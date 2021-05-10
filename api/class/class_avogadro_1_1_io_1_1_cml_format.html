@@ -1,0 +1,1177 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Class Avogadro::Io::CmlFormat &#8212; Avogadro 1.94 documentation</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/basic.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <link rel="canonical" href="https://two.avogadro.cc/api/class/class_avogadro_1_1_io_1_1_cml_format.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Class Avogadro::Io::DcdFormat" href="class_avogadro_1_1_io_1_1_dcd_format.html" />
+    <link rel="prev" title="Class Avogadro::Io::CjsonFormat" href="class_avogadro_1_1_io_1_1_cjson_format.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+<a class="navbar-brand" href="../../index.html">
+<p class="title">Avogadro</p>
+</a>
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../scripts/index.html">
+  Script Plugins
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../index.html">
+  Library API
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../contrib/index.html">
+  Contribute
+ </a>
+</li>
+
+    
+    <li class="nav-item">
+        <a class="nav-link nav-external" href="https://discuss.avogadro.cc">Discuss<i class="fas fa-external-link-alt"></i></a>
+    </li>
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/openchemistry/avogadrolibs" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://twitter.com/AvogadroChem" rel="noopener" target="_blank" title="Twitter">
+            <span><i class="fab fa-twitter-square"></i></span>
+            <label class="sr-only">Twitter</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../rpc.html">
+   Avogadro Remote Procedure Call (RPC)
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../classlist.html">
+   Class list
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../core.html">
+     Core Classes
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html">
+       Class Avogadro::Core::Array
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_core_1_1_array_set.html">
+       Class Avogadro::Core::ArraySet
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_core_1_1_array_set_1_1_holder.html">
+       Class Avogadro::Core::ArraySet::Holder
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_core_1_1_array_set_1_1_place_holder.html">
+       Class Avogadro::Core::ArraySet::PlaceHolder
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_core_1_1_atom.html">
+       Class Avogadro::Core::Atom
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_core_1_1_atom_template.html">
+       Class Avogadro::Core::AtomTemplate
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_core_1_1_atom_typer.html">
+       Class Avogadro::Core::AtomTyper
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_core_1_1_avo_spglib.html">
+       Class Avogadro::Core::AvoSpglib
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_core_1_1_basis_set.html">
+       Class Avogadro::Core::BasisSet
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_core_1_1_bond.html">
+       Class Avogadro::Core::Bond
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_core_1_1_bond_template.html">
+       Class Avogadro::Core::BondTemplate
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_core_1_1_color3f.html">
+       Class Avogadro::Core::Color3f
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_core_1_1_coordinate_block_generator.html">
+       Class Avogadro::Core::CoordinateBlockGenerator
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_core_1_1_coordinate_set.html">
+       Class Avogadro::Core::CoordinateSet
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_core_1_1_crystal_tools.html">
+       Class Avogadro::Core::CrystalTools
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_core_1_1_cube.html">
+       Class Avogadro::Core::Cube
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_core_1_1_elements.html">
+       Class Avogadro::Core::Elements
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_core_1_1_gaussian_set.html">
+       Class Avogadro::Core::GaussianSet
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_core_1_1_gaussian_set_tools.html">
+       Class Avogadro::Core::GaussianSetTools
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_core_1_1_graph.html">
+       Class Avogadro::Core::Graph
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_core_1_1_mesh.html">
+       Class Avogadro::Core::Mesh
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html">
+       Class Avogadro::Core::Molecule
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule_deserializer.html">
+       Class Avogadro::Core::MoleculeDeserializer
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule_serializer.html">
+       Class Avogadro::Core::MoleculeSerializer
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_core_1_1_mutex.html">
+       Class Avogadro::Core::Mutex
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_core_1_1_name_atom_typer.html">
+       Class Avogadro::Core::NameAtomTyper
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_core_1_1_residue.html">
+       Class Avogadro::Core::Residue
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_core_1_1_residue_data.html">
+       Class Avogadro::Core::ResidueData
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_core_1_1_ring_perceiver.html">
+       Class Avogadro::Core::RingPerceiver
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_core_1_1_shared_mutex.html">
+       Class Avogadro::Core::SharedMutex
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_core_1_1_slater_set.html">
+       Class Avogadro::Core::SlaterSet
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_core_1_1_slater_set_tools.html">
+       Class Avogadro::Core::SlaterSetTools
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_core_1_1_space_groups.html">
+       Class Avogadro::Core::SpaceGroups
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_core_1_1_symbol_atom_typer.html">
+       Class Avogadro::Core::SymbolAtomTyper
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_core_1_1_unit_cell.html">
+       Class Avogadro::Core::UnitCell
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_core_1_1_variant.html">
+       Class Avogadro::Core::Variant
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_core_1_1_variant_map.html">
+       Class Avogadro::Core::VariantMap
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_core_1_1internal_1_1_array_ref_container.html">
+       Class Avogadro::Core::internal::ArrayRefContainer
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_type_traits.html">
+       Class Avogadro::TypeTraits
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_type_traits_3_01char_01_4.html">
+       Class Avogadro::TypeTraits&lt; char &gt;
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_type_traits_3_01double_01_4.html">
+       Class Avogadro::TypeTraits&lt; double &gt;
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_type_traits_3_01float_01_4.html">
+       Class Avogadro::TypeTraits&lt; float &gt;
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_type_traits_3_01int_01_4.html">
+       Class Avogadro::TypeTraits&lt; int &gt;
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_type_traits_3_01short_01_4.html">
+       Class Avogadro::TypeTraits&lt; short &gt;
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_type_traits_3_01unsigned_01char_01_4.html">
+       Class Avogadro::TypeTraits&lt; unsigned char &gt;
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_type_traits_3_01unsigned_01int_01_4.html">
+       Class Avogadro::TypeTraits&lt; unsigned int &gt;
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_type_traits_3_01unsigned_01short_01_4.html">
+       Class Avogadro::TypeTraits&lt; unsigned short &gt;
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="../io.html">
+     IO Classes
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_io_1_1_cjson_format.html">
+       Class Avogadro::Io::CjsonFormat
+      </a>
+     </li>
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       Class Avogadro::Io::CmlFormat
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_io_1_1_dcd_format.html">
+       Class Avogadro::Io::DcdFormat
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_io_1_1_file_format.html">
+       Class Avogadro::Io::FileFormat
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_io_1_1_file_format_manager.html">
+       Class Avogadro::Io::FileFormatManager
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_io_1_1_gromacs_format.html">
+       Class Avogadro::Io::GromacsFormat
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_io_1_1_hdf5_data_format.html">
+       Class Avogadro::Io::Hdf5DataFormat
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_io_1_1_lammps_data_format.html">
+       Class Avogadro::Io::LammpsDataFormat
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_io_1_1_lammps_trajectory_format.html">
+       Class Avogadro::Io::LammpsTrajectoryFormat
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_io_1_1_m_m_t_f_format.html">
+       Class Avogadro::Io::MMTFFormat
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_io_1_1_mdl_format.html">
+       Class Avogadro::Io::MdlFormat
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_io_1_1_outcar_format.html">
+       Class Avogadro::Io::OutcarFormat
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_io_1_1_pdb_format.html">
+       Class Avogadro::Io::PdbFormat
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_io_1_1_poscar_format.html">
+       Class Avogadro::Io::PoscarFormat
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_io_1_1_trr_format.html">
+       Class Avogadro::Io::TrrFormat
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_io_1_1_xyz_format.html">
+       Class Avogadro::Io::XyzFormat
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_quantum_i_o_1_1_g_a_m_e_s_s_u_s_output.html">
+       Class Avogadro::QuantumIO::GAMESSUSOutput
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_quantum_i_o_1_1_g_u_k_basis_set.html">
+       Class Avogadro::QuantumIO::GUKBasisSet
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_quantum_i_o_1_1_gamessuk_out.html">
+       Class Avogadro::QuantumIO::GamessukOut
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_quantum_i_o_1_1_gaussian_cube.html">
+       Class Avogadro::QuantumIO::GaussianCube
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_quantum_i_o_1_1_gaussian_fchk.html">
+       Class Avogadro::QuantumIO::GaussianFchk
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_quantum_i_o_1_1_molden_file.html">
+       Class Avogadro::QuantumIO::MoldenFile
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_quantum_i_o_1_1_mopac_aux.html">
+       Class Avogadro::QuantumIO::MopacAux
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_quantum_i_o_1_1_n_w_chem_json.html">
+       Class Avogadro::QuantumIO::NWChemJson
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_quantum_i_o_1_1_n_w_chem_log.html">
+       Class Avogadro::QuantumIO::NWChemLog
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../molequeue.html">
+     MoleQueue Classes
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_mole_queue_1_1_batch_job.html">
+       Class Avogadro::MoleQueue::BatchJob
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_mole_queue_1_1_input_generator.html">
+       Class Avogadro::MoleQueue::InputGenerator
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_mole_queue_1_1_input_generator_dialog.html">
+       Class Avogadro::MoleQueue::InputGeneratorDialog
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_mole_queue_1_1_input_generator_widget.html">
+       Class Avogadro::MoleQueue::InputGeneratorWidget
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_mole_queue_1_1_mole_queue_dialog.html">
+       Class Avogadro::MoleQueue::MoleQueueDialog
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_mole_queue_1_1_mole_queue_manager.html">
+       Class Avogadro::MoleQueue::MoleQueueManager
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_mole_queue_1_1_mole_queue_queue_list_model.html">
+       Class Avogadro::MoleQueue::MoleQueueQueueListModel
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_mole_queue_1_1_mole_queue_widget.html">
+       Class Avogadro::MoleQueue::MoleQueueWidget
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../qtgui.html">
+     QtGui Classes
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_background_file_format.html">
+       Class Avogadro::QtGui::BackgroundFileFormat
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_container_widget.html">
+       Class Avogadro::QtGui::ContainerWidget
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_custom_element_dialog.html">
+       Class Avogadro::QtGui::CustomElementDialog
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_element_detail.html">
+       Class Avogadro::QtGui::ElementDetail
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_element_item.html">
+       Class Avogadro::QtGui::ElementItem
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_element_translator.html">
+       Class Avogadro::QtGui::ElementTranslator
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_extension_plugin.html">
+       Class Avogadro::QtGui::ExtensionPlugin
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_extension_plugin_factory.html">
+       Class Avogadro::QtGui::ExtensionPluginFactory
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_file_browse_widget.html">
+       Class Avogadro::QtGui::FileBrowseWidget
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_file_format_dialog.html">
+       Class Avogadro::QtGui::FileFormatDialog
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_generic_highlighter.html">
+       Class Avogadro::QtGui::GenericHighlighter
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_generic_highlighter_1_1_rule.html">
+       Class Avogadro::QtGui::GenericHighlighter::Rule
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_hydrogen_tools.html">
+       Class Avogadro::QtGui::HydrogenTools
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_interface_script.html">
+       Class Avogadro::QtGui::InterfaceScript
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_interface_widget.html">
+       Class Avogadro::QtGui::InterfaceWidget
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_mesh_generator.html">
+       Class Avogadro::QtGui::MeshGenerator
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_molecule.html">
+       Class Avogadro::QtGui::Molecule
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_molecule_model.html">
+       Class Avogadro::QtGui::MoleculeModel
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_multi_view_widget.html">
+       Class Avogadro::QtGui::MultiViewWidget
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_periodic_table_scene.html">
+       Class Avogadro::QtGui::PeriodicTableScene
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_periodic_table_view.html">
+       Class Avogadro::QtGui::PeriodicTableView
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_persistent_atom.html">
+       Class Avogadro::QtGui::PersistentAtom
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_persistent_bond.html">
+       Class Avogadro::QtGui::PersistentBond
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_python_script.html">
+       Class Avogadro::QtGui::PythonScript
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_r_w_atom.html">
+       Class Avogadro::QtGui::RWAtom
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_r_w_bond.html">
+       Class Avogadro::QtGui::RWBond
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_r_w_molecule.html">
+       Class Avogadro::QtGui::RWMolecule
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_scene_plugin.html">
+       Class Avogadro::QtGui::ScenePlugin
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_scene_plugin_factory.html">
+       Class Avogadro::QtGui::ScenePluginFactory
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_scene_plugin_model.html">
+       Class Avogadro::QtGui::ScenePluginModel
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_script_loader.html">
+       Class Avogadro::QtGui::ScriptLoader
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_tool_plugin.html">
+       Class Avogadro::QtGui::ToolPlugin
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_tool_plugin_factory.html">
+       Class Avogadro::QtGui::ToolPluginFactory
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_view_factory.html">
+       Class Avogadro::QtGui::ViewFactory
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_qt_open_g_l_1_1_active_objects.html">
+       Class Avogadro::QtOpenGL::ActiveObjects
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_qt_open_g_l_1_1_g_l_widget.html">
+       Class Avogadro::QtOpenGL::GLWidget
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_qt_open_g_l_1_1_qt_text_render_strategy.html">
+       Class Avogadro::QtOpenGL::QtTextRenderStrategy
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../rendering.html">
+     Rendering Classes
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_rendering_1_1_ambient_occlusion_sphere_geometry.html">
+       Class Avogadro::Rendering::AmbientOcclusionSphereGeometry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_rendering_1_1_arrow_geometry.html">
+       Class Avogadro::Rendering::ArrowGeometry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_rendering_1_1_buffer_object.html">
+       Class Avogadro::Rendering::BufferObject
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_rendering_1_1_camera.html">
+       Class Avogadro::Rendering::Camera
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_rendering_1_1_cylinder.html">
+       Class Avogadro::Rendering::Cylinder
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_rendering_1_1_cylinder_geometry.html">
+       Class Avogadro::Rendering::CylinderGeometry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_rendering_1_1_drawable.html">
+       Class Avogadro::Rendering::Drawable
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_rendering_1_1_g_l_render_visitor.html">
+       Class Avogadro::Rendering::GLRenderVisitor
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_rendering_1_1_g_l_renderer.html">
+       Class Avogadro::Rendering::GLRenderer
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_rendering_1_1_geometry_node.html">
+       Class Avogadro::Rendering::GeometryNode
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_rendering_1_1_geometry_visitor.html">
+       Class Avogadro::Rendering::GeometryVisitor
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_rendering_1_1_group_node.html">
+       Class Avogadro::Rendering::GroupNode
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_rendering_1_1_line_strip_geometry.html">
+       Class Avogadro::Rendering::LineStripGeometry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_rendering_1_1_mesh_geometry.html">
+       Class Avogadro::Rendering::MeshGeometry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_rendering_1_1_node.html">
+       Class Avogadro::Rendering::Node
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_rendering_1_1_p_o_v_ray_visitor.html">
+       Class Avogadro::Rendering::POVRayVisitor
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_rendering_1_1_primitive.html">
+       Class Avogadro::Rendering::Primitive
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_rendering_1_1_scene.html">
+       Class Avogadro::Rendering::Scene
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_rendering_1_1_shader.html">
+       Class Avogadro::Rendering::Shader
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_rendering_1_1_shader_program.html">
+       Class Avogadro::Rendering::ShaderProgram
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_rendering_1_1_sphere.html">
+       Class Avogadro::Rendering::Sphere
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_rendering_1_1_sphere_geometry.html">
+       Class Avogadro::Rendering::SphereGeometry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_rendering_1_1_text_label2_d.html">
+       Class Avogadro::Rendering::TextLabel2D
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_rendering_1_1_text_label3_d.html">
+       Class Avogadro::Rendering::TextLabel3D
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_rendering_1_1_text_label_base.html">
+       Class Avogadro::Rendering::TextLabelBase
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_rendering_1_1_text_properties.html">
+       Class Avogadro::Rendering::TextProperties
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_rendering_1_1_text_render_strategy.html">
+       Class Avogadro::Rendering::TextRenderStrategy
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_rendering_1_1_texture2_d.html">
+       Class Avogadro::Rendering::Texture2D
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_rendering_1_1_transform_node.html">
+       Class Avogadro::Rendering::TransformNode
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_rendering_1_1_v_r_m_l_visitor.html">
+       Class Avogadro::Rendering::VRMLVisitor
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_rendering_1_1_visitor.html">
+       Class Avogadro::Rendering::Visitor
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_rendering_1_1_volume_geometry.html">
+       Class Avogadro::Rendering::VolumeGeometry
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../vtk.html">
+     VTK Classes
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <label for="toctree-checkbox-7">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_v_t_k_1_1_vtk_plot.html">
+       Class Avogadro::VTK::VtkPlot
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="class_avogadro_1_1_v_t_k_1_1vtk_g_l_widget.html">
+       Class Avogadro::VTK::vtkGLWidget
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="classvtk_avogadro_actor.html">
+       Class vtkAvogadroActor
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+
+<nav id="bd-toc-nav">
+    
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+
+<div class="tocsection editthispage">
+    <a href="https://github.com/openchemistry/avogadrolibs/edit/master/docs/api/class/class_avogadro_1_1_io_1_1_cml_format.rst">
+        <i class="fas fa-pencil-alt"></i> Edit this page
+    </a>
+</div>
+
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="class-avogadro-io-cmlformat">
+<h1>Class Avogadro::Io::CmlFormat<a class="headerlink" href="#class-avogadro-io-cmlformat" title="Permalink to this headline">¶</a></h1>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro2Io9CmlFormatE">
+<span id="_CPPv3N8Avogadro2Io9CmlFormatE"></span><span id="_CPPv2N8Avogadro2Io9CmlFormatE"></span><span id="Avogadro::Io::CmlFormat"></span><span class="target" id="class_avogadro_1_1_io_1_1_cml_format"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">Avogadro</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Io</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">CmlFormat</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_io_1_1_file_format.html#_CPPv4N8Avogadro2Io10FileFormatE" title="Avogadro::Io::FileFormat"><span class="n"><span class="pre">FileFormat</span></span></a><a class="headerlink" href="#_CPPv4N8Avogadro2Io9CmlFormatE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Implementation of the Chemical Markup Language format. </p>
+<p><dl class="simple">
+<dt><strong>Author</strong></dt><dd><p>Marcus D. Hanwell </p>
+</dd>
+</dl>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro2Io9CmlFormat19supportedOperationsEv">
+<span id="_CPPv3NK8Avogadro2Io9CmlFormat19supportedOperationsEv"></span><span id="_CPPv2NK8Avogadro2Io9CmlFormat19supportedOperationsEv"></span><span id="Avogadro::Io::CmlFormat::supportedOperationsC"></span><span class="target" id="class_avogadro_1_1_io_1_1_cml_format_1aa9cefb75a737029efb42ef2c97ac48f7"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">Operations</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">supportedOperations</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro2Io9CmlFormat19supportedOperationsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Operation flags defining the capabilities of this format. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro2Io9CmlFormat11newInstanceEv">
+<span id="_CPPv3NK8Avogadro2Io9CmlFormat11newInstanceEv"></span><span id="_CPPv2NK8Avogadro2Io9CmlFormat11newInstanceEv"></span><span id="Avogadro::Io::CmlFormat::newInstanceC"></span><span class="target" id="class_avogadro_1_1_io_1_1_cml_format_1ad7df75064f1df1f4fb90e66f4787f8cf"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_io_1_1_file_format.html#_CPPv4N8Avogadro2Io10FileFormatE" title="Avogadro::Io::FileFormat"><span class="n"><span class="pre">FileFormat</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">newInstance</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro2Io9CmlFormat11newInstanceEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Create a new instance of the file format class. Ownership passes to the caller. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro2Io9CmlFormat10identifierEv">
+<span id="_CPPv3NK8Avogadro2Io9CmlFormat10identifierEv"></span><span id="_CPPv2NK8Avogadro2Io9CmlFormat10identifierEv"></span><span id="Avogadro::Io::CmlFormat::identifierC"></span><span class="target" id="class_avogadro_1_1_io_1_1_cml_format_1a3eaad8a6fe9989a1d32fe9898b3cb834"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">identifier</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro2Io9CmlFormat10identifierEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>A unique identifier, used to retrieve formats programatically. CML, XYZ, PDB etc. A runtime warning will be generated if the identifier is not unique. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro2Io9CmlFormat4nameEv">
+<span id="_CPPv3NK8Avogadro2Io9CmlFormat4nameEv"></span><span id="_CPPv2NK8Avogadro2Io9CmlFormat4nameEv"></span><span id="Avogadro::Io::CmlFormat::nameC"></span><span class="target" id="class_avogadro_1_1_io_1_1_cml_format_1aa4f4ba750a08765e64da2d0bd473944a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">name</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro2Io9CmlFormat4nameEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The name of the format, should be short such as Chemical Markup Language, XYZ format, Protein Databank etc. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro2Io9CmlFormat11descriptionEv">
+<span id="_CPPv3NK8Avogadro2Io9CmlFormat11descriptionEv"></span><span id="_CPPv2NK8Avogadro2Io9CmlFormat11descriptionEv"></span><span id="Avogadro::Io::CmlFormat::descriptionC"></span><span class="target" id="class_avogadro_1_1_io_1_1_cml_format_1a4afd83de1a474668783156572e06247b"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">description</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro2Io9CmlFormat11descriptionEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>A description of the format, along with any relevant help text for users. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro2Io9CmlFormat16specificationUrlEv">
+<span id="_CPPv3NK8Avogadro2Io9CmlFormat16specificationUrlEv"></span><span id="_CPPv2NK8Avogadro2Io9CmlFormat16specificationUrlEv"></span><span id="Avogadro::Io::CmlFormat::specificationUrlC"></span><span class="target" id="class_avogadro_1_1_io_1_1_cml_format_1ad783524804709a8c2937ff611e8a3c8b"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">specificationUrl</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro2Io9CmlFormat16specificationUrlEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The URL of the format specification if available (relevant web page/wiki otherwise). </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro2Io9CmlFormat14fileExtensionsEv">
+<span id="_CPPv3NK8Avogadro2Io9CmlFormat14fileExtensionsEv"></span><span id="_CPPv2NK8Avogadro2Io9CmlFormat14fileExtensionsEv"></span><span id="Avogadro::Io::CmlFormat::fileExtensionsC"></span><span class="target" id="class_avogadro_1_1_io_1_1_cml_format_1aafaba53d3db47dd553ded803c507f866"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">fileExtensions</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro2Io9CmlFormat14fileExtensionsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the file name extension(s) that the format supports reading. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A vector containing a list of extensions (in lower case). </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro2Io9CmlFormat9mimeTypesEv">
+<span id="_CPPv3NK8Avogadro2Io9CmlFormat9mimeTypesEv"></span><span id="_CPPv2NK8Avogadro2Io9CmlFormat9mimeTypesEv"></span><span id="Avogadro::Io::CmlFormat::mimeTypesC"></span><span class="target" id="class_avogadro_1_1_io_1_1_cml_format_1a2cb2eab264b0604d944ac938509573bd"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">mimeTypes</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro2Io9CmlFormat9mimeTypesEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the MIME type(s) that the format supports reading. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A vector containing a list of MIME type(s) (in lower case). </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro2Io9CmlFormat4readERNSt7istreamERN4Core8MoleculeE">
+<span id="_CPPv3N8Avogadro2Io9CmlFormat4readERNSt7istreamERN4Core8MoleculeE"></span><span id="_CPPv2N8Avogadro2Io9CmlFormat4readERNSt7istreamERN4Core8MoleculeE"></span><span id="Avogadro::Io::CmlFormat::read__isR.Core::MoleculeR"></span><span class="target" id="class_avogadro_1_1_io_1_1_cml_format_1a9d11d65979539c8906842516f8d4b906"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">read</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">istream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">in</span></span>, <span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">molecule</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8Avogadro2Io9CmlFormat4readERNSt7istreamERN4Core8MoleculeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Read the given <code class="docutils literal notranslate"><span class="pre">in</span></code> stream and load it into <code class="docutils literal notranslate"><span class="pre">molecule</span></code>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>in</strong> – The input file stream. </p></li>
+<li><p><strong>molecule</strong> – The molecule the data will be read into. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True on success, false on failure. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro2Io9CmlFormat5writeERNSt7ostreamERKN4Core8MoleculeE">
+<span id="_CPPv3N8Avogadro2Io9CmlFormat5writeERNSt7ostreamERKN4Core8MoleculeE"></span><span id="_CPPv2N8Avogadro2Io9CmlFormat5writeERNSt7ostreamERKN4Core8MoleculeE"></span><span id="Avogadro::Io::CmlFormat::write__osR.Core::MoleculeCR"></span><span class="target" id="class_avogadro_1_1_io_1_1_cml_format_1abb2fdca36bc78ede39c332d5a11eb625"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">write</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ostream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">out</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">molecule</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8Avogadro2Io9CmlFormat5writeERNSt7ostreamERKN4Core8MoleculeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Write to the given <code class="docutils literal notranslate"><span class="pre">out</span></code> stream the contents of <code class="docutils literal notranslate"><span class="pre">molecule</span></code>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>out</strong> – The output stream to write the data to. </p></li>
+<li><p><strong>molecule</strong> – The contents of this molecule will be written to output. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True on success, false on failure. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="class_avogadro_1_1_io_1_1_cjson_format.html" title="previous page">Class Avogadro::Io::CjsonFormat</a>
+    <a class='right-next' id="next-link" href="class_avogadro_1_1_io_1_1_dcd_format.html" title="next page">Class Avogadro::Io::DcdFormat</a>
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright ©2021 The OpenChemistry / Avogadro Teams..<br/>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.0.0.<br/>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

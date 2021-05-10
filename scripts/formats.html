@@ -22,16 +22,15 @@
       
 
     
-    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css" />
     
   <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
     <link rel="canonical" href="https://two.avogadro.cc/scripts/formats.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -81,8 +80,8 @@
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../credits.html">
-  Code:
+ <a class="reference internal nav-link" href="../contrib/index.html">
+  Contribute
  </a>
 </li>
 
@@ -175,25 +174,31 @@
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#identify-the-format-with-metadata">
    Identify the Format with
-   <cite>
-    –metadata
-   </cite>
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     --metadata
+    </span>
+   </code>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#reading-a-format-with-read">
    Reading a format with
-   <cite>
-    –read
-   </cite>
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     --read
+    </span>
+   </code>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#writing-a-format-with-write">
    Writing a format with
-   <cite>
-    –write
-   </cite>
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     --write
+    </span>
+   </code>
   </a>
  </li>
 </ul>
@@ -230,16 +235,19 @@
 handles and new formats (e.g., to use packages like cclib).</p>
 <p>The script must handle the following command line arguments:</p>
 <ul class="simple">
-<li><p><cite>–metadata</cite> Print metadata describing the format and the script’s
+<li><p><code class="docutils literal notranslate"><span class="pre">--metadata</span></code> Print metadata describing the format and the script’s
 abilities and exit.</p></li>
-<li><p><cite>–read</cite> Read data from standard input and produce a standard
+<li><p><code class="docutils literal notranslate"><span class="pre">--read</span></code> Read data from standard input and produce a standard
 representation on standard output.</p></li>
-<li><p><cite>–write</cite> Read a standard representation from standard input and write
+<li><p><code class="docutils literal notranslate"><span class="pre">--write</span></code> Read a standard representation from standard input and write
 the formatted result to standard output.</p></li>
 </ul>
+<p>Format scripts do not need to handle both <code class="docutils literal notranslate"><span class="pre">--read</span></code> and <code class="docutils literal notranslate"><span class="pre">--write</span></code> options.
+For example a format could be intended to only read in a new format by converting
+to <cite>cjson</cite>.</p>
 <div class="section" id="identify-the-format-with-metadata">
-<h2>Identify the Format with <cite>–metadata</cite><a class="headerlink" href="#identify-the-format-with-metadata" title="Permalink to this headline">¶</a></h2>
-<p>Running the script with the <cite>–metadata</cite> option should print a JSON object
+<h2>Identify the Format with <code class="docutils literal notranslate"><span class="pre">--metadata</span></code><a class="headerlink" href="#identify-the-format-with-metadata" title="Permalink to this headline">¶</a></h2>
+<p>Running the script with the <code class="docutils literal notranslate"><span class="pre">--metadata</span></code> option should print a JSON object
 of the following form:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="s2">&quot;inputFormat&quot;</span><span class="p">:</span> <span class="s2">&quot;cml&quot;</span><span class="p">,</span>
@@ -257,14 +265,14 @@ of the following form:</p>
 <p>Details:</p>
 <ul class="simple">
 <li><p><cite>inputFormat</cite> indicates the format that the script can convert to the
-implemented format by the <cite>–write</cite> command. Allowed values are <cite>“cml”</cite>,
-<cite>“cjson”</cite>, or <cite>“xyz”</cite>. See the <cite>–write</cite> documentation for more detail.</p></li>
+implemented format by the <code class="docutils literal notranslate"><span class="pre">--write</span></code> command. Allowed values are <cite>“cml”</cite>,
+<cite>“cjson”</cite>, or <cite>“xyz”</cite>. See the <code class="docutils literal notranslate"><span class="pre">--write</span></code> documentation for more detail.</p></li>
 <li><p><cite>outputFormat</cite> indicates the format that the script can convert to from the
-implemented format by the <cite>–read</cite> command. Allowed values are <cite>“cml”</cite>,
-<cite>“cjson”</cite>, or <cite>“xyz”</cite>. See the <cite>–read</cite> documentation for more detail.</p></li>
+implemented format by the <code class="docutils literal notranslate"><span class="pre">--read</span></code> command. Allowed values are <cite>“cml”</cite>,
+<cite>“cjson”</cite>, or <cite>“xyz”</cite>. See the <code class="docutils literal notranslate"><span class="pre">--read</span></code> documentation for more detail.</p></li>
 <li><p><cite>operations</cite> specifies the scripts capabilies. The array should contain
-<cite>“read”</cite> if the script implements the <cite>–read</cite> option, and/or <cite>“write”</cite> if
-<cite>–write</cite> is available.</p></li>
+<cite>“read”</cite> if the script implements the <code class="docutils literal notranslate"><span class="pre">--read</span></code> option, and/or <cite>“write”</cite> if
+<code class="docutils literal notranslate"><span class="pre">--write</span></code> is available.</p></li>
 <li><p><cite>identifier</cite> is a unique identifier. The value must only be unique amongst
 script formats, as it will be prefixed with “User Script: ” internally by
 Avogadro.</p></li>
@@ -297,17 +305,17 @@ supports.</p></li>
 </dl>
 </div>
 <div class="section" id="reading-a-format-with-read">
-<h2>Reading a format with <cite>–read</cite><a class="headerlink" href="#reading-a-format-with-read" title="Permalink to this headline">¶</a></h2>
-<p>If <cite>“read”</cite> is specified in the <cite>operations</cite> <cite>–metadata</cite> output along with
-a valid <cite>outputFormat</cite>, Avogadro will call the script with <cite>–read</cite> and
+<h2>Reading a format with <code class="docutils literal notranslate"><span class="pre">--read</span></code><a class="headerlink" href="#reading-a-format-with-read" title="Permalink to this headline">¶</a></h2>
+<p>If <cite>“read”</cite> is specified in the <cite>operations</cite> <code class="docutils literal notranslate"><span class="pre">--metadata</span></code> output along with
+a valid <cite>outputFormat</cite>, Avogadro will call the script with <code class="docutils literal notranslate"><span class="pre">--read</span></code> and
 write the implemented format to the script’s standard input. The script shall
 convert the input to <cite>outputFormat</cite> and print it to standard output.</p>
 </div>
 <div class="section" id="writing-a-format-with-write">
-<h2>Writing a format with <cite>–write</cite><a class="headerlink" href="#writing-a-format-with-write" title="Permalink to this headline">¶</a></h2>
-<p>If <cite>“write”</cite> is specified in the <cite>operations</cite> <cite>–metadata</cite> output along with
-a valid <cite>inputFormat</cite>, Avogadro will call the script with <cite>–write</cite> and
-write the <cite>inputFormat</cite> to the script’s standard input. The script shall
+<h2>Writing a format with <code class="docutils literal notranslate"><span class="pre">--write</span></code><a class="headerlink" href="#writing-a-format-with-write" title="Permalink to this headline">¶</a></h2>
+<p>If <cite>“write”</cite> is specified in the <cite>operations</cite> <code class="docutils literal notranslate"><span class="pre">--metadata</span></code> output along with
+a valid <code class="docutils literal notranslate"><span class="pre">inputFormat</span></code>, Avogadro will call the script with <code class="docutils literal notranslate"><span class="pre">--write</span></code> and
+write the <code class="docutils literal notranslate"><span class="pre">inputFormat</span></code> to the script’s standard input. The script shall
 convert the input to the implemented format and print it to standard output.</p>
 </div>
 </div>
@@ -342,7 +350,7 @@ convert the input to the implemented format and print it to standard output.</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.2.1.<br/>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.0.0.<br/>
 </p>
     </div>
     
