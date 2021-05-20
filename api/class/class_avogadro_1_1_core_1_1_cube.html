@@ -22,15 +22,15 @@
       
 
     
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/basic.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
   <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
@@ -472,10 +472,352 @@
                 
   <div class="section" id="class-avogadro-core-cube">
 <h1>Class Avogadro::Core::Cube<a class="headerlink" href="#class-avogadro-core-cube" title="Permalink to this headline">¶</a></h1>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core4CubeE">
+<span id="_CPPv3N8Avogadro4Core4CubeE"></span><span id="_CPPv2N8Avogadro4Core4CubeE"></span><span id="Avogadro::Core::Cube"></span><span class="target" id="class_avogadro_1_1_core_1_1_cube"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">Avogadro</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">Cube</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core4CubeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Provide a data structure for regularly spaced 3D grids. </p>
+<p><dl class="simple">
+<dt><strong>Author</strong></dt><dd><p>Marcus D. Hanwell </p>
+</dd>
+</dl>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-types">Public Types</p>
+<dl class="cpp enum">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core4Cube4TypeE">
+<span id="_CPPv3N8Avogadro4Core4Cube4TypeE"></span><span id="_CPPv2N8Avogadro4Core4Cube4TypeE"></span><span class="target" id="class_avogadro_1_1_core_1_1_cube_1a1d1cfd8ffb84e947f82999c682b666a7"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Type</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core4Cube4TypeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Different <a class="reference internal" href="#class_avogadro_1_1_core_1_1_cube"><span class="std std-ref">Cube</span></a> types relating to the data </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core4Cube4Type3VdWE">
+<span id="_CPPv3N8Avogadro4Core4Cube4Type3VdWE"></span><span id="_CPPv2N8Avogadro4Core4Cube4Type3VdWE"></span><span class="target" id="class_avogadro_1_1_core_1_1_cube_1a1d1cfd8ffb84e947f82999c682b666a7a341fac6509f82cfae45a7a956c4c107e"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">VdW</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core4Cube4Type3VdWE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core4Cube4Type3ESPE">
+<span id="_CPPv3N8Avogadro4Core4Cube4Type3ESPE"></span><span id="_CPPv2N8Avogadro4Core4Cube4Type3ESPE"></span><span class="target" id="class_avogadro_1_1_core_1_1_cube_1a1d1cfd8ffb84e947f82999c682b666a7a1759dbb2b863e2aed1d506449bcdac39"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ESP</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core4Cube4Type3ESPE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core4Cube4Type15ElectronDensityE">
+<span id="_CPPv3N8Avogadro4Core4Cube4Type15ElectronDensityE"></span><span id="_CPPv2N8Avogadro4Core4Cube4Type15ElectronDensityE"></span><span class="target" id="class_avogadro_1_1_core_1_1_cube_1a1d1cfd8ffb84e947f82999c682b666a7a8a50748c8fab8026a3eb08d1ca853f1c"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ElectronDensity</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core4Cube4Type15ElectronDensityE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core4Cube4Type2MOE">
+<span id="_CPPv3N8Avogadro4Core4Cube4Type2MOE"></span><span id="_CPPv2N8Avogadro4Core4Cube4Type2MOE"></span><span class="target" id="class_avogadro_1_1_core_1_1_cube_1a1d1cfd8ffb84e947f82999c682b666a7aa5de298885d52a94f5e57c1aa4c5c409"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">MO</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core4Cube4Type2MOE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core4Cube4Type8FromFileE">
+<span id="_CPPv3N8Avogadro4Core4Cube4Type8FromFileE"></span><span id="_CPPv2N8Avogadro4Core4Cube4Type8FromFileE"></span><span class="target" id="class_avogadro_1_1_core_1_1_cube_1a1d1cfd8ffb84e947f82999c682b666a7aba9cef4c53c11479f00eff1018c9594f"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">FromFile</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core4Cube4Type8FromFileE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core4Cube4Type4NoneE">
+<span id="_CPPv3N8Avogadro4Core4Cube4Type4NoneE"></span><span id="_CPPv2N8Avogadro4Core4Cube4Type4NoneE"></span><span class="target" id="class_avogadro_1_1_core_1_1_cube_1a1d1cfd8ffb84e947f82999c682b666a7ac9d3e887722f2bc482bcca9d41c512af"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">None</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core4Cube4Type4NoneE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core4Cube3minEv">
+<span id="_CPPv3NK8Avogadro4Core4Cube3minEv"></span><span id="_CPPv2NK8Avogadro4Core4Cube3minEv"></span><span id="Avogadro::Core::Cube::minC"></span><span class="target" id="class_avogadro_1_1_core_1_1_cube_1aaa18fa052f05bf0325e31a357e7276cb"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">Vector3</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">min</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core4Cube3minEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The minimum point in the cube. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core4Cube3maxEv">
+<span id="_CPPv3NK8Avogadro4Core4Cube3maxEv"></span><span id="_CPPv2NK8Avogadro4Core4Cube3maxEv"></span><span id="Avogadro::Core::Cube::maxC"></span><span class="target" id="class_avogadro_1_1_core_1_1_cube_1aa2a2ff9944c1accb2dec9f1a113bb86c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">Vector3</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">max</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core4Cube3maxEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The maximum point in the cube. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core4Cube7spacingEv">
+<span id="_CPPv3NK8Avogadro4Core4Cube7spacingEv"></span><span id="_CPPv2NK8Avogadro4Core4Cube7spacingEv"></span><span id="Avogadro::Core::Cube::spacingC"></span><span class="target" id="class_avogadro_1_1_core_1_1_cube_1a662d383498eff1ef9106ef0130528c58"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">Vector3</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">spacing</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core4Cube7spacingEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The spacing of the grid. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core4Cube10dimensionsEv">
+<span id="_CPPv3NK8Avogadro4Core4Cube10dimensionsEv"></span><span id="_CPPv2NK8Avogadro4Core4Cube10dimensionsEv"></span><span id="Avogadro::Core::Cube::dimensionsC"></span><span class="target" id="class_avogadro_1_1_core_1_1_cube_1ac5796a2db636c21ba3b96d5787a2d26d"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">Vector3i</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dimensions</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core4Cube10dimensionsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The x, y and z dimensions of the cube. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core4Cube9setLimitsERK7Vector3RK7Vector3RK8Vector3i">
+<span id="_CPPv3N8Avogadro4Core4Cube9setLimitsERK7Vector3RK7Vector3RK8Vector3i"></span><span id="_CPPv2N8Avogadro4Core4Cube9setLimitsERK7Vector3RK7Vector3RK8Vector3i"></span><span id="Avogadro::Core::Cube::setLimits__Vector3CR.Vector3CR.Vector3iCR"></span><span class="target" id="class_avogadro_1_1_core_1_1_cube_1aaa9214724b2508df2f476f05bc64ca87"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setLimits</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Vector3</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">min</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Vector3</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">max</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Vector3i</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">points</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core4Cube9setLimitsERK7Vector3RK7Vector3RK8Vector3i" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the limits of the cube. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min</strong> – The minimum point in the cube. </p></li>
+<li><p><strong>max</strong> – The maximum point in the cube. </p></li>
+<li><p><strong>points</strong> – The number of (integer) points in the cube. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core4Cube9setLimitsERK7Vector3RK7Vector3d">
+<span id="_CPPv3N8Avogadro4Core4Cube9setLimitsERK7Vector3RK7Vector3d"></span><span id="_CPPv2N8Avogadro4Core4Cube9setLimitsERK7Vector3RK7Vector3d"></span><span id="Avogadro::Core::Cube::setLimits__Vector3CR.Vector3CR.double"></span><span class="target" id="class_avogadro_1_1_core_1_1_cube_1a3cf27f6c74c6b02325e06f9bda7cd570"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setLimits</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Vector3</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">min</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Vector3</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">max</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">spacing</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core4Cube9setLimitsERK7Vector3RK7Vector3d" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the limits of the cube. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min</strong> – The minimum point in the cube. </p></li>
+<li><p><strong>max</strong> – The maximum point in the cube. </p></li>
+<li><p><strong>spacing</strong> – The interval between points in the cube. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core4Cube9setLimitsERK7Vector3RK8Vector3id">
+<span id="_CPPv3N8Avogadro4Core4Cube9setLimitsERK7Vector3RK8Vector3id"></span><span id="_CPPv2N8Avogadro4Core4Cube9setLimitsERK7Vector3RK8Vector3id"></span><span id="Avogadro::Core::Cube::setLimits__Vector3CR.Vector3iCR.double"></span><span class="target" id="class_avogadro_1_1_core_1_1_cube_1aa81af5641f9b4e635687eddb1dac7e46"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setLimits</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Vector3</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">min</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Vector3i</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">dim</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">spacing</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core4Cube9setLimitsERK7Vector3RK8Vector3id" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the limits of the cube. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min</strong> – The minimum point in the cube. </p></li>
+<li><p><strong>dim</strong> – The integer dimensions of the cube in x, y and z. </p></li>
+<li><p><strong>spacing</strong> – The interval between points in the cube. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core4Cube9setLimitsERK7Vector3RK8Vector3iRK7Vector3">
+<span id="_CPPv3N8Avogadro4Core4Cube9setLimitsERK7Vector3RK8Vector3iRK7Vector3"></span><span id="_CPPv2N8Avogadro4Core4Cube9setLimitsERK7Vector3RK8Vector3iRK7Vector3"></span><span id="Avogadro::Core::Cube::setLimits__Vector3CR.Vector3iCR.Vector3CR"></span><span class="target" id="class_avogadro_1_1_core_1_1_cube_1a07f01496cd287c15882a9d37371b4f91"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setLimits</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Vector3</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">min</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Vector3i</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">dim</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Vector3</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">spacing</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core4Cube9setLimitsERK7Vector3RK8Vector3iRK7Vector3" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the limits of the cube. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min</strong> – The minimum point in the cube. </p></li>
+<li><p><strong>dim</strong> – The integer dimensions of the cube in x, y and z. </p></li>
+<li><p><strong>spacing</strong> – The interval between points in the cube. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core4Cube9setLimitsERK4Cube">
+<span id="_CPPv3N8Avogadro4Core4Cube9setLimitsERK4Cube"></span><span id="_CPPv2N8Avogadro4Core4Cube9setLimitsERK4Cube"></span><span id="Avogadro::Core::Cube::setLimits__CubeCR"></span><span class="target" id="class_avogadro_1_1_core_1_1_cube_1aa98a4f8385b15f79acf1c5437ac57e71"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setLimits</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro4Core4CubeE" title="Avogadro::Core::Cube"><span class="n"><span class="pre">Cube</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">cube</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core4Cube9setLimitsERK4Cube" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the limits of the cube - copy the limits of an existing <a class="reference internal" href="#class_avogadro_1_1_core_1_1_cube"><span class="std std-ref">Cube</span></a>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>cube</strong> – Existing <a class="reference internal" href="#class_avogadro_1_1_core_1_1_cube"><span class="std std-ref">Cube</span></a> to copy the limits from. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core4Cube9setLimitsERK8Moleculedd">
+<span id="_CPPv3N8Avogadro4Core4Cube9setLimitsERK8Moleculedd"></span><span id="_CPPv2N8Avogadro4Core4Cube9setLimitsERK8Moleculedd"></span><span id="Avogadro::Core::Cube::setLimits__MoleculeCR.double.double"></span><span class="target" id="class_avogadro_1_1_core_1_1_cube_1ad12c6ead3b8d575ae9070b347b1a2192"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setLimits</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">mol</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">spacing</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">padding</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core4Cube9setLimitsERK8Moleculedd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the limits of the cube. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mol</strong> – <a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#class_avogadro_1_1_core_1_1_molecule"><span class="std std-ref">Molecule</span></a> to take limits from </p></li>
+<li><p><strong>spacing</strong> – The spacing of the regular grid </p></li>
+<li><p><strong>padding</strong> – Padding around the molecule </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core4Cube4dataEv">
+<span id="_CPPv3N8Avogadro4Core4Cube4dataEv"></span><span id="_CPPv2N8Avogadro4Core4Cube4dataEv"></span><span id="Avogadro::Core::Cube::data"></span><span class="target" id="class_avogadro_1_1_core_1_1_cube_1a7e2b1ff51ca67a19da930991c7f5ba4f"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">data</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core4Cube4dataEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Vector containing all the data in a one-dimensional array. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core4Cube7setDataERKNSt6vectorIdEE">
+<span id="_CPPv3N8Avogadro4Core4Cube7setDataERKNSt6vectorIdEE"></span><span id="_CPPv2N8Avogadro4Core4Cube7setDataERKNSt6vectorIdEE"></span><span id="Avogadro::Core::Cube::setData__std::vector:double:CR"></span><span class="target" id="class_avogadro_1_1_core_1_1_cube_1a70df4d98f881694772f02f25584302a7"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setData</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">values</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core4Cube7setDataERKNSt6vectorIdEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the values in the cube to those passed in the vector. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core4Cube7addDataERKNSt6vectorIdEE">
+<span id="_CPPv3N8Avogadro4Core4Cube7addDataERKNSt6vectorIdEE"></span><span id="_CPPv2N8Avogadro4Core4Cube7addDataERKNSt6vectorIdEE"></span><span id="Avogadro::Core::Cube::addData__std::vector:double:CR"></span><span class="target" id="class_avogadro_1_1_core_1_1_cube_1ab9aa034d57471447a0063af50640229c"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addData</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">values</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core4Cube7addDataERKNSt6vectorIdEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Adds the values in the cube to those passed in the vector. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core4Cube12closestIndexERK7Vector3">
+<span id="_CPPv3NK8Avogadro4Core4Cube12closestIndexERK7Vector3"></span><span id="_CPPv2NK8Avogadro4Core4Cube12closestIndexERK7Vector3"></span><span id="Avogadro::Core::Cube::closestIndex__Vector3CRC"></span><span class="target" id="class_avogadro_1_1_core_1_1_cube_1a2dfe6474066ccd5618e44d70e35f0d2f"></span><span class="kt"><span class="pre">unsigned</span> <span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">closestIndex</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Vector3</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">pos</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core4Cube12closestIndexERK7Vector3" title="Permalink to this definition">¶</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pos</strong> – Position to get closest index for. </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Index of the point closest to the position supplied. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core4Cube11indexVectorERK7Vector3">
+<span id="_CPPv3NK8Avogadro4Core4Cube11indexVectorERK7Vector3"></span><span id="_CPPv2NK8Avogadro4Core4Cube11indexVectorERK7Vector3"></span><span id="Avogadro::Core::Cube::indexVector__Vector3CRC"></span><span class="target" id="class_avogadro_1_1_core_1_1_cube_1a7a29fcee11dcd94684edd56cd897d674"></span><span class="n"><span class="pre">Vector3i</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">indexVector</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Vector3</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">pos</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core4Cube11indexVectorERK7Vector3" title="Permalink to this definition">¶</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pos</strong> – Position to get closest index for. </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The i, j, k index closest to the position supplied. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core4Cube8positionEj">
+<span id="_CPPv3NK8Avogadro4Core4Cube8positionEj"></span><span id="_CPPv2NK8Avogadro4Core4Cube8positionEj"></span><span id="Avogadro::Core::Cube::position__unsigned-iC"></span><span class="target" id="class_avogadro_1_1_core_1_1_cube_1a569597984b7d662f6713c2e678e6ad18"></span><span class="n"><span class="pre">Vector3</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">position</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">unsigned</span> <span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">index</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core4Cube8positionEj" title="Permalink to this definition">¶</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>index</strong> – Index to be translated to a position. </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Position of the given index. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core4Cube5valueEiii">
+<span id="_CPPv3NK8Avogadro4Core4Cube5valueEiii"></span><span id="_CPPv2NK8Avogadro4Core4Cube5valueEiii"></span><span id="Avogadro::Core::Cube::value__i.i.iC"></span><span class="target" id="class_avogadro_1_1_core_1_1_cube_1ad9133c6884e5f0ebb8a49aa39edbf0eb"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">value</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">j</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">k</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core4Cube5valueEiii" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This function is very quick as it just returns the value at the point. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#class_avogadro_1_1_core_1_1_cube"><span class="std std-ref">Cube</span></a> value at the integer point i, j, k. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core4Cube5valueERK8Vector3i">
+<span id="_CPPv3NK8Avogadro4Core4Cube5valueERK8Vector3i"></span><span id="_CPPv2NK8Avogadro4Core4Cube5valueERK8Vector3i"></span><span id="Avogadro::Core::Cube::value__Vector3iCRC"></span><span class="target" id="class_avogadro_1_1_core_1_1_cube_1a164e773896480d9a56ab279b25d19bf4"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">value</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Vector3i</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">pos</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core4Cube5valueERK8Vector3i" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This function is very quick as it just returns the value at the point. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#class_avogadro_1_1_core_1_1_cube"><span class="std std-ref">Cube</span></a> value at the integer point pos. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core4Cube6valuefERK8Vector3f">
+<span id="_CPPv3NK8Avogadro4Core4Cube6valuefERK8Vector3f"></span><span id="_CPPv2NK8Avogadro4Core4Cube6valuefERK8Vector3f"></span><span id="Avogadro::Core::Cube::valuef__Vector3fCRC"></span><span class="target" id="class_avogadro_1_1_core_1_1_cube_1a6d989afe302e892120b58da0bc1d6462"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">valuef</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Vector3f</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">pos</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core4Cube6valuefERK8Vector3f" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This function uses trilinear interpolation to find the value at points between those specified in the cube. </p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>doxygenclass: Cannot find file: /Users/ghutchis/Devel/build/openchemistry/avogadrolibs/docs/xml/index.xml</p>
+<p>This function is quite computationally expensive and should be avoided where possible. </p>
 </div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#class_avogadro_1_1_core_1_1_cube"><span class="std std-ref">Cube</span></a> value at the specified position. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core4Cube5valueERK7Vector3">
+<span id="_CPPv3NK8Avogadro4Core4Cube5valueERK7Vector3"></span><span id="_CPPv2NK8Avogadro4Core4Cube5valueERK7Vector3"></span><span id="Avogadro::Core::Cube::value__Vector3CRC"></span><span class="target" id="class_avogadro_1_1_core_1_1_cube_1a0e35e310c9cc31325211de80a6256daf"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">value</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Vector3</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">pos</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core4Cube5valueERK7Vector3" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This function uses trilinear interpolation to find the value at points between those specified in the cube. </p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is quite computationally expensive and should be avoided where possible. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#class_avogadro_1_1_core_1_1_cube"><span class="std std-ref">Cube</span></a> value at the specified position. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core4Cube8setValueEiiid">
+<span id="_CPPv3N8Avogadro4Core4Cube8setValueEiiid"></span><span id="_CPPv2N8Avogadro4Core4Cube8setValueEiiid"></span><span id="Avogadro::Core::Cube::setValue__i.i.i.double"></span><span class="target" id="class_avogadro_1_1_core_1_1_cube_1a7a176eb4833d2700a5e2c9215d3d390d"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setValue</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">j</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">k</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core4Cube8setValueEiiid" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the value at the specified point in the cube. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>i</strong> – x component of the position. </p></li>
+<li><p><strong>j</strong> – y component of the position. </p></li>
+<li><p><strong>k</strong> – z component of the position. </p></li>
+<li><p><strong>value</strong> – Value at the specified position. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core4Cube8setValueEjd">
+<span id="_CPPv3N8Avogadro4Core4Cube8setValueEjd"></span><span id="_CPPv2N8Avogadro4Core4Cube8setValueEjd"></span><span id="Avogadro::Core::Cube::setValue__unsigned-i.double"></span><span class="target" id="class_avogadro_1_1_core_1_1_cube_1aa9eff38078d51798814d5f5ef30e970f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setValue</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">unsigned</span> <span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core4Cube8setValueEjd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the value at the specified index in the cube. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>i</strong> – 1-dimensional index of the point to set in the cube. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core4Cube8minValueEv">
+<span id="_CPPv3NK8Avogadro4Core4Cube8minValueEv"></span><span id="_CPPv2NK8Avogadro4Core4Cube8minValueEv"></span><span id="Avogadro::Core::Cube::minValueC"></span><span class="target" id="class_avogadro_1_1_core_1_1_cube_1a67002b27fe63266608050c707af96dd7"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">minValue</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core4Cube8minValueEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The minimum value at any point in the <a class="reference internal" href="#class_avogadro_1_1_core_1_1_cube"><span class="std std-ref">Cube</span></a>. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core4Cube8maxValueEv">
+<span id="_CPPv3NK8Avogadro4Core4Cube8maxValueEv"></span><span id="_CPPv2NK8Avogadro4Core4Cube8maxValueEv"></span><span id="Avogadro::Core::Cube::maxValueC"></span><span class="target" id="class_avogadro_1_1_core_1_1_cube_1a18817048a17b7a7b0e7d8c59fb97712e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">maxValue</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core4Cube8maxValueEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The maximum value at any point in the <a class="reference internal" href="#class_avogadro_1_1_core_1_1_cube"><span class="std std-ref">Cube</span></a>. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core4Cube4lockEv">
+<span id="_CPPv3NK8Avogadro4Core4Cube4lockEv"></span><span id="_CPPv2NK8Avogadro4Core4Cube4lockEv"></span><span id="Avogadro::Core::Cube::lockC"></span><span class="target" id="class_avogadro_1_1_core_1_1_cube_1a754026a346234bef47621cac16f6c57a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_core_1_1_mutex.html#_CPPv4N8Avogadro4Core5MutexE" title="Avogadro::Core::Mutex"><span class="n"><span class="pre">Mutex</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">lock</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core4Cube4lockEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Provides locking. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
 </div>
 
 
@@ -504,7 +846,7 @@
       <div class="row">
         <div class="col-md-10 py-2">
           <p>
-            ©2021 The OpenChemistry / Avogadro Teams. The website content uses the <a href="https://github.com/openchemitry/avogadrolibs/blob/master/LICENSE">BSD License</a> and is covered by the <a href="https://github.com/openchemistry/avogadrolibss/blob/master/CODE_OF_CONDUCT.md">Bokeh Code of Conduct</a>.
+            ©2021 The OpenChemistry / Avogadro Teams. The website content uses the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/LICENSE">BSD License</a> and is covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
           </p>
         </div>
         <br />

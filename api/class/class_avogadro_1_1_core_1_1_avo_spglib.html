@@ -22,15 +22,15 @@
       
 
     
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/basic.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
   <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
@@ -472,10 +472,83 @@
                 
   <div class="section" id="class-avogadro-core-avospglib">
 <h1>Class Avogadro::Core::AvoSpglib<a class="headerlink" href="#class-avogadro-core-avospglib" title="Permalink to this headline">¶</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>doxygenclass: Cannot find file: /Users/ghutchis/Devel/build/openchemistry/avogadrolibs/docs/xml/index.xml</p>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core9AvoSpglibE">
+<span id="_CPPv3N8Avogadro4Core9AvoSpglibE"></span><span id="_CPPv2N8Avogadro4Core9AvoSpglibE"></span><span id="Avogadro::Core::AvoSpglib"></span><span class="target" id="class_avogadro_1_1_core_1_1_avo_spglib"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">Avogadro</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">AvoSpglib</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core9AvoSpglibE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The <a class="reference internal" href="#class_avogadro_1_1_core_1_1_avo_spglib"><span class="std std-ref">AvoSpglib</span></a> class provides an interface between Avogadro and Spglib. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-functions">Public Static Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core9AvoSpglib13getHallNumberERK8Moleculed">
+<span id="_CPPv3N8Avogadro4Core9AvoSpglib13getHallNumberERK8Moleculed"></span><span id="_CPPv2N8Avogadro4Core9AvoSpglib13getHallNumberERK8Moleculed"></span><span id="Avogadro::Core::AvoSpglib::getHallNumber__MoleculeCR.double"></span><span class="target" id="class_avogadro_1_1_core_1_1_avo_spglib_1ab7d2c91ff67a5711f86b6856c626b1d6"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">unsigned</span> <span class="pre">short</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getHallNumber</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">mol</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">cartTol</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1e-5</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core9AvoSpglib13getHallNumberERK8Moleculed" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Use spglib to find the Hall number for a crystal. If the unit cell does not exist or if the algorithm fails, 0 will be returned.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mol</strong> – The molecule to be handled. </p></li>
+<li><p><strong>cartTol</strong> – The cartesian tolerance for spglib. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The Hall number for the crystal. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core9AvoSpglib17reduceToPrimitiveER8Moleculed">
+<span id="_CPPv3N8Avogadro4Core9AvoSpglib17reduceToPrimitiveER8Moleculed"></span><span id="_CPPv2N8Avogadro4Core9AvoSpglib17reduceToPrimitiveER8Moleculed"></span><span id="Avogadro::Core::AvoSpglib::reduceToPrimitive__MoleculeR.double"></span><span class="target" id="class_avogadro_1_1_core_1_1_avo_spglib_1aa5f2baab73c5bc50f9f895a8d53d9657"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">reduceToPrimitive</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">mol</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">cartTol</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1e-5</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core9AvoSpglib17reduceToPrimitiveER8Moleculed" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Use spglib to reduce the crystal to a primitive cell. Unless the molecule is missing its unit cell, it will be edited by spglib. Positions are not idealized.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mol</strong> – The molecule to be reduced to its primitive cell. </p></li>
+<li><p><strong>cartTol</strong> – The cartesian tolerance for spglib. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>False if the molecule has no unit cell or if the spglib algorithm failed. True otherwise. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core9AvoSpglib19conventionalizeCellER8Moleculed">
+<span id="_CPPv3N8Avogadro4Core9AvoSpglib19conventionalizeCellER8Moleculed"></span><span id="_CPPv2N8Avogadro4Core9AvoSpglib19conventionalizeCellER8Moleculed"></span><span id="Avogadro::Core::AvoSpglib::conventionalizeCell__MoleculeR.double"></span><span class="target" id="class_avogadro_1_1_core_1_1_avo_spglib_1a302a3ac519f0ffa022e3b98601209ca7"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">conventionalizeCell</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">mol</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">cartTol</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1e-5</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core9AvoSpglib19conventionalizeCellER8Moleculed" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Use spglib to refine the crystal to its conventional cell. Unless the molecule is missing its unit cell, it will be edited by spglib. Positions are idealized.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mol</strong> – The molecule to be conventionalized. </p></li>
+<li><p><strong>cartTol</strong> – The cartesian tolerance for spglib. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>False if the molecule has no unit cell or if the spglib algorithm failed. True otherwise. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core9AvoSpglib10symmetrizeER8Moleculed">
+<span id="_CPPv3N8Avogadro4Core9AvoSpglib10symmetrizeER8Moleculed"></span><span id="_CPPv2N8Avogadro4Core9AvoSpglib10symmetrizeER8Moleculed"></span><span id="Avogadro::Core::AvoSpglib::symmetrize__MoleculeR.double"></span><span class="target" id="class_avogadro_1_1_core_1_1_avo_spglib_1a1d59b975185019ed247bbe4975b7200b"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">symmetrize</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">mol</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">cartTol</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1e-5</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core9AvoSpglib10symmetrizeER8Moleculed" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Use spglib to symmetrize the crystal. Unless the molecule is missing its unit cell, it will be edited by spglib. It will be reduced to its primitive form, and positions will be idealized.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mol</strong> – The molecule to be conventionalized. </p></li>
+<li><p><strong>cartTol</strong> – The cartesian tolerance for spglib. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>False if the molecule has no unit cell or if the spglib algorithm failed. True otherwise. </p>
+</dd>
+</dl>
+</dd></dl>
+
 </div>
+</dd></dl>
+
 </div>
 
 
@@ -504,7 +577,7 @@
       <div class="row">
         <div class="col-md-10 py-2">
           <p>
-            ©2021 The OpenChemistry / Avogadro Teams. The website content uses the <a href="https://github.com/openchemitry/avogadrolibs/blob/master/LICENSE">BSD License</a> and is covered by the <a href="https://github.com/openchemistry/avogadrolibss/blob/master/CODE_OF_CONDUCT.md">Bokeh Code of Conduct</a>.
+            ©2021 The OpenChemistry / Avogadro Teams. The website content uses the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/LICENSE">BSD License</a> and is covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
           </p>
         </div>
         <br />

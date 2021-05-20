@@ -22,15 +22,15 @@
       
 
     
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/basic.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
   <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
@@ -422,10 +422,191 @@
                 
   <div class="section" id="class-avogadro-qtopengl-glwidget">
 <h1>Class Avogadro::QtOpenGL::GLWidget<a class="headerlink" href="#class-avogadro-qtopengl-glwidget" title="Permalink to this headline">¶</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>doxygenclass: Cannot find file: /Users/ghutchis/Devel/build/openchemistry/avogadrolibs/docs/xml/index.xml</p>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro8QtOpenGL8GLWidgetE">
+<span id="_CPPv3N8Avogadro8QtOpenGL8GLWidgetE"></span><span id="_CPPv2N8Avogadro8QtOpenGL8GLWidgetE"></span><span id="Avogadro::QtOpenGL::GLWidget"></span><span class="target" id="class_avogadro_1_1_qt_open_g_l_1_1_g_l_widget"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">Avogadro</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">QtOpenGL</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">GLWidget</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">QOpenGLWidget</span></span><a class="headerlink" href="#_CPPv4N8Avogadro8QtOpenGL8GLWidgetE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>QOpenGLGLWidget derived object for displaying 3D molecular geometry. </p>
+<p>
+This class creates the GL context, and contains a renderer to render the 3D molecular geometry.<dl class="simple">
+<dt><strong>Author</strong></dt><dd><p>Marcus D. Hanwell</p>
+</dd>
+</dl>
+</p>
+<p>The <a class="reference internal" href="#class_avogadro_1_1_qt_open_g_l_1_1_g_l_widget"><span class="std std-ref">GLWidget</span></a> also manages a collection of ToolPlugins that are used to respond to user input events. Use <a class="reference internal" href="#class_avogadro_1_1_qt_open_g_l_1_1_g_l_widget_1ace01570c5ca757c8749f851a296aa558"><span class="std std-ref">setTools()</span></a> or <a class="reference internal" href="#class_avogadro_1_1_qt_open_g_l_1_1_g_l_widget_1a96cf0af3e2d669adcf105b997819fc0b"><span class="std std-ref">addTool()</span></a> to add tools to the widget. Use <a class="reference internal" href="#class_avogadro_1_1_qt_open_g_l_1_1_g_l_widget_1a47153ceacaa032eaeabcb79e3f563a42"><span class="std std-ref">setActiveTool()</span></a> to indicate which tool is active. The active tool will be given the opportunity to handle input events first. If the active tool does not handle the event, the default tool will be used. If the default tool also ignores the event, it will be passed to QOpenGLWidget’s handlers. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-unnamed-group">Unnamed Group</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro8QtOpenGL8GLWidget8moleculeEv">
+<span id="_CPPv3N8Avogadro8QtOpenGL8GLWidget8moleculeEv"></span><span id="_CPPv2N8Avogadro8QtOpenGL8GLWidget8moleculeEv"></span><span id="Avogadro::QtOpenGL::GLWidget::molecule"></span><span class="target" id="class_avogadro_1_1_qt_open_g_l_1_1_g_l_widget_1a7d2b707654f72f71284f61b11ba58199"></span><span class="n"><span class="pre">QtGui</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_molecule.html#_CPPv4N8Avogadro5QtGui8MoleculeE" title="Avogadro::QtGui::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">molecule</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro8QtOpenGL8GLWidget8moleculeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the molecule being rendered by the widget. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro8QtOpenGL8GLWidget8moleculeEv">
+<span id="_CPPv3NK8Avogadro8QtOpenGL8GLWidget8moleculeEv"></span><span id="_CPPv2NK8Avogadro8QtOpenGL8GLWidget8moleculeEv"></span><span id="Avogadro::QtOpenGL::GLWidget::moleculeC"></span><span class="target" id="class_avogadro_1_1_qt_open_g_l_1_1_g_l_widget_1a7d91dee7a6b89d355dc6a66adee81f80"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QtGui</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_molecule.html#_CPPv4N8Avogadro5QtGui8MoleculeE" title="Avogadro::QtGui::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">molecule</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro8QtOpenGL8GLWidget8moleculeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the molecule being rendered by the widget. </p>
+</dd></dl>
+
 </div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-unnamed-group">Unnamed Group</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro8QtOpenGL8GLWidget10sceneModelEv">
+<span id="_CPPv3N8Avogadro8QtOpenGL8GLWidget10sceneModelEv"></span><span id="_CPPv2N8Avogadro8QtOpenGL8GLWidget10sceneModelEv"></span><span id="Avogadro::QtOpenGL::GLWidget::sceneModel"></span><span class="target" id="class_avogadro_1_1_qt_open_g_l_1_1_g_l_widget_1a6ad5a28488fbc68b0ee5019e63131135"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">QtGui</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_scene_plugin_model.html#_CPPv4N8Avogadro5QtGui16ScenePluginModelE" title="Avogadro::QtGui::ScenePluginModel"><span class="n"><span class="pre">ScenePluginModel</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">sceneModel</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro8QtOpenGL8GLWidget10sceneModelEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the <a class="reference internal" href="#class_avogadro_1_1_qt_open_g_l_1_1_g_l_widget"><span class="std std-ref">GLWidget</span></a>’s ScenePluginModel, used to add, delete and modify the scene plugin items. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro8QtOpenGL8GLWidget10sceneModelEv">
+<span id="_CPPv3NK8Avogadro8QtOpenGL8GLWidget10sceneModelEv"></span><span id="_CPPv2NK8Avogadro8QtOpenGL8GLWidget10sceneModelEv"></span><span id="Avogadro::QtOpenGL::GLWidget::sceneModelC"></span><span class="target" id="class_avogadro_1_1_qt_open_g_l_1_1_g_l_widget_1a806dc21320021c4e922787e94d03f39d"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QtGui</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_scene_plugin_model.html#_CPPv4N8Avogadro5QtGui16ScenePluginModelE" title="Avogadro::QtGui::ScenePluginModel"><span class="n"><span class="pre">ScenePluginModel</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">sceneModel</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro8QtOpenGL8GLWidget10sceneModelEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the <a class="reference internal" href="#class_avogadro_1_1_qt_open_g_l_1_1_g_l_widget"><span class="std std-ref">GLWidget</span></a>’s ScenePluginModel, used to add, delete and modify the scene plugin items. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-unnamed-group">Unnamed Group</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro8QtOpenGL8GLWidget13setActiveToolERK7QString">
+<span id="_CPPv3N8Avogadro8QtOpenGL8GLWidget13setActiveToolERK7QString"></span><span id="_CPPv2N8Avogadro8QtOpenGL8GLWidget13setActiveToolERK7QString"></span><span id="Avogadro::QtOpenGL::GLWidget::setActiveTool__QStringCR"></span><span class="target" id="class_avogadro_1_1_qt_open_g_l_1_1_g_l_widget_1a47153ceacaa032eaeabcb79e3f563a42"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setActiveTool</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro8QtOpenGL8GLWidget13setActiveToolERK7QString" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the active tool. This is the tool that will be used to handle input events first. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro8QtOpenGL8GLWidget13setActiveToolEPN5QtGui10ToolPluginE">
+<span id="_CPPv3N8Avogadro8QtOpenGL8GLWidget13setActiveToolEPN5QtGui10ToolPluginE"></span><span id="_CPPv2N8Avogadro8QtOpenGL8GLWidget13setActiveToolEPN5QtGui10ToolPluginE"></span><span id="Avogadro::QtOpenGL::GLWidget::setActiveTool__QtGui::ToolPluginP"></span><span class="target" id="class_avogadro_1_1_qt_open_g_l_1_1_g_l_widget_1a6cd56ba578e624b7e422292dd4905f16"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setActiveTool</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">QtGui</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_tool_plugin.html#_CPPv4N8Avogadro5QtGui10ToolPluginE" title="Avogadro::QtGui::ToolPlugin"><span class="n"><span class="pre">ToolPlugin</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">tool</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro8QtOpenGL8GLWidget13setActiveToolEPN5QtGui10ToolPluginE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the active tool. This is the tool that will be used to handle input events first. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-unnamed-group">Unnamed Group</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro8QtOpenGL8GLWidget14setDefaultToolERK7QString">
+<span id="_CPPv3N8Avogadro8QtOpenGL8GLWidget14setDefaultToolERK7QString"></span><span id="_CPPv2N8Avogadro8QtOpenGL8GLWidget14setDefaultToolERK7QString"></span><span id="Avogadro::QtOpenGL::GLWidget::setDefaultTool__QStringCR"></span><span class="target" id="class_avogadro_1_1_qt_open_g_l_1_1_g_l_widget_1af59db7d758a30d26d6b5e670408015b7"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setDefaultTool</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro8QtOpenGL8GLWidget14setDefaultToolERK7QString" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the default tool. This is the tool that will be used to handle input events that are ignored by the active tool. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro8QtOpenGL8GLWidget14setDefaultToolEPN5QtGui10ToolPluginE">
+<span id="_CPPv3N8Avogadro8QtOpenGL8GLWidget14setDefaultToolEPN5QtGui10ToolPluginE"></span><span id="_CPPv2N8Avogadro8QtOpenGL8GLWidget14setDefaultToolEPN5QtGui10ToolPluginE"></span><span id="Avogadro::QtOpenGL::GLWidget::setDefaultTool__QtGui::ToolPluginP"></span><span class="target" id="class_avogadro_1_1_qt_open_g_l_1_1_g_l_widget_1aca8d6e3ab4ce2512fb3346afb49f36ba"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setDefaultTool</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">QtGui</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_tool_plugin.html#_CPPv4N8Avogadro5QtGui10ToolPluginE" title="Avogadro::QtGui::ToolPlugin"><span class="n"><span class="pre">ToolPlugin</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">tool</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro8QtOpenGL8GLWidget14setDefaultToolEPN5QtGui10ToolPluginE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the default tool. This is the tool that will be used to handle input events that are ignored by the active tool. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro8QtOpenGL8GLWidget11setMoleculeEPN5QtGui8MoleculeE">
+<span id="_CPPv3N8Avogadro8QtOpenGL8GLWidget11setMoleculeEPN5QtGui8MoleculeE"></span><span id="_CPPv2N8Avogadro8QtOpenGL8GLWidget11setMoleculeEPN5QtGui8MoleculeE"></span><span id="Avogadro::QtOpenGL::GLWidget::setMolecule__QtGui::MoleculeP"></span><span class="target" id="class_avogadro_1_1_qt_open_g_l_1_1_g_l_widget_1ae2c649d8c8422cb5669690484bcdf311"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setMolecule</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">QtGui</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_molecule.html#_CPPv4N8Avogadro5QtGui8MoleculeE" title="Avogadro::QtGui::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">molecule</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro8QtOpenGL8GLWidget11setMoleculeEPN5QtGui8MoleculeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the molecule the widget will render. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro8QtOpenGL8GLWidget8rendererEv">
+<span id="_CPPv3N8Avogadro8QtOpenGL8GLWidget8rendererEv"></span><span id="_CPPv2N8Avogadro8QtOpenGL8GLWidget8rendererEv"></span><span id="Avogadro::QtOpenGL::GLWidget::renderer"></span><span class="target" id="class_avogadro_1_1_qt_open_g_l_1_1_g_l_widget_1a03180aefa60214dd083e277c7a2bd1ce"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">Rendering</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_g_l_renderer.html#_CPPv4N8Avogadro9Rendering10GLRendererE" title="Avogadro::Rendering::GLRenderer"><span class="n"><span class="pre">GLRenderer</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">renderer</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro8QtOpenGL8GLWidget8rendererEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get a reference to the renderer for the widget. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro8QtOpenGL8GLWidget5toolsEv">
+<span id="_CPPv3NK8Avogadro8QtOpenGL8GLWidget5toolsEv"></span><span id="_CPPv2NK8Avogadro8QtOpenGL8GLWidget5toolsEv"></span><span id="Avogadro::QtOpenGL::GLWidget::toolsC"></span><span class="target" id="class_avogadro_1_1_qt_open_g_l_1_1_g_l_widget_1ab7df071ebc89da77f39ba1aae11db0db"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">QList</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">QtGui</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_tool_plugin.html#_CPPv4N8Avogadro5QtGui10ToolPluginE" title="Avogadro::QtGui::ToolPlugin"><span class="n"><span class="pre">ToolPlugin</span></span></a><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">tools</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro8QtOpenGL8GLWidget5toolsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A list of the ToolPlugins owned by the <a class="reference internal" href="#class_avogadro_1_1_qt_open_g_l_1_1_g_l_widget"><span class="std std-ref">GLWidget</span></a>. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro8QtOpenGL8GLWidget10activeToolEv">
+<span id="_CPPv3NK8Avogadro8QtOpenGL8GLWidget10activeToolEv"></span><span id="_CPPv2NK8Avogadro8QtOpenGL8GLWidget10activeToolEv"></span><span id="Avogadro::QtOpenGL::GLWidget::activeToolC"></span><span class="target" id="class_avogadro_1_1_qt_open_g_l_1_1_g_l_widget_1a06debf508df77a0716a8e70b81f18f7a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">QtGui</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_tool_plugin.html#_CPPv4N8Avogadro5QtGui10ToolPluginE" title="Avogadro::QtGui::ToolPlugin"><span class="n"><span class="pre">ToolPlugin</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">activeTool</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro8QtOpenGL8GLWidget10activeToolEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The active tool. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro8QtOpenGL8GLWidget11defaultToolEv">
+<span id="_CPPv3NK8Avogadro8QtOpenGL8GLWidget11defaultToolEv"></span><span id="_CPPv2NK8Avogadro8QtOpenGL8GLWidget11defaultToolEv"></span><span id="Avogadro::QtOpenGL::GLWidget::defaultToolC"></span><span class="target" id="class_avogadro_1_1_qt_open_g_l_1_1_g_l_widget_1ae493565a9c75f2933604e5d899ff96fb"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">QtGui</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_tool_plugin.html#_CPPv4N8Avogadro5QtGui10ToolPluginE" title="Avogadro::QtGui::ToolPlugin"><span class="n"><span class="pre">ToolPlugin</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">defaultTool</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro8QtOpenGL8GLWidget11defaultToolEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The default tool. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro8QtOpenGL8GLWidget7isValidEv">
+<span id="_CPPv3NK8Avogadro8QtOpenGL8GLWidget7isValidEv"></span><span id="_CPPv2NK8Avogadro8QtOpenGL8GLWidget7isValidEv"></span><span id="Avogadro::QtOpenGL::GLWidget::isValidC"></span><span class="target" id="class_avogadro_1_1_qt_open_g_l_1_1_g_l_widget_1a5bc2a781be2586924afce4e4a4ea6697"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isValid</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro8QtOpenGL8GLWidget7isValidEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Check if the <a class="reference internal" href="#class_avogadro_1_1_qt_open_g_l_1_1_g_l_widget"><span class="std std-ref">GLWidget</span></a> was able to acquire a context, and set up the renderer correctly. If not valid, the error method may provide more information. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>true if value, false if not. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro8QtOpenGL8GLWidget5errorEv">
+<span id="_CPPv3NK8Avogadro8QtOpenGL8GLWidget5errorEv"></span><span id="_CPPv2NK8Avogadro8QtOpenGL8GLWidget5errorEv"></span><span id="Avogadro::QtOpenGL::GLWidget::errorC"></span><span class="target" id="class_avogadro_1_1_qt_open_g_l_1_1_g_l_widget_1aefa586013c4aec8ffb6fd6c04ccce0ef"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">error</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro8QtOpenGL8GLWidget5errorEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the error(s), if any, encountered when setting up the <a class="reference internal" href="#class_avogadro_1_1_qt_open_g_l_1_1_g_l_widget"><span class="std std-ref">GLWidget</span></a>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A free form string containing errors encountered. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-slots">Public Slots</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro8QtOpenGL8GLWidget11updateSceneEv">
+<span id="_CPPv3N8Avogadro8QtOpenGL8GLWidget11updateSceneEv"></span><span id="_CPPv2N8Avogadro8QtOpenGL8GLWidget11updateSceneEv"></span><span id="Avogadro::QtOpenGL::GLWidget::updateScene"></span><span class="target" id="class_avogadro_1_1_qt_open_g_l_1_1_g_l_widget_1ada6a3f14c996a0c96b0488b092f335d0"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">updateScene</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro8QtOpenGL8GLWidget11updateSceneEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Update the scene plugins for the widget, this will generate geometry in the scene etc. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro8QtOpenGL8GLWidget10clearSceneEv">
+<span id="_CPPv3N8Avogadro8QtOpenGL8GLWidget10clearSceneEv"></span><span id="_CPPv2N8Avogadro8QtOpenGL8GLWidget10clearSceneEv"></span><span id="Avogadro::QtOpenGL::GLWidget::clearScene"></span><span class="target" id="class_avogadro_1_1_qt_open_g_l_1_1_g_l_widget_1a448ed3edddb28aff222719bfabe5e067"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">clearScene</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro8QtOpenGL8GLWidget10clearSceneEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Clear the contents of the scene. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro8QtOpenGL8GLWidget11resetCameraEv">
+<span id="_CPPv3N8Avogadro8QtOpenGL8GLWidget11resetCameraEv"></span><span id="_CPPv2N8Avogadro8QtOpenGL8GLWidget11resetCameraEv"></span><span id="Avogadro::QtOpenGL::GLWidget::resetCamera"></span><span class="target" id="class_avogadro_1_1_qt_open_g_l_1_1_g_l_widget_1a395cfd3b5286442312051da532ffa579"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">resetCamera</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro8QtOpenGL8GLWidget11resetCameraEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Reset the view to fit the entire scene. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro8QtOpenGL8GLWidget13resetGeometryEv">
+<span id="_CPPv3N8Avogadro8QtOpenGL8GLWidget13resetGeometryEv"></span><span id="_CPPv2N8Avogadro8QtOpenGL8GLWidget13resetGeometryEv"></span><span id="Avogadro::QtOpenGL::GLWidget::resetGeometry"></span><span class="target" id="class_avogadro_1_1_qt_open_g_l_1_1_g_l_widget_1af9d53cf2095cc836535071f4d1f1f030"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">resetGeometry</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro8QtOpenGL8GLWidget13resetGeometryEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Reset the geometry when the molecule etc changes. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro8QtOpenGL8GLWidget8setToolsERK5QListIPN5QtGui10ToolPluginEE">
+<span id="_CPPv3N8Avogadro8QtOpenGL8GLWidget8setToolsERK5QListIPN5QtGui10ToolPluginEE"></span><span id="_CPPv2N8Avogadro8QtOpenGL8GLWidget8setToolsERK5QListIPN5QtGui10ToolPluginEE"></span><span id="Avogadro::QtOpenGL::GLWidget::setTools__QList:QtGui::ToolPluginP:CR"></span><span class="target" id="class_avogadro_1_1_qt_open_g_l_1_1_g_l_widget_1ace01570c5ca757c8749f851a296aa558"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setTools</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QList</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">QtGui</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_tool_plugin.html#_CPPv4N8Avogadro5QtGui10ToolPluginE" title="Avogadro::QtGui::ToolPlugin"><span class="n"><span class="pre">ToolPlugin</span></span></a><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">toolList</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro8QtOpenGL8GLWidget8setToolsERK5QListIPN5QtGui10ToolPluginEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Make the tools in toolList available to the <a class="reference internal" href="#class_avogadro_1_1_qt_open_g_l_1_1_g_l_widget"><span class="std std-ref">GLWidget</span></a>. The <a class="reference internal" href="#class_avogadro_1_1_qt_open_g_l_1_1_g_l_widget"><span class="std std-ref">GLWidget</span></a> takes ownership of the tools. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro8QtOpenGL8GLWidget7addToolEPN5QtGui10ToolPluginE">
+<span id="_CPPv3N8Avogadro8QtOpenGL8GLWidget7addToolEPN5QtGui10ToolPluginE"></span><span id="_CPPv2N8Avogadro8QtOpenGL8GLWidget7addToolEPN5QtGui10ToolPluginE"></span><span id="Avogadro::QtOpenGL::GLWidget::addTool__QtGui::ToolPluginP"></span><span class="target" id="class_avogadro_1_1_qt_open_g_l_1_1_g_l_widget_1a96cf0af3e2d669adcf105b997819fc0b"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addTool</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">QtGui</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_tool_plugin.html#_CPPv4N8Avogadro5QtGui10ToolPluginE" title="Avogadro::QtGui::ToolPlugin"><span class="n"><span class="pre">ToolPlugin</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">tool</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro8QtOpenGL8GLWidget7addToolEPN5QtGui10ToolPluginE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Make tool available to the <a class="reference internal" href="#class_avogadro_1_1_qt_open_g_l_1_1_g_l_widget"><span class="std std-ref">GLWidget</span></a>. The <a class="reference internal" href="#class_avogadro_1_1_qt_open_g_l_1_1_g_l_widget"><span class="std std-ref">GLWidget</span></a> takes ownership of the tool. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro8QtOpenGL8GLWidget13requestUpdateEv">
+<span id="_CPPv3N8Avogadro8QtOpenGL8GLWidget13requestUpdateEv"></span><span id="_CPPv2N8Avogadro8QtOpenGL8GLWidget13requestUpdateEv"></span><span id="Avogadro::QtOpenGL::GLWidget::requestUpdate"></span><span class="target" id="class_avogadro_1_1_qt_open_g_l_1_1_g_l_widget_1a0bf4e1f2069ff74873db9b831369c856"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">requestUpdate</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro8QtOpenGL8GLWidget13requestUpdateEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Request an update, this will by default initiate a timer that will trigger in a specified time, enabling us to compress multiple events such as camera moves to maintain interactivity. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
 </div>
 
 
@@ -454,7 +635,7 @@
       <div class="row">
         <div class="col-md-10 py-2">
           <p>
-            ©2021 The OpenChemistry / Avogadro Teams. The website content uses the <a href="https://github.com/openchemitry/avogadrolibs/blob/master/LICENSE">BSD License</a> and is covered by the <a href="https://github.com/openchemistry/avogadrolibss/blob/master/CODE_OF_CONDUCT.md">Bokeh Code of Conduct</a>.
+            ©2021 The OpenChemistry / Avogadro Teams. The website content uses the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/LICENSE">BSD License</a> and is covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
           </p>
         </div>
         <br />

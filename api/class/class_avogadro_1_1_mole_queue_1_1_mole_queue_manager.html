@@ -22,15 +22,15 @@
       
 
     
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/basic.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
   <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
@@ -277,10 +277,97 @@
                 
   <div class="section" id="class-avogadro-molequeue-molequeuemanager">
 <h1>Class Avogadro::MoleQueue::MoleQueueManager<a class="headerlink" href="#class-avogadro-molequeue-molequeuemanager" title="Permalink to this headline">¶</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>doxygenclass: Cannot find file: /Users/ghutchis/Devel/build/openchemistry/avogadrolibs/docs/xml/index.xml</p>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9MoleQueue16MoleQueueManagerE">
+<span id="_CPPv3N8Avogadro9MoleQueue16MoleQueueManagerE"></span><span id="_CPPv2N8Avogadro9MoleQueue16MoleQueueManagerE"></span><span id="Avogadro::MoleQueue::MoleQueueManager"></span><span class="target" id="class_avogadro_1_1_mole_queue_1_1_mole_queue_manager"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">Avogadro</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MoleQueue</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">MoleQueueManager</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">QObject</span></span><a class="headerlink" href="#_CPPv4N8Avogadro9MoleQueue16MoleQueueManagerE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The <a class="reference internal" href="#class_avogadro_1_1_mole_queue_1_1_mole_queue_manager"><span class="std std-ref">MoleQueueManager</span></a> class provides access to a MoleQueue server. </p>
+<p>&lt;avogadro/molequeue/molequeuemanager.h&gt;</p>
+<p>This singleton class provides access to a single MoleQueue::Client instance that can be used to communicate with the server. The available queues and programs are cached in a <a class="reference internal" href="class_avogadro_1_1_mole_queue_1_1_mole_queue_queue_list_model.html#class_avogadro_1_1_mole_queue_1_1_mole_queue_queue_list_model"><span class="std std-ref">MoleQueueQueueListModel</span></a> (<a class="reference internal" href="#class_avogadro_1_1_mole_queue_1_1_mole_queue_manager_1a8520b1ea6071f04a87de3a7baa1f5efa"><span class="std std-ref">queueListModel()</span></a>). The connectIfNeeded convenience function can be used to ensure that the client is connected before use. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-unnamed-group">Unnamed Group</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9MoleQueue16MoleQueueManager6clientEv">
+<span id="_CPPv3N8Avogadro9MoleQueue16MoleQueueManager6clientEv"></span><span id="_CPPv2N8Avogadro9MoleQueue16MoleQueueManager6clientEv"></span><span id="Avogadro::MoleQueue::MoleQueueManager::client"></span><span class="target" id="class_avogadro_1_1_mole_queue_1_1_mole_queue_manager_1ab8f7d933fb2b43b025dc4fb5005e0939"></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MoleQueue</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Client</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">client</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9MoleQueue16MoleQueueManager6clientEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A reference to the managed MoleQueue::Client instance. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9MoleQueue16MoleQueueManager6clientEv">
+<span id="_CPPv3NK8Avogadro9MoleQueue16MoleQueueManager6clientEv"></span><span id="_CPPv2NK8Avogadro9MoleQueue16MoleQueueManager6clientEv"></span><span id="Avogadro::MoleQueue::MoleQueueManager::clientC"></span><span class="target" id="class_avogadro_1_1_mole_queue_1_1_mole_queue_manager_1aa7d043f24921efa582ea59016f691006"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MoleQueue</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Client</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">client</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9MoleQueue16MoleQueueManager6clientEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A reference to the managed MoleQueue::Client instance. </p>
+</dd>
+</dl>
+</dd></dl>
+
 </div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9MoleQueue16MoleQueueManager15connectIfNeededEv">
+<span id="_CPPv3N8Avogadro9MoleQueue16MoleQueueManager15connectIfNeededEv"></span><span id="_CPPv2N8Avogadro9MoleQueue16MoleQueueManager15connectIfNeededEv"></span><span id="Avogadro::MoleQueue::MoleQueueManager::connectIfNeeded"></span><span class="target" id="class_avogadro_1_1_mole_queue_1_1_mole_queue_manager_1a0f5e708a7a100ee0e55aedf98e8e42c9"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">connectIfNeeded</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9MoleQueue16MoleQueueManager15connectIfNeededEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Test if the client is connected, and if not, attempt a connection. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if the client is already connected or a new connection has been successfully created. False if the new connection failed. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9MoleQueue16MoleQueueManager14queueListModelEv">
+<span id="_CPPv3N8Avogadro9MoleQueue16MoleQueueManager14queueListModelEv"></span><span id="_CPPv2N8Avogadro9MoleQueue16MoleQueueManager14queueListModelEv"></span><span id="Avogadro::MoleQueue::MoleQueueManager::queueListModel"></span><span class="target" id="class_avogadro_1_1_mole_queue_1_1_mole_queue_manager_1a8520b1ea6071f04a87de3a7baa1f5efa"></span><a class="reference internal" href="class_avogadro_1_1_mole_queue_1_1_mole_queue_queue_list_model.html#_CPPv4N8Avogadro9MoleQueue23MoleQueueQueueListModelE" title="Avogadro::MoleQueue::MoleQueueQueueListModel"><span class="n"><span class="pre">MoleQueueQueueListModel</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">queueListModel</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9MoleQueue16MoleQueueManager14queueListModelEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A QAbstractItemModel subclass representing the queue/program tree. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-slots">Public Slots</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9MoleQueue16MoleQueueManager16requestQueueListEv">
+<span id="_CPPv3N8Avogadro9MoleQueue16MoleQueueManager16requestQueueListEv"></span><span id="_CPPv2N8Avogadro9MoleQueue16MoleQueueManager16requestQueueListEv"></span><span id="Avogadro::MoleQueue::MoleQueueManager::requestQueueList"></span><span class="target" id="class_avogadro_1_1_mole_queue_1_1_mole_queue_manager_1afc8b9f13eb287231440d2f533e60de2e"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">requestQueueList</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9MoleQueue16MoleQueueManager16requestQueueListEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Request that the cached queue list is updated. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if the request is send successfully. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-signals">Signals</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9MoleQueue16MoleQueueManager16queueListUpdatedEv">
+<span id="_CPPv3N8Avogadro9MoleQueue16MoleQueueManager16queueListUpdatedEv"></span><span id="_CPPv2N8Avogadro9MoleQueue16MoleQueueManager16queueListUpdatedEv"></span><span id="Avogadro::MoleQueue::MoleQueueManager::queueListUpdated"></span><span class="target" id="class_avogadro_1_1_mole_queue_1_1_mole_queue_manager_1ac02271730c6f96562e7a26df96f743ef"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">queueListUpdated</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9MoleQueue16MoleQueueManager16queueListUpdatedEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Emitted when the internal queue list is updated. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-functions">Public Static Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9MoleQueue16MoleQueueManager8instanceEv">
+<span id="_CPPv3N8Avogadro9MoleQueue16MoleQueueManager8instanceEv"></span><span id="_CPPv2N8Avogadro9MoleQueue16MoleQueueManager8instanceEv"></span><span id="Avogadro::MoleQueue::MoleQueueManager::instance"></span><span class="target" id="class_avogadro_1_1_mole_queue_1_1_mole_queue_manager_1af1cf42047ce8ca2f16ce04afe367f5fd"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro9MoleQueue16MoleQueueManagerE" title="Avogadro::MoleQueue::MoleQueueManager"><span class="n"><span class="pre">MoleQueueManager</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">instance</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9MoleQueue16MoleQueueManager8instanceEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The singleton instance. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
 </div>
 
 
@@ -309,7 +396,7 @@
       <div class="row">
         <div class="col-md-10 py-2">
           <p>
-            ©2021 The OpenChemistry / Avogadro Teams. The website content uses the <a href="https://github.com/openchemitry/avogadrolibs/blob/master/LICENSE">BSD License</a> and is covered by the <a href="https://github.com/openchemistry/avogadrolibss/blob/master/CODE_OF_CONDUCT.md">Bokeh Code of Conduct</a>.
+            ©2021 The OpenChemistry / Avogadro Teams. The website content uses the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/LICENSE">BSD License</a> and is covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
           </p>
         </div>
         <br />

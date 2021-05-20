@@ -22,15 +22,15 @@
       
 
     
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/basic.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
   <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
@@ -472,10 +472,90 @@
                 
   <div class="section" id="class-avogadro-core-elements">
 <h1>Class Avogadro::Core::Elements<a class="headerlink" href="#class-avogadro-core-elements" title="Permalink to this headline">¶</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>doxygenclass: Cannot find file: /Users/ghutchis/Devel/build/openchemistry/avogadrolibs/docs/xml/index.xml</p>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core8ElementsE">
+<span id="_CPPv3N8Avogadro4Core8ElementsE"></span><span id="_CPPv2N8Avogadro4Core8ElementsE"></span><span id="Avogadro::Core::Elements"></span><span class="target" id="class_avogadro_1_1_core_1_1_elements"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">Avogadro</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">Elements</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core8ElementsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The <a class="reference internal" href="#class_avogadro_1_1_core_1_1_elements"><span class="std std-ref">Elements</span></a> class stores basic data about chemical elements. </p>
+<p>The elements class gives a simple interface to basic data about chemical elements. The data is automatically generated from the Blue Obelisk data repository.</p>
+<p>The atomic numbers between the symbolic constants CustomElementMin and CustomElementMax are used to represent non-elemental entities, such as particles or structures units from MD simulations. Custom elements names and symbols are returned as name=”CustomElement_aa” and symbol=”Xaa”, where ‘aa’ is some combination of lowercase letters that is unique to the particular custom element atomic number. For all custom elements, the radii will match Carbon, the color is random (but consistent), and the mass is zero. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-functions">Public Static Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core8Elements12elementCountEv">
+<span id="_CPPv3N8Avogadro4Core8Elements12elementCountEv"></span><span id="_CPPv2N8Avogadro4Core8Elements12elementCountEv"></span><span id="Avogadro::Core::Elements::elementCount"></span><span class="target" id="class_avogadro_1_1_core_1_1_elements_1ab69e6bec3acd13e6ea16a318009c9d2f"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">unsigned</span> <span class="pre">char</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">elementCount</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core8Elements12elementCountEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the number of elements in the database. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core8Elements20atomicNumberFromNameERKNSt6stringE">
+<span id="_CPPv3N8Avogadro4Core8Elements20atomicNumberFromNameERKNSt6stringE"></span><span id="_CPPv2N8Avogadro4Core8Elements20atomicNumberFromNameERKNSt6stringE"></span><span id="Avogadro::Core::Elements::atomicNumberFromName__ssCR"></span><span class="target" id="class_avogadro_1_1_core_1_1_elements_1a130531a31c1bd45732bacb48add28c19"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">unsigned</span> <span class="pre">char</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">atomicNumberFromName</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core8Elements20atomicNumberFromNameERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the atomic number from the supplied element name. If the name is not recognised then Avogadro::InvalidElement will be returned. 0 represents the dummy atom (“Dummy”). </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The input string is expected to be lowercase with the first letter capitalized. </p>
 </div>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core8Elements22atomicNumberFromSymbolERKNSt6stringE">
+<span id="_CPPv3N8Avogadro4Core8Elements22atomicNumberFromSymbolERKNSt6stringE"></span><span id="_CPPv2N8Avogadro4Core8Elements22atomicNumberFromSymbolERKNSt6stringE"></span><span id="Avogadro::Core::Elements::atomicNumberFromSymbol__ssCR"></span><span class="target" id="class_avogadro_1_1_core_1_1_elements_1ad7aa426efc018e0818f2abbacb1bb917"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">unsigned</span> <span class="pre">char</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">atomicNumberFromSymbol</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">symbol</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core8Elements22atomicNumberFromSymbolERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the atomic number from the supplied symbol. If the symbol is not recognised then Avogadro::InvalidElement will be returned. 0 represents the dummy atom (“Xx”). </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The input string is expected to be lowercase with the first letter capitalized. </p>
+</div>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core8Elements17guessAtomicNumberERKNSt6stringE">
+<span id="_CPPv3N8Avogadro4Core8Elements17guessAtomicNumberERKNSt6stringE"></span><span id="_CPPv2N8Avogadro4Core8Elements17guessAtomicNumberERKNSt6stringE"></span><span id="Avogadro::Core::Elements::guessAtomicNumber__ssCR"></span><span class="target" id="class_avogadro_1_1_core_1_1_elements_1aabf2664e1a0d288e90f96fc3e647f087"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">unsigned</span> <span class="pre">char</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">guessAtomicNumber</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">str</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core8Elements17guessAtomicNumberERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Given a string, attempt to identify an element symbol, name, or atomic number. This method is slower and less reliable than the atomicNumberFrom*() methods, and is only intended for making an initial guess of user input. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the atomic number that best matches the string, or InvalidElement if no match can be made. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core8Elements4nameEh">
+<span id="_CPPv3N8Avogadro4Core8Elements4nameEh"></span><span id="_CPPv2N8Avogadro4Core8Elements4nameEh"></span><span id="Avogadro::Core::Elements::name__unsigned-c"></span><span class="target" id="class_avogadro_1_1_core_1_1_elements_1ac2fb41f5506ee6f71e6e89484d4ec2e1"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">name</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">unsigned</span> <span class="pre">char</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">atomicNumber</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core8Elements4nameEh" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the name of the element with the supplied atomic number. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core8Elements6symbolEh">
+<span id="_CPPv3N8Avogadro4Core8Elements6symbolEh"></span><span id="_CPPv2N8Avogadro4Core8Elements6symbolEh"></span><span id="Avogadro::Core::Elements::symbol__unsigned-c"></span><span class="target" id="class_avogadro_1_1_core_1_1_elements_1add928eb0f09ebfbab842046753c0f3f4"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">symbol</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">unsigned</span> <span class="pre">char</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">atomicNumber</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core8Elements6symbolEh" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the symbol of the element with the supplied atomic number. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core8Elements4massEh">
+<span id="_CPPv3N8Avogadro4Core8Elements4massEh"></span><span id="_CPPv2N8Avogadro4Core8Elements4massEh"></span><span id="Avogadro::Core::Elements::mass__unsigned-c"></span><span class="target" id="class_avogadro_1_1_core_1_1_elements_1a3fa4fb4ad4a79f6881a2f9a189ee9cf8"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">mass</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">unsigned</span> <span class="pre">char</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">atomicNumber</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core8Elements4massEh" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the mass of the element with the supplied atomic number. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core8Elements9radiusVDWEh">
+<span id="_CPPv3N8Avogadro4Core8Elements9radiusVDWEh"></span><span id="_CPPv2N8Avogadro4Core8Elements9radiusVDWEh"></span><span id="Avogadro::Core::Elements::radiusVDW__unsigned-c"></span><span class="target" id="class_avogadro_1_1_core_1_1_elements_1a4a7ee376342d632a640d0661110cdd03"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">radiusVDW</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">unsigned</span> <span class="pre">char</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">atomicNumber</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core8Elements9radiusVDWEh" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the Van der Waals radius of the element with the supplied atomic number. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core8Elements14radiusCovalentEh">
+<span id="_CPPv3N8Avogadro4Core8Elements14radiusCovalentEh"></span><span id="_CPPv2N8Avogadro4Core8Elements14radiusCovalentEh"></span><span id="Avogadro::Core::Elements::radiusCovalent__unsigned-c"></span><span class="target" id="class_avogadro_1_1_core_1_1_elements_1aa406d537cf41348fde932d6f2ee77fec"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">radiusCovalent</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">unsigned</span> <span class="pre">char</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">atomicNumber</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core8Elements14radiusCovalentEh" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the covalent radius of the element with the supplied atomic number. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core8Elements5colorEh">
+<span id="_CPPv3N8Avogadro4Core8Elements5colorEh"></span><span id="_CPPv2N8Avogadro4Core8Elements5colorEh"></span><span id="Avogadro::Core::Elements::color__unsigned-c"></span><span class="target" id="class_avogadro_1_1_core_1_1_elements_1a4ef4a038055e7822b4e1190348ed940e"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">unsigned</span> <span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">color</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">unsigned</span> <span class="pre">char</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">atomicNumber</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core8Elements5colorEh" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the default color of the element with the supplied atomic number. This is a pointer to a static three component unsigned char color. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
 </div>
 
 
@@ -504,7 +584,7 @@
       <div class="row">
         <div class="col-md-10 py-2">
           <p>
-            ©2021 The OpenChemistry / Avogadro Teams. The website content uses the <a href="https://github.com/openchemitry/avogadrolibs/blob/master/LICENSE">BSD License</a> and is covered by the <a href="https://github.com/openchemistry/avogadrolibss/blob/master/CODE_OF_CONDUCT.md">Bokeh Code of Conduct</a>.
+            ©2021 The OpenChemistry / Avogadro Teams. The website content uses the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/LICENSE">BSD License</a> and is covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
           </p>
         </div>
         <br />

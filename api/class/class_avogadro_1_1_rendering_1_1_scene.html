@@ -22,15 +22,15 @@
       
 
     
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/basic.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
   <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
@@ -397,10 +397,69 @@
                 
   <div class="section" id="class-avogadro-rendering-scene">
 <h1>Class Avogadro::Rendering::Scene<a class="headerlink" href="#class-avogadro-rendering-scene" title="Permalink to this headline">¶</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>doxygenclass: Cannot find file: /Users/ghutchis/Devel/build/openchemistry/avogadrolibs/docs/xml/index.xml</p>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering5SceneE">
+<span id="_CPPv3N8Avogadro9Rendering5SceneE"></span><span id="_CPPv2N8Avogadro9Rendering5SceneE"></span><span id="Avogadro::Rendering::Scene"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_scene"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">Avogadro</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Rendering</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">Scene</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering5SceneE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The <a class="reference internal" href="#class_avogadro_1_1_rendering_1_1_scene"><span class="std std-ref">Scene</span></a> contains data ready to be rendered. </p>
+<p>
+A collection of geometric primitives ready for rendering. This is highly targeted for fast rendering on modern OpenGL 2.1/ES 2.0 GPUs, but can also be adapted and rendered using other approaches. <dl class="simple">
+<dt><strong>Author</strong></dt><dd><p>Marcus D. Hanwell</p>
+</dd>
+</dl>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering5Scene6centerEv">
+<span id="_CPPv3N8Avogadro9Rendering5Scene6centerEv"></span><span id="_CPPv2N8Avogadro9Rendering5Scene6centerEv"></span><span id="Avogadro::Rendering::Scene::center"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_scene_1a7681af20e758c6114f5426a101a5d065"></span><span class="n"><span class="pre">Vector3f</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">center</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering5Scene6centerEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the center of the points contained in this <a class="reference internal" href="#class_avogadro_1_1_rendering_1_1_scene"><span class="std std-ref">Scene</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering5Scene6radiusEv">
+<span id="_CPPv3N8Avogadro9Rendering5Scene6radiusEv"></span><span id="_CPPv2N8Avogadro9Rendering5Scene6radiusEv"></span><span id="Avogadro::Rendering::Scene::radius"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_scene_1a2079a12518ee51cb4100e16fede9f505"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">radius</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering5Scene6radiusEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the radius, which is currently just the largest of the axis-aligned components of the positions. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering5Scene8rootNodeEv">
+<span id="_CPPv3N8Avogadro9Rendering5Scene8rootNodeEv"></span><span id="_CPPv2N8Avogadro9Rendering5Scene8rootNodeEv"></span><span id="Avogadro::Rendering::Scene::rootNode"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_scene_1a904c81c5f5e4222cdfbd0edfdc4a9da6"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_group_node.html#_CPPv4N8Avogadro9Rendering9GroupNodeE" title="Avogadro::Rendering::GroupNode"><span class="n"><span class="pre">GroupNode</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">rootNode</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering5Scene8rootNodeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the root node of the scene. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering5Scene18setBackgroundColorERK9Vector4ub">
+<span id="_CPPv3N8Avogadro9Rendering5Scene18setBackgroundColorERK9Vector4ub"></span><span id="_CPPv2N8Avogadro9Rendering5Scene18setBackgroundColorERK9Vector4ub"></span><span id="Avogadro::Rendering::Scene::setBackgroundColor__Vector4ubCR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_scene_1a9e50490ef3769199a66e8054b8f4a6cc"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setBackgroundColor</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Vector4ub</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">color</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering5Scene18setBackgroundColorERK9Vector4ub" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the background color of the scene (default is black). </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering5Scene15backgroundColorEv">
+<span id="_CPPv3NK8Avogadro9Rendering5Scene15backgroundColorEv"></span><span id="_CPPv2NK8Avogadro9Rendering5Scene15backgroundColorEv"></span><span id="Avogadro::Rendering::Scene::backgroundColorC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_scene_1a768bd405efd14e98a1eaf8e0654fa502"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">Vector4ub</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">backgroundColor</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering5Scene15backgroundColorEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the background color of the scene. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering5Scene8setDirtyEb">
+<span id="_CPPv3N8Avogadro9Rendering5Scene8setDirtyEb"></span><span id="_CPPv2N8Avogadro9Rendering5Scene8setDirtyEb"></span><span id="Avogadro::Rendering::Scene::setDirty__b"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_scene_1aa95b1ef33ed5ae1c7ea9c8663ae11f77"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setDirty</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">dirty</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering5Scene8setDirtyEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Mark the scene as dirty, primarily to ensure radius/center will be recalculated. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering5Scene7isDirtyEv">
+<span id="_CPPv3NK8Avogadro9Rendering5Scene7isDirtyEv"></span><span id="_CPPv2NK8Avogadro9Rendering5Scene7isDirtyEv"></span><span id="Avogadro::Rendering::Scene::isDirtyC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_scene_1a0a30315aafa09dceca81d0cbcd80253e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isDirty</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering5Scene7isDirtyEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Has the scene been marked as dirty? </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering5Scene5clearEv">
+<span id="_CPPv3N8Avogadro9Rendering5Scene5clearEv"></span><span id="_CPPv2N8Avogadro9Rendering5Scene5clearEv"></span><span id="Avogadro::Rendering::Scene::clear"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_scene_1ac8bb3912a3ce86b15842e79d0b421204"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">clear</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering5Scene5clearEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Clear the scene of all elements. </p>
+</dd></dl>
+
 </div>
+</dd></dl>
+
 </div>
 
 
@@ -429,7 +488,7 @@
       <div class="row">
         <div class="col-md-10 py-2">
           <p>
-            ©2021 The OpenChemistry / Avogadro Teams. The website content uses the <a href="https://github.com/openchemitry/avogadrolibs/blob/master/LICENSE">BSD License</a> and is covered by the <a href="https://github.com/openchemistry/avogadrolibss/blob/master/CODE_OF_CONDUCT.md">Bokeh Code of Conduct</a>.
+            ©2021 The OpenChemistry / Avogadro Teams. The website content uses the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/LICENSE">BSD License</a> and is covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
           </p>
         </div>
         <br />

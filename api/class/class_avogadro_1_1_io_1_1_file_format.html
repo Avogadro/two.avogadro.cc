@@ -22,15 +22,15 @@
       
 
     
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/basic.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
   <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
@@ -362,10 +362,361 @@
                 
   <div class="section" id="class-avogadro-io-fileformat">
 <h1>Class Avogadro::Io::FileFormat<a class="headerlink" href="#class-avogadro-io-fileformat" title="Permalink to this headline">¶</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>doxygenclass: Cannot find file: /Users/ghutchis/Devel/build/openchemistry/avogadrolibs/docs/xml/index.xml</p>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro2Io10FileFormatE">
+<span id="_CPPv3N8Avogadro2Io10FileFormatE"></span><span id="_CPPv2N8Avogadro2Io10FileFormatE"></span><span id="Avogadro::Io::FileFormat"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">Avogadro</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Io</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">FileFormat</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro2Io10FileFormatE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>General API for file formats. </p>
+<p>
+This serves as the common base class for chemical file formats. Classes deriving from this one override the read and write virtual methods and operate on the given streams. Several other signatures are available for convenience. If there is an error reading or writing a file the string returned by <a class="reference internal" href="#class_avogadro_1_1_io_1_1_file_format_1ab0ca267c415968ee3bc1c6b144dcbf56"><span class="std std-ref">error()</span></a> will give more details. <dl class="simple">
+<dt><strong>Author</strong></dt><dd><p>Marcus D. Hanwell</p>
+</dd>
+</dl>
+</p>
+<p>Subclassed by <a class="reference internal" href="class_avogadro_1_1_io_1_1_cjson_format.html#class_avogadro_1_1_io_1_1_cjson_format"><span class="std std-ref">CjsonFormat</span></a>, <a class="reference internal" href="class_avogadro_1_1_io_1_1_cml_format.html#class_avogadro_1_1_io_1_1_cml_format"><span class="std std-ref">CmlFormat</span></a>, <a class="reference internal" href="class_avogadro_1_1_io_1_1_dcd_format.html#class_avogadro_1_1_io_1_1_dcd_format"><span class="std std-ref">DcdFormat</span></a>, <a class="reference internal" href="class_avogadro_1_1_io_1_1_gromacs_format.html#class_avogadro_1_1_io_1_1_gromacs_format"><span class="std std-ref">GromacsFormat</span></a>, <a class="reference internal" href="class_avogadro_1_1_io_1_1_lammps_data_format.html#class_avogadro_1_1_io_1_1_lammps_data_format"><span class="std std-ref">LammpsDataFormat</span></a>, <a class="reference internal" href="class_avogadro_1_1_io_1_1_lammps_trajectory_format.html#class_avogadro_1_1_io_1_1_lammps_trajectory_format"><span class="std std-ref">LammpsTrajectoryFormat</span></a>, <a class="reference internal" href="class_avogadro_1_1_io_1_1_m_m_t_f_format.html#class_avogadro_1_1_io_1_1_m_m_t_f_format"><span class="std std-ref">MMTFFormat</span></a>, <a class="reference internal" href="class_avogadro_1_1_io_1_1_mdl_format.html#class_avogadro_1_1_io_1_1_mdl_format"><span class="std std-ref">MdlFormat</span></a>, <a class="reference internal" href="class_avogadro_1_1_io_1_1_outcar_format.html#class_avogadro_1_1_io_1_1_outcar_format"><span class="std std-ref">OutcarFormat</span></a>, <a class="reference internal" href="class_avogadro_1_1_io_1_1_pdb_format.html#class_avogadro_1_1_io_1_1_pdb_format"><span class="std std-ref">PdbFormat</span></a>, <a class="reference internal" href="class_avogadro_1_1_io_1_1_poscar_format.html#class_avogadro_1_1_io_1_1_poscar_format"><span class="std std-ref">PoscarFormat</span></a>, <a class="reference internal" href="class_avogadro_1_1_io_1_1_trr_format.html#class_avogadro_1_1_io_1_1_trr_format"><span class="std std-ref">TrrFormat</span></a>, <a class="reference internal" href="class_avogadro_1_1_io_1_1_xyz_format.html#class_avogadro_1_1_io_1_1_xyz_format"><span class="std std-ref">XyzFormat</span></a>, <a class="reference internal" href="class_avogadro_1_1_quantum_i_o_1_1_g_a_m_e_s_s_u_s_output.html#class_avogadro_1_1_quantum_i_o_1_1_g_a_m_e_s_s_u_s_output"><span class="std std-ref">GAMESSUSOutput</span></a>, <a class="reference internal" href="class_avogadro_1_1_quantum_i_o_1_1_gaussian_cube.html#class_avogadro_1_1_quantum_i_o_1_1_gaussian_cube"><span class="std std-ref">GaussianCube</span></a>, <a class="reference internal" href="class_avogadro_1_1_quantum_i_o_1_1_gaussian_fchk.html#class_avogadro_1_1_quantum_i_o_1_1_gaussian_fchk"><span class="std std-ref">GaussianFchk</span></a>, <a class="reference internal" href="class_avogadro_1_1_quantum_i_o_1_1_molden_file.html#class_avogadro_1_1_quantum_i_o_1_1_molden_file"><span class="std std-ref">MoldenFile</span></a>, <a class="reference internal" href="class_avogadro_1_1_quantum_i_o_1_1_mopac_aux.html#class_avogadro_1_1_quantum_i_o_1_1_mopac_aux"><span class="std std-ref">MopacAux</span></a>, <a class="reference internal" href="class_avogadro_1_1_quantum_i_o_1_1_n_w_chem_json.html#class_avogadro_1_1_quantum_i_o_1_1_n_w_chem_json"><span class="std std-ref">NWChemJson</span></a>, <a class="reference internal" href="class_avogadro_1_1_quantum_i_o_1_1_n_w_chem_log.html#class_avogadro_1_1_quantum_i_o_1_1_n_w_chem_log"><span class="std std-ref">NWChemLog</span></a></p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-types">Public Types</p>
+<dl class="cpp enum">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro2Io10FileFormat9OperationE">
+<span id="_CPPv3N8Avogadro2Io10FileFormat9OperationE"></span><span id="_CPPv2N8Avogadro2Io10FileFormat9OperationE"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_1aa8f137f19095e0bdcf4f521e901f88bb"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Operation</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro2Io10FileFormat9OperationE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Flags defining supported operations. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro2Io10FileFormat9Operation4NoneE">
+<span id="_CPPv3N8Avogadro2Io10FileFormat9Operation4NoneE"></span><span id="_CPPv2N8Avogadro2Io10FileFormat9Operation4NoneE"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_1aa8f137f19095e0bdcf4f521e901f88bbac9d3e887722f2bc482bcca9d41c512af"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">None</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro2Io10FileFormat9Operation4NoneE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro2Io10FileFormat9Operation4ReadE">
+<span id="_CPPv3N8Avogadro2Io10FileFormat9Operation4ReadE"></span><span id="_CPPv2N8Avogadro2Io10FileFormat9Operation4ReadE"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_1aa8f137f19095e0bdcf4f521e901f88bba809abe96853e69894bbf8e5730b31348"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Read</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro2Io10FileFormat9Operation4ReadE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro2Io10FileFormat9Operation5WriteE">
+<span id="_CPPv3N8Avogadro2Io10FileFormat9Operation5WriteE"></span><span id="_CPPv2N8Avogadro2Io10FileFormat9Operation5WriteE"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_1aa8f137f19095e0bdcf4f521e901f88bbaa56670174817e3fed92bfd8182d7c0d1"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Write</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro2Io10FileFormat9Operation5WriteE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro2Io10FileFormat9Operation9ReadWriteE">
+<span id="_CPPv3N8Avogadro2Io10FileFormat9Operation9ReadWriteE"></span><span id="_CPPv2N8Avogadro2Io10FileFormat9Operation9ReadWriteE"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_1aa8f137f19095e0bdcf4f521e901f88bba3c4d2d19c91b345c33a83ca9f551f4e1"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ReadWrite</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro2Io10FileFormat9Operation9ReadWriteE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro2Io10FileFormat9Operation13MultiMoleculeE">
+<span id="_CPPv3N8Avogadro2Io10FileFormat9Operation13MultiMoleculeE"></span><span id="_CPPv2N8Avogadro2Io10FileFormat9Operation13MultiMoleculeE"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_1aa8f137f19095e0bdcf4f521e901f88bbadb020055ea1a6d2b06d9d93d93702bcd"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">MultiMolecule</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro2Io10FileFormat9Operation13MultiMoleculeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro2Io10FileFormat9Operation6StreamE">
+<span id="_CPPv3N8Avogadro2Io10FileFormat9Operation6StreamE"></span><span id="_CPPv2N8Avogadro2Io10FileFormat9Operation6StreamE"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_1aa8f137f19095e0bdcf4f521e901f88bbad634599bd1e0d1e3a8caac5d77395089"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Stream</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro2Io10FileFormat9Operation6StreamE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro2Io10FileFormat9Operation6StringE">
+<span id="_CPPv3N8Avogadro2Io10FileFormat9Operation6StringE"></span><span id="_CPPv2N8Avogadro2Io10FileFormat9Operation6StringE"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_1aa8f137f19095e0bdcf4f521e901f88bbade17ec82ff106e0c2b4417f5ca231eae"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">String</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro2Io10FileFormat9Operation6StringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro2Io10FileFormat9Operation4FileE">
+<span id="_CPPv3N8Avogadro2Io10FileFormat9Operation4FileE"></span><span id="_CPPv2N8Avogadro2Io10FileFormat9Operation4FileE"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_1aa8f137f19095e0bdcf4f521e901f88bba1ab5ebbd194ab0b95e5697aca9ba274f"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">File</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro2Io10FileFormat9Operation4FileE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro2Io10FileFormat9Operation3AllE">
+<span id="_CPPv3N8Avogadro2Io10FileFormat9Operation3AllE"></span><span id="_CPPv2N8Avogadro2Io10FileFormat9Operation3AllE"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_1aa8f137f19095e0bdcf4f521e901f88bba54991d225c58ce0af43461d4e9a82312"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">All</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro2Io10FileFormat9Operation3AllE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro2Io10FileFormat19supportedOperationsEv">
+<span id="_CPPv3NK8Avogadro2Io10FileFormat19supportedOperationsEv"></span><span id="_CPPv2NK8Avogadro2Io10FileFormat19supportedOperationsEv"></span><span id="Avogadro::Io::FileFormat::supportedOperationsC"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_1a3efc2331183102c0cd0bdd239af3350e"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">Operations</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">supportedOperations</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro2Io10FileFormat19supportedOperationsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Operation flags defining the capabilities of this format. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro2Io10FileFormat4openERKNSt6stringE9Operation">
+<span id="_CPPv3N8Avogadro2Io10FileFormat4openERKNSt6stringE9Operation"></span><span id="_CPPv2N8Avogadro2Io10FileFormat4openERKNSt6stringE9Operation"></span><span id="Avogadro::Io::FileFormat::open__ssCR.Operation"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_1a0f3246d164bfff936450d60256a9f1fc"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">open</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">fileName</span></span>, <a class="reference internal" href="#_CPPv4N8Avogadro2Io10FileFormat9OperationE" title="Avogadro::Io::FileFormat::Operation"><span class="n"><span class="pre">Operation</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">mode</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro2Io10FileFormat4openERKNSt6stringE9Operation" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Open the specified file in Read or Write mode. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True on success, false on failure. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro2Io10FileFormat4modeEv">
+<span id="_CPPv3N8Avogadro2Io10FileFormat4modeEv"></span><span id="_CPPv2N8Avogadro2Io10FileFormat4modeEv"></span><span id="Avogadro::Io::FileFormat::mode"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_1a99b194cb7cb41b8dd7c8d79ebb68e743"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro2Io10FileFormat9OperationE" title="Avogadro::Io::FileFormat::Operation"><span class="n"><span class="pre">Operation</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">mode</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro2Io10FileFormat4modeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The mode the format is currently operating in. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The mode the format is in. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro2Io10FileFormat6isModeE9Operation">
+<span id="_CPPv3N8Avogadro2Io10FileFormat6isModeE9Operation"></span><span id="_CPPv2N8Avogadro2Io10FileFormat6isModeE9Operation"></span><span id="Avogadro::Io::FileFormat::isMode__Operation"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_1a5ef09a8719d5f2c77f81175f8f9a4fdf"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isMode</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N8Avogadro2Io10FileFormat9OperationE" title="Avogadro::Io::FileFormat::Operation"><span class="n"><span class="pre">Operation</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">isInMode</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro2Io10FileFormat6isModeE9Operation" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Check if the supplied mode(s) is being used. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>isInMode</strong> – The mode(s) to test against </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if the format is currently in the supplied mode(s). </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro2Io10FileFormat5closeEv">
+<span id="_CPPv3N8Avogadro2Io10FileFormat5closeEv"></span><span id="_CPPv2N8Avogadro2Io10FileFormat5closeEv"></span><span id="Avogadro::Io::FileFormat::close"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_1a5ae591df94fc66ccb85cbb6565368bca"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">close</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro2Io10FileFormat5closeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Close any opened file handles. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro2Io10FileFormat12readMoleculeERN4Core8MoleculeE">
+<span id="_CPPv3N8Avogadro2Io10FileFormat12readMoleculeERN4Core8MoleculeE"></span><span id="_CPPv2N8Avogadro2Io10FileFormat12readMoleculeERN4Core8MoleculeE"></span><span id="Avogadro::Io::FileFormat::readMolecule__Core::MoleculeR"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_1abdd3c269a7b2e27c63fc01cb2f4649a3"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">readMolecule</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">molecule</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro2Io10FileFormat12readMoleculeERN4Core8MoleculeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Read in a molecule, if there are no molecules to read molecule will be empty. This can be used to read in one or more molecules from a given file using repeated calls for each molecule. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>molecule</strong> – The molecule the data will be read into. </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True on success, false on failure. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro2Io10FileFormat13writeMoleculeERKN4Core8MoleculeE">
+<span id="_CPPv3N8Avogadro2Io10FileFormat13writeMoleculeERKN4Core8MoleculeE"></span><span id="_CPPv2N8Avogadro2Io10FileFormat13writeMoleculeERKN4Core8MoleculeE"></span><span id="Avogadro::Io::FileFormat::writeMolecule__Core::MoleculeCR"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_1acfafac04289f30a10717f766d588f5be"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">writeMolecule</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">molecule</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro2Io10FileFormat13writeMoleculeERKN4Core8MoleculeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Write out a molecule. This can be used to write one or more molecules to a given file using repeated calls for each molecule. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>molecule</strong> – The molecule the data will be written from. </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True on success, false on failure. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro2Io10FileFormat4readERNSt7istreamERN4Core8MoleculeE">
+<span id="_CPPv3N8Avogadro2Io10FileFormat4readERNSt7istreamERN4Core8MoleculeE"></span><span id="_CPPv2N8Avogadro2Io10FileFormat4readERNSt7istreamERN4Core8MoleculeE"></span><span id="Avogadro::Io::FileFormat::read__isR.Core::MoleculeR"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_1a21c0215d7af5b1795528785c8dd92276"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">read</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">istream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">in</span></span>, <span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">molecule</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N8Avogadro2Io10FileFormat4readERNSt7istreamERN4Core8MoleculeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Read the given <code class="docutils literal notranslate"><span class="pre">in</span></code> stream and load it into <code class="docutils literal notranslate"><span class="pre">molecule</span></code>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>in</strong> – The input file stream. </p></li>
+<li><p><strong>molecule</strong> – The molecule the data will be read into. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True on success, false on failure. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro2Io10FileFormat5writeERNSt7ostreamERKN4Core8MoleculeE">
+<span id="_CPPv3N8Avogadro2Io10FileFormat5writeERNSt7ostreamERKN4Core8MoleculeE"></span><span id="_CPPv2N8Avogadro2Io10FileFormat5writeERNSt7ostreamERKN4Core8MoleculeE"></span><span id="Avogadro::Io::FileFormat::write__osR.Core::MoleculeCR"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_1a6efcd7835af14f11742cc3be7603eff3"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">write</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ostream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">out</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">molecule</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N8Avogadro2Io10FileFormat5writeERNSt7ostreamERKN4Core8MoleculeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Write to the given <code class="docutils literal notranslate"><span class="pre">out</span></code> stream the contents of <code class="docutils literal notranslate"><span class="pre">molecule</span></code>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>out</strong> – The output stream to write the data to. </p></li>
+<li><p><strong>molecule</strong> – The contents of this molecule will be written to output. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True on success, false on failure. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro2Io10FileFormat8readFileERKNSt6stringERN4Core8MoleculeE">
+<span id="_CPPv3N8Avogadro2Io10FileFormat8readFileERKNSt6stringERN4Core8MoleculeE"></span><span id="_CPPv2N8Avogadro2Io10FileFormat8readFileERKNSt6stringERN4Core8MoleculeE"></span><span id="Avogadro::Io::FileFormat::readFile__ssCR.Core::MoleculeR"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_1a6aeb0e7be9ee0fca173705ed4b38c439"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">readFile</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">fileName</span></span>, <span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">molecule</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro2Io10FileFormat8readFileERKNSt6stringERN4Core8MoleculeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Read the given <code class="docutils literal notranslate"><span class="pre">fileName</span></code> and load it into <code class="docutils literal notranslate"><span class="pre">molecule</span></code>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fileName</strong> – The full path to the file to be read in. </p></li>
+<li><p><strong>molecule</strong> – The molecule the data will be read into. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True on success, false on failure. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro2Io10FileFormat9writeFileERKNSt6stringERKN4Core8MoleculeE">
+<span id="_CPPv3N8Avogadro2Io10FileFormat9writeFileERKNSt6stringERKN4Core8MoleculeE"></span><span id="_CPPv2N8Avogadro2Io10FileFormat9writeFileERKNSt6stringERKN4Core8MoleculeE"></span><span id="Avogadro::Io::FileFormat::writeFile__ssCR.Core::MoleculeCR"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_1a489c884421fc53333544a9ae3719566e"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">writeFile</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">fileName</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">molecule</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro2Io10FileFormat9writeFileERKNSt6stringERKN4Core8MoleculeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Write to the given <code class="docutils literal notranslate"><span class="pre">fileName</span></code> the contents of <code class="docutils literal notranslate"><span class="pre">molecule</span></code>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fileName</strong> – The full path to the file to be written. </p></li>
+<li><p><strong>molecule</strong> – The contents of this molecule will be written to the file. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True on success, false on failure. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro2Io10FileFormat10readStringERKNSt6stringERN4Core8MoleculeE">
+<span id="_CPPv3N8Avogadro2Io10FileFormat10readStringERKNSt6stringERN4Core8MoleculeE"></span><span id="_CPPv2N8Avogadro2Io10FileFormat10readStringERKNSt6stringERN4Core8MoleculeE"></span><span id="Avogadro::Io::FileFormat::readString__ssCR.Core::MoleculeR"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_1a4c10deac7ef5c2380dfea451e781dcee"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">readString</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">string</span></span>, <span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">molecule</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro2Io10FileFormat10readStringERKNSt6stringERN4Core8MoleculeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Read the given <code class="docutils literal notranslate"><span class="pre">string</span></code> and load it into <code class="docutils literal notranslate"><span class="pre">molecule</span></code>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>string</strong> – The string containing the molecule file contents. </p></li>
+<li><p><strong>molecule</strong> – The molecule the data will be read into. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True on success, false on failure. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro2Io10FileFormat11writeStringERNSt6stringERKN4Core8MoleculeE">
+<span id="_CPPv3N8Avogadro2Io10FileFormat11writeStringERNSt6stringERKN4Core8MoleculeE"></span><span id="_CPPv2N8Avogadro2Io10FileFormat11writeStringERNSt6stringERKN4Core8MoleculeE"></span><span id="Avogadro::Io::FileFormat::writeString__ssR.Core::MoleculeCR"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_1a1614d39d6d88fbfcfa6d7e427279a990"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">writeString</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">string</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">molecule</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro2Io10FileFormat11writeStringERNSt6stringERKN4Core8MoleculeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Write to the given <code class="docutils literal notranslate"><span class="pre">string</span></code> the contents of <code class="docutils literal notranslate"><span class="pre">molecule</span></code>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>string</strong> – The string to write the contents of the molecule into. </p></li>
+<li><p><strong>molecule</strong> – The contents of this molecule will be written to the string. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True on success, false on failure. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro2Io10FileFormat5errorEv">
+<span id="_CPPv3NK8Avogadro2Io10FileFormat5errorEv"></span><span id="_CPPv2NK8Avogadro2Io10FileFormat5errorEv"></span><span id="Avogadro::Io::FileFormat::errorC"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_1ab0ca267c415968ee3bc1c6b144dcbf56"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">error</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro2Io10FileFormat5errorEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the error string, contains errors/warnings encountered. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>String containing any errors or warnings encountered. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro2Io10FileFormat8fileNameEv">
+<span id="_CPPv3NK8Avogadro2Io10FileFormat8fileNameEv"></span><span id="_CPPv2NK8Avogadro2Io10FileFormat8fileNameEv"></span><span id="Avogadro::Io::FileFormat::fileNameC"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_1a3779a192ea974f0abcc386f8739cce1f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">fileName</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro2Io10FileFormat8fileNameEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the file name (if known). </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The full path to the file name as supplied, can be empty. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro2Io10FileFormat10setOptionsERKNSt6stringE">
+<span id="_CPPv3N8Avogadro2Io10FileFormat10setOptionsERKNSt6stringE"></span><span id="_CPPv2N8Avogadro2Io10FileFormat10setOptionsERKNSt6stringE"></span><span id="Avogadro::Io::FileFormat::setOptions__ssCR"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_1ab0185522cbfc38ce4ba7b8fcc1986a01"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setOptions</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">options</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro2Io10FileFormat10setOptionsERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set options for the file reader. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>options</strong> – The options, each reader chooses how to use/interpret them. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro2Io10FileFormat7optionsEv">
+<span id="_CPPv3NK8Avogadro2Io10FileFormat7optionsEv"></span><span id="_CPPv2NK8Avogadro2Io10FileFormat7optionsEv"></span><span id="Avogadro::Io::FileFormat::optionsC"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_1a0f71fd5dabc543c8ed47c05ccd2487d7"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">options</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro2Io10FileFormat7optionsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the file format options, can be used to change file IO. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The options set for the reader (defaults to empty). </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro2Io10FileFormat5clearEv">
+<span id="_CPPv3N8Avogadro2Io10FileFormat5clearEv"></span><span id="_CPPv2N8Avogadro2Io10FileFormat5clearEv"></span><span id="Avogadro::Io::FileFormat::clear"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_1aae048282c7011eedc2e0492f6421ea73"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">clear</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro2Io10FileFormat5clearEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Clear the format and reset all state. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro2Io10FileFormat11newInstanceEv">
+<span id="_CPPv3NK8Avogadro2Io10FileFormat11newInstanceEv"></span><span id="_CPPv2NK8Avogadro2Io10FileFormat11newInstanceEv"></span><span id="Avogadro::Io::FileFormat::newInstanceC"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_1a21b245c61e8687d3ace54759447a42dd"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro2Io10FileFormatE" title="Avogadro::Io::FileFormat"><span class="n"><span class="pre">FileFormat</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">newInstance</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro2Io10FileFormat11newInstanceEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Create a new instance of the file format class. Ownership passes to the caller. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro2Io10FileFormat10identifierEv">
+<span id="_CPPv3NK8Avogadro2Io10FileFormat10identifierEv"></span><span id="_CPPv2NK8Avogadro2Io10FileFormat10identifierEv"></span><span id="Avogadro::Io::FileFormat::identifierC"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_1a60b19ebc79a40e8eae74b5ab7cf103be"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">identifier</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro2Io10FileFormat10identifierEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>A unique identifier, used to retrieve formats programatically. CML, XYZ, PDB etc. A runtime warning will be generated if the identifier is not unique. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro2Io10FileFormat4nameEv">
+<span id="_CPPv3NK8Avogadro2Io10FileFormat4nameEv"></span><span id="_CPPv2NK8Avogadro2Io10FileFormat4nameEv"></span><span id="Avogadro::Io::FileFormat::nameC"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_1a7f04e718c6856c4d3d77a496b6acad0d"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">name</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro2Io10FileFormat4nameEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The name of the format, should be short such as Chemical Markup Language, XYZ format, Protein Databank etc. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro2Io10FileFormat11descriptionEv">
+<span id="_CPPv3NK8Avogadro2Io10FileFormat11descriptionEv"></span><span id="_CPPv2NK8Avogadro2Io10FileFormat11descriptionEv"></span><span id="Avogadro::Io::FileFormat::descriptionC"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_1a77d7003fa5d2e29669371413d5662141"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">description</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro2Io10FileFormat11descriptionEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>A description of the format, along with any relevant help text for users. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro2Io10FileFormat16specificationUrlEv">
+<span id="_CPPv3NK8Avogadro2Io10FileFormat16specificationUrlEv"></span><span id="_CPPv2NK8Avogadro2Io10FileFormat16specificationUrlEv"></span><span id="Avogadro::Io::FileFormat::specificationUrlC"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_1a28d1d01a112c4944b3e49dd7b0127134"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">specificationUrl</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro2Io10FileFormat16specificationUrlEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The URL of the format specification if available (relevant web page/wiki otherwise). </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro2Io10FileFormat14fileExtensionsEv">
+<span id="_CPPv3NK8Avogadro2Io10FileFormat14fileExtensionsEv"></span><span id="_CPPv2NK8Avogadro2Io10FileFormat14fileExtensionsEv"></span><span id="Avogadro::Io::FileFormat::fileExtensionsC"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_1a758852cc7f4b1802a49dcf069ed4f20a"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">fileExtensions</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro2Io10FileFormat14fileExtensionsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the file name extension(s) that the format supports reading. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A vector containing a list of extensions (in lower case). </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro2Io10FileFormat9mimeTypesEv">
+<span id="_CPPv3NK8Avogadro2Io10FileFormat9mimeTypesEv"></span><span id="_CPPv2NK8Avogadro2Io10FileFormat9mimeTypesEv"></span><span id="Avogadro::Io::FileFormat::mimeTypesC"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_1af940cbe53b19944dfe03fb717294cdf4"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">mimeTypes</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro2Io10FileFormat9mimeTypesEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the MIME type(s) that the format supports reading. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A vector containing a list of MIME type(s) (in lower case). </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
 </div>
 
 
@@ -394,7 +745,7 @@
       <div class="row">
         <div class="col-md-10 py-2">
           <p>
-            ©2021 The OpenChemistry / Avogadro Teams. The website content uses the <a href="https://github.com/openchemitry/avogadrolibs/blob/master/LICENSE">BSD License</a> and is covered by the <a href="https://github.com/openchemistry/avogadrolibss/blob/master/CODE_OF_CONDUCT.md">Bokeh Code of Conduct</a>.
+            ©2021 The OpenChemistry / Avogadro Teams. The website content uses the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/LICENSE">BSD License</a> and is covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
           </p>
         </div>
         <br />

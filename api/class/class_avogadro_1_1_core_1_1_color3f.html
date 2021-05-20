@@ -22,15 +22,15 @@
       
 
     
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/basic.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
   <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
@@ -472,10 +472,118 @@
                 
   <div class="section" id="class-avogadro-core-color3f">
 <h1>Class Avogadro::Core::Color3f<a class="headerlink" href="#class-avogadro-core-color3f" title="Permalink to this headline">¶</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>doxygenclass: Cannot find file: /Users/ghutchis/Devel/build/openchemistry/avogadrolibs/docs/xml/index.xml</p>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core7Color3fE">
+<span id="_CPPv3N8Avogadro4Core7Color3fE"></span><span id="_CPPv2N8Avogadro4Core7Color3fE"></span><span id="Avogadro::Core::Color3f"></span><span class="target" id="class_avogadro_1_1_core_1_1_color3f"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">Avogadro</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">Color3f</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Color3fE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Representation of an RGB color using three floats. </p>
+<p>
+This class represents a color as three floats ranging from 0.0 to 1.0 specifying the intensity of the red, green and blue components of the color. It is stored in memory as float[3], and so vectors containing this type may be passed directly to OpenGL and other functions as C arrays.<dl class="simple">
+<dt><strong>Author</strong></dt><dd><p>Marcus D. Hanwell</p>
+</dd>
+</dl>
+</p>
+<p>Several convenience functions are provided, the class is written with an emphasis on efficiency and memory layout. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core7Color3f7Color3fEfff">
+<span id="_CPPv3N8Avogadro4Core7Color3f7Color3fEfff"></span><span id="_CPPv2N8Avogadro4Core7Color3f7Color3fEfff"></span><span id="Avogadro::Core::Color3f::Color3f__float.float.float"></span><span class="target" id="class_avogadro_1_1_core_1_1_color3f_1ae208cd9aa41cb630c6725a58caaa521f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Color3f</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">red</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0.0</span></span>, <span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">green</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0.0</span></span>, <span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">blue</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0.0</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Color3f7Color3fEfff" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Constructor, results in a black <a class="reference internal" href="#class_avogadro_1_1_core_1_1_color3f"><span class="std std-ref">Color3f</span></a> object unless the RGB values are set. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>red</strong> – Intensity (from 0.0 to 1.0) of the red component of the color. </p></li>
+<li><p><strong>green</strong> – Intensity (from 0.0 to 1.0) of the green component of the color. </p></li>
+<li><p><strong>blue</strong> – Intensity (from 0.0 to 1.0) of the blue component of the color. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core7Color3f7Color3fEiii">
+<span id="_CPPv3N8Avogadro4Core7Color3f7Color3fEiii"></span><span id="_CPPv2N8Avogadro4Core7Color3f7Color3fEiii"></span><span id="Avogadro::Core::Color3f::Color3f__i.i.i"></span><span class="target" id="class_avogadro_1_1_core_1_1_color3f_1a8c95cbeffcb05bab2c1004519991c743"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Color3f</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">red</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">green</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">blue</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Color3f7Color3fEiii" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Constructor where the color is constructed from integer values. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>red</strong> – Intensity (from 0 to 255) of the red component of the color. </p></li>
+<li><p><strong>green</strong> – Intensity (from 0 to 255) of the green component of the color. </p></li>
+<li><p><strong>blue</strong> – Intensity (from 0 to 255) of the blue component of the color. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core7Color3f3setEfff">
+<span id="_CPPv3N8Avogadro4Core7Color3f3setEfff"></span><span id="_CPPv2N8Avogadro4Core7Color3f3setEfff"></span><span id="Avogadro::Core::Color3f::set__float.float.float"></span><span class="target" id="class_avogadro_1_1_core_1_1_color3f_1a32931fc32312eec61c7390ce18095320"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">red</span></span>, <span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">green</span></span>, <span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">blue</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Color3f3setEfff" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the color objects components. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>red</strong> – Intensity (from 0.0 to 1.0) of the red component of the color. </p></li>
+<li><p><strong>green</strong> – Intensity (from 0.0 to 1.0) of the green component of the color. </p></li>
+<li><p><strong>blue</strong> – Intensity (from 0.0 to 1.0) of the blue component of the color. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core7Color3f3redEv">
+<span id="_CPPv3NK8Avogadro4Core7Color3f3redEv"></span><span id="_CPPv2NK8Avogadro4Core7Color3f3redEv"></span><span id="Avogadro::Core::Color3f::redC"></span><span class="target" id="class_avogadro_1_1_core_1_1_color3f_1a7f5abd514d676142323b45ed0fd1a332"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">red</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core7Color3f3redEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The intensity of the red component of the color (0.0 to 1.0). </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core7Color3f5greenEv">
+<span id="_CPPv3NK8Avogadro4Core7Color3f5greenEv"></span><span id="_CPPv2NK8Avogadro4Core7Color3f5greenEv"></span><span id="Avogadro::Core::Color3f::greenC"></span><span class="target" id="class_avogadro_1_1_core_1_1_color3f_1ae5c16718ebca250775916b60afa4a9b5"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">green</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core7Color3f5greenEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The intensity of the green component of the color (0.0 to 1.0). </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core7Color3f4blueEv">
+<span id="_CPPv3NK8Avogadro4Core7Color3f4blueEv"></span><span id="_CPPv2NK8Avogadro4Core7Color3f4blueEv"></span><span id="Avogadro::Core::Color3f::blueC"></span><span class="target" id="class_avogadro_1_1_core_1_1_color3f_1a2d98bf04702b301cfb74a210f7fe7d00"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">blue</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core7Color3f4blueEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The intensity of the blue component of the color (0.0 to 1.0). </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core7Color3f4dataEv">
+<span id="_CPPv3N8Avogadro4Core7Color3f4dataEv"></span><span id="_CPPv2N8Avogadro4Core7Color3f4dataEv"></span><span id="Avogadro::Core::Color3f::data"></span><span class="target" id="class_avogadro_1_1_core_1_1_color3f_1a0fd2c87c0d7230931de395ced9a63a37"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">data</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Color3f4dataEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Direct access to the underlying float array of size 3. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core7Color3f4dataEv">
+<span id="_CPPv3NK8Avogadro4Core7Color3f4dataEv"></span><span id="_CPPv2NK8Avogadro4Core7Color3f4dataEv"></span><span id="Avogadro::Core::Color3f::dataC"></span><span class="target" id="class_avogadro_1_1_core_1_1_color3f_1a50aa8db02e304b5eadf22394f69bf6eb"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">data</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core7Color3f4dataEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This function is useful when calling OpenGL functions which expect a float * array of size 3. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Direct access to the underlying float array of size 3. </p>
+</dd>
+</dl>
+</dd></dl>
+
 </div>
+</dd></dl>
+
 </div>
 
 
@@ -504,7 +612,7 @@
       <div class="row">
         <div class="col-md-10 py-2">
           <p>
-            ©2021 The OpenChemistry / Avogadro Teams. The website content uses the <a href="https://github.com/openchemitry/avogadrolibs/blob/master/LICENSE">BSD License</a> and is covered by the <a href="https://github.com/openchemistry/avogadrolibss/blob/master/CODE_OF_CONDUCT.md">Bokeh Code of Conduct</a>.
+            ©2021 The OpenChemistry / Avogadro Teams. The website content uses the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/LICENSE">BSD License</a> and is covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
           </p>
         </div>
         <br />
