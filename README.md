@@ -44,3 +44,10 @@ Contributing
 Our project uses the standard GitHub pull request process for code review
 and integration. PThe GitHub issue
 tracker can be used to report bugs, make feature suggestions, etc.
+
+  [Avogadro2Logo]: https://raw.githubusercontent.com/OpenChemistry/avogadrolibs/master/docs/avogadro2_64.png "Avogadro2"
+  [OpenChemistry]: http://openchemistry.org/ "Open Chemistry Project"
+  [OpenChemistryLogo]: https://raw.githubusercontent.com/OpenChemistry/avogadrolibs/master/docs/OpenChemistry128.png "Open Chemistry"
+  [Kitware]: http://kitware.com/ "Kitware, Inc."
+  [KitwareLogo]: http://www.kitware.com/img/small_logo_over.png "Kitware"
+  [Avogadro1]: http://avogadro.cc/ "Avogadro 1"
