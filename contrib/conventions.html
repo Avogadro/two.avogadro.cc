@@ -1,0 +1,443 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coding Conventions (C++) &#8212; Avogadro 1.94 documentation</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="canonical" href="https://two.avogadro.cc/contrib/conventions.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Coding Style (C++)" href="style.html" />
+    <link rel="prev" title="Contributing Code" href="code.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../index.html">
+  <img src="../_static/avogadro2.png" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../install/index.html">
+  Install
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../scripts/index.html">
+  Script Plugins
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../api/index.html">
+  Library API
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="index.html">
+  Contribute
+ </a>
+</li>
+
+    
+    <li class="nav-item">
+        <a class="nav-link nav-external" href="https://discuss.avogadro.cc">Discuss<i class="fas fa-external-link-alt"></i></a>
+    </li>
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/openchemistry/avogadrolibs" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://twitter.com/AvogadroChem" rel="noopener" target="_blank" title="Twitter">
+            <span><i class="fab fa-twitter-square"></i></span>
+            <label class="sr-only">Twitter</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="credits.html">
+   Thanks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="translate.html">
+   Translations
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="code.html">
+   Contributing Code
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Coding Conventions (C++)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="style.html">
+     Coding Style (C++)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="code-docs.html">
+     Documenting Code
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#c-features">
+   C++ Features
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#including-headers">
+   Including Headers
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#export-macro-headers">
+     Export Macro Headers
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#private-headers">
+     Private Headers
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#qt-headers">
+     Qt Headers
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#namespaces">
+   Namespaces
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#casting">
+   Casting
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aesthetics">
+   Aesthetics
+  </a>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+
+<div class="tocsection editthispage">
+    <a href="https://github.com/openchemistry/avogadrolibs/edit/master/docs/contrib/conventions.rst">
+        <i class="fas fa-pencil-alt"></i> Edit this page
+    </a>
+</div>
+
+              </div>
+              
+            
+          </div>
+          
+          
+
+          
+          
+            
+            
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+            
+              <div>
+                
+  <div class="section" id="coding-conventions-c">
+<span id="code-conventions"></span><h1>Coding Conventions (C++)<a class="headerlink" href="#coding-conventions-c" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="c-features">
+<h2>C++ Features<a class="headerlink" href="#c-features" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Don’t use exceptions or asserts - Avogadro is production code and should never crash</p></li>
+<li><p>Prefer solutions from the Qt library over Boost/others in Qt
+dependent code</p>
+<ul>
+<li><p>In Avogadro use the C++11 features where necessary, they fall back
+to Boost on older compilers</p></li>
+<li><p>Avogadro offers AVO_OVERRIDE and AVO_FINAL (defines for new C++11
+override and final)</p></li>
+</ul>
+</li>
+<li><p>Minimize dependencies on third party libraries, think carefully
+before adding more</p></li>
+<li><p>Use templates where they make sense</p></li>
+<li><p>Submit proposed topics to Gerrit</p>
+<ul>
+<li><p>Monitor the <a class="reference external" href="mailto:CDash&#37;&#52;&#48;Home">CDash<span>&#64;</span>Home</a> builds and nightly builds once merged to
+ensure support in all supported compilers</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="including-headers">
+<span id="id1"></span><h2>Including Headers<a class="headerlink" href="#including-headers" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>In public headers, always use this form to include project headers:
+#include &lt;avogadro/core/something.h&gt;</p></li>
+<li><p>Prefer declaration of types in public headers over including headers
+for the type</p></li>
+</ul>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span> <span class="nn">Avogadro</span> <span class="p">{</span>
+<span class="k">class</span> <span class="nc">MyClass</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>In source files include specialized headers first, then dependency
+headers, then generic headers</p></li>
+</ul>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;myapiheader.h&quot;</span><span class="c1"> // Our header</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;avogadro/core/molecule.h&gt;</span><span class="c1"> // Avogadro header from a different module</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;QtCore/QString&gt;</span><span class="c1"> // Qt header</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="c1"> // STL</span><span class="cp"></span>
+</pre></div>
+</div>
+<div class="section" id="export-macro-headers">
+<span id="id2"></span><h3>Export Macro Headers<a class="headerlink" href="#export-macro-headers" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>If you need to include the export header for the module do it as the
+first include</p></li>
+</ul>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;avogadrorenderingexport.h&quot;</span><span class="cp"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="private-headers">
+<span id="id3"></span><h3>Private Headers<a class="headerlink" href="#private-headers" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Private headers are denoted by _p.h endings, and should not be
+included in public headers</p></li>
+</ul>
+</div>
+<div class="section" id="qt-headers">
+<span id="id4"></span><h3>Qt Headers<a class="headerlink" href="#qt-headers" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Use the Qt module and camel-cased header</p></li>
+<li><p>Never include Qt module headers such as QtGui, instead include the
+header for the class being used</p></li>
+</ul>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;QtGui&gt;</span><span class="c1"> // WRONG (module header)!</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;QtGui/QDialog&gt;</span><span class="c1"> // Correct</span><span class="cp"></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="namespaces">
+<h2>Namespaces<a class="headerlink" href="#namespaces" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>Open Chemistry code is namespaced</p></li>
+<li><p>Avogadro uses nested namespaces</p>
+<ul class="simple">
+<li><p>Everything is inside the Avogadro namespace</p></li>
+<li><p>Code in the core module is in the Avogadro::Core namespace</p></li>
+</ul>
+</li>
+<li><p>MoleQueue and MongoChem use a namespace to contain most code</p></li>
+<li><p>Don’t overspecify, i.e. code in the Avogadro namespace doesn’t need
+to use Avogadro:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span>  <span class="n">Qt</span> <span class="n">signals</span> <span class="ow">and</span> <span class="n">slots</span> <span class="n">are</span> <span class="n">one</span> <span class="n">exception</span> <span class="n">where</span> <span class="n">MOC</span> <span class="n">often</span> <span class="n">needs</span> <span class="n">a</span> <span class="n">little</span> <span class="n">help</span>
+</pre></div>
+</div>
+</li>
+<li><p>Never use using inside a public header</p>
+<ul class="simple">
+<li><p>Only pull in specific symbols in source files, i.e. using
+Avogadro::Core::Molecule;</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="casting">
+<h2>Casting<a class="headerlink" href="#casting" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Avoid C-style casts, prefer C++ (static_cast, dynamic_cast,
+const_cast, reinterpret_cast)</p></li>
+<li><p>For Qt classes, and Qt derived classes prefer qobject_cast over
+dynamic_cast</p></li>
+</ul>
+</div>
+<div class="section" id="aesthetics">
+<h2>Aesthetics<a class="headerlink" href="#aesthetics" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Prefer enums to define constants over static const int or defines</p></li>
+<li><p>Prefer verbose argument names in headers</p>
+<ul>
+<li><p>Most IDEs show the argument names in their autocompletion</p></li>
+<li><p>It looks better in the generated documentation</p></li>
+<li><p>Poor style making people guess what an argument is for</p></li>
+</ul>
+</li>
+<li><p>Avoid abbreviations, as they are often ambiguous and we can afford
+the extra bytes</p></li>
+</ul>
+</div>
+</div>
+
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="code.html" title="previous page">Contributing Code</a>
+    <a class='right-next' id="next-link" href="style.html" title="next page">Coding Style (C++)</a>
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  <footer class="container-fluid footer-copy">
+
+    <div class="container">
+
+      <div class="row">
+        <div class="col-md-10 py-2">
+          <p>
+            ©2021 The OpenChemistry / Avogadro Teams. The website content uses the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/LICENSE">BSD License</a> and is covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
+          </p>
+        </div>
+        <br />
+        <div class="col-md-2 py-2">
+          <a class="btn btn-primary" href="https://opencollective.com/open-chemistry">Donate</a>
+        </div>
+      </div>
+
+    </div>
+
+  </footer>
+  </body>
+</html>
