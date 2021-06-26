@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Class Avogadro::QtGui::PythonScript &#8212; Avogadro 1.93.1-145-g333a47ae documentation</title>
+    <title>Class Avogadro::QtGui::PythonScript &#8212; Avogadro 1.94.0-55-gbefc28e8 documentation</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -55,7 +55,7 @@
     
 
 <a class="navbar-brand" href="../../index.html">
-  <img src="../../_static/avogadro2.svg" class="logo" alt="logo">
+  <img src="../../_static/avogadro2.png" class="logo" alt="logo">
 </a>
 
 
@@ -460,6 +460,11 @@
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
+<dt id="_CPPv4N8Avogadro5QtGui12PythonScriptD0Ev">
+<span id="_CPPv3N8Avogadro5QtGui12PythonScriptD0Ev"></span><span id="_CPPv2N8Avogadro5QtGui12PythonScriptD0Ev"></span><span id="Avogadro::QtGui::PythonScript::~PythonScript"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1a7b714499441f5296bd92b9ca776a4aed"></span><code class="sig-name descname"><span class="pre">~PythonScript</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">override</span></em><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui12PythonScriptD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
 <dt id="_CPPv4NK8Avogadro5QtGui12PythonScript5debugEv">
 <span id="_CPPv3NK8Avogadro5QtGui12PythonScript5debugEv"></span><span id="_CPPv2NK8Avogadro5QtGui12PythonScript5debugEv"></span><span id="Avogadro::QtGui::PythonScript::debugC"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1a1d829a8cc5502cefd6713febc645035a"></span><em class="property"><span class="pre">inline</span></em> <span class="pre">bool</span> <code class="sig-name descname"><span class="pre">debug</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK8Avogadro5QtGui12PythonScript5debugEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><dl class="field-list simple">
@@ -528,6 +533,19 @@
 <dd><p>Start a new process to execute: “&lt;m_pythonInterpreter&gt; &lt;scriptFilePath()&gt; [args …]”, optionally passing scriptStdin to the processes standard input. Returns the standard output of the process when finished. </p>
 </dd></dl>
 
+<dl class="cpp function">
+<dt id="_CPPv4N8Avogadro5QtGui12PythonScript12asyncExecuteERK11QStringListRK10QByteArray">
+<span id="_CPPv3N8Avogadro5QtGui12PythonScript12asyncExecuteERK11QStringListRK10QByteArray"></span><span id="_CPPv2N8Avogadro5QtGui12PythonScript12asyncExecuteERK11QStringListRK10QByteArray"></span><span id="Avogadro::QtGui::PythonScript::asyncExecute__QStringListCR.QByteArrayCR"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1aa8fd704ff7bb6bdac44651e13e981039"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">asyncExecute</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <span class="pre">QStringList</span> <span class="pre">&amp;</span><em><span class="pre">args</span></em>, <em class="property"><span class="pre">const</span></em> <span class="pre">QByteArray</span> <span class="pre">&amp;</span><em><span class="pre">scriptStdin</span></em> <span class="pre">=</span> <span class="pre">QByteArray</span><span class="pre">(</span><span class="pre">)</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui12PythonScript12asyncExecuteERK11QStringListRK10QByteArray" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Start a new process to execute asynchronously “&lt;m_pythonInterpreter&gt; &lt;scriptFilePath()&gt; [args …]”, optionally passing scriptStdin to the processes standard input.</p>
+<p>Will send asyncFinished() signal when finished </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N8Avogadro5QtGui12PythonScript13asyncResponseEv">
+<span id="_CPPv3N8Avogadro5QtGui12PythonScript13asyncResponseEv"></span><span id="_CPPv2N8Avogadro5QtGui12PythonScript13asyncResponseEv"></span><span id="Avogadro::QtGui::PythonScript::asyncResponse"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1a23e9771831b04f40de6ea8532b6b0e08"></span><span class="pre">QByteArray</span> <code class="sig-name descname"><span class="pre">asyncResponse</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui12PythonScript13asyncResponseEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the standard output of the asynchronous process when finished. </p>
+</dd></dl>
+
 </div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-slots">Public Slots</p>
@@ -536,6 +554,49 @@
 <span id="_CPPv3N8Avogadro5QtGui12PythonScript8setDebugEb"></span><span id="_CPPv2N8Avogadro5QtGui12PythonScript8setDebugEb"></span><span id="Avogadro::QtGui::PythonScript::setDebug__b"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1ab934152422e35855a5348466c113212d"></span><em class="property"><span class="pre">inline</span></em> <span class="pre">void</span> <code class="sig-name descname"><span class="pre">setDebug</span></code><span class="sig-paren">(</span><span class="pre">bool</span> <em><span class="pre">d</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui12PythonScript8setDebugEb" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Enable/disable debugging. </p>
 </dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N8Avogadro5QtGui12PythonScript15processFinishedEiN8QProcess10ExitStatusE">
+<span id="_CPPv3N8Avogadro5QtGui12PythonScript15processFinishedEiN8QProcess10ExitStatusE"></span><span id="_CPPv2N8Avogadro5QtGui12PythonScript15processFinishedEiN8QProcess10ExitStatusE"></span><span id="Avogadro::QtGui::PythonScript::processFinished__i.QProcess::ExitStatus"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1ae72e2d4a6a219e4bf9603ef58e9cf9dc"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">processFinished</span></code><span class="sig-paren">(</span><span class="pre">int</span> <em><span class="pre">exitCode</span></em>, <span class="pre">QProcess</span><span class="pre">::</span><span class="pre">ExitStatus</span> <em><span class="pre">exitStatus</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui12PythonScript15processFinishedEiN8QProcess10ExitStatusE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Handle a finished process; </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-signals">Signals</p>
+<dl class="cpp function">
+<dt id="_CPPv4N8Avogadro5QtGui12PythonScript8finishedEv">
+<span id="_CPPv3N8Avogadro5QtGui12PythonScript8finishedEv"></span><span id="_CPPv2N8Avogadro5QtGui12PythonScript8finishedEv"></span><span id="Avogadro::QtGui::PythonScript::finished"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1af7b21038ab82868484b3a459947b0dbf"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">finished</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui12PythonScript8finishedEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The asynchronous execution is finished or timed out </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-attributes">Protected Attributes</p>
+<dl class="cpp var">
+<dt id="_CPPv4N8Avogadro5QtGui12PythonScript7m_debugE">
+<span id="_CPPv3N8Avogadro5QtGui12PythonScript7m_debugE"></span><span id="_CPPv2N8Avogadro5QtGui12PythonScript7m_debugE"></span><span id="Avogadro::QtGui::PythonScript::m_debug__b"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1a67320329e3515c9d02089a22e12ba035"></span><span class="pre">bool</span> <code class="sig-name descname"><span class="pre">m_debug</span></code><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui12PythonScript7m_debugE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N8Avogadro5QtGui12PythonScript19m_pythonInterpreterE">
+<span id="_CPPv3N8Avogadro5QtGui12PythonScript19m_pythonInterpreterE"></span><span id="_CPPv2N8Avogadro5QtGui12PythonScript19m_pythonInterpreterE"></span><span id="Avogadro::QtGui::PythonScript::m_pythonInterpreter__QString"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1a9ae7a7d88e4053fab8758e2c4dbaf404"></span><span class="pre">QString</span> <code class="sig-name descname"><span class="pre">m_pythonInterpreter</span></code><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui12PythonScript19m_pythonInterpreterE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N8Avogadro5QtGui12PythonScript16m_scriptFilePathE">
+<span id="_CPPv3N8Avogadro5QtGui12PythonScript16m_scriptFilePathE"></span><span id="_CPPv2N8Avogadro5QtGui12PythonScript16m_scriptFilePathE"></span><span id="Avogadro::QtGui::PythonScript::m_scriptFilePath__QString"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1a2037d447682228e6040b12f36dfe570d"></span><span class="pre">QString</span> <code class="sig-name descname"><span class="pre">m_scriptFilePath</span></code><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui12PythonScript16m_scriptFilePathE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N8Avogadro5QtGui12PythonScript8m_errorsE">
+<span id="_CPPv3N8Avogadro5QtGui12PythonScript8m_errorsE"></span><span id="_CPPv2N8Avogadro5QtGui12PythonScript8m_errorsE"></span><span id="Avogadro::QtGui::PythonScript::m_errors__QStringList"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1acab41fad1edfdb6fe92d45a24886960b"></span><span class="pre">QStringList</span> <code class="sig-name descname"><span class="pre">m_errors</span></code><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui12PythonScript8m_errorsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N8Avogadro5QtGui12PythonScript9m_processE">
+<span id="_CPPv3N8Avogadro5QtGui12PythonScript9m_processE"></span><span id="_CPPv2N8Avogadro5QtGui12PythonScript9m_processE"></span><span id="Avogadro::QtGui::PythonScript::m_process__QProcessP"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1aa4966914f6ef644ec6dfa54c184c4f8c"></span><span class="pre">QProcess</span> <span class="pre">*</span><code class="sig-name descname"><span class="pre">m_process</span></code><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui12PythonScript9m_processE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
 
 </div>
 </dd></dl>
