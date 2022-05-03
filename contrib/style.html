@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Coding Style (C++) &#8212; Avogadro 1.94.0-55-gbefc28e8 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Coding Style (C++) &#8212; Avogadro 1.95.1 documentation</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet" />
-  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,19 +20,15 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
@@ -40,10 +38,13 @@
     <link rel="next" title="Documenting Code" href="code-docs.html" />
     <link rel="prev" title="Coding Conventions (C++)" href="conventions.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -111,16 +112,12 @@
       <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
-          <a class="nav-link" href="https://github.com/openchemistry/avogadrolibs" rel="noopener" target="_blank" title="GitHub">
-            <span><i class="fab fa-github-square"></i></span>
-            <label class="sr-only">GitHub</label>
-          </a>
+          <a class="nav-link" href="https://github.com/openchemistry/avogadrolibs" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://twitter.com/AvogadroChem" rel="noopener" target="_blank" title="Twitter">
-            <span><i class="fab fa-twitter-square"></i></span>
-            <label class="sr-only">Twitter</label>
-          </a>
+          <a class="nav-link" href="https://twitter.com/AvogadroChem" rel="noopener" target="_blank" title="Twitter"><span><i class="fab fa-twitter-square"></i></span>
+            <label class="sr-only">Twitter</label></a>
         </li>
       </ul>
       </div>
@@ -136,7 +133,8 @@
           
             
             <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
@@ -183,18 +181,20 @@
 
   </div>
 </nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
             </div>
             
           
 
-          
           
           <div class="d-none d-xl-block col-xl-2 bd-toc">
             
               
               <div class="toc-item">
                 
-<div class="tocsection onthispage pt-5 pb-3">
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
     <i class="fas fa-list"></i> On this page
 </div>
 
@@ -279,38 +279,37 @@
             
           </div>
           
-          
 
           
           
             
-            
+          
           <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
-            
+              
               <div>
                 
-  <div class="section" id="coding-style-c">
-<span id="coding-style"></span><h1>Coding Style (C++)<a class="headerlink" href="#coding-style-c" title="Permalink to this headline">¶</a></h1>
+  <section id="coding-style-c">
+<span id="coding-style"></span><h1>Coding Style (C++)<a class="headerlink" href="#coding-style-c" title="Permalink to this headline">#</a></h1>
 <p>This is an overview of the coding conventions we use when writing C++
 code for the Open Chemistry projects. The style is based largely on the
 <a class="reference external" href="https://wiki.qt.io/Qt_Coding_Style">Qt</a> and
 <a class="reference external" href="https://community.kde.org/Policies/Library_Code_Policy">KDE</a> styles.</p>
 <p>Code formatting is enforced through use of the clang-format tool.</p>
-<div class="section" id="indentation">
-<h2>Indentation<a class="headerlink" href="#indentation" title="Permalink to this headline">¶</a></h2>
+<section id="indentation">
+<h2>Indentation<a class="headerlink" href="#indentation" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>2 spaces are used for indentation</p></li>
 <li><p>Spaces, not tabs!</p></li>
 </ul>
-</div>
-<div class="section" id="line-width">
-<span id="id1"></span><h2>Line Width<a class="headerlink" href="#line-width" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="line-width">
+<span id="id1"></span><h2>Line Width<a class="headerlink" href="#line-width" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Keep lines of source code to less than 80 characters wide.</p></li>
 </ul>
-</div>
-<div class="section" id="declaring-variables">
-<span id="id2"></span><h2>Declaring Variables<a class="headerlink" href="#declaring-variables" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="declaring-variables">
+<span id="id2"></span><h2>Declaring Variables<a class="headerlink" href="#declaring-variables" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Declare each variable on a separate line</p></li>
 <li><p>Avoid abbreviations (e.g. “a”, “nmbr”) where possible</p></li>
@@ -320,11 +319,11 @@ variables etc where the purpose is obvious</p></li>
 around</p></li>
 </ul>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Incorrect</span>
-<span class="kt">int</span> <span class="n">nmbr</span><span class="p">,</span> <span class="n">f</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">nmbr</span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="p">;</span><span class="w"></span>
 
 <span class="c1">// Correct</span>
-<span class="kt">int</span> <span class="n">number</span><span class="p">;</span>
-<span class="kt">int</span> <span class="n">result</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">number</span><span class="p">;</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">result</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -334,14 +333,14 @@ other words using camel case</p></li>
 <li><p>Acronyms are camel-cased (e.g. CmlFormat, not CMLFormat)</p></li>
 </ul>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Incorrect</span>
-<span class="kt">double</span> <span class="n">Cntr</span><span class="p">;</span>
-<span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">rawXML</span><span class="p">;</span>
-<span class="kt">char</span> <span class="n">LIST_DELIMITER</span> <span class="o">=</span> <span class="sc">&#39;\t&#39;</span><span class="p">;</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">Cntr</span><span class="p">;</span><span class="w"></span>
+<span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">rawXML</span><span class="p">;</span><span class="w"></span>
+<span class="kt">char</span><span class="w"> </span><span class="n">LIST_DELIMITER</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;\t&#39;</span><span class="p">;</span><span class="w"></span>
 
 <span class="c1">// Correct</span>
-<span class="kt">double</span> <span class="n">center</span><span class="p">;</span>
-<span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">rawXml</span><span class="p">;</span>
-<span class="kt">char</span> <span class="n">listDelimiter</span> <span class="o">=</span> <span class="sc">&#39;\t&#39;</span><span class="p">;</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">center</span><span class="p">;</span><span class="w"></span>
+<span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">rawXml</span><span class="p">;</span><span class="w"></span>
+<span class="kt">char</span><span class="w"> </span><span class="n">listDelimiter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;\t&#39;</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -349,25 +348,25 @@ other words using camel case</p></li>
 <li><p>Public classes should be placed inside the appropriate namespace</p></li>
 <li><p>Member variables should start with m_</p></li>
 </ul>
-</div>
-<div class="section" id="whitespace">
-<h2>Whitespace<a class="headerlink" href="#whitespace" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="whitespace">
+<h2>Whitespace<a class="headerlink" href="#whitespace" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Use blank lines to group statements together where appropriate</p></li>
 <li><p>Only use a single blank line</p></li>
 <li><p>Always use a single space after a keyword and before a curly brace</p></li>
 </ul>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Wrong</span>
-<span class="k">if</span><span class="p">(</span><span class="n">blah</span><span class="p">){</span>
-  <span class="n">explode</span><span class="p">();</span>
-  <span class="k">return</span> <span class="mi">5</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="k">if</span><span class="p">(</span><span class="n">blah</span><span class="p">){</span><span class="w"></span>
+<span class="w">  </span><span class="n">explode</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
 <span class="c1">// Correct</span>
-<span class="k">if</span> <span class="p">(</span><span class="n">blah</span><span class="p">)</span> <span class="p">{</span>
-  <span class="n">explode</span><span class="p">();</span>
-  <span class="k">return</span> <span class="mi">5</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">blah</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">explode</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -375,9 +374,9 @@ other words using camel case</p></li>
 type and the ‘*’ or ‘&amp;’, but no space between that character and the
 variable name.</p></li>
 </ul>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">char</span> <span class="o">*</span><span class="n">x</span><span class="p">;</span>
-<span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">myString</span><span class="p">;</span>
-<span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="k">const</span> <span class="n">y</span> <span class="o">=</span> <span class="s">&quot;whoah&quot;</span><span class="p">;</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">x</span><span class="p">;</span><span class="w"></span>
+<span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">myString</span><span class="p">;</span><span class="w"></span>
+<span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;whoah&quot;</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -386,30 +385,30 @@ variable name.</p></li>
 <li><p>Avoid the use of C-style casts</p></li>
 </ul>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Incorrect</span>
-<span class="kt">char</span><span class="o">*</span> <span class="n">memoryBlock</span> <span class="o">=</span> <span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="p">)</span> <span class="n">malloc</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+<span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">memoryBlock</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">size</span><span class="p">());</span><span class="w"></span>
 <span class="c1">// Correct</span>
-<span class="kt">char</span> <span class="o">*</span><span class="n">memoryBlock</span> <span class="o">=</span> <span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="kt">char</span> <span class="o">*&gt;</span><span class="p">(</span><span class="n">malloc</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">size</span><span class="p">()));</span>
+<span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">memoryBlock</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="kt">char</span><span class="w"> </span><span class="o">*&gt;</span><span class="p">(</span><span class="n">malloc</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">size</span><span class="p">()));</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="braces">
-<h2>Braces<a class="headerlink" href="#braces" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="braces">
+<h2>Braces<a class="headerlink" href="#braces" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>The left curly brace normally goes on the same line as the start of
 the statement</p></li>
 </ul>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">//Incorrect</span>
-<span class="k">if</span> <span class="p">(</span><span class="n">foo</span><span class="p">)</span>
-<span class="p">{</span>
-  <span class="n">run</span><span class="p">();</span>
-  <span class="k">break</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">foo</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">run</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
 <span class="c1">// Correct</span>
-<span class="k">if</span> <span class="p">(</span><span class="n">foo</span><span class="p">)</span> <span class="p">{</span>
-  <span class="n">run</span><span class="p">();</span>
-  <span class="k">break</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">foo</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">run</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -417,16 +416,16 @@ the statement</p></li>
 implementations. The left brace always goes on the start of a line
 there</p></li>
 </ul>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">myFun</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">name</span><span class="p">)</span>
-<span class="p">{</span>
-  <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Supplied name: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">name</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">myFun</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">name</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Supplied name: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="k">class</span> <span class="nc">Bar</span>
-<span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-  <span class="n">Bar</span><span class="p">();</span>
-<span class="p">};</span>
+<span class="k">class</span> <span class="nc">Bar</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="n">Bar</span><span class="p">();</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -434,20 +433,20 @@ there</p></li>
 one line, and also if a single statement is complex</p></li>
 </ul>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Incorrect</span>
-<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">correct</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">correct</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">42</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
-  <span class="n">var</span> <span class="o">+=</span> <span class="n">i</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">42</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">var</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
 <span class="c1">// Correct</span>
-<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">correct</span><span class="p">)</span>
-  <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">correct</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
 
-<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">42</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
-  <span class="n">var</span> <span class="o">+=</span> <span class="n">i</span><span class="p">;</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">42</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="n">var</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -455,10 +454,10 @@ one line, and also if a single statement is complex</p></li>
 one line/wraps</p></li>
 </ul>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Correct</span>
-<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">correct</span> <span class="o">||</span> <span class="o">!</span><span class="n">isValid</span>
-    <span class="o">||</span> <span class="o">!</span><span class="n">aGoodDay</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">correct</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="n">isValid</span><span class="w"></span>
+<span class="w">    </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="n">aGoodDay</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -466,152 +465,163 @@ one line/wraps</p></li>
 the elements cover several lines</p></li>
 </ul>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Incorrect</span>
-<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">correct</span><span class="p">)</span>
-  <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
-<span class="k">else</span> <span class="p">{</span>
-  <span class="o">++</span><span class="n">counter</span><span class="p">;</span>
-  <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">correct</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
+<span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="o">++</span><span class="n">counter</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
 <span class="c1">// Correct</span>
-<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">correct</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="k">else</span> <span class="p">{</span>
-  <span class="o">++</span><span class="n">counter</span><span class="p">;</span>
-  <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">correct</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="o">++</span><span class="n">counter</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
 <span class="c1">// Incorrect</span>
-<span class="k">if</span> <span class="p">(</span><span class="n">a</span><span class="p">)</span>
-  <span class="k">if</span> <span class="p">(</span><span class="n">b</span><span class="p">)</span>
-    <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
-  <span class="k">else</span>
-    <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">else</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
 
 <span class="c1">// Correct</span>
-<span class="k">if</span> <span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">if</span> <span class="p">(</span><span class="n">b</span><span class="p">)</span>
-    <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
-  <span class="k">else</span>
-    <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">else</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <ul class="simple">
 <li><p>Use curly braces when the body is empty.</p></li>
 </ul>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Incorrect</span>
-<span class="k">while</span> <span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nb">true</span><span class="p">);</span><span class="w"></span>
 
 <span class="c1">// Correct</span>
-<span class="k">while</span> <span class="p">(</span><span class="nb">true</span><span class="p">)</span> <span class="p">{}</span>
+<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nb">true</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="parentheses">
-<h2>Parentheses<a class="headerlink" href="#parentheses" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="parentheses">
+<h2>Parentheses<a class="headerlink" href="#parentheses" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Parentheses should be used to group expressions, and to make the
 intent clearer</p></li>
 </ul>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Incorrect</span>
-<span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">&amp;&amp;</span> <span class="n">b</span> <span class="o">||</span> <span class="n">c</span><span class="p">)</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">c</span><span class="p">)</span><span class="w"></span>
 
 <span class="c1">// Correct</span>
-<span class="k">if</span> <span class="p">((</span><span class="n">a</span> <span class="o">&amp;&amp;</span> <span class="n">b</span><span class="p">)</span> <span class="o">||</span> <span class="n">c</span><span class="p">)</span>
+<span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">a</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">c</span><span class="p">)</span><span class="w"></span>
 
 <span class="c1">// Incorrect</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">&amp;</span> <span class="n">c</span><span class="p">;</span>
+<span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">c</span><span class="p">;</span><span class="w"></span>
 
 <span class="c1">// Correct</span>
-<span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">c</span><span class="p">;</span>
+<span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">c</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="switch-statements">
-<span id="id3"></span><h2>Switch Statements<a class="headerlink" href="#switch-statements" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="switch-statements">
+<span id="id3"></span><h2>Switch Statements<a class="headerlink" href="#switch-statements" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>The case labels should be in the same column as the switch</p></li>
 <li><p>Every case must have a break/return statement at the end, or a
 comment to indicate the omission</p></li>
 <li><p>Exception: Another case follows immediately</p></li>
 </ul>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">switch</span> <span class="p">(</span><span class="n">myEnum</span><span class="p">)</span> <span class="p">{</span>
-<span class="k">case</span> <span class="nl">LINE</span><span class="p">:</span>
-  <span class="n">drawLine</span><span class="p">();</span>
-  <span class="k">break</span><span class="p">;</span>
-<span class="k">case</span> <span class="nl">POINT</span><span class="p">:</span>
-<span class="k">case</span> <span class="nl">VERTEX</span><span class="p">:</span>
-  <span class="n">drawDot</span><span class="p">();</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">myEnum</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="k">case</span><span class="w"> </span><span class="nl">LINE</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="n">drawLine</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="k">case</span><span class="w"> </span><span class="nl">POINT</span><span class="p">:</span><span class="w"></span>
+<span class="k">case</span><span class="w"> </span><span class="nl">VERTEX</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="n">drawDot</span><span class="p">();</span><span class="w"></span>
 <span class="c1">// Fall through to default.</span>
-<span class="k">default</span><span class="o">:</span>
-  <span class="n">drawDefault</span><span class="p">();</span>
-  <span class="k">break</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="k">default</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="n">drawDefault</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="line-breaks">
-<span id="id4"></span><h2>Line Breaks<a class="headerlink" href="#line-breaks" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="line-breaks">
+<span id="id4"></span><h2>Line Breaks<a class="headerlink" href="#line-breaks" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Keep lines shorter than 80 characters; insert breaks if necessary</p></li>
 <li><p>Commas go at the end of a broken line</p></li>
 <li><p>Operators go at the beginning of a new line</p></li>
 </ul>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Correct</span>
-<span class="k">if</span> <span class="p">(</span><span class="n">veryLongExpression</span><span class="p">()</span>
-    <span class="o">&amp;&amp;</span> <span class="n">anotherEvenLongerExpression</span><span class="p">()</span>
-    <span class="o">&amp;&amp;</span> <span class="n">justWhenYouThoughtItCouldntGetLonger</span><span class="p">())</span> <span class="p">{</span>
-  <span class="n">doSomething</span><span class="p">();</span>
-<span class="p">}</span>
-<span class="n">Eigen</span><span class="o">::</span><span class="n">Vector3d</span> <span class="n">position</span><span class="p">(</span><span class="n">currentPosition</span><span class="p">.</span><span class="n">x</span><span class="p">()</span> <span class="o">+</span> <span class="n">offset</span><span class="p">,</span>
-                         <span class="n">currentPosition</span><span class="p">.</span><span class="n">y</span><span class="p">()</span> <span class="o">+</span> <span class="n">offset</span><span class="p">,</span>
-                         <span class="mi">0</span><span class="p">);</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">veryLongExpression</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">anotherEvenLongerExpression</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">justWhenYouThoughtItCouldntGetLonger</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">doSomething</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="n">Eigen</span><span class="o">::</span><span class="n">Vector3d</span><span class="w"> </span><span class="n">position</span><span class="p">(</span><span class="n">currentPosition</span><span class="p">.</span><span class="n">x</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">offset</span><span class="p">,</span><span class="w"></span>
+<span class="w">                         </span><span class="n">currentPosition</span><span class="p">.</span><span class="n">y</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">offset</span><span class="p">,</span><span class="w"></span>
+<span class="w">                         </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="inheritance-and-the-virtual-keyword">
-<span id="id5"></span><h2>Inheritance and the “virtual” Keyword<a class="headerlink" href="#inheritance-and-the-virtual-keyword" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="inheritance-and-the-virtual-keyword">
+<span id="id5"></span><h2>Inheritance and the “virtual” Keyword<a class="headerlink" href="#inheritance-and-the-virtual-keyword" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>When reimplementing a virtual method, do not put the “virtual”
 keyword in the header</p></li>
 </ul>
-</div>
-<div class="section" id="referencing-members">
-<span id="id6"></span><h2>Referencing Members<a class="headerlink" href="#referencing-members" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="referencing-members">
+<span id="id6"></span><h2>Referencing Members<a class="headerlink" href="#referencing-members" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>The use of this-&gt; is discouraged. The use of the m_ prefix should
 make it clear that a member variable is being referenced.</p></li>
 </ul>
-</div>
-<div class="section" id="file-naming">
-<span id="id7"></span><h2>File Naming<a class="headerlink" href="#file-naming" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="file-naming">
+<span id="id7"></span><h2>File Naming<a class="headerlink" href="#file-naming" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>All file names should be lower-case.</p></li>
 <li><p>C++ source files should have a .cpp extension.</p></li>
 <li><p>C++ header files should have a .h extension.</p></li>
 </ul>
-</div>
-<div class="section" id="breaking-rules">
-<span id="general-exception"></span><h2>Breaking Rules<a class="headerlink" href="#breaking-rules" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="breaking-rules">
+<span id="general-exception"></span><h2>Breaking Rules<a class="headerlink" href="#breaking-rules" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>As with Qt, and others, feel free to break a rule if it makes your
 code look bad!</p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>
               
               
-              <div class='prev-next-bottom'>
-                
-    <a class='left-prev' id="prev-link" href="conventions.html" title="previous page">Coding Conventions (C++)</a>
-    <a class='right-next' id="next-link" href="code-docs.html" title="next page">Documenting Code</a>
-
-              </div>
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="conventions.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Coding Conventions (C++)</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="code-docs.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Documenting Code</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
               
           </main>
           
@@ -619,16 +629,16 @@ code look bad!</p></li>
       </div>
     </div>
   
-  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
-
-  <footer class="container-fluid footer-copy">
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+<footer class="container-fluid footer-copy">
 
     <div class="container">
 
       <div class="row">
         <div class="col-md-10 py-2">
           <p>
-            ©2021 The OpenChemistry / Avogadro Teams. The website content uses the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/LICENSE">BSD License</a> and is covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
+            ©2022 The OpenChemistry / Avogadro Teams. The website content uses the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/LICENSE">BSD License</a> and is covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
           </p>
         </div>
         <br />

@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Class Avogadro::Core::Residue &#8212; Avogadro 1.94.0-55-gbefc28e8 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Class Avogadro::Core::Residue &#8212; Avogadro 1.95.1 documentation</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,19 +20,15 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
@@ -40,10 +38,13 @@
     <link rel="next" title="Class Avogadro::Core::ResidueData" href="class_avogadro_1_1_core_1_1_residue_data.html" />
     <link rel="prev" title="Class Avogadro::Core::NameAtomTyper" href="class_avogadro_1_1_core_1_1_name_atom_typer.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -111,16 +112,12 @@
       <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
-          <a class="nav-link" href="https://github.com/openchemistry/avogadrolibs" rel="noopener" target="_blank" title="GitHub">
-            <span><i class="fab fa-github-square"></i></span>
-            <label class="sr-only">GitHub</label>
-          </a>
+          <a class="nav-link" href="https://github.com/openchemistry/avogadrolibs" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://twitter.com/AvogadroChem" rel="noopener" target="_blank" title="Twitter">
-            <span><i class="fab fa-twitter-square"></i></span>
-            <label class="sr-only">Twitter</label>
-          </a>
+          <a class="nav-link" href="https://twitter.com/AvogadroChem" rel="noopener" target="_blank" title="Twitter"><span><i class="fab fa-twitter-square"></i></span>
+            <label class="sr-only">Twitter</label></a>
         </li>
       </ul>
       </div>
@@ -136,7 +133,8 @@
           
             
             <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
@@ -435,11 +433,13 @@
 
   </div>
 </nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
             </div>
             
           
 
-          
           
           <div class="d-none d-xl-block col-xl-2 bd-toc">
             
@@ -466,27 +466,77 @@
             
           </div>
           
-          
 
           
           
             
-            
+          
           <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
-            
+              
               <div>
                 
-  <div class="section" id="class-avogadro-core-residue">
-<h1>Class Avogadro::Core::Residue<a class="headerlink" href="#class-avogadro-core-residue" title="Permalink to this headline">¶</a></h1>
+  <section id="class-avogadro-core-residue">
+<h1>Class Avogadro::Core::Residue<a class="headerlink" href="#class-avogadro-core-residue" title="Permalink to this headline">#</a></h1>
 <dl class="cpp class">
-<dt id="_CPPv4N8Avogadro4Core7ResidueE">
-<span id="_CPPv3N8Avogadro4Core7ResidueE"></span><span id="_CPPv2N8Avogadro4Core7ResidueE"></span><span id="Avogadro::Core::Residue"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue"></span><em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">Avogadro</span><span class="pre">::</span><span class="pre">Core</span><code class="sig-prename descclassname"><span class="pre">::</span></code></code><code class="sig-name descname"><span class="pre">Residue</span></code><a class="headerlink" href="#_CPPv4N8Avogadro4Core7ResidueE" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core7ResidueE">
+<span id="_CPPv3N8Avogadro4Core7ResidueE"></span><span id="_CPPv2N8Avogadro4Core7ResidueE"></span><span id="Avogadro::Core::Residue"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">Avogadro</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">Residue</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7ResidueE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>The <a class="reference internal" href="#class_avogadro_1_1_core_1_1_residue"><span class="std std-ref">Residue</span></a> class represents a chemical residue, used commonly in the PDB format. </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-types">Public Types</p>
+<dl class="cpp enum">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core7Residue18SecondaryStructureE">
+<span id="_CPPv3N8Avogadro4Core7Residue18SecondaryStructureE"></span><span id="_CPPv2N8Avogadro4Core7Residue18SecondaryStructureE"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1ad36b898792bb1dd1a835110e96d0a78a"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SecondaryStructure</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Residue18SecondaryStructureE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core7Residue18SecondaryStructure7piHelixE">
+<span id="_CPPv3N8Avogadro4Core7Residue18SecondaryStructure7piHelixE"></span><span id="_CPPv2N8Avogadro4Core7Residue18SecondaryStructure7piHelixE"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1ad36b898792bb1dd1a835110e96d0a78aab8518acf4b212eff2233d24dafd011de"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">piHelix</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Residue18SecondaryStructure7piHelixE" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core7Residue18SecondaryStructure4bendE">
+<span id="_CPPv3N8Avogadro4Core7Residue18SecondaryStructure4bendE"></span><span id="_CPPv2N8Avogadro4Core7Residue18SecondaryStructure4bendE"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1ad36b898792bb1dd1a835110e96d0a78aacacb34aaf806c37bedd00abcfe0b88b1"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">bend</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Residue18SecondaryStructure4bendE" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core7Residue18SecondaryStructure10alphaHelixE">
+<span id="_CPPv3N8Avogadro4Core7Residue18SecondaryStructure10alphaHelixE"></span><span id="_CPPv2N8Avogadro4Core7Residue18SecondaryStructure10alphaHelixE"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1ad36b898792bb1dd1a835110e96d0a78aa4d26aed6bdcb909ba83e153d6ed39c2f"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">alphaHelix</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Residue18SecondaryStructure10alphaHelixE" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core7Residue18SecondaryStructure9betaSheetE">
+<span id="_CPPv3N8Avogadro4Core7Residue18SecondaryStructure9betaSheetE"></span><span id="_CPPv2N8Avogadro4Core7Residue18SecondaryStructure9betaSheetE"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1ad36b898792bb1dd1a835110e96d0a78aac898f35dfd49eaf989e764a28d05e69f"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">betaSheet</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Residue18SecondaryStructure9betaSheetE" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core7Residue18SecondaryStructure8helix310E">
+<span id="_CPPv3N8Avogadro4Core7Residue18SecondaryStructure8helix310E"></span><span id="_CPPv2N8Avogadro4Core7Residue18SecondaryStructure8helix310E"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1ad36b898792bb1dd1a835110e96d0a78aa114368e75078baf59f6840af188aacae"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">helix310</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Residue18SecondaryStructure8helix310E" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core7Residue18SecondaryStructure10betaBridgeE">
+<span id="_CPPv3N8Avogadro4Core7Residue18SecondaryStructure10betaBridgeE"></span><span id="_CPPv2N8Avogadro4Core7Residue18SecondaryStructure10betaBridgeE"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1ad36b898792bb1dd1a835110e96d0a78aa39edb7820d2e2897cb1e2a3cd3c86d49"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">betaBridge</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Residue18SecondaryStructure10betaBridgeE" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core7Residue18SecondaryStructure4turnE">
+<span id="_CPPv3N8Avogadro4Core7Residue18SecondaryStructure4turnE"></span><span id="_CPPv2N8Avogadro4Core7Residue18SecondaryStructure4turnE"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1ad36b898792bb1dd1a835110e96d0a78aa6c718be48a89fed107a3273c6cb47f6d"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">turn</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Residue18SecondaryStructure4turnE" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core7Residue18SecondaryStructure4coilE">
+<span id="_CPPv3N8Avogadro4Core7Residue18SecondaryStructure4coilE"></span><span id="_CPPv2N8Avogadro4Core7Residue18SecondaryStructure4coilE"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1ad36b898792bb1dd1a835110e96d0a78aa8785241b43e40eb37569e360bbd80f23"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">coil</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Residue18SecondaryStructure4coilE" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core7Residue18SecondaryStructure9undefinedE">
+<span id="_CPPv3N8Avogadro4Core7Residue18SecondaryStructure9undefinedE"></span><span id="_CPPv2N8Avogadro4Core7Residue18SecondaryStructure9undefinedE"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1ad36b898792bb1dd1a835110e96d0a78aaf35387cab0e820dcf7df1ed4702043e1"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">undefined</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Residue18SecondaryStructure9undefinedE" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 <dl class="cpp type">
-<dt id="_CPPv4N8Avogadro4Core7Residue11AtomNameMapE">
-<span id="_CPPv3N8Avogadro4Core7Residue11AtomNameMapE"></span><span id="_CPPv2N8Avogadro4Core7Residue11AtomNameMapE"></span><span id="Avogadro::Core::Residue::AtomNameMap"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1a14b6b01904357cfff299d2bbf5a71dd0"></span><em class="property"><span class="pre">typedef</span> </em><span class="pre">std</span><span class="pre">::</span><span class="pre">map</span><span class="pre">&lt;</span><span class="pre">std</span><span class="pre">::</span><span class="pre">string</span><span class="pre">,</span> <a class="reference internal" href="class_avogadro_1_1_core_1_1_atom.html#_CPPv4N8Avogadro4Core4AtomE" title="Avogadro::Core::Atom"><span class="pre">Atom</span></a><span class="pre">&gt;</span> <code class="sig-name descname"><span class="pre">AtomNameMap</span></code><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Residue11AtomNameMapE" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core7Residue11AtomNameMapE">
+<span id="_CPPv3N8Avogadro4Core7Residue11AtomNameMapE"></span><span id="_CPPv2N8Avogadro4Core7Residue11AtomNameMapE"></span><span id="Avogadro::Core::Residue::AtomNameMap"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1a14b6b01904357cfff299d2bbf5a71dd0"></span><span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">map</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_core_1_1_atom.html#_CPPv4N8Avogadro4Core4AtomE" title="Avogadro::Core::Atom"><span class="n"><span class="pre">Atom</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AtomNameMap</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Residue11AtomNameMapE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Type for atom name map. </p>
 </dd></dl>
 
@@ -494,80 +544,90 @@
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro4Core7Residue7ResidueEv">
-<span id="_CPPv3N8Avogadro4Core7Residue7ResidueEv"></span><span id="_CPPv2N8Avogadro4Core7Residue7ResidueEv"></span><span id="Avogadro::Core::Residue::Residue"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1a2c020cf1aebff14954e47d6c4d3adb1c"></span><code class="sig-name descname"><span class="pre">Residue</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Residue7ResidueEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core7Residue7ResidueEv">
+<span id="_CPPv3N8Avogadro4Core7Residue7ResidueEv"></span><span id="_CPPv2N8Avogadro4Core7Residue7ResidueEv"></span><span id="Avogadro::Core::Residue::Residue"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1a2c020cf1aebff14954e47d6c4d3adb1c"></span><span class="sig-name descname"><span class="n"><span class="pre">Residue</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Residue7ResidueEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Creates a new, empty residue. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro4Core7Residue7ResidueERNSt6stringE">
-<span id="_CPPv3N8Avogadro4Core7Residue7ResidueERNSt6stringE"></span><span id="_CPPv2N8Avogadro4Core7Residue7ResidueERNSt6stringE"></span><span id="Avogadro::Core::Residue::Residue__ssR"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1a978763610ddd822506b55a9b66197e3c"></span><code class="sig-name descname"><span class="pre">Residue</span></code><span class="sig-paren">(</span><span class="pre">std</span><span class="pre">::</span><span class="pre">string</span> <span class="pre">&amp;</span><em><span class="pre">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Residue7ResidueERNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core7Residue7ResidueERNSt6stringE">
+<span id="_CPPv3N8Avogadro4Core7Residue7ResidueERNSt6stringE"></span><span id="_CPPv2N8Avogadro4Core7Residue7ResidueERNSt6stringE"></span><span id="Avogadro::Core::Residue::Residue__ssR"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1a978763610ddd822506b55a9b66197e3c"></span><span class="sig-name descname"><span class="n"><span class="pre">Residue</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Residue7ResidueERNSt6stringE" title="Permalink to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro4Core7Residue7ResidueERNSt6stringER5Index">
-<span id="_CPPv3N8Avogadro4Core7Residue7ResidueERNSt6stringER5Index"></span><span id="_CPPv2N8Avogadro4Core7Residue7ResidueERNSt6stringER5Index"></span><span id="Avogadro::Core::Residue::Residue__ssR.IndexR"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1afc12e5c671871a4647c6383a100c3100"></span><code class="sig-name descname"><span class="pre">Residue</span></code><span class="sig-paren">(</span><span class="pre">std</span><span class="pre">::</span><span class="pre">string</span> <span class="pre">&amp;</span><em><span class="pre">name</span></em>, <span class="pre">Index</span> <span class="pre">&amp;</span><em><span class="pre">number</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Residue7ResidueERNSt6stringER5Index" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core7Residue7ResidueERNSt6stringER5Index">
+<span id="_CPPv3N8Avogadro4Core7Residue7ResidueERNSt6stringER5Index"></span><span id="_CPPv2N8Avogadro4Core7Residue7ResidueERNSt6stringER5Index"></span><span id="Avogadro::Core::Residue::Residue__ssR.IndexR"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1afc12e5c671871a4647c6383a100c3100"></span><span class="sig-name descname"><span class="n"><span class="pre">Residue</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span>, <span class="n"><span class="pre">Index</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">number</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Residue7ResidueERNSt6stringER5Index" title="Permalink to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro4Core7Residue7ResidueERNSt6stringER5IndexRc">
-<span id="_CPPv3N8Avogadro4Core7Residue7ResidueERNSt6stringER5IndexRc"></span><span id="_CPPv2N8Avogadro4Core7Residue7ResidueERNSt6stringER5IndexRc"></span><span id="Avogadro::Core::Residue::Residue__ssR.IndexR.cR"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1a63cced37dab8c5565ffe1729f0eefd73"></span><code class="sig-name descname"><span class="pre">Residue</span></code><span class="sig-paren">(</span><span class="pre">std</span><span class="pre">::</span><span class="pre">string</span> <span class="pre">&amp;</span><em><span class="pre">name</span></em>, <span class="pre">Index</span> <span class="pre">&amp;</span><em><span class="pre">number</span></em>, <span class="pre">char</span> <span class="pre">&amp;</span><em><span class="pre">id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Residue7ResidueERNSt6stringER5IndexRc" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core7Residue7ResidueERNSt6stringER5IndexRc">
+<span id="_CPPv3N8Avogadro4Core7Residue7ResidueERNSt6stringER5IndexRc"></span><span id="_CPPv2N8Avogadro4Core7Residue7ResidueERNSt6stringER5IndexRc"></span><span id="Avogadro::Core::Residue::Residue__ssR.IndexR.cR"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1a63cced37dab8c5565ffe1729f0eefd73"></span><span class="sig-name descname"><span class="n"><span class="pre">Residue</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span>, <span class="n"><span class="pre">Index</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">number</span></span>, <span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">id</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Residue7ResidueERNSt6stringER5IndexRc" title="Permalink to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro4Core7Residue7ResidueERK7Residue">
-<span id="_CPPv3N8Avogadro4Core7Residue7ResidueERK7Residue"></span><span id="_CPPv2N8Avogadro4Core7Residue7ResidueERK7Residue"></span><span id="Avogadro::Core::Residue::Residue__ResidueCR"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1a50da9ddd77f2acbcff3c66c3045f9819"></span><code class="sig-name descname"><span class="pre">Residue</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4N8Avogadro4Core7Residue7ResidueERK7Residue" title="Avogadro::Core::Residue::Residue"><span class="pre">Residue</span></a> <span class="pre">&amp;</span><em><span class="pre">other</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Residue7ResidueERK7Residue" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core7Residue7ResidueERK7Residue">
+<span id="_CPPv3N8Avogadro4Core7Residue7ResidueERK7Residue"></span><span id="_CPPv2N8Avogadro4Core7Residue7ResidueERK7Residue"></span><span id="Avogadro::Core::Residue::Residue__ResidueCR"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1a50da9ddd77f2acbcff3c66c3045f9819"></span><span class="sig-name descname"><span class="n"><span class="pre">Residue</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro4Core7Residue7ResidueERK7Residue" title="Avogadro::Core::Residue::Residue"><span class="n"><span class="pre">Residue</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Residue7ResidueERK7Residue" title="Permalink to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro4Core7ResidueaSE7Residue">
-<span id="_CPPv3N8Avogadro4Core7ResidueaSE7Residue"></span><span id="_CPPv2N8Avogadro4Core7ResidueaSE7Residue"></span><span id="Avogadro::Core::Residue::assign-operator__Residue"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1ac867cf52d24557d409f34fe2d56e605c"></span><a class="reference internal" href="#_CPPv4N8Avogadro4Core7ResidueE" title="Avogadro::Core::Residue"><span class="pre">Residue</span></a> <span class="pre">&amp;</span><code class="sig-name descname"><span class="pre">operator=</span></code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N8Avogadro4Core7ResidueE" title="Avogadro::Core::Residue"><span class="pre">Residue</span></a> <em><span class="pre">other</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7ResidueaSE7Residue" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core7ResidueaSE7Residue">
+<span id="_CPPv3N8Avogadro4Core7ResidueaSE7Residue"></span><span id="_CPPv2N8Avogadro4Core7ResidueaSE7Residue"></span><span id="Avogadro::Core::Residue::assign-operator__Residue"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1ac867cf52d24557d409f34fe2d56e605c"></span><a class="reference internal" href="#_CPPv4N8Avogadro4Core7ResidueE" title="Avogadro::Core::Residue"><span class="n"><span class="pre">Residue</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N8Avogadro4Core7ResidueE" title="Avogadro::Core::Residue"><span class="n"><span class="pre">Residue</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7ResidueaSE7Residue" title="Permalink to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro4Core7ResidueD0Ev">
-<span id="_CPPv3N8Avogadro4Core7ResidueD0Ev"></span><span id="_CPPv2N8Avogadro4Core7ResidueD0Ev"></span><span id="Avogadro::Core::Residue::~Residue"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1a8f0fff3676c233e78db9a752e2aee4a3"></span><em class="property"><span class="pre">virtual</span></em> <code class="sig-name descname"><span class="pre">~Residue</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7ResidueD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core7ResidueD0Ev">
+<span id="_CPPv3N8Avogadro4Core7ResidueD0Ev"></span><span id="_CPPv2N8Avogadro4Core7ResidueD0Ev"></span><span id="Avogadro::Core::Residue::~Residue"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1a8f0fff3676c233e78db9a752e2aee4a3"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">~Residue</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7ResidueD0Ev" title="Permalink to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro4Core7Residue11residueNameEv">
-<span id="_CPPv3N8Avogadro4Core7Residue11residueNameEv"></span><span id="_CPPv2N8Avogadro4Core7Residue11residueNameEv"></span><span id="Avogadro::Core::Residue::residueName"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1ab692cc316fd6a3a6a7e97c998128f63d"></span><em class="property"><span class="pre">inline</span></em> <span class="pre">std</span><span class="pre">::</span><span class="pre">string</span> <code class="sig-name descname"><span class="pre">residueName</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Residue11residueNameEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core7Residue11residueNameEv">
+<span id="_CPPv3NK8Avogadro4Core7Residue11residueNameEv"></span><span id="_CPPv2NK8Avogadro4Core7Residue11residueNameEv"></span><span id="Avogadro::Core::Residue::residueNameC"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1a81e294e3a4623d29d2b4fc019fe34952"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">residueName</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core7Residue11residueNameEv" title="Permalink to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro4Core7Residue14setResidueNameERNSt6stringE">
-<span id="_CPPv3N8Avogadro4Core7Residue14setResidueNameERNSt6stringE"></span><span id="_CPPv2N8Avogadro4Core7Residue14setResidueNameERNSt6stringE"></span><span id="Avogadro::Core::Residue::setResidueName__ssR"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1a6600541a8b2603d4615e36831858a0a0"></span><em class="property"><span class="pre">inline</span></em> <span class="pre">void</span> <code class="sig-name descname"><span class="pre">setResidueName</span></code><span class="sig-paren">(</span><span class="pre">std</span><span class="pre">::</span><span class="pre">string</span> <span class="pre">&amp;</span><em><span class="pre">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Residue14setResidueNameERNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core7Residue14setResidueNameERNSt6stringE">
+<span id="_CPPv3N8Avogadro4Core7Residue14setResidueNameERNSt6stringE"></span><span id="_CPPv2N8Avogadro4Core7Residue14setResidueNameERNSt6stringE"></span><span id="Avogadro::Core::Residue::setResidueName__ssR"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1a6600541a8b2603d4615e36831858a0a0"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setResidueName</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Residue14setResidueNameERNSt6stringE" title="Permalink to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro4Core7Residue9residueIdEv">
-<span id="_CPPv3N8Avogadro4Core7Residue9residueIdEv"></span><span id="_CPPv2N8Avogadro4Core7Residue9residueIdEv"></span><span id="Avogadro::Core::Residue::residueId"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1aae59757254bdf7e46ad5c49f774b7d56"></span><em class="property"><span class="pre">inline</span></em> <span class="pre">Index</span> <code class="sig-name descname"><span class="pre">residueId</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Residue9residueIdEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core7Residue9residueIdEv">
+<span id="_CPPv3NK8Avogadro4Core7Residue9residueIdEv"></span><span id="_CPPv2NK8Avogadro4Core7Residue9residueIdEv"></span><span id="Avogadro::Core::Residue::residueIdC"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1a32d21cfd685cbfc7d09edb986bb94f01"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">Index</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">residueId</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core7Residue9residueIdEv" title="Permalink to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro4Core7Residue12setResidueIdER5Index">
-<span id="_CPPv3N8Avogadro4Core7Residue12setResidueIdER5Index"></span><span id="_CPPv2N8Avogadro4Core7Residue12setResidueIdER5Index"></span><span id="Avogadro::Core::Residue::setResidueId__IndexR"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1a203c527d352f9eeffea043b9c3464bdf"></span><em class="property"><span class="pre">inline</span></em> <span class="pre">void</span> <code class="sig-name descname"><span class="pre">setResidueId</span></code><span class="sig-paren">(</span><span class="pre">Index</span> <span class="pre">&amp;</span><em><span class="pre">number</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Residue12setResidueIdER5Index" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core7Residue12setResidueIdER5Index">
+<span id="_CPPv3N8Avogadro4Core7Residue12setResidueIdER5Index"></span><span id="_CPPv2N8Avogadro4Core7Residue12setResidueIdER5Index"></span><span id="Avogadro::Core::Residue::setResidueId__IndexR"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1a203c527d352f9eeffea043b9c3464bdf"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setResidueId</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Index</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">number</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Residue12setResidueIdER5Index" title="Permalink to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro4Core7Residue7chainIdEv">
-<span id="_CPPv3N8Avogadro4Core7Residue7chainIdEv"></span><span id="_CPPv2N8Avogadro4Core7Residue7chainIdEv"></span><span id="Avogadro::Core::Residue::chainId"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1a5e98ee44519e3580f4ba68a691daa19f"></span><em class="property"><span class="pre">inline</span></em> <span class="pre">char</span> <code class="sig-name descname"><span class="pre">chainId</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Residue7chainIdEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core7Residue7chainIdEv">
+<span id="_CPPv3NK8Avogadro4Core7Residue7chainIdEv"></span><span id="_CPPv2NK8Avogadro4Core7Residue7chainIdEv"></span><span id="Avogadro::Core::Residue::chainIdC"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1a11c19ecefd153c0abcebb5ccaceabab5"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">chainId</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core7Residue7chainIdEv" title="Permalink to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro4Core7Residue10setChainIdERc">
-<span id="_CPPv3N8Avogadro4Core7Residue10setChainIdERc"></span><span id="_CPPv2N8Avogadro4Core7Residue10setChainIdERc"></span><span id="Avogadro::Core::Residue::setChainId__cR"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1a2ab9f09ce7cb5f18a64260980474c401"></span><em class="property"><span class="pre">inline</span></em> <span class="pre">void</span> <code class="sig-name descname"><span class="pre">setChainId</span></code><span class="sig-paren">(</span><span class="pre">char</span> <span class="pre">&amp;</span><em><span class="pre">id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Residue10setChainIdERc" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core7Residue10setChainIdERKc">
+<span id="_CPPv3N8Avogadro4Core7Residue10setChainIdERKc"></span><span id="_CPPv2N8Avogadro4Core7Residue10setChainIdERKc"></span><span id="Avogadro::Core::Residue::setChainId__cCR"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1a8febe3a87fe5f93489d55625bb305301"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setChainId</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">id</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Residue10setChainIdERKc" title="Permalink to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro4Core7Residue14addResidueAtomERNSt6stringER4Atom">
-<span id="_CPPv3N8Avogadro4Core7Residue14addResidueAtomERNSt6stringER4Atom"></span><span id="_CPPv2N8Avogadro4Core7Residue14addResidueAtomERNSt6stringER4Atom"></span><span id="Avogadro::Core::Residue::addResidueAtom__ssR.AtomR"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1a1753a88d44c70a1ce2aa3b869519be95"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">addResidueAtom</span></code><span class="sig-paren">(</span><span class="pre">std</span><span class="pre">::</span><span class="pre">string</span> <span class="pre">&amp;</span><em><span class="pre">name</span></em>, <a class="reference internal" href="class_avogadro_1_1_core_1_1_atom.html#_CPPv4N8Avogadro4Core4AtomE" title="Avogadro::Core::Atom"><span class="pre">Atom</span></a> <span class="pre">&amp;</span><em><span class="pre">atom</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Residue14addResidueAtomERNSt6stringER4Atom" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core7Residue18secondaryStructureEv">
+<span id="_CPPv3NK8Avogadro4Core7Residue18secondaryStructureEv"></span><span id="_CPPv2NK8Avogadro4Core7Residue18secondaryStructureEv"></span><span id="Avogadro::Core::Residue::secondaryStructureC"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1a024bc7f75f999b7a4af7a308eb7e11c9"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro4Core7Residue18SecondaryStructureE" title="Avogadro::Core::Residue::SecondaryStructure"><span class="n"><span class="pre">SecondaryStructure</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">secondaryStructure</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core7Residue18secondaryStructureEv" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core7Residue21setSecondaryStructureERK18SecondaryStructure">
+<span id="_CPPv3N8Avogadro4Core7Residue21setSecondaryStructureERK18SecondaryStructure"></span><span id="_CPPv2N8Avogadro4Core7Residue21setSecondaryStructureERK18SecondaryStructure"></span><span id="Avogadro::Core::Residue::setSecondaryStructure__SecondaryStructureCR"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1af688ec95b2ba025a1e15cf815a42dadc"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setSecondaryStructure</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro4Core7Residue18SecondaryStructureE" title="Avogadro::Core::Residue::SecondaryStructure"><span class="n"><span class="pre">SecondaryStructure</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">ss</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Residue21setSecondaryStructureERK18SecondaryStructure" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core7Residue14addResidueAtomERKNSt6stringERK4Atom">
+<span id="_CPPv3N8Avogadro4Core7Residue14addResidueAtomERKNSt6stringERK4Atom"></span><span id="_CPPv2N8Avogadro4Core7Residue14addResidueAtomERKNSt6stringERK4Atom"></span><span id="Avogadro::Core::Residue::addResidueAtom__ssCR.AtomCR"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1a0019c4261d0dfdf31eee3fee80abbe16"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addResidueAtom</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_core_1_1_atom.html#_CPPv4N8Avogadro4Core4AtomE" title="Avogadro::Core::Atom"><span class="n"><span class="pre">Atom</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">atom</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Residue14addResidueAtomERKNSt6stringERK4Atom" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Adds an atom to the residue class </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro4Core7Residue12residueAtomsEv">
-<span id="_CPPv3N8Avogadro4Core7Residue12residueAtomsEv"></span><span id="_CPPv2N8Avogadro4Core7Residue12residueAtomsEv"></span><span id="Avogadro::Core::Residue::residueAtoms"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1ae45650e5f87237ec4cbe109b622ad817"></span><span class="pre">std</span><span class="pre">::</span><span class="pre">vector</span><span class="pre">&lt;</span><a class="reference internal" href="class_avogadro_1_1_core_1_1_atom.html#_CPPv4N8Avogadro4Core4AtomE" title="Avogadro::Core::Atom"><span class="pre">Atom</span></a><span class="pre">&gt;</span> <code class="sig-name descname"><span class="pre">residueAtoms</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Residue12residueAtomsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core7Residue12residueAtomsEv">
+<span id="_CPPv3NK8Avogadro4Core7Residue12residueAtomsEv"></span><span id="_CPPv2NK8Avogadro4Core7Residue12residueAtomsEv"></span><span id="Avogadro::Core::Residue::residueAtomsC"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1a5afb0aa3bf9ca47199cdaee720f4a791"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_atom.html#_CPPv4N8Avogadro4Core4AtomE" title="Avogadro::Core::Atom"><span class="n"><span class="pre">Atom</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">residueAtoms</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core7Residue12residueAtomsEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>a vector containing the atoms added to the residue </p>
@@ -576,32 +636,74 @@
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro4Core7Residue19resolveResidueBondsER8Molecule">
-<span id="_CPPv3N8Avogadro4Core7Residue19resolveResidueBondsER8Molecule"></span><span id="_CPPv2N8Avogadro4Core7Residue19resolveResidueBondsER8Molecule"></span><span id="Avogadro::Core::Residue::resolveResidueBonds__MoleculeR"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1a7f5eaf178ad49019369c88942fe756f8"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">resolveResidueBonds</span></code><span class="sig-paren">(</span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="pre">Molecule</span></a> <span class="pre">&amp;</span><em><span class="pre">mol</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Residue19resolveResidueBondsER8Molecule" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core7Residue11atomNameMapEv">
+<span id="_CPPv3N8Avogadro4Core7Residue11atomNameMapEv"></span><span id="_CPPv2N8Avogadro4Core7Residue11atomNameMapEv"></span><span id="Avogadro::Core::Residue::atomNameMap"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1a7bdffd4c6ce5769f6665d41e3849f3a0"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro4Core7Residue11AtomNameMapE" title="Avogadro::Core::Residue::AtomNameMap"><span class="n"><span class="pre">AtomNameMap</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">atomNameMap</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Residue11atomNameMapEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the atom map for the residue </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core7Residue19resolveResidueBondsER8Molecule">
+<span id="_CPPv3N8Avogadro4Core7Residue19resolveResidueBondsER8Molecule"></span><span id="_CPPv2N8Avogadro4Core7Residue19resolveResidueBondsER8Molecule"></span><span id="Avogadro::Core::Residue::resolveResidueBonds__MoleculeR"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1a7f5eaf178ad49019369c88942fe756f8"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">resolveResidueBonds</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">mol</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Residue19resolveResidueBondsER8Molecule" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Sets bonds to atoms in the residue based on data from residuedata header </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro4Core7Residue13getAtomByNameENSt6stringE">
-<span id="_CPPv3N8Avogadro4Core7Residue13getAtomByNameENSt6stringE"></span><span id="_CPPv2N8Avogadro4Core7Residue13getAtomByNameENSt6stringE"></span><span id="Avogadro::Core::Residue::getAtomByName__ss"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1ad46c52eaff71d6e375a2e0a4c5ed4c59"></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_atom.html#_CPPv4N8Avogadro4Core4AtomE" title="Avogadro::Core::Atom"><span class="pre">Atom</span></a> <code class="sig-name descname"><span class="pre">getAtomByName</span></code><span class="sig-paren">(</span><span class="pre">std</span><span class="pre">::</span><span class="pre">string</span> <em><span class="pre">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Residue13getAtomByNameENSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core7Residue13getAtomByNameENSt6stringE">
+<span id="_CPPv3NK8Avogadro4Core7Residue13getAtomByNameENSt6stringE"></span><span id="_CPPv2NK8Avogadro4Core7Residue13getAtomByNameENSt6stringE"></span><span id="Avogadro::Core::Residue::getAtomByName__ssC"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1a20cd47e3fa3978901523020578d53f65"></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_atom.html#_CPPv4N8Avogadro4Core4AtomE" title="Avogadro::Core::Atom"><span class="n"><span class="pre">Atom</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getAtomByName</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core7Residue13getAtomByNameENSt6stringE" title="Permalink to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the atom with the name specified (e.g., “CA”) </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core7Residue15getAtomicNumberENSt6stringE">
+<span id="_CPPv3NK8Avogadro4Core7Residue15getAtomicNumberENSt6stringE"></span><span id="_CPPv2NK8Avogadro4Core7Residue15getAtomicNumberENSt6stringE"></span><span id="Avogadro::Core::Residue::getAtomicNumber__ssC"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1ab1ed77d4900cc5a5d7bce7e81eddd59c"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getAtomicNumber</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core7Residue15getAtomicNumberENSt6stringE" title="Permalink to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the atomic number of the atom with the name specified (e.g., “CA” = “C”) </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core7Residue14hasAtomByIndexE5Index">
+<span id="_CPPv3NK8Avogadro4Core7Residue14hasAtomByIndexE5Index"></span><span id="_CPPv2NK8Avogadro4Core7Residue14hasAtomByIndexE5Index"></span><span id="Avogadro::Core::Residue::hasAtomByIndex__IndexC"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1aeb21a89a27f6060708a35305427548ef"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">hasAtomByIndex</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Index</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">index</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core7Residue14hasAtomByIndexE5Index" title="Permalink to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro4Core7Residue15getAtomicNumberENSt6stringE">
-<span id="_CPPv3N8Avogadro4Core7Residue15getAtomicNumberENSt6stringE"></span><span id="_CPPv2N8Avogadro4Core7Residue15getAtomicNumberENSt6stringE"></span><span id="Avogadro::Core::Residue::getAtomicNumber__ss"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1ad99d56f183b546cd6a15a717bfa70b00"></span><span class="pre">int</span> <code class="sig-name descname"><span class="pre">getAtomicNumber</span></code><span class="sig-paren">(</span><span class="pre">std</span><span class="pre">::</span><span class="pre">string</span> <em><span class="pre">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Residue15getAtomicNumberENSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core7Residue12setHeterogenEb">
+<span id="_CPPv3N8Avogadro4Core7Residue12setHeterogenEb"></span><span id="_CPPv2N8Avogadro4Core7Residue12setHeterogenEb"></span><span id="Avogadro::Core::Residue::setHeterogen__b"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1a3f20327cc4652c73345ced8f2a7b91c8"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setHeterogen</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">heterogen</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Residue12setHeterogenEb" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Set whether this residue is a “HET” / “HETATOM” ligand </p>
+</dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro4Core7Residue12setHeterogenEb">
-<span id="_CPPv3N8Avogadro4Core7Residue12setHeterogenEb"></span><span id="_CPPv2N8Avogadro4Core7Residue12setHeterogenEb"></span><span id="Avogadro::Core::Residue::setHeterogen__b"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1a3f20327cc4652c73345ced8f2a7b91c8"></span><em class="property"><span class="pre">inline</span></em> <span class="pre">void</span> <code class="sig-name descname"><span class="pre">setHeterogen</span></code><span class="sig-paren">(</span><span class="pre">bool</span> <em><span class="pre">heterogen</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Residue12setHeterogenEb" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp function">
-<dt id="_CPPv4N8Avogadro4Core7Residue11isHeterogenEv">
-<span id="_CPPv3N8Avogadro4Core7Residue11isHeterogenEv"></span><span id="_CPPv2N8Avogadro4Core7Residue11isHeterogenEv"></span><span id="Avogadro::Core::Residue::isHeterogen"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1ad36b56686c06552923ce40e1f4672abf"></span><em class="property"><span class="pre">inline</span></em> <span class="pre">bool</span> <code class="sig-name descname"><span class="pre">isHeterogen</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Residue11isHeterogenEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core7Residue11isHeterogenEv">
+<span id="_CPPv3NK8Avogadro4Core7Residue11isHeterogenEv"></span><span id="_CPPv2NK8Avogadro4Core7Residue11isHeterogenEv"></span><span id="Avogadro::Core::Residue::isHeterogenC"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1a260d77237a6f127f52270c680e477404"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isHeterogen</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core7Residue11isHeterogenEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>is this residue a heterogen (HET / HETATM) </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core7Residue8setColorEK9Vector3ub">
+<span id="_CPPv3N8Avogadro4Core7Residue8setColorEK9Vector3ub"></span><span id="_CPPv2N8Avogadro4Core7Residue8setColorEK9Vector3ub"></span><span id="Avogadro::Core::Residue::setColor__Vector3ubC"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1aae033f9d4b4b64b17ea0e7e43423ad22"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setColor</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Vector3ub</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">color</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Residue8setColorEK9Vector3ub" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Set a custom color for this residue </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core7Residue5colorEv">
+<span id="_CPPv3NK8Avogadro4Core7Residue5colorEv"></span><span id="_CPPv2NK8Avogadro4Core7Residue5colorEv"></span><span id="Avogadro::Core::Residue::colorC"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1a7b11a4622f502fc32ca22c2b5a05ce8f"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Vector3ub</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">color</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core7Residue5colorEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the color set for this residue, or a default from the chain id </p>
 </dd>
 </dl>
 </dd></dl>
@@ -610,45 +712,71 @@
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-attributes">Protected Attributes</p>
 <dl class="cpp var">
-<dt id="_CPPv4N8Avogadro4Core7Residue13m_residueNameE">
-<span id="_CPPv3N8Avogadro4Core7Residue13m_residueNameE"></span><span id="_CPPv2N8Avogadro4Core7Residue13m_residueNameE"></span><span id="Avogadro::Core::Residue::m_residueName__ss"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1ac4176df5b95b8d2df614bac8fc7360cc"></span><span class="pre">std</span><span class="pre">::</span><span class="pre">string</span> <code class="sig-name descname"><span class="pre">m_residueName</span></code><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Residue13m_residueNameE" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core7Residue13m_residueNameE">
+<span id="_CPPv3N8Avogadro4Core7Residue13m_residueNameE"></span><span id="_CPPv2N8Avogadro4Core7Residue13m_residueNameE"></span><span id="Avogadro::Core::Residue::m_residueName__ss"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1ac4176df5b95b8d2df614bac8fc7360cc"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_residueName</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Residue13m_residueNameE" title="Permalink to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp var">
-<dt id="_CPPv4N8Avogadro4Core7Residue11m_residueIdE">
-<span id="_CPPv3N8Avogadro4Core7Residue11m_residueIdE"></span><span id="_CPPv2N8Avogadro4Core7Residue11m_residueIdE"></span><span id="Avogadro::Core::Residue::m_residueId__Index"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1ab5c95b11ef2bf1a992edd92217d7a0e6"></span><span class="pre">Index</span> <code class="sig-name descname"><span class="pre">m_residueId</span></code><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Residue11m_residueIdE" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core7Residue11m_residueIdE">
+<span id="_CPPv3N8Avogadro4Core7Residue11m_residueIdE"></span><span id="_CPPv2N8Avogadro4Core7Residue11m_residueIdE"></span><span id="Avogadro::Core::Residue::m_residueId__Index"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1ab5c95b11ef2bf1a992edd92217d7a0e6"></span><span class="n"><span class="pre">Index</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_residueId</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Residue11m_residueIdE" title="Permalink to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp var">
-<dt id="_CPPv4N8Avogadro4Core7Residue9m_chainIdE">
-<span id="_CPPv3N8Avogadro4Core7Residue9m_chainIdE"></span><span id="_CPPv2N8Avogadro4Core7Residue9m_chainIdE"></span><span id="Avogadro::Core::Residue::m_chainId__c"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1ac3034338bfc7b675cd444ac2a6aa3ff1"></span><span class="pre">char</span> <code class="sig-name descname"><span class="pre">m_chainId</span></code><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Residue9m_chainIdE" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core7Residue9m_chainIdE">
+<span id="_CPPv3N8Avogadro4Core7Residue9m_chainIdE"></span><span id="_CPPv2N8Avogadro4Core7Residue9m_chainIdE"></span><span id="Avogadro::Core::Residue::m_chainId__c"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1ac3034338bfc7b675cd444ac2a6aa3ff1"></span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_chainId</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Residue9m_chainIdE" title="Permalink to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp var">
-<dt id="_CPPv4N8Avogadro4Core7Residue13m_atomNameMapE">
-<span id="_CPPv3N8Avogadro4Core7Residue13m_atomNameMapE"></span><span id="_CPPv2N8Avogadro4Core7Residue13m_atomNameMapE"></span><span id="Avogadro::Core::Residue::m_atomNameMap__AtomNameMap"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1ae7bb94b62881de87db78b6de8dd2c58c"></span><a class="reference internal" href="#_CPPv4N8Avogadro4Core7Residue11AtomNameMapE" title="Avogadro::Core::Residue::AtomNameMap"><span class="pre">AtomNameMap</span></a> <code class="sig-name descname"><span class="pre">m_atomNameMap</span></code><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Residue13m_atomNameMapE" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core7Residue13m_atomNameMapE">
+<span id="_CPPv3N8Avogadro4Core7Residue13m_atomNameMapE"></span><span id="_CPPv2N8Avogadro4Core7Residue13m_atomNameMapE"></span><span id="Avogadro::Core::Residue::m_atomNameMap__AtomNameMap"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1ae7bb94b62881de87db78b6de8dd2c58c"></span><a class="reference internal" href="#_CPPv4N8Avogadro4Core7Residue11AtomNameMapE" title="Avogadro::Core::Residue::AtomNameMap"><span class="n"><span class="pre">AtomNameMap</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_atomNameMap</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Residue13m_atomNameMapE" title="Permalink to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp var">
-<dt id="_CPPv4N8Avogadro4Core7Residue11m_heterogenE">
-<span id="_CPPv3N8Avogadro4Core7Residue11m_heterogenE"></span><span id="_CPPv2N8Avogadro4Core7Residue11m_heterogenE"></span><span id="Avogadro::Core::Residue::m_heterogen__b"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1a77de6084a70b6a56edd9585560a2b9ee"></span><span class="pre">bool</span> <code class="sig-name descname"><span class="pre">m_heterogen</span></code><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Residue11m_heterogenE" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core7Residue11m_heterogenE">
+<span id="_CPPv3N8Avogadro4Core7Residue11m_heterogenE"></span><span id="_CPPv2N8Avogadro4Core7Residue11m_heterogenE"></span><span id="Avogadro::Core::Residue::m_heterogen__b"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1a77de6084a70b6a56edd9585560a2b9ee"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_heterogen</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Residue11m_heterogenE" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core7Residue7m_colorE">
+<span id="_CPPv3N8Avogadro4Core7Residue7m_colorE"></span><span id="_CPPv2N8Avogadro4Core7Residue7m_colorE"></span><span id="Avogadro::Core::Residue::m_color__Vector3ub"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1aa941829a849f39d79517d07b03708b9f"></span><span class="n"><span class="pre">Vector3ub</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_color</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Residue7m_colorE" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core7Residue16m_customColorSetE">
+<span id="_CPPv3N8Avogadro4Core7Residue16m_customColorSetE"></span><span id="_CPPv2N8Avogadro4Core7Residue16m_customColorSetE"></span><span id="Avogadro::Core::Residue::m_customColorSet__b"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1ae64a83f1e0f3c00e7db5247c4ff73a07"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_customColorSet</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Residue16m_customColorSetE" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core7Residue20m_secondaryStructureE">
+<span id="_CPPv3N8Avogadro4Core7Residue20m_secondaryStructureE"></span><span id="_CPPv2N8Avogadro4Core7Residue20m_secondaryStructureE"></span><span id="Avogadro::Core::Residue::m_secondaryStructure__SecondaryStructure"></span><span class="target" id="class_avogadro_1_1_core_1_1_residue_1a2b9dc40a3e3e9b7fcb4a166aa5244893"></span><a class="reference internal" href="#_CPPv4N8Avogadro4Core7Residue18SecondaryStructureE" title="Avogadro::Core::Residue::SecondaryStructure"><span class="n"><span class="pre">SecondaryStructure</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_secondaryStructure</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core7Residue20m_secondaryStructureE" title="Permalink to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 </div>
 </dd></dl>
 
+</section>
+
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="class_avogadro_1_1_core_1_1_name_atom_typer.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Class Avogadro::Core::NameAtomTyper</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="class_avogadro_1_1_core_1_1_residue_data.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Class Avogadro::Core::ResidueData</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
-
-
-              </div>
-              
-              
-              <div class='prev-next-bottom'>
-                
-    <a class='left-prev' id="prev-link" href="class_avogadro_1_1_core_1_1_name_atom_typer.html" title="previous page">Class Avogadro::Core::NameAtomTyper</a>
-    <a class='right-next' id="next-link" href="class_avogadro_1_1_core_1_1_residue_data.html" title="next page">Class Avogadro::Core::ResidueData</a>
-
-              </div>
               
           </main>
           
@@ -656,16 +784,16 @@
       </div>
     </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
-
-  <footer class="container-fluid footer-copy">
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+<footer class="container-fluid footer-copy">
 
     <div class="container">
 
       <div class="row">
         <div class="col-md-10 py-2">
           <p>
-            ©2021 The OpenChemistry / Avogadro Teams. The website content uses the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/LICENSE">BSD License</a> and is covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
+            ©2022 The OpenChemistry / Avogadro Teams. The website content uses the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/LICENSE">BSD License</a> and is covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
           </p>
         </div>
         <br />

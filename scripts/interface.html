@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Script Interfaces &#8212; Avogadro 1.94.0-55-gbefc28e8 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Script Interfaces &#8212; Avogadro 1.95.1 documentation</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet" />
-  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,19 +20,15 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
@@ -40,10 +38,13 @@
     <link rel="next" title="Command Scripts" href="commands.html" />
     <link rel="prev" title="Script Plugins" href="index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -111,16 +112,12 @@
       <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
-          <a class="nav-link" href="https://github.com/openchemistry/avogadrolibs" rel="noopener" target="_blank" title="GitHub">
-            <span><i class="fab fa-github-square"></i></span>
-            <label class="sr-only">GitHub</label>
-          </a>
+          <a class="nav-link" href="https://github.com/openchemistry/avogadrolibs" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://twitter.com/AvogadroChem" rel="noopener" target="_blank" title="Twitter">
-            <span><i class="fab fa-twitter-square"></i></span>
-            <label class="sr-only">Twitter</label>
-          </a>
+          <a class="nav-link" href="https://twitter.com/AvogadroChem" rel="noopener" target="_blank" title="Twitter"><span><i class="fab fa-twitter-square"></i></span>
+            <label class="sr-only">Twitter</label></a>
         </li>
       </ul>
       </div>
@@ -136,7 +133,8 @@
           
             
             <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
@@ -166,18 +164,20 @@
 
   </div>
 </nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
             </div>
             
           
 
-          
           
           <div class="d-none d-xl-block col-xl-2 bd-toc">
             
               
               <div class="toc-item">
                 
-<div class="tocsection onthispage pt-5 pb-3">
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
     <i class="fas fa-list"></i> On this page
 </div>
 
@@ -232,20 +232,19 @@
             
           </div>
           
-          
 
           
           
             
-            
+          
           <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
-            
+              
               <div>
                 
-  <div class="section" id="script-interfaces">
-<span id="id1"></span><h1>Script Interfaces<a class="headerlink" href="#script-interfaces" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="fixed-string-lists-pop-up-menus">
-<h2>Fixed String Lists (Pop-up menus)<a class="headerlink" href="#fixed-string-lists-pop-up-menus" title="Permalink to this headline">¶</a></h2>
+  <section id="script-interfaces">
+<span id="id1"></span><h1>Script Interfaces<a class="headerlink" href="#script-interfaces" title="Permalink to this headline">#</a></h1>
+<section id="fixed-string-lists-pop-up-menus">
+<h2>Fixed String Lists (Pop-up menus)<a class="headerlink" href="#fixed-string-lists-pop-up-menus" title="Permalink to this headline">#</a></h2>
 <p>Parameters that have a fixed number of mutually-exclusive string values
 will be presented using a pop-up menu (combo box). Such a parameter can
 be specified in the <code class="docutils literal notranslate"><span class="pre">userOptions</span></code> block as:</p>
@@ -279,9 +278,9 @@ facilitates translation and localization (e.g., “color” vs. “colour”).</
 the combo box in the order they are written. The default parameter is a
 zero-based index  into the values array and indicates which value should
 be initially selected.</p>
-</div>
-<div class="section" id="short-free-form-text-parameters">
-<h2>Short Free-Form Text Parameters<a class="headerlink" href="#short-free-form-text-parameters" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="short-free-form-text-parameters">
+<h2>Short Free-Form Text Parameters<a class="headerlink" href="#short-free-form-text-parameters" title="Permalink to this headline">#</a></h2>
 <p>A short text string can be requested (e.g. for the “title” of an
 optimization) via:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
@@ -296,9 +295,9 @@ optimization) via:</p>
 </div>
 <p>This will add a blank text box to the GUI, initialized with the text
 specified by default.</p>
-</div>
-<div class="section" id="existing-files">
-<h2>Existing files<a class="headerlink" href="#existing-files" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="existing-files">
+<h2>Existing files<a class="headerlink" href="#existing-files" title="Permalink to this headline">#</a></h2>
 <p>A script can ask for the absolute path to an existing file using the
 following option block:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
@@ -313,9 +312,9 @@ following option block:</p>
 </div>
 <p>This will add an option to select a file to the GUI, initialized to the
 file pointed to by default.</p>
-</div>
-<div class="section" id="integer-values">
-<h2>Integer Values<a class="headerlink" href="#integer-values" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="integer-values">
+<h2>Integer Values<a class="headerlink" href="#integer-values" title="Permalink to this headline">#</a></h2>
 <p>Scripts may request integer values from a specified range by adding a
 user-option of the following form:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
@@ -343,9 +342,9 @@ units. Note that any prefix or suffix will be stripped out of the
 corresponding entry in the call to scripts, and just the raw integer
 value will be sent.</p></li>
 </ul>
-</div>
-<div class="section" id="floating-point-values">
-<h2>Floating-point values<a class="headerlink" href="#floating-point-values" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="floating-point-values">
+<h2>Floating-point values<a class="headerlink" href="#floating-point-values" title="Permalink to this headline">#</a></h2>
 <p>Scripts may request floating-point values from a specififed range by
 adding:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
@@ -362,9 +361,9 @@ adding:</p>
   <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="boolean-parameters">
-<h2>Boolean Parameters<a class="headerlink" href="#boolean-parameters" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="boolean-parameters">
+<h2>Boolean Parameters<a class="headerlink" href="#boolean-parameters" title="Permalink to this headline">#</a></h2>
 <p>If a simple on/off value is needed, a boolean type option can be
 requested:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
@@ -379,19 +378,30 @@ requested:</p>
 </div>
 <p>This will result in a check box in the dynamically generated GUI, with
 the initial check state shown in default.</p>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>
               
               
-              <div class='prev-next-bottom'>
-                
-    <a class='left-prev' id="prev-link" href="index.html" title="previous page">Script Plugins</a>
-    <a class='right-next' id="next-link" href="commands.html" title="next page">Command Scripts</a>
-
-              </div>
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Script Plugins</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="commands.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Command Scripts</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
               
           </main>
           
@@ -399,16 +409,16 @@ the initial check state shown in default.</p>
       </div>
     </div>
   
-  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
-
-  <footer class="container-fluid footer-copy">
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+<footer class="container-fluid footer-copy">
 
     <div class="container">
 
       <div class="row">
         <div class="col-md-10 py-2">
           <p>
-            ©2021 The OpenChemistry / Avogadro Teams. The website content uses the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/LICENSE">BSD License</a> and is covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
+            ©2022 The OpenChemistry / Avogadro Teams. The website content uses the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/LICENSE">BSD License</a> and is covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
           </p>
         </div>
         <br />

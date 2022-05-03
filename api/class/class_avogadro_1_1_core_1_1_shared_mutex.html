@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Class Avogadro::Core::SharedMutex &#8212; Avogadro 1.94.0-55-gbefc28e8 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Class Avogadro::Core::SharedMutex &#8212; Avogadro 1.95.1 documentation</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,19 +20,15 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
@@ -40,10 +38,13 @@
     <link rel="next" title="Class Avogadro::Core::SlaterSet" href="class_avogadro_1_1_core_1_1_slater_set.html" />
     <link rel="prev" title="Class Avogadro::Core::RingPerceiver" href="class_avogadro_1_1_core_1_1_ring_perceiver.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -111,16 +112,12 @@
       <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
-          <a class="nav-link" href="https://github.com/openchemistry/avogadrolibs" rel="noopener" target="_blank" title="GitHub">
-            <span><i class="fab fa-github-square"></i></span>
-            <label class="sr-only">GitHub</label>
-          </a>
+          <a class="nav-link" href="https://github.com/openchemistry/avogadrolibs" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://twitter.com/AvogadroChem" rel="noopener" target="_blank" title="Twitter">
-            <span><i class="fab fa-twitter-square"></i></span>
-            <label class="sr-only">Twitter</label>
-          </a>
+          <a class="nav-link" href="https://twitter.com/AvogadroChem" rel="noopener" target="_blank" title="Twitter"><span><i class="fab fa-twitter-square"></i></span>
+            <label class="sr-only">Twitter</label></a>
         </li>
       </ul>
       </div>
@@ -136,7 +133,8 @@
           
             
             <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
@@ -435,11 +433,13 @@
 
   </div>
 </nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
             </div>
             
           
 
-          
           
           <div class="d-none d-xl-block col-xl-2 bd-toc">
             
@@ -466,21 +466,20 @@
             
           </div>
           
-          
 
           
           
             
-            
+          
           <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
-            
+              
               <div>
                 
-  <div class="section" id="class-avogadro-core-sharedmutex">
-<h1>Class Avogadro::Core::SharedMutex<a class="headerlink" href="#class-avogadro-core-sharedmutex" title="Permalink to this headline">¶</a></h1>
+  <section id="class-avogadro-core-sharedmutex">
+<h1>Class Avogadro::Core::SharedMutex<a class="headerlink" href="#class-avogadro-core-sharedmutex" title="Permalink to this headline">#</a></h1>
 <dl class="cpp class">
-<dt id="_CPPv4N8Avogadro4Core11SharedMutexE">
-<span id="_CPPv3N8Avogadro4Core11SharedMutexE"></span><span id="_CPPv2N8Avogadro4Core11SharedMutexE"></span><span id="Avogadro::Core::SharedMutex"></span><span class="target" id="class_avogadro_1_1_core_1_1_shared_mutex"></span><em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">Avogadro</span><span class="pre">::</span><span class="pre">Core</span><code class="sig-prename descclassname"><span class="pre">::</span></code></code><code class="sig-name descname"><span class="pre">SharedMutex</span></code><a class="headerlink" href="#_CPPv4N8Avogadro4Core11SharedMutexE" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core11SharedMutexE">
+<span id="_CPPv3N8Avogadro4Core11SharedMutexE"></span><span id="_CPPv2N8Avogadro4Core11SharedMutexE"></span><span id="Avogadro::Core::SharedMutex"></span><span class="target" id="class_avogadro_1_1_core_1_1_shared_mutex"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">Avogadro</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">SharedMutex</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core11SharedMutexE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>The <a class="reference internal" href="#class_avogadro_1_1_core_1_1_shared_mutex"><span class="std std-ref">SharedMutex</span></a> class provides a simple wrapper for the C++17 shared_mutex class. </p>
 <p>
 A very simple, and thin wrapper around the C++17 shared_mutex class, allowing for lock, tryLock and unlock. <dl class="simple">
@@ -491,24 +490,24 @@ A very simple, and thin wrapper around the C++17 shared_mutex class, allowing fo
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro4Core11SharedMutex11SharedMutexEv">
-<span id="_CPPv3N8Avogadro4Core11SharedMutex11SharedMutexEv"></span><span id="_CPPv2N8Avogadro4Core11SharedMutex11SharedMutexEv"></span><span id="Avogadro::Core::SharedMutex::SharedMutex"></span><span class="target" id="class_avogadro_1_1_core_1_1_shared_mutex_1a10870e2f5b5483d77c1f45affa2298bb"></span><code class="sig-name descname"><span class="pre">SharedMutex</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core11SharedMutex11SharedMutexEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core11SharedMutex11SharedMutexEv">
+<span id="_CPPv3N8Avogadro4Core11SharedMutex11SharedMutexEv"></span><span id="_CPPv2N8Avogadro4Core11SharedMutex11SharedMutexEv"></span><span id="Avogadro::Core::SharedMutex::SharedMutex"></span><span class="target" id="class_avogadro_1_1_core_1_1_shared_mutex_1a10870e2f5b5483d77c1f45affa2298bb"></span><span class="sig-name descname"><span class="n"><span class="pre">SharedMutex</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core11SharedMutex11SharedMutexEv" title="Permalink to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro4Core11SharedMutexD0Ev">
-<span id="_CPPv3N8Avogadro4Core11SharedMutexD0Ev"></span><span id="_CPPv2N8Avogadro4Core11SharedMutexD0Ev"></span><span id="Avogadro::Core::SharedMutex::~SharedMutex"></span><span class="target" id="class_avogadro_1_1_core_1_1_shared_mutex_1a9ba1d90e58de7759c3fe453fb94e63fc"></span><code class="sig-name descname"><span class="pre">~SharedMutex</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core11SharedMutexD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core11SharedMutexD0Ev">
+<span id="_CPPv3N8Avogadro4Core11SharedMutexD0Ev"></span><span id="_CPPv2N8Avogadro4Core11SharedMutexD0Ev"></span><span id="Avogadro::Core::SharedMutex::~SharedMutex"></span><span class="target" id="class_avogadro_1_1_core_1_1_shared_mutex_1a9ba1d90e58de7759c3fe453fb94e63fc"></span><span class="sig-name descname"><span class="n"><span class="pre">~SharedMutex</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core11SharedMutexD0Ev" title="Permalink to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro4Core11SharedMutex11lockForReadEv">
-<span id="_CPPv3N8Avogadro4Core11SharedMutex11lockForReadEv"></span><span id="_CPPv2N8Avogadro4Core11SharedMutex11lockForReadEv"></span><span id="Avogadro::Core::SharedMutex::lockForRead"></span><span class="target" id="class_avogadro_1_1_core_1_1_shared_mutex_1a45ef8025894158a3c8e0fe823e80eabc"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">lockForRead</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core11SharedMutex11lockForReadEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core11SharedMutex11lockForReadEv">
+<span id="_CPPv3N8Avogadro4Core11SharedMutex11lockForReadEv"></span><span id="_CPPv2N8Avogadro4Core11SharedMutex11lockForReadEv"></span><span id="Avogadro::Core::SharedMutex::lockForRead"></span><span class="target" id="class_avogadro_1_1_core_1_1_shared_mutex_1a45ef8025894158a3c8e0fe823e80eabc"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lockForRead</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core11SharedMutex11lockForReadEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Obtain a shared read lock. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro4Core11SharedMutex14tryLockForReadEv">
-<span id="_CPPv3N8Avogadro4Core11SharedMutex14tryLockForReadEv"></span><span id="_CPPv2N8Avogadro4Core11SharedMutex14tryLockForReadEv"></span><span id="Avogadro::Core::SharedMutex::tryLockForRead"></span><span class="target" id="class_avogadro_1_1_core_1_1_shared_mutex_1a7a073248b1edf068469b81a753034c6a"></span><span class="pre">bool</span> <code class="sig-name descname"><span class="pre">tryLockForRead</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core11SharedMutex14tryLockForReadEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core11SharedMutex14tryLockForReadEv">
+<span id="_CPPv3N8Avogadro4Core11SharedMutex14tryLockForReadEv"></span><span id="_CPPv2N8Avogadro4Core11SharedMutex14tryLockForReadEv"></span><span id="Avogadro::Core::SharedMutex::tryLockForRead"></span><span class="target" id="class_avogadro_1_1_core_1_1_shared_mutex_1a7a073248b1edf068469b81a753034c6a"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">tryLockForRead</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core11SharedMutex14tryLockForReadEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Attempt to obtain a shared read lock. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -518,20 +517,20 @@ A very simple, and thin wrapper around the C++17 shared_mutex class, allowing fo
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro4Core11SharedMutex13unlockForReadEv">
-<span id="_CPPv3N8Avogadro4Core11SharedMutex13unlockForReadEv"></span><span id="_CPPv2N8Avogadro4Core11SharedMutex13unlockForReadEv"></span><span id="Avogadro::Core::SharedMutex::unlockForRead"></span><span class="target" id="class_avogadro_1_1_core_1_1_shared_mutex_1a6f8e3d965d2f2a888b0cd2d55411a6a9"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">unlockForRead</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core11SharedMutex13unlockForReadEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core11SharedMutex13unlockForReadEv">
+<span id="_CPPv3N8Avogadro4Core11SharedMutex13unlockForReadEv"></span><span id="_CPPv2N8Avogadro4Core11SharedMutex13unlockForReadEv"></span><span id="Avogadro::Core::SharedMutex::unlockForRead"></span><span class="target" id="class_avogadro_1_1_core_1_1_shared_mutex_1a6f8e3d965d2f2a888b0cd2d55411a6a9"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">unlockForRead</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core11SharedMutex13unlockForReadEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Unlocks the exclusive write lock. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro4Core11SharedMutex12lockForWriteEv">
-<span id="_CPPv3N8Avogadro4Core11SharedMutex12lockForWriteEv"></span><span id="_CPPv2N8Avogadro4Core11SharedMutex12lockForWriteEv"></span><span id="Avogadro::Core::SharedMutex::lockForWrite"></span><span class="target" id="class_avogadro_1_1_core_1_1_shared_mutex_1a1654dd8657ccb9f0e9fa77674420a4a9"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">lockForWrite</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core11SharedMutex12lockForWriteEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core11SharedMutex12lockForWriteEv">
+<span id="_CPPv3N8Avogadro4Core11SharedMutex12lockForWriteEv"></span><span id="_CPPv2N8Avogadro4Core11SharedMutex12lockForWriteEv"></span><span id="Avogadro::Core::SharedMutex::lockForWrite"></span><span class="target" id="class_avogadro_1_1_core_1_1_shared_mutex_1a1654dd8657ccb9f0e9fa77674420a4a9"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lockForWrite</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core11SharedMutex12lockForWriteEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Obtain an exclusive write lock. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro4Core11SharedMutex15tryLockForWriteEv">
-<span id="_CPPv3N8Avogadro4Core11SharedMutex15tryLockForWriteEv"></span><span id="_CPPv2N8Avogadro4Core11SharedMutex15tryLockForWriteEv"></span><span id="Avogadro::Core::SharedMutex::tryLockForWrite"></span><span class="target" id="class_avogadro_1_1_core_1_1_shared_mutex_1aa3bf7703366a40a6dcc1a2a5d1fc7fe7"></span><span class="pre">bool</span> <code class="sig-name descname"><span class="pre">tryLockForWrite</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core11SharedMutex15tryLockForWriteEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core11SharedMutex15tryLockForWriteEv">
+<span id="_CPPv3N8Avogadro4Core11SharedMutex15tryLockForWriteEv"></span><span id="_CPPv2N8Avogadro4Core11SharedMutex15tryLockForWriteEv"></span><span id="Avogadro::Core::SharedMutex::tryLockForWrite"></span><span class="target" id="class_avogadro_1_1_core_1_1_shared_mutex_1aa3bf7703366a40a6dcc1a2a5d1fc7fe7"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">tryLockForWrite</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core11SharedMutex15tryLockForWriteEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Attempt to obtain an exclusive write lock. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -541,26 +540,37 @@ A very simple, and thin wrapper around the C++17 shared_mutex class, allowing fo
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro4Core11SharedMutex14unlockForWriteEv">
-<span id="_CPPv3N8Avogadro4Core11SharedMutex14unlockForWriteEv"></span><span id="_CPPv2N8Avogadro4Core11SharedMutex14unlockForWriteEv"></span><span id="Avogadro::Core::SharedMutex::unlockForWrite"></span><span class="target" id="class_avogadro_1_1_core_1_1_shared_mutex_1a0ad5f10580b494daf5d2ef9f7ac21d36"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">unlockForWrite</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core11SharedMutex14unlockForWriteEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core11SharedMutex14unlockForWriteEv">
+<span id="_CPPv3N8Avogadro4Core11SharedMutex14unlockForWriteEv"></span><span id="_CPPv2N8Avogadro4Core11SharedMutex14unlockForWriteEv"></span><span id="Avogadro::Core::SharedMutex::unlockForWrite"></span><span class="target" id="class_avogadro_1_1_core_1_1_shared_mutex_1a0ad5f10580b494daf5d2ef9f7ac21d36"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">unlockForWrite</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core11SharedMutex14unlockForWriteEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Unlocks the exclusive write lock. </p>
 </dd></dl>
 
 </div>
 </dd></dl>
 
+</section>
+
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="class_avogadro_1_1_core_1_1_ring_perceiver.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Class Avogadro::Core::RingPerceiver</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="class_avogadro_1_1_core_1_1_slater_set.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Class Avogadro::Core::SlaterSet</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
-
-
-              </div>
-              
-              
-              <div class='prev-next-bottom'>
-                
-    <a class='left-prev' id="prev-link" href="class_avogadro_1_1_core_1_1_ring_perceiver.html" title="previous page">Class Avogadro::Core::RingPerceiver</a>
-    <a class='right-next' id="next-link" href="class_avogadro_1_1_core_1_1_slater_set.html" title="next page">Class Avogadro::Core::SlaterSet</a>
-
-              </div>
               
           </main>
           
@@ -568,16 +578,16 @@ A very simple, and thin wrapper around the C++17 shared_mutex class, allowing fo
       </div>
     </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
-
-  <footer class="container-fluid footer-copy">
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+<footer class="container-fluid footer-copy">
 
     <div class="container">
 
       <div class="row">
         <div class="col-md-10 py-2">
           <p>
-            ©2021 The OpenChemistry / Avogadro Teams. The website content uses the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/LICENSE">BSD License</a> and is covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
+            ©2022 The OpenChemistry / Avogadro Teams. The website content uses the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/LICENSE">BSD License</a> and is covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
           </p>
         </div>
         <br />

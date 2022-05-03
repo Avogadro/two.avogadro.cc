@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Class Avogadro::Rendering::GLRenderer &#8212; Avogadro 1.94.0-55-gbefc28e8 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Class Avogadro::Rendering::GLRenderer &#8212; Avogadro 1.95.1 documentation</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,19 +20,15 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
@@ -40,10 +38,13 @@
     <link rel="next" title="Class Avogadro::Rendering::GeometryNode" href="class_avogadro_1_1_rendering_1_1_geometry_node.html" />
     <link rel="prev" title="Class Avogadro::Rendering::GLRenderVisitor" href="class_avogadro_1_1_rendering_1_1_g_l_render_visitor.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -111,16 +112,12 @@
       <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
-          <a class="nav-link" href="https://github.com/openchemistry/avogadrolibs" rel="noopener" target="_blank" title="GitHub">
-            <span><i class="fab fa-github-square"></i></span>
-            <label class="sr-only">GitHub</label>
-          </a>
+          <a class="nav-link" href="https://github.com/openchemistry/avogadrolibs" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://twitter.com/AvogadroChem" rel="noopener" target="_blank" title="Twitter">
-            <span><i class="fab fa-twitter-square"></i></span>
-            <label class="sr-only">Twitter</label>
-          </a>
+          <a class="nav-link" href="https://twitter.com/AvogadroChem" rel="noopener" target="_blank" title="Twitter"><span><i class="fab fa-twitter-square"></i></span>
+            <label class="sr-only">Twitter</label></a>
         </li>
       </ul>
       </div>
@@ -136,7 +133,8 @@
           
             
             <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
@@ -360,11 +358,13 @@
 
   </div>
 </nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
             </div>
             
           
 
-          
           
           <div class="d-none d-xl-block col-xl-2 bd-toc">
             
@@ -391,21 +391,20 @@
             
           </div>
           
-          
 
           
           
             
-            
+          
           <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
-            
+              
               <div>
                 
-  <div class="section" id="class-avogadro-rendering-glrenderer">
-<h1>Class Avogadro::Rendering::GLRenderer<a class="headerlink" href="#class-avogadro-rendering-glrenderer" title="Permalink to this headline">¶</a></h1>
+  <section id="class-avogadro-rendering-glrenderer">
+<h1>Class Avogadro::Rendering::GLRenderer<a class="headerlink" href="#class-avogadro-rendering-glrenderer" title="Permalink to this headline">#</a></h1>
 <dl class="cpp class">
-<dt id="_CPPv4N8Avogadro9Rendering10GLRendererE">
-<span id="_CPPv3N8Avogadro9Rendering10GLRendererE"></span><span id="_CPPv2N8Avogadro9Rendering10GLRendererE"></span><span id="Avogadro::Rendering::GLRenderer"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_g_l_renderer"></span><em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">Avogadro</span><span class="pre">::</span><span class="pre">Rendering</span><code class="sig-prename descclassname"><span class="pre">::</span></code></code><code class="sig-name descname"><span class="pre">GLRenderer</span></code><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering10GLRendererE" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering10GLRendererE">
+<span id="_CPPv3N8Avogadro9Rendering10GLRendererE"></span><span id="_CPPv2N8Avogadro9Rendering10GLRendererE"></span><span id="Avogadro::Rendering::GLRenderer"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_g_l_renderer"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">Avogadro</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Rendering</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">GLRenderer</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering10GLRendererE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Render the scene using OpenGL calls. </p>
 <p><dl class="simple">
 <dt><strong>Author</strong></dt><dd><p>Marcus D. Hanwell </p>
@@ -415,20 +414,20 @@
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-unnamed-group">Unnamed Group</p>
 <dl class="cpp function">
-<dt id="_CPPv4NK8Avogadro9Rendering10GLRenderer18textRenderStrategyEv">
-<span id="_CPPv3NK8Avogadro9Rendering10GLRenderer18textRenderStrategyEv"></span><span id="_CPPv2NK8Avogadro9Rendering10GLRenderer18textRenderStrategyEv"></span><span id="Avogadro::Rendering::GLRenderer::textRenderStrategyC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_g_l_renderer_1abfe136c65d0e6e5184b79d976ba98e0c"></span><em class="property"><span class="pre">inline</span></em> <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="class_avogadro_1_1_rendering_1_1_text_render_strategy.html#_CPPv4N8Avogadro9Rendering18TextRenderStrategyE" title="Avogadro::Rendering::TextRenderStrategy"><span class="pre">TextRenderStrategy</span></a> <span class="pre">*</span><code class="sig-name descname"><span class="pre">textRenderStrategy</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering10GLRenderer18textRenderStrategyEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering10GLRenderer18textRenderStrategyEv">
+<span id="_CPPv3NK8Avogadro9Rendering10GLRenderer18textRenderStrategyEv"></span><span id="_CPPv2NK8Avogadro9Rendering10GLRenderer18textRenderStrategyEv"></span><span id="Avogadro::Rendering::GLRenderer::textRenderStrategyC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_g_l_renderer_1abfe136c65d0e6e5184b79d976ba98e0c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_text_render_strategy.html#_CPPv4N8Avogadro9Rendering18TextRenderStrategyE" title="Avogadro::Rendering::TextRenderStrategy"><span class="n"><span class="pre">TextRenderStrategy</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">textRenderStrategy</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering10GLRenderer18textRenderStrategyEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Get/set the text rendering strategy for this object. The renderer takes ownership of the strategy object. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro9Rendering10GLRenderer18textRenderStrategyEv">
-<span id="_CPPv3N8Avogadro9Rendering10GLRenderer18textRenderStrategyEv"></span><span id="_CPPv2N8Avogadro9Rendering10GLRenderer18textRenderStrategyEv"></span><span id="Avogadro::Rendering::GLRenderer::textRenderStrategy"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_g_l_renderer_1a2e6283de51fa03bdd334a6acfb87ae0a"></span><em class="property"><span class="pre">inline</span></em> <a class="reference internal" href="class_avogadro_1_1_rendering_1_1_text_render_strategy.html#_CPPv4N8Avogadro9Rendering18TextRenderStrategyE" title="Avogadro::Rendering::TextRenderStrategy"><span class="pre">TextRenderStrategy</span></a> <span class="pre">*</span><code class="sig-name descname"><span class="pre">textRenderStrategy</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering10GLRenderer18textRenderStrategyEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering10GLRenderer18textRenderStrategyEv">
+<span id="_CPPv3N8Avogadro9Rendering10GLRenderer18textRenderStrategyEv"></span><span id="_CPPv2N8Avogadro9Rendering10GLRenderer18textRenderStrategyEv"></span><span id="Avogadro::Rendering::GLRenderer::textRenderStrategy"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_g_l_renderer_1a2e6283de51fa03bdd334a6acfb87ae0a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_text_render_strategy.html#_CPPv4N8Avogadro9Rendering18TextRenderStrategyE" title="Avogadro::Rendering::TextRenderStrategy"><span class="n"><span class="pre">TextRenderStrategy</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">textRenderStrategy</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering10GLRenderer18textRenderStrategyEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Get/set the text rendering strategy for this object. The renderer takes ownership of the strategy object. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro9Rendering10GLRenderer21setTextRenderStrategyEP18TextRenderStrategy">
-<span id="_CPPv3N8Avogadro9Rendering10GLRenderer21setTextRenderStrategyEP18TextRenderStrategy"></span><span id="_CPPv2N8Avogadro9Rendering10GLRenderer21setTextRenderStrategyEP18TextRenderStrategy"></span><span id="Avogadro::Rendering::GLRenderer::setTextRenderStrategy__TextRenderStrategyP"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_g_l_renderer_1a094cfd47b17e375db1f4c43ce3c447d0"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">setTextRenderStrategy</span></code><span class="sig-paren">(</span><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_text_render_strategy.html#_CPPv4N8Avogadro9Rendering18TextRenderStrategyE" title="Avogadro::Rendering::TextRenderStrategy"><span class="pre">TextRenderStrategy</span></a> <span class="pre">*</span><em><span class="pre">tren</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering10GLRenderer21setTextRenderStrategyEP18TextRenderStrategy" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering10GLRenderer21setTextRenderStrategyEP18TextRenderStrategy">
+<span id="_CPPv3N8Avogadro9Rendering10GLRenderer21setTextRenderStrategyEP18TextRenderStrategy"></span><span id="_CPPv2N8Avogadro9Rendering10GLRenderer21setTextRenderStrategyEP18TextRenderStrategy"></span><span id="Avogadro::Rendering::GLRenderer::setTextRenderStrategy__TextRenderStrategyP"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_g_l_renderer_1a094cfd47b17e375db1f4c43ce3c447d0"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setTextRenderStrategy</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_text_render_strategy.html#_CPPv4N8Avogadro9Rendering18TextRenderStrategyE" title="Avogadro::Rendering::TextRenderStrategy"><span class="n"><span class="pre">TextRenderStrategy</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">tren</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering10GLRenderer21setTextRenderStrategyEP18TextRenderStrategy" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Get/set the text rendering strategy for this object. The renderer takes ownership of the strategy object. </p>
 </dd></dl>
 
@@ -436,127 +435,138 @@
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro9Rendering10GLRenderer10GLRendererEv">
-<span id="_CPPv3N8Avogadro9Rendering10GLRenderer10GLRendererEv"></span><span id="_CPPv2N8Avogadro9Rendering10GLRenderer10GLRendererEv"></span><span id="Avogadro::Rendering::GLRenderer::GLRenderer"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_g_l_renderer_1a6c4675a0e4175aa0d88940179b87b0e2"></span><code class="sig-name descname"><span class="pre">GLRenderer</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering10GLRenderer10GLRendererEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering10GLRenderer10GLRendererEv">
+<span id="_CPPv3N8Avogadro9Rendering10GLRenderer10GLRendererEv"></span><span id="_CPPv2N8Avogadro9Rendering10GLRenderer10GLRendererEv"></span><span id="Avogadro::Rendering::GLRenderer::GLRenderer"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_g_l_renderer_1a6c4675a0e4175aa0d88940179b87b0e2"></span><span class="sig-name descname"><span class="n"><span class="pre">GLRenderer</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering10GLRenderer10GLRendererEv" title="Permalink to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro9Rendering10GLRendererD0Ev">
-<span id="_CPPv3N8Avogadro9Rendering10GLRendererD0Ev"></span><span id="_CPPv2N8Avogadro9Rendering10GLRendererD0Ev"></span><span id="Avogadro::Rendering::GLRenderer::~GLRenderer"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_g_l_renderer_1a1c88d55b95dbdece0574a60a816ef5e4"></span><code class="sig-name descname"><span class="pre">~GLRenderer</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering10GLRendererD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering10GLRendererD0Ev">
+<span id="_CPPv3N8Avogadro9Rendering10GLRendererD0Ev"></span><span id="_CPPv2N8Avogadro9Rendering10GLRendererD0Ev"></span><span id="Avogadro::Rendering::GLRenderer::~GLRenderer"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_g_l_renderer_1a1c88d55b95dbdece0574a60a816ef5e4"></span><span class="sig-name descname"><span class="n"><span class="pre">~GLRenderer</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering10GLRendererD0Ev" title="Permalink to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro9Rendering10GLRenderer10initializeEv">
-<span id="_CPPv3N8Avogadro9Rendering10GLRenderer10initializeEv"></span><span id="_CPPv2N8Avogadro9Rendering10GLRenderer10initializeEv"></span><span id="Avogadro::Rendering::GLRenderer::initialize"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_g_l_renderer_1a25a40b6614565f755233080a384c35f1"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">initialize</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering10GLRenderer10initializeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering10GLRenderer10initializeEv">
+<span id="_CPPv3N8Avogadro9Rendering10GLRenderer10initializeEv"></span><span id="_CPPv2N8Avogadro9Rendering10GLRenderer10initializeEv"></span><span id="Avogadro::Rendering::GLRenderer::initialize"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_g_l_renderer_1a25a40b6614565f755233080a384c35f1"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">initialize</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering10GLRenderer10initializeEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Initialize the OpenGL context for rendering. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro9Rendering10GLRenderer6resizeEii">
-<span id="_CPPv3N8Avogadro9Rendering10GLRenderer6resizeEii"></span><span id="_CPPv2N8Avogadro9Rendering10GLRenderer6resizeEii"></span><span id="Avogadro::Rendering::GLRenderer::resize__i.i"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_g_l_renderer_1a56bfa8fae91947eb5802d2e208405904"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">resize</span></code><span class="sig-paren">(</span><span class="pre">int</span> <em><span class="pre">width</span></em>, <span class="pre">int</span> <em><span class="pre">height</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering10GLRenderer6resizeEii" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering10GLRenderer6resizeEii">
+<span id="_CPPv3N8Avogadro9Rendering10GLRenderer6resizeEii"></span><span id="_CPPv2N8Avogadro9Rendering10GLRenderer6resizeEii"></span><span id="Avogadro::Rendering::GLRenderer::resize__i.i"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_g_l_renderer_1a56bfa8fae91947eb5802d2e208405904"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">resize</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">width</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">height</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering10GLRenderer6resizeEii" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Resize the context in response to window management events. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro9Rendering10GLRenderer6renderEv">
-<span id="_CPPv3N8Avogadro9Rendering10GLRenderer6renderEv"></span><span id="_CPPv2N8Avogadro9Rendering10GLRenderer6renderEv"></span><span id="Avogadro::Rendering::GLRenderer::render"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_g_l_renderer_1a7d9edd8b0a8d0d2f737eb5ee0b0a5040"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">render</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering10GLRenderer6renderEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering10GLRenderer6renderEv">
+<span id="_CPPv3N8Avogadro9Rendering10GLRenderer6renderEv"></span><span id="_CPPv2N8Avogadro9Rendering10GLRenderer6renderEv"></span><span id="Avogadro::Rendering::GLRenderer::render"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_g_l_renderer_1a7d9edd8b0a8d0d2f737eb5ee0b0a5040"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">render</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering10GLRenderer6renderEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Take care of rendering the scene, requires that the context is current. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro9Rendering10GLRenderer11resetCameraEv">
-<span id="_CPPv3N8Avogadro9Rendering10GLRenderer11resetCameraEv"></span><span id="_CPPv2N8Avogadro9Rendering10GLRenderer11resetCameraEv"></span><span id="Avogadro::Rendering::GLRenderer::resetCamera"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_g_l_renderer_1a395cfd3b5286442312051da532ffa579"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">resetCamera</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering10GLRenderer11resetCameraEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering10GLRenderer11resetCameraEv">
+<span id="_CPPv3N8Avogadro9Rendering10GLRenderer11resetCameraEv"></span><span id="_CPPv2N8Avogadro9Rendering10GLRenderer11resetCameraEv"></span><span id="Avogadro::Rendering::GLRenderer::resetCamera"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_g_l_renderer_1a395cfd3b5286442312051da532ffa579"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">resetCamera</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering10GLRenderer11resetCameraEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Reset the view to fit the entire scene. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro9Rendering10GLRenderer13resetGeometryEv">
-<span id="_CPPv3N8Avogadro9Rendering10GLRenderer13resetGeometryEv"></span><span id="_CPPv2N8Avogadro9Rendering10GLRenderer13resetGeometryEv"></span><span id="Avogadro::Rendering::GLRenderer::resetGeometry"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_g_l_renderer_1af9d53cf2095cc836535071f4d1f1f030"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">resetGeometry</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering10GLRenderer13resetGeometryEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering10GLRenderer13resetGeometryEv">
+<span id="_CPPv3N8Avogadro9Rendering10GLRenderer13resetGeometryEv"></span><span id="_CPPv2N8Avogadro9Rendering10GLRenderer13resetGeometryEv"></span><span id="Avogadro::Rendering::GLRenderer::resetGeometry"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_g_l_renderer_1af9d53cf2095cc836535071f4d1f1f030"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">resetGeometry</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering10GLRenderer13resetGeometryEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Reset the scene geometry, this should be done when the scene geometry has changed in order to ensure correct clipping. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4NK8Avogadro9Rendering10GLRenderer4hitsEii">
-<span id="_CPPv3NK8Avogadro9Rendering10GLRenderer4hitsEii"></span><span id="_CPPv2NK8Avogadro9Rendering10GLRenderer4hitsEii"></span><span id="Avogadro::Rendering::GLRenderer::hits__i.iC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_g_l_renderer_1a618a3a5c3455cf16bc41998f3bcd4888"></span><span class="pre">std</span><span class="pre">::</span><span class="pre">multimap</span><span class="pre">&lt;</span><span class="pre">float</span><span class="pre">,</span> <span class="pre">Identifier</span><span class="pre">&gt;</span> <code class="sig-name descname"><span class="pre">hits</span></code><span class="sig-paren">(</span><span class="pre">int</span> <em><span class="pre">x</span></em>, <span class="pre">int</span> <em><span class="pre">y</span></em><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering10GLRenderer4hitsEii" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering10GLRenderer4hitsEii">
+<span id="_CPPv3NK8Avogadro9Rendering10GLRenderer4hitsEii"></span><span id="_CPPv2NK8Avogadro9Rendering10GLRenderer4hitsEii"></span><span id="Avogadro::Rendering::GLRenderer::hits__i.iC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_g_l_renderer_1a618a3a5c3455cf16bc41998f3bcd4888"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">multimap</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">float</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">Identifier</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">hits</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">x</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">y</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering10GLRenderer4hitsEii" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Return the primitives under the display coordinate (x,y), mapped by depth. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4NK8Avogadro9Rendering10GLRenderer3hitEii">
-<span id="_CPPv3NK8Avogadro9Rendering10GLRenderer3hitEii"></span><span id="_CPPv2NK8Avogadro9Rendering10GLRenderer3hitEii"></span><span id="Avogadro::Rendering::GLRenderer::hit__i.iC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_g_l_renderer_1a8feafd02976812c933269a7ae445aab6"></span><em class="property"><span class="pre">inline</span></em> <span class="pre">Identifier</span> <code class="sig-name descname"><span class="pre">hit</span></code><span class="sig-paren">(</span><span class="pre">int</span> <em><span class="pre">x</span></em>, <span class="pre">int</span> <em><span class="pre">y</span></em><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering10GLRenderer3hitEii" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering10GLRenderer3hitEii">
+<span id="_CPPv3NK8Avogadro9Rendering10GLRenderer3hitEii"></span><span id="_CPPv2NK8Avogadro9Rendering10GLRenderer3hitEii"></span><span id="Avogadro::Rendering::GLRenderer::hit__i.iC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_g_l_renderer_1a8feafd02976812c933269a7ae445aab6"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">Identifier</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">hit</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">x</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">y</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering10GLRenderer3hitEii" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Return the top primitive under the display coordinate (x,y). </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4NK8Avogadro9Rendering10GLRenderer4hitsEiiii">
-<span id="_CPPv3NK8Avogadro9Rendering10GLRenderer4hitsEiiii"></span><span id="_CPPv2NK8Avogadro9Rendering10GLRenderer4hitsEiiii"></span><span id="Avogadro::Rendering::GLRenderer::hits__i.i.i.iC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_g_l_renderer_1aa4dd1be7b05eda7224a46cc92c87fdb9"></span><span class="pre">Core</span><span class="pre">::</span><a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#_CPPv4I0EN8Avogadro4Core5ArrayE" title="Avogadro::Core::Array"><span class="pre">Array</span></a><span class="pre">&lt;</span><span class="pre">Identifier</span><span class="pre">&gt;</span> <code class="sig-name descname"><span class="pre">hits</span></code><span class="sig-paren">(</span><span class="pre">int</span> <em><span class="pre">x1</span></em>, <span class="pre">int</span> <em><span class="pre">y1</span></em>, <span class="pre">int</span> <em><span class="pre">x2</span></em>, <span class="pre">int</span> <em><span class="pre">y2</span></em><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering10GLRenderer4hitsEiiii" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering10GLRenderer4hitsEiiii">
+<span id="_CPPv3NK8Avogadro9Rendering10GLRenderer4hitsEiiii"></span><span id="_CPPv2NK8Avogadro9Rendering10GLRenderer4hitsEiiii"></span><span id="Avogadro::Rendering::GLRenderer::hits__i.i.i.iC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_g_l_renderer_1aa4dd1be7b05eda7224a46cc92c87fdb9"></span><span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#_CPPv4I0EN8Avogadro4Core5ArrayE" title="Avogadro::Core::Array"><span class="n"><span class="pre">Array</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Identifier</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">hits</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">x1</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">y1</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">x2</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">y2</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering10GLRenderer4hitsEiiii" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Return the primitives in the rectangular area provided. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4NK8Avogadro9Rendering10GLRenderer7isValidEv">
-<span id="_CPPv3NK8Avogadro9Rendering10GLRenderer7isValidEv"></span><span id="_CPPv2NK8Avogadro9Rendering10GLRenderer7isValidEv"></span><span id="Avogadro::Rendering::GLRenderer::isValidC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_g_l_renderer_1a5bc2a781be2586924afce4e4a4ea6697"></span><em class="property"><span class="pre">inline</span></em> <span class="pre">bool</span> <code class="sig-name descname"><span class="pre">isValid</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering10GLRenderer7isValidEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Check whether the GL context is valid and supports required features. <dl class="simple">
-<dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#class_avogadro_1_1_rendering_1_1_g_l_renderer_1ab0ca267c415968ee3bc1c6b144dcbf56"><span class="std std-ref">error()</span></a> to get more information if the context is not valid. </p>
-</dd>
-</dl>
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering10GLRenderer7isValidEv">
+<span id="_CPPv3NK8Avogadro9Rendering10GLRenderer7isValidEv"></span><span id="_CPPv2NK8Avogadro9Rendering10GLRenderer7isValidEv"></span><span id="Avogadro::Rendering::GLRenderer::isValidC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_g_l_renderer_1a5bc2a781be2586924afce4e4a4ea6697"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isValid</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering10GLRenderer7isValidEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Check whether the GL context is valid and supports required features. <div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#class_avogadro_1_1_rendering_1_1_g_l_renderer_1ab0ca267c415968ee3bc1c6b144dcbf56"><span class="std std-ref">error()</span></a> to get more information if the context is not valid. </p>
+</div>
 </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4NK8Avogadro9Rendering10GLRenderer5errorEv">
-<span id="_CPPv3NK8Avogadro9Rendering10GLRenderer5errorEv"></span><span id="_CPPv2NK8Avogadro9Rendering10GLRenderer5errorEv"></span><span id="Avogadro::Rendering::GLRenderer::errorC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_g_l_renderer_1ab0ca267c415968ee3bc1c6b144dcbf56"></span><em class="property"><span class="pre">inline</span></em> <span class="pre">std</span><span class="pre">::</span><span class="pre">string</span> <code class="sig-name descname"><span class="pre">error</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering10GLRenderer5errorEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering10GLRenderer5errorEv">
+<span id="_CPPv3NK8Avogadro9Rendering10GLRenderer5errorEv"></span><span id="_CPPv2NK8Avogadro9Rendering10GLRenderer5errorEv"></span><span id="Avogadro::Rendering::GLRenderer::errorC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_g_l_renderer_1ab0ca267c415968ee3bc1c6b144dcbf56"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">error</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering10GLRenderer5errorEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Get the error message if the context is not valid. Empty if valid. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4NK8Avogadro9Rendering10GLRenderer6cameraEv">
-<span id="_CPPv3NK8Avogadro9Rendering10GLRenderer6cameraEv"></span><span id="_CPPv2NK8Avogadro9Rendering10GLRenderer6cameraEv"></span><span id="Avogadro::Rendering::GLRenderer::cameraC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_g_l_renderer_1a29cda966e2b5e75d905642dd5b0ce5d1"></span><em class="property"><span class="pre">inline</span></em> <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="class_avogadro_1_1_rendering_1_1_camera.html#_CPPv4N8Avogadro9Rendering6CameraE" title="Avogadro::Rendering::Camera"><span class="pre">Camera</span></a> <span class="pre">&amp;</span><code class="sig-name descname"><span class="pre">camera</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering10GLRenderer6cameraEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering10GLRenderer6cameraEv">
+<span id="_CPPv3NK8Avogadro9Rendering10GLRenderer6cameraEv"></span><span id="_CPPv2NK8Avogadro9Rendering10GLRenderer6cameraEv"></span><span id="Avogadro::Rendering::GLRenderer::cameraC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_g_l_renderer_1a29cda966e2b5e75d905642dd5b0ce5d1"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_camera.html#_CPPv4N8Avogadro9Rendering6CameraE" title="Avogadro::Rendering::Camera"><span class="n"><span class="pre">Camera</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">camera</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering10GLRenderer6cameraEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Get the camera for this renderer. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro9Rendering10GLRenderer6cameraEv">
-<span id="_CPPv3N8Avogadro9Rendering10GLRenderer6cameraEv"></span><span id="_CPPv2N8Avogadro9Rendering10GLRenderer6cameraEv"></span><span id="Avogadro::Rendering::GLRenderer::camera"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_g_l_renderer_1aa0ad858ee9dc1a0798eed9e9ab44d432"></span><em class="property"><span class="pre">inline</span></em> <a class="reference internal" href="class_avogadro_1_1_rendering_1_1_camera.html#_CPPv4N8Avogadro9Rendering6CameraE" title="Avogadro::Rendering::Camera"><span class="pre">Camera</span></a> <span class="pre">&amp;</span><code class="sig-name descname"><span class="pre">camera</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering10GLRenderer6cameraEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering10GLRenderer6cameraEv">
+<span id="_CPPv3N8Avogadro9Rendering10GLRenderer6cameraEv"></span><span id="_CPPv2N8Avogadro9Rendering10GLRenderer6cameraEv"></span><span id="Avogadro::Rendering::GLRenderer::camera"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_g_l_renderer_1aa0ad858ee9dc1a0798eed9e9ab44d432"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_camera.html#_CPPv4N8Avogadro9Rendering6CameraE" title="Avogadro::Rendering::Camera"><span class="n"><span class="pre">Camera</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">camera</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering10GLRenderer6cameraEv" title="Permalink to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4NK8Avogadro9Rendering10GLRenderer13overlayCameraEv">
-<span id="_CPPv3NK8Avogadro9Rendering10GLRenderer13overlayCameraEv"></span><span id="_CPPv2NK8Avogadro9Rendering10GLRenderer13overlayCameraEv"></span><span id="Avogadro::Rendering::GLRenderer::overlayCameraC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_g_l_renderer_1ac0e4840a38a75601059b7185dd140d3a"></span><em class="property"><span class="pre">inline</span></em> <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="class_avogadro_1_1_rendering_1_1_camera.html#_CPPv4N8Avogadro9Rendering6CameraE" title="Avogadro::Rendering::Camera"><span class="pre">Camera</span></a> <span class="pre">&amp;</span><code class="sig-name descname"><span class="pre">overlayCamera</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering10GLRenderer13overlayCameraEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering10GLRenderer13overlayCameraEv">
+<span id="_CPPv3NK8Avogadro9Rendering10GLRenderer13overlayCameraEv"></span><span id="_CPPv2NK8Avogadro9Rendering10GLRenderer13overlayCameraEv"></span><span id="Avogadro::Rendering::GLRenderer::overlayCameraC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_g_l_renderer_1ac0e4840a38a75601059b7185dd140d3a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_camera.html#_CPPv4N8Avogadro9Rendering6CameraE" title="Avogadro::Rendering::Camera"><span class="n"><span class="pre">Camera</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">overlayCamera</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering10GLRenderer13overlayCameraEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Get the overlay camera. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro9Rendering10GLRenderer13overlayCameraEv">
-<span id="_CPPv3N8Avogadro9Rendering10GLRenderer13overlayCameraEv"></span><span id="_CPPv2N8Avogadro9Rendering10GLRenderer13overlayCameraEv"></span><span id="Avogadro::Rendering::GLRenderer::overlayCamera"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_g_l_renderer_1ab15faeb1a21a4ab9ed2a75685f457343"></span><em class="property"><span class="pre">inline</span></em> <a class="reference internal" href="class_avogadro_1_1_rendering_1_1_camera.html#_CPPv4N8Avogadro9Rendering6CameraE" title="Avogadro::Rendering::Camera"><span class="pre">Camera</span></a> <span class="pre">&amp;</span><code class="sig-name descname"><span class="pre">overlayCamera</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering10GLRenderer13overlayCameraEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering10GLRenderer13overlayCameraEv">
+<span id="_CPPv3N8Avogadro9Rendering10GLRenderer13overlayCameraEv"></span><span id="_CPPv2N8Avogadro9Rendering10GLRenderer13overlayCameraEv"></span><span id="Avogadro::Rendering::GLRenderer::overlayCamera"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_g_l_renderer_1ab15faeb1a21a4ab9ed2a75685f457343"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_camera.html#_CPPv4N8Avogadro9Rendering6CameraE" title="Avogadro::Rendering::Camera"><span class="n"><span class="pre">Camera</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">overlayCamera</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering10GLRenderer13overlayCameraEv" title="Permalink to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4NK8Avogadro9Rendering10GLRenderer5sceneEv">
-<span id="_CPPv3NK8Avogadro9Rendering10GLRenderer5sceneEv"></span><span id="_CPPv2NK8Avogadro9Rendering10GLRenderer5sceneEv"></span><span id="Avogadro::Rendering::GLRenderer::sceneC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_g_l_renderer_1ab489a1f08bc9f440d178ab8b5532a10f"></span><em class="property"><span class="pre">inline</span></em> <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="class_avogadro_1_1_rendering_1_1_scene.html#_CPPv4N8Avogadro9Rendering5SceneE" title="Avogadro::Rendering::Scene"><span class="pre">Scene</span></a> <span class="pre">&amp;</span><code class="sig-name descname"><span class="pre">scene</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering10GLRenderer5sceneEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering10GLRenderer5sceneEv">
+<span id="_CPPv3NK8Avogadro9Rendering10GLRenderer5sceneEv"></span><span id="_CPPv2NK8Avogadro9Rendering10GLRenderer5sceneEv"></span><span id="Avogadro::Rendering::GLRenderer::sceneC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_g_l_renderer_1ab489a1f08bc9f440d178ab8b5532a10f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_scene.html#_CPPv4N8Avogadro9Rendering5SceneE" title="Avogadro::Rendering::Scene"><span class="n"><span class="pre">Scene</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">scene</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering10GLRenderer5sceneEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Get the scene for this renderer. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro9Rendering10GLRenderer5sceneEv">
-<span id="_CPPv3N8Avogadro9Rendering10GLRenderer5sceneEv"></span><span id="_CPPv2N8Avogadro9Rendering10GLRenderer5sceneEv"></span><span id="Avogadro::Rendering::GLRenderer::scene"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_g_l_renderer_1ad5590eeb248dd2c2ccf89cf2ba15e937"></span><em class="property"><span class="pre">inline</span></em> <a class="reference internal" href="class_avogadro_1_1_rendering_1_1_scene.html#_CPPv4N8Avogadro9Rendering5SceneE" title="Avogadro::Rendering::Scene"><span class="pre">Scene</span></a> <span class="pre">&amp;</span><code class="sig-name descname"><span class="pre">scene</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering10GLRenderer5sceneEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering10GLRenderer5sceneEv">
+<span id="_CPPv3N8Avogadro9Rendering10GLRenderer5sceneEv"></span><span id="_CPPv2N8Avogadro9Rendering10GLRenderer5sceneEv"></span><span id="Avogadro::Rendering::GLRenderer::scene"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_g_l_renderer_1ad5590eeb248dd2c2ccf89cf2ba15e937"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_scene.html#_CPPv4N8Avogadro9Rendering5SceneE" title="Avogadro::Rendering::Scene"><span class="n"><span class="pre">Scene</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">scene</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering10GLRenderer5sceneEv" title="Permalink to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 </div>
 </dd></dl>
 
+</section>
+
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="class_avogadro_1_1_rendering_1_1_g_l_render_visitor.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Class Avogadro::Rendering::GLRenderVisitor</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="class_avogadro_1_1_rendering_1_1_geometry_node.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Class Avogadro::Rendering::GeometryNode</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
-
-
-              </div>
-              
-              
-              <div class='prev-next-bottom'>
-                
-    <a class='left-prev' id="prev-link" href="class_avogadro_1_1_rendering_1_1_g_l_render_visitor.html" title="previous page">Class Avogadro::Rendering::GLRenderVisitor</a>
-    <a class='right-next' id="next-link" href="class_avogadro_1_1_rendering_1_1_geometry_node.html" title="next page">Class Avogadro::Rendering::GeometryNode</a>
-
-              </div>
               
           </main>
           
@@ -564,16 +574,16 @@
       </div>
     </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
-
-  <footer class="container-fluid footer-copy">
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+<footer class="container-fluid footer-copy">
 
     <div class="container">
 
       <div class="row">
         <div class="col-md-10 py-2">
           <p>
-            ©2021 The OpenChemistry / Avogadro Teams. The website content uses the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/LICENSE">BSD License</a> and is covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
+            ©2022 The OpenChemistry / Avogadro Teams. The website content uses the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/LICENSE">BSD License</a> and is covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
           </p>
         </div>
         <br />

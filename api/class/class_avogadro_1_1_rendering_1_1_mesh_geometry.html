@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Class Avogadro::Rendering::MeshGeometry &#8212; Avogadro 1.94.0-55-gbefc28e8 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Class Avogadro::Rendering::MeshGeometry &#8212; Avogadro 1.95.1 documentation</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,19 +20,15 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
@@ -40,10 +38,13 @@
     <link rel="next" title="Class Avogadro::Rendering::Node" href="class_avogadro_1_1_rendering_1_1_node.html" />
     <link rel="prev" title="Class Avogadro::Rendering::LineStripGeometry" href="class_avogadro_1_1_rendering_1_1_line_strip_geometry.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -111,16 +112,12 @@
       <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
-          <a class="nav-link" href="https://github.com/openchemistry/avogadrolibs" rel="noopener" target="_blank" title="GitHub">
-            <span><i class="fab fa-github-square"></i></span>
-            <label class="sr-only">GitHub</label>
-          </a>
+          <a class="nav-link" href="https://github.com/openchemistry/avogadrolibs" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://twitter.com/AvogadroChem" rel="noopener" target="_blank" title="Twitter">
-            <span><i class="fab fa-twitter-square"></i></span>
-            <label class="sr-only">Twitter</label>
-          </a>
+          <a class="nav-link" href="https://twitter.com/AvogadroChem" rel="noopener" target="_blank" title="Twitter"><span><i class="fab fa-twitter-square"></i></span>
+            <label class="sr-only">Twitter</label></a>
         </li>
       </ul>
       </div>
@@ -136,7 +133,8 @@
           
             
             <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
@@ -360,11 +358,13 @@
 
   </div>
 </nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
             </div>
             
           
 
-          
           
           <div class="d-none d-xl-block col-xl-2 bd-toc">
             
@@ -391,21 +391,20 @@
             
           </div>
           
-          
 
           
           
             
-            
+          
           <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
-            
+              
               <div>
                 
-  <div class="section" id="class-avogadro-rendering-meshgeometry">
-<h1>Class Avogadro::Rendering::MeshGeometry<a class="headerlink" href="#class-avogadro-rendering-meshgeometry" title="Permalink to this headline">¶</a></h1>
+  <section id="class-avogadro-rendering-meshgeometry">
+<h1>Class Avogadro::Rendering::MeshGeometry<a class="headerlink" href="#class-avogadro-rendering-meshgeometry" title="Permalink to this headline">#</a></h1>
 <dl class="cpp class">
-<dt id="_CPPv4N8Avogadro9Rendering12MeshGeometryE">
-<span id="_CPPv3N8Avogadro9Rendering12MeshGeometryE"></span><span id="_CPPv2N8Avogadro9Rendering12MeshGeometryE"></span><span id="Avogadro::Rendering::MeshGeometry"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_mesh_geometry"></span><em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">Avogadro</span><span class="pre">::</span><span class="pre">Rendering</span><code class="sig-prename descclassname"><span class="pre">::</span></code></code><code class="sig-name descname"><span class="pre">MeshGeometry</span></code> <span class="pre">:</span> <em class="property"><span class="pre">public</span></em> <a class="reference internal" href="class_avogadro_1_1_rendering_1_1_drawable.html#_CPPv4N8Avogadro9Rendering8DrawableE" title="Avogadro::Rendering::Drawable"><span class="pre">Drawable</span></a><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12MeshGeometryE" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering12MeshGeometryE">
+<span id="_CPPv3N8Avogadro9Rendering12MeshGeometryE"></span><span id="_CPPv2N8Avogadro9Rendering12MeshGeometryE"></span><span id="Avogadro::Rendering::MeshGeometry"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_mesh_geometry"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">Avogadro</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Rendering</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">MeshGeometry</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_drawable.html#_CPPv4N8Avogadro9Rendering8DrawableE" title="Avogadro::Rendering::Drawable"><span class="n"><span class="pre">Drawable</span></span></a><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12MeshGeometryE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>The <a class="reference internal" href="#class_avogadro_1_1_rendering_1_1_mesh_geometry"><span class="std std-ref">MeshGeometry</span></a> is used for triangle mesh geometry. </p>
 <p><dl class="simple">
 <dt><strong>Author</strong></dt><dd><p>Marcus D. Hanwell </p>
@@ -415,8 +414,8 @@
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-unnamed-group">Unnamed Group</p>
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro9Rendering12MeshGeometry11addVerticesERKN4Core5ArrayI8Vector3fEERKN4Core5ArrayI8Vector3fEERKN4Core5ArrayI9Vector4ubEE">
-<span id="_CPPv3N8Avogadro9Rendering12MeshGeometry11addVerticesERKN4Core5ArrayI8Vector3fEERKN4Core5ArrayI8Vector3fEERKN4Core5ArrayI9Vector4ubEE"></span><span id="_CPPv2N8Avogadro9Rendering12MeshGeometry11addVerticesERKN4Core5ArrayI8Vector3fEERKN4Core5ArrayI8Vector3fEERKN4Core5ArrayI9Vector4ubEE"></span><span id="Avogadro::Rendering::MeshGeometry::addVertices__Core::Array:Vector3f:CR.Core::Array:Vector3f:CR.Core::Array:Vector4ub:CR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_mesh_geometry_1a39ea8226b4d9ad9ef869025b0727a63f"></span><span class="pre">unsigned</span> <span class="pre">int</span> <code class="sig-name descname"><span class="pre">addVertices</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <span class="pre">Core</span><span class="pre">::</span><a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#_CPPv4I0EN8Avogadro4Core5ArrayE" title="Avogadro::Core::Array"><span class="pre">Array</span></a><span class="pre">&lt;</span><span class="pre">Vector3f</span><span class="pre">&gt;</span> <span class="pre">&amp;</span><em><span class="pre">vertices</span></em>, <em class="property"><span class="pre">const</span></em> <span class="pre">Core</span><span class="pre">::</span><a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#_CPPv4I0EN8Avogadro4Core5ArrayE" title="Avogadro::Core::Array"><span class="pre">Array</span></a><span class="pre">&lt;</span><span class="pre">Vector3f</span><span class="pre">&gt;</span> <span class="pre">&amp;</span><em><span class="pre">normals</span></em>, <em class="property"><span class="pre">const</span></em> <span class="pre">Core</span><span class="pre">::</span><a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#_CPPv4I0EN8Avogadro4Core5ArrayE" title="Avogadro::Core::Array"><span class="pre">Array</span></a><span class="pre">&lt;</span><span class="pre">Vector4ub</span><span class="pre">&gt;</span> <span class="pre">&amp;</span><em><span class="pre">colors</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12MeshGeometry11addVerticesERKN4Core5ArrayI8Vector3fEERKN4Core5ArrayI8Vector3fEERKN4Core5ArrayI9Vector4ubEE" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering12MeshGeometry11addVerticesERKN4Core5ArrayI8Vector3fEERKN4Core5ArrayI8Vector3fEERKN4Core5ArrayI9Vector4ubEE">
+<span id="_CPPv3N8Avogadro9Rendering12MeshGeometry11addVerticesERKN4Core5ArrayI8Vector3fEERKN4Core5ArrayI8Vector3fEERKN4Core5ArrayI9Vector4ubEE"></span><span id="_CPPv2N8Avogadro9Rendering12MeshGeometry11addVerticesERKN4Core5ArrayI8Vector3fEERKN4Core5ArrayI8Vector3fEERKN4Core5ArrayI9Vector4ubEE"></span><span id="Avogadro::Rendering::MeshGeometry::addVertices__Core::Array:Vector3f:CR.Core::Array:Vector3f:CR.Core::Array:Vector4ub:CR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_mesh_geometry_1a39ea8226b4d9ad9ef869025b0727a63f"></span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addVertices</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#_CPPv4I0EN8Avogadro4Core5ArrayE" title="Avogadro::Core::Array"><span class="n"><span class="pre">Array</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Vector3f</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">vertices</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#_CPPv4I0EN8Avogadro4Core5ArrayE" title="Avogadro::Core::Array"><span class="n"><span class="pre">Array</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Vector3f</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">normals</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#_CPPv4I0EN8Avogadro4Core5ArrayE" title="Avogadro::Core::Array"><span class="n"><span class="pre">Array</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Vector4ub</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">colors</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12MeshGeometry11addVerticesERKN4Core5ArrayI8Vector3fEERKN4Core5ArrayI8Vector3fEERKN4Core5ArrayI9Vector4ubEE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Add vertices to the object. Note that this just adds vertices to the object. Use addTriangles with size_t indices to actually draw them. </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -437,8 +436,8 @@
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro9Rendering12MeshGeometry11addVerticesERKN4Core5ArrayI8Vector3fEERKN4Core5ArrayI8Vector3fEERKN4Core5ArrayI9Vector3ubEE">
-<span id="_CPPv3N8Avogadro9Rendering12MeshGeometry11addVerticesERKN4Core5ArrayI8Vector3fEERKN4Core5ArrayI8Vector3fEERKN4Core5ArrayI9Vector3ubEE"></span><span id="_CPPv2N8Avogadro9Rendering12MeshGeometry11addVerticesERKN4Core5ArrayI8Vector3fEERKN4Core5ArrayI8Vector3fEERKN4Core5ArrayI9Vector3ubEE"></span><span id="Avogadro::Rendering::MeshGeometry::addVertices__Core::Array:Vector3f:CR.Core::Array:Vector3f:CR.Core::Array:Vector3ub:CR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_mesh_geometry_1a818ad4b3ea7119fa2fed12d6b27870cd"></span><span class="pre">unsigned</span> <span class="pre">int</span> <code class="sig-name descname"><span class="pre">addVertices</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <span class="pre">Core</span><span class="pre">::</span><a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#_CPPv4I0EN8Avogadro4Core5ArrayE" title="Avogadro::Core::Array"><span class="pre">Array</span></a><span class="pre">&lt;</span><span class="pre">Vector3f</span><span class="pre">&gt;</span> <span class="pre">&amp;</span><em><span class="pre">vertices</span></em>, <em class="property"><span class="pre">const</span></em> <span class="pre">Core</span><span class="pre">::</span><a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#_CPPv4I0EN8Avogadro4Core5ArrayE" title="Avogadro::Core::Array"><span class="pre">Array</span></a><span class="pre">&lt;</span><span class="pre">Vector3f</span><span class="pre">&gt;</span> <span class="pre">&amp;</span><em><span class="pre">normals</span></em>, <em class="property"><span class="pre">const</span></em> <span class="pre">Core</span><span class="pre">::</span><a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#_CPPv4I0EN8Avogadro4Core5ArrayE" title="Avogadro::Core::Array"><span class="pre">Array</span></a><span class="pre">&lt;</span><span class="pre">Vector3ub</span><span class="pre">&gt;</span> <span class="pre">&amp;</span><em><span class="pre">colors</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12MeshGeometry11addVerticesERKN4Core5ArrayI8Vector3fEERKN4Core5ArrayI8Vector3fEERKN4Core5ArrayI9Vector3ubEE" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering12MeshGeometry11addVerticesERKN4Core5ArrayI8Vector3fEERKN4Core5ArrayI8Vector3fEERKN4Core5ArrayI9Vector3ubEE">
+<span id="_CPPv3N8Avogadro9Rendering12MeshGeometry11addVerticesERKN4Core5ArrayI8Vector3fEERKN4Core5ArrayI8Vector3fEERKN4Core5ArrayI9Vector3ubEE"></span><span id="_CPPv2N8Avogadro9Rendering12MeshGeometry11addVerticesERKN4Core5ArrayI8Vector3fEERKN4Core5ArrayI8Vector3fEERKN4Core5ArrayI9Vector3ubEE"></span><span id="Avogadro::Rendering::MeshGeometry::addVertices__Core::Array:Vector3f:CR.Core::Array:Vector3f:CR.Core::Array:Vector3ub:CR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_mesh_geometry_1a818ad4b3ea7119fa2fed12d6b27870cd"></span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addVertices</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#_CPPv4I0EN8Avogadro4Core5ArrayE" title="Avogadro::Core::Array"><span class="n"><span class="pre">Array</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Vector3f</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">vertices</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#_CPPv4I0EN8Avogadro4Core5ArrayE" title="Avogadro::Core::Array"><span class="n"><span class="pre">Array</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Vector3f</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">normals</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#_CPPv4I0EN8Avogadro4Core5ArrayE" title="Avogadro::Core::Array"><span class="n"><span class="pre">Array</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Vector3ub</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">colors</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12MeshGeometry11addVerticesERKN4Core5ArrayI8Vector3fEERKN4Core5ArrayI8Vector3fEERKN4Core5ArrayI9Vector3ubEE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Add vertices to the object. Note that this just adds vertices to the object. Use addTriangles with size_t indices to actually draw them. </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -459,8 +458,8 @@
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro9Rendering12MeshGeometry11addVerticesERKN4Core5ArrayI8Vector3fEERKN4Core5ArrayI8Vector3fEE">
-<span id="_CPPv3N8Avogadro9Rendering12MeshGeometry11addVerticesERKN4Core5ArrayI8Vector3fEERKN4Core5ArrayI8Vector3fEE"></span><span id="_CPPv2N8Avogadro9Rendering12MeshGeometry11addVerticesERKN4Core5ArrayI8Vector3fEERKN4Core5ArrayI8Vector3fEE"></span><span id="Avogadro::Rendering::MeshGeometry::addVertices__Core::Array:Vector3f:CR.Core::Array:Vector3f:CR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_mesh_geometry_1a2cfd7676f57404a726ba91f60a00e63b"></span><span class="pre">unsigned</span> <span class="pre">int</span> <code class="sig-name descname"><span class="pre">addVertices</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <span class="pre">Core</span><span class="pre">::</span><a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#_CPPv4I0EN8Avogadro4Core5ArrayE" title="Avogadro::Core::Array"><span class="pre">Array</span></a><span class="pre">&lt;</span><span class="pre">Vector3f</span><span class="pre">&gt;</span> <span class="pre">&amp;</span><em><span class="pre">vertices</span></em>, <em class="property"><span class="pre">const</span></em> <span class="pre">Core</span><span class="pre">::</span><a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#_CPPv4I0EN8Avogadro4Core5ArrayE" title="Avogadro::Core::Array"><span class="pre">Array</span></a><span class="pre">&lt;</span><span class="pre">Vector3f</span><span class="pre">&gt;</span> <span class="pre">&amp;</span><em><span class="pre">normals</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12MeshGeometry11addVerticesERKN4Core5ArrayI8Vector3fEERKN4Core5ArrayI8Vector3fEE" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering12MeshGeometry11addVerticesERKN4Core5ArrayI8Vector3fEERKN4Core5ArrayI8Vector3fEE">
+<span id="_CPPv3N8Avogadro9Rendering12MeshGeometry11addVerticesERKN4Core5ArrayI8Vector3fEERKN4Core5ArrayI8Vector3fEE"></span><span id="_CPPv2N8Avogadro9Rendering12MeshGeometry11addVerticesERKN4Core5ArrayI8Vector3fEERKN4Core5ArrayI8Vector3fEE"></span><span id="Avogadro::Rendering::MeshGeometry::addVertices__Core::Array:Vector3f:CR.Core::Array:Vector3f:CR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_mesh_geometry_1a2cfd7676f57404a726ba91f60a00e63b"></span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addVertices</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#_CPPv4I0EN8Avogadro4Core5ArrayE" title="Avogadro::Core::Array"><span class="n"><span class="pre">Array</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Vector3f</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">vertices</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#_CPPv4I0EN8Avogadro4Core5ArrayE" title="Avogadro::Core::Array"><span class="n"><span class="pre">Array</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Vector3f</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">normals</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12MeshGeometry11addVerticesERKN4Core5ArrayI8Vector3fEERKN4Core5ArrayI8Vector3fEE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Add vertices to the object. Note that this just adds vertices to the object. Use addTriangles with size_t indices to actually draw them. </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -484,14 +483,14 @@
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-unnamed-group">Unnamed Group</p>
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro9Rendering12MeshGeometry11addTriangleEjjj">
-<span id="_CPPv3N8Avogadro9Rendering12MeshGeometry11addTriangleEjjj"></span><span id="_CPPv2N8Avogadro9Rendering12MeshGeometry11addTriangleEjjj"></span><span id="Avogadro::Rendering::MeshGeometry::addTriangle__unsigned-i.unsigned-i.unsigned-i"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_mesh_geometry_1aac87d594d47695be550afc3f5de28ad3"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">addTriangle</span></code><span class="sig-paren">(</span><span class="pre">unsigned</span> <span class="pre">int</span> <em><span class="pre">index1</span></em>, <span class="pre">unsigned</span> <span class="pre">int</span> <em><span class="pre">index2</span></em>, <span class="pre">unsigned</span> <span class="pre">int</span> <em><span class="pre">index3</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12MeshGeometry11addTriangleEjjj" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering12MeshGeometry11addTriangleEjjj">
+<span id="_CPPv3N8Avogadro9Rendering12MeshGeometry11addTriangleEjjj"></span><span id="_CPPv2N8Avogadro9Rendering12MeshGeometry11addTriangleEjjj"></span><span id="Avogadro::Rendering::MeshGeometry::addTriangle__unsigned-i.unsigned-i.unsigned-i"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_mesh_geometry_1aac87d594d47695be550afc3f5de28ad3"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addTriangle</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">index1</span></span>, <span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">index2</span></span>, <span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">index3</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12MeshGeometry11addTriangleEjjj" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Add triangles to the mesh. Triangles are specified as 3-tuples of vertex indices. Must call addVertices first, and use the return value to obtain the valid index range. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro9Rendering12MeshGeometry12addTrianglesERKN4Core5ArrayIjEE">
-<span id="_CPPv3N8Avogadro9Rendering12MeshGeometry12addTrianglesERKN4Core5ArrayIjEE"></span><span id="_CPPv2N8Avogadro9Rendering12MeshGeometry12addTrianglesERKN4Core5ArrayIjEE"></span><span id="Avogadro::Rendering::MeshGeometry::addTriangles__Core::Array:unsigned-i:CR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_mesh_geometry_1aa6de760f7ed1f5242e33e0eb5595811f"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">addTriangles</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <span class="pre">Core</span><span class="pre">::</span><a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#_CPPv4I0EN8Avogadro4Core5ArrayE" title="Avogadro::Core::Array"><span class="pre">Array</span></a><span class="pre">&lt;</span><span class="pre">unsigned</span> <span class="pre">int</span><span class="pre">&gt;</span> <span class="pre">&amp;</span><em><span class="pre">indices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12MeshGeometry12addTrianglesERKN4Core5ArrayIjEE" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering12MeshGeometry12addTrianglesERKN4Core5ArrayIjEE">
+<span id="_CPPv3N8Avogadro9Rendering12MeshGeometry12addTrianglesERKN4Core5ArrayIjEE"></span><span id="_CPPv2N8Avogadro9Rendering12MeshGeometry12addTrianglesERKN4Core5ArrayIjEE"></span><span id="Avogadro::Rendering::MeshGeometry::addTriangles__Core::Array:unsigned-i:CR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_mesh_geometry_1aa6de760f7ed1f5242e33e0eb5595811f"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addTriangles</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#_CPPv4I0EN8Avogadro4Core5ArrayE" title="Avogadro::Core::Array"><span class="n"><span class="pre">Array</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">indices</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12MeshGeometry12addTrianglesERKN4Core5ArrayIjEE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Add triangles to the mesh. Triangles are specified as 3-tuples of vertex indices. Must call addVertices first, and use the return value to obtain the valid index range. </p>
 </dd></dl>
 
@@ -499,14 +498,14 @@
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-unnamed-group">Unnamed Group</p>
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro9Rendering12MeshGeometry8setColorERK9Vector3ub">
-<span id="_CPPv3N8Avogadro9Rendering12MeshGeometry8setColorERK9Vector3ub"></span><span id="_CPPv2N8Avogadro9Rendering12MeshGeometry8setColorERK9Vector3ub"></span><span id="Avogadro::Rendering::MeshGeometry::setColor__Vector3ubCR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_mesh_geometry_1a383b0f329c9bbd8e0749a8d1a58b8f53"></span><em class="property"><span class="pre">inline</span></em> <span class="pre">void</span> <code class="sig-name descname"><span class="pre">setColor</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <span class="pre">Vector3ub</span> <span class="pre">&amp;</span><em><span class="pre">c</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12MeshGeometry8setColorERK9Vector3ub" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering12MeshGeometry8setColorERK9Vector3ub">
+<span id="_CPPv3N8Avogadro9Rendering12MeshGeometry8setColorERK9Vector3ub"></span><span id="_CPPv2N8Avogadro9Rendering12MeshGeometry8setColorERK9Vector3ub"></span><span id="Avogadro::Rendering::MeshGeometry::setColor__Vector3ubCR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_mesh_geometry_1a383b0f329c9bbd8e0749a8d1a58b8f53"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setColor</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Vector3ub</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">c</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12MeshGeometry8setColorERK9Vector3ub" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>The default color of the mesh. This is used to set the color of new vertices when no explicit vertex color is specified. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4NK8Avogadro9Rendering12MeshGeometry5colorEv">
-<span id="_CPPv3NK8Avogadro9Rendering12MeshGeometry5colorEv"></span><span id="_CPPv2NK8Avogadro9Rendering12MeshGeometry5colorEv"></span><span id="Avogadro::Rendering::MeshGeometry::colorC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_mesh_geometry_1a25ec5a2d1f9552c2859bebb5780de8f9"></span><em class="property"><span class="pre">inline</span></em> <span class="pre">Vector3ub</span> <code class="sig-name descname"><span class="pre">color</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering12MeshGeometry5colorEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering12MeshGeometry5colorEv">
+<span id="_CPPv3NK8Avogadro9Rendering12MeshGeometry5colorEv"></span><span id="_CPPv2NK8Avogadro9Rendering12MeshGeometry5colorEv"></span><span id="Avogadro::Rendering::MeshGeometry::colorC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_mesh_geometry_1a25ec5a2d1f9552c2859bebb5780de8f9"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">Vector3ub</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">color</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering12MeshGeometry5colorEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>The default color of the mesh. This is used to set the color of new vertices when no explicit vertex color is specified. </p>
 </dd></dl>
 
@@ -514,14 +513,14 @@
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-unnamed-group">Unnamed Group</p>
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro9Rendering12MeshGeometry10setOpacityEh">
-<span id="_CPPv3N8Avogadro9Rendering12MeshGeometry10setOpacityEh"></span><span id="_CPPv2N8Avogadro9Rendering12MeshGeometry10setOpacityEh"></span><span id="Avogadro::Rendering::MeshGeometry::setOpacity__unsigned-c"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_mesh_geometry_1af6b7188aa1139175072a7ea43b2ccea9"></span><em class="property"><span class="pre">inline</span></em> <span class="pre">void</span> <code class="sig-name descname"><span class="pre">setOpacity</span></code><span class="sig-paren">(</span><span class="pre">unsigned</span> <span class="pre">char</span> <em><span class="pre">opacity_</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12MeshGeometry10setOpacityEh" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering12MeshGeometry10setOpacityEh">
+<span id="_CPPv3N8Avogadro9Rendering12MeshGeometry10setOpacityEh"></span><span id="_CPPv2N8Avogadro9Rendering12MeshGeometry10setOpacityEh"></span><span id="Avogadro::Rendering::MeshGeometry::setOpacity__unsigned-c"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_mesh_geometry_1af6b7188aa1139175072a7ea43b2ccea9"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setOpacity</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">opacity_</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12MeshGeometry10setOpacityEh" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>The default opacity of the mesh. This is used when either no explicit vertex color is specified, or a three component color is used. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4NK8Avogadro9Rendering12MeshGeometry7opacityEv">
-<span id="_CPPv3NK8Avogadro9Rendering12MeshGeometry7opacityEv"></span><span id="_CPPv2NK8Avogadro9Rendering12MeshGeometry7opacityEv"></span><span id="Avogadro::Rendering::MeshGeometry::opacityC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_mesh_geometry_1a0830406a5719666f2939f0d97138ca32"></span><em class="property"><span class="pre">inline</span></em> <span class="pre">unsigned</span> <span class="pre">char</span> <code class="sig-name descname"><span class="pre">opacity</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering12MeshGeometry7opacityEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering12MeshGeometry7opacityEv">
+<span id="_CPPv3NK8Avogadro9Rendering12MeshGeometry7opacityEv"></span><span id="_CPPv2NK8Avogadro9Rendering12MeshGeometry7opacityEv"></span><span id="Avogadro::Rendering::MeshGeometry::opacityC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_mesh_geometry_1a0830406a5719666f2939f0d97138ca32"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">opacity</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering12MeshGeometry7opacityEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>The default opacity of the mesh. This is used when either no explicit vertex color is specified, or a three component color is used. </p>
 </dd></dl>
 
@@ -529,34 +528,34 @@
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro9Rendering12MeshGeometry12MeshGeometryEv">
-<span id="_CPPv3N8Avogadro9Rendering12MeshGeometry12MeshGeometryEv"></span><span id="_CPPv2N8Avogadro9Rendering12MeshGeometry12MeshGeometryEv"></span><span id="Avogadro::Rendering::MeshGeometry::MeshGeometry"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_mesh_geometry_1a659804a44f4b3654c23dd14f9d47394b"></span><code class="sig-name descname"><span class="pre">MeshGeometry</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12MeshGeometry12MeshGeometryEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering12MeshGeometry12MeshGeometryEv">
+<span id="_CPPv3N8Avogadro9Rendering12MeshGeometry12MeshGeometryEv"></span><span id="_CPPv2N8Avogadro9Rendering12MeshGeometry12MeshGeometryEv"></span><span id="Avogadro::Rendering::MeshGeometry::MeshGeometry"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_mesh_geometry_1a659804a44f4b3654c23dd14f9d47394b"></span><span class="sig-name descname"><span class="n"><span class="pre">MeshGeometry</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12MeshGeometry12MeshGeometryEv" title="Permalink to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro9Rendering12MeshGeometry12MeshGeometryERK12MeshGeometry">
-<span id="_CPPv3N8Avogadro9Rendering12MeshGeometry12MeshGeometryERK12MeshGeometry"></span><span id="_CPPv2N8Avogadro9Rendering12MeshGeometry12MeshGeometryERK12MeshGeometry"></span><span id="Avogadro::Rendering::MeshGeometry::MeshGeometry__MeshGeometryCR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_mesh_geometry_1a2e1162aaf2e0802448a0fcf31163532b"></span><code class="sig-name descname"><span class="pre">MeshGeometry</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4N8Avogadro9Rendering12MeshGeometry12MeshGeometryERK12MeshGeometry" title="Avogadro::Rendering::MeshGeometry::MeshGeometry"><span class="pre">MeshGeometry</span></a> <span class="pre">&amp;</span><em><span class="pre">other</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12MeshGeometry12MeshGeometryERK12MeshGeometry" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering12MeshGeometry12MeshGeometryERK12MeshGeometry">
+<span id="_CPPv3N8Avogadro9Rendering12MeshGeometry12MeshGeometryERK12MeshGeometry"></span><span id="_CPPv2N8Avogadro9Rendering12MeshGeometry12MeshGeometryERK12MeshGeometry"></span><span id="Avogadro::Rendering::MeshGeometry::MeshGeometry__MeshGeometryCR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_mesh_geometry_1a2e1162aaf2e0802448a0fcf31163532b"></span><span class="sig-name descname"><span class="n"><span class="pre">MeshGeometry</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro9Rendering12MeshGeometry12MeshGeometryERK12MeshGeometry" title="Avogadro::Rendering::MeshGeometry::MeshGeometry"><span class="n"><span class="pre">MeshGeometry</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12MeshGeometry12MeshGeometryERK12MeshGeometry" title="Permalink to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro9Rendering12MeshGeometryD0Ev">
-<span id="_CPPv3N8Avogadro9Rendering12MeshGeometryD0Ev"></span><span id="_CPPv2N8Avogadro9Rendering12MeshGeometryD0Ev"></span><span id="Avogadro::Rendering::MeshGeometry::~MeshGeometry"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_mesh_geometry_1a30c79690418828c9f4986e74b7ee6501"></span><code class="sig-name descname"><span class="pre">~MeshGeometry</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">override</span></em><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12MeshGeometryD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering12MeshGeometryD0Ev">
+<span id="_CPPv3N8Avogadro9Rendering12MeshGeometryD0Ev"></span><span id="_CPPv2N8Avogadro9Rendering12MeshGeometryD0Ev"></span><span id="Avogadro::Rendering::MeshGeometry::~MeshGeometry"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_mesh_geometry_1a30c79690418828c9f4986e74b7ee6501"></span><span class="sig-name descname"><span class="n"><span class="pre">~MeshGeometry</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12MeshGeometryD0Ev" title="Permalink to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro9Rendering12MeshGeometryaSE12MeshGeometry">
-<span id="_CPPv3N8Avogadro9Rendering12MeshGeometryaSE12MeshGeometry"></span><span id="_CPPv2N8Avogadro9Rendering12MeshGeometryaSE12MeshGeometry"></span><span id="Avogadro::Rendering::MeshGeometry::assign-operator__MeshGeometry"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_mesh_geometry_1a7bc7b3defdd09a0dc22a4a893ea3932d"></span><em class="property"><span class="pre">inline</span></em> <a class="reference internal" href="#_CPPv4N8Avogadro9Rendering12MeshGeometryE" title="Avogadro::Rendering::MeshGeometry"><span class="pre">MeshGeometry</span></a> <span class="pre">&amp;</span><code class="sig-name descname"><span class="pre">operator=</span></code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N8Avogadro9Rendering12MeshGeometryE" title="Avogadro::Rendering::MeshGeometry"><span class="pre">MeshGeometry</span></a><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12MeshGeometryaSE12MeshGeometry" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering12MeshGeometryaSE12MeshGeometry">
+<span id="_CPPv3N8Avogadro9Rendering12MeshGeometryaSE12MeshGeometry"></span><span id="_CPPv2N8Avogadro9Rendering12MeshGeometryaSE12MeshGeometry"></span><span id="Avogadro::Rendering::MeshGeometry::assign-operator__MeshGeometry"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_mesh_geometry_1a7bc7b3defdd09a0dc22a4a893ea3932d"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro9Rendering12MeshGeometryE" title="Avogadro::Rendering::MeshGeometry"><span class="n"><span class="pre">MeshGeometry</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N8Avogadro9Rendering12MeshGeometryE" title="Avogadro::Rendering::MeshGeometry"><span class="n"><span class="pre">MeshGeometry</span></span></a><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12MeshGeometryaSE12MeshGeometry" title="Permalink to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro9Rendering12MeshGeometry6acceptER7Visitor">
-<span id="_CPPv3N8Avogadro9Rendering12MeshGeometry6acceptER7Visitor"></span><span id="_CPPv2N8Avogadro9Rendering12MeshGeometry6acceptER7Visitor"></span><span id="Avogadro::Rendering::MeshGeometry::accept__VisitorR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_mesh_geometry_1ab160d67ce77b08eae309d0557e1117fe"></span><em class="property"><span class="pre">virtual</span></em> <span class="pre">void</span> <code class="sig-name descname"><span class="pre">accept</span></code><span class="sig-paren">(</span><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_visitor.html#_CPPv4N8Avogadro9Rendering7VisitorE" title="Avogadro::Rendering::Visitor"><span class="pre">Visitor</span></a><span class="pre">&amp;</span><span class="sig-paren">)</span> <em class="property"><span class="pre">override</span></em><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12MeshGeometry6acceptER7Visitor" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering12MeshGeometry6acceptER7Visitor">
+<span id="_CPPv3N8Avogadro9Rendering12MeshGeometry6acceptER7Visitor"></span><span id="_CPPv2N8Avogadro9Rendering12MeshGeometry6acceptER7Visitor"></span><span id="Avogadro::Rendering::MeshGeometry::accept__VisitorR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_mesh_geometry_1ab160d67ce77b08eae309d0557e1117fe"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">accept</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_visitor.html#_CPPv4N8Avogadro9Rendering7VisitorE" title="Avogadro::Rendering::Visitor"><span class="n"><span class="pre">Visitor</span></span></a><span class="p"><span class="pre">&amp;</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12MeshGeometry6acceptER7Visitor" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Accept a visit from our friendly visitor. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro9Rendering12MeshGeometry6renderERK6Camera">
-<span id="_CPPv3N8Avogadro9Rendering12MeshGeometry6renderERK6Camera"></span><span id="_CPPv2N8Avogadro9Rendering12MeshGeometry6renderERK6Camera"></span><span id="Avogadro::Rendering::MeshGeometry::render__CameraCR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_mesh_geometry_1a77ab50866270d27fc00e1d656efcd951"></span><em class="property"><span class="pre">virtual</span></em> <span class="pre">void</span> <code class="sig-name descname"><span class="pre">render</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="class_avogadro_1_1_rendering_1_1_camera.html#_CPPv4N8Avogadro9Rendering6CameraE" title="Avogadro::Rendering::Camera"><span class="pre">Camera</span></a> <span class="pre">&amp;</span><em><span class="pre">camera</span></em><span class="sig-paren">)</span> <em class="property"><span class="pre">override</span></em><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12MeshGeometry6renderERK6Camera" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering12MeshGeometry6renderERK6Camera">
+<span id="_CPPv3N8Avogadro9Rendering12MeshGeometry6renderERK6Camera"></span><span id="_CPPv2N8Avogadro9Rendering12MeshGeometry6renderERK6Camera"></span><span id="Avogadro::Rendering::MeshGeometry::render__CameraCR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_mesh_geometry_1a77ab50866270d27fc00e1d656efcd951"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">render</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_camera.html#_CPPv4N8Avogadro9Rendering6CameraE" title="Avogadro::Rendering::Camera"><span class="n"><span class="pre">Camera</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">camera</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12MeshGeometry6renderERK6Camera" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Render the mesh geometry. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -566,105 +565,105 @@
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro9Rendering12MeshGeometry5clearEv">
-<span id="_CPPv3N8Avogadro9Rendering12MeshGeometry5clearEv"></span><span id="_CPPv2N8Avogadro9Rendering12MeshGeometry5clearEv"></span><span id="Avogadro::Rendering::MeshGeometry::clear"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_mesh_geometry_1aee7cb2065b88d21ac4ad05bc997ecf82"></span><em class="property"><span class="pre">virtual</span></em> <span class="pre">void</span> <code class="sig-name descname"><span class="pre">clear</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">override</span></em><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12MeshGeometry5clearEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering12MeshGeometry5clearEv">
+<span id="_CPPv3N8Avogadro9Rendering12MeshGeometry5clearEv"></span><span id="_CPPv2N8Avogadro9Rendering12MeshGeometry5clearEv"></span><span id="Avogadro::Rendering::MeshGeometry::clear"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_mesh_geometry_1aee7cb2065b88d21ac4ad05bc997ecf82"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">clear</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12MeshGeometry5clearEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Clear the contents of the node. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4NK8Avogadro9Rendering12MeshGeometry11vertexCountEv">
-<span id="_CPPv3NK8Avogadro9Rendering12MeshGeometry11vertexCountEv"></span><span id="_CPPv2NK8Avogadro9Rendering12MeshGeometry11vertexCountEv"></span><span id="Avogadro::Rendering::MeshGeometry::vertexCountC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_mesh_geometry_1a640ad54786237477e83e5ddedafe28f0"></span><em class="property"><span class="pre">inline</span></em> <span class="pre">size_t</span> <code class="sig-name descname"><span class="pre">vertexCount</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering12MeshGeometry11vertexCountEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering12MeshGeometry11vertexCountEv">
+<span id="_CPPv3NK8Avogadro9Rendering12MeshGeometry11vertexCountEv"></span><span id="_CPPv2NK8Avogadro9Rendering12MeshGeometry11vertexCountEv"></span><span id="Avogadro::Rendering::MeshGeometry::vertexCountC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_mesh_geometry_1a640ad54786237477e83e5ddedafe28f0"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">vertexCount</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering12MeshGeometry11vertexCountEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Get the number of vertices. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4NK8Avogadro9Rendering12MeshGeometry10indexCountEv">
-<span id="_CPPv3NK8Avogadro9Rendering12MeshGeometry10indexCountEv"></span><span id="_CPPv2NK8Avogadro9Rendering12MeshGeometry10indexCountEv"></span><span id="Avogadro::Rendering::MeshGeometry::indexCountC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_mesh_geometry_1a66d553a190e0ac2689901a288f0cb29a"></span><em class="property"><span class="pre">inline</span></em> <span class="pre">size_t</span> <code class="sig-name descname"><span class="pre">indexCount</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering12MeshGeometry10indexCountEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering12MeshGeometry10indexCountEv">
+<span id="_CPPv3NK8Avogadro9Rendering12MeshGeometry10indexCountEv"></span><span id="_CPPv2NK8Avogadro9Rendering12MeshGeometry10indexCountEv"></span><span id="Avogadro::Rendering::MeshGeometry::indexCountC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_mesh_geometry_1a66d553a190e0ac2689901a288f0cb29a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">indexCount</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering12MeshGeometry10indexCountEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Get the number of vertices. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4NK8Avogadro9Rendering12MeshGeometry13triangleCountEv">
-<span id="_CPPv3NK8Avogadro9Rendering12MeshGeometry13triangleCountEv"></span><span id="_CPPv2NK8Avogadro9Rendering12MeshGeometry13triangleCountEv"></span><span id="Avogadro::Rendering::MeshGeometry::triangleCountC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_mesh_geometry_1a98746daeaef06facc8bf8f0c744a4f42"></span><em class="property"><span class="pre">inline</span></em> <span class="pre">size_t</span> <code class="sig-name descname"><span class="pre">triangleCount</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering12MeshGeometry13triangleCountEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering12MeshGeometry13triangleCountEv">
+<span id="_CPPv3NK8Avogadro9Rendering12MeshGeometry13triangleCountEv"></span><span id="_CPPv2NK8Avogadro9Rendering12MeshGeometry13triangleCountEv"></span><span id="Avogadro::Rendering::MeshGeometry::triangleCountC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_mesh_geometry_1a98746daeaef06facc8bf8f0c744a4f42"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">triangleCount</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering12MeshGeometry13triangleCountEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Get the number of triangles. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro9Rendering12MeshGeometry8verticesEv">
-<span id="_CPPv3N8Avogadro9Rendering12MeshGeometry8verticesEv"></span><span id="_CPPv2N8Avogadro9Rendering12MeshGeometry8verticesEv"></span><span id="Avogadro::Rendering::MeshGeometry::vertices"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_mesh_geometry_1a5b2cdcc58f75e2b61faec044ef3acbbc"></span><em class="property"><span class="pre">inline</span></em> <span class="pre">Core</span><span class="pre">::</span><a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#_CPPv4I0EN8Avogadro4Core5ArrayE" title="Avogadro::Core::Array"><span class="pre">Array</span></a><span class="pre">&lt;</span><a class="reference internal" href="#_CPPv4N8Avogadro9Rendering12MeshGeometry12PackedVertexE" title="Avogadro::Rendering::MeshGeometry::PackedVertex"><span class="pre">PackedVertex</span></a><span class="pre">&gt;</span> <code class="sig-name descname"><span class="pre">vertices</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12MeshGeometry8verticesEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering12MeshGeometry8verticesEv">
+<span id="_CPPv3N8Avogadro9Rendering12MeshGeometry8verticesEv"></span><span id="_CPPv2N8Avogadro9Rendering12MeshGeometry8verticesEv"></span><span id="Avogadro::Rendering::MeshGeometry::vertices"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_mesh_geometry_1a5b2cdcc58f75e2b61faec044ef3acbbc"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#_CPPv4I0EN8Avogadro4Core5ArrayE" title="Avogadro::Core::Array"><span class="n"><span class="pre">Array</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4N8Avogadro9Rendering12MeshGeometry12PackedVertexE" title="Avogadro::Rendering::MeshGeometry::PackedVertex"><span class="n"><span class="pre">PackedVertex</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">vertices</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12MeshGeometry8verticesEv" title="Permalink to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro9Rendering12MeshGeometry9trianglesEv">
-<span id="_CPPv3N8Avogadro9Rendering12MeshGeometry9trianglesEv"></span><span id="_CPPv2N8Avogadro9Rendering12MeshGeometry9trianglesEv"></span><span id="Avogadro::Rendering::MeshGeometry::triangles"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_mesh_geometry_1a7e8b5a047ed8bb1fd5f26b607559ac24"></span><em class="property"><span class="pre">inline</span></em> <span class="pre">Core</span><span class="pre">::</span><a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#_CPPv4I0EN8Avogadro4Core5ArrayE" title="Avogadro::Core::Array"><span class="pre">Array</span></a><span class="pre">&lt;</span><span class="pre">unsigned</span> <span class="pre">int</span><span class="pre">&gt;</span> <code class="sig-name descname"><span class="pre">triangles</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12MeshGeometry9trianglesEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering12MeshGeometry9trianglesEv">
+<span id="_CPPv3N8Avogadro9Rendering12MeshGeometry9trianglesEv"></span><span id="_CPPv2N8Avogadro9Rendering12MeshGeometry9trianglesEv"></span><span id="Avogadro::Rendering::MeshGeometry::triangles"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_mesh_geometry_1a7e8b5a047ed8bb1fd5f26b607559ac24"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#_CPPv4I0EN8Avogadro4Core5ArrayE" title="Avogadro::Core::Array"><span class="n"><span class="pre">Array</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">triangles</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12MeshGeometry9trianglesEv" title="Permalink to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 </div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-attributes">Public Static Attributes</p>
 <dl class="cpp var">
-<dt id="_CPPv4N8Avogadro9Rendering12MeshGeometry12InvalidIndexE">
-<span id="_CPPv3N8Avogadro9Rendering12MeshGeometry12InvalidIndexE"></span><span id="_CPPv2N8Avogadro9Rendering12MeshGeometry12InvalidIndexE"></span><span id="Avogadro::Rendering::MeshGeometry::InvalidIndex__unsigned-iC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_mesh_geometry_1ae874c8e0194763bff45926e51fc0305b"></span><em class="property"><span class="pre">static</span></em> <em class="property"><span class="pre">const</span></em> <span class="pre">unsigned</span> <span class="pre">int</span> <code class="sig-name descname"><span class="pre">InvalidIndex</span></code><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12MeshGeometry12InvalidIndexE" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering12MeshGeometry12InvalidIndexE">
+<span id="_CPPv3N8Avogadro9Rendering12MeshGeometry12InvalidIndexE"></span><span id="_CPPv2N8Avogadro9Rendering12MeshGeometry12InvalidIndexE"></span><span id="Avogadro::Rendering::MeshGeometry::InvalidIndex__unsigned-iC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_mesh_geometry_1ae874c8e0194763bff45926e51fc0305b"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">InvalidIndex</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12MeshGeometry12InvalidIndexE" title="Permalink to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 </div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-friends">Friends</p>
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro9Rendering12MeshGeometry4swapER12MeshGeometryR12MeshGeometry">
-<span id="_CPPv3N8Avogadro9Rendering12MeshGeometry4swapER12MeshGeometryR12MeshGeometry"></span><span id="_CPPv2N8Avogadro9Rendering12MeshGeometry4swapER12MeshGeometryR12MeshGeometry"></span><span id="Avogadro::Rendering::MeshGeometry::swap__MeshGeometryR.MeshGeometryR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_mesh_geometry_1ac4ee31e89e81eadb9eed5af2dafb82c7"></span><em class="property"><span class="pre">friend</span></em> <span class="pre">void</span> <code class="sig-name descname"><span class="pre">swap</span></code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N8Avogadro9Rendering12MeshGeometryE" title="Avogadro::Rendering::MeshGeometry"><span class="pre">MeshGeometry</span></a> <span class="pre">&amp;</span><em><span class="pre">lhs</span></em>, <a class="reference internal" href="#_CPPv4N8Avogadro9Rendering12MeshGeometryE" title="Avogadro::Rendering::MeshGeometry"><span class="pre">MeshGeometry</span></a> <span class="pre">&amp;</span><em><span class="pre">rhs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12MeshGeometry4swapER12MeshGeometryR12MeshGeometry" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering12MeshGeometry4swapER12MeshGeometryR12MeshGeometry">
+<span id="_CPPv3N8Avogadro9Rendering12MeshGeometry4swapER12MeshGeometryR12MeshGeometry"></span><span id="_CPPv2N8Avogadro9Rendering12MeshGeometry4swapER12MeshGeometryR12MeshGeometry"></span><span id="Avogadro::Rendering::MeshGeometry::swap__MeshGeometryR.MeshGeometryR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_mesh_geometry_1ac4ee31e89e81eadb9eed5af2dafb82c7"></span><span class="k"><span class="pre">friend</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">swap</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N8Avogadro9Rendering12MeshGeometryE" title="Avogadro::Rendering::MeshGeometry"><span class="n"><span class="pre">MeshGeometry</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">lhs</span></span>, <a class="reference internal" href="#_CPPv4N8Avogadro9Rendering12MeshGeometryE" title="Avogadro::Rendering::MeshGeometry"><span class="n"><span class="pre">MeshGeometry</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">rhs</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12MeshGeometry4swapER12MeshGeometryR12MeshGeometry" title="Permalink to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 </div>
 <dl class="cpp struct">
-<dt id="_CPPv4N8Avogadro9Rendering12MeshGeometry12PackedVertexE">
-<span id="_CPPv3N8Avogadro9Rendering12MeshGeometry12PackedVertexE"></span><span id="_CPPv2N8Avogadro9Rendering12MeshGeometry12PackedVertexE"></span><span id="Avogadro::Rendering::MeshGeometry::PackedVertex"></span><span class="target" id="struct_avogadro_1_1_rendering_1_1_mesh_geometry_1_1_packed_vertex"></span><em class="property"><span class="pre">struct</span> </em><code class="sig-name descname"><span class="pre">PackedVertex</span></code><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12MeshGeometry12PackedVertexE" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering12MeshGeometry12PackedVertexE">
+<span id="_CPPv3N8Avogadro9Rendering12MeshGeometry12PackedVertexE"></span><span id="_CPPv2N8Avogadro9Rendering12MeshGeometry12PackedVertexE"></span><span id="Avogadro::Rendering::MeshGeometry::PackedVertex"></span><span class="target" id="struct_avogadro_1_1_rendering_1_1_mesh_geometry_1_1_packed_vertex"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PackedVertex</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12MeshGeometry12PackedVertexE" title="Permalink to this definition">#</a><br /></dt>
 <dd><div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro9Rendering12MeshGeometry12PackedVertex12PackedVertexERK9Vector4ubRK8Vector3fRK8Vector3f">
-<span id="_CPPv3N8Avogadro9Rendering12MeshGeometry12PackedVertex12PackedVertexERK9Vector4ubRK8Vector3fRK8Vector3f"></span><span id="_CPPv2N8Avogadro9Rendering12MeshGeometry12PackedVertex12PackedVertexERK9Vector4ubRK8Vector3fRK8Vector3f"></span><span id="Avogadro::Rendering::MeshGeometry::PackedVertex::PackedVertex__Vector4ubCR.Vector3fCR.Vector3fCR"></span><span class="target" id="struct_avogadro_1_1_rendering_1_1_mesh_geometry_1_1_packed_vertex_1a384ea446af9b3296416c0b29096fa022"></span><em class="property"><span class="pre">inline</span></em> <code class="sig-name descname"><span class="pre">PackedVertex</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <span class="pre">Vector4ub</span> <span class="pre">&amp;</span><em><span class="pre">c</span></em>, <em class="property"><span class="pre">const</span></em> <span class="pre">Vector3f</span> <span class="pre">&amp;</span><em><span class="pre">n</span></em>, <em class="property"><span class="pre">const</span></em> <span class="pre">Vector3f</span> <span class="pre">&amp;</span><em><span class="pre">v</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12MeshGeometry12PackedVertex12PackedVertexERK9Vector4ubRK8Vector3fRK8Vector3f" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering12MeshGeometry12PackedVertex12PackedVertexERK9Vector4ubRK8Vector3fRK8Vector3f">
+<span id="_CPPv3N8Avogadro9Rendering12MeshGeometry12PackedVertex12PackedVertexERK9Vector4ubRK8Vector3fRK8Vector3f"></span><span id="_CPPv2N8Avogadro9Rendering12MeshGeometry12PackedVertex12PackedVertexERK9Vector4ubRK8Vector3fRK8Vector3f"></span><span id="Avogadro::Rendering::MeshGeometry::PackedVertex::PackedVertex__Vector4ubCR.Vector3fCR.Vector3fCR"></span><span class="target" id="struct_avogadro_1_1_rendering_1_1_mesh_geometry_1_1_packed_vertex_1a384ea446af9b3296416c0b29096fa022"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PackedVertex</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Vector4ub</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">c</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Vector3f</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">n</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Vector3f</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">v</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12MeshGeometry12PackedVertex12PackedVertexERK9Vector4ubRK8Vector3fRK8Vector3f" title="Permalink to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 </div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
 <dl class="cpp var">
-<dt id="_CPPv4N8Avogadro9Rendering12MeshGeometry12PackedVertex5colorE">
-<span id="_CPPv3N8Avogadro9Rendering12MeshGeometry12PackedVertex5colorE"></span><span id="_CPPv2N8Avogadro9Rendering12MeshGeometry12PackedVertex5colorE"></span><span id="Avogadro::Rendering::MeshGeometry::PackedVertex::color__Vector4ub"></span><span class="target" id="struct_avogadro_1_1_rendering_1_1_mesh_geometry_1_1_packed_vertex_1a2837ef87627cd56b45c72a522f4d9251"></span><span class="pre">Vector4ub</span> <code class="sig-name descname"><span class="pre">color</span></code><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12MeshGeometry12PackedVertex5colorE" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering12MeshGeometry12PackedVertex5colorE">
+<span id="_CPPv3N8Avogadro9Rendering12MeshGeometry12PackedVertex5colorE"></span><span id="_CPPv2N8Avogadro9Rendering12MeshGeometry12PackedVertex5colorE"></span><span id="Avogadro::Rendering::MeshGeometry::PackedVertex::color__Vector4ub"></span><span class="target" id="struct_avogadro_1_1_rendering_1_1_mesh_geometry_1_1_packed_vertex_1a2837ef87627cd56b45c72a522f4d9251"></span><span class="n"><span class="pre">Vector4ub</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">color</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12MeshGeometry12PackedVertex5colorE" title="Permalink to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp var">
-<dt id="_CPPv4N8Avogadro9Rendering12MeshGeometry12PackedVertex6normalE">
-<span id="_CPPv3N8Avogadro9Rendering12MeshGeometry12PackedVertex6normalE"></span><span id="_CPPv2N8Avogadro9Rendering12MeshGeometry12PackedVertex6normalE"></span><span id="Avogadro::Rendering::MeshGeometry::PackedVertex::normal__Vector3f"></span><span class="target" id="struct_avogadro_1_1_rendering_1_1_mesh_geometry_1_1_packed_vertex_1a1b8d96ad5ea7d8b704525d1efa3a3cb4"></span><span class="pre">Vector3f</span> <code class="sig-name descname"><span class="pre">normal</span></code><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12MeshGeometry12PackedVertex6normalE" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering12MeshGeometry12PackedVertex6normalE">
+<span id="_CPPv3N8Avogadro9Rendering12MeshGeometry12PackedVertex6normalE"></span><span id="_CPPv2N8Avogadro9Rendering12MeshGeometry12PackedVertex6normalE"></span><span id="Avogadro::Rendering::MeshGeometry::PackedVertex::normal__Vector3f"></span><span class="target" id="struct_avogadro_1_1_rendering_1_1_mesh_geometry_1_1_packed_vertex_1a1b8d96ad5ea7d8b704525d1efa3a3cb4"></span><span class="n"><span class="pre">Vector3f</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">normal</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12MeshGeometry12PackedVertex6normalE" title="Permalink to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp var">
-<dt id="_CPPv4N8Avogadro9Rendering12MeshGeometry12PackedVertex6vertexE">
-<span id="_CPPv3N8Avogadro9Rendering12MeshGeometry12PackedVertex6vertexE"></span><span id="_CPPv2N8Avogadro9Rendering12MeshGeometry12PackedVertex6vertexE"></span><span id="Avogadro::Rendering::MeshGeometry::PackedVertex::vertex__Vector3f"></span><span class="target" id="struct_avogadro_1_1_rendering_1_1_mesh_geometry_1_1_packed_vertex_1aa2f0b68070c8c4d581b5ec2dcbe947f9"></span><span class="pre">Vector3f</span> <code class="sig-name descname"><span class="pre">vertex</span></code><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12MeshGeometry12PackedVertex6vertexE" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering12MeshGeometry12PackedVertex6vertexE">
+<span id="_CPPv3N8Avogadro9Rendering12MeshGeometry12PackedVertex6vertexE"></span><span id="_CPPv2N8Avogadro9Rendering12MeshGeometry12PackedVertex6vertexE"></span><span id="Avogadro::Rendering::MeshGeometry::PackedVertex::vertex__Vector3f"></span><span class="target" id="struct_avogadro_1_1_rendering_1_1_mesh_geometry_1_1_packed_vertex_1aa2f0b68070c8c4d581b5ec2dcbe947f9"></span><span class="n"><span class="pre">Vector3f</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">vertex</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12MeshGeometry12PackedVertex6vertexE" title="Permalink to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp var">
-<dt id="_CPPv4N8Avogadro9Rendering12MeshGeometry12PackedVertex7paddingE">
-<span id="_CPPv3N8Avogadro9Rendering12MeshGeometry12PackedVertex7paddingE"></span><span id="_CPPv2N8Avogadro9Rendering12MeshGeometry12PackedVertex7paddingE"></span><span id="Avogadro::Rendering::MeshGeometry::PackedVertex::padding__unsigned-cA"></span><span class="target" id="struct_avogadro_1_1_rendering_1_1_mesh_geometry_1_1_packed_vertex_1a57be15db3c56e66ab03f088077ca89b4"></span><span class="pre">unsigned</span> <span class="pre">char</span> <code class="sig-name descname"><span class="pre">padding</span></code><span class="pre">[</span><span class="pre">4</span><span class="pre">]</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12MeshGeometry12PackedVertex7paddingE" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering12MeshGeometry12PackedVertex7paddingE">
+<span id="_CPPv3N8Avogadro9Rendering12MeshGeometry12PackedVertex7paddingE"></span><span id="_CPPv2N8Avogadro9Rendering12MeshGeometry12PackedVertex7paddingE"></span><span id="Avogadro::Rendering::MeshGeometry::PackedVertex::padding__unsigned-cA"></span><span class="target" id="struct_avogadro_1_1_rendering_1_1_mesh_geometry_1_1_packed_vertex_1a57be15db3c56e66ab03f088077ca89b4"></span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">padding</span></span></span><span class="p"><span class="pre">[</span></span><span class="m"><span class="pre">4</span></span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12MeshGeometry12PackedVertex7paddingE" title="Permalink to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 </div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-functions">Public Static Functions</p>
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro9Rendering12MeshGeometry12PackedVertex11colorOffsetEv">
-<span id="_CPPv3N8Avogadro9Rendering12MeshGeometry12PackedVertex11colorOffsetEv"></span><span id="_CPPv2N8Avogadro9Rendering12MeshGeometry12PackedVertex11colorOffsetEv"></span><span id="Avogadro::Rendering::MeshGeometry::PackedVertex::colorOffset"></span><span class="target" id="struct_avogadro_1_1_rendering_1_1_mesh_geometry_1_1_packed_vertex_1a11d8445df939ba36e07087284d2cfaf5"></span><em class="property"><span class="pre">static</span></em> <em class="property"><span class="pre">inline</span></em> <span class="pre">int</span> <code class="sig-name descname"><span class="pre">colorOffset</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12MeshGeometry12PackedVertex11colorOffsetEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering12MeshGeometry12PackedVertex11colorOffsetEv">
+<span id="_CPPv3N8Avogadro9Rendering12MeshGeometry12PackedVertex11colorOffsetEv"></span><span id="_CPPv2N8Avogadro9Rendering12MeshGeometry12PackedVertex11colorOffsetEv"></span><span id="Avogadro::Rendering::MeshGeometry::PackedVertex::colorOffset"></span><span class="target" id="struct_avogadro_1_1_rendering_1_1_mesh_geometry_1_1_packed_vertex_1a11d8445df939ba36e07087284d2cfaf5"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">colorOffset</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12MeshGeometry12PackedVertex11colorOffsetEv" title="Permalink to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro9Rendering12MeshGeometry12PackedVertex12normalOffsetEv">
-<span id="_CPPv3N8Avogadro9Rendering12MeshGeometry12PackedVertex12normalOffsetEv"></span><span id="_CPPv2N8Avogadro9Rendering12MeshGeometry12PackedVertex12normalOffsetEv"></span><span id="Avogadro::Rendering::MeshGeometry::PackedVertex::normalOffset"></span><span class="target" id="struct_avogadro_1_1_rendering_1_1_mesh_geometry_1_1_packed_vertex_1a7977404473f8eb704fe67e3b2c462d4e"></span><em class="property"><span class="pre">static</span></em> <em class="property"><span class="pre">inline</span></em> <span class="pre">int</span> <code class="sig-name descname"><span class="pre">normalOffset</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12MeshGeometry12PackedVertex12normalOffsetEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering12MeshGeometry12PackedVertex12normalOffsetEv">
+<span id="_CPPv3N8Avogadro9Rendering12MeshGeometry12PackedVertex12normalOffsetEv"></span><span id="_CPPv2N8Avogadro9Rendering12MeshGeometry12PackedVertex12normalOffsetEv"></span><span id="Avogadro::Rendering::MeshGeometry::PackedVertex::normalOffset"></span><span class="target" id="struct_avogadro_1_1_rendering_1_1_mesh_geometry_1_1_packed_vertex_1a7977404473f8eb704fe67e3b2c462d4e"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">normalOffset</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12MeshGeometry12PackedVertex12normalOffsetEv" title="Permalink to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro9Rendering12MeshGeometry12PackedVertex12vertexOffsetEv">
-<span id="_CPPv3N8Avogadro9Rendering12MeshGeometry12PackedVertex12vertexOffsetEv"></span><span id="_CPPv2N8Avogadro9Rendering12MeshGeometry12PackedVertex12vertexOffsetEv"></span><span id="Avogadro::Rendering::MeshGeometry::PackedVertex::vertexOffset"></span><span class="target" id="struct_avogadro_1_1_rendering_1_1_mesh_geometry_1_1_packed_vertex_1a3871c25f3279286bbcb38cb8ceaa8f5d"></span><em class="property"><span class="pre">static</span></em> <em class="property"><span class="pre">inline</span></em> <span class="pre">int</span> <code class="sig-name descname"><span class="pre">vertexOffset</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12MeshGeometry12PackedVertex12vertexOffsetEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering12MeshGeometry12PackedVertex12vertexOffsetEv">
+<span id="_CPPv3N8Avogadro9Rendering12MeshGeometry12PackedVertex12vertexOffsetEv"></span><span id="_CPPv2N8Avogadro9Rendering12MeshGeometry12PackedVertex12vertexOffsetEv"></span><span id="Avogadro::Rendering::MeshGeometry::PackedVertex::vertexOffset"></span><span class="target" id="struct_avogadro_1_1_rendering_1_1_mesh_geometry_1_1_packed_vertex_1a3871c25f3279286bbcb38cb8ceaa8f5d"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">vertexOffset</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12MeshGeometry12PackedVertex12vertexOffsetEv" title="Permalink to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 </div>
@@ -672,18 +671,29 @@
 
 </dd></dl>
 
+</section>
+
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="class_avogadro_1_1_rendering_1_1_line_strip_geometry.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Class Avogadro::Rendering::LineStripGeometry</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="class_avogadro_1_1_rendering_1_1_node.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Class Avogadro::Rendering::Node</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
-
-
-              </div>
-              
-              
-              <div class='prev-next-bottom'>
-                
-    <a class='left-prev' id="prev-link" href="class_avogadro_1_1_rendering_1_1_line_strip_geometry.html" title="previous page">Class Avogadro::Rendering::LineStripGeometry</a>
-    <a class='right-next' id="next-link" href="class_avogadro_1_1_rendering_1_1_node.html" title="next page">Class Avogadro::Rendering::Node</a>
-
-              </div>
               
           </main>
           
@@ -691,16 +701,16 @@
       </div>
     </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
-
-  <footer class="container-fluid footer-copy">
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+<footer class="container-fluid footer-copy">
 
     <div class="container">
 
       <div class="row">
         <div class="col-md-10 py-2">
           <p>
-            ©2021 The OpenChemistry / Avogadro Teams. The website content uses the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/LICENSE">BSD License</a> and is covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
+            ©2022 The OpenChemistry / Avogadro Teams. The website content uses the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/LICENSE">BSD License</a> and is covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
           </p>
         </div>
         <br />

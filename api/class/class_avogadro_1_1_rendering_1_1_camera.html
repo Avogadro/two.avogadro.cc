@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Class Avogadro::Rendering::Camera &#8212; Avogadro 1.94.0-55-gbefc28e8 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Class Avogadro::Rendering::Camera &#8212; Avogadro 1.95.1 documentation</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,19 +20,15 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
@@ -40,10 +38,13 @@
     <link rel="next" title="Class Avogadro::Rendering::Cylinder" href="class_avogadro_1_1_rendering_1_1_cylinder.html" />
     <link rel="prev" title="Class Avogadro::Rendering::BufferObject" href="class_avogadro_1_1_rendering_1_1_buffer_object.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -111,16 +112,12 @@
       <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
-          <a class="nav-link" href="https://github.com/openchemistry/avogadrolibs" rel="noopener" target="_blank" title="GitHub">
-            <span><i class="fab fa-github-square"></i></span>
-            <label class="sr-only">GitHub</label>
-          </a>
+          <a class="nav-link" href="https://github.com/openchemistry/avogadrolibs" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://twitter.com/AvogadroChem" rel="noopener" target="_blank" title="Twitter">
-            <span><i class="fab fa-twitter-square"></i></span>
-            <label class="sr-only">Twitter</label>
-          </a>
+          <a class="nav-link" href="https://twitter.com/AvogadroChem" rel="noopener" target="_blank" title="Twitter"><span><i class="fab fa-twitter-square"></i></span>
+            <label class="sr-only">Twitter</label></a>
         </li>
       </ul>
       </div>
@@ -136,7 +133,8 @@
           
             
             <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
@@ -360,11 +358,13 @@
 
   </div>
 </nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
             </div>
             
           
 
-          
           
           <div class="d-none d-xl-block col-xl-2 bd-toc">
             
@@ -391,21 +391,20 @@
             
           </div>
           
-          
 
           
           
             
-            
+          
           <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
-            
+              
               <div>
                 
-  <div class="section" id="class-avogadro-rendering-camera">
-<h1>Class Avogadro::Rendering::Camera<a class="headerlink" href="#class-avogadro-rendering-camera" title="Permalink to this headline">¶</a></h1>
+  <section id="class-avogadro-rendering-camera">
+<h1>Class Avogadro::Rendering::Camera<a class="headerlink" href="#class-avogadro-rendering-camera" title="Permalink to this headline">#</a></h1>
 <dl class="cpp class">
-<dt id="_CPPv4N8Avogadro9Rendering6CameraE">
-<span id="_CPPv3N8Avogadro9Rendering6CameraE"></span><span id="_CPPv2N8Avogadro9Rendering6CameraE"></span><span id="Avogadro::Rendering::Camera"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera"></span><em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">Avogadro</span><span class="pre">::</span><span class="pre">Rendering</span><code class="sig-prename descclassname"><span class="pre">::</span></code></code><code class="sig-name descname"><span class="pre">Camera</span></code><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering6CameraE" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering6CameraE">
+<span id="_CPPv3N8Avogadro9Rendering6CameraE"></span><span id="_CPPv2N8Avogadro9Rendering6CameraE"></span><span id="Avogadro::Rendering::Camera"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">Avogadro</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Rendering</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">Camera</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering6CameraE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>The <a class="reference internal" href="#class_avogadro_1_1_rendering_1_1_camera"><span class="std std-ref">Camera</span></a> class provides utility functionality useful in camera’s used with 3D scenes. </p>
 <p><dl class="simple">
 <dt><strong>Author</strong></dt><dd><p>Marcus D. Hanwell </p>
@@ -415,58 +414,58 @@
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro9Rendering6Camera6CameraEv">
-<span id="_CPPv3N8Avogadro9Rendering6Camera6CameraEv"></span><span id="_CPPv2N8Avogadro9Rendering6Camera6CameraEv"></span><span id="Avogadro::Rendering::Camera::Camera"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1aa3f3efcb2fcc75de885df29041103cd2"></span><code class="sig-name descname"><span class="pre">Camera</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering6Camera6CameraEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering6Camera6CameraEv">
+<span id="_CPPv3N8Avogadro9Rendering6Camera6CameraEv"></span><span id="_CPPv2N8Avogadro9Rendering6Camera6CameraEv"></span><span id="Avogadro::Rendering::Camera::Camera"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1aa3f3efcb2fcc75de885df29041103cd2"></span><span class="sig-name descname"><span class="n"><span class="pre">Camera</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering6Camera6CameraEv" title="Permalink to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro9Rendering6Camera6CameraERK6Camera">
-<span id="_CPPv3N8Avogadro9Rendering6Camera6CameraERK6Camera"></span><span id="_CPPv2N8Avogadro9Rendering6Camera6CameraERK6Camera"></span><span id="Avogadro::Rendering::Camera::Camera__CameraCR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1a44ae693728488998e14170d7beed17cc"></span><code class="sig-name descname"><span class="pre">Camera</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4N8Avogadro9Rendering6Camera6CameraERK6Camera" title="Avogadro::Rendering::Camera::Camera"><span class="pre">Camera</span></a> <span class="pre">&amp;</span><em><span class="pre">o</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering6Camera6CameraERK6Camera" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering6Camera6CameraERK6Camera">
+<span id="_CPPv3N8Avogadro9Rendering6Camera6CameraERK6Camera"></span><span id="_CPPv2N8Avogadro9Rendering6Camera6CameraERK6Camera"></span><span id="Avogadro::Rendering::Camera::Camera__CameraCR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1a44ae693728488998e14170d7beed17cc"></span><span class="sig-name descname"><span class="n"><span class="pre">Camera</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro9Rendering6Camera6CameraERK6Camera" title="Avogadro::Rendering::Camera::Camera"><span class="n"><span class="pre">Camera</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">o</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering6Camera6CameraERK6Camera" title="Permalink to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro9Rendering6CameraaSERK6Camera">
-<span id="_CPPv3N8Avogadro9Rendering6CameraaSERK6Camera"></span><span id="_CPPv2N8Avogadro9Rendering6CameraaSERK6Camera"></span><span id="Avogadro::Rendering::Camera::assign-operator__CameraCR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1a219cedeeb308f703f3948bfe2a1e4452"></span><a class="reference internal" href="#_CPPv4N8Avogadro9Rendering6CameraE" title="Avogadro::Rendering::Camera"><span class="pre">Camera</span></a> <span class="pre">&amp;</span><code class="sig-name descname"><span class="pre">operator=</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4N8Avogadro9Rendering6CameraE" title="Avogadro::Rendering::Camera"><span class="pre">Camera</span></a> <span class="pre">&amp;</span><em><span class="pre">o</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering6CameraaSERK6Camera" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering6CameraaSERK6Camera">
+<span id="_CPPv3N8Avogadro9Rendering6CameraaSERK6Camera"></span><span id="_CPPv2N8Avogadro9Rendering6CameraaSERK6Camera"></span><span id="Avogadro::Rendering::Camera::assign-operator__CameraCR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1a219cedeeb308f703f3948bfe2a1e4452"></span><a class="reference internal" href="#_CPPv4N8Avogadro9Rendering6CameraE" title="Avogadro::Rendering::Camera"><span class="n"><span class="pre">Camera</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro9Rendering6CameraE" title="Avogadro::Rendering::Camera"><span class="n"><span class="pre">Camera</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">o</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering6CameraaSERK6Camera" title="Permalink to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro9Rendering6CameraD0Ev">
-<span id="_CPPv3N8Avogadro9Rendering6CameraD0Ev"></span><span id="_CPPv2N8Avogadro9Rendering6CameraD0Ev"></span><span id="Avogadro::Rendering::Camera::~Camera"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1ab921e886e6f14e117eb8099ccb0a3775"></span><code class="sig-name descname"><span class="pre">~Camera</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering6CameraD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering6CameraD0Ev">
+<span id="_CPPv3N8Avogadro9Rendering6CameraD0Ev"></span><span id="_CPPv2N8Avogadro9Rendering6CameraD0Ev"></span><span id="Avogadro::Rendering::Camera::~Camera"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1ab921e886e6f14e117eb8099ccb0a3775"></span><span class="sig-name descname"><span class="n"><span class="pre">~Camera</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering6CameraD0Ev" title="Permalink to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro9Rendering6Camera9translateERK8Vector3f">
-<span id="_CPPv3N8Avogadro9Rendering6Camera9translateERK8Vector3f"></span><span id="_CPPv2N8Avogadro9Rendering6Camera9translateERK8Vector3f"></span><span id="Avogadro::Rendering::Camera::translate__Vector3fCR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1a58b921be4c2af3317b2571089c0ae966"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">translate</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <span class="pre">Vector3f</span> <span class="pre">&amp;</span><em><span class="pre">translate</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering6Camera9translateERK8Vector3f" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering6Camera9translateERK8Vector3f">
+<span id="_CPPv3N8Avogadro9Rendering6Camera9translateERK8Vector3f"></span><span id="_CPPv2N8Avogadro9Rendering6Camera9translateERK8Vector3f"></span><span id="Avogadro::Rendering::Camera::translate__Vector3fCR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1a58b921be4c2af3317b2571089c0ae966"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">translate</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Vector3f</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">translate</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering6Camera9translateERK8Vector3f" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Translate the camera’s model view matrix using the supplied translation vector <code class="docutils literal notranslate"><span class="pre">translate</span></code>. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro9Rendering6Camera12preTranslateERK8Vector3f">
-<span id="_CPPv3N8Avogadro9Rendering6Camera12preTranslateERK8Vector3f"></span><span id="_CPPv2N8Avogadro9Rendering6Camera12preTranslateERK8Vector3f"></span><span id="Avogadro::Rendering::Camera::preTranslate__Vector3fCR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1abc97c444e9d874587d1fb0c752c4b315"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">preTranslate</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <span class="pre">Vector3f</span> <span class="pre">&amp;</span><em><span class="pre">translate</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering6Camera12preTranslateERK8Vector3f" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering6Camera12preTranslateERK8Vector3f">
+<span id="_CPPv3N8Avogadro9Rendering6Camera12preTranslateERK8Vector3f"></span><span id="_CPPv2N8Avogadro9Rendering6Camera12preTranslateERK8Vector3f"></span><span id="Avogadro::Rendering::Camera::preTranslate__Vector3fCR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1abc97c444e9d874587d1fb0c752c4b315"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">preTranslate</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Vector3f</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">translate</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering6Camera12preTranslateERK8Vector3f" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Pretranslate the camera’s model view matrix using the supplied translation vector <code class="docutils literal notranslate"><span class="pre">translate</span></code>. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro9Rendering6Camera6rotateEfRK8Vector3f">
-<span id="_CPPv3N8Avogadro9Rendering6Camera6rotateEfRK8Vector3f"></span><span id="_CPPv2N8Avogadro9Rendering6Camera6rotateEfRK8Vector3f"></span><span id="Avogadro::Rendering::Camera::rotate__float.Vector3fCR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1a0315441e095e0631cb96e7f826a7d982"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">rotate</span></code><span class="sig-paren">(</span><span class="pre">float</span> <em><span class="pre">angle</span></em>, <em class="property"><span class="pre">const</span></em> <span class="pre">Vector3f</span> <span class="pre">&amp;</span><em><span class="pre">axis</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering6Camera6rotateEfRK8Vector3f" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering6Camera6rotateEfRK8Vector3f">
+<span id="_CPPv3N8Avogadro9Rendering6Camera6rotateEfRK8Vector3f"></span><span id="_CPPv2N8Avogadro9Rendering6Camera6rotateEfRK8Vector3f"></span><span id="Avogadro::Rendering::Camera::rotate__float.Vector3fCR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1a0315441e095e0631cb96e7f826a7d982"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">rotate</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">angle</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Vector3f</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">axis</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering6Camera6rotateEfRK8Vector3f" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Rotate the camera about the supplied <code class="docutils literal notranslate"><span class="pre">axis</span></code> by <code class="docutils literal notranslate"><span class="pre">angle</span></code> (degrees). </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro9Rendering6Camera9preRotateEfRK8Vector3f">
-<span id="_CPPv3N8Avogadro9Rendering6Camera9preRotateEfRK8Vector3f"></span><span id="_CPPv2N8Avogadro9Rendering6Camera9preRotateEfRK8Vector3f"></span><span id="Avogadro::Rendering::Camera::preRotate__float.Vector3fCR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1a8bf6e8e792d67ce9c63398754228ef5f"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">preRotate</span></code><span class="sig-paren">(</span><span class="pre">float</span> <em><span class="pre">angle</span></em>, <em class="property"><span class="pre">const</span></em> <span class="pre">Vector3f</span> <span class="pre">&amp;</span><em><span class="pre">axis</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering6Camera9preRotateEfRK8Vector3f" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering6Camera9preRotateEfRK8Vector3f">
+<span id="_CPPv3N8Avogadro9Rendering6Camera9preRotateEfRK8Vector3f"></span><span id="_CPPv2N8Avogadro9Rendering6Camera9preRotateEfRK8Vector3f"></span><span id="Avogadro::Rendering::Camera::preRotate__float.Vector3fCR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1a8bf6e8e792d67ce9c63398754228ef5f"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">preRotate</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">angle</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Vector3f</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">axis</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering6Camera9preRotateEfRK8Vector3f" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Prerotate the camera about the supplied <code class="docutils literal notranslate"><span class="pre">axis</span></code> by <code class="docutils literal notranslate"><span class="pre">angle</span></code> (degrees). </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro9Rendering6Camera5scaleEf">
-<span id="_CPPv3N8Avogadro9Rendering6Camera5scaleEf"></span><span id="_CPPv2N8Avogadro9Rendering6Camera5scaleEf"></span><span id="Avogadro::Rendering::Camera::scale__float"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1a453fb82765e369bfe60966a1cafc58f0"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">scale</span></code><span class="sig-paren">(</span><span class="pre">float</span> <em><span class="pre">scale</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering6Camera5scaleEf" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering6Camera5scaleEf">
+<span id="_CPPv3N8Avogadro9Rendering6Camera5scaleEf"></span><span id="_CPPv2N8Avogadro9Rendering6Camera5scaleEf"></span><span id="Avogadro::Rendering::Camera::scale__float"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1a453fb82765e369bfe60966a1cafc58f0"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">scale</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">scale</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering6Camera5scaleEf" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Modify the matrix, to give the effect of zooming in or out. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro9Rendering6Camera6lookAtERK8Vector3fRK8Vector3fRK8Vector3f">
-<span id="_CPPv3N8Avogadro9Rendering6Camera6lookAtERK8Vector3fRK8Vector3fRK8Vector3f"></span><span id="_CPPv2N8Avogadro9Rendering6Camera6lookAtERK8Vector3fRK8Vector3fRK8Vector3f"></span><span id="Avogadro::Rendering::Camera::lookAt__Vector3fCR.Vector3fCR.Vector3fCR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1ae70bae189c028b84c5125e3ba5aa31a6"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">lookAt</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <span class="pre">Vector3f</span> <span class="pre">&amp;</span><em><span class="pre">eye</span></em>, <em class="property"><span class="pre">const</span></em> <span class="pre">Vector3f</span> <span class="pre">&amp;</span><em><span class="pre">center</span></em>, <em class="property"><span class="pre">const</span></em> <span class="pre">Vector3f</span> <span class="pre">&amp;</span><em><span class="pre">up</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering6Camera6lookAtERK8Vector3fRK8Vector3fRK8Vector3f" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering6Camera6lookAtERK8Vector3fRK8Vector3fRK8Vector3f">
+<span id="_CPPv3N8Avogadro9Rendering6Camera6lookAtERK8Vector3fRK8Vector3fRK8Vector3f"></span><span id="_CPPv2N8Avogadro9Rendering6Camera6lookAtERK8Vector3fRK8Vector3fRK8Vector3f"></span><span id="Avogadro::Rendering::Camera::lookAt__Vector3fCR.Vector3fCR.Vector3fCR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1ae70bae189c028b84c5125e3ba5aa31a6"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lookAt</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Vector3f</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">eye</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Vector3f</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">center</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Vector3f</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">up</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering6Camera6lookAtERK8Vector3fRK8Vector3fRK8Vector3f" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Set the model-view matrix to the “look at” transformation matrix. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -480,32 +479,32 @@
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4NK8Avogadro9Rendering6Camera8distanceERK8Vector3f">
-<span id="_CPPv3NK8Avogadro9Rendering6Camera8distanceERK8Vector3f"></span><span id="_CPPv2NK8Avogadro9Rendering6Camera8distanceERK8Vector3f"></span><span id="Avogadro::Rendering::Camera::distance__Vector3fCRC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1a2d3ab6c247b697fb1d51a2ee64494756"></span><span class="pre">float</span> <code class="sig-name descname"><span class="pre">distance</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <span class="pre">Vector3f</span> <span class="pre">&amp;</span><em><span class="pre">point</span></em><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering6Camera8distanceERK8Vector3f" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering6Camera8distanceERK8Vector3f">
+<span id="_CPPv3NK8Avogadro9Rendering6Camera8distanceERK8Vector3f"></span><span id="_CPPv2NK8Avogadro9Rendering6Camera8distanceERK8Vector3f"></span><span id="Avogadro::Rendering::Camera::distance__Vector3fCRC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1a2d3ab6c247b697fb1d51a2ee64494756"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">distance</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Vector3f</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">point</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering6Camera8distanceERK8Vector3f" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Distance to supplied point <code class="docutils literal notranslate"><span class="pre">point</span></code> and the camera. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4NK8Avogadro9Rendering6Camera7projectERK8Vector3f">
-<span id="_CPPv3NK8Avogadro9Rendering6Camera7projectERK8Vector3f"></span><span id="_CPPv2NK8Avogadro9Rendering6Camera7projectERK8Vector3f"></span><span id="Avogadro::Rendering::Camera::project__Vector3fCRC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1a002c9c65a6ed322d957486940aaafe5b"></span><span class="pre">Vector3f</span> <code class="sig-name descname"><span class="pre">project</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <span class="pre">Vector3f</span> <span class="pre">&amp;</span><em><span class="pre">point</span></em><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering6Camera7projectERK8Vector3f" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering6Camera7projectERK8Vector3f">
+<span id="_CPPv3NK8Avogadro9Rendering6Camera7projectERK8Vector3f"></span><span id="_CPPv2NK8Avogadro9Rendering6Camera7projectERK8Vector3f"></span><span id="Avogadro::Rendering::Camera::project__Vector3fCRC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1a002c9c65a6ed322d957486940aaafe5b"></span><span class="n"><span class="pre">Vector3f</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">project</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Vector3f</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">point</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering6Camera7projectERK8Vector3f" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Projects a point from the scene to the window. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4NK8Avogadro9Rendering6Camera9unProjectERK8Vector3f">
-<span id="_CPPv3NK8Avogadro9Rendering6Camera9unProjectERK8Vector3f"></span><span id="_CPPv2NK8Avogadro9Rendering6Camera9unProjectERK8Vector3f"></span><span id="Avogadro::Rendering::Camera::unProject__Vector3fCRC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1a181a11eb03bf0634a92e9a2898222d20"></span><span class="pre">Vector3f</span> <code class="sig-name descname"><span class="pre">unProject</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <span class="pre">Vector3f</span> <span class="pre">&amp;</span><em><span class="pre">point</span></em><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering6Camera9unProjectERK8Vector3f" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering6Camera9unProjectERK8Vector3f">
+<span id="_CPPv3NK8Avogadro9Rendering6Camera9unProjectERK8Vector3f"></span><span id="_CPPv2NK8Avogadro9Rendering6Camera9unProjectERK8Vector3f"></span><span id="Avogadro::Rendering::Camera::unProject__Vector3fCRC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1a181a11eb03bf0634a92e9a2898222d20"></span><span class="n"><span class="pre">Vector3f</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">unProject</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Vector3f</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">point</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering6Camera9unProjectERK8Vector3f" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Unprojects a point from the window to the scene. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4NK8Avogadro9Rendering6Camera9unProjectERK8Vector2fRK8Vector3f">
-<span id="_CPPv3NK8Avogadro9Rendering6Camera9unProjectERK8Vector2fRK8Vector3f"></span><span id="_CPPv2NK8Avogadro9Rendering6Camera9unProjectERK8Vector2fRK8Vector3f"></span><span id="Avogadro::Rendering::Camera::unProject__Vector2fCR.Vector3fCRC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1ac0f93f42f6e1bc921da674c63bf9e08e"></span><span class="pre">Vector3f</span> <code class="sig-name descname"><span class="pre">unProject</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <span class="pre">Vector2f</span> <span class="pre">&amp;</span><em><span class="pre">point</span></em>, <em class="property"><span class="pre">const</span></em> <span class="pre">Vector3f</span> <span class="pre">&amp;</span><em><span class="pre">reference</span></em> <span class="pre">=</span> <span class="pre">Vector3f</span><span class="pre">::</span><span class="pre">Zero</span><span class="pre">(</span><span class="pre">)</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering6Camera9unProjectERK8Vector2fRK8Vector3f" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering6Camera9unProjectERK8Vector2fRK8Vector3f">
+<span id="_CPPv3NK8Avogadro9Rendering6Camera9unProjectERK8Vector2fRK8Vector3f"></span><span id="_CPPv2NK8Avogadro9Rendering6Camera9unProjectERK8Vector2fRK8Vector3f"></span><span id="Avogadro::Rendering::Camera::unProject__Vector2fCR.Vector3fCRC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1ac0f93f42f6e1bc921da674c63bf9e08e"></span><span class="n"><span class="pre">Vector3f</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">unProject</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Vector2f</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">point</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Vector3f</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">reference</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">Vector3f</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Zero</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering6Camera9unProjectERK8Vector2fRK8Vector3f" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Unprojects a point from the window to the scene, using the supplied reference point (defaults to the origin if nothing is supplied). </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro9Rendering6Camera20calculatePerspectiveEffff">
-<span id="_CPPv3N8Avogadro9Rendering6Camera20calculatePerspectiveEffff"></span><span id="_CPPv2N8Avogadro9Rendering6Camera20calculatePerspectiveEffff"></span><span id="Avogadro::Rendering::Camera::calculatePerspective__float.float.float.float"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1afd0e255d66e1922efb31d850b7a0a5d8"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">calculatePerspective</span></code><span class="sig-paren">(</span><span class="pre">float</span> <em><span class="pre">fieldOfView</span></em>, <span class="pre">float</span> <em><span class="pre">aspectRatio</span></em>, <span class="pre">float</span> <em><span class="pre">zNear</span></em>, <span class="pre">float</span> <em><span class="pre">zFar</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering6Camera20calculatePerspectiveEffff" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering6Camera20calculatePerspectiveEffff">
+<span id="_CPPv3N8Avogadro9Rendering6Camera20calculatePerspectiveEffff"></span><span id="_CPPv2N8Avogadro9Rendering6Camera20calculatePerspectiveEffff"></span><span id="Avogadro::Rendering::Camera::calculatePerspective__float.float.float.float"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1afd0e255d66e1922efb31d850b7a0a5d8"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">calculatePerspective</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">fieldOfView</span></span>, <span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">aspectRatio</span></span>, <span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">zNear</span></span>, <span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">zFar</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering6Camera20calculatePerspectiveEffff" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Calculate the perspective projection matrix. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -520,8 +519,8 @@
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro9Rendering6Camera20calculatePerspectiveEfff">
-<span id="_CPPv3N8Avogadro9Rendering6Camera20calculatePerspectiveEfff"></span><span id="_CPPv2N8Avogadro9Rendering6Camera20calculatePerspectiveEfff"></span><span id="Avogadro::Rendering::Camera::calculatePerspective__float.float.float"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1adb3b9c7dcde941eb88f7b61b4ee5d415"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">calculatePerspective</span></code><span class="sig-paren">(</span><span class="pre">float</span> <em><span class="pre">fieldOfView</span></em>, <span class="pre">float</span> <em><span class="pre">zNear</span></em>, <span class="pre">float</span> <em><span class="pre">zFar</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering6Camera20calculatePerspectiveEfff" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering6Camera20calculatePerspectiveEfff">
+<span id="_CPPv3N8Avogadro9Rendering6Camera20calculatePerspectiveEfff"></span><span id="_CPPv2N8Avogadro9Rendering6Camera20calculatePerspectiveEfff"></span><span id="Avogadro::Rendering::Camera::calculatePerspective__float.float.float"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1adb3b9c7dcde941eb88f7b61b4ee5d415"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">calculatePerspective</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">fieldOfView</span></span>, <span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">zNear</span></span>, <span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">zFar</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering6Camera20calculatePerspectiveEfff" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Calculate the perspective projection matrix. Computes the aspect ratio from the width and height stored by the <a class="reference internal" href="#class_avogadro_1_1_rendering_1_1_camera"><span class="std std-ref">Camera</span></a> object. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -535,8 +534,8 @@
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro9Rendering6Camera21calculateOrthographicEffffff">
-<span id="_CPPv3N8Avogadro9Rendering6Camera21calculateOrthographicEffffff"></span><span id="_CPPv2N8Avogadro9Rendering6Camera21calculateOrthographicEffffff"></span><span id="Avogadro::Rendering::Camera::calculateOrthographic__float.float.float.float.float.float"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1ac7d004f798a154aba09799b10bd1c9f1"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">calculateOrthographic</span></code><span class="sig-paren">(</span><span class="pre">float</span> <em><span class="pre">left</span></em>, <span class="pre">float</span> <em><span class="pre">right</span></em>, <span class="pre">float</span> <em><span class="pre">bottom</span></em>, <span class="pre">float</span> <em><span class="pre">top</span></em>, <span class="pre">float</span> <em><span class="pre">zNear</span></em>, <span class="pre">float</span> <em><span class="pre">zFar</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering6Camera21calculateOrthographicEffffff" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering6Camera21calculateOrthographicEffffff">
+<span id="_CPPv3N8Avogadro9Rendering6Camera21calculateOrthographicEffffff"></span><span id="_CPPv2N8Avogadro9Rendering6Camera21calculateOrthographicEffffff"></span><span id="Avogadro::Rendering::Camera::calculateOrthographic__float.float.float.float.float.float"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1ac7d004f798a154aba09799b10bd1c9f1"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">calculateOrthographic</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">left</span></span>, <span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">right</span></span>, <span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">bottom</span></span>, <span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">top</span></span>, <span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">zNear</span></span>, <span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">zFar</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering6Camera21calculateOrthographicEffffff" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Calculate the orthographic projection matrix. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -553,56 +552,56 @@
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro9Rendering6Camera11setViewportEii">
-<span id="_CPPv3N8Avogadro9Rendering6Camera11setViewportEii"></span><span id="_CPPv2N8Avogadro9Rendering6Camera11setViewportEii"></span><span id="Avogadro::Rendering::Camera::setViewport__i.i"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1a8fdd2d6ca1be1af008a5194fe479e741"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">setViewport</span></code><span class="sig-paren">(</span><span class="pre">int</span> <em><span class="pre">w</span></em>, <span class="pre">int</span> <em><span class="pre">h</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering6Camera11setViewportEii" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering6Camera11setViewportEii">
+<span id="_CPPv3N8Avogadro9Rendering6Camera11setViewportEii"></span><span id="_CPPv2N8Avogadro9Rendering6Camera11setViewportEii"></span><span id="Avogadro::Rendering::Camera::setViewport__i.i"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1a8fdd2d6ca1be1af008a5194fe479e741"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setViewport</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">w</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">h</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering6Camera11setViewportEii" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Set the dimensions of the viewport in pixels. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4NK8Avogadro9Rendering6Camera5widthEv">
-<span id="_CPPv3NK8Avogadro9Rendering6Camera5widthEv"></span><span id="_CPPv2NK8Avogadro9Rendering6Camera5widthEv"></span><span id="Avogadro::Rendering::Camera::widthC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1ad72663daf610f2a0833a2fc3d78e4fdf"></span><em class="property"><span class="pre">inline</span></em> <span class="pre">int</span> <code class="sig-name descname"><span class="pre">width</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering6Camera5widthEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering6Camera5widthEv">
+<span id="_CPPv3NK8Avogadro9Rendering6Camera5widthEv"></span><span id="_CPPv2NK8Avogadro9Rendering6Camera5widthEv"></span><span id="Avogadro::Rendering::Camera::widthC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1ad72663daf610f2a0833a2fc3d78e4fdf"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">width</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering6Camera5widthEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Get the width of the viewport in pixels. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4NK8Avogadro9Rendering6Camera6heightEv">
-<span id="_CPPv3NK8Avogadro9Rendering6Camera6heightEv"></span><span id="_CPPv2NK8Avogadro9Rendering6Camera6heightEv"></span><span id="Avogadro::Rendering::Camera::heightC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1ad3774f6419003470f54fd495124ef51f"></span><em class="property"><span class="pre">inline</span></em> <span class="pre">int</span> <code class="sig-name descname"><span class="pre">height</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering6Camera6heightEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering6Camera6heightEv">
+<span id="_CPPv3NK8Avogadro9Rendering6Camera6heightEv"></span><span id="_CPPv2NK8Avogadro9Rendering6Camera6heightEv"></span><span id="Avogadro::Rendering::Camera::heightC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1ad3774f6419003470f54fd495124ef51f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">height</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering6Camera6heightEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Get the height of the viewport in pixels. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro9Rendering6Camera11setIdentityEv">
-<span id="_CPPv3N8Avogadro9Rendering6Camera11setIdentityEv"></span><span id="_CPPv2N8Avogadro9Rendering6Camera11setIdentityEv"></span><span id="Avogadro::Rendering::Camera::setIdentity"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1a382e6ad7e6721b121e510959e1011be3"></span><em class="property"><span class="pre">inline</span></em> <span class="pre">void</span> <code class="sig-name descname"><span class="pre">setIdentity</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering6Camera11setIdentityEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering6Camera11setIdentityEv">
+<span id="_CPPv3N8Avogadro9Rendering6Camera11setIdentityEv"></span><span id="_CPPv2N8Avogadro9Rendering6Camera11setIdentityEv"></span><span id="Avogadro::Rendering::Camera::setIdentity"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1a382e6ad7e6721b121e510959e1011be3"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setIdentity</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering6Camera11setIdentityEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Set the model view matrix to the identity. This resets the model view matrix. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro9Rendering6Camera13setProjectionERKN5Eigen8Affine3fE">
-<span id="_CPPv3N8Avogadro9Rendering6Camera13setProjectionERKN5Eigen8Affine3fE"></span><span id="_CPPv2N8Avogadro9Rendering6Camera13setProjectionERKN5Eigen8Affine3fE"></span><span id="Avogadro::Rendering::Camera::setProjection__Eigen::Affine3fCR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1abc5d4b69422e7ddf0908301cd797db29"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">setProjection</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <span class="pre">Eigen</span><span class="pre">::</span><span class="pre">Affine3f</span> <span class="pre">&amp;</span><em><span class="pre">transform</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering6Camera13setProjectionERKN5Eigen8Affine3fE" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering6Camera13setProjectionERKN5Eigen8Affine3fE">
+<span id="_CPPv3N8Avogadro9Rendering6Camera13setProjectionERKN5Eigen8Affine3fE"></span><span id="_CPPv2N8Avogadro9Rendering6Camera13setProjectionERKN5Eigen8Affine3fE"></span><span id="Avogadro::Rendering::Camera::setProjection__Eigen::Affine3fCR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1abc5d4b69422e7ddf0908301cd797db29"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setProjection</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Affine3f</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">transform</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering6Camera13setProjectionERKN5Eigen8Affine3fE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Set the projection transform. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4NK8Avogadro9Rendering6Camera10projectionEv">
-<span id="_CPPv3NK8Avogadro9Rendering6Camera10projectionEv"></span><span id="_CPPv2NK8Avogadro9Rendering6Camera10projectionEv"></span><span id="Avogadro::Rendering::Camera::projectionC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1aa1eca9cd54f13de9497a45d2e4799d11"></span><em class="property"><span class="pre">inline</span></em> <em class="property"><span class="pre">const</span></em> <span class="pre">Eigen</span><span class="pre">::</span><span class="pre">Affine3f</span> <span class="pre">&amp;</span><code class="sig-name descname"><span class="pre">projection</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering6Camera10projectionEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering6Camera10projectionEv">
+<span id="_CPPv3NK8Avogadro9Rendering6Camera10projectionEv"></span><span id="_CPPv2NK8Avogadro9Rendering6Camera10projectionEv"></span><span id="Avogadro::Rendering::Camera::projectionC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1aa1eca9cd54f13de9497a45d2e4799d11"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Affine3f</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">projection</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering6Camera10projectionEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Get a reference to the projection matrix. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro9Rendering6Camera12setModelViewERKN5Eigen8Affine3fE">
-<span id="_CPPv3N8Avogadro9Rendering6Camera12setModelViewERKN5Eigen8Affine3fE"></span><span id="_CPPv2N8Avogadro9Rendering6Camera12setModelViewERKN5Eigen8Affine3fE"></span><span id="Avogadro::Rendering::Camera::setModelView__Eigen::Affine3fCR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1a67c859528847c8b4a2d32bfbbd801aa8"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">setModelView</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <span class="pre">Eigen</span><span class="pre">::</span><span class="pre">Affine3f</span> <span class="pre">&amp;</span><em><span class="pre">transform</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering6Camera12setModelViewERKN5Eigen8Affine3fE" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering6Camera12setModelViewERKN5Eigen8Affine3fE">
+<span id="_CPPv3N8Avogadro9Rendering6Camera12setModelViewERKN5Eigen8Affine3fE"></span><span id="_CPPv2N8Avogadro9Rendering6Camera12setModelViewERKN5Eigen8Affine3fE"></span><span id="Avogadro::Rendering::Camera::setModelView__Eigen::Affine3fCR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1a67c859528847c8b4a2d32bfbbd801aa8"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setModelView</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Affine3f</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">transform</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering6Camera12setModelViewERKN5Eigen8Affine3fE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Set the model view transform. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4NK8Avogadro9Rendering6Camera9modelViewEv">
-<span id="_CPPv3NK8Avogadro9Rendering6Camera9modelViewEv"></span><span id="_CPPv2NK8Avogadro9Rendering6Camera9modelViewEv"></span><span id="Avogadro::Rendering::Camera::modelViewC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1a20ea745884f174bed566b0896336e396"></span><em class="property"><span class="pre">inline</span></em> <em class="property"><span class="pre">const</span></em> <span class="pre">Eigen</span><span class="pre">::</span><span class="pre">Affine3f</span> <span class="pre">&amp;</span><code class="sig-name descname"><span class="pre">modelView</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering6Camera9modelViewEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering6Camera9modelViewEv">
+<span id="_CPPv3NK8Avogadro9Rendering6Camera9modelViewEv"></span><span id="_CPPv2NK8Avogadro9Rendering6Camera9modelViewEv"></span><span id="Avogadro::Rendering::Camera::modelViewC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1a20ea745884f174bed566b0896336e396"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Affine3f</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">modelView</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering6Camera9modelViewEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Get a reference to the model view matrix. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro9Rendering6Camera17setProjectionTypeE10Projection">
-<span id="_CPPv3N8Avogadro9Rendering6Camera17setProjectionTypeE10Projection"></span><span id="_CPPv2N8Avogadro9Rendering6Camera17setProjectionTypeE10Projection"></span><span id="Avogadro::Rendering::Camera::setProjectionType__Projection"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1a61effe680261f60f8bed165c5e75a556"></span><em class="property"><span class="pre">inline</span></em> <span class="pre">void</span> <code class="sig-name descname"><span class="pre">setProjectionType</span></code><span class="sig-paren">(</span><span class="pre">Projection</span> <em><span class="pre">proj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering6Camera17setProjectionTypeE10Projection" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering6Camera17setProjectionTypeE10Projection">
+<span id="_CPPv3N8Avogadro9Rendering6Camera17setProjectionTypeE10Projection"></span><span id="_CPPv2N8Avogadro9Rendering6Camera17setProjectionTypeE10Projection"></span><span id="Avogadro::Rendering::Camera::setProjectionType__Projection"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1a61effe680261f60f8bed165c5e75a556"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setProjectionType</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Projection</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">proj</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering6Camera17setProjectionTypeE10Projection" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Set the projection type for this camera (Perspective or Orthographic). </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -612,8 +611,8 @@
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4NK8Avogadro9Rendering6Camera14projectionTypeEv">
-<span id="_CPPv3NK8Avogadro9Rendering6Camera14projectionTypeEv"></span><span id="_CPPv2NK8Avogadro9Rendering6Camera14projectionTypeEv"></span><span id="Avogadro::Rendering::Camera::projectionTypeC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1a13edbbc5420621ea4fe527a1183cc6fe"></span><em class="property"><span class="pre">inline</span></em> <span class="pre">Projection</span> <code class="sig-name descname"><span class="pre">projectionType</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering6Camera14projectionTypeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering6Camera14projectionTypeEv">
+<span id="_CPPv3NK8Avogadro9Rendering6Camera14projectionTypeEv"></span><span id="_CPPv2NK8Avogadro9Rendering6Camera14projectionTypeEv"></span><span id="Avogadro::Rendering::Camera::projectionTypeC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1a13edbbc5420621ea4fe527a1183cc6fe"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">Projection</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">projectionType</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering6Camera14projectionTypeEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Get the projection type the camera is using. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -623,8 +622,8 @@
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro9Rendering6Camera20setOrthographicScaleEf">
-<span id="_CPPv3N8Avogadro9Rendering6Camera20setOrthographicScaleEf"></span><span id="_CPPv2N8Avogadro9Rendering6Camera20setOrthographicScaleEf"></span><span id="Avogadro::Rendering::Camera::setOrthographicScale__float"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1a346d640b4a2d6c77e05cf2908263d457"></span><em class="property"><span class="pre">inline</span></em> <span class="pre">void</span> <code class="sig-name descname"><span class="pre">setOrthographicScale</span></code><span class="sig-paren">(</span><span class="pre">float</span> <em><span class="pre">newScale</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering6Camera20setOrthographicScaleEf" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering6Camera20setOrthographicScaleEf">
+<span id="_CPPv3N8Avogadro9Rendering6Camera20setOrthographicScaleEf"></span><span id="_CPPv2N8Avogadro9Rendering6Camera20setOrthographicScaleEf"></span><span id="Avogadro::Rendering::Camera::setOrthographicScale__float"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1a346d640b4a2d6c77e05cf2908263d457"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setOrthographicScale</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">newScale</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering6Camera20setOrthographicScaleEf" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Set the orthographic scale, this defaults to 1.0. Affects calculation of the orthographic projection matrix. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -634,8 +633,8 @@
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4NK8Avogadro9Rendering6Camera17orthographicScaleEv">
-<span id="_CPPv3NK8Avogadro9Rendering6Camera17orthographicScaleEv"></span><span id="_CPPv2NK8Avogadro9Rendering6Camera17orthographicScaleEv"></span><span id="Avogadro::Rendering::Camera::orthographicScaleC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1af7a2536c45c882aae7644a1bfb100bbc"></span><em class="property"><span class="pre">inline</span></em> <span class="pre">float</span> <code class="sig-name descname"><span class="pre">orthographicScale</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering6Camera17orthographicScaleEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering6Camera17orthographicScaleEv">
+<span id="_CPPv3NK8Avogadro9Rendering6Camera17orthographicScaleEv"></span><span id="_CPPv2NK8Avogadro9Rendering6Camera17orthographicScaleEv"></span><span id="Avogadro::Rendering::Camera::orthographicScaleC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1af7a2536c45c882aae7644a1bfb100bbc"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">orthographicScale</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering6Camera17orthographicScaleEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Get the value of the orthographic scale, defaults to 1.0. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -644,21 +643,44 @@
 </dl>
 </dd></dl>
 
-</div>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering6Camera8setFocusERKN5Eigen8Vector3fE">
+<span id="_CPPv3N8Avogadro9Rendering6Camera8setFocusERKN5Eigen8Vector3fE"></span><span id="_CPPv2N8Avogadro9Rendering6Camera8setFocusERKN5Eigen8Vector3fE"></span><span id="Avogadro::Rendering::Camera::setFocus__Eigen::Vector3fCR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1acd22cdabe52a9f43ffba4cba1755c0b3"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setFocus</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Vector3f</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">newFocus</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering6Camera8setFocusERKN5Eigen8Vector3fE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Set focused point. Navigation actions shall occur relative to it. Note that this method does not cause any change in camera matrices. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering6Camera5focusEv">
+<span id="_CPPv3NK8Avogadro9Rendering6Camera5focusEv"></span><span id="_CPPv2NK8Avogadro9Rendering6Camera5focusEv"></span><span id="Avogadro::Rendering::Camera::focusC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_camera_1acd7af5807029ed7475aa0c87fba2bb9c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">Vector3f</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">focus</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering6Camera5focusEv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Get focused point. Navigation actions shall occur relative to it. </p>
 </dd></dl>
 
 </div>
+</dd></dl>
+
+</section>
 
 
               </div>
               
               
-              <div class='prev-next-bottom'>
-                
-    <a class='left-prev' id="prev-link" href="class_avogadro_1_1_rendering_1_1_buffer_object.html" title="previous page">Class Avogadro::Rendering::BufferObject</a>
-    <a class='right-next' id="next-link" href="class_avogadro_1_1_rendering_1_1_cylinder.html" title="next page">Class Avogadro::Rendering::Cylinder</a>
-
-              </div>
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="class_avogadro_1_1_rendering_1_1_buffer_object.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Class Avogadro::Rendering::BufferObject</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="class_avogadro_1_1_rendering_1_1_cylinder.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Class Avogadro::Rendering::Cylinder</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
               
           </main>
           
@@ -666,16 +688,16 @@
       </div>
     </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
-
-  <footer class="container-fluid footer-copy">
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+<footer class="container-fluid footer-copy">
 
     <div class="container">
 
       <div class="row">
         <div class="col-md-10 py-2">
           <p>
-            ©2021 The OpenChemistry / Avogadro Teams. The website content uses the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/LICENSE">BSD License</a> and is covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
+            ©2022 The OpenChemistry / Avogadro Teams. The website content uses the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/LICENSE">BSD License</a> and is covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
           </p>
         </div>
         <br />

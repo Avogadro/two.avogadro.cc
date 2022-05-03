@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Class Avogadro::Rendering::BufferObject &#8212; Avogadro 1.94.0-55-gbefc28e8 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Class Avogadro::Rendering::BufferObject &#8212; Avogadro 1.95.1 documentation</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,19 +20,15 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
@@ -40,10 +38,13 @@
     <link rel="next" title="Class Avogadro::Rendering::Camera" href="class_avogadro_1_1_rendering_1_1_camera.html" />
     <link rel="prev" title="Class Avogadro::Rendering::ArrowGeometry" href="class_avogadro_1_1_rendering_1_1_arrow_geometry.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -111,16 +112,12 @@
       <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
-          <a class="nav-link" href="https://github.com/openchemistry/avogadrolibs" rel="noopener" target="_blank" title="GitHub">
-            <span><i class="fab fa-github-square"></i></span>
-            <label class="sr-only">GitHub</label>
-          </a>
+          <a class="nav-link" href="https://github.com/openchemistry/avogadrolibs" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://twitter.com/AvogadroChem" rel="noopener" target="_blank" title="Twitter">
-            <span><i class="fab fa-twitter-square"></i></span>
-            <label class="sr-only">Twitter</label>
-          </a>
+          <a class="nav-link" href="https://twitter.com/AvogadroChem" rel="noopener" target="_blank" title="Twitter"><span><i class="fab fa-twitter-square"></i></span>
+            <label class="sr-only">Twitter</label></a>
         </li>
       </ul>
       </div>
@@ -136,7 +133,8 @@
           
             
             <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
@@ -360,11 +358,13 @@
 
   </div>
 </nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
             </div>
             
           
 
-          
           
           <div class="d-none d-xl-block col-xl-2 bd-toc">
             
@@ -391,21 +391,20 @@
             
           </div>
           
-          
 
           
           
             
-            
+          
           <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
-            
+              
               <div>
                 
-  <div class="section" id="class-avogadro-rendering-bufferobject">
-<h1>Class Avogadro::Rendering::BufferObject<a class="headerlink" href="#class-avogadro-rendering-bufferobject" title="Permalink to this headline">¶</a></h1>
+  <section id="class-avogadro-rendering-bufferobject">
+<h1>Class Avogadro::Rendering::BufferObject<a class="headerlink" href="#class-avogadro-rendering-bufferobject" title="Permalink to this headline">#</a></h1>
 <dl class="cpp class">
-<dt id="_CPPv4N8Avogadro9Rendering12BufferObjectE">
-<span id="_CPPv3N8Avogadro9Rendering12BufferObjectE"></span><span id="_CPPv2N8Avogadro9Rendering12BufferObjectE"></span><span id="Avogadro::Rendering::BufferObject"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_buffer_object"></span><em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">Avogadro</span><span class="pre">::</span><span class="pre">Rendering</span><code class="sig-prename descclassname"><span class="pre">::</span></code></code><code class="sig-name descname"><span class="pre">BufferObject</span></code><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12BufferObjectE" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering12BufferObjectE">
+<span id="_CPPv3N8Avogadro9Rendering12BufferObjectE"></span><span id="_CPPv2N8Avogadro9Rendering12BufferObjectE"></span><span id="Avogadro::Rendering::BufferObject"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_buffer_object"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">Avogadro</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Rendering</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">BufferObject</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12BufferObjectE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Buffer object to store geometry/attribute data on the GPU. </p>
 <p>
 This class creates GPU buffer object, and uploads the data to the GPU. <dl class="simple">
@@ -416,17 +415,17 @@ This class creates GPU buffer object, and uploads the data to the GPU. <dl class
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-types">Public Types</p>
 <dl class="cpp enum">
-<dt id="_CPPv4N8Avogadro9Rendering12BufferObject10ObjectTypeE">
-<span id="_CPPv3N8Avogadro9Rendering12BufferObject10ObjectTypeE"></span><span id="_CPPv2N8Avogadro9Rendering12BufferObject10ObjectTypeE"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_buffer_object_1a842c5e2e69277690b064bf363c017980"></span><em class="property"><span class="pre">enum</span> </em><code class="sig-name descname"><span class="pre">ObjectType</span></code><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12BufferObject10ObjectTypeE" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering12BufferObject10ObjectTypeE">
+<span id="_CPPv3N8Avogadro9Rendering12BufferObject10ObjectTypeE"></span><span id="_CPPv2N8Avogadro9Rendering12BufferObject10ObjectTypeE"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_buffer_object_1a842c5e2e69277690b064bf363c017980"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ObjectType</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12BufferObject10ObjectTypeE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p><em>Values:</em></p>
 <dl class="cpp enumerator">
-<dt id="_CPPv4N8Avogadro9Rendering12BufferObject10ObjectType11ArrayBufferE">
-<span id="_CPPv3N8Avogadro9Rendering12BufferObject10ObjectType11ArrayBufferE"></span><span id="_CPPv2N8Avogadro9Rendering12BufferObject10ObjectType11ArrayBufferE"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_buffer_object_1a842c5e2e69277690b064bf363c017980a51769d63d166ec4e3cde0a9d55d85529"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">ArrayBuffer</span></code><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12BufferObject10ObjectType11ArrayBufferE" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering12BufferObject10ObjectType11ArrayBufferE">
+<span id="_CPPv3N8Avogadro9Rendering12BufferObject10ObjectType11ArrayBufferE"></span><span id="_CPPv2N8Avogadro9Rendering12BufferObject10ObjectType11ArrayBufferE"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_buffer_object_1a842c5e2e69277690b064bf363c017980a51769d63d166ec4e3cde0a9d55d85529"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ArrayBuffer</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12BufferObject10ObjectType11ArrayBufferE" title="Permalink to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp enumerator">
-<dt id="_CPPv4N8Avogadro9Rendering12BufferObject10ObjectType18ElementArrayBufferE">
-<span id="_CPPv3N8Avogadro9Rendering12BufferObject10ObjectType18ElementArrayBufferE"></span><span id="_CPPv2N8Avogadro9Rendering12BufferObject10ObjectType18ElementArrayBufferE"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_buffer_object_1a842c5e2e69277690b064bf363c017980a97e0ebfdbbd9f6e5813f1cdf9f0ee9c6"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">ElementArrayBuffer</span></code><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12BufferObject10ObjectType18ElementArrayBufferE" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering12BufferObject10ObjectType18ElementArrayBufferE">
+<span id="_CPPv3N8Avogadro9Rendering12BufferObject10ObjectType18ElementArrayBufferE"></span><span id="_CPPv2N8Avogadro9Rendering12BufferObject10ObjectType18ElementArrayBufferE"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_buffer_object_1a842c5e2e69277690b064bf363c017980a97e0ebfdbbd9f6e5813f1cdf9f0ee9c6"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ElementArrayBuffer</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12BufferObject10ObjectType18ElementArrayBufferE" title="Permalink to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -435,43 +434,43 @@ This class creates GPU buffer object, and uploads the data to the GPU. <dl class
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro9Rendering12BufferObject12BufferObjectE10ObjectType">
-<span id="_CPPv3N8Avogadro9Rendering12BufferObject12BufferObjectE10ObjectType"></span><span id="_CPPv2N8Avogadro9Rendering12BufferObject12BufferObjectE10ObjectType"></span><span id="Avogadro::Rendering::BufferObject::BufferObject__ObjectType"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_buffer_object_1a41d9fd514ab8f995e5b07150e0ac0079"></span><code class="sig-name descname"><span class="pre">BufferObject</span></code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N8Avogadro9Rendering12BufferObject10ObjectTypeE" title="Avogadro::Rendering::BufferObject::ObjectType"><span class="pre">ObjectType</span></a> <em><span class="pre">type</span></em> <span class="pre">=</span> <a class="reference internal" href="#_CPPv4N8Avogadro9Rendering12BufferObject10ObjectType11ArrayBufferE" title="Avogadro::Rendering::BufferObject::ArrayBuffer"><span class="pre">ArrayBuffer</span></a><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12BufferObject12BufferObjectE10ObjectType" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering12BufferObject12BufferObjectE10ObjectType">
+<span id="_CPPv3N8Avogadro9Rendering12BufferObject12BufferObjectE10ObjectType"></span><span id="_CPPv2N8Avogadro9Rendering12BufferObject12BufferObjectE10ObjectType"></span><span id="Avogadro::Rendering::BufferObject::BufferObject__ObjectType"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_buffer_object_1a41d9fd514ab8f995e5b07150e0ac0079"></span><span class="sig-name descname"><span class="n"><span class="pre">BufferObject</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N8Avogadro9Rendering12BufferObject10ObjectTypeE" title="Avogadro::Rendering::BufferObject::ObjectType"><span class="n"><span class="pre">ObjectType</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">type</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro9Rendering12BufferObject10ObjectType11ArrayBufferE" title="Avogadro::Rendering::BufferObject::ArrayBuffer"><span class="n"><span class="pre">ArrayBuffer</span></span></a><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12BufferObject12BufferObjectE10ObjectType" title="Permalink to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro9Rendering12BufferObjectD0Ev">
-<span id="_CPPv3N8Avogadro9Rendering12BufferObjectD0Ev"></span><span id="_CPPv2N8Avogadro9Rendering12BufferObjectD0Ev"></span><span id="Avogadro::Rendering::BufferObject::~BufferObject"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_buffer_object_1a55f70e5d3a477bf1cc75750ef846eef9"></span><code class="sig-name descname"><span class="pre">~BufferObject</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12BufferObjectD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering12BufferObjectD0Ev">
+<span id="_CPPv3N8Avogadro9Rendering12BufferObjectD0Ev"></span><span id="_CPPv2N8Avogadro9Rendering12BufferObjectD0Ev"></span><span id="Avogadro::Rendering::BufferObject::~BufferObject"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_buffer_object_1a55f70e5d3a477bf1cc75750ef846eef9"></span><span class="sig-name descname"><span class="n"><span class="pre">~BufferObject</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12BufferObjectD0Ev" title="Permalink to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4NK8Avogadro9Rendering12BufferObject4typeEv">
-<span id="_CPPv3NK8Avogadro9Rendering12BufferObject4typeEv"></span><span id="_CPPv2NK8Avogadro9Rendering12BufferObject4typeEv"></span><span id="Avogadro::Rendering::BufferObject::typeC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_buffer_object_1a86559440810995e4a4c711587214f264"></span><a class="reference internal" href="#_CPPv4N8Avogadro9Rendering12BufferObject10ObjectTypeE" title="Avogadro::Rendering::BufferObject::ObjectType"><span class="pre">ObjectType</span></a> <code class="sig-name descname"><span class="pre">type</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering12BufferObject4typeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering12BufferObject4typeEv">
+<span id="_CPPv3NK8Avogadro9Rendering12BufferObject4typeEv"></span><span id="_CPPv2NK8Avogadro9Rendering12BufferObject4typeEv"></span><span id="Avogadro::Rendering::BufferObject::typeC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_buffer_object_1a86559440810995e4a4c711587214f264"></span><a class="reference internal" href="#_CPPv4N8Avogadro9Rendering12BufferObject10ObjectTypeE" title="Avogadro::Rendering::BufferObject::ObjectType"><span class="n"><span class="pre">ObjectType</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">type</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering12BufferObject4typeEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Get the type of the buffer object. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4NK8Avogadro9Rendering12BufferObject6handleEv">
-<span id="_CPPv3NK8Avogadro9Rendering12BufferObject6handleEv"></span><span id="_CPPv2NK8Avogadro9Rendering12BufferObject6handleEv"></span><span id="Avogadro::Rendering::BufferObject::handleC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_buffer_object_1a9ae56f8b08b9ab4828ff8c83c7a1340a"></span><span class="pre">Index</span> <code class="sig-name descname"><span class="pre">handle</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering12BufferObject6handleEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering12BufferObject6handleEv">
+<span id="_CPPv3NK8Avogadro9Rendering12BufferObject6handleEv"></span><span id="_CPPv2NK8Avogadro9Rendering12BufferObject6handleEv"></span><span id="Avogadro::Rendering::BufferObject::handleC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_buffer_object_1a9ae56f8b08b9ab4828ff8c83c7a1340a"></span><span class="n"><span class="pre">Index</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">handle</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering12BufferObject6handleEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Get the handle of the buffer object. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4NK8Avogadro9Rendering12BufferObject5readyEv">
-<span id="_CPPv3NK8Avogadro9Rendering12BufferObject5readyEv"></span><span id="_CPPv2NK8Avogadro9Rendering12BufferObject5readyEv"></span><span id="Avogadro::Rendering::BufferObject::readyC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_buffer_object_1ae0659ce466366fc566dc1425c658a019"></span><em class="property"><span class="pre">inline</span></em> <span class="pre">bool</span> <code class="sig-name descname"><span class="pre">ready</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering12BufferObject5readyEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering12BufferObject5readyEv">
+<span id="_CPPv3NK8Avogadro9Rendering12BufferObject5readyEv"></span><span id="_CPPv2NK8Avogadro9Rendering12BufferObject5readyEv"></span><span id="Avogadro::Rendering::BufferObject::readyC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_buffer_object_1ae0659ce466366fc566dc1425c658a019"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ready</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering12BufferObject5readyEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Determine if the buffer object is ready to be used. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4I0EN8Avogadro9Rendering12BufferObject6uploadEbRK10ContainerT10ObjectType">
-<span id="_CPPv3I0EN8Avogadro9Rendering12BufferObject6uploadERK10ContainerT10ObjectType"></span><span id="_CPPv2I0EN8Avogadro9Rendering12BufferObject6uploadERK10ContainerT10ObjectType"></span><span class="pre">template&lt;</span><span class="pre">class</span> <code class="sig-name descname"><span class="pre">ContainerT</span></code><span class="pre">&gt;</span><br /><span class="target" id="class_avogadro_1_1_rendering_1_1_buffer_object_1a2c409f543723326d629859b2d39503a4"></span><em class="property"><span class="pre">inline</span></em> <span class="pre">bool</span> <code class="sig-name descname"><span class="pre">upload</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4I0EN8Avogadro9Rendering12BufferObject6uploadEbRK10ContainerT10ObjectType" title="Avogadro::Rendering::BufferObject::upload::ContainerT"><span class="pre">ContainerT</span></a> <span class="pre">&amp;</span><em><span class="pre">array</span></em>, <a class="reference internal" href="#_CPPv4N8Avogadro9Rendering12BufferObject10ObjectTypeE" title="Avogadro::Rendering::BufferObject::ObjectType"><span class="pre">ObjectType</span></a> <em><span class="pre">type</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN8Avogadro9Rendering12BufferObject6uploadEbRK10ContainerT10ObjectType" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4I0EN8Avogadro9Rendering12BufferObject6uploadEbRK10ContainerT10ObjectType">
+<span id="_CPPv3I0EN8Avogadro9Rendering12BufferObject6uploadERK10ContainerT10ObjectType"></span><span id="_CPPv2I0EN8Avogadro9Rendering12BufferObject6uploadERK10ContainerT10ObjectType"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ContainerT</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="class_avogadro_1_1_rendering_1_1_buffer_object_1a2c409f543723326d629859b2d39503a4"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">upload</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN8Avogadro9Rendering12BufferObject6uploadEbRK10ContainerT10ObjectType" title="Avogadro::Rendering::BufferObject::upload::ContainerT"><span class="n"><span class="pre">ContainerT</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">array</span></span>, <a class="reference internal" href="#_CPPv4N8Avogadro9Rendering12BufferObject10ObjectTypeE" title="Avogadro::Rendering::BufferObject::ObjectType"><span class="n"><span class="pre">ObjectType</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">type</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN8Avogadro9Rendering12BufferObject6uploadEbRK10ContainerT10ObjectType" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Upload data to the buffer object. The <a class="reference internal" href="#class_avogadro_1_1_rendering_1_1_buffer_object_1a86559440810995e4a4c711587214f264"><span class="std std-ref">BufferObject::type()</span></a> must match <em>type</em> or be uninitialized.</p>
 <p>The ContainerT type must have tightly packed values of ContainerT::value_type accessible by reference via ContainerT::operator[]. Additionally, the standard size() and empty() methods must be implemented. The std::vector and <a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#class_avogadro_1_1_core_1_1_array"><span class="std std-ref">Avogadro::Core::Array</span></a> classes are examples of such supported containers. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro9Rendering12BufferObject4bindEv">
-<span id="_CPPv3N8Avogadro9Rendering12BufferObject4bindEv"></span><span id="_CPPv2N8Avogadro9Rendering12BufferObject4bindEv"></span><span id="Avogadro::Rendering::BufferObject::bind"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_buffer_object_1a16873539a1053d46eebcbf393002ff6b"></span><span class="pre">bool</span> <code class="sig-name descname"><span class="pre">bind</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12BufferObject4bindEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering12BufferObject4bindEv">
+<span id="_CPPv3N8Avogadro9Rendering12BufferObject4bindEv"></span><span id="_CPPv2N8Avogadro9Rendering12BufferObject4bindEv"></span><span id="Avogadro::Rendering::BufferObject::bind"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_buffer_object_1a16873539a1053d46eebcbf393002ff6b"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">bind</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12BufferObject4bindEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Bind the buffer object ready for rendering. </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -480,32 +479,43 @@ This class creates GPU buffer object, and uploads the data to the GPU. <dl class
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4N8Avogadro9Rendering12BufferObject7releaseEv">
-<span id="_CPPv3N8Avogadro9Rendering12BufferObject7releaseEv"></span><span id="_CPPv2N8Avogadro9Rendering12BufferObject7releaseEv"></span><span id="Avogadro::Rendering::BufferObject::release"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_buffer_object_1a0c169e21a6a7de905bd60c5561ed690c"></span><span class="pre">bool</span> <code class="sig-name descname"><span class="pre">release</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12BufferObject7releaseEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering12BufferObject7releaseEv">
+<span id="_CPPv3N8Avogadro9Rendering12BufferObject7releaseEv"></span><span id="_CPPv2N8Avogadro9Rendering12BufferObject7releaseEv"></span><span id="Avogadro::Rendering::BufferObject::release"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_buffer_object_1a0c169e21a6a7de905bd60c5561ed690c"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">release</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering12BufferObject7releaseEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Release the buffer. This should be done after rendering is complete. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt id="_CPPv4NK8Avogadro9Rendering12BufferObject5errorEv">
-<span id="_CPPv3NK8Avogadro9Rendering12BufferObject5errorEv"></span><span id="_CPPv2NK8Avogadro9Rendering12BufferObject5errorEv"></span><span id="Avogadro::Rendering::BufferObject::errorC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_buffer_object_1ab0ca267c415968ee3bc1c6b144dcbf56"></span><em class="property"><span class="pre">inline</span></em> <span class="pre">std</span><span class="pre">::</span><span class="pre">string</span> <code class="sig-name descname"><span class="pre">error</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering12BufferObject5errorEv" title="Permalink to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering12BufferObject5errorEv">
+<span id="_CPPv3NK8Avogadro9Rendering12BufferObject5errorEv"></span><span id="_CPPv2NK8Avogadro9Rendering12BufferObject5errorEv"></span><span id="Avogadro::Rendering::BufferObject::errorC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_buffer_object_1ab0ca267c415968ee3bc1c6b144dcbf56"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">error</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering12BufferObject5errorEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Return a string describing errors. </p>
 </dd></dl>
 
 </div>
 </dd></dl>
 
+</section>
+
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="class_avogadro_1_1_rendering_1_1_arrow_geometry.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Class Avogadro::Rendering::ArrowGeometry</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="class_avogadro_1_1_rendering_1_1_camera.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Class Avogadro::Rendering::Camera</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
-
-
-              </div>
-              
-              
-              <div class='prev-next-bottom'>
-                
-    <a class='left-prev' id="prev-link" href="class_avogadro_1_1_rendering_1_1_arrow_geometry.html" title="previous page">Class Avogadro::Rendering::ArrowGeometry</a>
-    <a class='right-next' id="next-link" href="class_avogadro_1_1_rendering_1_1_camera.html" title="next page">Class Avogadro::Rendering::Camera</a>
-
-              </div>
               
           </main>
           
@@ -513,16 +523,16 @@ This class creates GPU buffer object, and uploads the data to the GPU. <dl class
       </div>
     </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
-
-  <footer class="container-fluid footer-copy">
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+<footer class="container-fluid footer-copy">
 
     <div class="container">
 
       <div class="row">
         <div class="col-md-10 py-2">
           <p>
-            ©2021 The OpenChemistry / Avogadro Teams. The website content uses the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/LICENSE">BSD License</a> and is covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
+            ©2022 The OpenChemistry / Avogadro Teams. The website content uses the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/LICENSE">BSD License</a> and is covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
           </p>
         </div>
         <br />
