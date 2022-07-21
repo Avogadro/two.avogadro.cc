@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Class Avogadro::MoleQueue::InputGenerator &#8212; Avogadro 1.95.1 documentation</title>
+    <title>Class Avogadro::MoleQueue::InputGenerator &#8212; Avogadro 1.97.0 documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -304,85 +304,85 @@ The QuantumInput extension provides a scriptable method for users to add custom 
 </section>
 <section id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md1">
 <h2>Specifying parameters with &lt;tt&gt;–print-options&lt;/tt&gt;<a class="headerlink" href="#class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md1" title="Permalink to this headline">#</a></h2>
-<p id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md1">The format of the <code class="docutils literal notranslate"><span class="pre">--print-options</span></code> output must be a JSON object of the following form: <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="s2">&quot;userOptions&quot;</span><span class="o">:</span> <span class="p">{</span>
-    <span class="p">...</span>
-  <span class="p">},</span>
-  <span class="s2">&quot;highlightStyles&quot;</span><span class="o">:</span> <span class="p">[</span>
-    <span class="p">{</span>
-      <span class="s2">&quot;style&quot;</span><span class="o">:</span> <span class="s2">&quot;Descriptive name&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;rules&quot;</span><span class="o">:</span> <span class="p">[</span>
-        <span class="p">{</span>
-          <span class="s2">&quot;patterns&quot;</span><span class="o">:</span> <span class="p">[</span> <span class="p">...</span> <span class="p">],</span>
-          <span class="s2">&quot;format&quot;</span><span class="o">:</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
-        <span class="p">},</span>
-        <span class="p">...</span>
-      <span class="p">],</span>
-    <span class="p">},</span>
-    <span class="p">...</span>
-  <span class="p">],</span>
-  <span class="s2">&quot;inputMoleculeFormat&quot;</span><span class="o">:</span> <span class="s2">&quot;cjson&quot;</span>
-<span class="p">}</span>
+<p id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md1">The format of the <code class="docutils literal notranslate"><span class="pre">--print-options</span></code> output must be a JSON object of the following form: <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="s2">&quot;userOptions&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="p">...</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="s2">&quot;highlightStyles&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;style&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Descriptive name&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;rules&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">        </span><span class="p">{</span><span class="w"></span>
+<span class="w">          </span><span class="s2">&quot;patterns&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">],</span><span class="w"></span>
+<span class="w">          </span><span class="s2">&quot;format&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">},</span><span class="w"></span>
+<span class="w">        </span><span class="p">...</span><span class="w"></span>
+<span class="w">      </span><span class="p">],</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="p">...</span><span class="w"></span>
+<span class="w">  </span><span class="p">],</span><span class="w"></span>
+<span class="w">  </span><span class="s2">&quot;inputMoleculeFormat&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;cjson&quot;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
  The <code class="docutils literal notranslate"><span class="pre">userOptions</span></code> block contains a JSON object keyed with option names (e.g. “First option name”), which are used in the GUI to label simulation parameter settings. Various parameter types are supported:</p>
 <section id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md2">
 <h3>Fixed Mutually-Exclusive Parameter Lists<a class="headerlink" href="#class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md2" title="Permalink to this headline">#</a></h3>
-<p id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md2">Parameters that have a fixed number of mutually-exclusive string values will be presented using a QComboBox. Such a parameter can be specified in the <code class="docutils literal notranslate"><span class="pre">userOptions</span></code> block as: <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="s2">&quot;userOptions&quot;</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">&quot;Parameter Name&quot;</span><span class="o">:</span> <span class="p">{</span>
-      <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;stringList&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;values&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;Option 1&quot;</span><span class="p">,</span> <span class="s2">&quot;Option 2&quot;</span><span class="p">,</span> <span class="s2">&quot;Option 3&quot;</span><span class="p">],</span>
-      <span class="s2">&quot;default&quot;</span><span class="o">:</span> <span class="mf">0</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<p id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md2">Parameters that have a fixed number of mutually-exclusive string values will be presented using a QComboBox. Such a parameter can be specified in the <code class="docutils literal notranslate"><span class="pre">userOptions</span></code> block as: <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="s2">&quot;userOptions&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;Parameter Name&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;stringList&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;values&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Option 1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Option 2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Option 3&quot;</span><span class="p">],</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;default&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
  Here, <code class="docutils literal notranslate"><span class="pre">Parameter</span> <span class="pre">Name</span></code> is the label that will be displayed in the GUI as a label next to the combo box. The array of strings in <code class="docutils literal notranslate"><span class="pre">values</span></code> will be used as the available entries in the combo box in the order they are written. <code class="docutils literal notranslate"><span class="pre">default</span></code> is a zero-based index into the <code class="docutils literal notranslate"><span class="pre">values</span></code> array and indicates which value should be initially selected by default.</p>
 </section>
 <section id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md3">
 <h3>Short Free-Form Text Parameters<a class="headerlink" href="#class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md3" title="Permalink to this headline">#</a></h3>
-<p id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md3">A short text string can be requested (e.g. for the “title” of an optimization) via: <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="s2">&quot;userOptions&quot;</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">&quot;Parameter Name&quot;</span><span class="o">:</span> <span class="p">{</span>
-      <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;default&quot;</span><span class="o">:</span> <span class="s2">&quot;blah blah blah&quot;</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<p id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md3">A short text string can be requested (e.g. for the “title” of an optimization) via: <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="s2">&quot;userOptions&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;Parameter Name&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;default&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;blah blah blah&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
  This will add a QLineEdit to the GUI, initialized with the text specified by <code class="docutils literal notranslate"><span class="pre">default</span></code>.</p>
 </section>
 <section id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md4">
 <h3>Existing files<a class="headerlink" href="#class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md4" title="Permalink to this headline">#</a></h3>
-<p id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md4">An input generator can ask for the absolute path to an existing file using the following option block: <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="s2">&quot;userOptions&quot;</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">&quot;Parameter Name&quot;</span><span class="o">:</span> <span class="p">{</span>
-      <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;filePath&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;default&quot;</span><span class="o">:</span> <span class="s2">&quot;/path/to/some/file&quot;</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<p id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md4">An input generator can ask for the absolute path to an existing file using the following option block: <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="s2">&quot;userOptions&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;Parameter Name&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;filePath&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;default&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;/path/to/some/file&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
  This will add an <a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_file_browse_widget.html#class_avogadro_1_1_qt_gui_1_1_file_browse_widget"><span class="std std-ref">Avogadro::QtGui::FileBrowseWidget</span></a> to the GUI, initialized to the file pointed to by default.</p>
 </section>
 <section id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md5">
 <h3>Clamped Integer Values<a class="headerlink" href="#class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md5" title="Permalink to this headline">#</a></h3>
-<p id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md5">Scripts may request integer values from a specified range by adding a user-option of the following form: <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="s2">&quot;userOptions&quot;</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">&quot;Parameter Name&quot;</span><span class="o">:</span> <span class="p">{</span>
-      <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;integer&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;minimum&quot;</span><span class="o">:</span> <span class="o">-</span><span class="mf">5</span><span class="p">,</span>
-      <span class="s2">&quot;maximum&quot;</span><span class="o">:</span> <span class="mf">5</span><span class="p">,</span>
-      <span class="s2">&quot;default&quot;</span><span class="o">:</span> <span class="mf">0</span><span class="p">,</span>
-      <span class="s2">&quot;prefix&quot;</span><span class="o">:</span> <span class="s2">&quot;some text &quot;</span><span class="p">,</span>
-      <span class="s2">&quot;suffix&quot;</span><span class="o">:</span> <span class="s2">&quot; units&quot;</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<p id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md5">Scripts may request integer values from a specified range by adding a user-option of the following form: <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="s2">&quot;userOptions&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;Parameter Name&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;integer&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;minimum&quot;</span><span class="o">:</span><span class="w"> </span><span class="o">-</span><span class="mf">5</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;maximum&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">5</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;default&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;prefix&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;some text &quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;suffix&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot; units&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
  This block will result in a QSpinBox, configured as follows:<ul class="simple">
@@ -394,14 +394,14 @@ The QuantumInput extension provides a scriptable method for users to add custom 
 </section>
 <section id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md6">
 <h3>Boolean Parameters<a class="headerlink" href="#class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md6" title="Permalink to this headline">#</a></h3>
-<p id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md6">If a simple on/off value is needed, a boolean type option can be requested: <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="s2">&quot;userOptions&quot;</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">&quot;Parameter Name&quot;</span><span class="o">:</span> <span class="p">{</span>
-      <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;boolean&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;default&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<p id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md6">If a simple on/off value is needed, a boolean type option can be requested: <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="s2">&quot;userOptions&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;Parameter Name&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;boolean&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;default&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
  This will result in a QCheckBox in the dynamically generated GUI, with the inital check state shown in <code class="docutils literal notranslate"><span class="pre">default</span></code>.</p>
@@ -413,48 +413,48 @@ The QuantumInput extension provides a scriptable method for users to add custom 
 </section>
 <section id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md8">
 <h3>Syntax Highlighting<a class="headerlink" href="#class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md8" title="Permalink to this headline">#</a></h3>
-<p id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md8">Rules for syntax highlighting can be specified as a collection of regular expressions or wildcard patterns and text format specifications in the “highlightRules” array. The <code class="docutils literal notranslate"><span class="pre">highlightRules</span></code> format is: <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;highlightStyles&quot;</span><span class="o">:</span> <span class="p">[</span>
-  <span class="p">{</span>
-    <span class="s2">&quot;style&quot;</span><span class="o">:</span> <span class="s2">&quot;Style 1&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;rules&quot;</span><span class="o">:</span> <span class="p">[</span> <span class="p">(</span><span class="nx">list</span> <span class="k">of</span> <span class="nx">highlight</span> <span class="nx">rules</span><span class="p">,</span> <span class="nx">see</span> <span class="nx">below</span><span class="p">)</span> <span class="p">],</span>
-  <span class="p">},</span>
-  <span class="p">{</span>
-    <span class="s2">&quot;style&quot;</span><span class="o">:</span> <span class="s2">&quot;Style 2&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;rules&quot;</span><span class="o">:</span> <span class="p">[</span> <span class="p">(</span><span class="nx">list</span> <span class="k">of</span> <span class="nx">highlight</span> <span class="nx">rules</span><span class="p">,</span> <span class="nx">see</span> <span class="nx">below</span><span class="p">)</span> <span class="p">],</span>
-  <span class="p">},</span>
-  <span class="p">...</span>
-<span class="p">],</span>
+<p id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md8">Rules for syntax highlighting can be specified as a collection of regular expressions or wildcard patterns and text format specifications in the “highlightRules” array. The <code class="docutils literal notranslate"><span class="pre">highlightRules</span></code> format is: <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;highlightStyles&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;style&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Style 1&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;rules&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">(</span><span class="nx">list</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">highlight</span><span class="w"> </span><span class="nx">rules</span><span class="p">,</span><span class="w"> </span><span class="nx">see</span><span class="w"> </span><span class="nx">below</span><span class="p">)</span><span class="w"> </span><span class="p">],</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;style&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Style 2&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;rules&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">(</span><span class="nx">list</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">highlight</span><span class="w"> </span><span class="nx">rules</span><span class="p">,</span><span class="w"> </span><span class="nx">see</span><span class="w"> </span><span class="nx">below</span><span class="p">)</span><span class="w"> </span><span class="p">],</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="p">...</span><span class="w"></span>
+<span class="p">],</span><span class="w"></span>
 </pre></div>
 </div>
  The <code class="docutils literal notranslate"><span class="pre">style</span></code> name is unique to the style object, and used to associate a set of highlighting rules with particular output files. See the <code class="docutils literal notranslate"><span class="pre">--generate-input</span></code> documentation for more details.</p>
-<p>The general form of a highlight rule is: <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="s2">&quot;patterns&quot;</span><span class="o">:</span> <span class="p">[</span>
-    <span class="p">{</span> <span class="s2">&quot;regexp&quot;</span><span class="o">:</span> <span class="s2">&quot;^Some regexp?$&quot;</span> <span class="p">},</span>
-    <span class="p">{</span> <span class="s2">&quot;wildcard&quot;</span><span class="o">:</span> <span class="s2">&quot;A * wildcard expression&quot;</span> <span class="p">},</span>
-    <span class="p">{</span> <span class="s2">&quot;string&quot;</span><span class="o">:</span> <span class="s2">&quot;An exact string to match.&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;caseSensitive&quot;</span><span class="o">:</span> <span class="kc">false</span>
-    <span class="p">},</span>
-    <span class="p">...</span>
-  <span class="p">],</span>
-  <span class="s2">&quot;format&quot;</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">&quot;preset&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;preset name&gt;&quot;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<p>The general form of a highlight rule is: <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="s2">&quot;patterns&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s2">&quot;regexp&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;^Some regexp?$&quot;</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s2">&quot;wildcard&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;A * wildcard expression&quot;</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;An exact string to match.&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;caseSensitive&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="p">...</span><span class="w"></span>
+<span class="w">  </span><span class="p">],</span><span class="w"></span>
+<span class="w">  </span><span class="s2">&quot;format&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;preset&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;preset name&gt;&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 </p>
 <p>or,</p>
-<p><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="s2">&quot;patterns&quot;</span><span class="o">:</span> <span class="p">[</span>
-    <span class="p">...</span>
-  <span class="p">],</span>
-  <span class="s2">&quot;format&quot;</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">&quot;foreground&quot;</span><span class="o">:</span> <span class="p">[</span> <span class="mf">255</span><span class="p">,</span> <span class="mf">128</span><span class="p">,</span>  <span class="mf">64</span> <span class="p">],</span>
-    <span class="s2">&quot;background&quot;</span><span class="o">:</span> <span class="p">[</span>   <span class="mf">0</span><span class="p">,</span> <span class="mf">128</span><span class="p">,</span> <span class="mf">128</span> <span class="p">],</span>
-    <span class="s2">&quot;attributes&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;bold&quot;</span><span class="p">,</span> <span class="s2">&quot;italic&quot;</span><span class="p">,</span> <span class="s2">&quot;underline&quot;</span><span class="p">],</span>
-    <span class="s2">&quot;family&quot;</span><span class="o">:</span> <span class="s2">&quot;serif&quot;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<p><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="s2">&quot;patterns&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">    </span><span class="p">...</span><span class="w"></span>
+<span class="w">  </span><span class="p">],</span><span class="w"></span>
+<span class="w">  </span><span class="s2">&quot;format&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;foreground&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">255</span><span class="p">,</span><span class="w"> </span><span class="mf">128</span><span class="p">,</span><span class="w">  </span><span class="mf">64</span><span class="w"> </span><span class="p">],</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;background&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w">   </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">128</span><span class="p">,</span><span class="w"> </span><span class="mf">128</span><span class="w"> </span><span class="p">],</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;attributes&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;bold&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;italic&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;underline&quot;</span><span class="p">],</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;family&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;serif&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 </p>
@@ -491,33 +491,33 @@ The QuantumInput extension provides a scriptable method for users to add custom 
 </section>
 <section id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md10">
 <h2>Handling User Selections: &lt;tt&gt;–generate-input&lt;/tt&gt;<a class="headerlink" href="#class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md10" title="Permalink to this headline">#</a></h2>
-<p id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md10">When <code class="docutils literal notranslate"><span class="pre">--generate-input</span></code> is passed, the information needed to generate the input file will be written to the script’s standard input channel as JSON string of the following form: <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="s2">&quot;cjson&quot;</span><span class="o">:</span> <span class="p">{...},</span>
-  <span class="s2">&quot;options&quot;</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">&quot;First option name&quot;</span><span class="o">:</span> <span class="s2">&quot;Value 2&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;Second option name&quot;</span><span class="o">:</span> <span class="s2">&quot;Value 1&quot;</span><span class="p">,</span>
-    <span class="p">...</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<p id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md10">When <code class="docutils literal notranslate"><span class="pre">--generate-input</span></code> is passed, the information needed to generate the input file will be written to the script’s standard input channel as JSON string of the following form: <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="s2">&quot;cjson&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{...},</span><span class="w"></span>
+<span class="w">  </span><span class="s2">&quot;options&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;First option name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Value 2&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;Second option name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Value 1&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="p">...</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
  The <code class="docutils literal notranslate"><span class="pre">cjson</span></code> entry will contain a Chemical JSON representation of the molecule if <code class="docutils literal notranslate"><span class="pre">inputMoleculeFormat</span></code> is set to “cjson” in the <code class="docutils literal notranslate"><span class="pre">--print-options</span></code> output. Similarly, a <code class="docutils literal notranslate"><span class="pre">cml</span></code> entry and CML string will exist if a Chemical Markup Language representation was requested. It will be omitted entirely if <code class="docutils literal notranslate"><span class="pre">inputMoleculeFormat</span></code> is not set. The <code class="docutils literal notranslate"><span class="pre">options</span></code> block contains key/value pairs for each of the options specified in the <code class="docutils literal notranslate"><span class="pre">userOptions</span></code> block of the <code class="docutils literal notranslate"><span class="pre">--print-options</span></code> output.</p>
-<p>If the script is called with <code class="docutils literal notranslate"><span class="pre">--generate-input</span></code>, it must write a JSON string to standard output with the following format: <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="s2">&quot;files&quot;</span><span class="o">:</span> <span class="p">[</span>
-    <span class="p">{</span>
-      <span class="s2">&quot;filename&quot;</span><span class="o">:</span> <span class="s2">&quot;file1.ext&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;contents&quot;</span><span class="o">:</span> <span class="s2">&quot;...&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;highlightStyles&quot;</span><span class="o">:</span> <span class="p">[</span> <span class="p">...</span> <span class="p">]</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-      <span class="s2">&quot;filename&quot;</span><span class="o">:</span> <span class="s2">&quot;file2.ext&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;filePath&quot;</span><span class="o">:</span> <span class="s2">&quot;/path/to/file/on/local/filesystem&quot;</span>
-    <span class="p">},</span>
-    <span class="p">...</span>
-  <span class="p">],</span>
-  <span class="s2">&quot;warnings&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;First warning.&quot;</span><span class="p">,</span> <span class="s2">&quot;Second warning.&quot;</span><span class="p">,</span> <span class="p">...</span> <span class="p">],</span>
-  <span class="s2">&quot;mainFile&quot;</span><span class="o">:</span> <span class="s2">&quot;file2.ext&quot;</span>
-<span class="p">}</span>
+<p>If the script is called with <code class="docutils literal notranslate"><span class="pre">--generate-input</span></code>, it must write a JSON string to standard output with the following format: <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="s2">&quot;files&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;filename&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;file1.ext&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;contents&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;highlightStyles&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;filename&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;file2.ext&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;filePath&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;/path/to/file/on/local/filesystem&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="p">...</span><span class="w"></span>
+<span class="w">  </span><span class="p">],</span><span class="w"></span>
+<span class="w">  </span><span class="s2">&quot;warnings&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;First warning.&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Second warning.&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">],</span><span class="w"></span>
+<span class="w">  </span><span class="s2">&quot;mainFile&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;file2.ext&quot;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
  The <code class="docutils literal notranslate"><span class="pre">files</span></code> block is an array of objects, which define the actual input files. The <code class="docutils literal notranslate"><span class="pre">filename</span></code> member provides the name of the file, and either <code class="docutils literal notranslate"><span class="pre">contents</span></code> or <code class="docutils literal notranslate"><span class="pre">filePath</span></code> provide the text that goes into the file. The <code class="docutils literal notranslate"><span class="pre">contents</span></code> string will be used as the file contents, and <code class="docutils literal notranslate"><span class="pre">filePath</span></code> should contain an absolute path to a file on the filesystem to read and use as the input file contents. The optional <code class="docutils literal notranslate"><span class="pre">highlightStyles</span></code> member is an array of strings describing any highlight styles to apply to the file (see <code class="docutils literal notranslate"><span class="pre">--print-options</span></code> documentation). Each string in this array must match a <code class="docutils literal notranslate"><span class="pre">style</span></code> description in a highlighting rule in the <code class="docutils literal notranslate"><span class="pre">--print-options</span></code> output. Zero or more highlighting styles may be applied to any file. The order of the files in the GUI will match the order of the files in the array, and the first file will be displayed first.</p>
