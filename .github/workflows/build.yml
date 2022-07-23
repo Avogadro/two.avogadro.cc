@@ -50,7 +50,7 @@ jobs:
         cmake ${{ runner.workspace }}/openchemistry -DBUILD_DOCUMENTATION=ON -DUSE_SYSTEM_LIBXML2=ON -DUSE_SYSTEM_ZLIB=ON
       shell: bash
 
-    - name: Build
+    - name: Build avogadrolibs
       run: |
         cmake --build . 
         ls
@@ -58,6 +58,10 @@ jobs:
       shell: bash
       working-directory: ${{ runner.workspace }}/build
 
-
-# sphinx-build -E . ~/two.avogadro.cc 
-# commit
+    - name: Build Sphinx
+      run: |
+        cd source
+        sphinx-build -E . ..
+        cd ..
+        git status
+      shell: bash
