@@ -56,22 +56,22 @@ This documentation site is for Avogadro 2, currently in development.
 
 ::::{card-carousel} 2
 :::{card}
-![Thumbnail for benzene molecular orbital](/_images/400px/benzene-mo.png)
+![Thumbnail for benzene molecular orbital](/_images/benzene-mo.png)
 :::
 :::{card}
-![Thumbnail for zeolite rendering](/_images/400px/zeolite.png)
+![Thumbnail for zeolite rendering](/_images/zeolite.png)
 :::
 :::{card}
-![Thumbnail for QTAim analysis](/_images/400px/phenol-qtaim.png)
+![Thumbnail for QTAim analysis](/_images/phenol-qtaim.png)
 :::
 :::{card}
-![Thumbnail for bond-centric editing](/_images/400px/bondcentric.png)
+![Thumbnail for bond-centric editing](/_images/bondcentric.png)
 :::
 :::{card}
-![Thumbnail for symmetry analysis of C180](/_images/400px/C180.png)
+![Thumbnail for symmetry analysis of C180](/_images/C180.png)
 :::
 :::{card}
-![Thumbnail for COVID spike protein](/_images/400px/covid-spike.png)
+![Thumbnail for COVID spike protein](/_images/covid-spike.png)
 :::
 ::::
 
