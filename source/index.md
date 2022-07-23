@@ -80,7 +80,7 @@ This documentation site is for Avogadro 2, currently in development.
 ::::{grid} 3
 :::{grid-item-card}
 :class-header: sd-font-weight-bold sd-bg-light sd-text-center
-{far}`book;fa-2x` User Guide
+{fas}`book;fa-2x` User Guide
 ^^^
 
   Coming Soon for Avogadro2:
@@ -92,7 +92,7 @@ This documentation site is for Avogadro 2, currently in development.
 
 :::{grid-item-card}
 :class-header: sd-font-weight-bold sd-bg-light sd-text-center
-{far}`laptop-code;fa-2x` API Documentation
+{fas}`laptop-code;fa-2x` API Documentation
 ^^^
 
   Develop scripts and C++ code with Avogadro:
@@ -104,7 +104,7 @@ This documentation site is for Avogadro 2, currently in development.
 :::
 :::{grid-item-card}
 :class-header: sd-font-weight-bold sd-bg-light sd-text-center
-{far}`users;fa-2x` Contribute
+{fas}`users;fa-2x` Contribute
 ^^^
 
   We want your help to make Avogadro better for everyone:
