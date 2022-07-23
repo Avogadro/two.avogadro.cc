@@ -1,18 +1,22 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Class Avogadro::Io::FileFormatManager &#8212; Avogadro 1.97.0 documentation</title>
-    
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
 
-    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
   <link rel="stylesheet"
     href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
@@ -21,50 +25,60 @@
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
     <link rel="canonical" href="https://two.avogadro.cc/api/class/class_avogadro_1_1_io_1_1_file_format_manager.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Class Avogadro::Io::GromacsFormat" href="class_avogadro_1_1_io_1_1_gromacs_format.html" />
     <link rel="prev" title="Class Avogadro::Io::FileFormat" href="class_avogadro_1_1_io_1_1_file_format.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="en">
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+    <div class="bd-header-announcement container-fluid" id="banner">
+      
+
+    </div>
 
     
-    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
 
   <div id="navbar-start">
     
     
+  
 
-<a class="navbar-brand" href="../../index.html">
-  <img src="../../_static/avogadro2.png" class="logo" alt="logo">
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+    <img src="../../_static/avogadro2.png" class="logo__image only-light" alt="Logo image">
+    <img src="../../_static/avogadro2.png" class="logo__image only-dark" alt="Logo image">
+  
+  
 </a>
-
-
     
   </div>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+    <span class="fas fa-bars"></span>
   </button>
 
   
@@ -110,6 +124,14 @@
     <div id="navbar-end">
       
       <div class="navbar-end-item">
+        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
           <a class="nav-link" href="https://github.com/openchemistry/avogadrolibs" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
@@ -128,13 +150,13 @@
     </nav>
     
 
-    <div class="container-xl">
-      <div class="row">
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
           
-            
-            <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar">
-              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
+  <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
@@ -323,53 +345,52 @@
 
   </div>
 </nav>
-              </div>
-              <div class="sidebar-end-items">
-              </div>
-            </div>
-            
-          
+  </div>
+  <div class="sidebar-end-items">
+  </div>
+</div>
+
 
           
-          <div class="d-none d-xl-block col-xl-2 bd-toc">
-            
-              
-              <div class="toc-item">
-                
+
+
+<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
+  
+    
+    <div class="toc-item">
+      
 
 <nav id="bd-toc-nav">
     
 </nav>
-              </div>
-              
-              <div class="toc-item">
-                
+    </div>
+    
+    <div class="toc-item">
+      
 
 <div class="tocsection editthispage">
-    <a href="https://github.com/openchemistry/avogadrolibs/edit/master/docs/api/class/class_avogadro_1_1_io_1_1_file_format_manager.rst">
+    <a href="https://github.com/avogadro/two.avogadro.cc/edit/main/source/api/class/class_avogadro_1_1_io_1_1_file_format_manager.rst">
         <i class="fas fa-pencil-alt"></i> Edit this page
     </a>
 </div>
 
-              </div>
-              
-            
-          </div>
-          
+    </div>
+    
+  
+</div>
+
 
           
           
-            
-          
-          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+          <div class="bd-content col-12 col-md-9 col-xl-7">
               
-              <div>
+              <article class="bd-article" role="main">
                 
   <section id="class-avogadro-io-fileformatmanager">
-<h1>Class Avogadro::Io::FileFormatManager<a class="headerlink" href="#class-avogadro-io-fileformatmanager" title="Permalink to this headline">#</a></h1>
+<h1>Class Avogadro::Io::FileFormatManager<a class="headerlink" href="#class-avogadro-io-fileformatmanager" title="Permalink to this heading">#</a></h1>
 <dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv4N8Avogadro2Io17FileFormatManagerE">
-<span id="_CPPv3N8Avogadro2Io17FileFormatManagerE"></span><span id="_CPPv2N8Avogadro2Io17FileFormatManagerE"></span><span id="Avogadro::Io::FileFormatManager"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_manager"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">Avogadro</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Io</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">FileFormatManager</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro2Io17FileFormatManagerE" title="Permalink to this definition">#</a><br /></dt>
+<span id="_CPPv3N8Avogadro2Io17FileFormatManagerE"></span><span id="_CPPv2N8Avogadro2Io17FileFormatManagerE"></span><span id="Avogadro::Io::FileFormatManager"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_manager"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">FileFormatManager</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro2Io17FileFormatManagerE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Class to manage registration, searching and creation of file formats. </p>
 <p><p>&lt;avogadro/io/fileformatmanager.h&gt;</p>
 <p>The file format manager is a singleton class that handles the runtime registration, search, creation and eventual destruction of file formats. It can be used to gain a listing of available formats, register new formats and retrieve the correct format to facilitate file IO.</p>
@@ -386,7 +407,7 @@
 <span id="_CPPv3NK8Avogadro2Io17FileFormatManager8readFileERN4Core8MoleculeERKNSt6stringERKNSt6stringERKNSt6stringE"></span><span id="_CPPv2NK8Avogadro2Io17FileFormatManager8readFileERN4Core8MoleculeERKNSt6stringERKNSt6stringERKNSt6stringE"></span><span id="Avogadro::Io::FileFormatManager::readFile__Core::MoleculeR.ssCR.ssCR.ssCRC"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_manager_1a291e5087fab5a99039c2ad60f9e31682"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">readFile</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">molecule</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">fileName</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">fileExtension</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">options</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro2Io17FileFormatManager8readFileERN4Core8MoleculeERKNSt6stringERKNSt6stringERKNSt6stringE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Load <code class="docutils literal notranslate"><span class="pre">molecule</span></code> with the <code class="docutils literal notranslate"><span class="pre">fileName</span></code> contents supplied, inferring the <code class="docutils literal notranslate"><span class="pre">fileExtension</span></code> if it is empty. The <code class="docutils literal notranslate"><span class="pre">options</span></code> can be used to modify the behavior of the file format. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>True on success, false on failure. </p>
 </dd>
 </dl>
@@ -397,7 +418,7 @@
 <span id="_CPPv3NK8Avogadro2Io17FileFormatManager9writeFileERKN4Core8MoleculeERKNSt6stringERKNSt6stringERKNSt6stringE"></span><span id="_CPPv2NK8Avogadro2Io17FileFormatManager9writeFileERKN4Core8MoleculeERKNSt6stringERKNSt6stringERKNSt6stringE"></span><span id="Avogadro::Io::FileFormatManager::writeFile__Core::MoleculeCR.ssCR.ssCR.ssCRC"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_manager_1a1b27e2856b6e6412354456531ab15972"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">writeFile</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">molecule</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">fileName</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">fileExtension</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">options</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro2Io17FileFormatManager9writeFileERKN4Core8MoleculeERKNSt6stringERKNSt6stringERKNSt6stringE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Write <code class="docutils literal notranslate"><span class="pre">molecule</span></code> to the <code class="docutils literal notranslate"><span class="pre">fileName</span></code> supplied, inferring the <code class="docutils literal notranslate"><span class="pre">fileExtension</span></code> if it is empty. The <code class="docutils literal notranslate"><span class="pre">options</span></code> can be used to modify the behavior of the file format. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>True on success, false on failure. </p>
 </dd>
 </dl>
@@ -408,7 +429,7 @@
 <span id="_CPPv3NK8Avogadro2Io17FileFormatManager10readStringERN4Core8MoleculeERKNSt6stringERKNSt6stringERKNSt6stringE"></span><span id="_CPPv2NK8Avogadro2Io17FileFormatManager10readStringERN4Core8MoleculeERKNSt6stringERKNSt6stringERKNSt6stringE"></span><span id="Avogadro::Io::FileFormatManager::readString__Core::MoleculeR.ssCR.ssCR.ssCRC"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_manager_1aba8d09fd0b9ddfbfe3f2457265fe8498"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">readString</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">molecule</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">string</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">fileExtension</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">options</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro2Io17FileFormatManager10readStringERN4Core8MoleculeERKNSt6stringERKNSt6stringERKNSt6stringE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Load <code class="docutils literal notranslate"><span class="pre">molecule</span></code> with the contents of <code class="docutils literal notranslate"><span class="pre">string</span></code>, using the supplied <code class="docutils literal notranslate"><span class="pre">fileExtension</span></code> to determine the format. The <code class="docutils literal notranslate"><span class="pre">options</span></code> can be used to modify the behavior of the file format. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>True on success, false on failure. </p>
 </dd>
 </dl>
@@ -419,7 +440,7 @@
 <span id="_CPPv3NK8Avogadro2Io17FileFormatManager11writeStringERKN4Core8MoleculeERNSt6stringERKNSt6stringERKNSt6stringE"></span><span id="_CPPv2NK8Avogadro2Io17FileFormatManager11writeStringERKN4Core8MoleculeERNSt6stringERKNSt6stringERKNSt6stringE"></span><span id="Avogadro::Io::FileFormatManager::writeString__Core::MoleculeCR.ssR.ssCR.ssCRC"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_manager_1a6877876d0e9152d2db558f262818adfa"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">writeString</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">molecule</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">string</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">fileExtension</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">options</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro2Io17FileFormatManager11writeStringERKN4Core8MoleculeERNSt6stringERKNSt6stringERKNSt6stringE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Write <code class="docutils literal notranslate"><span class="pre">molecule</span></code> to the <code class="docutils literal notranslate"><span class="pre">string</span></code>, using the supplied <code class="docutils literal notranslate"><span class="pre">fileExtension</span></code> to determine the format. The <code class="docutils literal notranslate"><span class="pre">options</span></code> can be used to modify the behavior of the file format. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>True on success, false on failure. </p>
 </dd>
 </dl>
@@ -430,7 +451,7 @@
 <span id="_CPPv3N8Avogadro2Io17FileFormatManager9addFormatEP10FileFormat"></span><span id="_CPPv2N8Avogadro2Io17FileFormatManager9addFormatEP10FileFormat"></span><span id="Avogadro::Io::FileFormatManager::addFormat__FileFormatP"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_manager_1a99341496e385b2432497dd20ad91e660"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addFormat</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="class_avogadro_1_1_io_1_1_file_format.html#_CPPv4N8Avogadro2Io10FileFormatE" title="Avogadro::Io::FileFormat"><span class="n"><span class="pre">FileFormat</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">format</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro2Io17FileFormatManager9addFormatEP10FileFormat" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Add the supplied <code class="docutils literal notranslate"><span class="pre">format</span></code> to the manager, registering its ID, MIME type, file extension and other relevant data for later lookup. The manager assumes ownership of the supplied object. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>True on success, false on failure. </p>
 </dd>
 </dl>
@@ -441,7 +462,7 @@
 <span id="_CPPv3N8Avogadro2Io17FileFormatManager12removeFormatERKNSt6stringE"></span><span id="_CPPv2N8Avogadro2Io17FileFormatManager12removeFormatERKNSt6stringE"></span><span id="Avogadro::Io::FileFormatManager::removeFormat__ssCR"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_manager_1a29736a68bcb4ddf8c82d48f1aa287e41"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">removeFormat</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">identifier</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro2Io17FileFormatManager12removeFormatERKNSt6stringE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Remove the format with the identifier <em>identifier</em> from the manager. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>True on success, false on failure. </p>
 </dd>
 </dl>
@@ -452,13 +473,13 @@
 <span id="_CPPv3NK8Avogadro2Io17FileFormatManager23newFormatFromIdentifierERKNSt6stringEN10FileFormat10OperationsE"></span><span id="_CPPv2NK8Avogadro2Io17FileFormatManager23newFormatFromIdentifierERKNSt6stringEN10FileFormat10OperationsE"></span><span id="Avogadro::Io::FileFormatManager::newFormatFromIdentifier__ssCR.FileFormat::OperationsC"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_manager_1a41d63740265d81bd89234f8531aa0719"></span><a class="reference internal" href="class_avogadro_1_1_io_1_1_file_format.html#_CPPv4N8Avogadro2Io10FileFormatE" title="Avogadro::Io::FileFormat"><span class="n"><span class="pre">FileFormat</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">newFormatFromIdentifier</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">identifier</span></span>, <a class="reference internal" href="class_avogadro_1_1_io_1_1_file_format.html#_CPPv4N8Avogadro2Io10FileFormatE" title="Avogadro::Io::FileFormat"><span class="n"><span class="pre">FileFormat</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_io_1_1_file_format.html#_CPPv4N8Avogadro2Io10FileFormat10OperationsE" title="Avogadro::Io::FileFormat::Operations"><span class="n"><span class="pre">Operations</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">filter</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_io_1_1_file_format.html#_CPPv4N8Avogadro2Io10FileFormatE" title="Avogadro::Io::FileFormat"><span class="n"><span class="pre">FileFormat</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_io_1_1_file_format.html#_CPPv4N8Avogadro2Io10FileFormat9Operation4NoneE" title="Avogadro::Io::FileFormat::None"><span class="n"><span class="pre">None</span></span></a><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro2Io17FileFormatManager23newFormatFromIdentifierERKNSt6stringEN10FileFormat10OperationsE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>New instance of the format for the specified <code class="docutils literal notranslate"><span class="pre">identifier</span></code>. Ownership is passed to the caller. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>identifier</strong> – The unique identifier of the format. </p></li>
 <li><p><strong>filter</strong> – Bitwise combination of <a class="reference internal" href="class_avogadro_1_1_io_1_1_file_format.html#class_avogadro_1_1_io_1_1_file_format_1aa8f137f19095e0bdcf4f521e901f88bb"><span class="std std-ref">FileFormat::Operation</span></a> values that represents the minimum required capabilities. </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Instance of the format, nullptr if not found. Ownership passes to the caller. </p>
 </dd>
 </dl>
@@ -469,13 +490,13 @@
 <span id="_CPPv3NK8Avogadro2Io17FileFormatManager21newFormatFromMimeTypeERKNSt6stringEN10FileFormat10OperationsE"></span><span id="_CPPv2NK8Avogadro2Io17FileFormatManager21newFormatFromMimeTypeERKNSt6stringEN10FileFormat10OperationsE"></span><span id="Avogadro::Io::FileFormatManager::newFormatFromMimeType__ssCR.FileFormat::OperationsC"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_manager_1af717554603263ada6a6f6c183e0be839"></span><a class="reference internal" href="class_avogadro_1_1_io_1_1_file_format.html#_CPPv4N8Avogadro2Io10FileFormatE" title="Avogadro::Io::FileFormat"><span class="n"><span class="pre">FileFormat</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">newFormatFromMimeType</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">mimeType</span></span>, <a class="reference internal" href="class_avogadro_1_1_io_1_1_file_format.html#_CPPv4N8Avogadro2Io10FileFormatE" title="Avogadro::Io::FileFormat"><span class="n"><span class="pre">FileFormat</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_io_1_1_file_format.html#_CPPv4N8Avogadro2Io10FileFormat10OperationsE" title="Avogadro::Io::FileFormat::Operations"><span class="n"><span class="pre">Operations</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">filter</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_io_1_1_file_format.html#_CPPv4N8Avogadro2Io10FileFormatE" title="Avogadro::Io::FileFormat"><span class="n"><span class="pre">FileFormat</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_io_1_1_file_format.html#_CPPv4N8Avogadro2Io10FileFormat9Operation4NoneE" title="Avogadro::Io::FileFormat::None"><span class="n"><span class="pre">None</span></span></a><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro2Io17FileFormatManager21newFormatFromMimeTypeERKNSt6stringEN10FileFormat10OperationsE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>New instance of the format for the specified <code class="docutils literal notranslate"><span class="pre">mimeType</span></code>. Ownership is passed to the caller. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>mimeType</strong> – The MIME type (in lower case). </p></li>
 <li><p><strong>filter</strong> – Bitwise combination of <a class="reference internal" href="class_avogadro_1_1_io_1_1_file_format.html#class_avogadro_1_1_io_1_1_file_format_1aa8f137f19095e0bdcf4f521e901f88bb"><span class="std std-ref">FileFormat::Operation</span></a> values that represents the minimum required capabilities. </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Instance of the format, nullptr if not found. Ownership passes to the caller. </p>
 </dd>
 </dl>
@@ -486,13 +507,13 @@
 <span id="_CPPv3NK8Avogadro2Io17FileFormatManager26newFormatFromFileExtensionERKNSt6stringEN10FileFormat10OperationsE"></span><span id="_CPPv2NK8Avogadro2Io17FileFormatManager26newFormatFromFileExtensionERKNSt6stringEN10FileFormat10OperationsE"></span><span id="Avogadro::Io::FileFormatManager::newFormatFromFileExtension__ssCR.FileFormat::OperationsC"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_manager_1a320883c8cc530bf3dc5d0c60abfa3860"></span><a class="reference internal" href="class_avogadro_1_1_io_1_1_file_format.html#_CPPv4N8Avogadro2Io10FileFormatE" title="Avogadro::Io::FileFormat"><span class="n"><span class="pre">FileFormat</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">newFormatFromFileExtension</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">extension</span></span>, <a class="reference internal" href="class_avogadro_1_1_io_1_1_file_format.html#_CPPv4N8Avogadro2Io10FileFormatE" title="Avogadro::Io::FileFormat"><span class="n"><span class="pre">FileFormat</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_io_1_1_file_format.html#_CPPv4N8Avogadro2Io10FileFormat10OperationsE" title="Avogadro::Io::FileFormat::Operations"><span class="n"><span class="pre">Operations</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">filter</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_io_1_1_file_format.html#_CPPv4N8Avogadro2Io10FileFormatE" title="Avogadro::Io::FileFormat"><span class="n"><span class="pre">FileFormat</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_io_1_1_file_format.html#_CPPv4N8Avogadro2Io10FileFormat9Operation4NoneE" title="Avogadro::Io::FileFormat::None"><span class="n"><span class="pre">None</span></span></a><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro2Io17FileFormatManager26newFormatFromFileExtensionERKNSt6stringEN10FileFormat10OperationsE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>New instance of the format for the specified file <code class="docutils literal notranslate"><span class="pre">extension</span></code>. Ownership is passed to the caller. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>extension</strong> – The file extension (in lower case). </p></li>
 <li><p><strong>filter</strong> – Bitwise combination of <a class="reference internal" href="class_avogadro_1_1_io_1_1_file_format.html#class_avogadro_1_1_io_1_1_file_format_1aa8f137f19095e0bdcf4f521e901f88bb"><span class="std std-ref">FileFormat::Operation</span></a> values that represents the minimum required capabilities. </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Instance of the format, nullptr if not found. Ownership passes to the caller. </p>
 </dd>
 </dl>
@@ -503,7 +524,7 @@
 <span id="_CPPv3NK8Avogadro2Io17FileFormatManager11identifiersEN10FileFormat10OperationsE"></span><span id="_CPPv2NK8Avogadro2Io17FileFormatManager11identifiersEN10FileFormat10OperationsE"></span><span id="Avogadro::Io::FileFormatManager::identifiers__FileFormat::OperationsC"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_manager_1a379845a8ef2c68d6f6469e4ffbe165cc"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">identifiers</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="class_avogadro_1_1_io_1_1_file_format.html#_CPPv4N8Avogadro2Io10FileFormatE" title="Avogadro::Io::FileFormat"><span class="n"><span class="pre">FileFormat</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_io_1_1_file_format.html#_CPPv4N8Avogadro2Io10FileFormat10OperationsE" title="Avogadro::Io::FileFormat::Operations"><span class="n"><span class="pre">Operations</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">filter</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_io_1_1_file_format.html#_CPPv4N8Avogadro2Io10FileFormatE" title="Avogadro::Io::FileFormat"><span class="n"><span class="pre">FileFormat</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_io_1_1_file_format.html#_CPPv4N8Avogadro2Io10FileFormat9Operation4NoneE" title="Avogadro::Io::FileFormat::None"><span class="n"><span class="pre">None</span></span></a><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro2Io17FileFormatManager11identifiersEN10FileFormat10OperationsE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Get a list of all loaded identifiers, optionally matching the specified filter. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>filter</strong> – Bitwise combination of <a class="reference internal" href="class_avogadro_1_1_io_1_1_file_format.html#class_avogadro_1_1_io_1_1_file_format_1aa8f137f19095e0bdcf4f521e901f88bb"><span class="std std-ref">FileFormat::Operation</span></a> values that represents the minimum required capabilities. </p>
 </dd>
 </dl>
@@ -514,7 +535,7 @@
 <span id="_CPPv3NK8Avogadro2Io17FileFormatManager9mimeTypesEN10FileFormat10OperationsE"></span><span id="_CPPv2NK8Avogadro2Io17FileFormatManager9mimeTypesEN10FileFormat10OperationsE"></span><span id="Avogadro::Io::FileFormatManager::mimeTypes__FileFormat::OperationsC"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_manager_1ae477e08fac7992f970ab9b62ea05e80c"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">mimeTypes</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="class_avogadro_1_1_io_1_1_file_format.html#_CPPv4N8Avogadro2Io10FileFormatE" title="Avogadro::Io::FileFormat"><span class="n"><span class="pre">FileFormat</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_io_1_1_file_format.html#_CPPv4N8Avogadro2Io10FileFormat10OperationsE" title="Avogadro::Io::FileFormat::Operations"><span class="n"><span class="pre">Operations</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">filter</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_io_1_1_file_format.html#_CPPv4N8Avogadro2Io10FileFormatE" title="Avogadro::Io::FileFormat"><span class="n"><span class="pre">FileFormat</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_io_1_1_file_format.html#_CPPv4N8Avogadro2Io10FileFormat9Operation4NoneE" title="Avogadro::Io::FileFormat::None"><span class="n"><span class="pre">None</span></span></a><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro2Io17FileFormatManager9mimeTypesEN10FileFormat10OperationsE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Get a list of all loaded MIME types, optionally matching the specified filter. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>filter</strong> – Bitwise combination of <a class="reference internal" href="class_avogadro_1_1_io_1_1_file_format.html#class_avogadro_1_1_io_1_1_file_format_1aa8f137f19095e0bdcf4f521e901f88bb"><span class="std std-ref">FileFormat::Operation</span></a> values that represents the minimum required capabilities. </p>
 </dd>
 </dl>
@@ -525,7 +546,7 @@
 <span id="_CPPv3NK8Avogadro2Io17FileFormatManager14fileExtensionsEN10FileFormat10OperationsE"></span><span id="_CPPv2NK8Avogadro2Io17FileFormatManager14fileExtensionsEN10FileFormat10OperationsE"></span><span id="Avogadro::Io::FileFormatManager::fileExtensions__FileFormat::OperationsC"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_manager_1ab0322a9145cba43b5488a323146544ce"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">fileExtensions</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="class_avogadro_1_1_io_1_1_file_format.html#_CPPv4N8Avogadro2Io10FileFormatE" title="Avogadro::Io::FileFormat"><span class="n"><span class="pre">FileFormat</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_io_1_1_file_format.html#_CPPv4N8Avogadro2Io10FileFormat10OperationsE" title="Avogadro::Io::FileFormat::Operations"><span class="n"><span class="pre">Operations</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">filter</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_io_1_1_file_format.html#_CPPv4N8Avogadro2Io10FileFormatE" title="Avogadro::Io::FileFormat"><span class="n"><span class="pre">FileFormat</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_io_1_1_file_format.html#_CPPv4N8Avogadro2Io10FileFormat9Operation4NoneE" title="Avogadro::Io::FileFormat::None"><span class="n"><span class="pre">None</span></span></a><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro2Io17FileFormatManager14fileExtensionsEN10FileFormat10OperationsE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Get a list of the file extensions supported, optionally matching the specified filter. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>filter</strong> – Bitwise combination of <a class="reference internal" href="class_avogadro_1_1_io_1_1_file_format.html#class_avogadro_1_1_io_1_1_file_format_1aa8f137f19095e0bdcf4f521e901f88bb"><span class="std std-ref">FileFormat::Operation</span></a> values that represents the minimum required capabilities. </p>
 </dd>
 </dl>
@@ -540,7 +561,7 @@
 <p>The objects in the returned list are owned by the <a class="reference internal" href="#class_avogadro_1_1_io_1_1_file_format_manager"><span class="std std-ref">FileFormatManager</span></a> and cannot be modified. Use <a class="reference internal" href="class_avogadro_1_1_io_1_1_file_format.html#class_avogadro_1_1_io_1_1_file_format_1a21b245c61e8687d3ace54759447a42dd"><span class="std std-ref">FileFormat::newInstance()</span></a> to create mutable copies. </p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>filter</strong> – Bitwise combination of <a class="reference internal" href="class_avogadro_1_1_io_1_1_file_format.html#class_avogadro_1_1_io_1_1_file_format_1aa8f137f19095e0bdcf4f521e901f88bb"><span class="std std-ref">FileFormat::Operation</span></a> values that represents the minimum required capabilities. </p>
 </dd>
 </dl>
@@ -555,7 +576,7 @@
 <p>The objects in the returned list are owned by the <a class="reference internal" href="#class_avogadro_1_1_io_1_1_file_format_manager"><span class="std std-ref">FileFormatManager</span></a> and cannot be modified. Use <a class="reference internal" href="class_avogadro_1_1_io_1_1_file_format.html#class_avogadro_1_1_io_1_1_file_format_1a21b245c61e8687d3ace54759447a42dd"><span class="std std-ref">FileFormat::newInstance()</span></a> to create mutable copies. </p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>mimeType</strong> – MIME type. </p></li>
 <li><p><strong>filter</strong> – Bitwise combination of <a class="reference internal" href="class_avogadro_1_1_io_1_1_file_format.html#class_avogadro_1_1_io_1_1_file_format_1aa8f137f19095e0bdcf4f521e901f88bb"><span class="std std-ref">FileFormat::Operation</span></a> values that represents the minimum required capabilities. </p></li>
@@ -573,7 +594,7 @@
 <p>The objects in the returned list are owned by the <a class="reference internal" href="#class_avogadro_1_1_io_1_1_file_format_manager"><span class="std std-ref">FileFormatManager</span></a> and cannot be modified. Use <a class="reference internal" href="class_avogadro_1_1_io_1_1_file_format.html#class_avogadro_1_1_io_1_1_file_format_1a21b245c61e8687d3ace54759447a42dd"><span class="std std-ref">FileFormat::newInstance()</span></a> to create mutable copies. </p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>extension</strong> – File extension. </p></li>
 <li><p><strong>filter</strong> – Bitwise combination of <a class="reference internal" href="class_avogadro_1_1_io_1_1_file_format.html#class_avogadro_1_1_io_1_1_file_format_1aa8f137f19095e0bdcf4f521e901f88bb"><span class="std std-ref">FileFormat::Operation</span></a> values that represents the minimum required capabilities. </p></li>
@@ -602,10 +623,10 @@
 <span id="_CPPv3N8Avogadro2Io17FileFormatManager14registerFormatEP10FileFormat"></span><span id="_CPPv2N8Avogadro2Io17FileFormatManager14registerFormatEP10FileFormat"></span><span id="Avogadro::Io::FileFormatManager::registerFormat__FileFormatP"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_manager_1a6abf67a2e508f0058c9e692ea0d23144"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">registerFormat</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="class_avogadro_1_1_io_1_1_file_format.html#_CPPv4N8Avogadro2Io10FileFormatE" title="Avogadro::Io::FileFormat"><span class="n"><span class="pre">FileFormat</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">format</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro2Io17FileFormatManager14registerFormatEP10FileFormat" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Register a new file format with the format manager. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>format</strong> – An instance of the format to manage, the manager assumes ownership of the object passed in. </p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>True on success, false on failure. </p>
 </dd>
 </dl>
@@ -616,10 +637,10 @@
 <span id="_CPPv3N8Avogadro2Io17FileFormatManager16unregisterFormatERKNSt6stringE"></span><span id="_CPPv2N8Avogadro2Io17FileFormatManager16unregisterFormatERKNSt6stringE"></span><span id="Avogadro::Io::FileFormatManager::unregisterFormat__ssCR"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_manager_1a28b19b1ae7344a533ab30369fc0edcba"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">unregisterFormat</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">identifier</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro2Io17FileFormatManager16unregisterFormatERKNSt6stringE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Unregister a file format from the format manager. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>identifier</strong> – The identifier for the format to remove. </p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>True on success, false on failure. </p>
 </dd>
 </dl>
@@ -631,53 +652,55 @@
 </section>
 
 
-              </div>
+              </article>
               
-              
-              <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="class_avogadro_1_1_io_1_1_file_format.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Class Avogadro::Io::FileFormat</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="class_avogadro_1_1_io_1_1_gromacs_format.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Class Avogadro::Io::GromacsFormat</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-              
-          </main>
-          
 
+              
+              <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="class_avogadro_1_1_io_1_1_file_format.html" title="previous page">
+      <i class="fas fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">Class Avogadro::Io::FileFormat</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="class_avogadro_1_1_io_1_1_gromacs_format.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">Class Avogadro::Io::GromacsFormat</p>
+  </div>
+  <i class="fas fa-angle-right"></i>
+  </a>
+</div>
+              </footer>
+              
+          </div>
+          
       </div>
     </div>
+
+  
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-<footer class="container-fluid footer-copy">
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
 
-    <div class="container">
-
-      <div class="row">
-        <div class="col-md-10 py-2">
-          <p>
-            ©2022 The OpenChemistry / Avogadro Teams. The website content uses the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/LICENSE">BSD License</a> and is covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
-          </p>
-        </div>
-        <br />
-        <div class="col-md-2 py-2">
-          <a class="btn btn-primary" href="https://opencollective.com/open-chemistry">Donate</a>
-        </div>
-      </div>
-
-    </div>
-
-  </footer>
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
+    &copy; Copyright ©2022 The OpenChemistry / Avogadro Teams..<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.2.<br>
+</p>
+  </div>
+  
+</div>
+</footer>
   </body>
 </html>

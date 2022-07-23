@@ -1,18 +1,22 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Script File Formats &#8212; Avogadro 1.97.0 documentation</title>
-    
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
 
-    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
   <link rel="stylesheet"
     href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
@@ -21,50 +25,60 @@
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <link rel="canonical" href="https://two.avogadro.cc/scripts/formats.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Library API" href="../api/index.html" />
     <link rel="prev" title="Input Generators" href="generators.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="en">
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+    <div class="bd-header-announcement container-fluid" id="banner">
+      
+
+    </div>
 
     
-    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
 
   <div id="navbar-start">
     
     
+  
 
-<a class="navbar-brand" href="../index.html">
-  <img src="../_static/avogadro2.png" class="logo" alt="logo">
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    <img src="../_static/avogadro2.png" class="logo__image only-light" alt="Logo image">
+    <img src="../_static/avogadro2.png" class="logo__image only-dark" alt="Logo image">
+  
+  
 </a>
-
-
     
   </div>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+    <span class="fas fa-bars"></span>
   </button>
 
   
@@ -110,6 +124,14 @@
     <div id="navbar-end">
       
       <div class="navbar-end-item">
+        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
           <a class="nav-link" href="https://github.com/openchemistry/avogadrolibs" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
@@ -128,13 +150,13 @@
     </nav>
     
 
-    <div class="container-xl">
-      <div class="row">
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
           
-            
-            <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar">
-              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
+  <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
@@ -164,19 +186,20 @@
 
   </div>
 </nav>
-              </div>
-              <div class="sidebar-end-items">
-              </div>
-            </div>
-            
-          
+  </div>
+  <div class="sidebar-end-items">
+  </div>
+</div>
+
 
           
-          <div class="d-none d-xl-block col-xl-2 bd-toc">
-            
-              
-              <div class="toc-item">
-                
+
+
+<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
+  
+    
+    <div class="toc-item">
+      
 <div class="tocsection onthispage mt-5 pt-1 pb-3">
     <i class="fas fa-list"></i> On this page
 </div>
@@ -216,33 +239,31 @@
 </ul>
 
 </nav>
-              </div>
-              
-              <div class="toc-item">
-                
+    </div>
+    
+    <div class="toc-item">
+      
 
 <div class="tocsection editthispage">
-    <a href="https://github.com/openchemistry/avogadrolibs/edit/master/docs/scripts/formats.rst">
+    <a href="https://github.com/avogadro/two.avogadro.cc/edit/main/source/scripts/formats.md">
         <i class="fas fa-pencil-alt"></i> Edit this page
     </a>
 </div>
 
-              </div>
-              
-            
-          </div>
-          
+    </div>
+    
+  
+</div>
+
 
           
           
-            
-          
-          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+          <div class="bd-content col-12 col-md-9 col-xl-7">
               
-              <div>
+              <article class="bd-article" role="main">
                 
-  <section id="script-file-formats">
-<span id="script-formats"></span><h1>Script File Formats<a class="headerlink" href="#script-file-formats" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="script-file-formats">
+<span id="script-formats"></span><h1>Script File Formats<a class="headerlink" href="#script-file-formats" title="Permalink to this heading">#</a></h1>
 <p>Avogadro allows scripts to translate between formats which Avogadro already
 handles and new formats (e.g., to use packages like cclib).</p>
 <p>The script must handle the following command line arguments:</p>
@@ -256,9 +277,9 @@ the formatted result to standard output.</p></li>
 </ul>
 <p>Format scripts do not need to handle both <code class="docutils literal notranslate"><span class="pre">--read</span></code> and <code class="docutils literal notranslate"><span class="pre">--write</span></code> options.
 For example a format could be intended to only read in a new format by converting
-to <cite>cjson</cite>.</p>
+to <code class="docutils literal notranslate"><span class="pre">cjson</span></code>.</p>
 <section id="identify-the-format-with-metadata">
-<h2>Identify the Format with <code class="docutils literal notranslate"><span class="pre">--metadata</span></code><a class="headerlink" href="#identify-the-format-with-metadata" title="Permalink to this headline">#</a></h2>
+<h2>Identify the Format with <code class="docutils literal notranslate"><span class="pre">--metadata</span></code><a class="headerlink" href="#identify-the-format-with-metadata" title="Permalink to this heading">#</a></h2>
 <p>Running the script with the <code class="docutils literal notranslate"><span class="pre">--metadata</span></code> option should print a JSON object
 of the following form:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
@@ -276,56 +297,56 @@ of the following form:</p>
 </div>
 <p>Details:</p>
 <ul class="simple">
-<li><p><cite>inputFormat</cite> indicates the format that the script can convert to the
-implemented format by the <code class="docutils literal notranslate"><span class="pre">--write</span></code> command. Allowed values are <cite>“cml”</cite>,
-<cite>“cjson”</cite>, or <cite>“xyz”</cite>. See the <code class="docutils literal notranslate"><span class="pre">--write</span></code> documentation for more detail.</p></li>
-<li><p><cite>outputFormat</cite> indicates the format that the script can convert to from the
-implemented format by the <code class="docutils literal notranslate"><span class="pre">--read</span></code> command. Allowed values are <cite>“cml”</cite>,
-<cite>“cjson”</cite>, or <cite>“xyz”</cite>. See the <code class="docutils literal notranslate"><span class="pre">--read</span></code> documentation for more detail.</p></li>
-<li><p><cite>operations</cite> specifies the scripts capabilies. The array should contain
-<cite>“read”</cite> if the script implements the <code class="docutils literal notranslate"><span class="pre">--read</span></code> option, and/or <cite>“write”</cite> if
+<li><p><code class="docutils literal notranslate"><span class="pre">inputFormat</span></code> indicates the format that the script can convert to the
+implemented format by the <code class="docutils literal notranslate"><span class="pre">--write</span></code> command. Allowed values are <code class="docutils literal notranslate"><span class="pre">&quot;cml&quot;</span></code>,
+<code class="docutils literal notranslate"><span class="pre">&quot;cjson&quot;</span></code>, or <code class="docutils literal notranslate"><span class="pre">&quot;xyz&quot;</span></code>. See the <code class="docutils literal notranslate"><span class="pre">--write</span></code> documentation for more detail.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">outputFormat</span></code> indicates the format that the script can convert to from the
+implemented format by the <code class="docutils literal notranslate"><span class="pre">--read</span></code> command. Allowed values are <code class="docutils literal notranslate"><span class="pre">&quot;cml&quot;</span></code>,
+<code class="docutils literal notranslate"><span class="pre">&quot;cjson&quot;</span></code>, or <code class="docutils literal notranslate"><span class="pre">&quot;xyz&quot;</span></code>. See the <code class="docutils literal notranslate"><span class="pre">--read</span></code> documentation for more detail.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">operations</span></code> specifies the scripts capabilies. The array should contain
+<code class="docutils literal notranslate"><span class="pre">&quot;read&quot;</span></code> if the script implements the <code class="docutils literal notranslate"><span class="pre">--read</span></code> option, and/or <code class="docutils literal notranslate"><span class="pre">&quot;write&quot;</span></code> if
 <code class="docutils literal notranslate"><span class="pre">--write</span></code> is available.</p></li>
-<li><p><cite>identifier</cite> is a unique identifier. The value must only be unique amongst
+<li><p><code class="docutils literal notranslate"><span class="pre">identifier</span></code> is a unique identifier. The value must only be unique amongst
 script formats, as it will be prefixed with “User Script: ” internally by
 Avogadro.</p></li>
-<li><p><cite>name</cite> is a user-friendly name for the format.</p></li>
-<li><p><cite>description</cite> is a description of the format, along with any relevant help
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code> is a user-friendly name for the format.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">description</span></code> is a description of the format, along with any relevant help
 text for users.</p></li>
-<li><p><cite>specificationUrl</cite> is the URL of the format specification if available
+<li><p><code class="docutils literal notranslate"><span class="pre">specificationUrl</span></code> is the URL of the format specification if available
 (or relevant web page/wiki otherwise).</p></li>
-<li><p><cite>fileExtensions</cite> is an array specifying the file extensions that this
+<li><p><code class="docutils literal notranslate"><span class="pre">fileExtensions</span></code> is an array specifying the file extensions that this
 format supports.</p></li>
-<li><p><cite>mimeTypes</cite> is an array specifying the mime types that this format
+<li><p><code class="docutils literal notranslate"><span class="pre">mimeTypes</span></code> is an array specifying the mime types that this format
 supports.</p></li>
 </ul>
-<dl class="simple">
+<dl class="simple myst">
 <dt>Required members are:</dt><dd><ul class="simple">
-<li><p><cite>operations</cite></p></li>
-<li><p><cite>inputFormat</cite> (if <cite>“write”</cite> is specified in <cite>operations</cite>)</p></li>
-<li><p><cite>outputFormat</cite> (if <cite>“read”</cite> is specified in <cite>operations</cite>)</p></li>
-<li><p><cite>identifier</cite></p></li>
-<li><p><cite>name</cite></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">operations</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">inputFormat</span></code> (if <code class="docutils literal notranslate"><span class="pre">&quot;write&quot;</span></code> is specified in <code class="docutils literal notranslate"><span class="pre">operations</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">outputFormat</span></code> (if <code class="docutils literal notranslate"><span class="pre">&quot;read&quot;</span></code> is specified in <code class="docutils literal notranslate"><span class="pre">operations</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">identifier</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code></p></li>
 </ul>
 </dd>
 <dt>Optional members are:</dt><dd><ul class="simple">
-<li><p><cite>description</cite></p></li>
-<li><p><cite>specificationUrl</cite></p></li>
-<li><p><cite>fileExtensions</cite></p></li>
-<li><p><cite>mimeTypes</cite></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">description</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">specificationUrl</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fileExtensions</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mimeTypes</span></code></p></li>
 </ul>
 </dd>
 </dl>
 </section>
 <section id="reading-a-format-with-read">
-<h2>Reading a format with <code class="docutils literal notranslate"><span class="pre">--read</span></code><a class="headerlink" href="#reading-a-format-with-read" title="Permalink to this headline">#</a></h2>
-<p>If <cite>“read”</cite> is specified in the <cite>operations</cite> <code class="docutils literal notranslate"><span class="pre">--metadata</span></code> output along with
-a valid <cite>outputFormat</cite>, Avogadro will call the script with <code class="docutils literal notranslate"><span class="pre">--read</span></code> and
+<h2>Reading a format with <code class="docutils literal notranslate"><span class="pre">--read</span></code><a class="headerlink" href="#reading-a-format-with-read" title="Permalink to this heading">#</a></h2>
+<p>If <code class="docutils literal notranslate"><span class="pre">&quot;read&quot;</span></code> is specified in the <code class="docutils literal notranslate"><span class="pre">operations</span></code> <code class="docutils literal notranslate"><span class="pre">--metadata</span></code> output along with
+a valid <code class="docutils literal notranslate"><span class="pre">outputFormat</span></code>, Avogadro will call the script with <code class="docutils literal notranslate"><span class="pre">--read</span></code> and
 write the implemented format to the script’s standard input. The script shall
-convert the input to <cite>outputFormat</cite> and print it to standard output.</p>
+convert the input to <code class="docutils literal notranslate"><span class="pre">outputFormat</span></code> and print it to standard output.</p>
 </section>
 <section id="writing-a-format-with-write">
-<h2>Writing a format with <code class="docutils literal notranslate"><span class="pre">--write</span></code><a class="headerlink" href="#writing-a-format-with-write" title="Permalink to this headline">#</a></h2>
-<p>If <cite>“write”</cite> is specified in the <cite>operations</cite> <code class="docutils literal notranslate"><span class="pre">--metadata</span></code> output along with
+<h2>Writing a format with <code class="docutils literal notranslate"><span class="pre">--write</span></code><a class="headerlink" href="#writing-a-format-with-write" title="Permalink to this heading">#</a></h2>
+<p>If <code class="docutils literal notranslate"><span class="pre">&quot;write&quot;</span></code> is specified in the <code class="docutils literal notranslate"><span class="pre">operations</span></code> <code class="docutils literal notranslate"><span class="pre">--metadata</span></code> output along with
 a valid <code class="docutils literal notranslate"><span class="pre">inputFormat</span></code>, Avogadro will call the script with <code class="docutils literal notranslate"><span class="pre">--write</span></code> and
 write the <code class="docutils literal notranslate"><span class="pre">inputFormat</span></code> to the script’s standard input. The script shall
 convert the input to the implemented format and print it to standard output.</p>
@@ -333,53 +354,55 @@ convert the input to the implemented format and print it to standard output.</p>
 </section>
 
 
-              </div>
+              </article>
               
-              
-              <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="generators.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Input Generators</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="../api/index.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Library API</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-              
-          </main>
-          
 
+              
+              <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="generators.html" title="previous page">
+      <i class="fas fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">Input Generators</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="../api/index.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">Library API</p>
+  </div>
+  <i class="fas fa-angle-right"></i>
+  </a>
+</div>
+              </footer>
+              
+          </div>
+          
       </div>
     </div>
+
+  
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-<footer class="container-fluid footer-copy">
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
 
-    <div class="container">
-
-      <div class="row">
-        <div class="col-md-10 py-2">
-          <p>
-            ©2022 The OpenChemistry / Avogadro Teams. The website content uses the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/LICENSE">BSD License</a> and is covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
-          </p>
-        </div>
-        <br />
-        <div class="col-md-2 py-2">
-          <a class="btn btn-primary" href="https://opencollective.com/open-chemistry">Donate</a>
-        </div>
-      </div>
-
-    </div>
-
-  </footer>
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
+    &copy; Copyright ©2022 The OpenChemistry / Avogadro Teams..<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.2.<br>
+</p>
+  </div>
+  
+</div>
+</footer>
   </body>
 </html>

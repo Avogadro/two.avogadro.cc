@@ -1,18 +1,22 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Class Avogadro::QtGui::ViewFactory &#8212; Avogadro 1.97.0 documentation</title>
-    
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
 
-    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
   <link rel="stylesheet"
     href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
@@ -21,50 +25,60 @@
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
     <link rel="canonical" href="https://two.avogadro.cc/api/class/class_avogadro_1_1_qt_gui_1_1_view_factory.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Class Avogadro::QtOpenGL::ActiveObjects" href="class_avogadro_1_1_qt_open_g_l_1_1_active_objects.html" />
     <link rel="prev" title="Class Avogadro::QtGui::ToolPluginFactory" href="class_avogadro_1_1_qt_gui_1_1_tool_plugin_factory.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="en">
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+    <div class="bd-header-announcement container-fluid" id="banner">
+      
+
+    </div>
 
     
-    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
 
   <div id="navbar-start">
     
     
+  
 
-<a class="navbar-brand" href="../../index.html">
-  <img src="../../_static/avogadro2.png" class="logo" alt="logo">
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+    <img src="../../_static/avogadro2.png" class="logo__image only-light" alt="Logo image">
+    <img src="../../_static/avogadro2.png" class="logo__image only-dark" alt="Logo image">
+  
+  
 </a>
-
-
     
   </div>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+    <span class="fas fa-bars"></span>
   </button>
 
   
@@ -110,6 +124,14 @@
     <div id="navbar-end">
       
       <div class="navbar-end-item">
+        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
           <a class="nav-link" href="https://github.com/openchemistry/avogadrolibs" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
@@ -128,13 +150,13 @@
     </nav>
     
 
-    <div class="container-xl">
-      <div class="row">
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
           
-            
-            <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar">
-              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
+  <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
@@ -383,53 +405,52 @@
 
   </div>
 </nav>
-              </div>
-              <div class="sidebar-end-items">
-              </div>
-            </div>
-            
-          
+  </div>
+  <div class="sidebar-end-items">
+  </div>
+</div>
+
 
           
-          <div class="d-none d-xl-block col-xl-2 bd-toc">
-            
-              
-              <div class="toc-item">
-                
+
+
+<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
+  
+    
+    <div class="toc-item">
+      
 
 <nav id="bd-toc-nav">
     
 </nav>
-              </div>
-              
-              <div class="toc-item">
-                
+    </div>
+    
+    <div class="toc-item">
+      
 
 <div class="tocsection editthispage">
-    <a href="https://github.com/openchemistry/avogadrolibs/edit/master/docs/api/class/class_avogadro_1_1_qt_gui_1_1_view_factory.rst">
+    <a href="https://github.com/avogadro/two.avogadro.cc/edit/main/source/api/class/class_avogadro_1_1_qt_gui_1_1_view_factory.rst">
         <i class="fas fa-pencil-alt"></i> Edit this page
     </a>
 </div>
 
-              </div>
-              
-            
-          </div>
-          
+    </div>
+    
+  
+</div>
+
 
           
           
-            
-          
-          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+          <div class="bd-content col-12 col-md-9 col-xl-7">
               
-              <div>
+              <article class="bd-article" role="main">
                 
   <section id="class-avogadro-qtgui-viewfactory">
-<h1>Class Avogadro::QtGui::ViewFactory<a class="headerlink" href="#class-avogadro-qtgui-viewfactory" title="Permalink to this headline">#</a></h1>
+<h1>Class Avogadro::QtGui::ViewFactory<a class="headerlink" href="#class-avogadro-qtgui-viewfactory" title="Permalink to this heading">#</a></h1>
 <dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui11ViewFactoryE">
-<span id="_CPPv3N8Avogadro5QtGui11ViewFactoryE"></span><span id="_CPPv2N8Avogadro5QtGui11ViewFactoryE"></span><span id="Avogadro::QtGui::ViewFactory"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_view_factory"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">Avogadro</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">QtGui</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">ViewFactory</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui11ViewFactoryE" title="Permalink to this definition">#</a><br /></dt>
+<span id="_CPPv3N8Avogadro5QtGui11ViewFactoryE"></span><span id="_CPPv2N8Avogadro5QtGui11ViewFactoryE"></span><span id="Avogadro::QtGui::ViewFactory"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_view_factory"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ViewFactory</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui11ViewFactoryE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>The <a class="reference internal" href="#class_avogadro_1_1_qt_gui_1_1_view_factory"><span class="std std-ref">ViewFactory</span></a> class is a pure virtual that provides a method of dynamically adding views to the <a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_multi_view_widget.html#class_avogadro_1_1_qt_gui_1_1_multi_view_widget"><span class="std std-ref">MultiViewWidget</span></a> class. </p>
 <p><dl class="simple">
 <dt><strong>Author</strong></dt><dd><p>Marcus D. Hanwell </p>
@@ -453,7 +474,7 @@
 <span id="_CPPv3NK8Avogadro5QtGui11ViewFactory5viewsEv"></span><span id="_CPPv2NK8Avogadro5QtGui11ViewFactory5viewsEv"></span><span id="Avogadro::QtGui::ViewFactory::viewsC"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_view_factory_1aa0053293835da540ea0ddc45e961db39"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">QStringList</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">views</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro5QtGui11ViewFactory5viewsEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Get the list of views the factory provides. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>A list of supported views. </p>
 </dd>
 </dl>
@@ -464,10 +485,10 @@
 <span id="_CPPv3N8Avogadro5QtGui11ViewFactory10createViewERK7QString"></span><span id="_CPPv2N8Avogadro5QtGui11ViewFactory10createViewERK7QString"></span><span id="Avogadro::QtGui::ViewFactory::createView__QStringCR"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_view_factory_1a926b64d37b8dcb4f552462ac0cb07158"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">QWidget</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">createView</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">view</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui11ViewFactory10createViewERK7QString" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Create a named view, the caller assumes ownership of the widget. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>view</strong> – The name of the view. </p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>A new widget of the requested type, nullptr if none exists. </p>
 </dd>
 </dl>
@@ -479,53 +500,55 @@
 </section>
 
 
-              </div>
+              </article>
               
-              
-              <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="class_avogadro_1_1_qt_gui_1_1_tool_plugin_factory.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Class Avogadro::QtGui::ToolPluginFactory</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="class_avogadro_1_1_qt_open_g_l_1_1_active_objects.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Class Avogadro::QtOpenGL::ActiveObjects</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-              
-          </main>
-          
 
+              
+              <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="class_avogadro_1_1_qt_gui_1_1_tool_plugin_factory.html" title="previous page">
+      <i class="fas fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">Class Avogadro::QtGui::ToolPluginFactory</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="class_avogadro_1_1_qt_open_g_l_1_1_active_objects.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">Class Avogadro::QtOpenGL::ActiveObjects</p>
+  </div>
+  <i class="fas fa-angle-right"></i>
+  </a>
+</div>
+              </footer>
+              
+          </div>
+          
       </div>
     </div>
+
+  
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-<footer class="container-fluid footer-copy">
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
 
-    <div class="container">
-
-      <div class="row">
-        <div class="col-md-10 py-2">
-          <p>
-            ©2022 The OpenChemistry / Avogadro Teams. The website content uses the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/LICENSE">BSD License</a> and is covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
-          </p>
-        </div>
-        <br />
-        <div class="col-md-2 py-2">
-          <a class="btn btn-primary" href="https://opencollective.com/open-chemistry">Donate</a>
-        </div>
-      </div>
-
-    </div>
-
-  </footer>
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
+    &copy; Copyright ©2022 The OpenChemistry / Avogadro Teams..<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.2.<br>
+</p>
+  </div>
+  
+</div>
+</footer>
   </body>
 </html>

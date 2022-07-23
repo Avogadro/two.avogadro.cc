@@ -1,18 +1,22 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Class Avogadro::MoleQueue::MoleQueueWidget &#8212; Avogadro 1.97.0 documentation</title>
-    
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
 
-    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
   <link rel="stylesheet"
     href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
@@ -21,50 +25,60 @@
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
     <link rel="canonical" href="https://two.avogadro.cc/api/class/class_avogadro_1_1_mole_queue_1_1_mole_queue_widget.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="QtGui Classes" href="../qtgui.html" />
     <link rel="prev" title="Class Avogadro::MoleQueue::MoleQueueQueueListModel" href="class_avogadro_1_1_mole_queue_1_1_mole_queue_queue_list_model.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="en">
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+    <div class="bd-header-announcement container-fluid" id="banner">
+      
+
+    </div>
 
     
-    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
 
   <div id="navbar-start">
     
     
+  
 
-<a class="navbar-brand" href="../../index.html">
-  <img src="../../_static/avogadro2.png" class="logo" alt="logo">
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+    <img src="../../_static/avogadro2.png" class="logo__image only-light" alt="Logo image">
+    <img src="../../_static/avogadro2.png" class="logo__image only-dark" alt="Logo image">
+  
+  
 </a>
-
-
     
   </div>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+    <span class="fas fa-bars"></span>
   </button>
 
   
@@ -110,6 +124,14 @@
     <div id="navbar-end">
       
       <div class="navbar-end-item">
+        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
           <a class="nav-link" href="https://github.com/openchemistry/avogadrolibs" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
@@ -128,13 +150,13 @@
     </nav>
     
 
-    <div class="container-xl">
-      <div class="row">
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
           
-            
-            <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar">
-              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
+  <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
@@ -238,53 +260,52 @@
 
   </div>
 </nav>
-              </div>
-              <div class="sidebar-end-items">
-              </div>
-            </div>
-            
-          
+  </div>
+  <div class="sidebar-end-items">
+  </div>
+</div>
+
 
           
-          <div class="d-none d-xl-block col-xl-2 bd-toc">
-            
-              
-              <div class="toc-item">
-                
+
+
+<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
+  
+    
+    <div class="toc-item">
+      
 
 <nav id="bd-toc-nav">
     
 </nav>
-              </div>
-              
-              <div class="toc-item">
-                
+    </div>
+    
+    <div class="toc-item">
+      
 
 <div class="tocsection editthispage">
-    <a href="https://github.com/openchemistry/avogadrolibs/edit/master/docs/api/class/class_avogadro_1_1_mole_queue_1_1_mole_queue_widget.rst">
+    <a href="https://github.com/avogadro/two.avogadro.cc/edit/main/source/api/class/class_avogadro_1_1_mole_queue_1_1_mole_queue_widget.rst">
         <i class="fas fa-pencil-alt"></i> Edit this page
     </a>
 </div>
 
-              </div>
-              
-            
-          </div>
-          
+    </div>
+    
+  
+</div>
+
 
           
           
-            
-          
-          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+          <div class="bd-content col-12 col-md-9 col-xl-7">
               
-              <div>
+              <article class="bd-article" role="main">
                 
   <section id="class-avogadro-molequeue-molequeuewidget">
-<h1>Class Avogadro::MoleQueue::MoleQueueWidget<a class="headerlink" href="#class-avogadro-molequeue-molequeuewidget" title="Permalink to this headline">#</a></h1>
+<h1>Class Avogadro::MoleQueue::MoleQueueWidget<a class="headerlink" href="#class-avogadro-molequeue-molequeuewidget" title="Permalink to this heading">#</a></h1>
 <dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9MoleQueue15MoleQueueWidgetE">
-<span id="_CPPv3N8Avogadro9MoleQueue15MoleQueueWidgetE"></span><span id="_CPPv2N8Avogadro9MoleQueue15MoleQueueWidgetE"></span><span id="Avogadro::MoleQueue::MoleQueueWidget"></span><span class="target" id="class_avogadro_1_1_mole_queue_1_1_mole_queue_widget"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">Avogadro</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MoleQueue</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">MoleQueueWidget</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">QWidget</span></span><a class="headerlink" href="#_CPPv4N8Avogadro9MoleQueue15MoleQueueWidgetE" title="Permalink to this definition">#</a><br /></dt>
+<span id="_CPPv3N8Avogadro9MoleQueue15MoleQueueWidgetE"></span><span id="_CPPv2N8Avogadro9MoleQueue15MoleQueueWidgetE"></span><span id="Avogadro::MoleQueue::MoleQueueWidget"></span><span class="target" id="class_avogadro_1_1_mole_queue_1_1_mole_queue_widget"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">MoleQueueWidget</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">QWidget</span></span><a class="headerlink" href="#_CPPv4N8Avogadro9MoleQueue15MoleQueueWidgetE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>The <a class="reference internal" href="#class_avogadro_1_1_mole_queue_1_1_mole_queue_widget"><span class="std std-ref">MoleQueueWidget</span></a> class provides a widget for configuring and submitting a MoleQueue::JobObject. </p>
 <p>&lt;avogadro/molequeue/molequeuewidget.h&gt; </p>
 <div class="breathe-sectiondef docutils container">
@@ -330,7 +351,7 @@
 <dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9MoleQueue15MoleQueueWidget17submissionSuccessEv">
 <span id="_CPPv3NK8Avogadro9MoleQueue15MoleQueueWidget17submissionSuccessEv"></span><span id="_CPPv2NK8Avogadro9MoleQueue15MoleQueueWidget17submissionSuccessEv"></span><span id="Avogadro::MoleQueue::MoleQueueWidget::submissionSuccessC"></span><span class="target" id="class_avogadro_1_1_mole_queue_1_1_mole_queue_widget_1a21495cb372ea86533779967eb785f03b"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">submissionSuccess</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9MoleQueue15MoleQueueWidget17submissionSuccessEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>True if the last submission was successful. Only valid after jobSubmitted has been emitted. </p>
 </dd>
 </dl>
@@ -340,7 +361,7 @@
 <dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9MoleQueue15MoleQueueWidget8jobStateEv">
 <span id="_CPPv3NK8Avogadro9MoleQueue15MoleQueueWidget8jobStateEv"></span><span id="_CPPv2NK8Avogadro9MoleQueue15MoleQueueWidget8jobStateEv"></span><span id="Avogadro::MoleQueue::MoleQueueWidget::jobStateC"></span><span class="target" id="class_avogadro_1_1_mole_queue_1_1_mole_queue_widget_1a781681f0166aa63476d2fc386f9e6908"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">jobState</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9MoleQueue15MoleQueueWidget8jobStateEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>True if the last submission was successful. Only valid after jobSubmitted has been emitted. </p>
 </dd>
 </dl>
@@ -350,7 +371,7 @@
 <dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9MoleQueue15MoleQueueWidget12jobCompletedEv">
 <span id="_CPPv3NK8Avogadro9MoleQueue15MoleQueueWidget12jobCompletedEv"></span><span id="_CPPv2NK8Avogadro9MoleQueue15MoleQueueWidget12jobCompletedEv"></span><span id="Avogadro::MoleQueue::MoleQueueWidget::jobCompletedC"></span><span class="target" id="class_avogadro_1_1_mole_queue_1_1_mole_queue_widget_1a64c2294dae150d3d1715c8d429eb808c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">jobCompleted</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9MoleQueue15MoleQueueWidget12jobCompletedEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>True if the job has finished running. </p>
 </dd>
 </dl>
@@ -360,7 +381,7 @@
 <dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9MoleQueue15MoleQueueWidget10jobSuccessEv">
 <span id="_CPPv3NK8Avogadro9MoleQueue15MoleQueueWidget10jobSuccessEv"></span><span id="_CPPv2NK8Avogadro9MoleQueue15MoleQueueWidget10jobSuccessEv"></span><span id="Avogadro::MoleQueue::MoleQueueWidget::jobSuccessC"></span><span class="target" id="class_avogadro_1_1_mole_queue_1_1_mole_queue_widget_1aacf3d088d0032a1860a3bad0f991c8f3"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">jobSuccess</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9MoleQueue15MoleQueueWidget10jobSuccessEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>true if the job completed without error. </p>
 </dd>
 </dl>
@@ -370,7 +391,7 @@
 <dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9MoleQueue15MoleQueueWidget9requestIdEv">
 <span id="_CPPv3NK8Avogadro9MoleQueue15MoleQueueWidget9requestIdEv"></span><span id="_CPPv2NK8Avogadro9MoleQueue15MoleQueueWidget9requestIdEv"></span><span id="Avogadro::MoleQueue::MoleQueueWidget::requestIdC"></span><span class="target" id="class_avogadro_1_1_mole_queue_1_1_mole_queue_widget_1afe11ff68bb2e1d384be7b5b760f65c1e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">requestId</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9MoleQueue15MoleQueueWidget9requestIdEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The request id associated with the last call to submitJobRequest. -1 if there was a submission error. </p>
 </dd>
 </dl>
@@ -384,7 +405,7 @@
 <p>If an error occurs, InvalidMoleQueueId will be returned. </p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The MoleQueue ID associated with the last <a class="reference internal" href="#class_avogadro_1_1_mole_queue_1_1_mole_queue_widget_1ac4999024f8687ecf442391cb897b7c3e"><span class="std std-ref">submitJobRequest()</span></a> call. Only valid after jobSubmitted has been emitted. </p>
 </dd>
 </dl>
@@ -394,7 +415,7 @@
 <dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9MoleQueue15MoleQueueWidget15submissionErrorEv">
 <span id="_CPPv3NK8Avogadro9MoleQueue15MoleQueueWidget15submissionErrorEv"></span><span id="_CPPv2NK8Avogadro9MoleQueue15MoleQueueWidget15submissionErrorEv"></span><span id="Avogadro::MoleQueue::MoleQueueWidget::submissionErrorC"></span><span class="target" id="class_avogadro_1_1_mole_queue_1_1_mole_queue_widget_1a1cd323b4fdfb039c3846d181b3a02af5"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">submissionError</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9MoleQueue15MoleQueueWidget15submissionErrorEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>A string describing the submission error when <a class="reference internal" href="#class_avogadro_1_1_mole_queue_1_1_mole_queue_widget_1a21495cb372ea86533779967eb785f03b"><span class="std std-ref">submissionSuccess()</span></a> return false. </p>
 </dd>
 </dl>
@@ -404,7 +425,7 @@
 <dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9MoleQueue15MoleQueueWidget10openOutputEv">
 <span id="_CPPv3NK8Avogadro9MoleQueue15MoleQueueWidget10openOutputEv"></span><span id="_CPPv2NK8Avogadro9MoleQueue15MoleQueueWidget10openOutputEv"></span><span id="Avogadro::MoleQueue::MoleQueueWidget::openOutputC"></span><span class="target" id="class_avogadro_1_1_mole_queue_1_1_mole_queue_widget_1a0a63e36d4bd9b5730438a1328f49ee42"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">openOutput</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9MoleQueue15MoleQueueWidget10openOutputEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>True if the user has requested that the output file be opened when the calculation completes. </p>
 </dd>
 </dl>
@@ -415,7 +436,7 @@
 <span id="_CPPv3N8Avogadro9MoleQueue15MoleQueueWidget16requestJobLookupEv"></span><span id="_CPPv2N8Avogadro9MoleQueue15MoleQueueWidget16requestJobLookupEv"></span><span id="Avogadro::MoleQueue::MoleQueueWidget::requestJobLookup"></span><span class="target" id="class_avogadro_1_1_mole_queue_1_1_mole_queue_widget_1ad07262000b2a947e1a047da3b0f69380"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">requestJobLookup</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9MoleQueue15MoleQueueWidget16requestJobLookupEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Request the current state of the job identified by <a class="reference internal" href="#class_avogadro_1_1_mole_queue_1_1_mole_queue_widget_1a7ed91cfbf2c5480922afcef3d78ab232"><span class="std std-ref">moleQueueId()</span></a> from the server. The result will be emitted in the <a class="reference internal" href="#class_avogadro_1_1_mole_queue_1_1_mole_queue_widget_1a4961d0ce930416ec046b9ab196b2e634"><span class="std std-ref">jobUpdated()</span></a> signal. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>True if <a class="reference internal" href="#class_avogadro_1_1_mole_queue_1_1_mole_queue_widget_1a7ed91cfbf2c5480922afcef3d78ab232"><span class="std std-ref">moleQueueId()</span></a> is valid and the server is connected, false if the request cannot be sent. </p>
 </dd>
 </dl>
@@ -436,7 +457,7 @@
 <dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9MoleQueue15MoleQueueWidget15programSelectedEv">
 <span id="_CPPv3N8Avogadro9MoleQueue15MoleQueueWidget15programSelectedEv"></span><span id="_CPPv2N8Avogadro9MoleQueue15MoleQueueWidget15programSelectedEv"></span><span id="Avogadro::MoleQueue::MoleQueueWidget::programSelected"></span><span class="target" id="class_avogadro_1_1_mole_queue_1_1_mole_queue_widget_1a581091832b87f65fbc9812da33aeb0a4"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">programSelected</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9MoleQueue15MoleQueueWidget15programSelectedEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>True if the user has selected a program, false otherwise. </p>
 </dd>
 </dl>
@@ -446,7 +467,7 @@
 <dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9MoleQueue15MoleQueueWidget13configuredJobEv">
 <span id="_CPPv3NK8Avogadro9MoleQueue15MoleQueueWidget13configuredJobEv"></span><span id="_CPPv2NK8Avogadro9MoleQueue15MoleQueueWidget13configuredJobEv"></span><span id="Avogadro::MoleQueue::MoleQueueWidget::configuredJobC"></span><span class="target" id="class_avogadro_1_1_mole_queue_1_1_mole_queue_widget_1aac29d23fe3b7e95d4b955a51c521908a"></span><span class="n"><span class="pre">JobObject</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">configuredJob</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9MoleQueue15MoleQueueWidget13configuredJobEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>A JobObject with the GUI options. Any settings in jobTemplate that are not handled by the GUI are passed through untouched to the new object. </p>
 </dd>
 </dl>
@@ -470,7 +491,7 @@
 <p>The result of the submission request can be checked by monitoring jobSubmitted, which will always be emitted after this slot is called. </p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The request id associated with the submission, or -1 on error. </p>
 </dd>
 </dl>
@@ -484,7 +505,7 @@
 <span id="_CPPv3N8Avogadro9MoleQueue15MoleQueueWidget12jobSubmittedEb"></span><span id="_CPPv2N8Avogadro9MoleQueue15MoleQueueWidget12jobSubmittedEb"></span><span id="Avogadro::MoleQueue::MoleQueueWidget::jobSubmitted__b"></span><span class="target" id="class_avogadro_1_1_mole_queue_1_1_mole_queue_widget_1aef8dea042d4950aacdc39b23fc751b1e"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">jobSubmitted</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">success</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9MoleQueue15MoleQueueWidget12jobSubmittedEb" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Emitted after a call to submitJobRequest </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>success</strong> – True if the job has been accepted by MoleQueue. </p>
 </dd>
 </dl>
@@ -495,7 +516,7 @@
 <span id="_CPPv3N8Avogadro9MoleQueue15MoleQueueWidget11jobFinishedEb"></span><span id="_CPPv2N8Avogadro9MoleQueue15MoleQueueWidget11jobFinishedEb"></span><span id="Avogadro::MoleQueue::MoleQueueWidget::jobFinished__b"></span><span class="target" id="class_avogadro_1_1_mole_queue_1_1_mole_queue_widget_1a01386664ce7866f8fd313d4ee78723a0"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">jobFinished</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">success</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9MoleQueue15MoleQueueWidget11jobFinishedEb" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Emitted after jobSubmitted is emitted and the job completes. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>success</strong> – True if the job enters the “Finished” state. False if the job enters the “Canceled” or “Error” states. </p>
 </dd>
 </dl>
@@ -506,7 +527,7 @@
 <span id="_CPPv3N8Avogadro9MoleQueue15MoleQueueWidget10jobUpdatedERK9JobObject"></span><span id="_CPPv2N8Avogadro9MoleQueue15MoleQueueWidget10jobUpdatedERK9JobObject"></span><span id="Avogadro::MoleQueue::MoleQueueWidget::jobUpdated__JobObjectCR"></span><span class="target" id="class_avogadro_1_1_mole_queue_1_1_mole_queue_widget_1a4961d0ce930416ec046b9ab196b2e634"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">jobUpdated</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">JobObject</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">job</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9MoleQueue15MoleQueueWidget10jobUpdatedERK9JobObject" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Emitted after a successful call to <a class="reference internal" href="#class_avogadro_1_1_mole_queue_1_1_mole_queue_widget_1ad07262000b2a947e1a047da3b0f69380"><span class="std std-ref">requestJobLookup()</span></a>. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>job</strong> – The result of the lookupJob() RPC query. </p>
 </dd>
 </dl>
@@ -527,53 +548,55 @@
 </section>
 
 
-              </div>
+              </article>
               
-              
-              <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="class_avogadro_1_1_mole_queue_1_1_mole_queue_queue_list_model.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Class Avogadro::MoleQueue::MoleQueueQueueListModel</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="../qtgui.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">QtGui Classes</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-              
-          </main>
-          
 
+              
+              <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="class_avogadro_1_1_mole_queue_1_1_mole_queue_queue_list_model.html" title="previous page">
+      <i class="fas fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">Class Avogadro::MoleQueue::MoleQueueQueueListModel</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="../qtgui.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">QtGui Classes</p>
+  </div>
+  <i class="fas fa-angle-right"></i>
+  </a>
+</div>
+              </footer>
+              
+          </div>
+          
       </div>
     </div>
+
+  
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-<footer class="container-fluid footer-copy">
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
 
-    <div class="container">
-
-      <div class="row">
-        <div class="col-md-10 py-2">
-          <p>
-            ©2022 The OpenChemistry / Avogadro Teams. The website content uses the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/LICENSE">BSD License</a> and is covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
-          </p>
-        </div>
-        <br />
-        <div class="col-md-2 py-2">
-          <a class="btn btn-primary" href="https://opencollective.com/open-chemistry">Donate</a>
-        </div>
-      </div>
-
-    </div>
-
-  </footer>
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
+    &copy; Copyright ©2022 The OpenChemistry / Avogadro Teams..<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.2.<br>
+</p>
+  </div>
+  
+</div>
+</footer>
   </body>
 </html>
