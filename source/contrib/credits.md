@@ -27,7 +27,7 @@ grateful to all contributors:
 - Allison Vacanti
 - [Tim Vandermeersch]
 
-All the Avogadro Translatorss
+All the Avogadro Translators
 
 ## Funding
 
