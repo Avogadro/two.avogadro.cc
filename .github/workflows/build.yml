@@ -50,13 +50,11 @@ jobs:
         cmake ${{ runner.workspace }}/openchemistry -DBUILD_DOCUMENTATION=ON -DUSE_SYSTEM_LIBXML2=ON -DUSE_SYSTEM_ZLIB=ON
       shell: bash
 
-    - name: Build avogadrolibs
+    - name: Build doxygen
       run: |
-        cmake --build . 
-        ls
-        ls avogadrolibs
+        ninja documentation
       shell: bash
-      working-directory: ${{ runner.workspace }}/build
+      working-directory: ${{ runner.workspace }}/build/avogadrolibs
 
     - name: Build Sphinx
       run: |

@@ -85,7 +85,7 @@ exclude_patterns = []
 
 # -- Options for Breathe --------
 
-breathe_projects = { 'AvogadroLibs': '../../openchemistry/avogadrolibs/docs/xml' }
+breathe_projects = { 'AvogadroLibs': '../../build/avogadrolibs/docs/xml' }
 breathe_default_project = 'AvogadroLibs'
 breathe_default_members = ('members', 'undoc-members', 'protected-members')
 
