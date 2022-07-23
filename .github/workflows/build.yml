@@ -38,9 +38,7 @@ jobs:
 
     - name: Install Sphinx and requirements
       run: |
-        pwd
-        ls
-        pip install sphinx myst-parser breathe pydata-sphinx-theme sphinx-design sphinx-copybutton linkify-it-py
+        pip install -U sphinx myst-parser breathe pydata-sphinx-theme sphinx-design sphinx-copybutton linkify-it-py pygments
 
     - name: Configure
       run: |
@@ -53,17 +51,10 @@ jobs:
     - name: Build doxygen
       run: |
         cmake --build . 
-        ls
         cd avogadrolibs
-        pwd
-        ls
         ninja documentation
       shell: bash
       working-directory: ${{ runner.workspace }}/build
-
-    - name: Setup tmate session
-      if: ${{ failure() }}
-      uses: mxschmitt/action-tmate@v3
 
     - name: Build Sphinx
       run: |
@@ -72,3 +63,7 @@ jobs:
         cd ..
         git status
       shell: bash
+
+    - name: Setup tmate session
+      if: ${{ failure() }}
+      uses: mxschmitt/action-tmate@v3
