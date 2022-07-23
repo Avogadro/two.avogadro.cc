@@ -1,0 +1,60 @@
+name: Build Sphinx
+
+on: 
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '31 2 * * *'
+  workflow_dispatch:
+  push:
+#    branches:    
+#      - 'main'
+
+jobs:
+  build-html:
+    name: Update website
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+# build the doxygen XML for breathe
+    - name: Checkout openchemistry
+      uses: actions/checkout@v3
+      with:
+        repository: openchemistry/openchemistry
+        submodules: recursive
+        path: openchemistry
+
+    - name: Checkout avogadrolibs
+      uses: actions/checkout@v3
+      with:
+        repository: openchemistry/avogadrolibs
+        path: openchemistry/avogadrolibs
+
+    - name: Install packages
+      run: |
+        sudo apt-get -qq update
+        sudo apt-get -qq install doxygen ninja-build libeigen3-dev libglew-dev libxml2-dev qt5-default libqt5x11extras5-dev libqt5svg5-dev
+
+    - name: Install Sphinx and requirements
+      run: |
+        pwd
+        ls
+        pip install sphinx myst-parser breathe pydata-sphinx-theme sphinx-design sphinx-copybutton linkify-it-py
+
+    - name: Configure
+      run: |
+        if [ ! -d "${{ runner.workspace }}/build" ]; then mkdir "${{ runner.workspace }}/build"; fi
+        cd "${{ runner.workspace }}/build"
+        cmake $GITHUB_WORKSPACE -DBUILD_DOCUMENTATION=ON -DUSE_SYSTEM_LIBXML2=ON -DUSE_SYSTEM_ZLIB=ON -DUSE_VTK=ON
+      shell: bash
+
+    - name: Build
+      run: |
+        cmake --build . 
+      shell: bash
+      working-directory: ${{ runner.workspace }}/build
+
+
+# sphinx-build -E . ~/two.avogadro.cc 
+# commit
