@@ -47,7 +47,7 @@ jobs:
         mv openchemistry ${{ runner.workspace }}
         if [ ! -d "${{ runner.workspace }}/build" ]; then mkdir "${{ runner.workspace }}/build"; fi
         cd "${{ runner.workspace }}/build"
-        cmake ${{ runner.workspace }}/openchemistry -DBUILD_DOCUMENTATION=ON -DUSE_SYSTEM_LIBXML2=ON -DUSE_SYSTEM_ZLIB=ON -DUSE_VTK=ON
+        cmake ${{ runner.workspace }}/openchemistry -DBUILD_DOCUMENTATION=ON -DUSE_SYSTEM_LIBXML2=ON -DUSE_SYSTEM_ZLIB=ON
       shell: bash
 
     - name: Build
