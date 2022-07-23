@@ -4,11 +4,30 @@ notoc: true
 
 (about)=
 
-# Avogadro
-
 Avogadro is an advanced molecule editor and visualizer designed for cross-platform use in computational chemistry, molecular modeling, bioinformatics, materials science, and related areas. It offers flexible high quality rendering and a powerful plugin architecture.
 
 This documentation site is for Avogadro 2, currently in development.
+
+::::{card-carousel} 3
+:::{card}
+![Thumbnail for benzene molecular orbital](/_images/benzene-mo.png)
+:::
+:::{card}
+![Thumbnail for zeolite rendering](/_images/zeolite.png)
+:::
+:::{card}
+![Thumbnail for QTAim analysis](/_images/phenol-qtaim.png)
+:::
+:::{card}
+![Thumbnail for bond-centric editing](/_images/bondcentric.png)
+:::
+:::{card}
+![Thumbnail for symmetry analysis of C180](/_images/C180.png)
+:::
+:::{card}
+![Thumbnail for COVID spike protein](/_images/covid-spike.png)
+:::
+::::
 
 - Free, Open Source: Easy to install and all source code and documentation is available to modify or extend.
 - International: Translations into English, French, German, Hungarian, Indonesian, Japanese, Portuguese, Serbian, Turkish, and others, with [more languages to come](https://hosted.weblate.org/engage/avogadro/).
@@ -50,29 +69,6 @@ This documentation site is for Avogadro 2, currently in development.
 <a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-primary reference external" href="build.html"><span>Build from source</span></a>
 :::
 
-::::
-
-## Graphics
-
-::::{card-carousel} 2
-:::{card}
-![Thumbnail for benzene molecular orbital](/_images/benzene-mo.png)
-:::
-:::{card}
-![Thumbnail for zeolite rendering](/_images/zeolite.png)
-:::
-:::{card}
-![Thumbnail for QTAim analysis](/_images/phenol-qtaim.png)
-:::
-:::{card}
-![Thumbnail for bond-centric editing](/_images/bondcentric.png)
-:::
-:::{card}
-![Thumbnail for symmetry analysis of C180](/_images/C180.png)
-:::
-:::{card}
-![Thumbnail for COVID spike protein](/_images/covid-spike.png)
-:::
 ::::
 
 ## Resources
