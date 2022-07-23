@@ -2,14 +2,13 @@
 
 # Install
 
-In addition to installing the latest release, there are nightly builds
-and anyone can build Avogadro from source code.
+In addition to installing the latest release ({{release}}), there are nightly builds and anyone can build Avogadro from source code.
 
 ::::{grid} 3
 :::{grid-item-card}
 :text-align: center
 :class-header: sd-font-weight-bold sd-bg-light
-{fa}`apple,fa-2x,style=fab` MacOS
+{fab}`apple;fa-2x` MacOS
 ^^^
 {{ '<a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-primary reference external" href="' + macurl + '"><span>Download DMG</span></a>'}}
 ++++
@@ -19,7 +18,7 @@ and anyone can build Avogadro from source code.
 :::{grid-item-card}
 :text-align: center
 :class-header: sd-font-weight-bold sd-bg-light
-{fa}`windows,fa-2x,style=fab` Windows
+{fab}`windows;fa-2x` Windows
 ^^^
 {{ '<a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-primary reference external" href="' + winurl + '"><span>Download Installer</span></a>'}}
 ++++
@@ -29,11 +28,12 @@ and anyone can build Avogadro from source code.
 :::{grid-item-card}
 :text-align: center
 :class-header: sd-font-weight-bold sd-bg-light
-{fa}`linux,fa-2x,style=fab` Linux
+{fab}`linux;fa-2x` Linux
 ^^^
 {{ '<a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-primary reference external" href="' + appurl + '"><span>Download AppImage</span></a>'}}
 <a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-primary reference external" href="https://dl.flathub.org/repo/appstream/org.openchemistry.Avogadro2.flatpakref"><span>Download Flatpak</span></a>
 ++++
+<a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-primary reference external" href="https://nightly.link/OpenChemistry/avogadrolibs/workflows/build_cmake/master/Avogadro2.AppImage.zip"><span>Download Nightly AppImage</span></a>
 <a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-primary reference external" href="build.html"><span>Build from source</span></a>
 :::
 
