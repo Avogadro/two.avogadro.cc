@@ -23,13 +23,13 @@ jobs:
       with:
         repository: openchemistry/openchemistry
         submodules: recursive
-        path: openchemistry
+        path: ${{ runner.workspace }}/openchemistry
 
     - name: Checkout avogadrolibs
       uses: actions/checkout@v3
       with:
         repository: openchemistry/avogadrolibs
-        path: openchemistry/avogadrolibs
+        path: ${{ runner.workspace }}/openchemistry/avogadrolibs
 
     - name: Install packages
       run: |
@@ -46,12 +46,14 @@ jobs:
       run: |
         if [ ! -d "${{ runner.workspace }}/build" ]; then mkdir "${{ runner.workspace }}/build"; fi
         cd "${{ runner.workspace }}/build"
-        cmake $GITHUB_WORKSPACE -DBUILD_DOCUMENTATION=ON -DUSE_SYSTEM_LIBXML2=ON -DUSE_SYSTEM_ZLIB=ON -DUSE_VTK=ON
+        cmake ${{ runner.workspace }}/openchemistry -DBUILD_DOCUMENTATION=ON -DUSE_SYSTEM_LIBXML2=ON -DUSE_SYSTEM_ZLIB=ON -DUSE_VTK=ON
       shell: bash
 
     - name: Build
       run: |
         cmake --build . 
+        ls
+        ls avogadrolibs
       shell: bash
       working-directory: ${{ runner.workspace }}/build
 
