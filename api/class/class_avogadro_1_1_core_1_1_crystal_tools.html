@@ -1,18 +1,22 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Class Avogadro::Core::CrystalTools &#8212; Avogadro 1.97.0 documentation</title>
-    
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
 
-    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
   <link rel="stylesheet"
     href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
@@ -21,50 +25,60 @@
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
     <link rel="canonical" href="https://two.avogadro.cc/api/class/class_avogadro_1_1_core_1_1_crystal_tools.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Class Avogadro::Core::Cube" href="class_avogadro_1_1_core_1_1_cube.html" />
     <link rel="prev" title="Class Avogadro::Core::CoordinateSet" href="class_avogadro_1_1_core_1_1_coordinate_set.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="en">
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+    <div class="bd-header-announcement container-fluid" id="banner">
+      
+
+    </div>
 
     
-    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
 
   <div id="navbar-start">
     
     
+  
 
-<a class="navbar-brand" href="../../index.html">
-  <img src="../../_static/avogadro2.png" class="logo" alt="logo">
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+    <img src="../../_static/avogadro2.png" class="logo__image only-light" alt="Logo image">
+    <img src="../../_static/avogadro2.png" class="logo__image only-dark" alt="Logo image">
+  
+  
 </a>
-
-
     
   </div>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+    <span class="fas fa-bars"></span>
   </button>
 
   
@@ -110,6 +124,14 @@
     <div id="navbar-end">
       
       <div class="navbar-end-item">
+        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
           <a class="nav-link" href="https://github.com/openchemistry/avogadrolibs" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
@@ -128,13 +150,13 @@
     </nav>
     
 
-    <div class="container-xl">
-      <div class="row">
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
           
-            
-            <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar">
-              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
+  <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
@@ -433,53 +455,52 @@
 
   </div>
 </nav>
-              </div>
-              <div class="sidebar-end-items">
-              </div>
-            </div>
-            
-          
+  </div>
+  <div class="sidebar-end-items">
+  </div>
+</div>
+
 
           
-          <div class="d-none d-xl-block col-xl-2 bd-toc">
-            
-              
-              <div class="toc-item">
-                
+
+
+<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
+  
+    
+    <div class="toc-item">
+      
 
 <nav id="bd-toc-nav">
     
 </nav>
-              </div>
-              
-              <div class="toc-item">
-                
+    </div>
+    
+    <div class="toc-item">
+      
 
 <div class="tocsection editthispage">
-    <a href="https://github.com/openchemistry/avogadrolibs/edit/master/docs/api/class/class_avogadro_1_1_core_1_1_crystal_tools.rst">
+    <a href="https://github.com/avogadro/two.avogadro.cc/edit/main/source/api/class/class_avogadro_1_1_core_1_1_crystal_tools.rst">
         <i class="fas fa-pencil-alt"></i> Edit this page
     </a>
 </div>
 
-              </div>
-              
-            
-          </div>
-          
+    </div>
+    
+  
+</div>
+
 
           
           
-            
-          
-          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+          <div class="bd-content col-12 col-md-9 col-xl-7">
               
-              <div>
+              <article class="bd-article" role="main">
                 
   <section id="class-avogadro-core-crystaltools">
-<h1>Class Avogadro::Core::CrystalTools<a class="headerlink" href="#class-avogadro-core-crystaltools" title="Permalink to this headline">#</a></h1>
+<h1>Class Avogadro::Core::CrystalTools<a class="headerlink" href="#class-avogadro-core-crystaltools" title="Permalink to this heading">#</a></h1>
 <dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core12CrystalToolsE">
-<span id="_CPPv3N8Avogadro4Core12CrystalToolsE"></span><span id="_CPPv2N8Avogadro4Core12CrystalToolsE"></span><span id="Avogadro::Core::CrystalTools"></span><span class="target" id="class_avogadro_1_1_core_1_1_crystal_tools"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">Avogadro</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">CrystalTools</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core12CrystalToolsE" title="Permalink to this definition">#</a><br /></dt>
+<span id="_CPPv3N8Avogadro4Core12CrystalToolsE"></span><span id="_CPPv2N8Avogadro4Core12CrystalToolsE"></span><span id="Avogadro::Core::CrystalTools"></span><span class="target" id="class_avogadro_1_1_core_1_1_crystal_tools"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CrystalTools</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core12CrystalToolsE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>The <a class="reference internal" href="#class_avogadro_1_1_core_1_1_crystal_tools"><span class="std std-ref">CrystalTools</span></a> class contains a collection of static functions that perform common crystallographic operations on a <a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#class_avogadro_1_1_core_1_1_molecule"><span class="std std-ref">Core::Molecule</span></a>. </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-types">Public Types</p>
@@ -515,7 +536,7 @@
 <span id="_CPPv3N8Avogadro4Core12CrystalTools19wrapAtomsToUnitCellER8Molecule"></span><span id="_CPPv2N8Avogadro4Core12CrystalTools19wrapAtomsToUnitCellER8Molecule"></span><span id="Avogadro::Core::CrystalTools::wrapAtomsToUnitCell__MoleculeR"></span><span class="target" id="class_avogadro_1_1_core_1_1_crystal_tools_1aaf1bd62bb156aec40b852b8570bae03c"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">wrapAtomsToUnitCell</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">molecule</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core12CrystalTools19wrapAtomsToUnitCellER8Molecule" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Adjust the atomic positions in <em>molecule</em> so that the fractional (lattice) coordinates of all atoms are in the range [0, 1]. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>True on success, false otherwise. </p>
 </dd>
 </dl>
@@ -526,10 +547,10 @@
 <span id="_CPPv3N8Avogadro4Core12CrystalTools27rotateToStandardOrientationER8Molecule7Options"></span><span id="_CPPv2N8Avogadro4Core12CrystalTools27rotateToStandardOrientationER8Molecule7Options"></span><span id="Avogadro::Core::CrystalTools::rotateToStandardOrientation__MoleculeR.Options"></span><span class="target" id="class_avogadro_1_1_core_1_1_crystal_tools_1afe16c2b54ab2771aba2c17ec607cfdfa"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">rotateToStandardOrientation</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">molecule</span></span>, <a class="reference internal" href="#_CPPv4N8Avogadro4Core12CrystalTools7OptionsE" title="Avogadro::Core::CrystalTools::Options"><span class="n"><span class="pre">Options</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">opts</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro4Core12CrystalTools6Option4NoneE" title="Avogadro::Core::CrystalTools::None"><span class="n"><span class="pre">None</span></span></a><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core12CrystalTools27rotateToStandardOrientationER8Molecule7Options" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>This function will rotate the input molecule so that the unit cell’s ‘a’ vector is aligned to the x-axis, and the ‘b’ axis is in the xy-plane. It does not use trig functions or the cell parameters, since such implementations are fragile and cannot handle negative cell angles. The derivation of this algorithm can be found at <a class="reference external" href="http://xtalopt.openmolecules.net/misc/rotateToStdOrientation.pdf">http://xtalopt.openmolecules.net/misc/rotateToStdOrientation.pdf</a>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>opts</strong> – If TransformAtoms is specified, the atoms in <em>molecule</em> are rotated along with the unit cell. </p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>True on success, false otherwise. </p>
 </dd>
 </dl>
@@ -540,10 +561,10 @@
 <span id="_CPPv3N8Avogadro4Core12CrystalTools9setVolumeER8Molecule4Real7Options"></span><span id="_CPPv2N8Avogadro4Core12CrystalTools9setVolumeER8Molecule4Real7Options"></span><span id="Avogadro::Core::CrystalTools::setVolume__MoleculeR.Real.Options"></span><span class="target" id="class_avogadro_1_1_core_1_1_crystal_tools_1aa3d943aeeb1d913a8854231185d80c85"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setVolume</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">molecule</span></span>, <span class="n"><span class="pre">Real</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">newVolume</span></span>, <a class="reference internal" href="#_CPPv4N8Avogadro4Core12CrystalTools7OptionsE" title="Avogadro::Core::CrystalTools::Options"><span class="n"><span class="pre">Options</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">opts</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro4Core12CrystalTools6Option4NoneE" title="Avogadro::Core::CrystalTools::None"><span class="n"><span class="pre">None</span></span></a><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core12CrystalTools9setVolumeER8Molecule4Real7Options" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Isotropically scale the volume of the unit cell in <em>molecule</em> to <em>newVolume</em> (in cubic angstrom). </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>opts</strong> – If TransformAtoms is specified, the atoms in <em>molecule</em> are adjusted so that their fractional (lattice) coordinates are preserved. </p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>True on success, false on failure. </p>
 </dd>
 </dl>
@@ -558,10 +579,10 @@
 <p>Implements the niggli reduction algorithm detailed in: Grosse-Kunstleve RW, Sauter NK, Adams PD. Numerically stable algorithms for the computation of reduced unit cells. Acta Crystallographica Section A Foundations of Crystallography. 2003;60(1):1-6. </p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>opts</strong> – If TransformAtoms is specified, the atom positions are modified to ensure that the same extended atomic structure from the input is represented by the output. </p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>True on success, false on failure. </p>
 </dd>
 </dl>
@@ -578,14 +599,14 @@
 <span id="_CPPv3N8Avogadro4Core12CrystalTools14buildSupercellER8Moleculejjj"></span><span id="_CPPv2N8Avogadro4Core12CrystalTools14buildSupercellER8Moleculejjj"></span><span id="Avogadro::Core::CrystalTools::buildSupercell__MoleculeR.unsigned-i.unsigned-i.unsigned-i"></span><span class="target" id="class_avogadro_1_1_core_1_1_crystal_tools_1ad0fb11472fcdb0fa534376490ea5cfd7"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">buildSupercell</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">molecule</span></span>, <span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">a</span></span>, <span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">b</span></span>, <span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">c</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core12CrystalTools14buildSupercellER8Moleculejjj" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Build a supercell by expanding upon the unit cell of <em>molecule</em>. It will only return false if the molecule does not have a unit cell or if a, b, or c is set to zero. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>a</strong> – The number of units along lattice vector a for the supercell </p></li>
 <li><p><strong>b</strong> – The number of units along lattice vector b for the supercell </p></li>
 <li><p><strong>c</strong> – The number of units along lattice vector c for the supercell </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>True on success, false on failure. </p>
 </dd>
 </dl>
@@ -596,10 +617,10 @@
 <span id="_CPPv3N8Avogadro4Core12CrystalTools13setCellMatrixER8MoleculeRK7Matrix37Options"></span><span id="_CPPv2N8Avogadro4Core12CrystalTools13setCellMatrixER8MoleculeRK7Matrix37Options"></span><span id="Avogadro::Core::CrystalTools::setCellMatrix__MoleculeR.Matrix3CR.Options"></span><span class="target" id="class_avogadro_1_1_core_1_1_crystal_tools_1aa966a215da1fc4731210871cdbd640c3"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setCellMatrix</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">molecule</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Matrix3</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">newCellColMatrix</span></span>, <a class="reference internal" href="#_CPPv4N8Avogadro4Core12CrystalTools7OptionsE" title="Avogadro::Core::CrystalTools::Options"><span class="n"><span class="pre">Options</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">opt</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro4Core12CrystalTools6Option4NoneE" title="Avogadro::Core::CrystalTools::None"><span class="n"><span class="pre">None</span></span></a><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core12CrystalTools13setCellMatrixER8MoleculeRK7Matrix37Options" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Set the unit cell in <em>molecule</em> to represent the real-space column-vector unit cell description in <em>newCellColMatrix</em>. A unit cell is created if needed. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>opt</strong> – If TransformAtoms is specified, the atoms in <em>molecule</em> are adjusted so that their fractional (lattice) coordinates are preserved. This option is ignored if the input molecule has no unit cell. </p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>True on success, false otherwise. </p>
 </dd>
 </dl>
@@ -610,7 +631,7 @@
 <span id="_CPPv3N8Avogadro4Core12CrystalTools21fractionalCoordinatesERK8UnitCellRK5ArrayI7Vector3ER5ArrayI7Vector3E"></span><span id="_CPPv2N8Avogadro4Core12CrystalTools21fractionalCoordinatesERK8UnitCellRK5ArrayI7Vector3ER5ArrayI7Vector3E"></span><span id="Avogadro::Core::CrystalTools::fractionalCoordinates__UnitCellCR.Array:Vector3:CR.Array:Vector3:R"></span><span class="target" id="class_avogadro_1_1_core_1_1_crystal_tools_1a296c801033ad7ac1d92c3dd93380b733"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">fractionalCoordinates</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_core_1_1_unit_cell.html#_CPPv4N8Avogadro4Core8UnitCellE" title="Avogadro::Core::UnitCell"><span class="n"><span class="pre">UnitCell</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">unitCell</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#_CPPv4I0EN8Avogadro4Core5ArrayE" title="Avogadro::Core::Array"><span class="n"><span class="pre">Array</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Vector3</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">cart</span></span>, <a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#_CPPv4I0EN8Avogadro4Core5ArrayE" title="Avogadro::Core::Array"><span class="n"><span class="pre">Array</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Vector3</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">frac</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core12CrystalTools21fractionalCoordinatesERK8UnitCellRK5ArrayI7Vector3ER5ArrayI7Vector3E" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Populate the <em>frac</em> vector with the fractional representation of the cartesian coordinates in <em>cart</em>, using <em>unitCell</em> to perform the coordinate transformation. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>True on success, false otherwise. </p>
 </dd>
 </dl>
@@ -621,7 +642,7 @@
 <span id="_CPPv3N8Avogadro4Core12CrystalTools21fractionalCoordinatesERK8MoleculeR5ArrayI7Vector3E"></span><span id="_CPPv2N8Avogadro4Core12CrystalTools21fractionalCoordinatesERK8MoleculeR5ArrayI7Vector3E"></span><span id="Avogadro::Core::CrystalTools::fractionalCoordinates__MoleculeCR.Array:Vector3:R"></span><span class="target" id="class_avogadro_1_1_core_1_1_crystal_tools_1a0901426823a29b2097d175b210bc1342"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">fractionalCoordinates</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">molecule</span></span>, <a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#_CPPv4I0EN8Avogadro4Core5ArrayE" title="Avogadro::Core::Array"><span class="n"><span class="pre">Array</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Vector3</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">coords</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core12CrystalTools21fractionalCoordinatesERK8MoleculeR5ArrayI7Vector3E" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Populate the <em>coords</em> vector with the fractional coordinates of the atoms in <em>molecule</em>, using the unit cell of <em>molecule</em> to perform the coordinate transformation. Coordinates are ordered the same as the <a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#class_avogadro_1_1_core_1_1_molecule_1a08503bedf12747b094a1a37bb1d5e23f"><span class="std std-ref">Molecule::atomPositions3d()</span></a> result. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>True on success, false otherwise. </p>
 </dd>
 </dl>
@@ -632,7 +653,7 @@
 <span id="_CPPv3N8Avogadro4Core12CrystalTools24setFractionalCoordinatesER8MoleculeRK5ArrayI7Vector3E"></span><span id="_CPPv2N8Avogadro4Core12CrystalTools24setFractionalCoordinatesER8MoleculeRK5ArrayI7Vector3E"></span><span id="Avogadro::Core::CrystalTools::setFractionalCoordinates__MoleculeR.Array:Vector3:CR"></span><span class="target" id="class_avogadro_1_1_core_1_1_crystal_tools_1a71a8cc0615ede264f7e0b6577f005f76"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setFractionalCoordinates</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">molecule</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#_CPPv4I0EN8Avogadro4Core5ArrayE" title="Avogadro::Core::Array"><span class="n"><span class="pre">Array</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Vector3</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">coords</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core12CrystalTools24setFractionalCoordinatesER8MoleculeRK5ArrayI7Vector3E" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Set the atomic positions of <em>molecule</em> to the fractional coordinates in <em>coords</em>, using the unit cell of <em>molecule</em> to perform the coordinate transformation. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p></p>
 </dd>
 </dl>
@@ -644,53 +665,55 @@
 </section>
 
 
-              </div>
+              </article>
               
-              
-              <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="class_avogadro_1_1_core_1_1_coordinate_set.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Class Avogadro::Core::CoordinateSet</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="class_avogadro_1_1_core_1_1_cube.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Class Avogadro::Core::Cube</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-              
-          </main>
-          
 
+              
+              <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="class_avogadro_1_1_core_1_1_coordinate_set.html" title="previous page">
+      <i class="fas fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">Class Avogadro::Core::CoordinateSet</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="class_avogadro_1_1_core_1_1_cube.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">Class Avogadro::Core::Cube</p>
+  </div>
+  <i class="fas fa-angle-right"></i>
+  </a>
+</div>
+              </footer>
+              
+          </div>
+          
       </div>
     </div>
+
+  
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-<footer class="container-fluid footer-copy">
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
 
-    <div class="container">
-
-      <div class="row">
-        <div class="col-md-10 py-2">
-          <p>
-            ©2022 The OpenChemistry / Avogadro Teams. The website content uses the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/LICENSE">BSD License</a> and is covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
-          </p>
-        </div>
-        <br />
-        <div class="col-md-2 py-2">
-          <a class="btn btn-primary" href="https://opencollective.com/open-chemistry">Donate</a>
-        </div>
-      </div>
-
-    </div>
-
-  </footer>
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
+    &copy; Copyright ©2022 The OpenChemistry / Avogadro Teams..<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.2.<br>
+</p>
+  </div>
+  
+</div>
+</footer>
   </body>
 </html>

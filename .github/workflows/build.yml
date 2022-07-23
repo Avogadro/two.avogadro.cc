@@ -1,0 +1,78 @@
+name: Build Sphinx
+
+on: 
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '31 2 * * *'
+  workflow_dispatch:
+  push:
+#    branches:    
+#      - 'main'
+
+jobs:
+  build-html:
+    name: Update website
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+# build the doxygen XML for breathe
+    - name: Checkout openchemistry
+      uses: actions/checkout@v3
+      with:
+        repository: openchemistry/openchemistry
+        submodules: recursive
+        path: openchemistry
+
+    - name: Checkout openchemistry and avogadrolibs
+      uses: actions/checkout@v3
+      with:
+        repository: openchemistry/avogadrolibs
+        path: openchemistry/avogadrolibs
+
+    - name: Install packages
+      run: |
+        sudo apt-get -qq update
+        sudo apt-get -qq install doxygen ninja-build libeigen3-dev libglew-dev libxml2-dev qt5-default libqt5x11extras5-dev libqt5svg5-dev
+
+    - name: Install Sphinx and requirements
+      run: |
+        pip install -U sphinx myst-parser breathe pydata-sphinx-theme sphinx-design sphinx-copybutton linkify-it-py pygments
+
+    - name: Configure
+      run: |
+        mv openchemistry ${{ runner.workspace }}
+        if [ ! -d "${{ runner.workspace }}/build" ]; then mkdir "${{ runner.workspace }}/build"; fi
+        cd "${{ runner.workspace }}/build"
+        cmake ${{ runner.workspace }}/openchemistry -G "Ninja" -DBUILD_DOCUMENTATION=ON -DUSE_SYSTEM_LIBXML2=ON -DUSE_SYSTEM_ZLIB=ON
+      shell: bash
+
+    - name: Build doxygen
+      run: |
+        cmake --build . 
+        cd avogadrolibs
+        ninja documentation
+      shell: bash
+      working-directory: ${{ runner.workspace }}/build
+
+    - name: Build Sphinx
+      run: |
+        cd source
+        sphinx-build -E . ..
+        cd ..
+        git status
+      shell: bash
+
+    - name: Setup tmate session
+      if: ${{ failure() }}
+      uses: mxschmitt/action-tmate@v3
+
+    - name: Update git repo
+      uses: EndBug/add-and-commit@v9
+      with:
+        default_author: github_actions
+        message: Deploy Sphinx build
+        add: '*'
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

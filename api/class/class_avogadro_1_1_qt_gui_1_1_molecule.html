@@ -1,18 +1,22 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Class Avogadro::QtGui::Molecule &#8212; Avogadro 1.97.0 documentation</title>
-    
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
 
-    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
   <link rel="stylesheet"
     href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
@@ -21,50 +25,60 @@
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
     <link rel="canonical" href="https://two.avogadro.cc/api/class/class_avogadro_1_1_qt_gui_1_1_molecule.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Class Avogadro::QtGui::MoleculeModel" href="class_avogadro_1_1_qt_gui_1_1_molecule_model.html" />
     <link rel="prev" title="Class Avogadro::QtGui::MeshGenerator" href="class_avogadro_1_1_qt_gui_1_1_mesh_generator.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="en">
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+    <div class="bd-header-announcement container-fluid" id="banner">
+      
+
+    </div>
 
     
-    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
 
   <div id="navbar-start">
     
     
+  
 
-<a class="navbar-brand" href="../../index.html">
-  <img src="../../_static/avogadro2.png" class="logo" alt="logo">
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+    <img src="../../_static/avogadro2.png" class="logo__image only-light" alt="Logo image">
+    <img src="../../_static/avogadro2.png" class="logo__image only-dark" alt="Logo image">
+  
+  
 </a>
-
-
     
   </div>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+    <span class="fas fa-bars"></span>
   </button>
 
   
@@ -110,6 +124,14 @@
     <div id="navbar-end">
       
       <div class="navbar-end-item">
+        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
           <a class="nav-link" href="https://github.com/openchemistry/avogadrolibs" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
@@ -128,13 +150,13 @@
     </nav>
     
 
-    <div class="container-xl">
-      <div class="row">
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
           
-            
-            <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar">
-              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
+  <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
@@ -383,53 +405,52 @@
 
   </div>
 </nav>
-              </div>
-              <div class="sidebar-end-items">
-              </div>
-            </div>
-            
-          
+  </div>
+  <div class="sidebar-end-items">
+  </div>
+</div>
+
 
           
-          <div class="d-none d-xl-block col-xl-2 bd-toc">
-            
-              
-              <div class="toc-item">
-                
+
+
+<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
+  
+    
+    <div class="toc-item">
+      
 
 <nav id="bd-toc-nav">
     
 </nav>
-              </div>
-              
-              <div class="toc-item">
-                
+    </div>
+    
+    <div class="toc-item">
+      
 
 <div class="tocsection editthispage">
-    <a href="https://github.com/openchemistry/avogadrolibs/edit/master/docs/api/class/class_avogadro_1_1_qt_gui_1_1_molecule.rst">
+    <a href="https://github.com/avogadro/two.avogadro.cc/edit/main/source/api/class/class_avogadro_1_1_qt_gui_1_1_molecule.rst">
         <i class="fas fa-pencil-alt"></i> Edit this page
     </a>
 </div>
 
-              </div>
-              
-            
-          </div>
-          
+    </div>
+    
+  
+</div>
+
 
           
           
-            
-          
-          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+          <div class="bd-content col-12 col-md-9 col-xl-7">
               
-              <div>
+              <article class="bd-article" role="main">
                 
   <section id="class-avogadro-qtgui-molecule">
-<h1>Class Avogadro::QtGui::Molecule<a class="headerlink" href="#class-avogadro-qtgui-molecule" title="Permalink to this headline">#</a></h1>
+<h1>Class Avogadro::QtGui::Molecule<a class="headerlink" href="#class-avogadro-qtgui-molecule" title="Permalink to this heading">#</a></h1>
 <dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui8MoleculeE">
-<span id="_CPPv3N8Avogadro5QtGui8MoleculeE"></span><span id="_CPPv2N8Avogadro5QtGui8MoleculeE"></span><span id="Avogadro::QtGui::Molecule"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_molecule"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">Avogadro</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">QtGui</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">Molecule</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">QObject</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro5QtGui8MoleculeE" title="Avogadro::QtGui::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui8MoleculeE" title="Permalink to this definition">#</a><br /></dt>
+<span id="_CPPv3N8Avogadro5QtGui8MoleculeE"></span><span id="_CPPv2N8Avogadro5QtGui8MoleculeE"></span><span id="Avogadro::QtGui::Molecule"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_molecule"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Molecule</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">QObject</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro5QtGui8MoleculeE" title="Avogadro::QtGui::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui8MoleculeE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>A QObject derived molecule object with signals/slots. </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-unnamed-group">Unnamed Group</p>
@@ -438,10 +459,10 @@
 <span id="_CPPv3NK8Avogadro5QtGui8Molecule12atomUniqueIdERK8AtomType"></span><span id="_CPPv2NK8Avogadro5QtGui8Molecule12atomUniqueIdERK8AtomType"></span><span id="Avogadro::QtGui::Molecule::atomUniqueId__AtomTypeCRC"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_molecule_1a9f72f568a3a54afcf3a723b476a3b6af"></span><span class="n"><span class="pre">Index</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">atomUniqueId</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro5QtGui8Molecule8AtomTypeE" title="Avogadro::QtGui::Molecule::AtomType"><span class="n"><span class="pre">AtomType</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">atom</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro5QtGui8Molecule12atomUniqueIdERK8AtomType" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Get the unique ID of the atom, this will uniquely reference the atom as long as it exists. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>atom</strong> – The atom to obtain the unique ID of. </p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The unique identifier for the atom, MaxIndex if the atom is invalid or does not belong to this molecule. </p>
 </dd>
 </dl>
@@ -452,10 +473,10 @@
 <span id="_CPPv3NK8Avogadro5QtGui8Molecule12atomUniqueIdE5Index"></span><span id="_CPPv2NK8Avogadro5QtGui8Molecule12atomUniqueIdE5Index"></span><span id="Avogadro::QtGui::Molecule::atomUniqueId__IndexC"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_molecule_1a351a3521b864c3d6ce6781e0247edb75"></span><span class="n"><span class="pre">Index</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">atomUniqueId</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Index</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">atom</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro5QtGui8Molecule12atomUniqueIdE5Index" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Get the unique ID of the atom, this will uniquely reference the atom as long as it exists. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>atom</strong> – The atom to obtain the unique ID of. </p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The unique identifier for the atom, MaxIndex if the atom is invalid or does not belong to this molecule. </p>
 </dd>
 </dl>
@@ -469,13 +490,13 @@
 <span id="_CPPv3N8Avogadro5QtGui8Molecule10removeBondERK8AtomTypeRK8AtomType"></span><span id="_CPPv2N8Avogadro5QtGui8Molecule10removeBondERK8AtomTypeRK8AtomType"></span><span id="Avogadro::QtGui::Molecule::removeBond__AtomTypeCR.AtomTypeCR"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_molecule_1a8774db066326bdd1c733a1daa00d0b2d"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">removeBond</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro5QtGui8Molecule8AtomTypeE" title="Avogadro::QtGui::Molecule::AtomType"><span class="n"><span class="pre">AtomType</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">atom1</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro5QtGui8Molecule8AtomTypeE" title="Avogadro::QtGui::Molecule::AtomType"><span class="n"><span class="pre">AtomType</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">atom2</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui8Molecule10removeBondERK8AtomTypeRK8AtomType" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Remove the specified bond. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>atom1</strong> – One atom in the bond. </p></li>
 <li><p><strong>atom2</strong> – The other atom in the bond. </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>True on success, false if the bond was not found. This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
 </dd>
 </dl>
@@ -486,13 +507,13 @@
 <span id="_CPPv3N8Avogadro5QtGui8Molecule10removeBondE5Index5Index"></span><span id="_CPPv2N8Avogadro5QtGui8Molecule10removeBondE5Index5Index"></span><span id="Avogadro::QtGui::Molecule::removeBond__Index.Index"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_molecule_1afa4528a5c6756cc34043bd87abc8aafe"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">removeBond</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Index</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">atom1</span></span>, <span class="n"><span class="pre">Index</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">atom2</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui8Molecule10removeBondE5Index5Index" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Remove the specified bond. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>atom1</strong> – One atom in the bond. </p></li>
 <li><p><strong>atom2</strong> – The other atom in the bond. </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>True on success, false if the bond was not found. This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
 </dd>
 </dl>
@@ -506,10 +527,10 @@
 <span id="_CPPv3NK8Avogadro5QtGui8Molecule12bondUniqueIdERK8BondType"></span><span id="_CPPv2NK8Avogadro5QtGui8Molecule12bondUniqueIdERK8BondType"></span><span id="Avogadro::QtGui::Molecule::bondUniqueId__BondTypeCRC"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_molecule_1a99971a6d32f0ab94271d3c779303b774"></span><span class="n"><span class="pre">Index</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">bondUniqueId</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro5QtGui8Molecule8BondTypeE" title="Avogadro::QtGui::Molecule::BondType"><span class="n"><span class="pre">BondType</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">bond</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro5QtGui8Molecule12bondUniqueIdERK8BondType" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Get the unique ID of the bond, this will uniquely reference the bond as long as it exists. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>bond</strong> – The bond to obtain the unique ID of. </p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The unique identifier for the bond, MaxIndex if the bond is invalid or does not belong to this molecule. </p>
 </dd>
 </dl>
@@ -520,10 +541,10 @@
 <span id="_CPPv3NK8Avogadro5QtGui8Molecule12bondUniqueIdE5Index"></span><span id="_CPPv2NK8Avogadro5QtGui8Molecule12bondUniqueIdE5Index"></span><span id="Avogadro::QtGui::Molecule::bondUniqueId__IndexC"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_molecule_1a015df06128473b2100a1b3942f16fd21"></span><span class="n"><span class="pre">Index</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">bondUniqueId</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Index</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">bond</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro5QtGui8Molecule12bondUniqueIdE5Index" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Get the unique ID of the bond, this will uniquely reference the bond as long as it exists. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>bond</strong> – The bond to obtain the unique ID of. </p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The unique identifier for the bond, MaxIndex if the bond is invalid or does not belong to this molecule. </p>
 </dd>
 </dl>
@@ -654,7 +675,7 @@
 <span id="_CPPv3N8Avogadro5QtGui8Molecule7addAtomEh"></span><span id="_CPPv2N8Avogadro5QtGui8Molecule7addAtomEh"></span><span id="Avogadro::QtGui::Molecule::addAtom__unsigned-c"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_molecule_1a0fb6132bfa7c5365e9718ced49a8fb5f"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro5QtGui8Molecule8AtomTypeE" title="Avogadro::QtGui::Molecule::AtomType"><span class="n"><span class="pre">AtomType</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addAtom</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">atomicNumber</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui8Molecule7addAtomEh" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Add an atom with <code class="docutils literal notranslate"><span class="pre">atomicNumber</span></code> to the molecule. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The atom created. </p>
 </dd>
 </dl>
@@ -665,7 +686,7 @@
 <span id="_CPPv3N8Avogadro5QtGui8Molecule7addAtomEh5Index"></span><span id="_CPPv2N8Avogadro5QtGui8Molecule7addAtomEh5Index"></span><span id="Avogadro::QtGui::Molecule::addAtom__unsigned-c.Index"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_molecule_1ae3911f2f107eb1425a00877bb1968f00"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro5QtGui8Molecule8AtomTypeE" title="Avogadro::QtGui::Molecule::AtomType"><span class="n"><span class="pre">AtomType</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addAtom</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">atomicNumber</span></span>, <span class="n"><span class="pre">Index</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">uniqueId</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui8Molecule7addAtomEh5Index" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Add an atom with <code class="docutils literal notranslate"><span class="pre">atomicNumber</span></code> and <code class="docutils literal notranslate"><span class="pre">uniqueId</span></code> to the molecule. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The atom created. This can be invalid if the unique ID was already in use. </p>
 </dd>
 </dl>
@@ -681,10 +702,10 @@
 <span id="_CPPv3N8Avogadro5QtGui8Molecule10removeAtomE5Index"></span><span id="_CPPv2N8Avogadro5QtGui8Molecule10removeAtomE5Index"></span><span id="Avogadro::QtGui::Molecule::removeAtom__Index"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_molecule_1a48b30af0d345f21a18d0164853606388"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">removeAtom</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Index</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">index</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui8Molecule10removeAtomE5Index" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Remove the specified atom from the molecule. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>index</strong> – The index of the atom to be removed. </p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>True on success, false if the atom was not found. </p>
 </dd>
 </dl>
@@ -695,10 +716,10 @@
 <span id="_CPPv3N8Avogadro5QtGui8Molecule10removeAtomERK8AtomType"></span><span id="_CPPv2N8Avogadro5QtGui8Molecule10removeAtomERK8AtomType"></span><span id="Avogadro::QtGui::Molecule::removeAtom__AtomTypeCR"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_molecule_1aa9f962fdfcd7e549dd2f75424eace2e4"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">removeAtom</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro5QtGui8Molecule8AtomTypeE" title="Avogadro::QtGui::Molecule::AtomType"><span class="n"><span class="pre">AtomType</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">atom</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui8Molecule10removeAtomERK8AtomType" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Remove the specified atom from the molecule. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>atom</strong> – The atom to be removed. </p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>True on success, false if the atom was not found. This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
 </dd>
 </dl>
@@ -709,10 +730,10 @@
 <span id="_CPPv3N8Avogadro5QtGui8Molecule14atomByUniqueIdE5Index"></span><span id="_CPPv2N8Avogadro5QtGui8Molecule14atomByUniqueIdE5Index"></span><span id="Avogadro::QtGui::Molecule::atomByUniqueId__Index"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_molecule_1aa59bf0e0d7e2ddad31a89c30484f0914"></span><a class="reference internal" href="#_CPPv4N8Avogadro5QtGui8Molecule8AtomTypeE" title="Avogadro::QtGui::Molecule::AtomType"><span class="n"><span class="pre">AtomType</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">atomByUniqueId</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Index</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">uniqueId</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui8Molecule14atomByUniqueIdE5Index" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Get the atom referenced by the <code class="docutils literal notranslate"><span class="pre">uniqueId</span></code>, the isValid method should be queried to ensure the id still referenced a valid atom. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>uniqueId</strong> – The unique identifier for the atom. </p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>An Atom object, check it is valid before using it. </p>
 </dd>
 </dl>
@@ -728,14 +749,14 @@
 <span id="_CPPv3N8Avogadro5QtGui8Molecule7addBondERK8AtomTypeRK8AtomTypeh"></span><span id="_CPPv2N8Avogadro5QtGui8Molecule7addBondERK8AtomTypeRK8AtomTypeh"></span><span id="Avogadro::QtGui::Molecule::addBond__AtomTypeCR.AtomTypeCR.unsigned-c"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_molecule_1af8d6d4d7a4569cedd58dc837f8d1fe7a"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro5QtGui8Molecule8BondTypeE" title="Avogadro::QtGui::Molecule::BondType"><span class="n"><span class="pre">BondType</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addBond</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro5QtGui8Molecule8AtomTypeE" title="Avogadro::QtGui::Molecule::AtomType"><span class="n"><span class="pre">AtomType</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">a</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro5QtGui8Molecule8AtomTypeE" title="Avogadro::QtGui::Molecule::AtomType"><span class="n"><span class="pre">AtomType</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">b</span></span>, <span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">bondOrder</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui8Molecule7addBondERK8AtomTypeRK8AtomTypeh" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Add a bond between the specified atoms. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>a</strong> – The first atom in the bond. </p></li>
 <li><p><strong>b</strong> – The second atom in the bond. </p></li>
 <li><p><strong>bondOrder</strong> – The order of the bond. </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The bond created. </p>
 </dd>
 </dl>
@@ -746,14 +767,14 @@
 <span id="_CPPv3N8Avogadro5QtGui8Molecule7addBondE5Index5Indexh"></span><span id="_CPPv2N8Avogadro5QtGui8Molecule7addBondE5Index5Indexh"></span><span id="Avogadro::QtGui::Molecule::addBond__Index.Index.unsigned-c"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_molecule_1a7488bed400cca4a0b4e8bbb1d5d00c4d"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro5QtGui8Molecule8BondTypeE" title="Avogadro::QtGui::Molecule::BondType"><span class="n"><span class="pre">BondType</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addBond</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Index</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">atomId1</span></span>, <span class="n"><span class="pre">Index</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">atomId2</span></span>, <span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">bondOrder</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui8Molecule7addBondE5Index5Indexh" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Add a bond between the specified atoms. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>atomId1</strong> – The index of the first atom in the bond. </p></li>
 <li><p><strong>atomId2</strong> – The index of the second atom in the bond. </p></li>
 <li><p><strong>bondOrder</strong> – The order of the bond. </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The bond created. </p>
 </dd>
 </dl>
@@ -769,7 +790,7 @@
 <span id="_CPPv3N8Avogadro5QtGui8Molecule7addBondERK8AtomTypeRK8AtomTypeh5Index"></span><span id="_CPPv2N8Avogadro5QtGui8Molecule7addBondERK8AtomTypeRK8AtomTypeh5Index"></span><span id="Avogadro::QtGui::Molecule::addBond__AtomTypeCR.AtomTypeCR.unsigned-c.Index"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_molecule_1ac486de33ad4c73a841c13b57543a64af"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro5QtGui8Molecule8BondTypeE" title="Avogadro::QtGui::Molecule::BondType"><span class="n"><span class="pre">BondType</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addBond</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro5QtGui8Molecule8AtomTypeE" title="Avogadro::QtGui::Molecule::AtomType"><span class="n"><span class="pre">AtomType</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">a</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro5QtGui8Molecule8AtomTypeE" title="Avogadro::QtGui::Molecule::AtomType"><span class="n"><span class="pre">AtomType</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">b</span></span>, <span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">bondOrder</span></span>, <span class="n"><span class="pre">Index</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">uniqueId</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui8Molecule7addBondERK8AtomTypeRK8AtomTypeh5Index" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Add a bond between the specified atoms. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>a</strong> – The first atom in the bond. </p></li>
 <li><p><strong>b</strong> – The second atom in the bond. </p></li>
@@ -777,7 +798,7 @@
 <li><p><strong>uniqueId</strong> – The unique ID to use for the bond. </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The bond created. This can be invalid if the unique ID was already in use. </p>
 </dd>
 </dl>
@@ -788,7 +809,7 @@
 <span id="_CPPv3N8Avogadro5QtGui8Molecule7addBondE5Index5Indexh5Index"></span><span id="_CPPv2N8Avogadro5QtGui8Molecule7addBondE5Index5Indexh5Index"></span><span id="Avogadro::QtGui::Molecule::addBond__Index.Index.unsigned-c.Index"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_molecule_1a1caacdfbbb114f0f89e56537065d2579"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro5QtGui8Molecule8BondTypeE" title="Avogadro::QtGui::Molecule::BondType"><span class="n"><span class="pre">BondType</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addBond</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Index</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">atomId1</span></span>, <span class="n"><span class="pre">Index</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">atomId2</span></span>, <span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">bondOrder</span></span>, <span class="n"><span class="pre">Index</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">uniqueId</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui8Molecule7addBondE5Index5Indexh5Index" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Add a bond between the specified atoms. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>a</strong> – The index of the first atom in the bond. </p></li>
 <li><p><strong>b</strong> – The index of the second atom in the bond. </p></li>
@@ -796,7 +817,7 @@
 <li><p><strong>uniqueId</strong> – The unique ID to use for the bond. </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The bond created. This can be invalid if the unique ID was already in use. </p>
 </dd>
 </dl>
@@ -807,10 +828,10 @@
 <span id="_CPPv3N8Avogadro5QtGui8Molecule10removeBondE5Index"></span><span id="_CPPv2N8Avogadro5QtGui8Molecule10removeBondE5Index"></span><span id="Avogadro::QtGui::Molecule::removeBond__Index"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_molecule_1a6cbe6be15d80f98bc9f5062e7194fd46"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">removeBond</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Index</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">index</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui8Molecule10removeBondE5Index" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Remove the specified bond. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>index</strong> – The index of the bond to be removed. </p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>True on success, false if the bond was not found. </p>
 </dd>
 </dl>
@@ -821,10 +842,10 @@
 <span id="_CPPv3N8Avogadro5QtGui8Molecule10removeBondERK8BondType"></span><span id="_CPPv2N8Avogadro5QtGui8Molecule10removeBondERK8BondType"></span><span id="Avogadro::QtGui::Molecule::removeBond__BondTypeCR"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_molecule_1a4d23375cca2a9b15a816ba62d3c2e949"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">removeBond</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro5QtGui8Molecule8BondTypeE" title="Avogadro::QtGui::Molecule::BondType"><span class="n"><span class="pre">BondType</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">bond</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui8Molecule10removeBondERK8BondType" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Remove the specified bond. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>bond</strong> – The bond to be removed. </p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>True on success, false if the bond was not found. This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
 </dd>
 </dl>
@@ -835,10 +856,10 @@
 <span id="_CPPv3N8Avogadro5QtGui8Molecule14bondByUniqueIdE5Index"></span><span id="_CPPv2N8Avogadro5QtGui8Molecule14bondByUniqueIdE5Index"></span><span id="Avogadro::QtGui::Molecule::bondByUniqueId__Index"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_molecule_1aa914d12beb6c7e518e4e25e2611bf763"></span><a class="reference internal" href="#_CPPv4N8Avogadro5QtGui8Molecule8BondTypeE" title="Avogadro::QtGui::Molecule::BondType"><span class="n"><span class="pre">BondType</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">bondByUniqueId</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Index</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">uniqueId</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui8Molecule14bondByUniqueIdE5Index" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Get the bond referenced by the <code class="docutils literal notranslate"><span class="pre">uniqueId</span></code>, the isValid method should be queried to ensure the id still referenced a valid bond. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>uniqueId</strong> – The unique identifier for the bond. </p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>A Bond object, check it is valid before using it. </p>
 </dd>
 </dl>
@@ -882,7 +903,7 @@
 <span id="_CPPv3N8Avogadro5QtGui8Molecule11emitChangedEj"></span><span id="_CPPv2N8Avogadro5QtGui8Molecule11emitChangedEj"></span><span id="Avogadro::QtGui::Molecule::emitChanged__unsigned-i"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_molecule_1a9374c8b1c39f163f459aae407918b028"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">emitChanged</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">change</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui8Molecule11emitChangedEj" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Force the molecule to emit the <a class="reference internal" href="#class_avogadro_1_1_qt_gui_1_1_molecule_1a829551f99b308fdb8645766cf4483556"><span class="std std-ref">changed()</span></a> signal. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>change</strong> – See <a class="reference internal" href="#class_avogadro_1_1_qt_gui_1_1_molecule_1a829551f99b308fdb8645766cf4483556"><span class="std std-ref">changed()</span></a>. </p>
 </dd>
 </dl>
@@ -898,7 +919,7 @@
 <p>
 The <code class="docutils literal notranslate"><span class="pre">change</span></code> variable indicates what has changed, i.e. if change &amp; Atoms == true then atoms were changed in some way, and if change &amp; Removed == true then one or more atoms were removed. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>change</strong> – Use the MoleculeChange enum to check what has changed.</p>
 </dd>
 </dl>
@@ -910,53 +931,55 @@ The <code class="docutils literal notranslate"><span class="pre">change</span></
 </section>
 
 
-              </div>
+              </article>
               
-              
-              <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="class_avogadro_1_1_qt_gui_1_1_mesh_generator.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Class Avogadro::QtGui::MeshGenerator</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="class_avogadro_1_1_qt_gui_1_1_molecule_model.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Class Avogadro::QtGui::MoleculeModel</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-              
-          </main>
-          
 
+              
+              <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="class_avogadro_1_1_qt_gui_1_1_mesh_generator.html" title="previous page">
+      <i class="fas fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">Class Avogadro::QtGui::MeshGenerator</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="class_avogadro_1_1_qt_gui_1_1_molecule_model.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">Class Avogadro::QtGui::MoleculeModel</p>
+  </div>
+  <i class="fas fa-angle-right"></i>
+  </a>
+</div>
+              </footer>
+              
+          </div>
+          
       </div>
     </div>
+
+  
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-<footer class="container-fluid footer-copy">
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
 
-    <div class="container">
-
-      <div class="row">
-        <div class="col-md-10 py-2">
-          <p>
-            ©2022 The OpenChemistry / Avogadro Teams. The website content uses the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/LICENSE">BSD License</a> and is covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
-          </p>
-        </div>
-        <br />
-        <div class="col-md-2 py-2">
-          <a class="btn btn-primary" href="https://opencollective.com/open-chemistry">Donate</a>
-        </div>
-      </div>
-
-    </div>
-
-  </footer>
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
+    &copy; Copyright ©2022 The OpenChemistry / Avogadro Teams..<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.2.<br>
+</p>
+  </div>
+  
+</div>
+</footer>
   </body>
 </html>

@@ -1,17 +1,21 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Index &#8212; Avogadro 1.97.0 documentation</title>
-    
-  <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
 
-    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
   <link rel="stylesheet"
     href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
@@ -20,48 +24,58 @@
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/design-tabs.js"></script>
     <link rel="canonical" href="https://two.avogadro.cc/genindex.html" />
     <link rel="index" title="Index" href="#" />
     <link rel="search" title="Search" href="search.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="en">
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+    <div class="bd-header-announcement container-fluid" id="banner">
+      
+
+    </div>
 
     
-    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
 
   <div id="navbar-start">
     
     
+  
 
-<a class="navbar-brand" href="index.html">
-  <img src="_static/avogadro2.png" class="logo" alt="logo">
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+    <img src="_static/avogadro2.png" class="logo__image only-light" alt="Logo image">
+    <img src="_static/avogadro2.png" class="logo__image only-dark" alt="Logo image">
+  
+  
 </a>
-
-
     
   </div>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+    <span class="fas fa-bars"></span>
   </button>
 
   
@@ -107,6 +121,14 @@
     <div id="navbar-end">
       
       <div class="navbar-end-item">
+        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
           <a class="nav-link" href="https://github.com/openchemistry/avogadrolibs" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
@@ -125,13 +147,13 @@
     </nav>
     
 
-    <div class="container-xl">
-      <div class="row">
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
           
-            
-            <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar">
-              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
+  <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
@@ -139,26 +161,25 @@
     
   </div>
 </nav>
-              </div>
-              <div class="sidebar-end-items">
-              </div>
-            </div>
-            
-          
+  </div>
+  <div class="sidebar-end-items">
+  </div>
+</div>
+
 
           
-          <div class="d-none d-xl-block col-xl-2 bd-toc">
-            
-          </div>
-          
+
+
+<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
+  
+</div>
+
 
           
           
-            
-          
-          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+          <div class="bd-content col-12 col-md-9 col-xl-7">
               
-              <div>
+              <article class="bd-article" role="main">
                 
 
 <h1 id="index">Index</h1>
@@ -457,6 +478,8 @@
 </li>
       <li><a href="api/class/class_avogadro_1_1_core_1_1_bond_template.html#_CPPv4N8Avogadro4Core12BondTemplate12BondTemplateEP12MoleculeType5Index">Avogadro::Core::BondTemplate::BondTemplate (C++ function)</a>, <a href="api/class/class_avogadro_1_1_core_1_1_bond_template.html#_CPPv4N8Avogadro4Core12BondTemplate12BondTemplateEv">[1]</a>
 </li>
+      <li><a href="api/class/class_avogadro_1_1_core_1_1_bond_template.html#_CPPv4NK8Avogadro4Core12BondTemplate12getOtherAtomE5Index">Avogadro::Core::BondTemplate::getOtherAtom (C++ function)</a>, <a href="api/class/class_avogadro_1_1_core_1_1_bond_template.html#_CPPv4NK8Avogadro4Core12BondTemplate12getOtherAtomE8AtomType">[1]</a>
+</li>
       <li><a href="api/class/class_avogadro_1_1_core_1_1_bond_template.html#_CPPv4NK8Avogadro4Core12BondTemplate5indexEv">Avogadro::Core::BondTemplate::index (C++ function)</a>
 </li>
       <li><a href="api/class/class_avogadro_1_1_core_1_1_bond_template.html#_CPPv4NK8Avogadro4Core12BondTemplate7isValidEv">Avogadro::Core::BondTemplate::isValid (C++ function)</a>
@@ -563,7 +586,7 @@
 </li>
       <li><a href="api/class/class_avogadro_1_1_core_1_1_cube.html#_CPPv4N8Avogadro4Core4CubeE">Avogadro::Core::Cube (C++ class)</a>
 </li>
-      <li><a href="api/class/class_avogadro_1_1_core_1_1_cube.html#_CPPv4N8Avogadro4Core4Cube7addDataERKNSt6vectorIdEE">Avogadro::Core::Cube::addData (C++ function)</a>
+      <li><a href="api/class/class_avogadro_1_1_core_1_1_cube.html#_CPPv4N8Avogadro4Core4Cube7addDataERKNSt6vectorIfEE">Avogadro::Core::Cube::addData (C++ function)</a>
 </li>
       <li><a href="api/class/class_avogadro_1_1_core_1_1_cube.html#_CPPv4NK8Avogadro4Core4Cube12closestIndexERK7Vector3">Avogadro::Core::Cube::closestIndex (C++ function)</a>
 </li>
@@ -574,6 +597,10 @@
       <li><a href="api/class/class_avogadro_1_1_core_1_1_cube.html#_CPPv4N8Avogadro4Core4Cube4dataEv">Avogadro::Core::Cube::data (C++ function)</a>, <a href="api/class/class_avogadro_1_1_core_1_1_cube.html#_CPPv4NK8Avogadro4Core4Cube4dataEv">[1]</a>
 </li>
       <li><a href="api/class/class_avogadro_1_1_core_1_1_cube.html#_CPPv4NK8Avogadro4Core4Cube10dimensionsEv">Avogadro::Core::Cube::dimensions (C++ function)</a>
+</li>
+      <li><a href="api/class/class_avogadro_1_1_core_1_1_cube.html#_CPPv4N8Avogadro4Core4Cube4fillEf">Avogadro::Core::Cube::fill (C++ function)</a>
+</li>
+      <li><a href="api/class/class_avogadro_1_1_core_1_1_cube.html#_CPPv4N8Avogadro4Core4Cube10fillStripeEjjjjf">Avogadro::Core::Cube::fillStripe (C++ function)</a>
 </li>
       <li><a href="api/class/class_avogadro_1_1_core_1_1_cube.html#_CPPv4NK8Avogadro4Core4Cube11indexVectorERK7Vector3">Avogadro::Core::Cube::indexVector (C++ function)</a>
 </li>
@@ -613,13 +640,13 @@
 </li>
       <li><a href="api/class/class_avogadro_1_1_core_1_1_cube.html#_CPPv4N8Avogadro4Core4Cube11setCubeTypeE4Type">Avogadro::Core::Cube::setCubeType (C++ function)</a>
 </li>
-      <li><a href="api/class/class_avogadro_1_1_core_1_1_cube.html#_CPPv4N8Avogadro4Core4Cube7setDataERKNSt6vectorIdEE">Avogadro::Core::Cube::setData (C++ function)</a>
+      <li><a href="api/class/class_avogadro_1_1_core_1_1_cube.html#_CPPv4N8Avogadro4Core4Cube7setDataERKNSt6vectorIfEE">Avogadro::Core::Cube::setData (C++ function)</a>
 </li>
-      <li><a href="api/class/class_avogadro_1_1_core_1_1_cube.html#_CPPv4N8Avogadro4Core4Cube9setLimitsERK4Cube">Avogadro::Core::Cube::setLimits (C++ function)</a>, <a href="api/class/class_avogadro_1_1_core_1_1_cube.html#_CPPv4N8Avogadro4Core4Cube9setLimitsERK7Vector3RK7Vector3RK8Vector3i">[1]</a>, <a href="api/class/class_avogadro_1_1_core_1_1_cube.html#_CPPv4N8Avogadro4Core4Cube9setLimitsERK7Vector3RK7Vector3d">[2]</a>, <a href="api/class/class_avogadro_1_1_core_1_1_cube.html#_CPPv4N8Avogadro4Core4Cube9setLimitsERK7Vector3RK8Vector3iRK7Vector3">[3]</a>, <a href="api/class/class_avogadro_1_1_core_1_1_cube.html#_CPPv4N8Avogadro4Core4Cube9setLimitsERK7Vector3RK8Vector3id">[4]</a>, <a href="api/class/class_avogadro_1_1_core_1_1_cube.html#_CPPv4N8Avogadro4Core4Cube9setLimitsERK8Moleculedd">[5]</a>
+      <li><a href="api/class/class_avogadro_1_1_core_1_1_cube.html#_CPPv4N8Avogadro4Core4Cube9setLimitsERK4Cube">Avogadro::Core::Cube::setLimits (C++ function)</a>, <a href="api/class/class_avogadro_1_1_core_1_1_cube.html#_CPPv4N8Avogadro4Core4Cube9setLimitsERK7Vector3RK7Vector3RK8Vector3i">[1]</a>, <a href="api/class/class_avogadro_1_1_core_1_1_cube.html#_CPPv4N8Avogadro4Core4Cube9setLimitsERK7Vector3RK7Vector3f">[2]</a>, <a href="api/class/class_avogadro_1_1_core_1_1_cube.html#_CPPv4N8Avogadro4Core4Cube9setLimitsERK7Vector3RK8Vector3iRK7Vector3">[3]</a>, <a href="api/class/class_avogadro_1_1_core_1_1_cube.html#_CPPv4N8Avogadro4Core4Cube9setLimitsERK7Vector3RK8Vector3if">[4]</a>, <a href="api/class/class_avogadro_1_1_core_1_1_cube.html#_CPPv4N8Avogadro4Core4Cube9setLimitsERK8Moleculeff">[5]</a>
 </li>
       <li><a href="api/class/class_avogadro_1_1_core_1_1_cube.html#_CPPv4N8Avogadro4Core4Cube7setNameERKNSt6stringE">Avogadro::Core::Cube::setName (C++ function)</a>
 </li>
-      <li><a href="api/class/class_avogadro_1_1_core_1_1_cube.html#_CPPv4N8Avogadro4Core4Cube8setValueEiiid">Avogadro::Core::Cube::setValue (C++ function)</a>, <a href="api/class/class_avogadro_1_1_core_1_1_cube.html#_CPPv4N8Avogadro4Core4Cube8setValueEjd">[1]</a>
+      <li><a href="api/class/class_avogadro_1_1_core_1_1_cube.html#_CPPv4N8Avogadro4Core4Cube8setValueEjf">Avogadro::Core::Cube::setValue (C++ function)</a>, <a href="api/class/class_avogadro_1_1_core_1_1_cube.html#_CPPv4N8Avogadro4Core4Cube8setValueEjjjf">[1]</a>
 </li>
       <li><a href="api/class/class_avogadro_1_1_core_1_1_cube.html#_CPPv4NK8Avogadro4Core4Cube7spacingEv">Avogadro::Core::Cube::spacing (C++ function)</a>
 </li>
@@ -943,6 +970,8 @@
 </li>
       <li><a href="api/class/class_avogadro_1_1_core_1_1_mesh.html#_CPPv4N8Avogadro4Core4Mesh11setVerticesERKN4Core5ArrayI8Vector3fEE">Avogadro::Core::Mesh::setVertices (C++ function)</a>
 </li>
+      <li><a href="api/class/class_avogadro_1_1_core_1_1_mesh.html#_CPPv4N8Avogadro4Core4Mesh6smoothEi">Avogadro::Core::Mesh::smooth (C++ function)</a>
+</li>
       <li><a href="api/class/class_avogadro_1_1_core_1_1_mesh.html#_CPPv4N8Avogadro4Core4Mesh6stableEv">Avogadro::Core::Mesh::stable (C++ function)</a>
 </li>
       <li><a href="api/class/class_avogadro_1_1_core_1_1_mesh.html#_CPPv4NK8Avogadro4Core4Mesh5validEv">Avogadro::Core::Mesh::valid (C++ function)</a>
@@ -1043,6 +1072,10 @@
 </li>
       <li><a href="api/class/class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8Molecule7dataMapEv">Avogadro::Core::Molecule::dataMap (C++ function)</a>, <a href="api/class/class_avogadro_1_1_core_1_1_molecule.html#_CPPv4NK8Avogadro4Core8Molecule7dataMapEv">[1]</a>
 </li>
+      <li><a href="api/class/class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8Molecule11ElementMaskE">Avogadro::Core::Molecule::ElementMask (C++ type)</a>
+</li>
+      <li><a href="api/class/class_avogadro_1_1_core_1_1_molecule.html#_CPPv4NK8Avogadro4Core8Molecule8elementsEv">Avogadro::Core::Molecule::elements (C++ function)</a>
+</li>
       <li><a href="api/class/class_avogadro_1_1_core_1_1_molecule.html#_CPPv4NK8Avogadro4Core8Molecule11forceVectorE5Index">Avogadro::Core::Molecule::forceVector (C++ function)</a>
 </li>
       <li><a href="api/class/class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8Molecule12forceVectorsEv">Avogadro::Core::Molecule::forceVectors (C++ function)</a>, <a href="api/class/class_avogadro_1_1_core_1_1_molecule.html#_CPPv4NK8Avogadro4Core8Molecule12forceVectorsEv">[1]</a>
@@ -1089,6 +1122,8 @@
 </li>
       <li><a href="api/class/class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8Molecule6m_dataE">Avogadro::Core::Molecule::m_data (C++ member)</a>
 </li>
+      <li><a href="api/class/class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8Molecule10m_elementsE">Avogadro::Core::Molecule::m_elements (C++ member)</a>
+</li>
       <li><a href="api/class/class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8Molecule14m_forceVectorsE">Avogadro::Core::Molecule::m_forceVectors (C++ member)</a>
 </li>
       <li><a href="api/class/class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8Molecule15m_formalChargesE">Avogadro::Core::Molecule::m_formalCharges (C++ member)</a>
@@ -1100,6 +1135,8 @@
       <li><a href="api/class/class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8Molecule7m_labelE">Avogadro::Core::Molecule::m_label (C++ member)</a>
 </li>
       <li><a href="api/class/class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8Molecule8m_meshesE">Avogadro::Core::Molecule::m_meshes (C++ member)</a>
+</li>
+      <li><a href="api/class/class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8Molecule16m_partialChargesE">Avogadro::Core::Molecule::m_partialCharges (C++ member)</a>
 </li>
       <li><a href="api/class/class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8Molecule13m_positions2dE">Avogadro::Core::Molecule::m_positions2d (C++ member)</a>
 </li>
@@ -1115,9 +1152,11 @@
 </li>
       <li><a href="api/class/class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8Molecule22m_vibrationFrequenciesE">Avogadro::Core::Molecule::m_vibrationFrequencies (C++ member)</a>
 </li>
-      <li><a href="api/class/class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8Molecule22m_vibrationIntensitiesE">Avogadro::Core::Molecule::m_vibrationIntensities (C++ member)</a>
+      <li><a href="api/class/class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8Molecule24m_vibrationIRIntensitiesE">Avogadro::Core::Molecule::m_vibrationIRIntensities (C++ member)</a>
 </li>
       <li><a href="api/class/class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8Molecule13m_vibrationLxE">Avogadro::Core::Molecule::m_vibrationLx (C++ member)</a>
+</li>
+      <li><a href="api/class/class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8Molecule27m_vibrationRamanIntensitiesE">Avogadro::Core::Molecule::m_vibrationRamanIntensities (C++ member)</a>
 </li>
       <li><a href="api/class/class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8Molecule12makeBondPairERK5IndexRK5Index">Avogadro::Core::Molecule::makeBondPair (C++ function)</a>
 </li>
@@ -1130,6 +1169,10 @@
       <li><a href="api/class/class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8Molecule8MoleculeERK8Molecule">Avogadro::Core::Molecule::Molecule (C++ function)</a>, <a href="api/class/class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8Molecule8MoleculeERR8Molecule">[1]</a>, <a href="api/class/class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8Molecule8MoleculeEv">[2]</a>
 </li>
       <li><a href="api/class/class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeaSERK8Molecule">Avogadro::Core::Molecule::operator= (C++ function)</a>, <a href="api/class/class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeaSERR8Molecule">[1]</a>
+</li>
+      <li><a href="api/class/class_avogadro_1_1_core_1_1_molecule.html#_CPPv4NK8Avogadro4Core8Molecule14partialChargesERKNSt6stringE">Avogadro::Core::Molecule::partialCharges (C++ function)</a>
+</li>
+      <li><a href="api/class/class_avogadro_1_1_core_1_1_molecule.html#_CPPv4NK8Avogadro4Core8Molecule18partialChargeTypesEv">Avogadro::Core::Molecule::partialChargeTypes (C++ function)</a>
 </li>
       <li><a href="api/class/class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8Molecule28perceiveBondsFromResidueDataEv">Avogadro::Core::Molecule::perceiveBondsFromResidueData (C++ function)</a>
 </li>
@@ -1205,15 +1248,19 @@
 </li>
       <li><a href="api/class/class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8Molecule8setLayerE5Index6size_t">Avogadro::Core::Molecule::setLayer (C++ function)</a>
 </li>
+      <li><a href="api/class/class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8Molecule17setPartialChargesERKNSt6stringERK7MatrixX">Avogadro::Core::Molecule::setPartialCharges (C++ function)</a>
+</li>
       <li><a href="api/class/class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8Molecule11setTimeStepEdi">Avogadro::Core::Molecule::setTimeStep (C++ function)</a>
 </li>
       <li><a href="api/class/class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8Molecule11setUnitCellEP8UnitCell">Avogadro::Core::Molecule::setUnitCell (C++ function)</a>
 </li>
       <li><a href="api/class/class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8Molecule23setVibrationFrequenciesERK5ArrayIdE">Avogadro::Core::Molecule::setVibrationFrequencies (C++ function)</a>
 </li>
-      <li><a href="api/class/class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8Molecule23setVibrationIntensitiesERK5ArrayIdE">Avogadro::Core::Molecule::setVibrationIntensities (C++ function)</a>
+      <li><a href="api/class/class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8Molecule25setVibrationIRIntensitiesERK5ArrayIdE">Avogadro::Core::Molecule::setVibrationIRIntensities (C++ function)</a>
 </li>
       <li><a href="api/class/class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8Molecule14setVibrationLxERK5ArrayI5ArrayI7Vector3EE">Avogadro::Core::Molecule::setVibrationLx (C++ function)</a>
+</li>
+      <li><a href="api/class/class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8Molecule28setVibrationRamanIntensitiesERK5ArrayIdE">Avogadro::Core::Molecule::setVibrationRamanIntensities (C++ function)</a>
 </li>
       <li><a href="api/class/class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8Molecule8swapAtomE5Index5Index">Avogadro::Core::Molecule::swapAtom (C++ function)</a>
 </li>
@@ -1225,9 +1272,11 @@
 </li>
       <li><a href="api/class/class_avogadro_1_1_core_1_1_molecule.html#_CPPv4NK8Avogadro4Core8Molecule20vibrationFrequenciesEv">Avogadro::Core::Molecule::vibrationFrequencies (C++ function)</a>
 </li>
-      <li><a href="api/class/class_avogadro_1_1_core_1_1_molecule.html#_CPPv4NK8Avogadro4Core8Molecule20vibrationIntensitiesEv">Avogadro::Core::Molecule::vibrationIntensities (C++ function)</a>
+      <li><a href="api/class/class_avogadro_1_1_core_1_1_molecule.html#_CPPv4NK8Avogadro4Core8Molecule22vibrationIRIntensitiesEv">Avogadro::Core::Molecule::vibrationIRIntensities (C++ function)</a>
 </li>
       <li><a href="api/class/class_avogadro_1_1_core_1_1_molecule.html#_CPPv4NK8Avogadro4Core8Molecule11vibrationLxEi">Avogadro::Core::Molecule::vibrationLx (C++ function)</a>
+</li>
+      <li><a href="api/class/class_avogadro_1_1_core_1_1_molecule.html#_CPPv4NK8Avogadro4Core8Molecule25vibrationRamanIntensitiesEv">Avogadro::Core::Molecule::vibrationRamanIntensities (C++ function)</a>
 </li>
       <li><a href="api/class/class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeD0Ev">Avogadro::Core::Molecule::~Molecule (C++ function)</a>
 </li>
@@ -1280,6 +1329,8 @@
       <li><a href="api/class/class_avogadro_1_1_core_1_1_residue.html#_CPPv4NK8Avogadro4Core7Residue13getAtomByNameENSt6stringE">Avogadro::Core::Residue::getAtomByName (C++ function)</a>
 </li>
       <li><a href="api/class/class_avogadro_1_1_core_1_1_residue.html#_CPPv4NK8Avogadro4Core7Residue15getAtomicNumberENSt6stringE">Avogadro::Core::Residue::getAtomicNumber (C++ function)</a>
+</li>
+      <li><a href="api/class/class_avogadro_1_1_core_1_1_residue.html#_CPPv4NK8Avogadro4Core7Residue11getAtomNameEK4Atom">Avogadro::Core::Residue::getAtomName (C++ function)</a>, <a href="api/class/class_avogadro_1_1_core_1_1_residue.html#_CPPv4NK8Avogadro4Core7Residue11getAtomNameEK5Index">[1]</a>
 </li>
       <li><a href="api/class/class_avogadro_1_1_core_1_1_residue.html#_CPPv4NK8Avogadro4Core7Residue14hasAtomByIndexE5Index">Avogadro::Core::Residue::hasAtomByIndex (C++ function)</a>
 </li>
@@ -1664,6 +1715,8 @@
       <li><a href="api/class/class_avogadro_1_1_core_1_1_variant_map.html#_CPPv4N8Avogadro4Core10VariantMapE">Avogadro::Core::VariantMap (C++ class)</a>
 </li>
       <li><a href="api/class/class_avogadro_1_1_core_1_1_variant_map.html#_CPPv4N8Avogadro4Core10VariantMap5beginEv">Avogadro::Core::VariantMap::begin (C++ function)</a>, <a href="api/class/class_avogadro_1_1_core_1_1_variant_map.html#_CPPv4NK8Avogadro4Core10VariantMap5beginEv">[1]</a>
+</li>
+      <li><a href="api/class/class_avogadro_1_1_core_1_1_variant_map.html#_CPPv4N8Avogadro4Core10VariantMap5clearEv">Avogadro::Core::VariantMap::clear (C++ function)</a>
 </li>
       <li><a href="api/class/class_avogadro_1_1_core_1_1_variant_map.html#_CPPv4N8Avogadro4Core10VariantMap14const_iteratorE">Avogadro::Core::VariantMap::const_iterator (C++ type)</a>
 </li>
@@ -2555,6 +2608,8 @@
 </li>
       <li><a href="api/class/class_avogadro_1_1_qt_gui_1_1_element_detail.html#_CPPv4N8Avogadro5QtGui13ElementDetail13ElementDetailEi">Avogadro::QtGui::ElementDetail::ElementDetail (C++ function)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/class/class_avogadro_1_1_qt_gui_1_1_element_detail.html#_CPPv4N8Avogadro5QtGui13ElementDetail5paintEP8QPainterPK24QStyleOptionGraphicsItemP7QWidget">Avogadro::QtGui::ElementDetail::paint (C++ function)</a>
 </li>
       <li><a href="api/class/class_avogadro_1_1_qt_gui_1_1_element_detail.html#_CPPv4N8Avogadro5QtGui13ElementDetail10setElementEi">Avogadro::QtGui::ElementDetail::setElement (C++ function)</a>
@@ -2573,8 +2628,6 @@
 </li>
       <li><a href="api/class/class_avogadro_1_1_qt_gui_1_1_element_item.html#_CPPv4N8Avogadro5QtGui11ElementItemD0Ev">Avogadro::QtGui::ElementItem::~ElementItem (C++ function)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/class/class_avogadro_1_1_qt_gui_1_1_element_translator.html#_CPPv4N8Avogadro5QtGui17ElementTranslatorE">Avogadro::QtGui::ElementTranslator (C++ class)</a>
 </li>
       <li><a href="api/class/class_avogadro_1_1_qt_gui_1_1_element_translator.html#_CPPv4N8Avogadro5QtGui17ElementTranslator17ElementTranslatorEv">Avogadro::QtGui::ElementTranslator::ElementTranslator (C++ function)</a>
@@ -2717,11 +2770,7 @@
 </li>
       <li><a href="api/class/class_avogadro_1_1_qt_gui_1_1_hydrogen_tools.html#_CPPv4N8Avogadro5QtGui13HydrogenTools20extraHydrogenIndicesERK6RWAtomiRNSt6vectorI6size_tEE">Avogadro::QtGui::HydrogenTools::extraHydrogenIndices (C++ function)</a>
 </li>
-      <li><a href="api/class/class_avogadro_1_1_qt_gui_1_1_hydrogen_tools.html#_CPPv4N8Avogadro5QtGui13HydrogenTools21generateNewBondVectorERK6RWAtomRNSt6vectorI7Vector3EEN4Core17AtomHybridizationE">Avogadro::QtGui::HydrogenTools::generateNewBondVector (C++ function)</a>
-</li>
       <li><a href="api/class/class_avogadro_1_1_qt_gui_1_1_hydrogen_tools.html#_CPPv4N8Avogadro5QtGui13HydrogenTools28generateNewHydrogenPositionsERK6RWAtomiRNSt6vectorI7Vector3EE">Avogadro::QtGui::HydrogenTools::generateNewHydrogenPositions (C++ function)</a>
-</li>
-      <li><a href="api/class/class_avogadro_1_1_qt_gui_1_1_hydrogen_tools.html#_CPPv4N8Avogadro5QtGui13HydrogenTools21perceiveHybridizationERK6RWAtom">Avogadro::QtGui::HydrogenTools::perceiveHybridization (C++ function)</a>
 </li>
       <li><a href="api/class/class_avogadro_1_1_qt_gui_1_1_hydrogen_tools.html#_CPPv4N8Avogadro5QtGui13HydrogenTools18removeAllHydrogensER10RWMolecule">Avogadro::QtGui::HydrogenTools::removeAllHydrogens (C++ function)</a>
 </li>
@@ -2817,7 +2866,7 @@
 </li>
       <li><a href="api/class/class_avogadro_1_1_qt_gui_1_1_mesh_generator.html#_CPPv4N8Avogadro5QtGui13MeshGenerator9duplicateERK8Vector3iRK8Vector3f">Avogadro::QtGui::MeshGenerator::duplicate (C++ function)</a>
 </li>
-      <li><a href="api/class/class_avogadro_1_1_qt_gui_1_1_mesh_generator.html#_CPPv4N8Avogadro5QtGui13MeshGenerator10initializeEPKN4Core4CubeEPN4Core4MeshEfb">Avogadro::QtGui::MeshGenerator::initialize (C++ function)</a>
+      <li><a href="api/class/class_avogadro_1_1_qt_gui_1_1_mesh_generator.html#_CPPv4N8Avogadro5QtGui13MeshGenerator10initializeEPKN4Core4CubeEPN4Core4MeshEfib">Avogadro::QtGui::MeshGenerator::initialize (C++ function)</a>
 </li>
       <li><a href="api/class/class_avogadro_1_1_qt_gui_1_1_mesh_generator.html#_CPPv4N8Avogadro5QtGui13MeshGenerator6m_cubeE">Avogadro::QtGui::MeshGenerator::m_cube (C++ member)</a>
 </li>
@@ -2833,6 +2882,8 @@
 </li>
       <li><a href="api/class/class_avogadro_1_1_qt_gui_1_1_mesh_generator.html#_CPPv4N8Avogadro5QtGui13MeshGenerator9m_normalsE">Avogadro::QtGui::MeshGenerator::m_normals (C++ member)</a>
 </li>
+      <li><a href="api/class/class_avogadro_1_1_qt_gui_1_1_mesh_generator.html#_CPPv4N8Avogadro5QtGui13MeshGenerator8m_passesE">Avogadro::QtGui::MeshGenerator::m_passes (C++ member)</a>
+</li>
       <li><a href="api/class/class_avogadro_1_1_qt_gui_1_1_mesh_generator.html#_CPPv4N8Avogadro5QtGui13MeshGenerator9m_progmaxE">Avogadro::QtGui::MeshGenerator::m_progmax (C++ member)</a>
 </li>
       <li><a href="api/class/class_avogadro_1_1_qt_gui_1_1_mesh_generator.html#_CPPv4N8Avogadro5QtGui13MeshGenerator9m_progminE">Avogadro::QtGui::MeshGenerator::m_progmin (C++ member)</a>
@@ -2847,7 +2898,7 @@
 </li>
       <li><a href="api/class/class_avogadro_1_1_qt_gui_1_1_mesh_generator.html#_CPPv4NK8Avogadro5QtGui13MeshGenerator4meshEv">Avogadro::QtGui::MeshGenerator::mesh (C++ function)</a>
 </li>
-      <li><a href="api/class/class_avogadro_1_1_qt_gui_1_1_mesh_generator.html#_CPPv4N8Avogadro5QtGui13MeshGenerator13MeshGeneratorEP7QObject">Avogadro::QtGui::MeshGenerator::MeshGenerator (C++ function)</a>, <a href="api/class/class_avogadro_1_1_qt_gui_1_1_mesh_generator.html#_CPPv4N8Avogadro5QtGui13MeshGenerator13MeshGeneratorEPKN4Core4CubeEPN4Core4MeshEfbP7QObject">[1]</a>
+      <li><a href="api/class/class_avogadro_1_1_qt_gui_1_1_mesh_generator.html#_CPPv4N8Avogadro5QtGui13MeshGenerator13MeshGeneratorEP7QObject">Avogadro::QtGui::MeshGenerator::MeshGenerator (C++ function)</a>, <a href="api/class/class_avogadro_1_1_qt_gui_1_1_mesh_generator.html#_CPPv4N8Avogadro5QtGui13MeshGenerator13MeshGeneratorEPKN4Core4CubeEPN4Core4MeshEfibP7QObject">[1]</a>
 </li>
       <li><a href="api/class/class_avogadro_1_1_qt_gui_1_1_mesh_generator.html#_CPPv4N8Avogadro5QtGui13MeshGenerator6normalERK8Vector3f">Avogadro::QtGui::MeshGenerator::normal (C++ function)</a>
 </li>
@@ -4991,8 +5042,6 @@
 </li>
       <li><a href="api/class/classvtk_avogadro_actor.html#_CPPv4N16vtkAvogadroActor31HasTranslucentPolygonalGeometryEv">vtkAvogadroActor::HasTranslucentPolygonalGeometry (C++ function)</a>
 </li>
-      <li><a href="api/class/classvtk_avogadro_actor.html#_CPPv4N16vtkAvogadroActor6indentE">vtkAvogadroActor::indent (C++ member)</a>
-</li>
       <li><a href="api/class/classvtk_avogadro_actor.html#_CPPv4N16vtkAvogadroActor8m_boundsE">vtkAvogadroActor::m_bounds (C++ member)</a>
 </li>
       <li><a href="api/class/classvtk_avogadro_actor.html#_CPPv4N16vtkAvogadroActor13m_initializedE">vtkAvogadroActor::m_initialized (C++ member)</a>
@@ -5018,39 +5067,41 @@
 
 
 
-              </div>
+              </article>
               
+
               
-              <!-- Previous / next buttons -->
+              <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
 <div class='prev-next-area'>
 </div>
+              </footer>
               
-          </main>
+          </div>
           
-
       </div>
     </div>
+
+  
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-<footer class="container-fluid footer-copy">
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
 
-    <div class="container">
-
-      <div class="row">
-        <div class="col-md-10 py-2">
-          <p>
-            ©2022 The OpenChemistry / Avogadro Teams. The website content uses the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/LICENSE">BSD License</a> and is covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
-          </p>
-        </div>
-        <br />
-        <div class="col-md-2 py-2">
-          <a class="btn btn-primary" href="https://opencollective.com/open-chemistry">Donate</a>
-        </div>
-      </div>
-
-    </div>
-
-  </footer>
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
+    &copy; Copyright ©2022 The OpenChemistry / Avogadro Teams..<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.2.<br>
+</p>
+  </div>
+  
+</div>
+</footer>
   </body>
 </html>

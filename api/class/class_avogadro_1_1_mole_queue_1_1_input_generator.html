@@ -1,18 +1,22 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Class Avogadro::MoleQueue::InputGenerator &#8212; Avogadro 1.97.0 documentation</title>
-    
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
 
-    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
   <link rel="stylesheet"
     href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
@@ -21,50 +25,60 @@
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
     <link rel="canonical" href="https://two.avogadro.cc/api/class/class_avogadro_1_1_mole_queue_1_1_input_generator.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Class Avogadro::MoleQueue::InputGeneratorDialog" href="class_avogadro_1_1_mole_queue_1_1_input_generator_dialog.html" />
     <link rel="prev" title="Class Avogadro::MoleQueue::BatchJob" href="class_avogadro_1_1_mole_queue_1_1_batch_job.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="en">
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+    <div class="bd-header-announcement container-fluid" id="banner">
+      
+
+    </div>
 
     
-    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
 
   <div id="navbar-start">
     
     
+  
 
-<a class="navbar-brand" href="../../index.html">
-  <img src="../../_static/avogadro2.png" class="logo" alt="logo">
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+    <img src="../../_static/avogadro2.png" class="logo__image only-light" alt="Logo image">
+    <img src="../../_static/avogadro2.png" class="logo__image only-dark" alt="Logo image">
+  
+  
 </a>
-
-
     
   </div>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+    <span class="fas fa-bars"></span>
   </button>
 
   
@@ -110,6 +124,14 @@
     <div id="navbar-end">
       
       <div class="navbar-end-item">
+        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
           <a class="nav-link" href="https://github.com/openchemistry/avogadrolibs" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
@@ -128,13 +150,13 @@
     </nav>
     
 
-    <div class="container-xl">
-      <div class="row">
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
           
-            
-            <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar">
-              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
+  <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
@@ -238,53 +260,52 @@
 
   </div>
 </nav>
-              </div>
-              <div class="sidebar-end-items">
-              </div>
-            </div>
-            
-          
+  </div>
+  <div class="sidebar-end-items">
+  </div>
+</div>
+
 
           
-          <div class="d-none d-xl-block col-xl-2 bd-toc">
-            
-              
-              <div class="toc-item">
-                
+
+
+<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
+  
+    
+    <div class="toc-item">
+      
 
 <nav id="bd-toc-nav">
     
 </nav>
-              </div>
-              
-              <div class="toc-item">
-                
+    </div>
+    
+    <div class="toc-item">
+      
 
 <div class="tocsection editthispage">
-    <a href="https://github.com/openchemistry/avogadrolibs/edit/master/docs/api/class/class_avogadro_1_1_mole_queue_1_1_input_generator.rst">
+    <a href="https://github.com/avogadro/two.avogadro.cc/edit/main/source/api/class/class_avogadro_1_1_mole_queue_1_1_input_generator.rst">
         <i class="fas fa-pencil-alt"></i> Edit this page
     </a>
 </div>
 
-              </div>
-              
-            
-          </div>
-          
+    </div>
+    
+  
+</div>
+
 
           
           
-            
-          
-          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+          <div class="bd-content col-12 col-md-9 col-xl-7">
               
-              <div>
+              <article class="bd-article" role="main">
                 
   <section id="class-avogadro-molequeue-inputgenerator">
-<h1>Class Avogadro::MoleQueue::InputGenerator<a class="headerlink" href="#class-avogadro-molequeue-inputgenerator" title="Permalink to this headline">#</a></h1>
+<h1>Class Avogadro::MoleQueue::InputGenerator<a class="headerlink" href="#class-avogadro-molequeue-inputgenerator" title="Permalink to this heading">#</a></h1>
 <dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9MoleQueue14InputGeneratorE">
-<span id="_CPPv3N8Avogadro9MoleQueue14InputGeneratorE"></span><span id="_CPPv2N8Avogadro9MoleQueue14InputGeneratorE"></span><span id="Avogadro::MoleQueue::InputGenerator"></span><span class="target" id="class_avogadro_1_1_mole_queue_1_1_input_generator"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">Avogadro</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MoleQueue</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">InputGenerator</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">QObject</span></span><a class="headerlink" href="#_CPPv4N8Avogadro9MoleQueue14InputGeneratorE" title="Permalink to this definition">#</a><br /></dt>
+<span id="_CPPv3N8Avogadro9MoleQueue14InputGeneratorE"></span><span id="_CPPv2N8Avogadro9MoleQueue14InputGeneratorE"></span><span id="Avogadro::MoleQueue::InputGenerator"></span><span class="target" id="class_avogadro_1_1_mole_queue_1_1_input_generator"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">InputGenerator</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">QObject</span></span><a class="headerlink" href="#_CPPv4N8Avogadro9MoleQueue14InputGeneratorE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>The <a class="reference internal" href="#class_avogadro_1_1_mole_queue_1_1_input_generator"><span class="std std-ref">InputGenerator</span></a> class provides an interface to input generator scripts. </p>
 <p>
 The QuantumInput extension provides a scriptable method for users to add custom input generators to Avogadro. By writing an executable that implements the interface defined below, new input generators can be created faster and easier than writing full Avogadro extensions.<div class="admonition seealso">
@@ -293,7 +314,7 @@ The QuantumInput extension provides a scriptable method for users to add custom 
 </div>
 </p>
 <section id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md0">
-<h2>Script Entry Points<a class="headerlink" href="#class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md0" title="Permalink to this headline">#</a></h2>
+<h2>Script Entry Points<a class="headerlink" href="#class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md0" title="Permalink to this heading">#</a></h2>
 <p id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md0">The script must handle the following command-line arguments:<ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">--debug</span></code> Enable extra debugging output. Used with other commands. It is not required that the script support extra debugging, but it should not crash when this option is passed.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--print-options</span></code> Print the available options supported by the script, e.g. simulation parameters, etc. See below for more details.</p></li>
@@ -303,7 +324,7 @@ The QuantumInput extension provides a scriptable method for users to add custom 
 </p>
 </section>
 <section id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md1">
-<h2>Specifying parameters with &lt;tt&gt;–print-options&lt;/tt&gt;<a class="headerlink" href="#class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md1" title="Permalink to this headline">#</a></h2>
+<h2>Specifying parameters with &lt;tt&gt;–print-options&lt;/tt&gt;<a class="headerlink" href="#class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md1" title="Permalink to this heading">#</a></h2>
 <p id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md1">The format of the <code class="docutils literal notranslate"><span class="pre">--print-options</span></code> output must be a JSON object of the following form: <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="s2">&quot;userOptions&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="p">...</span><span class="w"></span>
@@ -325,9 +346,10 @@ The QuantumInput extension provides a scriptable method for users to add custom 
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
- The <code class="docutils literal notranslate"><span class="pre">userOptions</span></code> block contains a JSON object keyed with option names (e.g. “First option name”), which are used in the GUI to label simulation parameter settings. Various parameter types are supported:</p>
+</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">userOptions</span></code> block contains a JSON object keyed with option names (e.g. “First option name”), which are used in the GUI to label simulation parameter settings. Various parameter types are supported:</p>
 <section id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md2">
-<h3>Fixed Mutually-Exclusive Parameter Lists<a class="headerlink" href="#class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md2" title="Permalink to this headline">#</a></h3>
+<h3>Fixed Mutually-Exclusive Parameter Lists<a class="headerlink" href="#class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md2" title="Permalink to this heading">#</a></h3>
 <p id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md2">Parameters that have a fixed number of mutually-exclusive string values will be presented using a QComboBox. Such a parameter can be specified in the <code class="docutils literal notranslate"><span class="pre">userOptions</span></code> block as: <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="s2">&quot;userOptions&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="s2">&quot;Parameter Name&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -339,10 +361,11 @@ The QuantumInput extension provides a scriptable method for users to add custom 
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
- Here, <code class="docutils literal notranslate"><span class="pre">Parameter</span> <span class="pre">Name</span></code> is the label that will be displayed in the GUI as a label next to the combo box. The array of strings in <code class="docutils literal notranslate"><span class="pre">values</span></code> will be used as the available entries in the combo box in the order they are written. <code class="docutils literal notranslate"><span class="pre">default</span></code> is a zero-based index into the <code class="docutils literal notranslate"><span class="pre">values</span></code> array and indicates which value should be initially selected by default.</p>
+</p>
+<p>Here, <code class="docutils literal notranslate"><span class="pre">Parameter</span> <span class="pre">Name</span></code> is the label that will be displayed in the GUI as a label next to the combo box. The array of strings in <code class="docutils literal notranslate"><span class="pre">values</span></code> will be used as the available entries in the combo box in the order they are written. <code class="docutils literal notranslate"><span class="pre">default</span></code> is a zero-based index into the <code class="docutils literal notranslate"><span class="pre">values</span></code> array and indicates which value should be initially selected by default.</p>
 </section>
 <section id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md3">
-<h3>Short Free-Form Text Parameters<a class="headerlink" href="#class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md3" title="Permalink to this headline">#</a></h3>
+<h3>Short Free-Form Text Parameters<a class="headerlink" href="#class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md3" title="Permalink to this heading">#</a></h3>
 <p id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md3">A short text string can be requested (e.g. for the “title” of an optimization) via: <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="s2">&quot;userOptions&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="s2">&quot;Parameter Name&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -353,10 +376,11 @@ The QuantumInput extension provides a scriptable method for users to add custom 
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
- This will add a QLineEdit to the GUI, initialized with the text specified by <code class="docutils literal notranslate"><span class="pre">default</span></code>.</p>
+</p>
+<p>This will add a QLineEdit to the GUI, initialized with the text specified by <code class="docutils literal notranslate"><span class="pre">default</span></code>.</p>
 </section>
 <section id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md4">
-<h3>Existing files<a class="headerlink" href="#class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md4" title="Permalink to this headline">#</a></h3>
+<h3>Existing files<a class="headerlink" href="#class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md4" title="Permalink to this heading">#</a></h3>
 <p id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md4">An input generator can ask for the absolute path to an existing file using the following option block: <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="s2">&quot;userOptions&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="s2">&quot;Parameter Name&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -367,10 +391,11 @@ The QuantumInput extension provides a scriptable method for users to add custom 
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
- This will add an <a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_file_browse_widget.html#class_avogadro_1_1_qt_gui_1_1_file_browse_widget"><span class="std std-ref">Avogadro::QtGui::FileBrowseWidget</span></a> to the GUI, initialized to the file pointed to by default.</p>
+</p>
+<p>This will add an <a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_file_browse_widget.html#class_avogadro_1_1_qt_gui_1_1_file_browse_widget"><span class="std std-ref">Avogadro::QtGui::FileBrowseWidget</span></a> to the GUI, initialized to the file pointed to by default.</p>
 </section>
 <section id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md5">
-<h3>Clamped Integer Values<a class="headerlink" href="#class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md5" title="Permalink to this headline">#</a></h3>
+<h3>Clamped Integer Values<a class="headerlink" href="#class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md5" title="Permalink to this heading">#</a></h3>
 <p id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md5">Scripts may request integer values from a specified range by adding a user-option of the following form: <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="s2">&quot;userOptions&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="s2">&quot;Parameter Name&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -385,7 +410,8 @@ The QuantumInput extension provides a scriptable method for users to add custom 
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
- This block will result in a QSpinBox, configured as follows:<ul class="simple">
+</p>
+<p>This block will result in a QSpinBox, configured as follows:<ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">minimum</span></code> and <code class="docutils literal notranslate"><span class="pre">maximum</span></code> indicate the valid range of integers for the parameter.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">default</span></code> is the integer value that will be shown initially.</p></li>
 <li><p>(optional) <code class="docutils literal notranslate"><span class="pre">prefix</span></code> and <code class="docutils literal notranslate"><span class="pre">suffix</span></code> are used to insert text before or after the integer value in the spin box. This is handy for specifying units. Note that any prefix or suffix will be stripped out of the corresponding entry in the call to <code class="docutils literal notranslate"><span class="pre">--generate-input</span></code>, and just the raw integer value will be sent.</p></li>
@@ -393,7 +419,7 @@ The QuantumInput extension provides a scriptable method for users to add custom 
 </p>
 </section>
 <section id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md6">
-<h3>Boolean Parameters<a class="headerlink" href="#class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md6" title="Permalink to this headline">#</a></h3>
+<h3>Boolean Parameters<a class="headerlink" href="#class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md6" title="Permalink to this heading">#</a></h3>
 <p id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md6">If a simple on/off value is needed, a boolean type option can be requested: <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="s2">&quot;userOptions&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="s2">&quot;Parameter Name&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -404,15 +430,16 @@ The QuantumInput extension provides a scriptable method for users to add custom 
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
- This will result in a QCheckBox in the dynamically generated GUI, with the inital check state shown in <code class="docutils literal notranslate"><span class="pre">default</span></code>.</p>
+</p>
+<p>This will result in a QCheckBox in the dynamically generated GUI, with the inital check state shown in <code class="docutils literal notranslate"><span class="pre">default</span></code>.</p>
 </section>
 <section id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md7">
-<h3>Special Parameters<a class="headerlink" href="#class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md7" title="Permalink to this headline">#</a></h3>
+<h3>Special Parameters<a class="headerlink" href="#class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md7" title="Permalink to this heading">#</a></h3>
 <p id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md7">Some parameters are common to most calculation codes. If the following parameter names are found, they will be handled specially while creating the GUI. It is recommended to use the names below for these options to provide a consistent interface and ensure that MoleQueue job staging uses correct values where appropriate.</p>
 <p>| Option name | type | description | | :————-&amp;#8212;: | :—–&amp;#8212;: | :—————————————————————&amp;#8212; | | “Title” | string | Input file title comment, MoleQueue job description. | | “Filename Base” | string | Input file base name, e.g. “job” in “job.inp”. | | “Processor Cores” | integer | Number of cores to use. Will be passed to MoleQueue. | | “Calculation Type” | stringList | Type of calculation, e.g. “Single Point” or “Equilibrium Geometry”. | | “Theory” | stringList | Levels of QM theory, e.g. “RHF”, “B3LYP”, “MP2”, “CCSD”, etc. | | “Basis” | stringList | Available basis sets, e.g. “STO-3G”, “6-31G**”, etc. | | “Charge” | integer | Charge on the system. | | “Multiplicity” | integer | Spin multiplicity of the system. |</p>
 </section>
 <section id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md8">
-<h3>Syntax Highlighting<a class="headerlink" href="#class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md8" title="Permalink to this headline">#</a></h3>
+<h3>Syntax Highlighting<a class="headerlink" href="#class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md8" title="Permalink to this heading">#</a></h3>
 <p id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md8">Rules for syntax highlighting can be specified as a collection of regular expressions or wildcard patterns and text format specifications in the “highlightRules” array. The <code class="docutils literal notranslate"><span class="pre">highlightRules</span></code> format is: <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;highlightStyles&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
 <span class="w">  </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="s2">&quot;style&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Style 1&quot;</span><span class="p">,</span><span class="w"></span>
@@ -426,7 +453,8 @@ The QuantumInput extension provides a scriptable method for users to add custom 
 <span class="p">],</span><span class="w"></span>
 </pre></div>
 </div>
- The <code class="docutils literal notranslate"><span class="pre">style</span></code> name is unique to the style object, and used to associate a set of highlighting rules with particular output files. See the <code class="docutils literal notranslate"><span class="pre">--generate-input</span></code> documentation for more details.</p>
+</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">style</span></code> name is unique to the style object, and used to associate a set of highlighting rules with particular output files. See the <code class="docutils literal notranslate"><span class="pre">--generate-input</span></code> documentation for more details.</p>
 <p>The general form of a highlight rule is: <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="s2">&quot;patterns&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
 <span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s2">&quot;regexp&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;^Some regexp?$&quot;</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
@@ -484,13 +512,13 @@ The QuantumInput extension provides a scriptable method for users to add custom 
 <p>The input generator extension will apply the entries in the <code class="docutils literal notranslate"><span class="pre">highlightRules</span></code> object to the text in the order they appear. Thus, later rules will override the formatting of earlier rules should a conflict arise.</p>
 </section>
 <section id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md9">
-<h3>Requesting Full Structure of Current Molecule<a class="headerlink" href="#class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md9" title="Permalink to this headline">#</a></h3>
+<h3>Requesting Full Structure of Current Molecule<a class="headerlink" href="#class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md9" title="Permalink to this heading">#</a></h3>
 <p id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md9">The <code class="docutils literal notranslate"><span class="pre">inputMoleculeFormat</span></code> is optional, and can be used to request a representation of the current molecule’s geometry when <code class="docutils literal notranslate"><span class="pre">--generate-input</span></code> is called. The corresponding value indicates the format of the molecule that the script expects. If this value is omitted, no representation of the structure will be provided.</p>
 <p></p>
 </section>
 </section>
 <section id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md10">
-<h2>Handling User Selections: &lt;tt&gt;–generate-input&lt;/tt&gt;<a class="headerlink" href="#class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md10" title="Permalink to this headline">#</a></h2>
+<h2>Handling User Selections: &lt;tt&gt;–generate-input&lt;/tt&gt;<a class="headerlink" href="#class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md10" title="Permalink to this heading">#</a></h2>
 <p id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md10">When <code class="docutils literal notranslate"><span class="pre">--generate-input</span></code> is passed, the information needed to generate the input file will be written to the script’s standard input channel as JSON string of the following form: <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="s2">&quot;cjson&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{...},</span><span class="w"></span>
 <span class="w">  </span><span class="s2">&quot;options&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -501,7 +529,8 @@ The QuantumInput extension provides a scriptable method for users to add custom 
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
- The <code class="docutils literal notranslate"><span class="pre">cjson</span></code> entry will contain a Chemical JSON representation of the molecule if <code class="docutils literal notranslate"><span class="pre">inputMoleculeFormat</span></code> is set to “cjson” in the <code class="docutils literal notranslate"><span class="pre">--print-options</span></code> output. Similarly, a <code class="docutils literal notranslate"><span class="pre">cml</span></code> entry and CML string will exist if a Chemical Markup Language representation was requested. It will be omitted entirely if <code class="docutils literal notranslate"><span class="pre">inputMoleculeFormat</span></code> is not set. The <code class="docutils literal notranslate"><span class="pre">options</span></code> block contains key/value pairs for each of the options specified in the <code class="docutils literal notranslate"><span class="pre">userOptions</span></code> block of the <code class="docutils literal notranslate"><span class="pre">--print-options</span></code> output.</p>
+</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">cjson</span></code> entry will contain a Chemical JSON representation of the molecule if <code class="docutils literal notranslate"><span class="pre">inputMoleculeFormat</span></code> is set to “cjson” in the <code class="docutils literal notranslate"><span class="pre">--print-options</span></code> output. Similarly, a <code class="docutils literal notranslate"><span class="pre">cml</span></code> entry and CML string will exist if a Chemical Markup Language representation was requested. It will be omitted entirely if <code class="docutils literal notranslate"><span class="pre">inputMoleculeFormat</span></code> is not set. The <code class="docutils literal notranslate"><span class="pre">options</span></code> block contains key/value pairs for each of the options specified in the <code class="docutils literal notranslate"><span class="pre">userOptions</span></code> block of the <code class="docutils literal notranslate"><span class="pre">--print-options</span></code> output.</p>
 <p>If the script is called with <code class="docutils literal notranslate"><span class="pre">--generate-input</span></code>, it must write a JSON string to standard output with the following format: <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="s2">&quot;files&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
 <span class="w">    </span><span class="p">{</span><span class="w"></span>
@@ -520,18 +549,20 @@ The QuantumInput extension provides a scriptable method for users to add custom 
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
- The <code class="docutils literal notranslate"><span class="pre">files</span></code> block is an array of objects, which define the actual input files. The <code class="docutils literal notranslate"><span class="pre">filename</span></code> member provides the name of the file, and either <code class="docutils literal notranslate"><span class="pre">contents</span></code> or <code class="docutils literal notranslate"><span class="pre">filePath</span></code> provide the text that goes into the file. The <code class="docutils literal notranslate"><span class="pre">contents</span></code> string will be used as the file contents, and <code class="docutils literal notranslate"><span class="pre">filePath</span></code> should contain an absolute path to a file on the filesystem to read and use as the input file contents. The optional <code class="docutils literal notranslate"><span class="pre">highlightStyles</span></code> member is an array of strings describing any highlight styles to apply to the file (see <code class="docutils literal notranslate"><span class="pre">--print-options</span></code> documentation). Each string in this array must match a <code class="docutils literal notranslate"><span class="pre">style</span></code> description in a highlighting rule in the <code class="docutils literal notranslate"><span class="pre">--print-options</span></code> output. Zero or more highlighting styles may be applied to any file. The order of the files in the GUI will match the order of the files in the array, and the first file will be displayed first.</p>
+</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">files</span></code> block is an array of objects, which define the actual input files. The <code class="docutils literal notranslate"><span class="pre">filename</span></code> member provides the name of the file, and either <code class="docutils literal notranslate"><span class="pre">contents</span></code> or <code class="docutils literal notranslate"><span class="pre">filePath</span></code> provide the text that goes into the file. The <code class="docutils literal notranslate"><span class="pre">contents</span></code> string will be used as the file contents, and <code class="docutils literal notranslate"><span class="pre">filePath</span></code> should contain an absolute path to a file on the filesystem to read and use as the input file contents. The optional <code class="docutils literal notranslate"><span class="pre">highlightStyles</span></code> member is an array of strings describing any highlight styles to apply to the file (see <code class="docutils literal notranslate"><span class="pre">--print-options</span></code> documentation). Each string in this array must match a <code class="docutils literal notranslate"><span class="pre">style</span></code> description in a highlighting rule in the <code class="docutils literal notranslate"><span class="pre">--print-options</span></code> output. Zero or more highlighting styles may be applied to any file. The order of the files in the GUI will match the order of the files in the array, and the first file will be displayed first.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">warnings</span></code><p>member provides an array of strings that describe non-fatal warnings to be shown to the users. This is useful for describing the resolution of conflicting options, e.g. “Ignoring basis set for</p>
 <p>semi-empirical calculation.”. This member is optional and should be omitted if no warnings are present.</p>
 </p>
 <p>The <code class="docutils literal notranslate"><span class="pre">mainFile</span></code> member points to the primary input file for a calculation. This is the file that will be used as a command line argument when executing the simulation code (if applicable), and used by MoleQueue to set the <code class="docutils literal notranslate"><span class="pre">$$inputFileName$$</span></code> and <code class="docutils literal notranslate"><span class="pre">$$inputFileBaseName$$</span></code> input template keywords. This is optional; if present, the filename must exist in the <code class="docutils literal notranslate"><span class="pre">files</span></code> array. If absent and only one file is specified in <code class="docutils literal notranslate"><span class="pre">files</span></code>, the single input file will be used. Otherwise, the main file will be left unspecified.</p>
 </section>
 <section id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md11">
-<h2>Automatic Generation of Geometry<a class="headerlink" href="#class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md11" title="Permalink to this headline">#</a></h2>
+<h2>Automatic Generation of Geometry<a class="headerlink" href="#class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md11" title="Permalink to this heading">#</a></h2>
 <p id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md11">The generation of molecular geometry descriptions may be skipped in the script and deferred to the <a class="reference internal" href="#class_avogadro_1_1_mole_queue_1_1_input_generator"><span class="std std-ref">InputGenerator</span></a> class by use of a special keyword. The “contents” string may contain a keyword of the form <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$$coords:[coordSpec]$$
 </pre></div>
 </div>
- where <code class="docutils literal notranslate"><span class="pre">[coordSpec]</span></code> is a sequence of characters. The characters in <code class="docutils literal notranslate"><span class="pre">[coordSpec]</span></code> indicate the information needed about each atom in the coordinate block. See the CoordinateBlockGenerator documentation for a list of recognized characters.</p>
+</p>
+<p>where <code class="docutils literal notranslate"><span class="pre">[coordSpec]</span></code> is a sequence of characters. The characters in <code class="docutils literal notranslate"><span class="pre">[coordSpec]</span></code> indicate the information needed about each atom in the coordinate block. See the CoordinateBlockGenerator documentation for a list of recognized characters.</p>
 <p>Other keywords that can be used in the input files are:<ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">$$atomCount$$</span></code>: Number of atoms in the molecule.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">$$bondCount$$</span></code>: Number of bonds in the molecule.</p></li>
@@ -539,11 +570,11 @@ The QuantumInput extension provides a scriptable method for users to add custom 
 </p>
 </section>
 <section id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md12">
-<h2>Error Handling<a class="headerlink" href="#class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md12" title="Permalink to this headline">#</a></h2>
+<h2>Error Handling<a class="headerlink" href="#class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md12" title="Permalink to this heading">#</a></h2>
 <p id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md12">In general, these scripts should be written robustly so that they will not fail under normal circumstances. However, if for some reason an error occurs that must be reported to the user, simply write the error message to standard output as plain text (i.e. not JSON), and it will be shown to the user.</p>
 </section>
 <section id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md13">
-<h2>Debugging<a class="headerlink" href="#class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md13" title="Permalink to this headline">#</a></h2>
+<h2>Debugging<a class="headerlink" href="#class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md13" title="Permalink to this heading">#</a></h2>
 <p id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md13">Debugging may be enabled by defining AVO_QM_INPUT_DEBUG in the process’s environment. This will cause the <code class="docutils literal notranslate"><span class="pre">debug</span></code> option to be passed in all calls to generator scripts, and will print extra information to the qDebug() stream from within avogadro. The script is free to handle the debug flag as the author wishes. </p>
 </section>
 <div class="admonition note">
@@ -557,7 +588,7 @@ The QuantumInput extension provides a scriptable method for users to add custom 
 <span id="_CPPv3N8Avogadro9MoleQueue14InputGenerator14InputGeneratorERK7QStringP7QObject"></span><span id="_CPPv2N8Avogadro9MoleQueue14InputGenerator14InputGeneratorERK7QStringP7QObject"></span><span id="Avogadro::MoleQueue::InputGenerator::InputGenerator__QStringCR.QObjectP"></span><span class="target" id="class_avogadro_1_1_mole_queue_1_1_input_generator_1afd952d8d7ec60a006aff05224196cbe0"></span><span class="k"><span class="pre">explicit</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">InputGenerator</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">scriptFilePath_</span></span>, <span class="n"><span class="pre">QObject</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">parent_</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">nullptr</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9MoleQueue14InputGenerator14InputGeneratorERK7QStringP7QObject" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Constructor </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>scriptFilePath_</strong> – Absolute path to generator script. </p>
 </dd>
 </dl>
@@ -577,7 +608,7 @@ The QuantumInput extension provides a scriptable method for users to add custom 
 <dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9MoleQueue14InputGenerator5debugEv">
 <span id="_CPPv3NK8Avogadro9MoleQueue14InputGenerator5debugEv"></span><span id="_CPPv2NK8Avogadro9MoleQueue14InputGenerator5debugEv"></span><span id="Avogadro::MoleQueue::InputGenerator::debugC"></span><span class="target" id="class_avogadro_1_1_mole_queue_1_1_input_generator_1a1d829a8cc5502cefd6713febc645035a"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">debug</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9MoleQueue14InputGenerator5debugEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>True if debugging is enabled. </p>
 </dd>
 </dl>
@@ -587,7 +618,7 @@ The QuantumInput extension provides a scriptable method for users to add custom 
 <dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9MoleQueue14InputGenerator7isValidEv">
 <span id="_CPPv3NK8Avogadro9MoleQueue14InputGenerator7isValidEv"></span><span id="_CPPv2NK8Avogadro9MoleQueue14InputGenerator7isValidEv"></span><span id="Avogadro::MoleQueue::InputGenerator::isValidC"></span><span class="target" id="class_avogadro_1_1_mole_queue_1_1_input_generator_1a5bc2a781be2586924afce4e4a4ea6697"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isValid</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9MoleQueue14InputGenerator7isValidEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>True if the generator is configured with a valid script. </p>
 </dd>
 </dl>
@@ -625,7 +656,7 @@ The QuantumInput extension provides a scriptable method for users to add custom 
 <dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9MoleQueue14InputGenerator14scriptFilePathEv">
 <span id="_CPPv3NK8Avogadro9MoleQueue14InputGenerator14scriptFilePathEv"></span><span id="_CPPv2NK8Avogadro9MoleQueue14InputGenerator14scriptFilePathEv"></span><span id="Avogadro::MoleQueue::InputGenerator::scriptFilePathC"></span><span class="target" id="class_avogadro_1_1_mole_queue_1_1_input_generator_1a2d90664e0dda3c954b7d3350aa94749b"></span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">scriptFilePath</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9MoleQueue14InputGenerator14scriptFilePathEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The path to the generator file. </p>
 </dd>
 </dl>
@@ -653,7 +684,7 @@ The QuantumInput extension provides a scriptable method for users to add custom 
 <p>If an error occurs, the error string will be set. Call <a class="reference internal" href="#class_avogadro_1_1_mole_queue_1_1_input_generator_1ab992cfc3a5b4e04ec9d8057d614a572c"><span class="std std-ref">hasErrors()</span></a> to check for success, and errorString() or <a class="reference internal" href="#class_avogadro_1_1_mole_queue_1_1_input_generator_1a08fb2df150486aca94c773f609f56df6"><span class="std std-ref">errorList()</span></a> to get a user-friendly description of the error. </p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>true on success and false on failure. </p>
 </dd>
 </dl>
@@ -667,7 +698,7 @@ The QuantumInput extension provides a scriptable method for users to add custom 
 <p>This function is only valid after a successful call to <a class="reference internal" href="#class_avogadro_1_1_mole_queue_1_1_input_generator_1a86e46659fa691eef7148cfa24f1c6cb8"><span class="std std-ref">generateInput()</span></a>. </p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The number of input files stored by <a class="reference internal" href="#class_avogadro_1_1_mole_queue_1_1_input_generator_1a86e46659fa691eef7148cfa24f1c6cb8"><span class="std std-ref">generateInput()</span></a>. </p>
 </dd>
 </dl>
@@ -681,7 +712,7 @@ The QuantumInput extension provides a scriptable method for users to add custom 
 <p>This function is only valid after a successful call to <a class="reference internal" href="#class_avogadro_1_1_mole_queue_1_1_input_generator_1a86e46659fa691eef7148cfa24f1c6cb8"><span class="std std-ref">generateInput()</span></a>. </p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>A list of filenames created by <a class="reference internal" href="#class_avogadro_1_1_mole_queue_1_1_input_generator_1a86e46659fa691eef7148cfa24f1c6cb8"><span class="std std-ref">generateInput()</span></a>. </p>
 </dd>
 </dl>
@@ -695,7 +726,7 @@ The QuantumInput extension provides a scriptable method for users to add custom 
 <p>This function is only valid after a successful call to <a class="reference internal" href="#class_avogadro_1_1_mole_queue_1_1_input_generator_1a86e46659fa691eef7148cfa24f1c6cb8"><span class="std std-ref">generateInput()</span></a>. </p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The “main” input file of the collection. This is the input file used by MoleQueue to determine the $$inputFileName$$ and $$inputFileBaseName$$ keywords. </p>
 </dd>
 </dl>
@@ -710,7 +741,7 @@ The QuantumInput extension provides a scriptable method for users to add custom 
 </div>
 </p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>A file contents corresponding to <code class="docutils literal notranslate"><span class="pre">fileName</span></code>. Must call <a class="reference internal" href="#class_avogadro_1_1_mole_queue_1_1_input_generator_1a86e46659fa691eef7148cfa24f1c6cb8"><span class="std std-ref">generateInput()</span></a> first. </p>
 </dd>
 </dl>
@@ -725,7 +756,7 @@ The QuantumInput extension provides a scriptable method for users to add custom 
 </div>
 </p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>A syntax highlighter for the file <em>fileName</em>. Must call <a class="reference internal" href="#class_avogadro_1_1_mole_queue_1_1_input_generator_1a86e46659fa691eef7148cfa24f1c6cb8"><span class="std std-ref">generateInput()</span></a> first. The caller takes ownership of the returned object. If no syntax highlighter is defined, this function returns nullptr. </p>
 </dd>
 </dl>
@@ -735,7 +766,7 @@ The QuantumInput extension provides a scriptable method for users to add custom 
 <dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9MoleQueue14InputGenerator9hasErrorsEv">
 <span id="_CPPv3NK8Avogadro9MoleQueue14InputGenerator9hasErrorsEv"></span><span id="_CPPv2NK8Avogadro9MoleQueue14InputGenerator9hasErrorsEv"></span><span id="Avogadro::MoleQueue::InputGenerator::hasErrorsC"></span><span class="target" id="class_avogadro_1_1_mole_queue_1_1_input_generator_1ab992cfc3a5b4e04ec9d8057d614a572c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">hasErrors</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9MoleQueue14InputGenerator9hasErrorsEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>True if an error is set. </p>
 </dd>
 </dl>
@@ -751,7 +782,7 @@ The QuantumInput extension provides a scriptable method for users to add custom 
 <dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9MoleQueue14InputGenerator9errorListEv">
 <span id="_CPPv3NK8Avogadro9MoleQueue14InputGenerator9errorListEv"></span><span id="_CPPv2NK8Avogadro9MoleQueue14InputGenerator9errorListEv"></span><span id="Avogadro::MoleQueue::InputGenerator::errorListC"></span><span class="target" id="class_avogadro_1_1_mole_queue_1_1_input_generator_1a08fb2df150486aca94c773f609f56df6"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">QStringList</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">errorList</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9MoleQueue14InputGenerator9errorListEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>A QStringList containing all errors that occurred in the last call to the input generator script. </p>
 </dd>
 </dl>
@@ -761,7 +792,7 @@ The QuantumInput extension provides a scriptable method for users to add custom 
 <dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9MoleQueue14InputGenerator11warningListEv">
 <span id="_CPPv3NK8Avogadro9MoleQueue14InputGenerator11warningListEv"></span><span id="_CPPv2NK8Avogadro9MoleQueue14InputGenerator11warningListEv"></span><span id="Avogadro::MoleQueue::InputGenerator::warningListC"></span><span class="target" id="class_avogadro_1_1_mole_queue_1_1_input_generator_1a2ab972a65a9b09cc91e19057e3f95b36"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">QStringList</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">warningList</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9MoleQueue14InputGenerator11warningListEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>A QStringList containing all warnings returned by the input generator script in the last call to generateInput. These are script-specific warnings. </p>
 </dd>
 </dl>
@@ -782,53 +813,55 @@ The QuantumInput extension provides a scriptable method for users to add custom 
 </section>
 
 
-              </div>
+              </article>
               
-              
-              <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="class_avogadro_1_1_mole_queue_1_1_batch_job.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Class Avogadro::MoleQueue::BatchJob</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="class_avogadro_1_1_mole_queue_1_1_input_generator_dialog.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Class Avogadro::MoleQueue::InputGeneratorDialog</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-              
-          </main>
-          
 
+              
+              <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="class_avogadro_1_1_mole_queue_1_1_batch_job.html" title="previous page">
+      <i class="fas fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">Class Avogadro::MoleQueue::BatchJob</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="class_avogadro_1_1_mole_queue_1_1_input_generator_dialog.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">Class Avogadro::MoleQueue::InputGeneratorDialog</p>
+  </div>
+  <i class="fas fa-angle-right"></i>
+  </a>
+</div>
+              </footer>
+              
+          </div>
+          
       </div>
     </div>
+
+  
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-<footer class="container-fluid footer-copy">
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
 
-    <div class="container">
-
-      <div class="row">
-        <div class="col-md-10 py-2">
-          <p>
-            ©2022 The OpenChemistry / Avogadro Teams. The website content uses the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/LICENSE">BSD License</a> and is covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
-          </p>
-        </div>
-        <br />
-        <div class="col-md-2 py-2">
-          <a class="btn btn-primary" href="https://opencollective.com/open-chemistry">Donate</a>
-        </div>
-      </div>
-
-    </div>
-
-  </footer>
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
+    &copy; Copyright ©2022 The OpenChemistry / Avogadro Teams..<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.2.<br>
+</p>
+  </div>
+  
+</div>
+</footer>
   </body>
 </html>

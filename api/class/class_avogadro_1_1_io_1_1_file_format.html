@@ -1,18 +1,22 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Class Avogadro::Io::FileFormat &#8212; Avogadro 1.97.0 documentation</title>
-    
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
 
-    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
   <link rel="stylesheet"
     href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
@@ -21,50 +25,60 @@
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
     <link rel="canonical" href="https://two.avogadro.cc/api/class/class_avogadro_1_1_io_1_1_file_format.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Class Avogadro::Io::FileFormatManager" href="class_avogadro_1_1_io_1_1_file_format_manager.html" />
     <link rel="prev" title="Class Avogadro::Io::DcdFormat" href="class_avogadro_1_1_io_1_1_dcd_format.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="en">
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+    <div class="bd-header-announcement container-fluid" id="banner">
+      
+
+    </div>
 
     
-    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
 
   <div id="navbar-start">
     
     
+  
 
-<a class="navbar-brand" href="../../index.html">
-  <img src="../../_static/avogadro2.png" class="logo" alt="logo">
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+    <img src="../../_static/avogadro2.png" class="logo__image only-light" alt="Logo image">
+    <img src="../../_static/avogadro2.png" class="logo__image only-dark" alt="Logo image">
+  
+  
 </a>
-
-
     
   </div>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+    <span class="fas fa-bars"></span>
   </button>
 
   
@@ -110,6 +124,14 @@
     <div id="navbar-end">
       
       <div class="navbar-end-item">
+        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
           <a class="nav-link" href="https://github.com/openchemistry/avogadrolibs" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
@@ -128,13 +150,13 @@
     </nav>
     
 
-    <div class="container-xl">
-      <div class="row">
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
           
-            
-            <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar">
-              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
+  <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
@@ -323,53 +345,52 @@
 
   </div>
 </nav>
-              </div>
-              <div class="sidebar-end-items">
-              </div>
-            </div>
-            
-          
+  </div>
+  <div class="sidebar-end-items">
+  </div>
+</div>
+
 
           
-          <div class="d-none d-xl-block col-xl-2 bd-toc">
-            
-              
-              <div class="toc-item">
-                
+
+
+<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
+  
+    
+    <div class="toc-item">
+      
 
 <nav id="bd-toc-nav">
     
 </nav>
-              </div>
-              
-              <div class="toc-item">
-                
+    </div>
+    
+    <div class="toc-item">
+      
 
 <div class="tocsection editthispage">
-    <a href="https://github.com/openchemistry/avogadrolibs/edit/master/docs/api/class/class_avogadro_1_1_io_1_1_file_format.rst">
+    <a href="https://github.com/avogadro/two.avogadro.cc/edit/main/source/api/class/class_avogadro_1_1_io_1_1_file_format.rst">
         <i class="fas fa-pencil-alt"></i> Edit this page
     </a>
 </div>
 
-              </div>
-              
-            
-          </div>
-          
+    </div>
+    
+  
+</div>
+
 
           
           
-            
-          
-          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+          <div class="bd-content col-12 col-md-9 col-xl-7">
               
-              <div>
+              <article class="bd-article" role="main">
                 
   <section id="class-avogadro-io-fileformat">
-<h1>Class Avogadro::Io::FileFormat<a class="headerlink" href="#class-avogadro-io-fileformat" title="Permalink to this headline">#</a></h1>
+<h1>Class Avogadro::Io::FileFormat<a class="headerlink" href="#class-avogadro-io-fileformat" title="Permalink to this heading">#</a></h1>
 <dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv4N8Avogadro2Io10FileFormatE">
-<span id="_CPPv3N8Avogadro2Io10FileFormatE"></span><span id="_CPPv2N8Avogadro2Io10FileFormatE"></span><span id="Avogadro::Io::FileFormat"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">Avogadro</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Io</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">FileFormat</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro2Io10FileFormatE" title="Permalink to this definition">#</a><br /></dt>
+<span id="_CPPv3N8Avogadro2Io10FileFormatE"></span><span id="_CPPv2N8Avogadro2Io10FileFormatE"></span><span id="Avogadro::Io::FileFormat"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">FileFormat</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro2Io10FileFormatE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>General API for file formats. </p>
 <p>
 This serves as the common base class for chemical file formats. Classes deriving from this one override the read and write virtual methods and operate on the given streams. Several other signatures are available for convenience. If there is an error reading or writing a file the string returned by <a class="reference internal" href="#class_avogadro_1_1_io_1_1_file_format_1ab0ca267c415968ee3bc1c6b144dcbf56"><span class="std std-ref">error()</span></a> will give more details. <dl class="simple">
@@ -377,7 +398,7 @@ This serves as the common base class for chemical file formats. Classes deriving
 </dd>
 </dl>
 </p>
-<p>Subclassed by <a class="reference internal" href="class_avogadro_1_1_io_1_1_cjson_format.html#class_avogadro_1_1_io_1_1_cjson_format"><span class="std std-ref">CjsonFormat</span></a>, <a class="reference internal" href="class_avogadro_1_1_io_1_1_cml_format.html#class_avogadro_1_1_io_1_1_cml_format"><span class="std std-ref">CmlFormat</span></a>, <a class="reference internal" href="class_avogadro_1_1_io_1_1_dcd_format.html#class_avogadro_1_1_io_1_1_dcd_format"><span class="std std-ref">DcdFormat</span></a>, <a class="reference internal" href="class_avogadro_1_1_io_1_1_gromacs_format.html#class_avogadro_1_1_io_1_1_gromacs_format"><span class="std std-ref">GromacsFormat</span></a>, <a class="reference internal" href="class_avogadro_1_1_io_1_1_lammps_data_format.html#class_avogadro_1_1_io_1_1_lammps_data_format"><span class="std std-ref">LammpsDataFormat</span></a>, <a class="reference internal" href="class_avogadro_1_1_io_1_1_lammps_trajectory_format.html#class_avogadro_1_1_io_1_1_lammps_trajectory_format"><span class="std std-ref">LammpsTrajectoryFormat</span></a>, <a class="reference internal" href="class_avogadro_1_1_io_1_1_m_m_t_f_format.html#class_avogadro_1_1_io_1_1_m_m_t_f_format"><span class="std std-ref">MMTFFormat</span></a>, <a class="reference internal" href="class_avogadro_1_1_io_1_1_mdl_format.html#class_avogadro_1_1_io_1_1_mdl_format"><span class="std std-ref">MdlFormat</span></a>, <a class="reference internal" href="class_avogadro_1_1_io_1_1_outcar_format.html#class_avogadro_1_1_io_1_1_outcar_format"><span class="std std-ref">OutcarFormat</span></a>, <a class="reference internal" href="class_avogadro_1_1_io_1_1_pdb_format.html#class_avogadro_1_1_io_1_1_pdb_format"><span class="std std-ref">PdbFormat</span></a>, <a class="reference internal" href="class_avogadro_1_1_io_1_1_poscar_format.html#class_avogadro_1_1_io_1_1_poscar_format"><span class="std std-ref">PoscarFormat</span></a>, <a class="reference internal" href="class_avogadro_1_1_io_1_1_trr_format.html#class_avogadro_1_1_io_1_1_trr_format"><span class="std std-ref">TrrFormat</span></a>, <a class="reference internal" href="class_avogadro_1_1_io_1_1_xyz_format.html#class_avogadro_1_1_io_1_1_xyz_format"><span class="std std-ref">XyzFormat</span></a>, <a class="reference internal" href="class_avogadro_1_1_quantum_i_o_1_1_g_a_m_e_s_s_u_s_output.html#class_avogadro_1_1_quantum_i_o_1_1_g_a_m_e_s_s_u_s_output"><span class="std std-ref">GAMESSUSOutput</span></a>, <a class="reference internal" href="class_avogadro_1_1_quantum_i_o_1_1_gaussian_cube.html#class_avogadro_1_1_quantum_i_o_1_1_gaussian_cube"><span class="std std-ref">GaussianCube</span></a>, <a class="reference internal" href="class_avogadro_1_1_quantum_i_o_1_1_gaussian_fchk.html#class_avogadro_1_1_quantum_i_o_1_1_gaussian_fchk"><span class="std std-ref">GaussianFchk</span></a>, <a class="reference internal" href="class_avogadro_1_1_quantum_i_o_1_1_molden_file.html#class_avogadro_1_1_quantum_i_o_1_1_molden_file"><span class="std std-ref">MoldenFile</span></a>, <a class="reference internal" href="class_avogadro_1_1_quantum_i_o_1_1_mopac_aux.html#class_avogadro_1_1_quantum_i_o_1_1_mopac_aux"><span class="std std-ref">MopacAux</span></a>, <a class="reference internal" href="class_avogadro_1_1_quantum_i_o_1_1_n_w_chem_json.html#class_avogadro_1_1_quantum_i_o_1_1_n_w_chem_json"><span class="std std-ref">NWChemJson</span></a>, <a class="reference internal" href="class_avogadro_1_1_quantum_i_o_1_1_n_w_chem_log.html#class_avogadro_1_1_quantum_i_o_1_1_n_w_chem_log"><span class="std std-ref">NWChemLog</span></a></p>
+<p>Subclassed by <a class="reference internal" href="class_avogadro_1_1_io_1_1_cjson_format.html#class_avogadro_1_1_io_1_1_cjson_format"><span class="std std-ref">CjsonFormat</span></a>, <a class="reference internal" href="class_avogadro_1_1_io_1_1_cml_format.html#class_avogadro_1_1_io_1_1_cml_format"><span class="std std-ref">CmlFormat</span></a>, <a class="reference internal" href="class_avogadro_1_1_io_1_1_dcd_format.html#class_avogadro_1_1_io_1_1_dcd_format"><span class="std std-ref">DcdFormat</span></a>, <a class="reference internal" href="class_avogadro_1_1_io_1_1_gromacs_format.html#class_avogadro_1_1_io_1_1_gromacs_format"><span class="std std-ref">GromacsFormat</span></a>, <a class="reference internal" href="class_avogadro_1_1_io_1_1_lammps_data_format.html#class_avogadro_1_1_io_1_1_lammps_data_format"><span class="std std-ref">LammpsDataFormat</span></a>, <a class="reference internal" href="class_avogadro_1_1_io_1_1_lammps_trajectory_format.html#class_avogadro_1_1_io_1_1_lammps_trajectory_format"><span class="std std-ref">LammpsTrajectoryFormat</span></a>, <a class="reference internal" href="class_avogadro_1_1_io_1_1_mdl_format.html#class_avogadro_1_1_io_1_1_mdl_format"><span class="std std-ref">MdlFormat</span></a>, <a class="reference internal" href="class_avogadro_1_1_io_1_1_m_m_t_f_format.html#class_avogadro_1_1_io_1_1_m_m_t_f_format"><span class="std std-ref">MMTFFormat</span></a>, <a class="reference internal" href="class_avogadro_1_1_io_1_1_outcar_format.html#class_avogadro_1_1_io_1_1_outcar_format"><span class="std std-ref">OutcarFormat</span></a>, <a class="reference internal" href="class_avogadro_1_1_io_1_1_pdb_format.html#class_avogadro_1_1_io_1_1_pdb_format"><span class="std std-ref">PdbFormat</span></a>, <a class="reference internal" href="class_avogadro_1_1_io_1_1_poscar_format.html#class_avogadro_1_1_io_1_1_poscar_format"><span class="std std-ref">PoscarFormat</span></a>, <a class="reference internal" href="class_avogadro_1_1_io_1_1_trr_format.html#class_avogadro_1_1_io_1_1_trr_format"><span class="std std-ref">TrrFormat</span></a>, TurbomoleFormat, <a class="reference internal" href="class_avogadro_1_1_io_1_1_xyz_format.html#class_avogadro_1_1_io_1_1_xyz_format"><span class="std std-ref">XyzFormat</span></a>, <a class="reference internal" href="class_avogadro_1_1_quantum_i_o_1_1_g_a_m_e_s_s_u_s_output.html#class_avogadro_1_1_quantum_i_o_1_1_g_a_m_e_s_s_u_s_output"><span class="std std-ref">GAMESSUSOutput</span></a>, <a class="reference internal" href="class_avogadro_1_1_quantum_i_o_1_1_gaussian_cube.html#class_avogadro_1_1_quantum_i_o_1_1_gaussian_cube"><span class="std std-ref">GaussianCube</span></a>, <a class="reference internal" href="class_avogadro_1_1_quantum_i_o_1_1_gaussian_fchk.html#class_avogadro_1_1_quantum_i_o_1_1_gaussian_fchk"><span class="std std-ref">GaussianFchk</span></a>, <a class="reference internal" href="class_avogadro_1_1_quantum_i_o_1_1_molden_file.html#class_avogadro_1_1_quantum_i_o_1_1_molden_file"><span class="std std-ref">MoldenFile</span></a>, <a class="reference internal" href="class_avogadro_1_1_quantum_i_o_1_1_mopac_aux.html#class_avogadro_1_1_quantum_i_o_1_1_mopac_aux"><span class="std std-ref">MopacAux</span></a>, <a class="reference internal" href="class_avogadro_1_1_quantum_i_o_1_1_n_w_chem_json.html#class_avogadro_1_1_quantum_i_o_1_1_n_w_chem_json"><span class="std std-ref">NWChemJson</span></a>, <a class="reference internal" href="class_avogadro_1_1_quantum_i_o_1_1_n_w_chem_log.html#class_avogadro_1_1_quantum_i_o_1_1_n_w_chem_log"><span class="std std-ref">NWChemLog</span></a></p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-types">Public Types</p>
 <dl class="cpp enum">
@@ -454,7 +475,7 @@ This serves as the common base class for chemical file formats. Classes deriving
 <dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro2Io10FileFormat19supportedOperationsEv">
 <span id="_CPPv3NK8Avogadro2Io10FileFormat19supportedOperationsEv"></span><span id="_CPPv2NK8Avogadro2Io10FileFormat19supportedOperationsEv"></span><span id="Avogadro::Io::FileFormat::supportedOperationsC"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_1a3efc2331183102c0cd0bdd239af3350e"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro2Io10FileFormat10OperationsE" title="Avogadro::Io::FileFormat::Operations"><span class="n"><span class="pre">Operations</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">supportedOperations</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro2Io10FileFormat19supportedOperationsEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Operation flags defining the capabilities of this format. </p>
 </dd>
 </dl>
@@ -465,7 +486,7 @@ This serves as the common base class for chemical file formats. Classes deriving
 <span id="_CPPv3N8Avogadro2Io10FileFormat4openERKNSt6stringE9Operation"></span><span id="_CPPv2N8Avogadro2Io10FileFormat4openERKNSt6stringE9Operation"></span><span id="Avogadro::Io::FileFormat::open__ssCR.Operation"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_1a0f3246d164bfff936450d60256a9f1fc"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">open</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">fileName</span></span>, <a class="reference internal" href="#_CPPv4N8Avogadro2Io10FileFormat9OperationE" title="Avogadro::Io::FileFormat::Operation"><span class="n"><span class="pre">Operation</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">mode</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro2Io10FileFormat4openERKNSt6stringE9Operation" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Open the specified file in Read or Write mode. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>True on success, false on failure. </p>
 </dd>
 </dl>
@@ -476,7 +497,7 @@ This serves as the common base class for chemical file formats. Classes deriving
 <span id="_CPPv3N8Avogadro2Io10FileFormat4modeEv"></span><span id="_CPPv2N8Avogadro2Io10FileFormat4modeEv"></span><span id="Avogadro::Io::FileFormat::mode"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_1a99b194cb7cb41b8dd7c8d79ebb68e743"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro2Io10FileFormat9OperationE" title="Avogadro::Io::FileFormat::Operation"><span class="n"><span class="pre">Operation</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">mode</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro2Io10FileFormat4modeEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>The mode the format is currently operating in. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The mode the format is in. </p>
 </dd>
 </dl>
@@ -487,10 +508,10 @@ This serves as the common base class for chemical file formats. Classes deriving
 <span id="_CPPv3N8Avogadro2Io10FileFormat6isModeE9Operation"></span><span id="_CPPv2N8Avogadro2Io10FileFormat6isModeE9Operation"></span><span id="Avogadro::Io::FileFormat::isMode__Operation"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_1a5ef09a8719d5f2c77f81175f8f9a4fdf"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isMode</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N8Avogadro2Io10FileFormat9OperationE" title="Avogadro::Io::FileFormat::Operation"><span class="n"><span class="pre">Operation</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">isInMode</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro2Io10FileFormat6isModeE9Operation" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Check if the supplied mode(s) is being used. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>isInMode</strong> – The mode(s) to test against </p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>True if the format is currently in the supplied mode(s). </p>
 </dd>
 </dl>
@@ -507,10 +528,10 @@ This serves as the common base class for chemical file formats. Classes deriving
 <span id="_CPPv3N8Avogadro2Io10FileFormat12readMoleculeERN4Core8MoleculeE"></span><span id="_CPPv2N8Avogadro2Io10FileFormat12readMoleculeERN4Core8MoleculeE"></span><span id="Avogadro::Io::FileFormat::readMolecule__Core::MoleculeR"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_1abdd3c269a7b2e27c63fc01cb2f4649a3"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">readMolecule</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">molecule</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro2Io10FileFormat12readMoleculeERN4Core8MoleculeE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Read in a molecule, if there are no molecules to read molecule will be empty. This can be used to read in one or more molecules from a given file using repeated calls for each molecule. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>molecule</strong> – The molecule the data will be read into. </p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>True on success, false on failure. </p>
 </dd>
 </dl>
@@ -521,10 +542,10 @@ This serves as the common base class for chemical file formats. Classes deriving
 <span id="_CPPv3N8Avogadro2Io10FileFormat13writeMoleculeERKN4Core8MoleculeE"></span><span id="_CPPv2N8Avogadro2Io10FileFormat13writeMoleculeERKN4Core8MoleculeE"></span><span id="Avogadro::Io::FileFormat::writeMolecule__Core::MoleculeCR"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_1acfafac04289f30a10717f766d588f5be"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">writeMolecule</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">molecule</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro2Io10FileFormat13writeMoleculeERKN4Core8MoleculeE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Write out a molecule. This can be used to write one or more molecules to a given file using repeated calls for each molecule. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>molecule</strong> – The molecule the data will be written from. </p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>True on success, false on failure. </p>
 </dd>
 </dl>
@@ -535,13 +556,13 @@ This serves as the common base class for chemical file formats. Classes deriving
 <span id="_CPPv3N8Avogadro2Io10FileFormat4readERNSt7istreamERN4Core8MoleculeE"></span><span id="_CPPv2N8Avogadro2Io10FileFormat4readERNSt7istreamERN4Core8MoleculeE"></span><span id="Avogadro::Io::FileFormat::read__isR.Core::MoleculeR"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_1a21c0215d7af5b1795528785c8dd92276"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">read</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">istream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">in</span></span>, <span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">molecule</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N8Avogadro2Io10FileFormat4readERNSt7istreamERN4Core8MoleculeE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Read the given <code class="docutils literal notranslate"><span class="pre">in</span></code> stream and load it into <code class="docutils literal notranslate"><span class="pre">molecule</span></code>. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>in</strong> – The input file stream. </p></li>
 <li><p><strong>molecule</strong> – The molecule the data will be read into. </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>True on success, false on failure. </p>
 </dd>
 </dl>
@@ -552,13 +573,13 @@ This serves as the common base class for chemical file formats. Classes deriving
 <span id="_CPPv3N8Avogadro2Io10FileFormat5writeERNSt7ostreamERKN4Core8MoleculeE"></span><span id="_CPPv2N8Avogadro2Io10FileFormat5writeERNSt7ostreamERKN4Core8MoleculeE"></span><span id="Avogadro::Io::FileFormat::write__osR.Core::MoleculeCR"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_1a6efcd7835af14f11742cc3be7603eff3"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">write</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ostream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">out</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">molecule</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N8Avogadro2Io10FileFormat5writeERNSt7ostreamERKN4Core8MoleculeE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Write to the given <code class="docutils literal notranslate"><span class="pre">out</span></code> stream the contents of <code class="docutils literal notranslate"><span class="pre">molecule</span></code>. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>out</strong> – The output stream to write the data to. </p></li>
 <li><p><strong>molecule</strong> – The contents of this molecule will be written to output. </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>True on success, false on failure. </p>
 </dd>
 </dl>
@@ -569,13 +590,13 @@ This serves as the common base class for chemical file formats. Classes deriving
 <span id="_CPPv3N8Avogadro2Io10FileFormat8readFileERKNSt6stringERN4Core8MoleculeE"></span><span id="_CPPv2N8Avogadro2Io10FileFormat8readFileERKNSt6stringERN4Core8MoleculeE"></span><span id="Avogadro::Io::FileFormat::readFile__ssCR.Core::MoleculeR"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_1a6aeb0e7be9ee0fca173705ed4b38c439"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">readFile</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">fileName</span></span>, <span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">molecule</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro2Io10FileFormat8readFileERKNSt6stringERN4Core8MoleculeE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Read the given <code class="docutils literal notranslate"><span class="pre">fileName</span></code> and load it into <code class="docutils literal notranslate"><span class="pre">molecule</span></code>. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>fileName</strong> – The full path to the file to be read in. </p></li>
 <li><p><strong>molecule</strong> – The molecule the data will be read into. </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>True on success, false on failure. </p>
 </dd>
 </dl>
@@ -586,13 +607,13 @@ This serves as the common base class for chemical file formats. Classes deriving
 <span id="_CPPv3N8Avogadro2Io10FileFormat9writeFileERKNSt6stringERKN4Core8MoleculeE"></span><span id="_CPPv2N8Avogadro2Io10FileFormat9writeFileERKNSt6stringERKN4Core8MoleculeE"></span><span id="Avogadro::Io::FileFormat::writeFile__ssCR.Core::MoleculeCR"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_1a489c884421fc53333544a9ae3719566e"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">writeFile</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">fileName</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">molecule</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro2Io10FileFormat9writeFileERKNSt6stringERKN4Core8MoleculeE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Write to the given <code class="docutils literal notranslate"><span class="pre">fileName</span></code> the contents of <code class="docutils literal notranslate"><span class="pre">molecule</span></code>. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>fileName</strong> – The full path to the file to be written. </p></li>
 <li><p><strong>molecule</strong> – The contents of this molecule will be written to the file. </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>True on success, false on failure. </p>
 </dd>
 </dl>
@@ -603,13 +624,13 @@ This serves as the common base class for chemical file formats. Classes deriving
 <span id="_CPPv3N8Avogadro2Io10FileFormat10readStringERKNSt6stringERN4Core8MoleculeE"></span><span id="_CPPv2N8Avogadro2Io10FileFormat10readStringERKNSt6stringERN4Core8MoleculeE"></span><span id="Avogadro::Io::FileFormat::readString__ssCR.Core::MoleculeR"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_1a4c10deac7ef5c2380dfea451e781dcee"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">readString</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">string</span></span>, <span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">molecule</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro2Io10FileFormat10readStringERKNSt6stringERN4Core8MoleculeE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Read the given <code class="docutils literal notranslate"><span class="pre">string</span></code> and load it into <code class="docutils literal notranslate"><span class="pre">molecule</span></code>. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>string</strong> – The string containing the molecule file contents. </p></li>
 <li><p><strong>molecule</strong> – The molecule the data will be read into. </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>True on success, false on failure. </p>
 </dd>
 </dl>
@@ -620,13 +641,13 @@ This serves as the common base class for chemical file formats. Classes deriving
 <span id="_CPPv3N8Avogadro2Io10FileFormat11writeStringERNSt6stringERKN4Core8MoleculeE"></span><span id="_CPPv2N8Avogadro2Io10FileFormat11writeStringERNSt6stringERKN4Core8MoleculeE"></span><span id="Avogadro::Io::FileFormat::writeString__ssR.Core::MoleculeCR"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_1a1614d39d6d88fbfcfa6d7e427279a990"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">writeString</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">string</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">molecule</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro2Io10FileFormat11writeStringERNSt6stringERKN4Core8MoleculeE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Write to the given <code class="docutils literal notranslate"><span class="pre">string</span></code> the contents of <code class="docutils literal notranslate"><span class="pre">molecule</span></code>. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>string</strong> – The string to write the contents of the molecule into. </p></li>
 <li><p><strong>molecule</strong> – The contents of this molecule will be written to the string. </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>True on success, false on failure. </p>
 </dd>
 </dl>
@@ -637,7 +658,7 @@ This serves as the common base class for chemical file formats. Classes deriving
 <span id="_CPPv3NK8Avogadro2Io10FileFormat5errorEv"></span><span id="_CPPv2NK8Avogadro2Io10FileFormat5errorEv"></span><span id="Avogadro::Io::FileFormat::errorC"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_1ab0ca267c415968ee3bc1c6b144dcbf56"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">error</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro2Io10FileFormat5errorEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Get the error string, contains errors/warnings encountered. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>String containing any errors or warnings encountered. </p>
 </dd>
 </dl>
@@ -648,7 +669,7 @@ This serves as the common base class for chemical file formats. Classes deriving
 <span id="_CPPv3NK8Avogadro2Io10FileFormat8fileNameEv"></span><span id="_CPPv2NK8Avogadro2Io10FileFormat8fileNameEv"></span><span id="Avogadro::Io::FileFormat::fileNameC"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_1a3779a192ea974f0abcc386f8739cce1f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">fileName</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro2Io10FileFormat8fileNameEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Get the file name (if known). </p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The full path to the file name as supplied, can be empty. </p>
 </dd>
 </dl>
@@ -659,7 +680,7 @@ This serves as the common base class for chemical file formats. Classes deriving
 <span id="_CPPv3N8Avogadro2Io10FileFormat10setOptionsERKNSt6stringE"></span><span id="_CPPv2N8Avogadro2Io10FileFormat10setOptionsERKNSt6stringE"></span><span id="Avogadro::Io::FileFormat::setOptions__ssCR"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_1ab0185522cbfc38ce4ba7b8fcc1986a01"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setOptions</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">options</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro2Io10FileFormat10setOptionsERKNSt6stringE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Set options for the file reader. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>options</strong> – The options, each reader chooses how to use/interpret them. </p>
 </dd>
 </dl>
@@ -670,7 +691,7 @@ This serves as the common base class for chemical file formats. Classes deriving
 <span id="_CPPv3NK8Avogadro2Io10FileFormat7optionsEv"></span><span id="_CPPv2NK8Avogadro2Io10FileFormat7optionsEv"></span><span id="Avogadro::Io::FileFormat::optionsC"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_1a0f71fd5dabc543c8ed47c05ccd2487d7"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">options</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro2Io10FileFormat7optionsEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Get the file format options, can be used to change file IO. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The options set for the reader (defaults to empty). </p>
 </dd>
 </dl>
@@ -717,7 +738,7 @@ This serves as the common base class for chemical file formats. Classes deriving
 <span id="_CPPv3NK8Avogadro2Io10FileFormat14fileExtensionsEv"></span><span id="_CPPv2NK8Avogadro2Io10FileFormat14fileExtensionsEv"></span><span id="Avogadro::Io::FileFormat::fileExtensionsC"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_1a758852cc7f4b1802a49dcf069ed4f20a"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">fileExtensions</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro2Io10FileFormat14fileExtensionsEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Get the file name extension(s) that the format supports reading. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>A vector containing a list of extensions (in lower case). </p>
 </dd>
 </dl>
@@ -728,7 +749,7 @@ This serves as the common base class for chemical file formats. Classes deriving
 <span id="_CPPv3NK8Avogadro2Io10FileFormat9mimeTypesEv"></span><span id="_CPPv2NK8Avogadro2Io10FileFormat9mimeTypesEv"></span><span id="Avogadro::Io::FileFormat::mimeTypesC"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_1af940cbe53b19944dfe03fb717294cdf4"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">mimeTypes</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro2Io10FileFormat9mimeTypesEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Get the MIME type(s) that the format supports reading. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>A vector containing a list of MIME type(s) (in lower case). </p>
 </dd>
 </dl>
@@ -742,7 +763,7 @@ This serves as the common base class for chemical file formats. Classes deriving
 <span id="_CPPv3N8Avogadro2Io10FileFormat11appendErrorERKNSt6stringEb"></span><span id="_CPPv2N8Avogadro2Io10FileFormat11appendErrorERKNSt6stringEb"></span><span id="Avogadro::Io::FileFormat::appendError__ssCR.b"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_1aab3ffd170760fed90c10931133746e4e"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">appendError</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">errorString</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">newLine</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">true</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro2Io10FileFormat11appendErrorERKNSt6stringEb" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Append an error to the error string for the format. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>errorString</strong> – The error to be added. </p></li>
 <li><p><strong>newLine</strong> – Add a new line after the error string? </p></li>
@@ -757,53 +778,55 @@ This serves as the common base class for chemical file formats. Classes deriving
 </section>
 
 
-              </div>
+              </article>
               
-              
-              <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="class_avogadro_1_1_io_1_1_dcd_format.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Class Avogadro::Io::DcdFormat</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="class_avogadro_1_1_io_1_1_file_format_manager.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Class Avogadro::Io::FileFormatManager</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-              
-          </main>
-          
 
+              
+              <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="class_avogadro_1_1_io_1_1_dcd_format.html" title="previous page">
+      <i class="fas fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">Class Avogadro::Io::DcdFormat</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="class_avogadro_1_1_io_1_1_file_format_manager.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">Class Avogadro::Io::FileFormatManager</p>
+  </div>
+  <i class="fas fa-angle-right"></i>
+  </a>
+</div>
+              </footer>
+              
+          </div>
+          
       </div>
     </div>
+
+  
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-<footer class="container-fluid footer-copy">
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
 
-    <div class="container">
-
-      <div class="row">
-        <div class="col-md-10 py-2">
-          <p>
-            ©2022 The OpenChemistry / Avogadro Teams. The website content uses the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/LICENSE">BSD License</a> and is covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
-          </p>
-        </div>
-        <br />
-        <div class="col-md-2 py-2">
-          <a class="btn btn-primary" href="https://opencollective.com/open-chemistry">Donate</a>
-        </div>
-      </div>
-
-    </div>
-
-  </footer>
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
+    &copy; Copyright ©2022 The OpenChemistry / Avogadro Teams..<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.2.<br>
+</p>
+  </div>
+  
+</div>
+</footer>
   </body>
 </html>

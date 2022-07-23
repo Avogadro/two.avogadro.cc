@@ -1,18 +1,22 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Class Avogadro::Core::Mesh &#8212; Avogadro 1.97.0 documentation</title>
-    
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
 
-    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
   <link rel="stylesheet"
     href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
@@ -21,50 +25,60 @@
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
     <link rel="canonical" href="https://two.avogadro.cc/api/class/class_avogadro_1_1_core_1_1_mesh.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Class Avogadro::Core::Molecule" href="class_avogadro_1_1_core_1_1_molecule.html" />
     <link rel="prev" title="Class Avogadro::Core::Graph" href="class_avogadro_1_1_core_1_1_graph.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="en">
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+    <div class="bd-header-announcement container-fluid" id="banner">
+      
+
+    </div>
 
     
-    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
 
   <div id="navbar-start">
     
     
+  
 
-<a class="navbar-brand" href="../../index.html">
-  <img src="../../_static/avogadro2.png" class="logo" alt="logo">
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+    <img src="../../_static/avogadro2.png" class="logo__image only-light" alt="Logo image">
+    <img src="../../_static/avogadro2.png" class="logo__image only-dark" alt="Logo image">
+  
+  
 </a>
-
-
     
   </div>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+    <span class="fas fa-bars"></span>
   </button>
 
   
@@ -110,6 +124,14 @@
     <div id="navbar-end">
       
       <div class="navbar-end-item">
+        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
           <a class="nav-link" href="https://github.com/openchemistry/avogadrolibs" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
@@ -128,13 +150,13 @@
     </nav>
     
 
-    <div class="container-xl">
-      <div class="row">
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
           
-            
-            <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar">
-              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
+  <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
@@ -433,53 +455,52 @@
 
   </div>
 </nav>
-              </div>
-              <div class="sidebar-end-items">
-              </div>
-            </div>
-            
-          
+  </div>
+  <div class="sidebar-end-items">
+  </div>
+</div>
+
 
           
-          <div class="d-none d-xl-block col-xl-2 bd-toc">
-            
-              
-              <div class="toc-item">
-                
+
+
+<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
+  
+    
+    <div class="toc-item">
+      
 
 <nav id="bd-toc-nav">
     
 </nav>
-              </div>
-              
-              <div class="toc-item">
-                
+    </div>
+    
+    <div class="toc-item">
+      
 
 <div class="tocsection editthispage">
-    <a href="https://github.com/openchemistry/avogadrolibs/edit/master/docs/api/class/class_avogadro_1_1_core_1_1_mesh.rst">
+    <a href="https://github.com/avogadro/two.avogadro.cc/edit/main/source/api/class/class_avogadro_1_1_core_1_1_mesh.rst">
         <i class="fas fa-pencil-alt"></i> Edit this page
     </a>
 </div>
 
-              </div>
-              
-            
-          </div>
-          
+    </div>
+    
+  
+</div>
+
 
           
           
-            
-          
-          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+          <div class="bd-content col-12 col-md-9 col-xl-7">
               
-              <div>
+              <article class="bd-article" role="main">
                 
   <section id="class-avogadro-core-mesh">
-<h1>Class Avogadro::Core::Mesh<a class="headerlink" href="#class-avogadro-core-mesh" title="Permalink to this headline">#</a></h1>
+<h1>Class Avogadro::Core::Mesh<a class="headerlink" href="#class-avogadro-core-mesh" title="Permalink to this heading">#</a></h1>
 <dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core4MeshE">
-<span id="_CPPv3N8Avogadro4Core4MeshE"></span><span id="_CPPv2N8Avogadro4Core4MeshE"></span><span id="Avogadro::Core::Mesh"></span><span class="target" id="class_avogadro_1_1_core_1_1_mesh"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">Avogadro</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">Mesh</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core4MeshE" title="Permalink to this definition">#</a><br /></dt>
+<span id="_CPPv3N8Avogadro4Core4MeshE"></span><span id="_CPPv2N8Avogadro4Core4MeshE"></span><span id="Avogadro::Core::Mesh"></span><span class="target" id="class_avogadro_1_1_core_1_1_mesh"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Mesh</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core4MeshE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Encapsulation of a triangular mesh that makes up a surface. </p>
 <p>
 The <a class="reference internal" href="#class_avogadro_1_1_core_1_1_mesh"><span class="std std-ref">Mesh</span></a> class is a data container that provides a <a class="reference internal" href="#class_avogadro_1_1_core_1_1_mesh"><span class="std std-ref">Mesh</span></a> object. All meshes should be owned by a <a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#class_avogadro_1_1_core_1_1_molecule"><span class="std std-ref">Molecule</span></a>. It should also be removed by the <a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#class_avogadro_1_1_core_1_1_molecule"><span class="std std-ref">Molecule</span></a> that owns it. Meshes encapsulate triangular meshes that can also have colors associated with each vertex. <dl class="simple">
@@ -512,13 +533,13 @@ The <a class="reference internal" href="#class_avogadro_1_1_core_1_1_mesh"><span
 <span id="_CPPv3N8Avogadro4Core4Mesh7reserveEjb"></span><span id="_CPPv2N8Avogadro4Core4Mesh7reserveEjb"></span><span id="Avogadro::Core::Mesh::reserve__unsigned-i.b"></span><span class="target" id="class_avogadro_1_1_core_1_1_mesh_1a762d6fe94689a76e6dc3f6efdaa8f13d"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">reserve</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">size</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">colors</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core4Mesh7reserveEjb" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Reserve the expected space for the mesh. This causes all member array storage to call the reserve function with the number specified. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>size</strong> – Expected size of the mesh. </p></li>
 <li><p><strong>colors</strong> – Should the colors array reserve this space too? Defaults to false. </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>True on success. </p>
 </dd>
 </dl>
@@ -529,7 +550,7 @@ The <a class="reference internal" href="#class_avogadro_1_1_core_1_1_mesh"><span
 <span id="_CPPv3N8Avogadro4Core4Mesh9setStableEb"></span><span id="_CPPv2N8Avogadro4Core4Mesh9setStableEb"></span><span id="Avogadro::Core::Mesh::setStable__b"></span><span class="target" id="class_avogadro_1_1_core_1_1_mesh_1a390eb6835e77156892a7f6770ef6231a"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setStable</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">stable</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core4Mesh9setStableEb" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>This function allows long running calculations to mark the mesh as in progress. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>stable</strong> – Indicate that the <a class="reference internal" href="#class_avogadro_1_1_core_1_1_mesh"><span class="std std-ref">Mesh</span></a> is currently being modified. </p>
 </dd>
 </dl>
@@ -540,7 +561,7 @@ The <a class="reference internal" href="#class_avogadro_1_1_core_1_1_mesh"><span
 <span id="_CPPv3N8Avogadro4Core4Mesh6stableEv"></span><span id="_CPPv2N8Avogadro4Core4Mesh6stableEv"></span><span id="Avogadro::Core::Mesh::stable"></span><span class="target" id="class_avogadro_1_1_core_1_1_mesh_1ad6994a9cfb4b21ddc8eb9132d2aca43d"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">stable</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core4Mesh6stableEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Indicate whether the <a class="reference internal" href="#class_avogadro_1_1_core_1_1_mesh"><span class="std std-ref">Mesh</span></a> is complete or currently being modified. In general using <a class="reference internal" href="#class_avogadro_1_1_core_1_1_mesh"><span class="std std-ref">Mesh</span></a> values from an unstable <a class="reference internal" href="#class_avogadro_1_1_core_1_1_mesh"><span class="std std-ref">Mesh</span></a> is not advisable. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>True if the <a class="reference internal" href="#class_avogadro_1_1_core_1_1_mesh"><span class="std std-ref">Mesh</span></a> is complete, false if it is being modified. </p>
 </dd>
 </dl>
@@ -556,7 +577,7 @@ The <a class="reference internal" href="#class_avogadro_1_1_core_1_1_mesh"><span
 <dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core4Mesh8isoValueEv">
 <span id="_CPPv3NK8Avogadro4Core4Mesh8isoValueEv"></span><span id="_CPPv2NK8Avogadro4Core4Mesh8isoValueEv"></span><span id="Avogadro::Core::Mesh::isoValueC"></span><span class="target" id="class_avogadro_1_1_core_1_1_mesh_1afd92ad7c2e9c255a2802747c0645b1d5"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isoValue</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core4Mesh8isoValueEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The iso value used to generate the <a class="reference internal" href="#class_avogadro_1_1_core_1_1_mesh"><span class="std std-ref">Mesh</span></a>. </p>
 </dd>
 </dl>
@@ -572,7 +593,7 @@ The <a class="reference internal" href="#class_avogadro_1_1_core_1_1_mesh"><span
 <dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core4Mesh9otherMeshEv">
 <span id="_CPPv3NK8Avogadro4Core4Mesh9otherMeshEv"></span><span id="_CPPv2NK8Avogadro4Core4Mesh9otherMeshEv"></span><span id="Avogadro::Core::Mesh::otherMeshC"></span><span class="target" id="class_avogadro_1_1_core_1_1_mesh_1a9b68ce7842e3ece7ed97c0cee4fbe010"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">otherMesh</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core4Mesh9otherMeshEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The unique id of the other <a class="reference internal" href="#class_avogadro_1_1_core_1_1_mesh"><span class="std std-ref">Mesh</span></a> if this is part of a pair. </p>
 </dd>
 </dl>
@@ -588,7 +609,7 @@ The <a class="reference internal" href="#class_avogadro_1_1_core_1_1_mesh"><span
 <dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core4Mesh4cubeEv">
 <span id="_CPPv3NK8Avogadro4Core4Mesh4cubeEv"></span><span id="_CPPv2NK8Avogadro4Core4Mesh4cubeEv"></span><span id="Avogadro::Core::Mesh::cubeC"></span><span class="target" id="class_avogadro_1_1_core_1_1_mesh_1a135c36f5fc790e7a76905fdb38349334"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cube</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core4Mesh4cubeEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The unique id of the <a class="reference internal" href="class_avogadro_1_1_core_1_1_cube.html#class_avogadro_1_1_core_1_1_cube"><span class="std std-ref">Cube</span></a> the <a class="reference internal" href="#class_avogadro_1_1_core_1_1_mesh"><span class="std std-ref">Mesh</span></a> was generated from. </p>
 </dd>
 </dl>
@@ -598,7 +619,7 @@ The <a class="reference internal" href="#class_avogadro_1_1_core_1_1_mesh"><span
 <dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core4Mesh8verticesEv">
 <span id="_CPPv3NK8Avogadro4Core4Mesh8verticesEv"></span><span id="_CPPv2NK8Avogadro4Core4Mesh8verticesEv"></span><span id="Avogadro::Core::Mesh::verticesC"></span><span class="target" id="class_avogadro_1_1_core_1_1_mesh_1ae1a3aa09cc5b00714af1f3117ac5d920"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#_CPPv4I0EN8Avogadro4Core5ArrayE" title="Avogadro::Core::Array"><span class="n"><span class="pre">Array</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Vector3f</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">vertices</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core4Mesh8verticesEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#class_avogadro_1_1_core_1_1_array"><span class="std std-ref">Array</span></a> containing all of the vertices in a one dimensional array. </p>
 </dd>
 </dl>
@@ -608,7 +629,7 @@ The <a class="reference internal" href="#class_avogadro_1_1_core_1_1_mesh"><span
 <dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core4Mesh11numVerticesEv">
 <span id="_CPPv3NK8Avogadro4Core4Mesh11numVerticesEv"></span><span id="_CPPv2NK8Avogadro4Core4Mesh11numVerticesEv"></span><span id="Avogadro::Core::Mesh::numVerticesC"></span><span class="target" id="class_avogadro_1_1_core_1_1_mesh_1abbc815a34decffdb75cca769e29773ba"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">numVertices</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core4Mesh11numVerticesEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The number of vertices. </p>
 </dd>
 </dl>
@@ -618,7 +639,7 @@ The <a class="reference internal" href="#class_avogadro_1_1_core_1_1_mesh"><span
 <dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core4Mesh6vertexEi">
 <span id="_CPPv3NK8Avogadro4Core4Mesh6vertexEi"></span><span id="_CPPv2NK8Avogadro4Core4Mesh6vertexEi"></span><span id="Avogadro::Core::Mesh::vertex__iC"></span><span class="target" id="class_avogadro_1_1_core_1_1_mesh_1afa3f60853f7c70de033ecd2b9248baa3"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Vector3f</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">vertex</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">n</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core4Mesh6vertexEi" title="Permalink to this definition">#</a><br /></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Pointer to the first vertex of the specified triangle. </p>
 </dd>
 </dl>
@@ -640,7 +661,7 @@ The <a class="reference internal" href="#class_avogadro_1_1_core_1_1_mesh"><span
 <dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core4Mesh7normalsEv">
 <span id="_CPPv3NK8Avogadro4Core4Mesh7normalsEv"></span><span id="_CPPv2NK8Avogadro4Core4Mesh7normalsEv"></span><span id="Avogadro::Core::Mesh::normalsC"></span><span class="target" id="class_avogadro_1_1_core_1_1_mesh_1a811693c2dba2e03c86534ae8f64f73ba"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#_CPPv4I0EN8Avogadro4Core5ArrayE" title="Avogadro::Core::Array"><span class="n"><span class="pre">Array</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Vector3f</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">normals</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core4Mesh7normalsEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#class_avogadro_1_1_core_1_1_array"><span class="std std-ref">Array</span></a> containing all of the normals in a one-dimensional array. </p>
 </dd>
 </dl>
@@ -650,7 +671,7 @@ The <a class="reference internal" href="#class_avogadro_1_1_core_1_1_mesh"><span
 <dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core4Mesh10numNormalsEv">
 <span id="_CPPv3NK8Avogadro4Core4Mesh10numNormalsEv"></span><span id="_CPPv2NK8Avogadro4Core4Mesh10numNormalsEv"></span><span id="Avogadro::Core::Mesh::numNormalsC"></span><span class="target" id="class_avogadro_1_1_core_1_1_mesh_1a3e9042287892c5cd1238ae56f0e7e4a5"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">numNormals</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core4Mesh10numNormalsEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The number of normals. </p>
 </dd>
 </dl>
@@ -660,7 +681,7 @@ The <a class="reference internal" href="#class_avogadro_1_1_core_1_1_mesh"><span
 <dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core4Mesh6normalEi">
 <span id="_CPPv3NK8Avogadro4Core4Mesh6normalEi"></span><span id="_CPPv2NK8Avogadro4Core4Mesh6normalEi"></span><span id="Avogadro::Core::Mesh::normal__iC"></span><span class="target" id="class_avogadro_1_1_core_1_1_mesh_1a7d29e467b0884879137478397805da6e"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Vector3f</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">normal</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">n</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core4Mesh6normalEi" title="Permalink to this definition">#</a><br /></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Pointer to the first normal of the specified triangle. </p>
 </dd>
 </dl>
@@ -682,7 +703,7 @@ The <a class="reference internal" href="#class_avogadro_1_1_core_1_1_mesh"><span
 <dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core4Mesh6colorsEv">
 <span id="_CPPv3NK8Avogadro4Core4Mesh6colorsEv"></span><span id="_CPPv2NK8Avogadro4Core4Mesh6colorsEv"></span><span id="Avogadro::Core::Mesh::colorsC"></span><span class="target" id="class_avogadro_1_1_core_1_1_mesh_1a73ee11ea122ca48f83c7a205a888adea"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#_CPPv4I0EN8Avogadro4Core5ArrayE" title="Avogadro::Core::Array"><span class="n"><span class="pre">Array</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_color3f.html#_CPPv4N8Avogadro4Core7Color3fE" title="Avogadro::Core::Color3f"><span class="n"><span class="pre">Color3f</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">colors</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core4Mesh6colorsEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#class_avogadro_1_1_core_1_1_array"><span class="std std-ref">Array</span></a> containing all of the colors in a one-dimensional array. </p>
 </dd>
 </dl>
@@ -692,7 +713,7 @@ The <a class="reference internal" href="#class_avogadro_1_1_core_1_1_mesh"><span
 <dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core4Mesh5colorEi">
 <span id="_CPPv3NK8Avogadro4Core4Mesh5colorEi"></span><span id="_CPPv2NK8Avogadro4Core4Mesh5colorEi"></span><span id="Avogadro::Core::Mesh::color__iC"></span><span class="target" id="class_avogadro_1_1_core_1_1_mesh_1a311df8aa83a86b4513839fbcab03225d"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_core_1_1_color3f.html#_CPPv4N8Avogadro4Core7Color3fE" title="Avogadro::Core::Color3f"><span class="n"><span class="pre">Color3f</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">color</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">n</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core4Mesh5colorEi" title="Permalink to this definition">#</a><br /></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Pointer to the first color of the specified triangle. </p>
 </dd>
 </dl>
@@ -715,7 +736,7 @@ The <a class="reference internal" href="#class_avogadro_1_1_core_1_1_mesh"><span
 <span id="_CPPv3NK8Avogadro4Core4Mesh5validEv"></span><span id="_CPPv2NK8Avogadro4Core4Mesh5validEv"></span><span id="Avogadro::Core::Mesh::validC"></span><span class="target" id="class_avogadro_1_1_core_1_1_mesh_1a315419f26d3c59fa143b49b90a019049"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">valid</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core4Mesh5validEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Sanity checking function - is the mesh sane? </p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>True if the <a class="reference internal" href="#class_avogadro_1_1_core_1_1_mesh"><span class="std std-ref">Mesh</span></a> object is sane and composed of the right number of elements. </p>
 </dd>
 </dl>
@@ -726,7 +747,7 @@ The <a class="reference internal" href="#class_avogadro_1_1_core_1_1_mesh"><span
 <span id="_CPPv3N8Avogadro4Core4Mesh5clearEv"></span><span id="_CPPv2N8Avogadro4Core4Mesh5clearEv"></span><span id="Avogadro::Core::Mesh::clear"></span><span class="target" id="class_avogadro_1_1_core_1_1_mesh_1aa0cf457d7170b358f40a5ffa13051b83"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">clear</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core4Mesh5clearEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Clear all mesh data. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>True on success. </p>
 </dd>
 </dl>
@@ -748,7 +769,7 @@ The <a class="reference internal" href="#class_avogadro_1_1_core_1_1_mesh"><span
 <dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core4Mesh4nameEv">
 <span id="_CPPv3NK8Avogadro4Core4Mesh4nameEv"></span><span id="_CPPv2NK8Avogadro4Core4Mesh4nameEv"></span><span id="Avogadro::Core::Mesh::nameC"></span><span class="target" id="class_avogadro_1_1_core_1_1_mesh_1a1d89c28bd42ba9a52da008bb69367171"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">name</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core4Mesh4nameEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The name of the <a class="reference internal" href="#class_avogadro_1_1_core_1_1_mesh"><span class="std std-ref">Mesh</span></a>. </p>
 </dd>
 </dl>
@@ -758,6 +779,17 @@ The <a class="reference internal" href="#class_avogadro_1_1_core_1_1_mesh"><span
 <dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core4Mesh4lockEv">
 <span id="_CPPv3NK8Avogadro4Core4Mesh4lockEv"></span><span id="_CPPv2NK8Avogadro4Core4Mesh4lockEv"></span><span id="Avogadro::Core::Mesh::lockC"></span><span class="target" id="class_avogadro_1_1_core_1_1_mesh_1a754026a346234bef47621cac16f6c57a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_core_1_1_mutex.html#_CPPv4N8Avogadro4Core5MutexE" title="Avogadro::Core::Mutex"><span class="n"><span class="pre">Mutex</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">lock</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core4Mesh4lockEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Provides locking. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core4Mesh6smoothEi">
+<span id="_CPPv3N8Avogadro4Core4Mesh6smoothEi"></span><span id="_CPPv2N8Avogadro4Core4Mesh6smoothEi"></span><span id="Avogadro::Core::Mesh::smooth__i"></span><span class="target" id="class_avogadro_1_1_core_1_1_mesh_1ae128fc8ae62a956662a60cc820bd1319"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">smooth</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">iterationCount</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">6</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core4Mesh6smoothEi" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Applies Laplacian smoothing. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>iterationCount</strong> – number of smoothing passes to make. </p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -774,53 +806,55 @@ The <a class="reference internal" href="#class_avogadro_1_1_core_1_1_mesh"><span
 </section>
 
 
-              </div>
+              </article>
               
-              
-              <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="class_avogadro_1_1_core_1_1_graph.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Class Avogadro::Core::Graph</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="class_avogadro_1_1_core_1_1_molecule.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Class Avogadro::Core::Molecule</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-              
-          </main>
-          
 
+              
+              <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="class_avogadro_1_1_core_1_1_graph.html" title="previous page">
+      <i class="fas fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">Class Avogadro::Core::Graph</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="class_avogadro_1_1_core_1_1_molecule.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">Class Avogadro::Core::Molecule</p>
+  </div>
+  <i class="fas fa-angle-right"></i>
+  </a>
+</div>
+              </footer>
+              
+          </div>
+          
       </div>
     </div>
+
+  
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-<footer class="container-fluid footer-copy">
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
 
-    <div class="container">
-
-      <div class="row">
-        <div class="col-md-10 py-2">
-          <p>
-            ©2022 The OpenChemistry / Avogadro Teams. The website content uses the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/LICENSE">BSD License</a> and is covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
-          </p>
-        </div>
-        <br />
-        <div class="col-md-2 py-2">
-          <a class="btn btn-primary" href="https://opencollective.com/open-chemistry">Donate</a>
-        </div>
-      </div>
-
-    </div>
-
-  </footer>
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
+    &copy; Copyright ©2022 The OpenChemistry / Avogadro Teams..<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.2.<br>
+</p>
+  </div>
+  
+</div>
+</footer>
   </body>
 </html>
