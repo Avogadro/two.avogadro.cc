@@ -342,8 +342,8 @@ The characters in `[coordSpec]` indicate the information needed about each
 atom in the coordinate block.
 
 Other keywords that can be used in the input files are:
-\- `$$atomCount$$`: Number of atoms in the molecule.
-\- `$$bondCount$$`: Number of bonds in the molecule.
+- `$$atomCount$$`: Number of atoms in the molecule.
+- `$$bondCount$$`: Number of bonds in the molecule.
 
 ### Coordinate Blocks
 
