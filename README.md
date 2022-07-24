@@ -10,8 +10,7 @@ for documentation on Avogadro v2. It will become the main Avogadro webpage when 
 is released as a stable version.
 
 These files are automatically generated. If you want to edit the site, click on an
-"Edit this page" link, or make a pull request to 
-[the avogadrolibs repository](https://github.com/OpenChemistry/avogadrolibs/tree/master/docs)
+"Edit this page" link, or make a pull request to the files in the [source directory](https://github.com/Avogadro/two.avogadro.cc/tree/main/source).
 
 Core features and goals of the Avogadro project include:
 
@@ -36,7 +35,7 @@ features, and can be found [here][Avogadro1]. We will be porting more features
 to the Avogadro 2 code base, and making regular releases to get feedback from
 the community.
 
-We are actively working to finish Avogadro 2.0 in 2021.
+We are actively working to finish Avogadro 2.0 in 2022.
 
 Contributing
 ------------
