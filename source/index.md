@@ -29,12 +29,6 @@ This documentation site is for Avogadro 2, currently in development.
 :::
 ::::
 
-- Free, Open Source: Easy to install and all source code and documentation is available to modify or extend.
-- International: Translations into English, French, German, Hungarian, Indonesian, Japanese, Portuguese, Serbian, Turkish, and others, with [more languages to come](https://hosted.weblate.org/engage/avogadro/).
-- Intuitive: Built to work easily for students and advanced researchers both.
-- Fast: Supports multi-threaded rendering and computation.
-- Extensible: Plugin architecture for developers, including rendering, interactive tools, commands, and Python scripts.
-
 ## Install
 
 ::::{grid} 3
@@ -64,12 +58,19 @@ This documentation site is for Avogadro 2, currently in development.
 {fab}`linux;fa-2x` Linux
 ^^^
 {{ '<a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-primary reference external" href="' + appurl + '"><span>Download AppImage</span></a>'}}
-<a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-primary reference external" href="https://dl.flathub.org/repo/appstream/org.openchemistry.Avogadro2.flatpakref"><span>Download Flatpak</span></a>
 ++++
 <a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-primary reference external" href="build.html"><span>Build from source</span></a>
 :::
 
 ::::
+
+## Features
+
+- Free, Open Source: Easy to install and all source code and documentation is available to modify or extend.
+- International: Translations into English, French, German, Hungarian, Indonesian, Japanese, Portuguese, Serbian, Turkish, and others, with [more languages to come](https://hosted.weblate.org/engage/avogadro/).
+- Intuitive: Built to work easily for students and advanced researchers both.
+- Fast: Supports multi-threaded rendering and computation.
+- Extensible: Plugin architecture for developers, including rendering, interactive tools, commands, and Python scripts.
 
 ## Resources
 
