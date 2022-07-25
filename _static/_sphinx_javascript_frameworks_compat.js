@@ -2,7 +2,7 @@
  * _sphinx_javascript_frameworks_compat.js
  * ~~~~~~~~~~
  *
- * Compatibility shim for jQuery and underscores.js.
+ * Compatability shim for jQuery and underscores.js.
  *
  * WILL BE REMOVED IN Sphinx 6.0
  * xref RemovedInSphinx60Warning
