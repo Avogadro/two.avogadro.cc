@@ -21,8 +21,11 @@ import requests
 project = 'Avogadro'
 author = 'The OpenChemistry / Avogadro Teams'
 # The latest version from the GitHub API
-response = requests.get("https://api.github.com/repos/openchemistry/avogadrolibs/releases/latest")
-release = response.json()['tag_name']
+try:
+    response = requests.get("https://api.github.com/repos/openchemistry/avogadrolibs/releases/latest")
+    release = response.json()['tag_name']
+except requests.exceptions.ConnectionError:
+    release = "1.97.0"
 version = release
 
 year = date.today().year
