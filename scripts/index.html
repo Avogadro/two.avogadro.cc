@@ -4,7 +4,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Script Plugins &#8212; Avogadro 1.97.0 documentation</title>
 <script>
@@ -164,7 +164,12 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <div class="bd-toc-item active">
-    <ul class="nav bd-sidenav">
+    <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Python Scripts
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="interface.html">
    Script Interfaces
@@ -176,13 +181,18 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="charges.html">
+   Charges / Electrostatics
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="generators.html">
    Input Generators
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="formats.html">
-   Script File Formats
+   File Formats
   </a>
  </li>
 </ul>
@@ -237,56 +247,20 @@
 <span id="scripts"></span><h1>Script Plugins<a class="headerlink" href="#script-plugins" title="Permalink to this heading">#</a></h1>
 <p>Avogadro can be extended easily using Python scripts:</p>
 <ul class="simple">
-<li><p>commands</p></li>
-<li><p>input generators</p></li>
-<li><p>formats</p></li>
+<li><p><a class="reference internal" href="charges.html"><span class="doc std std-doc">charges / electrostatics</span></a></p></li>
+<li><p><a class="reference internal" href="commands.html"><span class="doc std std-doc">commands</span></a></p></li>
+<li><p><a class="reference internal" href="generators.html"><span class="doc std std-doc">input generators</span></a></p></li>
+<li><p><a class="reference internal" href="formats.html"><span class="doc std std-doc">file formats</span></a></p></li>
 </ul>
 <p>More script types are anticipated in the future, including:</p>
 <ul class="simple">
 <li><p>force field calculators</p></li>
-<li><p>charges / electrostatics</p></li>
 <li><p>web databases</p></li>
 <li><p>custom colors</p></li>
 </ul>
-<p>Scripts can either be installed manually, or downloaded from GitHub repositories.</p>
+<p>Scripts can either be installed manually, by dragging to the Avogadro window,
+or downloaded from GitHub repositories through the “Plugin Downloader” command.</p>
 <div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="interface.html">Script Interfaces</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="interface.html#fixed-string-lists-pop-up-menus">Fixed String Lists (Pop-up menus)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="interface.html#short-free-form-text-parameters">Short Free-Form Text Parameters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="interface.html#existing-files">Existing files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="interface.html#integer-values">Integer Values</a></li>
-<li class="toctree-l2"><a class="reference internal" href="interface.html#floating-point-values">Floating-point values</a></li>
-<li class="toctree-l2"><a class="reference internal" href="interface.html#boolean-parameters">Boolean Parameters</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="commands.html">Command Scripts</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="commands.html#script-entry-points">Script Entry Points</a></li>
-<li class="toctree-l2"><a class="reference internal" href="commands.html#specifying-ui-options-with-print-options">Specifying UI options with –print-options</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="generators.html">Input Generators</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="generators.html#script-entry-points">Script Entry Points</a></li>
-<li class="toctree-l2"><a class="reference internal" href="generators.html#specifying-parameters-with-print-options">Specifying parameters with <code class="docutils literal notranslate"><span class="pre">--print-options</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="generators.html#special-parameters">Special Parameters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="generators.html#syntax-highlighting">Syntax Highlighting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="generators.html#requesting-full-structure-of-current-molecule">Requesting Full Structure of Current Molecule</a></li>
-<li class="toctree-l2"><a class="reference internal" href="generators.html#handling-user-selections-generate-input">Handling User Selections: <code class="docutils literal notranslate"><span class="pre">--generate-input</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="generators.html#automatic-generation-of-geometry">Automatic Generation of Geometry</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="generators.html#coordinate-blocks">Coordinate Blocks</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="generators.html#error-handling">Error Handling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="generators.html#debugging">Debugging</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="formats.html">Script File Formats</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="formats.html#identify-the-format-with-metadata">Identify the Format with <code class="docutils literal notranslate"><span class="pre">--metadata</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="formats.html#reading-a-format-with-read">Reading a format with <code class="docutils literal notranslate"><span class="pre">--read</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="formats.html#writing-a-format-with-write">Writing a format with <code class="docutils literal notranslate"><span class="pre">--write</span></code></a></li>
-</ul>
-</li>
-</ul>
 </div>
 </section>
 
@@ -335,7 +309,7 @@
   
   <div class="footer-item">
     <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.2.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.0.<br>
 </p>
   </div>
   

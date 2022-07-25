@@ -9,8 +9,7 @@
 - Prefer solutions from the Qt library over Boost/others in Qt
   dependent code
 
-  - In Avogadro use the C++11 features where necessary, they fall back
-    to Boost on older compilers
+  - In Avogadro use the C++11 and C++17 features where necessary.
   - Avogadro offers AVO_OVERRIDE and AVO_FINAL (defines for new C++11
     override and final)
 
@@ -18,11 +17,6 @@
   before adding more
 
 - Use templates where they make sense
-
-- Submit proposed topics to Gerrit
-
-  - Monitor the <mailto:CDash@Home> builds and nightly builds once merged to
-    ensure support in all supported compilers
 
 (including-headers)=
 
@@ -94,31 +88,29 @@ class MyClass;
 - Don't overspecify, i.e. code in the Avogadro namespace doesn't need
   to use Avogadro:
 
-  ```
   -  Qt signals and slots are one exception where MOC often needs a little help
-  ```
 
 - Never use using inside a public header
 
-  - Only pull in specific symbols in source files, i.e. using
-    Avogadro::Core::Molecule;
+  - Only pull in specific symbols in source files, i.e. `using
+    Avogadro::Core::Molecule;`
 
 ## Casting
 
-- Avoid C-style casts, prefer C++ (static_cast, dynamic_cast,
-  const_cast, reinterpret_cast)
-- For Qt classes, and Qt derived classes prefer qobject_cast over
-  dynamic_cast
+- Avoid C-style casts, prefer C++ (`static_cast`, `dynamic_cast`,
+  `const_cast`, `reinterpret_cast`)
+- For Qt classes, and Qt derived classes prefer `qobject_cast` over
+  `dynamic_cast`
 
 ## Aesthetics
 
-- Prefer enums to define constants over static const int or defines
+- Prefer `enum`s to define constants over `static const int` or `#define`s
 
 - Prefer verbose argument names in headers
 
   - Most IDEs show the argument names in their autocompletion
   - It looks better in the generated documentation
-  - Poor style making people guess what an argument is for
+  - Poor style making people guess the purpose of an argument
 
 - Avoid abbreviations, as they are often ambiguous and we can afford
-  the extra bytes
+  a few extra bytes

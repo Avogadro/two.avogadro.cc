@@ -1,4 +1,4 @@
-(generators-command-scripts)=
+(command-scripts)=
 
 # Command Scripts
 

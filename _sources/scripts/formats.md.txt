@@ -1,9 +1,9 @@
 (script-formats)=
 
-# Script File Formats
+# File Formats
 
 Avogadro allows scripts to translate between formats which Avogadro already
-handles and new formats (e.g., to use packages like cclib).
+handles and new formats (e.g., to use packages like [cclib](https://cclib.github.io/)).
 
 The script must handle the following command line arguments:
 

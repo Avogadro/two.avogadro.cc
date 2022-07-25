@@ -2,6 +2,10 @@
 
 # Script Interfaces
 
+Both commands and input generator scripts can create user interfaces
+using JSON syntax. For each option in the `userOptions` list, Avogadro
+will create appropriate labels, menus, text boxes, check boxes, etc.
+
 ## Fixed String Lists (Pop-up menus)
 
 Parameters that have a fixed number of mutually-exclusive string values

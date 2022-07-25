@@ -13,6 +13,9 @@ as well as the need to document your code with comments and Doxygen API
 docs (which ultimately become part of this website).
 
 ```{toctree}
+---
+caption: Contributing Code
+---
 conventions
 style
 code-docs
