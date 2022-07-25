@@ -33,7 +33,10 @@ and Python scripts and utilities.
 - [Donate financially](https://opencollective.com/open-chemistry) to pay for server hosting, user meetings, and bug bounties.
 
 ```{toctree}
-:hidden: true
+---
+caption: Contributing
+hidden: true
+---
 
 credits
 translate
