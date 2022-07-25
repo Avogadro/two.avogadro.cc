@@ -15,17 +15,23 @@ More script types are anticipated in the future, including:
 - web databases
 - custom colors
 
-Scripts can either be installed manually, by dragging to the Avogadro window,
-or downloaded from GitHub repositories through the "Plugin Downloader" command.
+Scripts can either be installed manually, by dragging to the Avogadro window:
+
+![installing script](/_images/install-script.png)
+
+Scripts can also be installed from GitHub repositories through the "Download Plugins…" command:
+
+![plugin download](/_images/plugin-download.png)
 
 ```{toctree}
 ---
 caption: Python Scripts
 hidden: true
 ---
-interface.md
-commands.md
-charges.md
-generators.md
-formats.md
+install
+interface
+commands
+charges
+generators
+formats
 ```

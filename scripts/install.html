@@ -1,0 +1,387 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Installing Script Plugins &#8212; Avogadro 1.97.0 documentation</title>
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
+
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/design-tabs.js"></script>
+    <link rel="canonical" href="https://two.avogadro.cc/scripts/install.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Script Interfaces" href="interface.html" />
+    <link rel="prev" title="Script Plugins" href="index.html" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="en">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+    <div class="bd-header-announcement container-fluid" id="banner">
+      
+
+    </div>
+
+    
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
+
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    <img src="../_static/avogadro2.png" class="logo__image only-light" alt="Logo image">
+    <img src="../_static/avogadro2.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+    <p class="title logo__title">Avogadro</p>
+  
+</a>
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="fas fa-bars"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../install/index.html">
+  Install
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="index.html">
+  Script Plugins
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../api/index.html">
+  Library API
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../contrib/index.html">
+  Contribute
+ </a>
+</li>
+
+    
+    <li class="nav-item">
+        <a class="nav-link nav-external" href="https://discuss.avogadro.cc">Discuss<i class="fas fa-external-link-alt"></i></a>
+    </li>
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/openchemistry/avogadrolibs" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://twitter.com/AvogadroChem" rel="noopener" target="_blank" title="Twitter"><span><i class="fab fa-twitter-square"></i></span>
+            <label class="sr-only">Twitter</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
+          
+
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
+  <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Python Scripts
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Installing Script Plugins
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="interface.html">
+   Script Interfaces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="commands.html">
+   Command Scripts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="charges.html">
+   Charges / Electrostatics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="generators.html">
+   Input Generators
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="formats.html">
+   File Formats
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+  </div>
+  <div class="sidebar-end-items">
+  </div>
+</div>
+
+
+          
+
+
+<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
+  
+    
+    <div class="toc-item">
+      
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#directories">
+   Directories
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plugin-packages-and-repositories">
+   Plugin Packages and Repositories
+  </a>
+ </li>
+</ul>
+
+</nav>
+    </div>
+    
+    <div class="toc-item">
+      
+
+<div class="tocsection editthispage">
+    <a href="https://github.com/avogadro/two.avogadro.cc/edit/main/source/scripts/install.md">
+        <i class="fas fa-pencil-alt"></i> Edit this page
+    </a>
+</div>
+
+    </div>
+    
+  
+</div>
+
+
+          
+
+
+
+
+<div class="bd-content col-12 col-md-9 col-xl-7">
+    
+              <article class="bd-article" role="main">
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="installing-script-plugins">
+<span id="script-install"></span><h1>Installing Script Plugins<a class="headerlink" href="#installing-script-plugins" title="Permalink to this heading">#</a></h1>
+<p>Scripts can either be installed manually, by dragging to the Avogadro window:</p>
+<p><img alt="installing script" src="../_images/install-script.png" /></p>
+<p>Scripts can also be installed from GitHub repositories through the “Download Plugins…” command:</p>
+<p><img alt="plugin download" src="../_images/plugin-download.png" /></p>
+<section id="directories">
+<h2>Directories<a class="headerlink" href="#directories" title="Permalink to this heading">#</a></h2>
+<p>Avogadro will look for plugins either as individual files or subdirectories
+in a few paths, including system and user directories. Each type of plugin
+should be in the corresponding subdirectory, e.g.:</p>
+<p><img alt="plugin subdirectories" src="../_images/plugin-directories.png" /></p>
+<p>The main directory for installing plugins is determined by <code class="docutils literal notranslate"><span class="pre">QStandardPaths::standardLocations(QStandardPaths::AppLocalDataLocation)</span></code>:</p>
+<ul class="simple">
+<li><p><strong>Linux and BSD</strong>: <code class="docutils literal notranslate"><span class="pre">~/.local/share/avogadro/</span></code></p></li>
+<li><p><strong>macOS</strong>: <code class="docutils literal notranslate"><span class="pre">Library/Application\</span> <span class="pre">Support/OpenChemistry/Avogadro</span></code></p></li>
+<li><p><strong>Windows</strong>: <code class="docutils literal notranslate"><span class="pre">C:/Users/USER/AppData/Local/Avogadro</span></code></p></li>
+</ul>
+<p>Inside each of these paths, subdirectories for each category of plugin will be
+scanned for both individual files and directories containing <code class="docutils literal notranslate"><span class="pre">plugin.json</span></code> files
+indicating a plugin “package.”</p>
+</section>
+<section id="plugin-packages-and-repositories">
+<h2>Plugin Packages and Repositories<a class="headerlink" href="#plugin-packages-and-repositories" title="Permalink to this heading">#</a></h2>
+<p>Since some plugins may require additional scripts or resources to function,
+they can be installed as an entire directory.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/OpenChemistry/avogadro-cclib">avogadro-cclib</a> - <a class="reference internal" href="formats.html"><span class="doc std std-doc">reads files</span></a> through the <code class="docutils literal notranslate"><span class="pre">cclib</span></code> Python module and needs a <code class="docutils literal notranslate"><span class="pre">utils.py</span></code> helper script</p></li>
+<li><p><a class="reference external" href="https://github.com/ghutchis/avogadro-rdkit">avogadro-rdkit</a> - packages multiple <a class="reference internal" href="commands.html"><span class="doc std std-doc">command</span></a> scripts together since they all use the <code class="docutils literal notranslate"><span class="pre">rdkit</span></code> package</p></li>
+</ul>
+<p>All repositories must include a <code class="docutils literal notranslate"><span class="pre">plugin.json</span></code> file, which is used by Avogadro
+to indicate the actual plugin scripts (e.g., multiple <a class="reference internal" href="commands.html"><span class="doc std std-doc">commands</span></a>)
+as well as the Download Plugins… command to provide information to the user:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;author&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Geoffrey Hutchison&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://github.com/ghutchis/avogadro-scikit-nano&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;avogadro-scikit-nano&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Generate carbon nanomaterial using scikit-nano&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;commands&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;commands&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SWNT&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;swnt.py&quot;</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MWNT&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mwnt.py&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">]</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Required sections:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">author</span></code>: a user-visible attribution of the script</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">version</span></code>: a version number of the script (which is ignored based on GitHub tags or releases)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">url</span></code>: the URL of the GitHub repository</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: the name of the plugin. Initial <code class="docutils literal notranslate"><span class="pre">avogadro-</span></code> prefix will be ignored by the Download Plugins… dialog.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">description</span></code>: a brief description of the plugin</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">type</span></code>: the category of plugin script, including:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">charges</span></code> for <a class="reference internal" href="charges.html"><span class="doc std std-doc">charge / electrostatics models</span></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">commands</span></code> for <a class="reference internal" href="commands.html"><span class="doc std std-doc">menu commands</span></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">formats</span></code> for <a class="reference internal" href="formats.html"><span class="doc std std-doc">file formats</span></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">generators</span></code> for <a class="reference internal" href="generators.html"><span class="doc std std-doc">input generators</span></a></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">commands</span></code>: a list of key/value pairs to indicate a potential <code class="docutils literal notranslate"><span class="pre">name</span></code> and the <code class="docutils literal notranslate"><span class="pre">command</span></code> filename for the script.</p></li>
+</ul>
+<p>Note that any files not listed in the <code class="docutils literal notranslate"><span class="pre">commands</span></code> list will be ignored by
+Avogadro during launch.</p>
+</section>
+</section>
+
+
+              </article>
+              
+    
+    <footer class="bd-footer-article">
+        <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="index.html" title="previous page">
+      <i class="fas fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">Script Plugins</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="interface.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">Script Interfaces</p>
+  </div>
+  <i class="fas fa-angle-right"></i>
+  </a>
+</div>
+    </footer>
+    
+</div>
+
+
+      </div>
+    </div>
+
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
+
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
+    &copy; Copyright ©2022 The OpenChemistry / Avogadro Teams..<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.0.<br>
+</p>
+  </div>
+  
+</div>
+</footer>
+  </body>
+</html>
