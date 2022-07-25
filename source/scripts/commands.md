@@ -34,7 +34,7 @@ The script *must* handle the following command-line arguments:
 The format of the `--print-options` output must be a JSON object of
 the following form:
 
-```
+```json
 {
   "userOptions": {
     ...
