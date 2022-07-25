@@ -12,7 +12,7 @@ Parameters that have a fixed number of mutually-exclusive string values
 will be presented using a pop-up menu (combo box). Such a parameter can
 be specified in the `userOptions` block as:
 
-```
+```json
 {
   "userOptions": {
     "Parameter Name": {
@@ -28,7 +28,7 @@ Here, "Parameter Name" is the default label that will be displayed in
 the GUI as a label next to the combo box. If you wish to have the label
 differ from the JSON key, you can add a "label" key pair:
 
-```
+```json
 "userOptions": {
   "element": {
     "type": "stringList",
@@ -52,7 +52,7 @@ be initially selected.
 A short text string can be requested (e.g. for the "title" of an
 optimization) via:
 
-```
+```json
 {
   "userOptions": {
     "Parameter Name": {
@@ -71,7 +71,7 @@ specified by default.
 A script can ask for the absolute path to an existing file using the
 following option block:
 
-```
+```json
 {
   "userOptions": {
     "Parameter Name": {
@@ -90,7 +90,7 @@ file pointed to by default.
 Scripts may request integer values from a specified range by adding a
 user-option of the following form:
 
-```
+```json
 {
   "userOptions": {
     "Parameter Name": {
@@ -121,7 +121,7 @@ This block will result in a QSpinBox, configured as follows:
 Scripts may request floating-point values from a specified range by
 adding:
 
-```
+```json
 {
   "userOptions": {
     "Parameter Name": {
@@ -141,7 +141,7 @@ adding:
 If a simple on/off value is needed, a boolean type option can be
 requested:
 
-```
+```json
 {
   "userOptions": {
     "Parameter Name": {

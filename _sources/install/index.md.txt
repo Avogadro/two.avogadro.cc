@@ -40,7 +40,10 @@ In addition to installing the latest release ({{release}}), there are nightly bu
 ::::
 
 ```{toctree}
-:hidden: true
+---
+hidden: true
+caption: Installation
+---
 
 build
 ```
