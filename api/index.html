@@ -4,7 +4,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Library API &#8212; Avogadro 1.97.0 documentation</title>
 <script>
@@ -44,7 +44,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Avogadro Remote Procedure Call (RPC)" href="rpc.html" />
-    <link rel="prev" title="Script File Formats" href="../scripts/formats.html" />
+    <link rel="prev" title="File Formats" href="../scripts/formats.html" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="docsearch:language" content="en">
   </head>
@@ -164,7 +164,12 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <div class="bd-toc-item active">
-    <ul class="nav bd-sidenav">
+    <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  API
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="rpc.html">
    Avogadro Remote Procedure Call (RPC)
@@ -193,9 +198,19 @@
     
     <div class="toc-item">
       
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
 
 <nav id="bd-toc-nav">
-    
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#main-classes">
+   Main Classes
+  </a>
+ </li>
+</ul>
+
 </nav>
     </div>
     
@@ -226,24 +241,49 @@
   <section class="tex2jax_ignore mathjax_ignore" id="library-api">
 <span id="api"></span><h1>Library API<a class="headerlink" href="#library-api" title="Permalink to this heading">#</a></h1>
 <p>Avogadro libraries can be used from both C++ and Python interfaces.</p>
-<div class="toctree-wrapper compound">
+<p>The Avogadro libraries are developed to support the Avogadro2 application, and
+provide liberally BSD-licensed, open-source reusable components for both C++ and Python. At its core it is a platform for developing molecular visualization, editing and interactive simulation applications. This is achieved using a collection of libraries, along with a plugin interface allowing the platform to be easily extended and used in a variety of environments.</p>
+<section id="main-classes">
+<h2>Main Classes<a class="headerlink" href="#main-classes" title="Permalink to this heading">#</a></h2>
+<p>The Avogadro libraries are implemented as a set of libraries, where all classes
+are implemented in the Avogadro <code class="docutils literal notranslate"><span class="pre">namespace</span></code>, and each library uses a namespace
+to distinguish members of that library. Include directories are also divided
+up by library, resulting in classes such as <code class="docutils literal notranslate"><span class="pre">Avogadro::Core::Molecule</span></code> in the
+include file <code class="docutils literal notranslate"><span class="pre">&lt;avogadro/core/molecule.h&gt;</span></code>. Some of the main classes that are
+useful to get acquainted with are:</p>
+<ul class="simple">
+<li><p>Core::Molecule : The base molecule class, for representing molecules.</p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="rpc.html">Avogadro Remote Procedure Call (RPC)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="rpc.html#rpc-protocol">RPC Protocol</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rpc.html#methods">Methods</a></li>
+<li><p>Core::Atom : Class representing atoms in a molecule.</p></li>
+<li><p>Core::Bond : Class representing bonds in a molecule.</p></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="classlist.html">Class list</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="core.html">Core Classes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="io.html">IO Classes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="molequeue.html">MoleQueue Classes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="qtgui.html">QtGui Classes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rendering.html">Rendering Classes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="vtk.html">VTK Classes</a></li>
+<li><p>Io::FileFormatManager : Convenience functions for file format wrangling.</p></li>
+<li><p>Io::FileFormat : Base class for all file format readers and writers.</p>
+<ul>
+<li><p>Io::CjsonFormat : Chemical JSON format reader and writeer.</p></li>
 </ul>
 </li>
+<li><p>Rendering::Scene : Class managing the main scene graph used for rendering.</p></li>
+<li><p>Rendering::Drawable : Base class for drawable items in the scene.</p>
+<ul>
+<li><p>Rendering::SphereGeometry : Drawable item for spheres.</p></li>
+<li><p>Rendering::CylinderGeometry : Drawable item for cylinders.</p></li>
 </ul>
+</li>
+<li><p>QtGui::PeriodicTableView : A periodic table widget.</p></li>
+<li><p>QtOpenGL::GLWidget : Provides an OpenGL widget for 3D molecule rendering.</p></li>
+</ul>
+<p>If you wish to extend Avogadro the main base classes are:</p>
+<ul class="simple">
+<li><p>QtGui::ScenePlugin : Generate geometry to be rendered in the scene.</p></li>
+<li><p>QtGui::ToolPlugin : Base class for mouse interaction, editing, etc.</p></li>
+<li><p>QtGui::ExtensionPlugin : Base class for dialog/menu extensions.</p></li>
+</ul>
+<p>Many examples of each can be found in the <code class="docutils literal notranslate"><span class="pre">avogadro/qtplugins/</span></code> subdirectories.</p>
+<div class="toctree-wrapper compound">
 </div>
+</section>
 </section>
 
 
@@ -257,7 +297,7 @@
       <i class="fas fa-angle-left"></i>
       <div class="prev-next-info">
           <p class="prev-next-subtitle">previous</p>
-          <p class="prev-next-title">Script File Formats</p>
+          <p class="prev-next-title">File Formats</p>
       </div>
   </a>
   <a class='right-next' id="next-link" href="rpc.html" title="next page">
@@ -291,7 +331,7 @@
   
   <div class="footer-item">
     <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.2.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.0.<br>
 </p>
   </div>
   

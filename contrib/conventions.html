@@ -4,7 +4,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Coding Conventions (C++) &#8212; Avogadro 1.97.0 documentation</title>
 <script>
@@ -164,7 +164,12 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <div class="bd-toc-item active">
-    <ul class="current nav bd-sidenav">
+    <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Contributing
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="credits.html">
    Thanks
@@ -306,8 +311,7 @@
 <li><p>Prefer solutions from the Qt library over Boost/others in Qt
 dependent code</p>
 <ul>
-<li><p>In Avogadro use the C++11 features where necessary, they fall back
-to Boost on older compilers</p></li>
+<li><p>In Avogadro use the C++11 and C++17 features where necessary.</p></li>
 <li><p>Avogadro offers AVO_OVERRIDE and AVO_FINAL (defines for new C++11
 override and final)</p></li>
 </ul>
@@ -315,12 +319,6 @@ override and final)</p></li>
 <li><p>Minimize dependencies on third party libraries, think carefully
 before adding more</p></li>
 <li><p>Use templates where they make sense</p></li>
-<li><p>Submit proposed topics to Gerrit</p>
-<ul>
-<li><p>Monitor the <a class="reference external" href="mailto:CDash&#37;&#52;&#48;Home">mailto:CDash<span>&#64;</span>Home</a> builds and nightly builds once merged to
-ensure support in all supported compilers</p></li>
-</ul>
-</li>
 </ul>
 </section>
 <section id="including-headers">
@@ -378,10 +376,10 @@ header for the class being used</p></li>
 </section>
 <section id="namespaces">
 <h2>Namespaces<a class="headerlink" href="#namespaces" title="Permalink to this heading">#</a></h2>
-<ul>
+<ul class="simple">
 <li><p>Open Chemistry code is namespaced</p></li>
 <li><p>Avogadro uses nested namespaces</p>
-<ul class="simple">
+<ul>
 <li><p>Everything is inside the Avogadro namespace</p></li>
 <li><p>Code in the core module is in the Avogadro::Core namespace</p></li>
 </ul>
@@ -389,14 +387,13 @@ header for the class being used</p></li>
 <li><p>MoleQueue and MongoChem use a namespace to contain most code</p></li>
 <li><p>Don’t overspecify, i.e. code in the Avogadro namespace doesn’t need
 to use Avogadro:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span>  <span class="n">Qt</span> <span class="n">signals</span> <span class="ow">and</span> <span class="n">slots</span> <span class="n">are</span> <span class="n">one</span> <span class="n">exception</span> <span class="n">where</span> <span class="n">MOC</span> <span class="n">often</span> <span class="n">needs</span> <span class="n">a</span> <span class="n">little</span> <span class="n">help</span>
-</pre></div>
-</div>
+<ul>
+<li><p>Qt signals and slots are one exception where MOC often needs a little help</p></li>
+</ul>
 </li>
 <li><p>Never use using inside a public header</p>
-<ul class="simple">
-<li><p>Only pull in specific symbols in source files, i.e. using
-Avogadro::Core::Molecule;</p></li>
+<ul>
+<li><p>Only pull in specific symbols in source files, i.e. <code class="docutils literal notranslate"><span class="pre">using</span> <span class="pre">Avogadro::Core::Molecule;</span></code></p></li>
 </ul>
 </li>
 </ul>
@@ -404,25 +401,25 @@ Avogadro::Core::Molecule;</p></li>
 <section id="casting">
 <h2>Casting<a class="headerlink" href="#casting" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Avoid C-style casts, prefer C++ (static_cast, dynamic_cast,
-const_cast, reinterpret_cast)</p></li>
-<li><p>For Qt classes, and Qt derived classes prefer qobject_cast over
-dynamic_cast</p></li>
+<li><p>Avoid C-style casts, prefer C++ (<code class="docutils literal notranslate"><span class="pre">static_cast</span></code>, <code class="docutils literal notranslate"><span class="pre">dynamic_cast</span></code>,
+<code class="docutils literal notranslate"><span class="pre">const_cast</span></code>, <code class="docutils literal notranslate"><span class="pre">reinterpret_cast</span></code>)</p></li>
+<li><p>For Qt classes, and Qt derived classes prefer <code class="docutils literal notranslate"><span class="pre">qobject_cast</span></code> over
+<code class="docutils literal notranslate"><span class="pre">dynamic_cast</span></code></p></li>
 </ul>
 </section>
 <section id="aesthetics">
 <h2>Aesthetics<a class="headerlink" href="#aesthetics" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Prefer enums to define constants over static const int or defines</p></li>
+<li><p>Prefer <code class="docutils literal notranslate"><span class="pre">enum</span></code>s to define constants over <code class="docutils literal notranslate"><span class="pre">static</span> <span class="pre">const</span> <span class="pre">int</span></code> or <code class="docutils literal notranslate"><span class="pre">#define</span></code>s</p></li>
 <li><p>Prefer verbose argument names in headers</p>
 <ul>
 <li><p>Most IDEs show the argument names in their autocompletion</p></li>
 <li><p>It looks better in the generated documentation</p></li>
-<li><p>Poor style making people guess what an argument is for</p></li>
+<li><p>Poor style making people guess the purpose of an argument</p></li>
 </ul>
 </li>
 <li><p>Avoid abbreviations, as they are often ambiguous and we can afford
-the extra bytes</p></li>
+a few extra bytes</p></li>
 </ul>
 </section>
 </section>
@@ -472,7 +469,7 @@ the extra bytes</p></li>
   
   <div class="footer-item">
     <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.2.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.0.<br>
 </p>
   </div>
   
