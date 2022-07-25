@@ -11,7 +11,7 @@ The script must handle the following command line arguments:
 - `--display-name` Print the name to display in user options
 - `--lang en` Optionally respond to language translation codes
 - `--charges` Calculate atomic partial charges for a molecule
-- `--potential` Calculate the electrostatic potentail for a molecule
+- `--potential` Calculate the electrostatic potential for a molecule
 on a supplied set of points (e.g., a molecular surface)
 
 With the exception of `--metadata` and `--display-name` options, charge scripts
