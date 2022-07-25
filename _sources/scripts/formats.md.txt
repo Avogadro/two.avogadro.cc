@@ -23,7 +23,7 @@ to `cjson`.
 Running the script with the `--metadata` option should print a JSON object
 of the following form:
 
-```
+```json
 {
   "inputFormat": "cml",
   "outputFormat": "cml",

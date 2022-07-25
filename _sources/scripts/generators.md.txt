@@ -30,7 +30,7 @@ The script must handle the following command-line arguments:
 The format of the `--print-options` output must be a JSON object of
 the following form:
 
-```
+```json
 {
    "userOptions": {
      ...
@@ -83,7 +83,7 @@ Rules for syntax highlighting can be specified as a collection of
 regular expressions or wildcard patterns and text format specifications
 in the "highlightRules" array. The highlightRules format is:
 
-```
+```json
 "highlightStyles": [
   {
     "style": "Style 1",
@@ -103,7 +103,7 @@ set of highlighting rules with particular output files. See the
 
 The general form of a highlight rule is:
 
-```
+```json
 {
   "patterns": [
     { "regexp": "^Some regexp?$" },
@@ -121,7 +121,7 @@ The general form of a highlight rule is:
 
 or,
 
-```
+```json
 {
   "patterns": [
     ...
@@ -141,7 +141,7 @@ see the QRegExp documentation) that are used to identify strings that
 should be formatted. There must be one of the following members present
 in each pattern object:
 
-- regexp A QRegExp-style regular expression. If no capture groups
+- regexp A `QRegExp`-style regular expression. If no capture groups
   ("(...)") are defined, the entire match is formatted. If one or more
   capture groups, only the captured texts will be marked.
 - wildcard A wildcard expression
@@ -175,7 +175,7 @@ allows fine-tuning of the font properties:
 
 The input generator extension will apply the entries in the highlightRules object to the text in the order they appear. Thus, later rules will override the formatting of earlier rules should a conflict arise.
 
-```
+```json
 {
   "patterns": [
     ...
@@ -196,7 +196,7 @@ formatted.
 
 There must be one of the following members present in each pattern object:
 
-- `regexp` A QRegExp-style regular expression. If no capture groups ("(...)")
+- `regexp` A `QRegExp`-style regular expression. If no capture groups ("(...)")
   are defined, the entire match is formatted. If one or more capture groups,
   only the captured texts will be marked.
 - `wildcard` A wildcard expression
@@ -252,7 +252,7 @@ When `--generate-input` is passed, the information needed to generate
 the input file will be written to the script's standard input
 channel as JSON string of the following form:
 
-```
+```json
 {
   "cjson": {...},
   "options": {
@@ -277,7 +277,7 @@ pairs for each of the options specified in the `userOptions` block of the
 If the script is called with `--generate-input`, it must write a JSON
 string to standard output with the following format:
 
-```
+```json
 {
   "files": [
     {

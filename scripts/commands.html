@@ -290,25 +290,25 @@ display-name.</p></li>
 <h2>Specifying UI options with –print-options<a class="headerlink" href="#specifying-ui-options-with-print-options" title="Permalink to this heading">#</a></h2>
 <p>The format of the <code class="docutils literal notranslate"><span class="pre">--print-options</span></code> output must be a JSON object of
 the following form:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="s2">&quot;userOptions&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="o">...</span>
-  <span class="p">},</span>
-  <span class="s2">&quot;highlightStyles&quot;</span><span class="p">:</span> <span class="p">[</span>
-    <span class="p">{</span>
-      <span class="s2">&quot;style&quot;</span><span class="p">:</span> <span class="s2">&quot;Descriptive name&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;rules&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="p">{</span>
-          <span class="s2">&quot;patterns&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="o">...</span> <span class="p">],</span>
-          <span class="s2">&quot;format&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
-        <span class="p">},</span>
-        <span class="o">...</span>
-      <span class="p">],</span>
-    <span class="p">},</span>
-    <span class="o">...</span>
-  <span class="p">],</span>
-  <span class="s2">&quot;inputMoleculeFormat&quot;</span><span class="p">:</span> <span class="s2">&quot;cjson&quot;</span>
-<span class="p">}</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+  &quot;userOptions&quot;: {
+    ...
+  },
+  &quot;highlightStyles&quot;: [
+    {
+      &quot;style&quot;: &quot;Descriptive name&quot;,
+      &quot;rules&quot;: [
+        {
+          &quot;patterns&quot;: [ ... ],
+          &quot;format&quot;: { ... }
+        },
+        ...
+      ],
+    },
+    ...
+  ],
+  &quot;inputMoleculeFormat&quot;: &quot;cjson&quot;
+}
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">userOptions</span></code> block contains a JSON object keyed with option names

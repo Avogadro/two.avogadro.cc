@@ -338,25 +338,25 @@ This is used in the GUI for menu entries, window titles, etc.</p></li>
 <h2>Specifying parameters with <code class="docutils literal notranslate"><span class="pre">--print-options</span></code><a class="headerlink" href="#specifying-parameters-with-print-options" title="Permalink to this heading">#</a></h2>
 <p>The format of the <code class="docutils literal notranslate"><span class="pre">--print-options</span></code> output must be a JSON object of
 the following form:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-   <span class="s2">&quot;userOptions&quot;</span><span class="p">:</span> <span class="p">{</span>
-     <span class="o">...</span>
-   <span class="p">},</span>
-   <span class="s2">&quot;highlightStyles&quot;</span><span class="p">:</span> <span class="p">[</span>
-      <span class="p">{</span>
-        <span class="s2">&quot;style&quot;</span><span class="p">:</span> <span class="s2">&quot;Descriptive name&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;rules&quot;</span><span class="p">:</span> <span class="p">[</span>
-         <span class="p">{</span>
-           <span class="s2">&quot;patterns&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="o">...</span> <span class="p">],</span>
-            <span class="s2">&quot;format&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
-          <span class="p">},</span>
-         <span class="o">...</span>
-        <span class="p">],</span>
-     <span class="p">},</span>
-     <span class="o">...</span>
-    <span class="p">],</span>
-   <span class="s2">&quot;inputMoleculeFormat&quot;</span><span class="p">:</span> <span class="s2">&quot;cjson&quot;</span>
- <span class="p">}</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+   &quot;userOptions&quot;: {
+     ...
+   },
+   &quot;highlightStyles&quot;: [
+      {
+        &quot;style&quot;: &quot;Descriptive name&quot;,
+        &quot;rules&quot;: [
+         {
+           &quot;patterns&quot;: [ ... ],
+            &quot;format&quot;: { ... }
+          },
+         ...
+        ],
+     },
+     ...
+    ],
+   &quot;inputMoleculeFormat&quot;: &quot;cjson&quot;
+ }
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">userOptions</span></code> block contains a JSON object keyed with option names
@@ -419,50 +419,50 @@ values where appropriate.</p>
 <p>Rules for syntax highlighting can be specified as a collection of
 regular expressions or wildcard patterns and text format specifications
 in the “highlightRules” array. The highlightRules format is:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;highlightStyles&quot;</span><span class="p">:</span> <span class="p">[</span>
-  <span class="p">{</span>
-    <span class="s2">&quot;style&quot;</span><span class="p">:</span> <span class="s2">&quot;Style 1&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;rules&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="p">(</span><span class="nb">list</span> <span class="n">of</span> <span class="n">highlight</span> <span class="n">rules</span><span class="p">,</span> <span class="n">see</span> <span class="n">below</span><span class="p">)</span> <span class="p">],</span>
-  <span class="p">},</span>
-  <span class="p">{</span>
-    <span class="s2">&quot;style&quot;</span><span class="p">:</span> <span class="s2">&quot;Style 2&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;rules&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="p">(</span><span class="nb">list</span> <span class="n">of</span> <span class="n">highlight</span> <span class="n">rules</span><span class="p">,</span> <span class="n">see</span> <span class="n">below</span><span class="p">)</span> <span class="p">],</span>
-  <span class="p">},</span>
-  <span class="o">...</span>
-<span class="p">],</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;highlightStyles&quot;: [
+  {
+    &quot;style&quot;: &quot;Style 1&quot;,
+    &quot;rules&quot;: [ (list of highlight rules, see below) ],
+  },
+  {
+    &quot;style&quot;: &quot;Style 2&quot;,
+    &quot;rules&quot;: [ (list of highlight rules, see below) ],
+  },
+  ...
+],
 </pre></div>
 </div>
 <p>The style name is unique to the style object, and used to associate a
 set of highlighting rules with particular output files. See the
 –generate-input documentation for more details.</p>
 <p>The general form of a highlight rule is:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="s2">&quot;patterns&quot;</span><span class="p">:</span> <span class="p">[</span>
-    <span class="p">{</span> <span class="s2">&quot;regexp&quot;</span><span class="p">:</span> <span class="s2">&quot;^Some regexp?$&quot;</span> <span class="p">},</span>
-    <span class="p">{</span> <span class="s2">&quot;wildcard&quot;</span><span class="p">:</span> <span class="s2">&quot;A * wildcard expression&quot;</span> <span class="p">},</span>
-    <span class="p">{</span> <span class="s2">&quot;string&quot;</span><span class="p">:</span> <span class="s2">&quot;An exact string to match.&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;caseSensitive&quot;</span><span class="p">:</span> <span class="n">false</span>
-    <span class="p">},</span>
-    <span class="o">...</span>
-  <span class="p">],</span>
-  <span class="s2">&quot;format&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">&quot;preset&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;preset name&gt;&quot;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+  &quot;patterns&quot;: [
+    { &quot;regexp&quot;: &quot;^Some regexp?$&quot; },
+    { &quot;wildcard&quot;: &quot;A * wildcard expression&quot; },
+    { &quot;string&quot;: &quot;An exact string to match.&quot;,
+      &quot;caseSensitive&quot;: false
+    },
+    ...
+  ],
+  &quot;format&quot;: {
+    &quot;preset&quot;: &quot;&lt;preset name&gt;&quot;
+  }
+}
 </pre></div>
 </div>
 <p>or,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="s2">&quot;patterns&quot;</span><span class="p">:</span> <span class="p">[</span>
-    <span class="o">...</span>
-  <span class="p">],</span>
-  <span class="s2">&quot;format&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">&quot;foreground&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span>  <span class="mi">64</span> <span class="p">],</span>
-    <span class="s2">&quot;background&quot;</span><span class="p">:</span> <span class="p">[</span>   <span class="mi">0</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">128</span> <span class="p">],</span>
-    <span class="s2">&quot;attributes&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;bold&quot;</span><span class="p">,</span> <span class="s2">&quot;italic&quot;</span><span class="p">,</span> <span class="s2">&quot;underline&quot;</span><span class="p">],</span>
-    <span class="s2">&quot;family&quot;</span><span class="p">:</span> <span class="s2">&quot;serif&quot;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+  &quot;patterns&quot;: [
+    ...
+  ],
+  &quot;format&quot;: {
+    &quot;foreground&quot;: [ 255, 128,  64 ],
+    &quot;background&quot;: [   0, 128, 128 ],
+    &quot;attributes&quot;: [&quot;bold&quot;, &quot;italic&quot;, &quot;underline&quot;],
+    &quot;family&quot;: &quot;serif&quot;
+  }
+}
 </pre></div>
 </div>
 <p>The patterns array contains a collection of fixed strings, wildcard
@@ -471,7 +471,7 @@ see the QRegExp documentation) that are used to identify strings that
 should be formatted. There must be one of the following members present
 in each pattern object:</p>
 <ul class="simple">
-<li><p>regexp A QRegExp-style regular expression. If no capture groups
+<li><p>regexp A <code class="docutils literal notranslate"><span class="pre">QRegExp</span></code>-style regular expression. If no capture groups
 (“(…)”) are defined, the entire match is formatted. If one or more
 capture groups, only the captured texts will be marked.</p></li>
 <li><p>wildcard A wildcard expression</p></li>
@@ -504,17 +504,17 @@ allows fine-tuning of the font properties:</p>
 <li><p>family of font. Valid values are “serif”, “sans”, or “mono” Any of the font property members may be omitted and default QTextCharFormat settings will be substituted.</p></li>
 </ul>
 <p>The input generator extension will apply the entries in the highlightRules object to the text in the order they appear. Thus, later rules will override the formatting of earlier rules should a conflict arise.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="s2">&quot;patterns&quot;</span><span class="p">:</span> <span class="p">[</span>
-    <span class="o">...</span>
-  <span class="p">],</span>
-  <span class="s2">&quot;format&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">&quot;foreground&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span>  <span class="mi">64</span> <span class="p">],</span>
-    <span class="s2">&quot;background&quot;</span><span class="p">:</span> <span class="p">[</span>   <span class="mi">0</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">128</span> <span class="p">],</span>
-    <span class="s2">&quot;attributes&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;bold&quot;</span><span class="p">,</span> <span class="s2">&quot;italic&quot;</span><span class="p">,</span> <span class="s2">&quot;underline&quot;</span><span class="p">],</span>
-    <span class="s2">&quot;family&quot;</span><span class="p">:</span> <span class="s2">&quot;serif&quot;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+  &quot;patterns&quot;: [
+    ...
+  ],
+  &quot;format&quot;: {
+    &quot;foreground&quot;: [ 255, 128,  64 ],
+    &quot;background&quot;: [   0, 128, 128 ],
+    &quot;attributes&quot;: [&quot;bold&quot;, &quot;italic&quot;, &quot;underline&quot;],
+    &quot;family&quot;: &quot;serif&quot;
+  }
+}
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">patterns</span></code> array contains a collection of fixed strings, wildcard
@@ -523,7 +523,7 @@ the QRegExp documentation) that are used to identify strings that should be
 formatted.</p>
 <p>There must be one of the following members present in each pattern object:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">regexp</span></code> A QRegExp-style regular expression. If no capture groups (“(…)”)
+<li><p><code class="docutils literal notranslate"><span class="pre">regexp</span></code> A <code class="docutils literal notranslate"><span class="pre">QRegExp</span></code>-style regular expression. If no capture groups (“(…)”)
 are defined, the entire match is formatted. If one or more capture groups,
 only the captured texts will be marked.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">wildcard</span></code> A wildcard expression</p></li>
@@ -575,14 +575,14 @@ Chemical JSON or “cml” for Chemical Markup Language.</p>
 <p>When <code class="docutils literal notranslate"><span class="pre">--generate-input</span></code> is passed, the information needed to generate
 the input file will be written to the script’s standard input
 channel as JSON string of the following form:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="s2">&quot;cjson&quot;</span><span class="p">:</span> <span class="p">{</span><span class="o">...</span><span class="p">},</span>
-  <span class="s2">&quot;options&quot;</span><span class="p">:</span> <span class="p">{</span>
-   <span class="s2">&quot;First option name&quot;</span><span class="p">:</span> <span class="s2">&quot;Value 2&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;Second option name&quot;</span><span class="p">:</span> <span class="s2">&quot;Value 1&quot;</span><span class="p">,</span>
-    <span class="o">...</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+  &quot;cjson&quot;: {...},
+  &quot;options&quot;: {
+   &quot;First option name&quot;: &quot;Value 2&quot;,
+    &quot;Second option name&quot;: &quot;Value 1&quot;,
+    ...
+  }
+}
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">cjson</span></code> entry will contain a Chemical JSON representation
@@ -596,22 +596,22 @@ pairs for each of the options specified in the <code class="docutils literal not
 <code class="docutils literal notranslate"><span class="pre">--print-options</span></code> output.</p>
 <p>If the script is called with <code class="docutils literal notranslate"><span class="pre">--generate-input</span></code>, it must write a JSON
 string to standard output with the following format:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="s2">&quot;files&quot;</span><span class="p">:</span> <span class="p">[</span>
-    <span class="p">{</span>
-      <span class="s2">&quot;filename&quot;</span><span class="p">:</span> <span class="s2">&quot;file1.ext&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;contents&quot;</span><span class="p">:</span> <span class="s2">&quot;...&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;highlightStyles&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="o">...</span> <span class="p">]</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-      <span class="s2">&quot;filename&quot;</span><span class="p">:</span> <span class="s2">&quot;file2.ext&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;filePath&quot;</span><span class="p">:</span> <span class="s2">&quot;/path/to/file/on/local/filesystem&quot;</span>
-    <span class="p">},</span>
-    <span class="o">...</span>
-  <span class="p">],</span>
-  <span class="s2">&quot;warnings&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;First warning.&quot;</span><span class="p">,</span> <span class="s2">&quot;Second warning.&quot;</span><span class="p">,</span> <span class="o">...</span> <span class="p">],</span>
-  <span class="s2">&quot;mainFile&quot;</span><span class="p">:</span> <span class="s2">&quot;file2.ext&quot;</span>
-<span class="p">}</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+  &quot;files&quot;: [
+    {
+      &quot;filename&quot;: &quot;file1.ext&quot;,
+      &quot;contents&quot;: &quot;...&quot;,
+      &quot;highlightStyles&quot;: [ ... ]
+    },
+    {
+      &quot;filename&quot;: &quot;file2.ext&quot;,
+      &quot;filePath&quot;: &quot;/path/to/file/on/local/filesystem&quot;
+    },
+    ...
+  ],
+  &quot;warnings&quot;: [&quot;First warning.&quot;, &quot;Second warning.&quot;, ... ],
+  &quot;mainFile&quot;: &quot;file2.ext&quot;
+}
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">files</span></code> block is an array of objects, which define the actual input

@@ -2,8 +2,8 @@
 
 # Charges / Electrostatics
 
-Avogadro allows scripts to translate between formats which Avogadro already
-handles and new formats (e.g., to use packages like cclib).
+Avogadro allows scripts to calculate atomic partial charges and electrostatic
+potential maps (e.g., for molecular surfaces).
 
 The script must handle the following command line arguments:
 
@@ -26,7 +26,7 @@ directly, but not assign atomic partial charges.
 Running the script with the `--metadata` option should print a JSON object
 of the following form:
 
-```
+```json
 {
   "inputFormat": "mol",
   "identifier": "Unique Name"
@@ -57,6 +57,10 @@ allowed.
 
 Optional members are:
 : - `description`
+
+Make sure to specify the `elements` list correctly. Avogadro will automatically
+exclude a script in the list of available methods if a molecule contains
+elements not in the list (e.g., if it does not support metals).
 
 ## Calculating Atomic Partial Charges with `--charge`
 
