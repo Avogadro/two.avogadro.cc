@@ -80,23 +80,23 @@ This documentation site is for Avogadro 2, currently in development.
 {fas}`book;fa-2x` User Guide
 ^^^
 
-  Coming Soon for Avogadro2:
+Coming Soon for Avogadro2:
 
-  * Getting Started
-  * Tutorials
-  * Manual
+- Getting Started
+- Tutorials
+- Manual
 :::
 
 :::{grid-item-card}
 :class-header: sd-font-weight-bold sd-bg-light sd-text-center
-{fas}`laptop-code;fa-2x` API Documentation
+{fas}`laptop-code;fa-2x` Develop
 ^^^
 
-  Develop scripts and C++ code with Avogadro:
+Develop scripts and C++ code with Avogadro:
 
-  * [Script Plugins](Scripts)
-  * Jupyter Notebooks
-  * [C++ API](API)
+- [Script Plugins](Scripts)
+- Jupyter Notebooks
+- [C++ API](API)
 
 :::
 :::{grid-item-card}
@@ -104,12 +104,12 @@ This documentation site is for Avogadro 2, currently in development.
 {fas}`users;fa-2x` Contribute
 ^^^
 
-  We want your help to make Avogadro better for everyone:
+We want your help to make Avogadro better for everyone:
 
-  * Roadmap
-  * [Translation / Localization](Translate)
-  * Bugs / Issues
-  * Feature Requests
+- Roadmap
+- [Translation / Localization](Translate)
+- [Bugs / Issues][issues]
+- [Feature Requests][features]
 :::
 ::::
 
@@ -117,12 +117,13 @@ This documentation site is for Avogadro 2, currently in development.
 
 There are various ways to get in touch with the Avogadro community:
 
-- [Avogadro Discussion] is the best place to ask usage questions and is a
-  great way to get feedback from other users on how to approach a problem.
-- If you think you've found a bug, or would like to request a feature, please
-  report an issue at the [AvogadroLibs GitHub repository].
-
-You can also find more information about Avogadro on [Twitter].
+- [Avogadro Discussion] is the best place to ask questions and is a
+  great way to get feedback from other users on how to approach a problem,
+  suggest ideas, etc.
+- If you think you've found a [bug][issues], or would like to request
+a [feature][features], please report an issue on our [project tracker][tracker].
+- You can also find more information about Avogadro on [Twitter]. Feel free to
+  tag us on your papers and images!
 
 ```{toctree}
 :hidden: true
@@ -136,6 +137,7 @@ contrib/index
 
 [avogadro discussion]: https://discuss.avogadro.cc/
 [avogadrolibs github repository]: https://github.com/openchemistry/avogadrolibs
-[features]: https://github.com/OpenChemistry/avogadrolibs/issues
-[issues]: https://github.com/OpenChemistry/avogadrolibs/issues
+[features]: https://github.com/OpenChemistry/avogadrolibs/issues/new?template=feature_request.md
+[issues]: https://github.com/OpenChemistry/avogadrolibs/issues/new?template=bug_report.md
+[tracker]: https://github.com/openchemistry/avogadrolibs/issues
 [twitter]: https://twitter.com/AvogadroChem
