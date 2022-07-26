@@ -26,7 +26,7 @@ directly, but not assign atomic partial charges.
 Running the script with the `--metadata` option should print a JSON object
 of the following form:
 
-```json
+```
 {
   "inputFormat": "mol",
   "identifier": "Unique Name"
