@@ -71,6 +71,7 @@ myst_enable_extensions = [
 myst_substitutions = {
   "release": release,
   "macurl": f"https://github.com/OpenChemistry/avogadrolibs/releases/download/{version}/Avogadro2-{version}-Darwin.dmg",
+  "macurlarm": f"https://github.com/OpenChemistry/avogadrolibs/releases/download/{version}/Avogadro2-{version}-Darwin-arm64.dmg",
   "winurl": f"https://github.com/OpenChemistry/avogadrolibs/releases/download/{version}/Avogadro2-{version}-win64.exe",
   "appurl": f"https://github.com/OpenChemistry/avogadrolibs/releases/download/{version}/Avogadro2-x86_64.AppImage"
 }
