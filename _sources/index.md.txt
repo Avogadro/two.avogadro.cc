@@ -122,7 +122,7 @@ There are various ways to get in touch with the Avogadro community:
   suggest ideas, etc.
 - If you think you've found a [bug][issues], or would like to request
 a [feature][features], please report an issue on our [project tracker][tracker].
-- You can also find more information about Avogadro on [Twitter]. Feel free to
+- You can also find more information about Avogadro on [Twitter] or <a href="http://fosstodon.org/@avogadrochem" rel="me">Mastodon</a>. Feel free to
   tag us on your papers and images!
 
 ```{toctree}
