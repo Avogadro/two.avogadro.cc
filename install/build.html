@@ -396,7 +396,7 @@ infrastructure, or the Github/Gitorious mirror. You should also track
 changes from here as the cloning/update process will be faster, and is
 always in sync with Gerrit. To clone the Open Chemistry repository that
 contains the other projects as submodules,</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git clone --recursive git://github.com/OpenChemistry/openchemistry.git
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>--recursive<span class="w"> </span>git://github.com/OpenChemistry/openchemistry.git
 </pre></div>
 </div>
 </section>
@@ -404,8 +404,8 @@ contains the other projects as submodules,</p>
 <h2>Updating<a class="headerlink" href="#updating" title="Permalink to this heading">#</a></h2>
 <p>In order to update the repository from the openchemistry module you can
 run,</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git pull
-git submodule update --init
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>pull
+git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--init
 </pre></div>
 </div>
 </section>
@@ -431,10 +431,10 @@ a guide you will need:</p>
 <p>It is recommended that you create a build tree outside of the source
 tree. Assuming you are in the directory where you cloned the repository
 the following commands will create a build tree, configure it and build.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mkdir openchemistry-build
-<span class="nb">cd</span> openchemistry-build
-cmake ../openchemistry
-cmake --build . --config Release
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>openchemistry-build
+<span class="nb">cd</span><span class="w"> </span>openchemistry-build
+cmake<span class="w"> </span>../openchemistry
+cmake<span class="w"> </span>--build<span class="w"> </span>.<span class="w"> </span>--config<span class="w"> </span>Release
 </pre></div>
 </div>
 <p>You may wish to run cmake-gui in the build directory once it has been
@@ -493,8 +493,8 @@ like,</p>
 </pre></div>
 </div>
 <p>On Mac, it might be:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">DYLD_LIBRARY_PATH</span><span class="o">=</span>/Users/your-user/openchemistry-build/prefix/lib
-open /Users/your-user/openchemistry-build/avogadroapp/bin/Avogadro2.app
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">DYLD_LIBRARY_PATH</span><span class="o">=</span>/Users/your-user/openchemistry-build/prefix/lib
+open<span class="w"> </span>/Users/your-user/openchemistry-build/avogadroapp/bin/Avogadro2.app
 </pre></div>
 </div>
 <p>We will look into improving this situation soon.</p>
@@ -504,8 +504,8 @@ open /Users/your-user/openchemistry-build/avogadroapp/bin/Avogadro2.app
 <p>The molequeue and avogadroapps projects can build installers.
 In order to do this you must cd into the appropriate subdirectory and
 call make package. So to build the Avogadro 2 package,</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> avogadroapp
-make package
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>avogadroapp
+make<span class="w"> </span>package
 </pre></div>
 </div>
 <p>You may need to run cmake-gui, toggle advanced variables and

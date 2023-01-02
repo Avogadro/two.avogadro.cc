@@ -408,19 +408,19 @@ before adding more</p></li>
 <li><p>Prefer declaration of types in public headers over including headers
 for the type</p></li>
 </ul>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span><span class="w"> </span><span class="nn">Avogadro</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="k">class</span><span class="w"> </span><span class="nc">MyClass</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span><span class="w"> </span><span class="nn">Avogadro</span><span class="w"> </span><span class="p">{</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">MyClass</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <ul class="simple">
 <li><p>In source files include specialized headers first, then dependency
 headers, then generic headers</p></li>
 </ul>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;myapiheader.h&quot;</span><span class="c1"> // Our header</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;avogadro/core/molecule.h&gt;</span><span class="c1"> // Avogadro header from a different module</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;QtCore/QString&gt;</span><span class="c1"> // Qt header</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span><span class="c1"> // STL</span><span class="cp"></span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;myapiheader.h&quot;</span><span class="c1"> // Our header</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;avogadro/core/molecule.h&gt;</span><span class="c1"> // Avogadro header from a different module</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;QtCore/QString&gt;</span><span class="c1"> // Qt header</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span><span class="c1"> // STL</span>
 </pre></div>
 </div>
 <section id="export-macro-headers">
@@ -429,7 +429,7 @@ headers, then generic headers</p></li>
 <li><p>If you need to include the export header for the module do it as the
 first include</p></li>
 </ul>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;avogadrorenderingexport.h&quot;</span><span class="cp"></span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;avogadrorenderingexport.h&quot;</span>
 </pre></div>
 </div>
 </section>
@@ -447,8 +447,8 @@ included in public headers</p></li>
 <li><p>Never include Qt module headers such as QtGui, instead include the
 header for the class being used</p></li>
 </ul>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;QtGui&gt;</span><span class="c1"> // WRONG (module header)!</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;QtGui/QDialog&gt;</span><span class="c1"> // Correct</span><span class="cp"></span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;QtGui&gt;</span><span class="c1"> // WRONG (module header)!</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;QtGui/QDialog&gt;</span><span class="c1"> // Correct</span>
 </pre></div>
 </div>
 </section>
