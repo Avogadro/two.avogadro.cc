@@ -1,5 +1,7 @@
 ---
 notoc: true
+html_theme.sidebar_secondary.remove: true
+html_theme.show_prev_next: false
 ---
 
 (about)=
