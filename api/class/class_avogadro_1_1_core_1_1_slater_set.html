@@ -230,6 +230,18 @@ document.write(`
           <a href="https://twitter.com/AvogadroChem" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter"></i></span>
             <label class="sr-only">Twitter</label></a>
         </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon"></i></span>
+            <label class="sr-only">Mastodon</label></a>
+        </li>
 </ul></div>
       
     </div>
@@ -358,6 +370,18 @@ document.write(`
           <a href="https://twitter.com/AvogadroChem" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter"></i></span>
             <label class="sr-only">Twitter</label></a>
         </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon"></i></span>
+            <label class="sr-only">Mastodon</label></a>
+        </li>
 </ul></div>
         
       </div>
@@ -446,12 +470,49 @@ document.write(`
       <main id="main-content" class="bd-main">
         
         
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
 
 
 
 
-<div class="bd-content col-12 col-md-9 col-xl-7">
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
     
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Library API</a></li>
+    
+    
+    <li class="breadcrumb-item"><i class="fa-solid fa-ellipsis"></i></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../core.html" class="nav-link">Core Classes</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Class Avogadro::Core::SlaterSet</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
               
                 
 <div id="searchbox"></div>
@@ -459,253 +520,15 @@ document.write(`
                   
   <section id="class-avogadro-core-slaterset">
 <h1>Class Avogadro::Core::SlaterSet<a class="headerlink" href="#class-avogadro-core-slaterset" title="Permalink to this heading">#</a></h1>
-<dl class="cpp class">
-<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core9SlaterSetE">
-<span id="_CPPv3N8Avogadro4Core9SlaterSetE"></span><span id="_CPPv2N8Avogadro4Core9SlaterSetE"></span><span id="Avogadro::Core::SlaterSet"></span><span class="target" id="class_avogadro_1_1_core_1_1_slater_set"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SlaterSet</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_core_1_1_basis_set.html#_CPPv4N8Avogadro4Core8BasisSetE" title="Avogadro::Core::BasisSet"><span class="n"><span class="pre">BasisSet</span></span></a><a class="headerlink" href="#_CPPv4N8Avogadro4Core9SlaterSetE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p><a class="reference internal" href="#class_avogadro_1_1_core_1_1_slater_set"><span class="std std-ref">SlaterSet</span></a> Class. </p>
-<p>
-The <a class="reference internal" href="#class_avogadro_1_1_core_1_1_slater_set"><span class="std std-ref">SlaterSet</span></a> class has a transparent data structure for storing the basis sets output by many quantum mechanical codes. It has a certain hierarchy where shells are built up from n primitives, in this case Slater Type Orbitals (STOs). Each shell has a type (S, P, D, F, etc) and is composed of one or more STOs. Each STO has a contraction coefficient, c, and an exponent, a.<dl class="simple">
-<dt><strong>Author</strong></dt><dd><p>Marcus D. Hanwell</p>
-</dd>
-</dl>
-</p>
-<p>When calculating Molecular Orbitals (MOs) each orthogonal shell has an independent coefficient. That is the S type orbitals have one coefficient, the P type orbitals have three coefficients (Px, Py and Pz), the D type orbitals have five (or six if cartesian types) coefficients, and so on. </p>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-types">Public Types</p>
-<dl class="cpp enum">
-<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core9SlaterSet6slaterE">
-<span id="_CPPv3N8Avogadro4Core9SlaterSet6slaterE"></span><span id="_CPPv2N8Avogadro4Core9SlaterSet6slaterE"></span><span class="target" id="class_avogadro_1_1_core_1_1_slater_set_1a990c39cf8669cbe794848b00c975508d"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">slater</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core9SlaterSet6slaterE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Enumeration of the Slater orbital types. </p>
-<p><em>Values:</em></p>
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core9SlaterSet6slater1SE">
-<span id="_CPPv3N8Avogadro4Core9SlaterSet6slater1SE"></span><span id="_CPPv2N8Avogadro4Core9SlaterSet6slater1SE"></span><span class="target" id="class_avogadro_1_1_core_1_1_slater_set_1a990c39cf8669cbe794848b00c975508daf1ce01387d2348f8b858721a7db81670"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">S</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core9SlaterSet6slater1SE" title="Permalink to this definition">#</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core9SlaterSet6slater2PXE">
-<span id="_CPPv3N8Avogadro4Core9SlaterSet6slater2PXE"></span><span id="_CPPv2N8Avogadro4Core9SlaterSet6slater2PXE"></span><span class="target" id="class_avogadro_1_1_core_1_1_slater_set_1a990c39cf8669cbe794848b00c975508da3bb85920d54d707d1a4e9a197773230e"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PX</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core9SlaterSet6slater2PXE" title="Permalink to this definition">#</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core9SlaterSet6slater2PYE">
-<span id="_CPPv3N8Avogadro4Core9SlaterSet6slater2PYE"></span><span id="_CPPv2N8Avogadro4Core9SlaterSet6slater2PYE"></span><span class="target" id="class_avogadro_1_1_core_1_1_slater_set_1a990c39cf8669cbe794848b00c975508dae0a77e22f8238541046ba5f9a5941e9e"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PY</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core9SlaterSet6slater2PYE" title="Permalink to this definition">#</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core9SlaterSet6slater2PZE">
-<span id="_CPPv3N8Avogadro4Core9SlaterSet6slater2PZE"></span><span id="_CPPv2N8Avogadro4Core9SlaterSet6slater2PZE"></span><span class="target" id="class_avogadro_1_1_core_1_1_slater_set_1a990c39cf8669cbe794848b00c975508da301a66d5e3c0179f4ddab3520b332234"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PZ</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core9SlaterSet6slater2PZE" title="Permalink to this definition">#</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core9SlaterSet6slater2X2E">
-<span id="_CPPv3N8Avogadro4Core9SlaterSet6slater2X2E"></span><span id="_CPPv2N8Avogadro4Core9SlaterSet6slater2X2E"></span><span class="target" id="class_avogadro_1_1_core_1_1_slater_set_1a990c39cf8669cbe794848b00c975508da0f6c4c83e4fac43cef81eaddb3e90f4d"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">X2</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core9SlaterSet6slater2X2E" title="Permalink to this definition">#</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core9SlaterSet6slater2XZE">
-<span id="_CPPv3N8Avogadro4Core9SlaterSet6slater2XZE"></span><span id="_CPPv2N8Avogadro4Core9SlaterSet6slater2XZE"></span><span class="target" id="class_avogadro_1_1_core_1_1_slater_set_1a990c39cf8669cbe794848b00c975508da17598f0f134bb1b6c20e07f7ad30bc99"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">XZ</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core9SlaterSet6slater2XZE" title="Permalink to this definition">#</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core9SlaterSet6slater2Z2E">
-<span id="_CPPv3N8Avogadro4Core9SlaterSet6slater2Z2E"></span><span id="_CPPv2N8Avogadro4Core9SlaterSet6slater2Z2E"></span><span class="target" id="class_avogadro_1_1_core_1_1_slater_set_1a990c39cf8669cbe794848b00c975508dab5c674e0d924575c563f1596ac469ee0"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Z2</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core9SlaterSet6slater2Z2E" title="Permalink to this definition">#</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core9SlaterSet6slater2YZE">
-<span id="_CPPv3N8Avogadro4Core9SlaterSet6slater2YZE"></span><span id="_CPPv2N8Avogadro4Core9SlaterSet6slater2YZE"></span><span class="target" id="class_avogadro_1_1_core_1_1_slater_set_1a990c39cf8669cbe794848b00c975508da3b8f851b2f010ff2fba4d1e6ff86cc45"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">YZ</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core9SlaterSet6slater2YZE" title="Permalink to this definition">#</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core9SlaterSet6slater2XYE">
-<span id="_CPPv3N8Avogadro4Core9SlaterSet6slater2XYE"></span><span id="_CPPv2N8Avogadro4Core9SlaterSet6slater2XYE"></span><span class="target" id="class_avogadro_1_1_core_1_1_slater_set_1a990c39cf8669cbe794848b00c975508da0e35228e79b7d412f3c0ba4d49646ef5"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">XY</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core9SlaterSet6slater2XYE" title="Permalink to this definition">#</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core9SlaterSet6slater2UUE">
-<span id="_CPPv3N8Avogadro4Core9SlaterSet6slater2UUE"></span><span id="_CPPv2N8Avogadro4Core9SlaterSet6slater2UUE"></span><span class="target" id="class_avogadro_1_1_core_1_1_slater_set_1a990c39cf8669cbe794848b00c975508da73953effb6bd3d7b86908f8c03d0818a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">UU</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core9SlaterSet6slater2UUE" title="Permalink to this definition">#</a><br /></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-</div>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core9SlaterSet9SlaterSetEv">
-<span id="_CPPv3N8Avogadro4Core9SlaterSet9SlaterSetEv"></span><span id="_CPPv2N8Avogadro4Core9SlaterSet9SlaterSetEv"></span><span id="Avogadro::Core::SlaterSet::SlaterSet"></span><span class="target" id="class_avogadro_1_1_core_1_1_slater_set_1a9e361b21eb68a1cf909316e11a0902a8"></span><span class="sig-name descname"><span class="n"><span class="pre">SlaterSet</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core9SlaterSet9SlaterSetEv" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Constructor. </p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core9SlaterSetD0Ev">
-<span id="_CPPv3N8Avogadro4Core9SlaterSetD0Ev"></span><span id="_CPPv2N8Avogadro4Core9SlaterSetD0Ev"></span><span id="Avogadro::Core::SlaterSet::~SlaterSet"></span><span class="target" id="class_avogadro_1_1_core_1_1_slater_set_1a0795bd1f4df3ea569952842598e1c2e0"></span><span class="sig-name descname"><span class="n"><span class="pre">~SlaterSet</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core9SlaterSetD0Ev" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Destructor. </p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core9SlaterSet5cloneEv">
-<span id="_CPPv3NK8Avogadro4Core9SlaterSet5cloneEv"></span><span id="_CPPv2NK8Avogadro4Core9SlaterSet5cloneEv"></span><span id="Avogadro::Core::SlaterSet::cloneC"></span><span class="target" id="class_avogadro_1_1_core_1_1_slater_set_1a7372830f0cfbf54ca125369b1d250730"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro4Core9SlaterSetE" title="Avogadro::Core::SlaterSet"><span class="n"><span class="pre">SlaterSet</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">clone</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core9SlaterSet5cloneEv" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Clone. </p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core9SlaterSet16addSlaterIndicesERKNSt6vectorIiEE">
-<span id="_CPPv3N8Avogadro4Core9SlaterSet16addSlaterIndicesERKNSt6vectorIiEE"></span><span id="_CPPv2N8Avogadro4Core9SlaterSet16addSlaterIndicesERKNSt6vectorIiEE"></span><span id="Avogadro::Core::SlaterSet::addSlaterIndices__std::vector:i:CR"></span><span class="target" id="class_avogadro_1_1_core_1_1_slater_set_1a2afbbb5c4dcea363b933a2b505003851"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addSlaterIndices</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">i</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core9SlaterSet16addSlaterIndicesERKNSt6vectorIiEE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Add a basis to the basis set. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>i</strong> – Index of the atom to add the Basis too. </p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The index of the added Basis. </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core9SlaterSet14addSlaterTypesERKNSt6vectorIiEE">
-<span id="_CPPv3N8Avogadro4Core9SlaterSet14addSlaterTypesERKNSt6vectorIiEE"></span><span id="_CPPv2N8Avogadro4Core9SlaterSet14addSlaterTypesERKNSt6vectorIiEE"></span><span id="Avogadro::Core::SlaterSet::addSlaterTypes__std::vector:i:CR"></span><span class="target" id="class_avogadro_1_1_core_1_1_slater_set_1a520c549537c6ad02df639ba31a7d7291"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addSlaterTypes</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">t</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core9SlaterSet14addSlaterTypesERKNSt6vectorIiEE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Add the symmetry types for the orbitals. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>t</strong> – Vector containing the types of symmetry using the slater enum. </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core9SlaterSet8addZetasERKNSt6vectorIdEE">
-<span id="_CPPv3N8Avogadro4Core9SlaterSet8addZetasERKNSt6vectorIdEE"></span><span id="_CPPv2N8Avogadro4Core9SlaterSet8addZetasERKNSt6vectorIdEE"></span><span id="Avogadro::Core::SlaterSet::addZetas__std::vector:double:CR"></span><span class="target" id="class_avogadro_1_1_core_1_1_slater_set_1a1d1b3c12aaebbb8e3b4c469a2e0c9981"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addZetas</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">zetas</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core9SlaterSet8addZetasERKNSt6vectorIdEE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Add a STO to the supplied basis. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>zetas</strong> – The exponents of the STOs </p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>True if successful. </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core9SlaterSet7addPQNsERKNSt6vectorIiEE">
-<span id="_CPPv3N8Avogadro4Core9SlaterSet7addPQNsERKNSt6vectorIiEE"></span><span id="_CPPv2N8Avogadro4Core9SlaterSet7addPQNsERKNSt6vectorIiEE"></span><span id="Avogadro::Core::SlaterSet::addPQNs__std::vector:i:CR"></span><span class="target" id="class_avogadro_1_1_core_1_1_slater_set_1a16957a79775121d8a0eeba280370ed90"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addPQNs</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">pqns</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core9SlaterSet7addPQNsERKNSt6vectorIiEE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>The PQNs for the orbitals. </p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core9SlaterSet16addOverlapMatrixERKN5Eigen8MatrixXdE">
-<span id="_CPPv3N8Avogadro4Core9SlaterSet16addOverlapMatrixERKN5Eigen8MatrixXdE"></span><span id="_CPPv2N8Avogadro4Core9SlaterSet16addOverlapMatrixERKN5Eigen8MatrixXdE"></span><span id="Avogadro::Core::SlaterSet::addOverlapMatrix__Eigen::MatrixXdCR"></span><span class="target" id="class_avogadro_1_1_core_1_1_slater_set_1a6f51e99e63e45067654253710877c306"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addOverlapMatrix</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">m</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core9SlaterSet16addOverlapMatrixERKN5Eigen8MatrixXdE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>The overlap matrix. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>m</strong> – Matrix containing the overlap matrix for the basis. </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core9SlaterSet15addEigenVectorsERKN5Eigen8MatrixXdE">
-<span id="_CPPv3N8Avogadro4Core9SlaterSet15addEigenVectorsERKN5Eigen8MatrixXdE"></span><span id="_CPPv2N8Avogadro4Core9SlaterSet15addEigenVectorsERKN5Eigen8MatrixXdE"></span><span id="Avogadro::Core::SlaterSet::addEigenVectors__Eigen::MatrixXdCR"></span><span class="target" id="class_avogadro_1_1_core_1_1_slater_set_1a39c5c8608be230328dc4e5d38a38a056"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addEigenVectors</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">e</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core9SlaterSet15addEigenVectorsERKN5Eigen8MatrixXdE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Add Eigen Vectors to the <a class="reference internal" href="#class_avogadro_1_1_core_1_1_slater_set"><span class="std std-ref">SlaterSet</span></a>. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>e</strong> – Matrix of the eigen vectors for the <a class="reference internal" href="#class_avogadro_1_1_core_1_1_slater_set"><span class="std std-ref">SlaterSet</span></a>. </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core9SlaterSet16addDensityMatrixERKN5Eigen8MatrixXdE">
-<span id="_CPPv3N8Avogadro4Core9SlaterSet16addDensityMatrixERKN5Eigen8MatrixXdE"></span><span id="_CPPv2N8Avogadro4Core9SlaterSet16addDensityMatrixERKN5Eigen8MatrixXdE"></span><span id="Avogadro::Core::SlaterSet::addDensityMatrix__Eigen::MatrixXdCR"></span><span class="target" id="class_avogadro_1_1_core_1_1_slater_set_1acb24c22d00e7e24dd4701050bff9fb66"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addDensityMatrix</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MatrixXd</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">d</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core9SlaterSet16addDensityMatrixERKN5Eigen8MatrixXdE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Add the density matrix to the <a class="reference internal" href="#class_avogadro_1_1_core_1_1_slater_set"><span class="std std-ref">SlaterSet</span></a>. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>d</strong> – Density matrix for the <a class="reference internal" href="#class_avogadro_1_1_core_1_1_slater_set"><span class="std std-ref">SlaterSet</span></a>. </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core9SlaterSet21molecularOrbitalCountE12ElectronType">
-<span id="_CPPv3N8Avogadro4Core9SlaterSet21molecularOrbitalCountE12ElectronType"></span><span id="_CPPv2N8Avogadro4Core9SlaterSet21molecularOrbitalCountE12ElectronType"></span><span id="Avogadro::Core::SlaterSet::molecularOrbitalCount__ElectronType"></span><span class="target" id="class_avogadro_1_1_core_1_1_slater_set_1a0a1ae305fea04ac1f0b7b24de422f05c"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">molecularOrbitalCount</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">ElectronType</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">type</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">Paired</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core9SlaterSet21molecularOrbitalCountE12ElectronType" title="Permalink to this definition">#</a><br /></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>The number of molecular orbitals in the <a class="reference internal" href="class_avogadro_1_1_core_1_1_basis_set.html#class_avogadro_1_1_core_1_1_basis_set"><span class="std std-ref">BasisSet</span></a>. </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core9SlaterSet7isValidEv">
-<span id="_CPPv3N8Avogadro4Core9SlaterSet7isValidEv"></span><span id="_CPPv2N8Avogadro4Core9SlaterSet7isValidEv"></span><span id="Avogadro::Core::SlaterSet::isValid"></span><span class="target" id="class_avogadro_1_1_core_1_1_slater_set_1aed2ba0e21a4f1861eb180b952c358c47"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isValid</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core9SlaterSet7isValidEv" title="Permalink to this definition">#</a><br /></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>True of the basis set is valid, false otherwise. Default is true, if false then the basis set is likely unusable. </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core9SlaterSet15initCalculationEv">
-<span id="_CPPv3N8Avogadro4Core9SlaterSet15initCalculationEv"></span><span id="_CPPv2N8Avogadro4Core9SlaterSet15initCalculationEv"></span><span id="Avogadro::Core::SlaterSet::initCalculation"></span><span class="target" id="class_avogadro_1_1_core_1_1_slater_set_1ae30e29a057bc9d36ba68f197be7321cd"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">initCalculation</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core9SlaterSet15initCalculationEv" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Initialize the calculation, this must normally be done before anything. </p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core9SlaterSet13slaterIndicesEv">
-<span id="_CPPv3N8Avogadro4Core9SlaterSet13slaterIndicesEv"></span><span id="_CPPv2N8Avogadro4Core9SlaterSet13slaterIndicesEv"></span><span id="Avogadro::Core::SlaterSet::slaterIndices"></span><span class="target" id="class_avogadro_1_1_core_1_1_slater_set_1a48abd36dbb6bfa6726cdd9f98f4efd12"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">slaterIndices</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core9SlaterSet13slaterIndicesEv" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Accessors for the various properties of the <a class="reference internal" href="class_avogadro_1_1_core_1_1_gaussian_set.html#class_avogadro_1_1_core_1_1_gaussian_set"><span class="std std-ref">GaussianSet</span></a>. </p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core9SlaterSet11slaterTypesEv">
-<span id="_CPPv3N8Avogadro4Core9SlaterSet11slaterTypesEv"></span><span id="_CPPv2N8Avogadro4Core9SlaterSet11slaterTypesEv"></span><span id="Avogadro::Core::SlaterSet::slaterTypes"></span><span class="target" id="class_avogadro_1_1_core_1_1_slater_set_1af64411487c63cd01cb4c12937b933e5c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">slaterTypes</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core9SlaterSet11slaterTypesEv" title="Permalink to this definition">#</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core9SlaterSet5zetasEv">
-<span id="_CPPv3N8Avogadro4Core9SlaterSet5zetasEv"></span><span id="_CPPv2N8Avogadro4Core9SlaterSet5zetasEv"></span><span id="Avogadro::Core::SlaterSet::zetas"></span><span class="target" id="class_avogadro_1_1_core_1_1_slater_set_1a4b281323af20a4f015690ae22dfc16ff"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">zetas</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core9SlaterSet5zetasEv" title="Permalink to this definition">#</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core9SlaterSet7factorsEv">
-<span id="_CPPv3N8Avogadro4Core9SlaterSet7factorsEv"></span><span id="_CPPv2N8Avogadro4Core9SlaterSet7factorsEv"></span><span id="Avogadro::Core::SlaterSet::factors"></span><span class="target" id="class_avogadro_1_1_core_1_1_slater_set_1a740d52abb096054e2f81170811e7adc3"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">factors</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core9SlaterSet7factorsEv" title="Permalink to this definition">#</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core9SlaterSet4PQNsEv">
-<span id="_CPPv3N8Avogadro4Core9SlaterSet4PQNsEv"></span><span id="_CPPv2N8Avogadro4Core9SlaterSet4PQNsEv"></span><span id="Avogadro::Core::SlaterSet::PQNs"></span><span class="target" id="class_avogadro_1_1_core_1_1_slater_set_1af6736d4cc7d9a9e44e3ce060b70ec81c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">PQNs</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core9SlaterSet4PQNsEv" title="Permalink to this definition">#</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core9SlaterSet16normalizedMatrixEv">
-<span id="_CPPv3N8Avogadro4Core9SlaterSet16normalizedMatrixEv"></span><span id="_CPPv2N8Avogadro4Core9SlaterSet16normalizedMatrixEv"></span><span id="Avogadro::Core::SlaterSet::normalizedMatrix"></span><span class="target" id="class_avogadro_1_1_core_1_1_slater_set_1a0fa51745ab3ef83ecbaf142518375a0c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">MatrixX</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">normalizedMatrix</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core9SlaterSet16normalizedMatrixEv" title="Permalink to this definition">#</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core9SlaterSet13densityMatrixEv">
-<span id="_CPPv3N8Avogadro4Core9SlaterSet13densityMatrixEv"></span><span id="_CPPv2N8Avogadro4Core9SlaterSet13densityMatrixEv"></span><span id="Avogadro::Core::SlaterSet::densityMatrix"></span><span class="target" id="class_avogadro_1_1_core_1_1_slater_set_1a4a591516063064df146570cab5b94b1c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">MatrixX</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">densityMatrix</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core9SlaterSet13densityMatrixEv" title="Permalink to this definition">#</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core9SlaterSet9outputAllEv">
-<span id="_CPPv3N8Avogadro4Core9SlaterSet9outputAllEv"></span><span id="_CPPv2N8Avogadro4Core9SlaterSet9outputAllEv"></span><span id="Avogadro::Core::SlaterSet::outputAll"></span><span class="target" id="class_avogadro_1_1_core_1_1_slater_set_1ab4d352adbde98dcfd8f0433e2304b352"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">outputAll</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core9SlaterSet9outputAllEv" title="Permalink to this definition">#</a><br /></dt>
-<dd></dd></dl>
-
-</div>
-</dd></dl>
-
 </section>
 
 
                 </article>
               
-    
-    <footer class="bd-footer-article">
-        
+              
+              
+                <footer class="bd-footer-article">
+                  
 <div class="footer-article-items footer-article__inner">
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
@@ -732,11 +555,45 @@ The <a class="reference internal" href="#class_avogadro_1_1_core_1_1_slater_set"
   
 </div>
 
-    </footer>
-    
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/avogadro/two.avogadro.cc/edit/main/source/api/class/class_avogadro_1_1_core_1_1_slater_set.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
 </div>
 
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/api/class/class_avogadro_1_1_core_1_1_slater_set.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
 
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
       </main>
     </div>
   </div>
@@ -750,14 +607,15 @@ The <a class="reference internal" href="#class_avogadro_1_1_core_1_1_slater_set"
   
     <div class="footer-items__start">
       
-        <div class="footer-item">
-  <p class="copyright">
-    
-      © Copyright ©2023 The OpenChemistry / Avogadro Teams..
-      <br/>
-    
-  </p>
-</div>
+        <div class="footer-item">          <p>
+            ©2023 The OpenChemistry / Avogadro Teams 
+          </p>
+          <p>Covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
+          </p></div>
+      
+        <div class="footer-item">        <p>
+          <a href="contrib/index.html">Contribute</a>
+        </p></div>
       
         <div class="footer-item">
   <p class="sphinx-version">
