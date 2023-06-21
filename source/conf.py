@@ -29,7 +29,7 @@ except requests.exceptions.ConnectionError:
 version = release
 
 year = date.today().year
-copyright = f'©{year} {author}.'
+copyright = f'©{year} {author}'
 
 
 
@@ -49,7 +49,7 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinx_design',
     'sphinx_copybutton',
-    'breathe',
+    #'breathe',
     'myst_parser',
 ]
 
@@ -103,14 +103,26 @@ html_theme_options = {
     'external_links': [
         {'name': 'Discuss', 'url': 'https://discuss.avogadro.cc'}
     ],
+    'footer_start': ['copyright', 'contribute', 'sphinx-version' ],
     'github_url': 'https://github.com/openchemistry/avogadrolibs',
     'use_edit_page_button': True,
     'show_toc_level': 2,
-    'twitter_url': 'https://twitter.com/AvogadroChem',
     'collapse_navigation': True,
     "logo": {
         "text": "Avogadro",
-    }
+    },
+    "icon_links": [
+        {
+            "name": "Twitter",
+            "url": "https://twitter.com/AvogadroChem",
+            "icon": "fa-brands fa-square-twitter",
+        },
+        {
+            "name": "Mastodon",
+            "url": "https://fosstodon.org/@avogadrochem",
+            "icon": "fa-brands fa-mastodon",
+        },
+    ],
 }
 
 html_context = {
@@ -123,7 +135,7 @@ html_context = {
 
 html_sidebars = {
     # omit the sidebar on the mainpage
-  'index': []
+  #'index': []
 }
 
 html_logo = '_images/avogadro2.png'
