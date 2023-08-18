@@ -37,9 +37,9 @@
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=7c084eb6"></script>
+    <script src="../_static/documentation_options.js?v=5e7298fe"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
-    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
     <script src="../_static/design-tabs.js?v=36754332"></script>
@@ -462,9 +462,9 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="coding-conventions-c">
-<span id="code-conventions"></span><h1>Coding Conventions (C++)<a class="headerlink" href="#coding-conventions-c" title="Permalink to this heading">#</a></h1>
+<span id="code-conventions"></span><h1>Coding Conventions (C++)<a class="headerlink" href="#coding-conventions-c" title="Link to this heading">#</a></h1>
 <section id="c-features">
-<h2>C++ Features<a class="headerlink" href="#c-features" title="Permalink to this heading">#</a></h2>
+<h2>C++ Features<a class="headerlink" href="#c-features" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Don’t use exceptions or asserts - Avogadro is production code and should never crash</p></li>
 <li><p>Prefer solutions from the Qt library over Boost/others in Qt
@@ -481,7 +481,7 @@ before adding more</p></li>
 </ul>
 </section>
 <section id="including-headers">
-<span id="id1"></span><h2>Including Headers<a class="headerlink" href="#including-headers" title="Permalink to this heading">#</a></h2>
+<span id="id1"></span><h2>Including Headers<a class="headerlink" href="#including-headers" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>In public headers, always use this form to include project headers:
 #include &lt;avogadro/core/something.h&gt;</p></li>
@@ -504,7 +504,7 @@ headers, then generic headers</p></li>
 </pre></div>
 </div>
 <section id="export-macro-headers">
-<span id="id2"></span><h3>Export Macro Headers<a class="headerlink" href="#export-macro-headers" title="Permalink to this heading">#</a></h3>
+<span id="id2"></span><h3>Export Macro Headers<a class="headerlink" href="#export-macro-headers" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>If you need to include the export header for the module do it as the
 first include</p></li>
@@ -514,14 +514,14 @@ first include</p></li>
 </div>
 </section>
 <section id="private-headers">
-<span id="id3"></span><h3>Private Headers<a class="headerlink" href="#private-headers" title="Permalink to this heading">#</a></h3>
+<span id="id3"></span><h3>Private Headers<a class="headerlink" href="#private-headers" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Private headers are denoted by _p.h endings, and should not be
 included in public headers</p></li>
 </ul>
 </section>
 <section id="qt-headers">
-<span id="id4"></span><h3>Qt Headers<a class="headerlink" href="#qt-headers" title="Permalink to this heading">#</a></h3>
+<span id="id4"></span><h3>Qt Headers<a class="headerlink" href="#qt-headers" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Use the Qt module and camel-cased header</p></li>
 <li><p>Never include Qt module headers such as QtGui, instead include the
@@ -534,7 +534,7 @@ header for the class being used</p></li>
 </section>
 </section>
 <section id="namespaces">
-<h2>Namespaces<a class="headerlink" href="#namespaces" title="Permalink to this heading">#</a></h2>
+<h2>Namespaces<a class="headerlink" href="#namespaces" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Open Chemistry code is namespaced</p></li>
 <li><p>Avogadro uses nested namespaces</p>
@@ -558,7 +558,7 @@ to use Avogadro:</p>
 </ul>
 </section>
 <section id="casting">
-<h2>Casting<a class="headerlink" href="#casting" title="Permalink to this heading">#</a></h2>
+<h2>Casting<a class="headerlink" href="#casting" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Avoid C-style casts, prefer C++ (<code class="docutils literal notranslate"><span class="pre">static_cast</span></code>, <code class="docutils literal notranslate"><span class="pre">dynamic_cast</span></code>,
 <code class="docutils literal notranslate"><span class="pre">const_cast</span></code>, <code class="docutils literal notranslate"><span class="pre">reinterpret_cast</span></code>)</p></li>
@@ -567,7 +567,7 @@ to use Avogadro:</p>
 </ul>
 </section>
 <section id="aesthetics">
-<h2>Aesthetics<a class="headerlink" href="#aesthetics" title="Permalink to this heading">#</a></h2>
+<h2>Aesthetics<a class="headerlink" href="#aesthetics" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Prefer <code class="docutils literal notranslate"><span class="pre">enum</span></code>s to define constants over <code class="docutils literal notranslate"><span class="pre">static</span> <span class="pre">const</span> <span class="pre">int</span></code> or <code class="docutils literal notranslate"><span class="pre">#define</span></code>s</p></li>
 <li><p>Prefer verbose argument names in headers</p>
@@ -699,7 +699,7 @@ a few extra bytes</p></li>
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.1.2.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.2.
     <br/>
   </p>
 </div>

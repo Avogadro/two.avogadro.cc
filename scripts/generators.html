@@ -37,9 +37,9 @@
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=7c084eb6"></script>
+    <script src="../_static/documentation_options.js?v=5e7298fe"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
-    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
     <script src="../_static/design-tabs.js?v=36754332"></script>
@@ -457,7 +457,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="input-generators">
-<span id="id1"></span><h1>Input Generators<a class="headerlink" href="#input-generators" title="Permalink to this heading">#</a></h1>
+<span id="id1"></span><h1>Input Generators<a class="headerlink" href="#input-generators" title="Link to this heading">#</a></h1>
 <p>Input generators offer several unique capabilities for formatting text
 input for programs, including syntax highlighting rules and capabilities
 for creating multiple files as part of one input (e.g., separate files
@@ -466,7 +466,7 @@ for geometry and keywords).</p>
 to generate JSON both for the user interface form and for the input to send
 to the external programs.</p>
 <section id="script-entry-points">
-<h2>Script Entry Points<a class="headerlink" href="#script-entry-points" title="Permalink to this heading">#</a></h2>
+<h2>Script Entry Points<a class="headerlink" href="#script-entry-points" title="Link to this heading">#</a></h2>
 <p>The script must handle the following command-line arguments:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">--debug</span></code> Enable extra debugging output. Used with other commands.
@@ -481,7 +481,7 @@ This is used in the GUI for menu entries, window titles, etc.</p></li>
 </ul>
 </section>
 <section id="specifying-parameters-with-print-options">
-<h2>Specifying parameters with <code class="docutils literal notranslate"><span class="pre">--print-options</span></code><a class="headerlink" href="#specifying-parameters-with-print-options" title="Permalink to this heading">#</a></h2>
+<h2>Specifying parameters with <code class="docutils literal notranslate"><span class="pre">--print-options</span></code><a class="headerlink" href="#specifying-parameters-with-print-options" title="Link to this heading">#</a></h2>
 <p>The format of the <code class="docutils literal notranslate"><span class="pre">--print-options</span></code> output must be a JSON object of
 the following form:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
@@ -510,7 +510,7 @@ the following form:</p>
 parameter settings. Various parameter types are supported.</p>
 </section>
 <section id="special-parameters">
-<h2>Special Parameters<a class="headerlink" href="#special-parameters" title="Permalink to this heading">#</a></h2>
+<h2>Special Parameters<a class="headerlink" href="#special-parameters" title="Link to this heading">#</a></h2>
 <p>Some parameters are common to most calculation codes.
 If the following parameter names are found, they will be handled specially
 while creating the GUI (e.g., the charge and spin will be placed on one line)</p>
@@ -561,7 +561,7 @@ values where appropriate.</p>
 </table>
 </section>
 <section id="syntax-highlighting">
-<h2>Syntax Highlighting<a class="headerlink" href="#syntax-highlighting" title="Permalink to this heading">#</a></h2>
+<h2>Syntax Highlighting<a class="headerlink" href="#syntax-highlighting" title="Link to this heading">#</a></h2>
 <p>Rules for syntax highlighting can be specified as a collection of
 regular expressions or wildcard patterns and text format specifications
 in the “highlightRules” array. The highlightRules format is:</p>
@@ -707,7 +707,7 @@ object to the text in the order they appear. Thus, later rules will
 override the formatting of earlier rules should a conflict arise.</p>
 </section>
 <section id="requesting-full-structure-of-current-molecule">
-<h2>Requesting Full Structure of Current Molecule<a class="headerlink" href="#requesting-full-structure-of-current-molecule" title="Permalink to this heading">#</a></h2>
+<h2>Requesting Full Structure of Current Molecule<a class="headerlink" href="#requesting-full-structure-of-current-molecule" title="Link to this heading">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">inputMoleculeFormat</span></code> is optional, and can be used to request a
 representation of the current molecule’s geometry when
 <code class="docutils literal notranslate"><span class="pre">--generate-input</span></code> is called. The corresponding value
@@ -717,7 +717,7 @@ is omitted, no representation of the structure will be provided.</p>
 Chemical JSON or “cml” for Chemical Markup Language.</p>
 </section>
 <section id="handling-user-selections-generate-input">
-<h2>Handling User Selections: <code class="docutils literal notranslate"><span class="pre">--generate-input</span></code><a class="headerlink" href="#handling-user-selections-generate-input" title="Permalink to this heading">#</a></h2>
+<h2>Handling User Selections: <code class="docutils literal notranslate"><span class="pre">--generate-input</span></code><a class="headerlink" href="#handling-user-selections-generate-input" title="Link to this heading">#</a></h2>
 <p>When <code class="docutils literal notranslate"><span class="pre">--generate-input</span></code> is passed, the information needed to generate
 the input file will be written to the script’s standard input
 channel as JSON string of the following form:</p>
@@ -788,7 +788,7 @@ If absent and only one file is specified in <code class="docutils literal notran
 will be used. Otherwise, the main file will be left unspecified.</p>
 </section>
 <section id="automatic-generation-of-geometry">
-<h2>Automatic Generation of Geometry<a class="headerlink" href="#automatic-generation-of-geometry" title="Permalink to this heading">#</a></h2>
+<h2>Automatic Generation of Geometry<a class="headerlink" href="#automatic-generation-of-geometry" title="Link to this heading">#</a></h2>
 <p>The generation of molecular geometry descriptions may be skipped in the
 script and deferred to the InputGenerator class by use of a special keyword.
 The “contents” string may contain a keyword of the form</p>
@@ -804,7 +804,7 @@ atom in the coordinate block.</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">$$bondCount$$</span></code>: Number of bonds in the molecule.</p></li>
 </ul>
 <section id="coordinate-blocks">
-<h3>Coordinate Blocks<a class="headerlink" href="#coordinate-blocks" title="Permalink to this heading">#</a></h3>
+<h3>Coordinate Blocks<a class="headerlink" href="#coordinate-blocks" title="Link to this heading">#</a></h3>
 <p>The characters in the specification string indicate the information
 needed about each atom in the coordinate block.</p>
 <ul class="simple">
@@ -843,7 +843,7 @@ following:</p>
 </section>
 </section>
 <section id="error-handling">
-<h2>Error Handling<a class="headerlink" href="#error-handling" title="Permalink to this heading">#</a></h2>
+<h2>Error Handling<a class="headerlink" href="#error-handling" title="Link to this heading">#</a></h2>
 <p>In general, these scripts should be written robustly so that they will not
 fail under normal circumstances. However, if for some reason an error
 occurs that must be reported to the user, simply write the error message to
@@ -851,7 +851,7 @@ standard output as plain text (i.e. not JSON), and it will be shown to the
 user.</p>
 </section>
 <section id="debugging">
-<h2>Debugging<a class="headerlink" href="#debugging" title="Permalink to this heading">#</a></h2>
+<h2>Debugging<a class="headerlink" href="#debugging" title="Link to this heading">#</a></h2>
 <p>Debugging may be enabled by defining AVO_QM_INPUT_DEBUG in the process’s
 environment. This will cause the <code class="docutils literal notranslate"><span class="pre">--debug</span></code> option to be passed in
 all calls to generator scripts, and will print extra information to the
@@ -978,7 +978,7 @@ debug flag as the author wishes.</p>
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.1.2.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.2.
     <br/>
   </p>
 </div>
