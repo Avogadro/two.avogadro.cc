@@ -22,14 +22,18 @@ and compiling from inside them largely ignoring the outer build tree.
 
 ## Cloning Repositories
 
-You should clone the repositories from our source code hosting
-infrastructure, or the Github/Gitorious mirror. You should also track
-changes from here as the cloning/update process will be faster, and is
-always in sync with Gerrit. To clone the Open Chemistry repository that
+To clone the Open Chemistry repository that
 contains the other projects as submodules,
 
 ```shell
-git clone --recursive git://github.com/OpenChemistry/openchemistry.git
+git clone --recursive https://github.com/OpenChemistry/openchemistry.git
+```
+
+Or if you have a GitHub account with SSH key (e.g., for contributing 
+changes):
+
+```shell
+git clone --recursive git@github.com:OpenChemistry/openchemistry.git
 ```
 
 ## Updating
@@ -56,7 +60,7 @@ a guide you will need:
 - a C/C++ compiler that supports C++11
 - OpenGL
 - Qt 5.6+
-- CMake 3.3+
+- CMake
 - Python
 
 ## Building
@@ -142,11 +146,13 @@ like,
 On Mac, it might be:
 
 ```shell
-export DYLD_LIBRARY_PATH=/Users/your-user/openchemistry-build/prefix/lib
 open /Users/your-user/openchemistry-build/avogadroapp/bin/Avogadro2.app
 ```
 
-We will look into improving this situation soon.
+Note that on Mac with Apple Silicon, you must sign all binaries before opening:
+```shell
+codesign --force --deep -s "Developer ID Application: Username (Team ID)" prefix/Avogadro2.app
+```
 
 (building-packages)=
 
