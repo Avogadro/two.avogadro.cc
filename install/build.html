@@ -468,12 +468,14 @@ directories which you can treat as normal build directories, developing
 and compiling from inside them largely ignoring the outer build tree.</p>
 <section id="cloning-repositories">
 <span id="id1"></span><h2>Cloning Repositories<a class="headerlink" href="#cloning-repositories" title="Link to this heading">#</a></h2>
-<p>You should clone the repositories from our source code hosting
-infrastructure, or the Github/Gitorious mirror. You should also track
-changes from here as the cloning/update process will be faster, and is
-always in sync with Gerrit. To clone the Open Chemistry repository that
+<p>To clone the Open Chemistry repository that
 contains the other projects as submodules,</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>--recursive<span class="w"> </span>git://github.com/OpenChemistry/openchemistry.git
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>--recursive<span class="w"> </span>https://github.com/OpenChemistry/openchemistry.git
+</pre></div>
+</div>
+<p>Or if you have a GitHub account with SSH key (e.g., for contributing
+changes):</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>--recursive<span class="w"> </span>git@github.com:OpenChemistry/openchemistry.git
 </pre></div>
 </div>
 </section>
@@ -499,7 +501,7 @@ a guide you will need:</p>
 <li><p>a C/C++ compiler that supports C++11</p></li>
 <li><p>OpenGL</p></li>
 <li><p>Qt 5.6+</p></li>
-<li><p>CMake 3.3+</p></li>
+<li><p>CMake</p></li>
 <li><p>Python</p></li>
 </ul>
 </section>
@@ -570,11 +572,13 @@ like,</p>
 </pre></div>
 </div>
 <p>On Mac, it might be:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">DYLD_LIBRARY_PATH</span><span class="o">=</span>/Users/your-user/openchemistry-build/prefix/lib
-open<span class="w"> </span>/Users/your-user/openchemistry-build/avogadroapp/bin/Avogadro2.app
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>open<span class="w"> </span>/Users/your-user/openchemistry-build/avogadroapp/bin/Avogadro2.app
 </pre></div>
 </div>
-<p>We will look into improving this situation soon.</p>
+<p>Note that on Mac with Apple Silicon, you must sign all binaries before opening:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>codesign<span class="w"> </span>--force<span class="w"> </span>--deep<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;Developer ID Application: Username (Team ID)&quot;</span><span class="w"> </span>prefix/Avogadro2.app
+</pre></div>
+</div>
 </section>
 <section id="building-packages">
 <span id="id6"></span><h3>Building Packages<a class="headerlink" href="#building-packages" title="Link to this heading">#</a></h3>
@@ -712,7 +716,7 @@ installer will be created in the build directory.</p>
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     <br/>
   </p>
 </div>
