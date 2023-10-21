@@ -82,7 +82,6 @@ It is called when `--print-options` is given as the input argument.
 
 - The testing molecule for running the command may be in **CJSON format**
 ```json
-water = {
 "chemicalJson": 1,
 "atoms": {
     "coords": {
@@ -94,12 +93,11 @@ water = {
 },
 "bonds": {"connections": {"index": [1, 2, 1, 0]},
         "order": [1, 1]},
-}
 ```
 
 The above segment represent a water molecule in CJSON format.
 So, an example input molecule for the replace or alloy command may look like:
-```json
+```
 echo '{"Find": "Hydrogen", 
 "Percent": 50, 
 "Replace": "Carbon",
@@ -175,7 +173,7 @@ For example,
 - It is usually preferable to have selection support that is, for example, minor tweaks which indicate the atoms selected by the user such that **the changes must only be done on those specific atoms**
 - Here the input also consists of an additional selected component which is a list indicating the atoms selected, **1 for selected atom and 0 for non selected atom**
 For example:
-```json
+```
 echo '{"Find": "Hydrogen", 
 "Percent": 50, 
 "Replace": "Carbon",
@@ -228,7 +226,7 @@ Finally we get the modified molecule output in the **CJSON format**
 
 ## Sample Input and Output 
 For example when we give the following input to the alchemy script:
-```json
+```
 echo '{"Find": "Hydrogen", 
 "Percent": 50, 
 "Replace": "Carbon",
