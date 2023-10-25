@@ -59,3 +59,13 @@ the following form:
 The `userOptions` block contains a JSON object keyed with option names
 (e.g. "First option name"), which are used in the GUI to label
 simulation parameter settings. Various parameter types are supported.
+
+```{toctree}
+---
+caption: Command Scripts
+hidden: true
+---
+commands
+example1
+example2
+```
