@@ -1,6 +1,6 @@
 (api)=
 
-# Library API
+# Develop
 
 Avogadro libraries can be used from both C++ and Python interfaces.
 
