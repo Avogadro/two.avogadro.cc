@@ -5,15 +5,17 @@
 Avogadro can be extended easily using Python scripts:
 
 - [charges / electrostatics](charges)
-- [commands](commands)
-- [input generators](generators)
+- [menu commands](commands)
+- [energy / force fields](energy)
 - [file formats](formats)
+- [input generators](generators)
 
 More script types are anticipated in the future, including:
 
-- force field calculators
 - web databases
 - custom colors
+
+Suggestions either for new types of scripts or new functions are always welcome.
 
 Scripts can either be installed manually, by dragging to the Avogadro window:
 
@@ -32,6 +34,7 @@ install
 interface
 commands
 charges
-generators
+energy
 formats
+generators
 ```

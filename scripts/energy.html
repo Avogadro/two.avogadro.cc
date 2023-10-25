@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Charges / Electrostatics &#8212; Avogadro 1.97.0 documentation</title>
+    <title>Energy / Force Fields &#8212; Avogadro 1.97.0 documentation</title>
   
   
   
@@ -44,12 +44,12 @@
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
     <script src="../_static/design-tabs.js?v=36754332"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'scripts/charges';</script>
-    <link rel="canonical" href="https://two.avogadro.cc/scripts/charges.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'scripts/energy';</script>
+    <link rel="canonical" href="https://two.avogadro.cc/scripts/energy.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Energy / Force Fields" href="energy.html" />
-    <link rel="prev" title="Example Plugin Script - Part 2" href="example2.html" />
+    <link rel="next" title="File Formats" href="formats.html" />
+    <link rel="prev" title="Charges / Electrostatics" href="charges.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -410,8 +410,8 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installing Script Plugins</a></li>
 <li class="toctree-l1"><a class="reference internal" href="interface.html">Script Interfaces</a></li>
 <li class="toctree-l1"><a class="reference internal" href="commands.html">Command Scripts</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Charges / Electrostatics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="energy.html">Energy / Force Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="charges.html">Charges / Electrostatics</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Energy / Force Fields</a></li>
 <li class="toctree-l1"><a class="reference internal" href="formats.html">File Formats</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generators.html">Input Generators</a></li>
 </ul>
@@ -454,7 +454,7 @@ document.write(`
     
     <li class="breadcrumb-item"><a href="index.html" class="nav-link">Script Plugins</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Charges /...</li>
+    <li class="breadcrumb-item active" aria-current="page">Energy /...</li>
   </ul>
 </nav>
 </div>
@@ -471,37 +471,31 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="charges-electrostatics">
-<span id="script-charges"></span><h1>Charges / Electrostatics<a class="headerlink" href="#charges-electrostatics" title="Link to this heading">#</a></h1>
-<p>Avogadro allows scripts to calculate atomic partial charges and electrostatic
-potential maps (e.g., for molecular surfaces).</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="energy-force-fields">
+<span id="script-energy"></span><h1>Energy / Force Fields<a class="headerlink" href="#energy-force-fields" title="Link to this heading">#</a></h1>
+<p>Avogadro allows scripts to calculate energies and gradients for optimizing geometry.</p>
 <p>The script must handle the following command line arguments:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">--metadata</span></code> Print metadata describing the script</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--display-name</span></code> Print the name to display in user options</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--lang</span> <span class="pre">en</span></code> Optionally respond to language translation codes</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">--charges</span></code> Calculate atomic partial charges for a molecule</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">--potential</span></code> Calculate the electrostatic potential for a molecule
-on a supplied set of points (e.g., a molecular surface)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--file</span> <span class="pre">FILE</span></code> Calculate energies and gradients for a particular molecule</p></li>
 </ul>
-<p>With the exception of <code class="docutils literal notranslate"><span class="pre">--metadata</span></code> and <code class="docutils literal notranslate"><span class="pre">--display-name</span></code> options, charge scripts
-can respond to either <code class="docutils literal notranslate"><span class="pre">charge</span></code> or <code class="docutils literal notranslate"><span class="pre">potential</span></code> requests or both. For example,
-many partial charge models approximate the electrostatic potential given by
-the point charges, which is handled by Avogadro internally. On the other hand,
-a machine learning model may only handle the electrostatic potential grid
-directly, but not assign atomic partial charges.</p>
+<p>With the exception of <code class="docutils literal notranslate"><span class="pre">--metadata</span></code> and <code class="docutils literal notranslate"><span class="pre">--display-name</span></code> options</p>
 <section id="identify-the-script-with-metadata">
 <h2>Identify the Script with <code class="docutils literal notranslate"><span class="pre">--metadata</span></code><a class="headerlink" href="#identify-the-script-with-metadata" title="Link to this heading">#</a></h2>
 <p>Running the script with the <code class="docutils literal notranslate"><span class="pre">--metadata</span></code> option should print a JSON object
 of the following form:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="s2">&quot;inputFormat&quot;</span><span class="p">:</span> <span class="s2">&quot;mol&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;inputFormat&quot;</span><span class="p">:</span> <span class="s2">&quot;pdb&quot;</span><span class="p">,</span>
   <span class="s2">&quot;identifier&quot;</span><span class="p">:</span> <span class="s2">&quot;Unique Name&quot;</span>
   <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;User-Friendly Name&quot;</span><span class="p">,</span>
   <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Description of method or citation.&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;charges&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-  <span class="s2">&quot;potential&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
   <span class="s2">&quot;elements&quot;</span><span class="p">:</span> <span class="s2">&quot;1,6-9&quot;</span>
+  <span class="s2">&quot;unitCell&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+  <span class="s2">&quot;gradients&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+  <span class="s2">&quot;ion&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+  <span class="s2">&quot;radical&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -516,11 +510,12 @@ script charges, since it is used internally.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">name</span></code> is a user-friendly name for the method, which will be used in menus.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">description</span></code> is an <em>optional</em> description of the method, along with any
 relevant help text for users.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">charges</span></code> indicates whether the script can provide atomic partial charges.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">potential</span></code> indicates whether the script can provide electrostatic potential
-at specified points (supplied by Avogadro).</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">elements</span></code> is a list indicating the atomic numbers supported by the method.
 Both commas <code class="docutils literal notranslate"><span class="pre">1,</span> <span class="pre">6,</span> <span class="pre">7</span></code> and ranges <code class="docutils literal notranslate"><span class="pre">1-86</span></code> are supported.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">unitCell</span></code> is either <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code> as to whether systems with lattice vectors are supported by the method.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gradients</span></code> indicates <code class="docutils literal notranslate"><span class="pre">True</span></code> if analytical gradients will be calculated by the method or <code class="docutils literal notranslate"><span class="pre">False</span></code> if Avogadro should calculate numeric gradients.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ion</span></code> indicates <code class="docutils literal notranslate"><span class="pre">True</span></code> if the method can handle systems with non-zero total charge (e.g., cations, anions, etc.)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">radical</span></code> indicates <code class="docutils literal notranslate"><span class="pre">True</span></code> if the method can handle systems with unpaired spins (i.e., spin multiplicity beyond singlet).</p></li>
 </ul>
 <dl class="simple myst">
 <dt>Optional members are:</dt><dd><ul class="simple">
@@ -530,60 +525,112 @@ Both commas <code class="docutils literal notranslate"><span class="pre">1,</spa
 </dl>
 <p>Make sure to specify the <code class="docutils literal notranslate"><span class="pre">elements</span></code> list correctly. Avogadro will automatically
 exclude a script in the list of available methods if a molecule contains
-elements not in the list (e.g., if it does not support metals).</p>
+elements not in the list (e.g., if it does not support metals), or based on the <code class="docutils literal notranslate"><span class="pre">unitCell</span></code>, <code class="docutils literal notranslate"><span class="pre">ion</span></code>, and <code class="docutils literal notranslate"><span class="pre">radical</span></code> fields.</p>
 </section>
-<section id="calculating-atomic-partial-charges-with-charge">
-<h2>Calculating Atomic Partial Charges with <code class="docutils literal notranslate"><span class="pre">--charge</span></code><a class="headerlink" href="#calculating-atomic-partial-charges-with-charge" title="Link to this heading">#</a></h2>
-<p>Many chemists prefer to think of
-<a class="reference external" href="https://en.wikipedia.org/wiki/Partial_charge">atomic partial point charges</a>.
-For that reason, these methods are common.</p>
-<p>Avogadro will provide the molecule on the standard input in the format requested
-by the <code class="docutils literal notranslate"><span class="pre">inputFormat</span></code> metadata.</p>
-<p>Calculate charges and print them in the same order as the atoms on the standard
-output.</p>
-<p>For example, a script requesting the <code class="docutils literal notranslate"><span class="pre">xyz</span></code> format will get water as:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span>
+<section id="calculating-energies-and-gradients">
+<h2>Calculating Energies and Gradients<a class="headerlink" href="#calculating-energies-and-gradients" title="Link to this heading">#</a></h2>
+<p>Avogadro will write a temporary file in the specified file format and supply the filename when calling the script, e.g. <code class="docutils literal notranslate"><span class="pre">script.py</span> <span class="pre">-f</span> <span class="pre">tempfile.mol</span></code>.</p>
+<p>For example a script using Open Babel might use code like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># we declared &quot;inputFormat&quot;: &quot;cml&quot; in the metadata</span>
+<span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="c1"># we get the molecule from the supplied filename</span>
+    <span class="c1">#  in cjson format (it&#39;s a temporary file created by Avogadro)</span>
+    <span class="n">mol</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">pybel</span><span class="o">.</span><span class="n">readfile</span><span class="p">(</span><span class="s2">&quot;cml&quot;</span><span class="p">,</span> <span class="n">filename</span><span class="p">))</span>
+ 
+    <span class="n">ff</span> <span class="o">=</span> <span class="n">pybel</span><span class="o">.</span><span class="n">_forcefields</span><span class="p">[</span><span class="s2">&quot;uff&quot;</span><span class="p">]</span>
+    <span class="n">success</span> <span class="o">=</span> <span class="n">ff</span><span class="o">.</span><span class="n">Setup</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">OBMol</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">success</span><span class="p">:</span>
+        <span class="c1"># should never happen, but just in case</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="s2">&quot;UFF force field setup failed&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Another example is to use cjson and get elements and coordinates:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="c1"># we get the molecule from the supplied filename</span>
+    <span class="c1">#  in cjson format (it&#39;s a temporary file created by Avogadro)</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">mol_cjson</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+ 
+    <span class="c1"># get the atomic numbers</span>
+    <span class="n">atoms</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">mol_cjson</span><span class="p">[</span><span class="s2">&quot;atoms&quot;</span><span class="p">][</span><span class="s2">&quot;elements&quot;</span><span class="p">][</span><span class="s2">&quot;number&quot;</span><span class="p">])</span>
+    <span class="c1"># get the coordinates in a list of [ [x, y, z], [x, y, z] … ]</span>
+    <span class="n">coord_list</span> <span class="o">=</span> <span class="n">mol_cjson</span><span class="p">[</span><span class="s2">&quot;atoms&quot;</span><span class="p">][</span><span class="s2">&quot;coords&quot;</span><span class="p">][</span><span class="s2">&quot;3d&quot;</span><span class="p">]</span>
+    <span class="n">coordinates</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">coord_list</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>After reading coordinates from the tempory filename on the command-line arguments, Avogadro will supply updated coordinates through standard input and expect energies and gradients on the standard output.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># we loop forever - Avogadro will kill the process when done</span>
+    <span class="n">num_atoms</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">atoms</span><span class="p">)</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="c1"># read new coordinates from stdin</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_atoms</span><span class="p">):</span>
+            <span class="n">coordinates</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span><span class="nb">input</span><span class="p">(),</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+            <span class="n">atom</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">atoms</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">atom</span><span class="o">.</span><span class="n">OBAtom</span><span class="o">.</span><span class="n">SetVector</span><span class="p">(</span><span class="n">coordinates</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">coordinates</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">coordinates</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+ 
+        <span class="c1"># update the molecule geometry for the next energy</span>
+        <span class="n">ff</span><span class="o">.</span><span class="n">SetCoordinates</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">OBMol</span><span class="p">)</span>
+ 
+        <span class="c1"># first print the energy of these coordinates</span>
+        <span class="n">energy</span> <span class="o">=</span> <span class="n">ff</span><span class="o">.</span><span class="n">Energy</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># in kJ/mol</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;AvogadroEnergy:&quot;</span><span class="p">,</span> <span class="n">energy</span><span class="p">)</span>  <span class="c1"># in kJ/mol</span>
 
-<span class="n">O</span>          <span class="mf">0.93364</span>        <span class="mf">0.09813</span>        <span class="mf">0.00687</span>
-<span class="n">H</span>          <span class="mf">1.90153</span>        <span class="mf">0.06280</span>        <span class="mf">0.03699</span>
-<span class="n">H</span>          <span class="mf">0.65479</span>       <span class="o">-</span><span class="mf">0.60815</span>        <span class="mf">0.60884</span>
+        <span class="c1"># now print the gradient on each atom</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;AvogadroGradient:&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">atom</span> <span class="ow">in</span> <span class="n">mol</span><span class="o">.</span><span class="n">atoms</span><span class="p">:</span>
+            <span class="n">grad</span> <span class="o">=</span> <span class="n">ff</span><span class="o">.</span><span class="n">GetGradient</span><span class="p">(</span><span class="n">atom</span><span class="o">.</span><span class="n">OBAtom</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="o">*</span><span class="n">grad</span><span class="o">.</span><span class="n">GetX</span><span class="p">(),</span> <span class="o">-</span><span class="mf">1.0</span><span class="o">*</span><span class="n">grad</span><span class="o">.</span><span class="n">GetY</span><span class="p">(),</span> <span class="o">-</span><span class="mf">1.0</span><span class="o">*</span><span class="n">grad</span><span class="o">.</span><span class="n">GetZ</span><span class="p">())</span>
 </pre></div>
 </div>
-<p>And return:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="o">-</span><span class="mf">0.56095360</span>
-    <span class="mf">0.28047667</span>
-    <span class="mf">0.28047692</span>
+<p>Note that Avogadro expects energies and gradients with the indicated tags:</p>
+<p><code class="docutils literal notranslate"><span class="pre">AvogadroEnergy:</span> <span class="pre">[energy]</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>AvogadroGradient:
+x y z
+x y z
+x y z
+x y z
+…
 </pre></div>
 </div>
-<p>No particular numeric format is required in the standard output.</p>
 </section>
-<section id="generating-electrostatic-potentials-with-potential">
-<h2>Generating Electrostatic Potentials with <code class="docutils literal notranslate"><span class="pre">--potential</span></code><a class="headerlink" href="#generating-electrostatic-potentials-with-potential" title="Link to this heading">#</a></h2>
-<p>Some programs can directly calculate the electrostatic potential for a molecule
-at given points (e.g., on the solvent-excluded surface).</p>
-<p>Since Avogadro must provide both the molecular data and the list of points,
-JSON is supplied on the standard input. The molecular file is provided with
-the key used by <code class="docutils literal notranslate"><span class="pre">inputFormat</span></code>. The points are supplied in an array of
-floating point values with the <code class="docutils literal notranslate"><span class="pre">points</span></code> key.</p>
-<p>For example our water molecule might be evaluated at the two points
-(0.0, 0.0, 0.0) and (1.0, 0.0, 0.0):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="s2">&quot;xyz&quot;</span><span class="p">:</span> <span class="s2">&quot;3</span>
-
-<span class="n">O</span>          <span class="mf">0.93364</span>        <span class="mf">0.09813</span>        <span class="mf">0.00687</span>
-<span class="n">H</span>          <span class="mf">1.90153</span>        <span class="mf">0.06280</span>        <span class="mf">0.03699</span>
-<span class="n">H</span>          <span class="mf">0.65479</span>       <span class="o">-</span><span class="mf">0.60815</span>        <span class="mf">0.60884</span><span class="s2">&quot;,</span>
-    <span class="s2">&quot;points&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span> <span class="p">]</span>
-<span class="p">}</span>
+<section id="unit-cells-total-charge-and-spin-multiplicity">
+<h2>Unit Cells, Total Charge, and Spin Multiplicity<a class="headerlink" href="#unit-cells-total-charge-and-spin-multiplicity" title="Link to this heading">#</a></h2>
+<p>If your method involves unit cells, total charge, or spin multiplicity, the <code class="docutils literal notranslate"><span class="pre">cjson</span></code> format is likely your best option.</p>
+<section id="lattice-vectors-and-fractional-coordinates">
+<h3>Lattice Vectors and Fractional Coordinates<a class="headerlink" href="#lattice-vectors-and-fractional-coordinates" title="Link to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">cjson</span></code> format from Avogadro will provide both real-space Cartesian coordinates as <code class="docutils literal notranslate"><span class="pre">cjson[&quot;atoms&quot;][&quot;coords&quot;][&quot;3d&quot;]</span></code> and fractional coordinates as <code class="docutils literal notranslate"><span class="pre">cjson[&quot;atoms&quot;][&quot;coords&quot;][&quot;3dFractional&quot;]</span></code>. For both cases, the coordinates are supplied as a 1D array, which can be reshaped via <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, e.g. <code class="docutils literal notranslate"><span class="pre">np.array(coord_list,</span> <span class="pre">dtype=float).reshape(-1,</span> <span class="pre">3)</span></code>.</p>
+<p>The unit cell parameters and lattice vectors are also available in <code class="docutils literal notranslate"><span class="pre">cjson</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="s2">&quot;unitCell&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="mf">4.0862</span><span class="p">,</span>
+    <span class="s2">&quot;alpha&quot;</span><span class="p">:</span> <span class="mf">90.0</span><span class="p">,</span>
+    <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="mf">4.0862</span><span class="p">,</span>
+    <span class="s2">&quot;beta&quot;</span><span class="p">:</span> <span class="mf">90.0</span><span class="p">,</span>
+    <span class="s2">&quot;c&quot;</span><span class="p">:</span> <span class="mf">4.0862</span><span class="p">,</span>
+    <span class="s2">&quot;cellVectors&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="mf">4.0862</span><span class="p">,</span>
+      <span class="mf">0.0</span><span class="p">,</span>
+      <span class="mf">0.0</span><span class="p">,</span>
+      <span class="mf">0.0</span><span class="p">,</span>
+      <span class="mf">4.0862</span><span class="p">,</span>
+      <span class="mf">0.0</span><span class="p">,</span>
+      <span class="mf">0.0</span><span class="p">,</span>
+      <span class="mf">0.0</span><span class="p">,</span>
+      <span class="mf">4.0862</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;gamma&quot;</span><span class="p">:</span> <span class="mf">90.0</span>
+  <span class="p">}</span>
 </pre></div>
 </div>
-<p>Again, the script should simply compute the electrostatic potential at these
-points and print the values on the standard output:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="mf">0.1234</span>
-   <span class="o">-</span><span class="mf">0.5678</span>
-</pre></div>
-</div>
-<p>These are completely random values for illustration purposes.</p>
+<p>For example, if your script needs the lattice vectors, you can use <code class="docutils literal notranslate"><span class="pre">cjson[&quot;unitCell&quot;][&quot;cellVectors&quot;]</span></code> to get a 1D list of the vectors and can reshape via <code class="docutils literal notranslate"><span class="pre">np.array(cell_list,</span> <span class="pre">dtype=float).reshape(3,3)</span></code>. Alternatively, you can access:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">cjson[&quot;unitCell&quot;][&quot;a&quot;]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">cjson[&quot;unitCell&quot;][&quot;a&quot;]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">c</span> <span class="pre">=</span> <span class="pre">cjson[&quot;unitCell&quot;][&quot;a&quot;]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">alpha</span> <span class="pre">=</span> <span class="pre">cjson[&quot;unitCell&quot;][&quot;alpha&quot;]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">beta</span> <span class="pre">=</span> <span class="pre">cjson[&quot;unitCell&quot;][&quot;beta&quot;]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gamma</span> <span class="pre">=</span> <span class="pre">cjson[&quot;unitCell&quot;][&quot;gamma&quot;]</span></code></p></li>
+</ul>
+</section>
 </section>
 </section>
 
@@ -598,20 +645,20 @@ points and print the values on the standard output:</p>
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="example2.html"
+       href="charges.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Example Plugin Script - Part 2</p>
+        <p class="prev-next-title">Charges / Electrostatics</p>
       </div>
     </a>
     <a class="right-next"
-       href="energy.html"
+       href="formats.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Energy / Force Fields</p>
+        <p class="prev-next-title">File Formats</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -631,15 +678,18 @@ points and print the values on the standard output:</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identify-the-script-with-metadata">Identify the Script with <code class="docutils literal notranslate"><span class="pre">--metadata</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-atomic-partial-charges-with-charge">Calculating Atomic Partial Charges with <code class="docutils literal notranslate"><span class="pre">--charge</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-electrostatic-potentials-with-potential">Generating Electrostatic Potentials with <code class="docutils literal notranslate"><span class="pre">--potential</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-energies-and-gradients">Calculating Energies and Gradients</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-cells-total-charge-and-spin-multiplicity">Unit Cells, Total Charge, and Spin Multiplicity</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lattice-vectors-and-fractional-coordinates">Lattice Vectors and Fractional Coordinates</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
   <div class="sidebar-secondary-item">
   
   <div class="tocsection editthispage">
-    <a href="https://github.com/avogadro/two.avogadro.cc/edit/main/source/scripts/charges.md">
+    <a href="https://github.com/avogadro/two.avogadro.cc/edit/main/source/scripts/energy.md">
       <i class="fa-solid fa-pencil"></i>
       
       
@@ -653,7 +703,7 @@ points and print the values on the standard output:</p>
 
   <div class="sidebar-secondary-item">
   <div class="tocsection sourcelink">
-    <a href="../_sources/scripts/charges.md.txt">
+    <a href="../_sources/scripts/energy.md.txt">
       <i class="fa-solid fa-file-lines"></i> Show Source
     </a>
   </div>

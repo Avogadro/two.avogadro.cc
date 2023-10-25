@@ -64,9 +64,10 @@ Required sections:
 - `type`: the category of plugin script, including:
   - `charges` for [charge / electrostatics models](charges)
   - `commands` for [menu commands](commands)
+  - `energy` for [energy / force field models](energy)
   - `formats` for [file formats](formats)
   - `generators` for [input generators](generators)
 - `commands`: a list of key/value pairs to indicate a potential `name` and the `command` filename for the script.
 
-Note that any files not listed in the `commands` list will be ignored by
+Note that any files **not** listed in the `commands` list will be ignored by
 Avogadro during launch.
