@@ -68,6 +68,9 @@ myst_enable_extensions = [
     "tasklist",
 ]
 
+# Make sure icons show in LaTeX / PDF output
+sd_fontawesome_latex = True
+
 myst_substitutions = {
   "release": release,
   "macurl": f"https://github.com/OpenChemistry/avogadrolibs/releases/download/{version}/Avogadro2-{version}-Darwin.dmg",
