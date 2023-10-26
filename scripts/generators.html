@@ -156,6 +156,13 @@
                     </li>
                 
 
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../docs/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="index.html">
                         Script Plugins
@@ -176,13 +183,21 @@
                       </a>
                     </li>
                 
-
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
                 <li class="nav-item">
-                  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+                  <a class="nav-link dropdown-item nav-external" href="https://discuss.avogadro.cc">
                     Discuss
                   </a>
                 </li>
                 
+                </ul>
+            </li>
+            
   </ul>
 </nav></div>
       
@@ -311,6 +326,13 @@ document.write(`
                     </li>
                 
 
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../docs/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="index.html">
                         Script Plugins
@@ -331,13 +353,21 @@ document.write(`
                       </a>
                     </li>
                 
-
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links-2">
+                    More
+                </button>
+                <ul id="pst-nav-more-links-2" class="dropdown-menu">
+                    
                 <li class="nav-item">
-                  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+                  <a class="nav-link dropdown-item nav-external" href="https://discuss.avogadro.cc">
                     Discuss
                   </a>
                 </li>
                 
+                </ul>
+            </li>
+            
   </ul>
 </nav></div>
         
@@ -500,25 +530,25 @@ This is used in the GUI for menu entries, window titles, etc.</p></li>
 <h2>Specifying parameters with <code class="docutils literal notranslate"><span class="pre">--print-options</span></code><a class="headerlink" href="#specifying-parameters-with-print-options" title="Link to this heading">#</a></h2>
 <p>The format of the <code class="docutils literal notranslate"><span class="pre">--print-options</span></code> output must be a JSON object of
 the following form:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-   <span class="s2">&quot;userOptions&quot;</span><span class="p">:</span> <span class="p">{</span>
-     <span class="o">...</span>
-   <span class="p">},</span>
-   <span class="s2">&quot;highlightStyles&quot;</span><span class="p">:</span> <span class="p">[</span>
-      <span class="p">{</span>
-        <span class="s2">&quot;style&quot;</span><span class="p">:</span> <span class="s2">&quot;Descriptive name&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;rules&quot;</span><span class="p">:</span> <span class="p">[</span>
-         <span class="p">{</span>
-           <span class="s2">&quot;patterns&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="o">...</span> <span class="p">],</span>
-            <span class="s2">&quot;format&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
-          <span class="p">},</span>
-         <span class="o">...</span>
-        <span class="p">],</span>
-     <span class="p">},</span>
-     <span class="o">...</span>
-    <span class="p">],</span>
-   <span class="s2">&quot;inputMoleculeFormat&quot;</span><span class="p">:</span> <span class="s2">&quot;cjson&quot;</span>
- <span class="p">}</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">   </span><span class="nt">&quot;userOptions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="err">...</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="nt">&quot;highlightStyles&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;style&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Descriptive name&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;rules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">         </span><span class="p">{</span>
+<span class="w">           </span><span class="nt">&quot;patterns&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">],</span>
+<span class="w">            </span><span class="nt">&quot;format&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">}</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">         </span><span class="err">...</span>
+<span class="w">        </span><span class="p">],</span>
+<span class="w">     </span><span class="p">},</span>
+<span class="w">     </span><span class="err">...</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">   </span><span class="nt">&quot;inputMoleculeFormat&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cjson&quot;</span>
+<span class="w"> </span><span class="p">}</span>
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">userOptions</span></code> block contains a JSON object keyed with option names
@@ -598,32 +628,32 @@ in the “highlightRules” array. The highlightRules format is:</p>
 set of highlighting rules with particular output files. See the
 –generate-input documentation for more details.</p>
 <p>The general form of a highlight rule is:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="s2">&quot;patterns&quot;</span><span class="p">:</span> <span class="p">[</span>
-    <span class="p">{</span> <span class="s2">&quot;regexp&quot;</span><span class="p">:</span> <span class="s2">&quot;^Some regexp?$&quot;</span> <span class="p">},</span>
-    <span class="p">{</span> <span class="s2">&quot;wildcard&quot;</span><span class="p">:</span> <span class="s2">&quot;A * wildcard expression&quot;</span> <span class="p">},</span>
-    <span class="p">{</span> <span class="s2">&quot;string&quot;</span><span class="p">:</span> <span class="s2">&quot;An exact string to match.&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;caseSensitive&quot;</span><span class="p">:</span> <span class="n">false</span>
-    <span class="p">},</span>
-    <span class="o">...</span>
-  <span class="p">],</span>
-  <span class="s2">&quot;format&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">&quot;preset&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;preset name&gt;&quot;</span>
-  <span class="p">}</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;patterns&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;regexp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;^Some regexp?$&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;wildcard&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A * wildcard expression&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;string&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;An exact string to match.&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;caseSensitive&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="err">...</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;format&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;preset&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;preset name&gt;&quot;</span>
+<span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>or,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="s2">&quot;patterns&quot;</span><span class="p">:</span> <span class="p">[</span>
-    <span class="o">...</span>
-  <span class="p">],</span>
-  <span class="s2">&quot;format&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">&quot;foreground&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span>  <span class="mi">64</span> <span class="p">],</span>
-    <span class="s2">&quot;background&quot;</span><span class="p">:</span> <span class="p">[</span>   <span class="mi">0</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">128</span> <span class="p">],</span>
-    <span class="s2">&quot;attributes&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;bold&quot;</span><span class="p">,</span> <span class="s2">&quot;italic&quot;</span><span class="p">,</span> <span class="s2">&quot;underline&quot;</span><span class="p">],</span>
-    <span class="s2">&quot;family&quot;</span><span class="p">:</span> <span class="s2">&quot;serif&quot;</span>
-  <span class="p">}</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;patterns&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="err">...</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;format&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;foreground&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="mi">128</span><span class="p">,</span><span class="w">  </span><span class="mi">64</span><span class="w"> </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;background&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">   </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">128</span><span class="p">,</span><span class="w"> </span><span class="mi">128</span><span class="w"> </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;attributes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;bold&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;italic&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;underline&quot;</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;family&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;serif&quot;</span>
+<span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -666,16 +696,16 @@ allows fine-tuning of the font properties:</p>
 <li><p>family of font. Valid values are “serif”, “sans”, or “mono” Any of the font property members may be omitted and default QTextCharFormat settings will be substituted.</p></li>
 </ul>
 <p>The input generator extension will apply the entries in the highlightRules object to the text in the order they appear. Thus, later rules will override the formatting of earlier rules should a conflict arise.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="s2">&quot;patterns&quot;</span><span class="p">:</span> <span class="p">[</span>
-    <span class="o">...</span>
-  <span class="p">],</span>
-  <span class="s2">&quot;format&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">&quot;foreground&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span>  <span class="mi">64</span> <span class="p">],</span>
-    <span class="s2">&quot;background&quot;</span><span class="p">:</span> <span class="p">[</span>   <span class="mi">0</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">128</span> <span class="p">],</span>
-    <span class="s2">&quot;attributes&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;bold&quot;</span><span class="p">,</span> <span class="s2">&quot;italic&quot;</span><span class="p">,</span> <span class="s2">&quot;underline&quot;</span><span class="p">],</span>
-    <span class="s2">&quot;family&quot;</span><span class="p">:</span> <span class="s2">&quot;serif&quot;</span>
-  <span class="p">}</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;patterns&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="err">...</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;format&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;foreground&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="mi">128</span><span class="p">,</span><span class="w">  </span><span class="mi">64</span><span class="w"> </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;background&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">   </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">128</span><span class="p">,</span><span class="w"> </span><span class="mi">128</span><span class="w"> </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;attributes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;bold&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;italic&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;underline&quot;</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;family&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;serif&quot;</span>
+<span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -737,13 +767,13 @@ Chemical JSON or “cml” for Chemical Markup Language.</p>
 <p>When <code class="docutils literal notranslate"><span class="pre">--generate-input</span></code> is passed, the information needed to generate
 the input file will be written to the script’s standard input
 channel as JSON string of the following form:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="s2">&quot;cjson&quot;</span><span class="p">:</span> <span class="p">{</span><span class="o">...</span><span class="p">},</span>
-  <span class="s2">&quot;options&quot;</span><span class="p">:</span> <span class="p">{</span>
-   <span class="s2">&quot;First option name&quot;</span><span class="p">:</span> <span class="s2">&quot;Value 2&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;Second option name&quot;</span><span class="p">:</span> <span class="s2">&quot;Value 1&quot;</span><span class="p">,</span>
-    <span class="o">...</span>
-  <span class="p">}</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;cjson&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="nt">&quot;First option name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Value 2&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Second option name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Value 1&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="err">...</span>
+<span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -758,21 +788,21 @@ pairs for each of the options specified in the <code class="docutils literal not
 <code class="docutils literal notranslate"><span class="pre">--print-options</span></code> output.</p>
 <p>If the script is called with <code class="docutils literal notranslate"><span class="pre">--generate-input</span></code>, it must write a JSON
 string to standard output with the following format:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="s2">&quot;files&quot;</span><span class="p">:</span> <span class="p">[</span>
-    <span class="p">{</span>
-      <span class="s2">&quot;filename&quot;</span><span class="p">:</span> <span class="s2">&quot;file1.ext&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;contents&quot;</span><span class="p">:</span> <span class="s2">&quot;...&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;highlightStyles&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="o">...</span> <span class="p">]</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-      <span class="s2">&quot;filename&quot;</span><span class="p">:</span> <span class="s2">&quot;file2.ext&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;filePath&quot;</span><span class="p">:</span> <span class="s2">&quot;/path/to/file/on/local/filesystem&quot;</span>
-    <span class="p">},</span>
-    <span class="o">...</span>
-  <span class="p">],</span>
-  <span class="s2">&quot;warnings&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;First warning.&quot;</span><span class="p">,</span> <span class="s2">&quot;Second warning.&quot;</span><span class="p">,</span> <span class="o">...</span> <span class="p">],</span>
-  <span class="s2">&quot;mainFile&quot;</span><span class="p">:</span> <span class="s2">&quot;file2.ext&quot;</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;files&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;filename&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;file1.ext&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;contents&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;highlightStyles&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">]</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;filename&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;file2.ext&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;filePath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/path/to/file/on/local/filesystem&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="err">...</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;warnings&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;First warning.&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Second warning.&quot;</span><span class="p">,</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;mainFile&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;file2.ext&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -868,10 +898,10 @@ user.</p>
 </section>
 <section id="debugging">
 <h2>Debugging<a class="headerlink" href="#debugging" title="Link to this heading">#</a></h2>
-<p>Debugging may be enabled by defining AVO_QM_INPUT_DEBUG in the process’s
+<p>Debugging may be enabled by defining <code class="docutils literal notranslate"><span class="pre">AVO_PYTHON_SCRIPT_DEBUG</span></code> in the process’s
 environment. This will cause the <code class="docutils literal notranslate"><span class="pre">--debug</span></code> option to be passed in
 all calls to generator scripts, and will print extra information to the
-qDebug() stream from within avogadro. The script is free to handle the
+qDebug() stream from within Avogadro. The script is free to handle the
 debug flag as the author wishes.</p>
 </section>
 </section>
