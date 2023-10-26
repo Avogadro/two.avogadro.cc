@@ -18,7 +18,7 @@ With the exception of `--metadata` and `--display-name` options
 Running the script with the `--metadata` option should print a JSON object
 of the following form:
 
-```
+```json
 {
   "inputFormat": "pdb",
   "identifier": "Unique Name"
@@ -142,7 +142,7 @@ The `cjson` format from Avogadro will provide both real-space Cartesian coordina
 
 The unit cell parameters and lattice vectors are also available in `cjson`:
 
-```
+```json
   "unitCell": {
     "a": 4.0862,
     "alpha": 90.0,

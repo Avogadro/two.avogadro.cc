@@ -30,7 +30,7 @@ The script must handle the following command-line arguments:
 The format of the `--print-options` output must be a JSON object of
 the following form:
 
-```
+```json
 {
    "userOptions": {
      ...
@@ -103,7 +103,7 @@ set of highlighting rules with particular output files. See the
 
 The general form of a highlight rule is:
 
-```
+```json
 {
   "patterns": [
     { "regexp": "^Some regexp?$" },
@@ -121,7 +121,7 @@ The general form of a highlight rule is:
 
 or,
 
-```
+```json
 {
   "patterns": [
     ...
@@ -175,7 +175,7 @@ allows fine-tuning of the font properties:
 
 The input generator extension will apply the entries in the highlightRules object to the text in the order they appear. Thus, later rules will override the formatting of earlier rules should a conflict arise.
 
-```
+```json
 {
   "patterns": [
     ...
@@ -252,7 +252,7 @@ When `--generate-input` is passed, the information needed to generate
 the input file will be written to the script's standard input
 channel as JSON string of the following form:
 
-```
+```json
 {
   "cjson": {...},
   "options": {
@@ -277,7 +277,7 @@ pairs for each of the options specified in the `userOptions` block of the
 If the script is called with `--generate-input`, it must write a JSON
 string to standard output with the following format:
 
-```
+```json
 {
   "files": [
     {
@@ -397,8 +397,8 @@ user.
 
 ## Debugging
 
-Debugging may be enabled by defining AVO_QM_INPUT_DEBUG in the process's
+Debugging may be enabled by defining `AVO_PYTHON_SCRIPT_DEBUG` in the process's
 environment. This will cause the `--debug` option to be passed in
 all calls to generator scripts, and will print extra information to the
-qDebug() stream from within avogadro. The script is free to handle the
+qDebug() stream from within Avogadro. The script is free to handle the
 debug flag as the author wishes.
