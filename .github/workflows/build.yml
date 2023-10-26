@@ -50,7 +50,7 @@ jobs:
 
     - name: Build doxygen
       run: |
-        cmake --build . 
+        ninja
         cd avogadrolibs
         ninja documentation
       shell: bash
@@ -59,7 +59,7 @@ jobs:
     - name: Build Sphinx
       run: |
         cd source
-        sphinx-build -E . ..
+        sphinx-build -J auto -E . ..
         cd ..
         git status
       shell: bash
