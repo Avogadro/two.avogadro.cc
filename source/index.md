@@ -132,6 +132,7 @@ a [feature][features], please report an issue on our [project tracker][tracker].
 :maxdepth: 2
 
 install/index
+docs/index
 scripts/index
 api/index
 contrib/index
