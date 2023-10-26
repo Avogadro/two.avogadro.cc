@@ -63,6 +63,20 @@ a guide you will need:
 - CMake
 - Python
 
+### debian based distribution (ubuntu)
+```bash
+apt-get update && \
+ apt-get install -y cmake curl build-essential qtbase5-dev qtdeclarative5-dev zlib1g-dev libxml2-dev git libqt5svg5-dev libqt5gui5 libqt5concurrent5 rapidjson && \
+```
+If you need more higher cmake version (replace aarch64 with your [architecture](https://github.com/Kitware/CMake/releases/download/v3.26.5/))
+```bash
+apt-get purge cmake && \
+ curl -L -v -o /tmp/bin https://github.com/Kitware/CMake/releases/download/v3.26.5/cmake-3.26.5-linux-aarch64.sh && \
+ chmod +x /tmp/bin && \
+ cd /usr && \
+ /tmp/bin
+```
+
 ## Building
 
 It is recommended that you create a build tree outside of the source
