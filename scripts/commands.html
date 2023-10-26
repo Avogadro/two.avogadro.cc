@@ -156,6 +156,13 @@
                     </li>
                 
 
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../docs/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="index.html">
                         Script Plugins
@@ -176,13 +183,21 @@
                       </a>
                     </li>
                 
-
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
                 <li class="nav-item">
-                  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+                  <a class="nav-link dropdown-item nav-external" href="https://discuss.avogadro.cc">
                     Discuss
                   </a>
                 </li>
                 
+                </ul>
+            </li>
+            
   </ul>
 </nav></div>
       
@@ -311,6 +326,13 @@ document.write(`
                     </li>
                 
 
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../docs/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="index.html">
                         Script Plugins
@@ -331,13 +353,21 @@ document.write(`
                       </a>
                     </li>
                 
-
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links-2">
+                    More
+                </button>
+                <ul id="pst-nav-more-links-2" class="dropdown-menu">
+                    
                 <li class="nav-item">
-                  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+                  <a class="nav-link dropdown-item nav-external" href="https://discuss.avogadro.cc">
                     Discuss
                   </a>
                 </li>
                 
+                </ul>
+            </li>
+            
   </ul>
 </nav></div>
         
@@ -512,19 +542,6 @@ the following form:</p>
   <span class="s2">&quot;userOptions&quot;</span><span class="p">:</span> <span class="p">{</span>
     <span class="o">...</span>
   <span class="p">},</span>
-  <span class="s2">&quot;highlightStyles&quot;</span><span class="p">:</span> <span class="p">[</span>
-    <span class="p">{</span>
-      <span class="s2">&quot;style&quot;</span><span class="p">:</span> <span class="s2">&quot;Descriptive name&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;rules&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="p">{</span>
-          <span class="s2">&quot;patterns&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="o">...</span> <span class="p">],</span>
-          <span class="s2">&quot;format&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
-        <span class="p">},</span>
-        <span class="o">...</span>
-      <span class="p">],</span>
-    <span class="p">},</span>
-    <span class="o">...</span>
-  <span class="p">],</span>
   <span class="s2">&quot;inputMoleculeFormat&quot;</span><span class="p">:</span> <span class="s2">&quot;cjson&quot;</span>
 <span class="p">}</span>
 </pre></div>
@@ -532,6 +549,75 @@ the following form:</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">userOptions</span></code> block contains a JSON object keyed with option names
 (e.g. “First option name”), which are used in the GUI to label
 simulation parameter settings. Various parameter types are supported.</p>
+<p>If the command does not require an options dialog, the JSON can be completely empty. or include an empty <code class="docutils literal notranslate"><span class="pre">userOptions</span></code> block.</p>
+</section>
+<section id="returning-data">
+<h2>Returning Data<a class="headerlink" href="#returning-data" title="Link to this heading">#</a></h2>
+<p>Avogadro will pass JSON on the standard input, including the <code class="docutils literal notranslate"><span class="pre">userOptions</span></code> selections as well as the molecular data as requested.</p>
+<p>After running the script, data should be printed to the standard output in JSON format, e.g.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;cjson&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<section id="returning-data-in-a-specific-file-format">
+<h3>Returning Data in a Specific File Format<a class="headerlink" href="#returning-data-in-a-specific-file-format" title="Link to this heading">#</a></h3>
+<p>While the default is for data to be returned as <code class="docutils literal notranslate"><span class="pre">cjson</span></code> objects, scripts can return data in any format recognized by Avogadro. In general, we suggest <code class="docutils literal notranslate"><span class="pre">mol</span></code> or <code class="docutils literal notranslate"><span class="pre">sdf</span></code>, <code class="docutils literal notranslate"><span class="pre">xyz</span></code>, <code class="docutils literal notranslate"><span class="pre">pdb</span></code>, <code class="docutils literal notranslate"><span class="pre">cif</span></code>, <code class="docutils literal notranslate"><span class="pre">cml</span></code>, or <code class="docutils literal notranslate"><span class="pre">cjson</span></code> as relatively common interchange foramts.</p>
+<p>To indicate the format use the <code class="docutils literal notranslate"><span class="pre">moleculeFormat</span></code> key and then return the file data with the appropriate key:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;moleculeFormat&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pdb&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;pdb&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;…&quot;</span><span class="w"> </span><span class="c1">// PDB file as a string</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="appending-new-atoms-and-bonds">
+<h3>Appending New Atoms and Bonds<a class="headerlink" href="#appending-new-atoms-and-bonds" title="Link to this heading">#</a></h3>
+<p>Sometimes a script may wish to <code class="docutils literal notranslate"><span class="pre">append</span></code> new atoms and bonds to the current system. As indicated above, the default action is to replace the current molecule with data returned to Avogadro (e.g., deleting or replacing atoms, etc.).</p>
+<p>Instead, one can use the <code class="docutils literal notranslate"><span class="pre">append</span></code> key in the JSON returned to Avogadro:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;moleculeFormat&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pdb&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;append&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Avogadro will not modify the existing molecule, but only insert new atoms and/or bonds.</p>
+</section>
+<section id="bonding-new-atoms">
+<h3>Bonding New Atoms<a class="headerlink" href="#bonding-new-atoms" title="Link to this heading">#</a></h3>
+<p>Avogadro can perceive bonds and bond orders in the new or appended molecule. Simply supply the <code class="docutils literal notranslate"><span class="pre">bond</span></code> key in the JSON returned to Avogadro, for example:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// other data to return, e.g. in XYZ format</span>
+<span class="w">  </span><span class="nt">&quot;moleculeFormat&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xyz&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;append&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;bond&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="selected-atoms">
+<h3>Selected Atoms<a class="headerlink" href="#selected-atoms" title="Link to this heading">#</a></h3>
+<p>A script can indicate atoms to select in the current molecule using the <code class="docutils literal notranslate"><span class="pre">selectedAtoms</span></code> key in the JSON returned to Avogadro. The <code class="docutils literal notranslate"><span class="pre">selectedAtoms</span></code> should be a numeric list, e.g.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># e.g., matching a SMARTS pattern</span>
+    <span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetSubstructMatches</span><span class="p">(</span><span class="n">smarts</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">atom</span> <span class="ow">in</span> <span class="n">match</span><span class="p">:</span>
+            <span class="n">selected</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">atom</span><span class="p">)</span>
+ 
+    <span class="c1"># Just indicate that we want to select matching atoms</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;selectedAtoms&#39;</span><span class="p">:</span> <span class="n">selected</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="debugging">
+<h2>Debugging<a class="headerlink" href="#debugging" title="Link to this heading">#</a></h2>
+<p>Debugging may be enabled by defining <code class="docutils literal notranslate"><span class="pre">AVO_PYTHON_SCRIPT_DEBUG</span></code> in the process’s
+environment. This will cause the <code class="docutils literal notranslate"><span class="pre">--debug</span></code> option to be passed in
+all calls to scripts, and will print extra information to the
+qDebug() stream from within Avogadro (i.e., to the console).
+The script is free to handle the debug flag as the author wishes.</p>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -582,6 +668,14 @@ simulation parameter settings. Various parameter types are supported.</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#script-entry-points">Script Entry Points</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specifying-ui-options-with-print-options">Specifying UI options with –print-options</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#returning-data">Returning Data</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#returning-data-in-a-specific-file-format">Returning Data in a Specific File Format</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#appending-new-atoms-and-bonds">Appending New Atoms and Bonds</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bonding-new-atoms">Bonding New Atoms</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selected-atoms">Selected Atoms</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
 </ul>
   </nav></div>
 

@@ -156,6 +156,13 @@
                     </li>
                 
 
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../docs/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="index.html">
                         Script Plugins
@@ -176,13 +183,21 @@
                       </a>
                     </li>
                 
-
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
                 <li class="nav-item">
-                  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+                  <a class="nav-link dropdown-item nav-external" href="https://discuss.avogadro.cc">
                     Discuss
                   </a>
                 </li>
                 
+                </ul>
+            </li>
+            
   </ul>
 </nav></div>
       
@@ -311,6 +326,13 @@ document.write(`
                     </li>
                 
 
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../docs/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="index.html">
                         Script Plugins
@@ -331,13 +353,21 @@ document.write(`
                       </a>
                     </li>
                 
-
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links-2">
+                    More
+                </button>
+                <ul id="pst-nav-more-links-2" class="dropdown-menu">
+                    
                 <li class="nav-item">
-                  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+                  <a class="nav-link dropdown-item nav-external" href="https://discuss.avogadro.cc">
                     Discuss
                   </a>
                 </li>
                 
+                </ul>
+            </li>
+            
   </ul>
 </nav></div>
         
@@ -487,16 +517,16 @@ document.write(`
 <h2>Identify the Script with <code class="docutils literal notranslate"><span class="pre">--metadata</span></code><a class="headerlink" href="#identify-the-script-with-metadata" title="Link to this heading">#</a></h2>
 <p>Running the script with the <code class="docutils literal notranslate"><span class="pre">--metadata</span></code> option should print a JSON object
 of the following form:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="s2">&quot;inputFormat&quot;</span><span class="p">:</span> <span class="s2">&quot;pdb&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;identifier&quot;</span><span class="p">:</span> <span class="s2">&quot;Unique Name&quot;</span>
-  <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;User-Friendly Name&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Description of method or citation.&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;elements&quot;</span><span class="p">:</span> <span class="s2">&quot;1,6-9&quot;</span>
-  <span class="s2">&quot;unitCell&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
-  <span class="s2">&quot;gradients&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-  <span class="s2">&quot;ion&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
-  <span class="s2">&quot;radical&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;inputFormat&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pdb&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;identifier&quot;</span><span class="p">:</span><span class="w"> </span><span class="nt">&quot;Unique Name&quot;</span>
+<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;User-Friendly Name&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Description of method or citation.&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;elements&quot;</span><span class="p">:</span><span class="w"> </span><span class="nt">&quot;1,6-9&quot;</span>
+<span class="w">  </span><span class="nt">&quot;unitCell&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;gradients&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">True</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ion&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;radical&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -601,25 +631,25 @@ x y z
 <h3>Lattice Vectors and Fractional Coordinates<a class="headerlink" href="#lattice-vectors-and-fractional-coordinates" title="Link to this heading">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">cjson</span></code> format from Avogadro will provide both real-space Cartesian coordinates as <code class="docutils literal notranslate"><span class="pre">cjson[&quot;atoms&quot;][&quot;coords&quot;][&quot;3d&quot;]</span></code> and fractional coordinates as <code class="docutils literal notranslate"><span class="pre">cjson[&quot;atoms&quot;][&quot;coords&quot;][&quot;3dFractional&quot;]</span></code>. For both cases, the coordinates are supplied as a 1D array, which can be reshaped via <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, e.g. <code class="docutils literal notranslate"><span class="pre">np.array(coord_list,</span> <span class="pre">dtype=float).reshape(-1,</span> <span class="pre">3)</span></code>.</p>
 <p>The unit cell parameters and lattice vectors are also available in <code class="docutils literal notranslate"><span class="pre">cjson</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="s2">&quot;unitCell&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="mf">4.0862</span><span class="p">,</span>
-    <span class="s2">&quot;alpha&quot;</span><span class="p">:</span> <span class="mf">90.0</span><span class="p">,</span>
-    <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="mf">4.0862</span><span class="p">,</span>
-    <span class="s2">&quot;beta&quot;</span><span class="p">:</span> <span class="mf">90.0</span><span class="p">,</span>
-    <span class="s2">&quot;c&quot;</span><span class="p">:</span> <span class="mf">4.0862</span><span class="p">,</span>
-    <span class="s2">&quot;cellVectors&quot;</span><span class="p">:</span> <span class="p">[</span>
-      <span class="mf">4.0862</span><span class="p">,</span>
-      <span class="mf">0.0</span><span class="p">,</span>
-      <span class="mf">0.0</span><span class="p">,</span>
-      <span class="mf">0.0</span><span class="p">,</span>
-      <span class="mf">4.0862</span><span class="p">,</span>
-      <span class="mf">0.0</span><span class="p">,</span>
-      <span class="mf">0.0</span><span class="p">,</span>
-      <span class="mf">0.0</span><span class="p">,</span>
-      <span class="mf">4.0862</span>
-    <span class="p">],</span>
-    <span class="s2">&quot;gamma&quot;</span><span class="p">:</span> <span class="mf">90.0</span>
-  <span class="p">}</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="nt">&quot;unitCell&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;a&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">4.0862</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;alpha&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">90.0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;b&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">4.0862</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;beta&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">90.0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;c&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">4.0862</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;cellVectors&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="mf">4.0862</span><span class="p">,</span>
+<span class="w">      </span><span class="mf">0.0</span><span class="p">,</span>
+<span class="w">      </span><span class="mf">0.0</span><span class="p">,</span>
+<span class="w">      </span><span class="mf">0.0</span><span class="p">,</span>
+<span class="w">      </span><span class="mf">4.0862</span><span class="p">,</span>
+<span class="w">      </span><span class="mf">0.0</span><span class="p">,</span>
+<span class="w">      </span><span class="mf">0.0</span><span class="p">,</span>
+<span class="w">      </span><span class="mf">0.0</span><span class="p">,</span>
+<span class="w">      </span><span class="mf">4.0862</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;gamma&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">90.0</span>
+<span class="w">  </span><span class="p">}</span>
 </pre></div>
 </div>
 <p>For example, if your script needs the lattice vectors, you can use <code class="docutils literal notranslate"><span class="pre">cjson[&quot;unitCell&quot;][&quot;cellVectors&quot;]</span></code> to get a 1D list of the vectors and can reshape via <code class="docutils literal notranslate"><span class="pre">np.array(cell_list,</span> <span class="pre">dtype=float).reshape(3,3)</span></code>. Alternatively, you can access:</p>
