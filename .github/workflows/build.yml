@@ -6,8 +6,8 @@ on:
     - cron:  '31 2 * * *'
   workflow_dispatch:
   push:
-#    branches:    
-#      - 'main'
+    branches:    
+      - 'main'
 
 jobs:
   build-html:
@@ -50,7 +50,7 @@ jobs:
 
     - name: Build doxygen
       run: |
-        cmake --build . 
+        ninja 
         cd avogadrolibs
         ninja documentation
       shell: bash
@@ -59,7 +59,7 @@ jobs:
     - name: Build Sphinx
       run: |
         cd source
-        sphinx-build -E . ..
+        sphinx-build -j auto -E . ..
         cd ..
         git status
       shell: bash
@@ -73,6 +73,7 @@ jobs:
       with:
         default_author: github_actions
         message: Deploy Sphinx build
+        new_branch: gh-pages
         add: '*'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
