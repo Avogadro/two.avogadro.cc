@@ -71,3 +71,15 @@ Required sections:
 
 Note that any files **not** listed in the `commands` list will be ignored by
 Avogadro during launch.
+
+## Adding to the Plugin Directory
+
+When you are ready to add your plugin repository to the download list, create a release and submit a 
+pull request to:
+https://github.com/Avogadro/plugins/blob/master/repositories.txt
+
+Someone will check your plugin and approve the addition to the list of approved repositories. An 
+automated script runs daily to generate the cached information on the plugin repositories, so it may
+not appear immediately.
+
+Suggestions for a more complete plugin repository system are welcome.
