@@ -31,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=ee427ece" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
@@ -545,12 +545,28 @@ macOS the homebrew package manager works well.</p>
 <p>We should add a package listing for various Linux distributions, but as
 a guide you will need:</p>
 <ul class="simple">
-<li><p>a C/C++ compiler that supports C++11</p></li>
+<li><p>a C/C++ compiler that supports C++17</p></li>
 <li><p>OpenGL</p></li>
 <li><p>Qt 5.6+</p></li>
 <li><p>CMake</p></li>
 <li><p>Python</p></li>
 </ul>
+<section id="debian-based-distribution-or-ubuntu">
+<h3>Debian-based Distribution or Ubuntu<a class="headerlink" href="#debian-based-distribution-or-ubuntu" title="Link to this heading">#</a></h3>
+<p>You can install prerequisites with the following commands:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>apt-get<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>cmake<span class="w"> </span>curl<span class="w"> </span>build-essential<span class="w"> </span>qtbase5-dev<span class="w"> </span>qtdeclarative5-dev<span class="w"> </span>zlib1g-dev<span class="w"> </span>libxml2-dev<span class="w"> </span>git<span class="w"> </span>libqt5svg5-dev<span class="w"> </span>libqt5gui5<span class="w"> </span>libqt5concurrent5<span class="w"> </span>rapidjson<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+</pre></div>
+</div>
+<p>If you need a newer cmake version (replace aarch64 with your <a class="reference external" href="https://github.com/Kitware/CMake/releases/download/v3.26.5/">architecture</a>)</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>apt-get<span class="w"> </span>purge<span class="w"> </span>cmake<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<span class="w"> </span>curl<span class="w"> </span>-L<span class="w"> </span>-v<span class="w"> </span>-o<span class="w"> </span>/tmp/bin<span class="w"> </span>https://github.com/Kitware/CMake/releases/download/v3.26.5/cmake-3.26.5-linux-aarch64.sh<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>/tmp/bin<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/usr<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<span class="w"> </span>/tmp/bin
+</pre></div>
+</div>
+</section>
 </section>
 <section id="building">
 <h2>Building<a class="headerlink" href="#building" title="Link to this heading">#</a></h2>
@@ -689,7 +705,10 @@ installer will be created in the build directory.</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cloning-repositories">Cloning Repositories</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#updating">Updating</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#debian-based-distribution-or-ubuntu">Debian-based Distribution or Ubuntu</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building">Building</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-qt-windows-generators">Finding Qt, Windows Generators</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normal-development">Normal Development</a></li>
