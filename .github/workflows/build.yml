@@ -13,11 +13,14 @@ jobs:
   build-html:
     name: Update website
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: true
 
     steps:
     - uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
 
 # build the doxygen XML for breathe
     - name: Checkout openchemistry
@@ -61,7 +64,7 @@ jobs:
     - name: Build Sphinx
       run: |
         cd source
-        sphinx-build -j auto -E . ..
+        sphinx-build -j auto -E . ../public
         cd ..
         git status
       shell: bash
@@ -70,11 +73,12 @@ jobs:
       if: ${{ failure() }}
       uses: mxschmitt/action-tmate@v3
 
-    - name: Update git repo
-      uses: EndBug/add-and-commit@v9
+    - name: Deploy to gh-pages
+      uses: peaceiris/actions-gh-pages@v3
+      # If you're changing the branch from main,
+      # also change the `main` in `refs/heads/main`
+      # below accordingly.
+      if: github.ref == 'refs/heads/main'
       with:
-        default_author: github_actions
-        message: Deploy Sphinx build
-        push: origin gh-pages --set-upstream --force
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_branch: gh-pages
