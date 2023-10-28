@@ -15,18 +15,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
 
 # build the doxygen XML for breathe
     - name: Checkout openchemistry
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         repository: openchemistry/openchemistry
         submodules: recursive
         path: openchemistry
 
     - name: Checkout openchemistry and avogadrolibs
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         repository: openchemistry/avogadrolibs
         path: openchemistry/avogadrolibs
@@ -50,7 +52,7 @@ jobs:
 
     - name: Build doxygen
       run: |
-        cmake --build . 
+        ninja
         cd avogadrolibs
         ninja documentation
       shell: bash
@@ -59,7 +61,7 @@ jobs:
     - name: Build Sphinx
       run: |
         cd source
-        sphinx-build -E . ..
+        sphinx-build -j auto -E . ..
         cd ..
         git status
       shell: bash
