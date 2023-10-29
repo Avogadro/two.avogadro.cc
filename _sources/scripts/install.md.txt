@@ -4,11 +4,11 @@
 
 Scripts can either be installed manually, by dragging to the Avogadro window:
 
-![installing script](/_images/install-script.png)
+![installing script](/_static/install-script.png)
 
 Scripts can also be installed from GitHub repositories through the "Download Plugins…" command:
 
-![plugin download](/_images/plugin-download.png)
+![plugin download](/_static/plugin-download.png)
 
 ## Directories
 
@@ -16,7 +16,7 @@ Avogadro will look for plugins either as individual files or subdirectories
 in a few paths, including system and user directories. Each type of plugin
 should be in the corresponding subdirectory, e.g.:
 
-![plugin subdirectories](/_images/plugin-directories.png)
+![plugin subdirectories](/_static/plugin-directories.png)
 
 The main directory for installing plugins is determined by `QStandardPaths::standardLocations(QStandardPaths::AppLocalDataLocation)`:
 
