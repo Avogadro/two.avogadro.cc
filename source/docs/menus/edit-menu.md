@@ -2,7 +2,7 @@
 
 The edit menu administers basic file revisions.
 
-![](../.gitbook/assets/ab0abbfc-1551-4c45-b76b-02573e62ed4c.png)
+![](../../_images/ab0abbfc-1551-4c45-b76b-02573e62ed4c.png)
 
 ## Undo
 
@@ -24,7 +24,7 @@ The edit menu administers basic file revisions.
 
 "Copy As" provides text representations of the molecules present in the viewing screen. For example, selecting "Copy As" and "SMILES", renders "C\(=O\)\(C\)C.O.O" as the output for the viewing screen below. This selection can then be pasted in a text document for external projects.
 
-![](../.gitbook/assets/copy-as.png)
+![](../../_images/copy-as.png)
 
 ## Paste
 
@@ -38,7 +38,7 @@ The edit menu administers basic file revisions.
 
 "Select All" highlights everything in the screen \(this feature can also be found under the "Select" menu\).
 
-![](../.gitbook/assets/select-all.png)
+![](../../_images/select-all.png)
 
 ## Select None
 

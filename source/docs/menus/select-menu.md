@@ -2,7 +2,7 @@
 
 The select menu makes chemical alterations more efficient through various modes of selection.
 
-![](../.gitbook/assets/ee179776-5a24-4523-a668-a0012d4dbe6c.png)
+![](../../_images/ee179776-5a24-4523-a668-a0012d4dbe6c.png)
 
 ## Select All
 
@@ -18,19 +18,19 @@ The select menu makes chemical alterations more efficient through various modes 
 
 The first image displayed below is the orginal selection, and the second image demonstrates the inverted selection.
 
-![](../.gitbook/assets/invert-selection.png)
+![](../../_images/invert-selection.png)
 
 ## Select SMARTS...
 
 SMARTS **\(**SMiles ARbitrary Target Specification\) is a more general chemical language extension of SMILES. "Select SMARTS..." allows you to use this chemical language to select various atoms, or groups of atoms within the molecule. For example, typing "a" into the dialog box and clicking ok will select all atoms with aromaticity. More information can be found at the [Daylight SMARTS webpage](http://www.daylight.com/dayhtml/doc/theory/theory.smarts.html).
 
-![](../.gitbook/assets/select-smarts.png)
+![](../../_images/select-smarts.png)
 
 ## Select by Element...
 
 "Select by Element..." generates a periodic table pop up screen that allows you to select an element throughout the viewing display.
 
-![](../.gitbook/assets/select-by-element%20%281%29.png)
+![](../../_images/select-by-element%20%281%29.png)
 
 ## Select by Residue...
 
@@ -38,7 +38,7 @@ SMARTS **\(**SMiles ARbitrary Target Specification\) is a more general chemical 
 
 This feauture only works with residues that were made using the peptide builder.
 
-![](../.gitbook/assets/select-by-residue%20%281%29.png)
+![](../../_images/select-by-residue%20%281%29.png)
 
 ## Select Solvent
 

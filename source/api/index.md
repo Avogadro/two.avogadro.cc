@@ -2,7 +2,30 @@
 
 # Develop
 
-Avogadro libraries can be used from both C++ and Python interfaces.
+Avogadro can be extended from both C++ and Python interfaces.
+
+In many cases,
+
+## Script Plugins
+
+Many features in Avogadro can be extended with Python scripts, including:
+
+- menu commands
+- electrostatic models
+- force fields
+- input generators
+
+For more details, see the [script plugin](../scripts/index) documentation.
+
+## External Scripting
+
+Avogadro supports sending messages from external scripts, through
+remote procedure call (RPC) JSON. This can be very helpful for rendering
+images of molecules, generating orbitals, etc.
+
+For more details, see the [RPC](rpc) documentation.
+
+## Libraries
 
 The Avogadro libraries are developed to support the Avogadro2 application, and
 provide liberally BSD-licensed, open-source reusable components for both C++ and Python. At its core it is a platform for developing molecular visualization, editing and interactive simulation applications. This is achieved using a collection of libraries, along with a plugin interface allowing the platform to be easily extended and used in a variety of environments.
@@ -44,6 +67,7 @@ maxdepth: 2
 hidden: true
 ---
 
+../scripts/index
 rpc
 classlist
 ```
