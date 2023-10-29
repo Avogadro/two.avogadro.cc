@@ -16,13 +16,13 @@ For new features, a "**New in 2.0**" heading is included.
 
 The revised manual also includes tips and warnings as call-out sections:
 
-{% hint style="danger" %}
+```{warning}
 This is a warning - pay attention to something that may cause problems
-{% endhint %}
+```
 
-{% hint style="info" %}
+```{tip}
 This is a tip - something that can help you work better
-{% endhint %}
+```
 
 ## Thanks
 

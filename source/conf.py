@@ -49,7 +49,7 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinx_design',
     'sphinx_copybutton',
-    #'breathe',
+    'breathe',
     'myst_parser',
 ]
 
@@ -74,6 +74,7 @@ sd_fontawesome_latex = True
 myst_substitutions = {
   "release": release,
   "macurl": f"https://github.com/OpenChemistry/avogadrolibs/releases/download/{version}/Avogadro2-{version}-Darwin.dmg",
+  "macarmurl": f"https://github.com/OpenChemistry/avogadrolibs/releases/download/{version}/Avogadro2-{version}-Darwin-arm64.dmg",
   "winurl": f"https://github.com/OpenChemistry/avogadrolibs/releases/download/{version}/Avogadro2-{version}-win64.exe",
   "appurl": f"https://github.com/OpenChemistry/avogadrolibs/releases/download/{version}/Avogadro2-x86_64.AppImage"
 }

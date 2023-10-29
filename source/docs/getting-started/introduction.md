@@ -6,17 +6,17 @@ This manual was largely made on a Mac, but the interface should be very similar 
 
 When you initially open Avogadro you will be presented with a screen such as the one shown below.
 
-![](../.gitbook/assets/015e6535-4871-43dd-99cb-d27fd0738a4e.png)
+![](../../_images/015e6535-4871-43dd-99cb-d27fd0738a4e.png)
 
 ## Opening a File
 
 The first thing you will probably want to do is open a file and navigate around the molecule. To do this click on the `File` menu and select `Open...`.
 
-![](../.gitbook/assets/opening-a-file.png)
+![](../../_images/opening-a-file.png)
 
 You can then look through the files on your disk and find an appropriate chemical file. Thanks to Open Babel, a large number of file types are supported including CML, XYZ, SDF, Mol2, PDB etc. Several example molecules are supplied with Avogadro.
 
-![](../.gitbook/assets/bdfc7544-6b58-4e14-85c3-892ba8260944.png)
+![](../../_images/bdfc7544-6b58-4e14-85c3-892ba8260944.png)
 
 The screen shot above shows the ethanol.cml file opened up and displayed using the default Ball and Stick display type. Notice that when a new file is opened Avogadro switches from the Draw Tool to the Navigate Tool, which allows you to view the molecule without editing it.
 
