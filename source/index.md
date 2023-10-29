@@ -18,7 +18,10 @@ This documentation site is for Avogadro 2, currently in development.
 ![Thumbnail for zeolite rendering](/_static/zeolite.png)
 :::
 :::{card}
-![Thumbnail for QTAim analysis](/_static/phenol-qtaim.png)
+![Thumbnail for COVID spike protein](/_static/covid-spike.png)
+:::
+:::{card}
+![Thumbnail for COVID spike protein](/_static/AuNP.png)
 :::
 :::{card}
 ![Thumbnail for bond-centric editing](/_static/bondcentric.png)
@@ -27,7 +30,10 @@ This documentation site is for Avogadro 2, currently in development.
 ![Thumbnail for symmetry analysis of C180](/_static/C180.png)
 :::
 :::{card}
-![Thumbnail for COVID spike protein](/_static/covid-spike.png)
+![Thumbnail for ferrocene](/_static/ferrocene.png)
+:::
+:::{card}
+![Thumbnail for QTAim analysis](/_static/phenol-qtaim.png)
 :::
 ::::
 
