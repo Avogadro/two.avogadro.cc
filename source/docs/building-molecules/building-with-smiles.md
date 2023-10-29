@@ -4,13 +4,13 @@ SMILES \(Simplified molecular-input line-entry system\) allows you to build mole
 
 Under the "Build" menu, hold your cursor over "Insert", and select "SMILES...".
 
-![](../../_images/4dd015d9-d489-42d5-a8b1-be5e6080bbd0.png)
+![](../../_static/4dd015d9-d489-42d5-a8b1-be5e6080bbd0.png)
 
 Enter your SMILES fragment, and select "OK".
 
-![](../../_images/6d7b8ae1-2daf-4d0a-874a-3979e52c0dfd.png)
+![](../../_static/6d7b8ae1-2daf-4d0a-874a-3979e52c0dfd.png)
 
 There it is..
 
-![](../../_images/791f7d8e-bf76-4b5f-b163-1ed2860ecad6.png)
+![](../../_static/791f7d8e-bf76-4b5f-b163-1ed2860ecad6.png)
 
