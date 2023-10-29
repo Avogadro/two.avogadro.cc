@@ -14,7 +14,7 @@ MMFF94 and MMFF94s use the same functional form to calculate the potential energ
 
 These force fields also add electrostatic charges, and hydrogen bonds \(displayed below\).
 
-![](../../_images/mmff94-s-.png)
+![](../../_static/mmff94-s-.png)
 
 ## GAFF
 
