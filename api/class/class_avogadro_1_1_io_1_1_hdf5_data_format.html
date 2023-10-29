@@ -163,13 +163,6 @@
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../scripts/index.html">
-                        Script Plugins
-                      </a>
-                    </li>
-                
-
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="../index.html">
                         Develop
@@ -183,21 +176,13 @@
                       </a>
                     </li>
                 
-            <li class="nav-item dropdown">
-                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
-                    More
-                </button>
-                <ul id="pst-nav-more-links" class="dropdown-menu">
-                    
+
                 <li class="nav-item">
-                  <a class="nav-link dropdown-item nav-external" href="https://discuss.avogadro.cc">
+                  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
                     Discuss
                   </a>
                 </li>
                 
-                </ul>
-            </li>
-            
   </ul>
 </nav></div>
       
@@ -333,13 +318,6 @@ document.write(`
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../scripts/index.html">
-                        Script Plugins
-                      </a>
-                    </li>
-                
-
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="../index.html">
                         Develop
@@ -353,21 +331,13 @@ document.write(`
                       </a>
                     </li>
                 
-            <li class="nav-item dropdown">
-                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links-2">
-                    More
-                </button>
-                <ul id="pst-nav-more-links-2" class="dropdown-menu">
-                    
+
                 <li class="nav-item">
-                  <a class="nav-link dropdown-item nav-external" href="https://discuss.avogadro.cc">
+                  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
                     Discuss
                   </a>
                 </li>
                 
-                </ul>
-            </li>
-            
   </ul>
 </nav></div>
         
@@ -438,6 +408,7 @@ document.write(`
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">API</span></p>
 <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../scripts/index.html">Script Plugins</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../rpc.html">Avogadro Remote Procedure Call (RPC)</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../classlist.html">Class list</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../core.html">Core Classes</a></li>
@@ -542,6 +513,367 @@ document.write(`
                   
   <section id="class-avogadro-io-hdf5dataformat">
 <h1>Class Avogadro::Io::Hdf5DataFormat<a class="headerlink" href="#class-avogadro-io-hdf5dataformat" title="Link to this heading">#</a></h1>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro2Io14Hdf5DataFormatE">
+<span id="_CPPv3N8Avogadro2Io14Hdf5DataFormatE"></span><span id="_CPPv2N8Avogadro2Io14Hdf5DataFormatE"></span><span id="Avogadro::Io::Hdf5DataFormat"></span><span class="target" id="class_avogadro_1_1_io_1_1_hdf5_data_format"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Hdf5DataFormat</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro2Io14Hdf5DataFormatE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The <a class="reference internal" href="#class_avogadro_1_1_io_1_1_hdf5_data_format"><span class="std std-ref">Hdf5DataFormat</span></a> class provides access to data stored in HDF5 files. </p>
+<p>
+This class is intended to supplement an existing format reader/writer by providing the option to write large data to an HDF5 file store. The purpose is to keep text format files at a manageable size.<dl class="simple">
+<dt><strong>Author</strong></dt><dd><p>Allison Vacanti</p>
+</dd>
+</dl>
+</p>
+<p>To use this class, open or create an HDF5 file with the openFile method, using the appropriate OpenMode for the intended operation. Data can be written to the file using the writeDataset methods and retrieved using the readDataset methods. When finished, call closeFile to release the file resources from the HDF5 library.</p>
+<p>A complete set of datasets available in an open file can be retrieved with the <a class="reference internal" href="#class_avogadro_1_1_io_1_1_hdf5_data_format_1aa1442e13cd27e3f52aaf67bb3a4e429a"><span class="std std-ref">datasets()</span></a> method, and the existence of a particular dataset can be tested with <a class="reference internal" href="#class_avogadro_1_1_io_1_1_hdf5_data_format_1a21e4c2c0e6515f649c3f0d9c0c0d5df4"><span class="std std-ref">datasetExists()</span></a>. <a class="reference internal" href="#class_avogadro_1_1_io_1_1_hdf5_data_format_1ada3bdb6c43f304564fa565da7731f421"><span class="std std-ref">removeDataset()</span></a> can be used to unlink an existing dataset from the file, though this will not free any space on disk. The space occupied by an unlinked dataset may be reclaimed by new write operations, but only if they occur before the file is closed.</p>
+<p>A convenient thresholding system is implemented to help the accompanying text format writer determine which data is “large” enough to be stored in HDF5. A size threshold (in bytes) may be set with the <a class="reference internal" href="#class_avogadro_1_1_io_1_1_hdf5_data_format_1a6f6353b77aafbddfa6b476fa519e1d09"><span class="std std-ref">setThreshold()</span></a> function (the default is 1KB). A data object may be passed to the exceedsThreshold method to see if the size of the data in the container exceeds the currently set threshold. If so, it should be written into the HDF5 file by writeDataset. If not, it should be serialized into the text file in a suitable format. The thresholding operations are optional; the threshold size does not affect the behavior of the read/write methods and are only for user convenience. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-types">Public Types</p>
+<dl class="cpp enum">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro2Io14Hdf5DataFormat8OpenModeE">
+<span id="_CPPv3N8Avogadro2Io14Hdf5DataFormat8OpenModeE"></span><span id="_CPPv2N8Avogadro2Io14Hdf5DataFormat8OpenModeE"></span><span class="target" id="class_avogadro_1_1_io_1_1_hdf5_data_format_1a3a70f8b621474c9885f80fe709e2dca2"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">OpenMode</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro2Io14Hdf5DataFormat8OpenModeE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Open modes for use with <a class="reference internal" href="#class_avogadro_1_1_io_1_1_hdf5_data_format_1a3349106aa317a15d846774c3cbf70eba"><span class="std std-ref">openFile()</span></a>. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro2Io14Hdf5DataFormat8OpenMode8ReadOnlyE">
+<span id="_CPPv3N8Avogadro2Io14Hdf5DataFormat8OpenMode8ReadOnlyE"></span><span id="_CPPv2N8Avogadro2Io14Hdf5DataFormat8OpenMode8ReadOnlyE"></span><span class="target" id="class_avogadro_1_1_io_1_1_hdf5_data_format_1a3a70f8b621474c9885f80fe709e2dca2af1a03d8a79e3c6ef4a82a0ba3fec6e7a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ReadOnly</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro2Io14Hdf5DataFormat8OpenMode8ReadOnlyE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Open an existing file in read-only mode. The file must exist. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro2Io14Hdf5DataFormat8OpenMode17ReadWriteTruncateE">
+<span id="_CPPv3N8Avogadro2Io14Hdf5DataFormat8OpenMode17ReadWriteTruncateE"></span><span id="_CPPv2N8Avogadro2Io14Hdf5DataFormat8OpenMode17ReadWriteTruncateE"></span><span class="target" id="class_avogadro_1_1_io_1_1_hdf5_data_format_1a3a70f8b621474c9885f80fe709e2dca2a31fb35588cf923abdb413dbfff1c3c0c"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ReadWriteTruncate</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro2Io14Hdf5DataFormat8OpenMode17ReadWriteTruncateE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Create a file in read/write mode, removing any existing file with the same name. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro2Io14Hdf5DataFormat8OpenMode15ReadWriteAppendE">
+<span id="_CPPv3N8Avogadro2Io14Hdf5DataFormat8OpenMode15ReadWriteAppendE"></span><span id="_CPPv2N8Avogadro2Io14Hdf5DataFormat8OpenMode15ReadWriteAppendE"></span><span class="target" id="class_avogadro_1_1_io_1_1_hdf5_data_format_1a3a70f8b621474c9885f80fe709e2dca2a41b93c12db189844b1ed9ff4306d323c"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ReadWriteAppend</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro2Io14Hdf5DataFormat8OpenMode15ReadWriteAppendE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Open an file in read/write mode. If the file exist, its contents will be preserved. If it does not, a new file will be created. </p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro2Io14Hdf5DataFormat14Hdf5DataFormatEv">
+<span id="_CPPv3N8Avogadro2Io14Hdf5DataFormat14Hdf5DataFormatEv"></span><span id="_CPPv2N8Avogadro2Io14Hdf5DataFormat14Hdf5DataFormatEv"></span><span id="Avogadro::Io::Hdf5DataFormat::Hdf5DataFormat"></span><span class="target" id="class_avogadro_1_1_io_1_1_hdf5_data_format_1accd66bfc9cd6e136abb5de8654390283"></span><span class="sig-name descname"><span class="n"><span class="pre">Hdf5DataFormat</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro2Io14Hdf5DataFormat14Hdf5DataFormatEv" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro2Io14Hdf5DataFormatD0Ev">
+<span id="_CPPv3N8Avogadro2Io14Hdf5DataFormatD0Ev"></span><span id="_CPPv2N8Avogadro2Io14Hdf5DataFormatD0Ev"></span><span id="Avogadro::Io::Hdf5DataFormat::~Hdf5DataFormat"></span><span class="target" id="class_avogadro_1_1_io_1_1_hdf5_data_format_1ab1756d401b01d46a9462c348ab34f966"></span><span class="sig-name descname"><span class="n"><span class="pre">~Hdf5DataFormat</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro2Io14Hdf5DataFormatD0Ev" title="Link to this definition">#</a><br /></dt>
+<dd><p>Destructor. Closes any open file before freeing memory. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro2Io14Hdf5DataFormat6isOpenEv">
+<span id="_CPPv3NK8Avogadro2Io14Hdf5DataFormat6isOpenEv"></span><span id="_CPPv2NK8Avogadro2Io14Hdf5DataFormat6isOpenEv"></span><span id="Avogadro::Io::Hdf5DataFormat::isOpenC"></span><span class="target" id="class_avogadro_1_1_io_1_1_hdf5_data_format_1a002ed331862370f434b7befe331b5a0b"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isOpen</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro2Io14Hdf5DataFormat6isOpenEv" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>true if a file is open. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro2Io14Hdf5DataFormat8openFileERKNSt6stringE8OpenMode">
+<span id="_CPPv3N8Avogadro2Io14Hdf5DataFormat8openFileERKNSt6stringE8OpenMode"></span><span id="_CPPv2N8Avogadro2Io14Hdf5DataFormat8openFileERKNSt6stringE8OpenMode"></span><span id="Avogadro::Io::Hdf5DataFormat::openFile__ssCR.OpenMode"></span><span class="target" id="class_avogadro_1_1_io_1_1_hdf5_data_format_1a3349106aa317a15d846774c3cbf70eba"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">openFile</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">filename_</span></span>, <a class="reference internal" href="#_CPPv4N8Avogadro2Io14Hdf5DataFormat8OpenModeE" title="Avogadro::Io::Hdf5DataFormat::OpenMode"><span class="n"><span class="pre">OpenMode</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">mode</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro2Io14Hdf5DataFormat8OpenMode15ReadWriteAppendE" title="Avogadro::Io::Hdf5DataFormat::ReadWriteAppend"><span class="n"><span class="pre">ReadWriteAppend</span></span></a><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro2Io14Hdf5DataFormat8openFileERKNSt6stringE8OpenMode" title="Link to this definition">#</a><br /></dt>
+<dd><p>openFile Open a file for use by this reader/writer. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only a single file may be opened at a time. Attempting to open multiple files without calling <a class="reference internal" href="#class_avogadro_1_1_io_1_1_hdf5_data_format_1a903f5479b76603cfcf855e753ab7f6db"><span class="std std-ref">closeFile()</span></a> will fail. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filename_</strong> – Name of the file to open. </p></li>
+<li><p><strong>mode</strong> – OpenMode for the file. Default is ReadWriteAppend. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the file is successfully opened/create by the HDF5 subsystem, false otherwise. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro2Io14Hdf5DataFormat8filenameEv">
+<span id="_CPPv3NK8Avogadro2Io14Hdf5DataFormat8filenameEv"></span><span id="_CPPv2NK8Avogadro2Io14Hdf5DataFormat8filenameEv"></span><span id="Avogadro::Io::Hdf5DataFormat::filenameC"></span><span class="target" id="class_avogadro_1_1_io_1_1_hdf5_data_format_1a94c732bb0f167eab349228237a8fbe3c"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">filename</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro2Io14Hdf5DataFormat8filenameEv" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The name of the open file, or an empty string if no file is open. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro2Io14Hdf5DataFormat9closeFileEv">
+<span id="_CPPv3N8Avogadro2Io14Hdf5DataFormat9closeFileEv"></span><span id="_CPPv2N8Avogadro2Io14Hdf5DataFormat9closeFileEv"></span><span id="Avogadro::Io::Hdf5DataFormat::closeFile"></span><span class="target" id="class_avogadro_1_1_io_1_1_hdf5_data_format_1a903f5479b76603cfcf855e753ab7f6db"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">closeFile</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro2Io14Hdf5DataFormat9closeFileEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>closeFile Close the file and reset the reader/writer. Another file may be opened after calling this function. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>true if the file is successfully released by the HDF5 subsystem. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro2Io14Hdf5DataFormat12setThresholdE6size_t">
+<span id="_CPPv3N8Avogadro2Io14Hdf5DataFormat12setThresholdE6size_t"></span><span id="_CPPv2N8Avogadro2Io14Hdf5DataFormat12setThresholdE6size_t"></span><span id="Avogadro::Io::Hdf5DataFormat::setThreshold__s"></span><span class="target" id="class_avogadro_1_1_io_1_1_hdf5_data_format_1a6f6353b77aafbddfa6b476fa519e1d09"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setThreshold</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">bytes</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro2Io14Hdf5DataFormat12setThresholdE6size_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>setThreshold Set the threshold size in bytes that will be used in the exceedsThreshold functions. The threshold can be used to determine which data is considered “large enough” to be stored in HDF5, rather than an accompanying format. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>bytes</strong> – The size in bytes for the threshold. Default: 1KB. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro2Io14Hdf5DataFormat9thresholdEv">
+<span id="_CPPv3NK8Avogadro2Io14Hdf5DataFormat9thresholdEv"></span><span id="_CPPv2NK8Avogadro2Io14Hdf5DataFormat9thresholdEv"></span><span id="Avogadro::Io::Hdf5DataFormat::thresholdC"></span><span class="target" id="class_avogadro_1_1_io_1_1_hdf5_data_format_1a784a183318dd82d258e0809e66e7d973"></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">threshold</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro2Io14Hdf5DataFormat9thresholdEv" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The current threshold size in bytes. Default: 1KB. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro2Io14Hdf5DataFormat16exceedsThresholdE6size_t">
+<span id="_CPPv3NK8Avogadro2Io14Hdf5DataFormat16exceedsThresholdE6size_t"></span><span id="_CPPv2NK8Avogadro2Io14Hdf5DataFormat16exceedsThresholdE6size_t"></span><span id="Avogadro::Io::Hdf5DataFormat::exceedsThreshold__sC"></span><span class="target" id="class_avogadro_1_1_io_1_1_hdf5_data_format_1a1494069b9ff640be28c5b93c17d37912"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">exceedsThreshold</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">bytes</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro2Io14Hdf5DataFormat16exceedsThresholdE6size_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>exceedsThreshold Test if a data set is “large enough” to be stored in HDF5 format. If this function returns true, the number of bytes tested is larger than the threshold and the data should be written into the HDF5 file. If false, the data should be written into the accompanying format. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>bytes</strong> – The size of the dataset in bytes </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>true if the size exceeds the threshold set by setThreshold. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro2Io14Hdf5DataFormat16exceedsThresholdERK7MatrixX">
+<span id="_CPPv3NK8Avogadro2Io14Hdf5DataFormat16exceedsThresholdERK7MatrixX"></span><span id="_CPPv2NK8Avogadro2Io14Hdf5DataFormat16exceedsThresholdERK7MatrixX"></span><span id="Avogadro::Io::Hdf5DataFormat::exceedsThreshold__MatrixXCRC"></span><span class="target" id="class_avogadro_1_1_io_1_1_hdf5_data_format_1a42d69d0a034bd1e44e3f670f49929401"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">exceedsThreshold</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">MatrixX</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">data</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro2Io14Hdf5DataFormat16exceedsThresholdERK7MatrixX" title="Link to this definition">#</a><br /></dt>
+<dd><p>exceedsThreshold Test if a data set is “large enough” to be stored in HDF5 format. If this function returns true, the size of the data in the object is larger than the threshold and should be written into the HDF5 file. If false, the data should be written into the accompanying format. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> – Data object to test. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>true if the size of the serializable data in <em>data</em> exceeds the threshold set by setThreshold. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro2Io14Hdf5DataFormat16exceedsThresholdERKNSt6vectorIdEE">
+<span id="_CPPv3NK8Avogadro2Io14Hdf5DataFormat16exceedsThresholdERKNSt6vectorIdEE"></span><span id="_CPPv2NK8Avogadro2Io14Hdf5DataFormat16exceedsThresholdERKNSt6vectorIdEE"></span><span id="Avogadro::Io::Hdf5DataFormat::exceedsThreshold__std::vector:double:CRC"></span><span class="target" id="class_avogadro_1_1_io_1_1_hdf5_data_format_1aa99adb9499eb91b02cc5b2a3a10a9b85"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">exceedsThreshold</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">data</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro2Io14Hdf5DataFormat16exceedsThresholdERKNSt6vectorIdEE" title="Link to this definition">#</a><br /></dt>
+<dd><p>exceedsThreshold Test if a data set is “large enough” to be stored in HDF5 format. If this function returns true, the size of the data in the object is larger than the threshold and should be written into the HDF5 file. If false, the data should be written into the accompanying format. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> – Data object to test. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>true if the size of the serializable data in <em>data</em> exceeds the threshold set by setThreshold. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro2Io14Hdf5DataFormat16exceedsThresholdERKN4Core5ArrayIdEE">
+<span id="_CPPv3NK8Avogadro2Io14Hdf5DataFormat16exceedsThresholdERKN4Core5ArrayIdEE"></span><span id="_CPPv2NK8Avogadro2Io14Hdf5DataFormat16exceedsThresholdERKN4Core5ArrayIdEE"></span><span id="Avogadro::Io::Hdf5DataFormat::exceedsThreshold__Core::Array:double:CRC"></span><span class="target" id="class_avogadro_1_1_io_1_1_hdf5_data_format_1ae68ca04904da18bcba21e1ff7d0a3aff"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">exceedsThreshold</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#_CPPv4I0EN8Avogadro4Core5ArrayE" title="Avogadro::Core::Array"><span class="n"><span class="pre">Array</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">data</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro2Io14Hdf5DataFormat16exceedsThresholdERKN4Core5ArrayIdEE" title="Link to this definition">#</a><br /></dt>
+<dd><p>exceedsThreshold Test if a data set is “large enough” to be stored in HDF5 format. If this function returns true, the size of the data in the object is larger than the threshold and should be written into the HDF5 file. If false, the data should be written into the accompanying format. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> – Data object to test. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>true if the size of the serializable data in <em>data</em> exceeds the threshold set by setThreshold. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro2Io14Hdf5DataFormat13datasetExistsERKNSt6stringE">
+<span id="_CPPv3NK8Avogadro2Io14Hdf5DataFormat13datasetExistsERKNSt6stringE"></span><span id="_CPPv2NK8Avogadro2Io14Hdf5DataFormat13datasetExistsERKNSt6stringE"></span><span id="Avogadro::Io::Hdf5DataFormat::datasetExists__ssCRC"></span><span class="target" id="class_avogadro_1_1_io_1_1_hdf5_data_format_1a21e4c2c0e6515f649c3f0d9c0c0d5df4"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">datasetExists</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">path</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro2Io14Hdf5DataFormat13datasetExistsERKNSt6stringE" title="Link to this definition">#</a><br /></dt>
+<dd><p>datasetExists Test if the currently open file contains a dataset at the HDF5 absolute path <em>path</em>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path</strong> – An absolute path into the HDF5 data. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>true if the object at <em>path</em> both exists and is a dataset, false otherwise. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro2Io14Hdf5DataFormat13removeDatasetERKNSt6stringE">
+<span id="_CPPv3NK8Avogadro2Io14Hdf5DataFormat13removeDatasetERKNSt6stringE"></span><span id="_CPPv2NK8Avogadro2Io14Hdf5DataFormat13removeDatasetERKNSt6stringE"></span><span id="Avogadro::Io::Hdf5DataFormat::removeDataset__ssCRC"></span><span class="target" id="class_avogadro_1_1_io_1_1_hdf5_data_format_1ada3bdb6c43f304564fa565da7731f421"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">removeDataset</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">path</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro2Io14Hdf5DataFormat13removeDatasetERKNSt6stringE" title="Link to this definition">#</a><br /></dt>
+<dd><p>removeDataset Remove a dataset from the currently opened file. </p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Removing datasets can be expensive in terms of filesize, as deleted space cannot be reclaimed by HDF5 once the file is closed, and the file will not decrease in size as datasets are removed. For details, see <a class="reference external" href="http://www.hdfgroup.org/HDF5/doc/H5.user/Performance.html#Freespace">http://www.hdfgroup.org/HDF5/doc/H5.user/Performance.html#Freespace</a>. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path</strong> – An absolute path into the HDF5 data. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>true if the dataset exists and has been successfully removed. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro2Io14Hdf5DataFormat17datasetDimensionsERKNSt6stringE">
+<span id="_CPPv3NK8Avogadro2Io14Hdf5DataFormat17datasetDimensionsERKNSt6stringE"></span><span id="_CPPv2NK8Avogadro2Io14Hdf5DataFormat17datasetDimensionsERKNSt6stringE"></span><span id="Avogadro::Io::Hdf5DataFormat::datasetDimensions__ssCRC"></span><span class="target" id="class_avogadro_1_1_io_1_1_hdf5_data_format_1ae30a98e0ea1b42cd24769303a683b42b"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">datasetDimensions</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">path</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro2Io14Hdf5DataFormat17datasetDimensionsERKNSt6stringE" title="Link to this definition">#</a><br /></dt>
+<dd><p>datasetDimensions Find the dimensions of a dataset. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path</strong> – An absolute path into the HDF5 data. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A vector containing the dimensionality of the data, major dimension first. If an error is encountered, an empty vector is returned. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro2Io14Hdf5DataFormat12writeDatasetERKNSt6stringERK7MatrixX">
+<span id="_CPPv3NK8Avogadro2Io14Hdf5DataFormat12writeDatasetERKNSt6stringERK7MatrixX"></span><span id="_CPPv2NK8Avogadro2Io14Hdf5DataFormat12writeDatasetERKNSt6stringERK7MatrixX"></span><span id="Avogadro::Io::Hdf5DataFormat::writeDataset__ssCR.MatrixXCRC"></span><span class="target" id="class_avogadro_1_1_io_1_1_hdf5_data_format_1ae41501d68c0a8717799f3173e2efc833"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">writeDataset</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">path</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">MatrixX</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">data</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro2Io14Hdf5DataFormat12writeDatasetERKNSt6stringERK7MatrixX" title="Link to this definition">#</a><br /></dt>
+<dd><p>writeDataset Write the data to the currently opened file at the specified absolute HDF5 path. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> – An absolute path into the HDF5 data. </p></li>
+<li><p><strong>data</strong> – The data container to serialize to HDF5. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>true if the data is successfully written, false otherwise. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro2Io14Hdf5DataFormat12writeDatasetERKNSt6stringERKNSt6vectorIdEEiP6size_t">
+<span id="_CPPv3NK8Avogadro2Io14Hdf5DataFormat12writeDatasetERKNSt6stringERKNSt6vectorIdEEiP6size_t"></span><span id="_CPPv2NK8Avogadro2Io14Hdf5DataFormat12writeDatasetERKNSt6stringERKNSt6vectorIdEEiP6size_t"></span><span id="Avogadro::Io::Hdf5DataFormat::writeDataset__ssCR.std::vector:double:CR.i.sPC"></span><span class="target" id="class_avogadro_1_1_io_1_1_hdf5_data_format_1a0a8826726f7559be56714310a4ae89b2"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">writeDataset</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">path</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">data</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">ndims</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">dims</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">nullptr</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro2Io14Hdf5DataFormat12writeDatasetERKNSt6stringERKNSt6vectorIdEEiP6size_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>writeDataset Write the data to the currently opened file at the specified absolute HDF5 path. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Since std::vector is a flat container, the dimensionality data is only used to set up the dataset metadata in the HDF5 container. Omitting the dimensionality parameters will write a flat array. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> – An absolute path into the HDF5 data. </p></li>
+<li><p><strong>data</strong> – The data container to serialize to HDF5. </p></li>
+<li><p><strong>ndims</strong> – The number of dimensions in the data. Default: 1. </p></li>
+<li><p><strong>dims</strong> – The dimensionality of the data, major dimension first. Default: data.size(). </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>true if the data is successfully written, false otherwise. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro2Io14Hdf5DataFormat12writeDatasetERKNSt6stringERKN4Core5ArrayIdEEiP6size_t">
+<span id="_CPPv3NK8Avogadro2Io14Hdf5DataFormat12writeDatasetERKNSt6stringERKN4Core5ArrayIdEEiP6size_t"></span><span id="_CPPv2NK8Avogadro2Io14Hdf5DataFormat12writeDatasetERKNSt6stringERKN4Core5ArrayIdEEiP6size_t"></span><span id="Avogadro::Io::Hdf5DataFormat::writeDataset__ssCR.Core::Array:double:CR.i.sPC"></span><span class="target" id="class_avogadro_1_1_io_1_1_hdf5_data_format_1a21c50fbd42bec76918966863f87bf5c1"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">writeDataset</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">path</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#_CPPv4I0EN8Avogadro4Core5ArrayE" title="Avogadro::Core::Array"><span class="n"><span class="pre">Array</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">data</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">ndims</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">dims</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">nullptr</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro2Io14Hdf5DataFormat12writeDatasetERKNSt6stringERKN4Core5ArrayIdEEiP6size_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>writeDataset Write the data to the currently opened file at the specified absolute HDF5 path. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Since this is a flat container, the dimensionality data is only used to set up the dataset metadata in the HDF5 container. Omitting the dimensionality parameters will write a flat array. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> – An absolute path into the HDF5 data. </p></li>
+<li><p><strong>data</strong> – The data container to serialize to HDF5. </p></li>
+<li><p><strong>ndims</strong> – The number of dimensions in the data. Default: 1. </p></li>
+<li><p><strong>dims</strong> – The dimensionality of the data, major dimension first. Default: data.size(). </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>true if the data is successfully written, false otherwise. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro2Io14Hdf5DataFormat11readDatasetERKNSt6stringER7MatrixX">
+<span id="_CPPv3NK8Avogadro2Io14Hdf5DataFormat11readDatasetERKNSt6stringER7MatrixX"></span><span id="_CPPv2NK8Avogadro2Io14Hdf5DataFormat11readDatasetERKNSt6stringER7MatrixX"></span><span id="Avogadro::Io::Hdf5DataFormat::readDataset__ssCR.MatrixXRC"></span><span class="target" id="class_avogadro_1_1_io_1_1_hdf5_data_format_1a6b3e5cbb9a45fc650d1577be4d73150c"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">readDataset</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">path</span></span>, <span class="n"><span class="pre">MatrixX</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">data</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro2Io14Hdf5DataFormat11readDatasetERKNSt6stringER7MatrixX" title="Link to this definition">#</a><br /></dt>
+<dd><p>readDataset Populate the data container &#64;data with data at from the specified path in the currently opened HDF5 file. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> – An absolute path into the HDF5 data. </p></li>
+<li><p><strong>data</strong> – The data container to into which the HDF5 data shall be deserialized. <em>data</em> will be resized to fit the data. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>true if the data is successfully read, false otherwise. If the read fails, the <em>data</em> object may be left in an unpredictable state. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro2Io14Hdf5DataFormat11readDatasetERKNSt6stringERNSt6vectorIdEE">
+<span id="_CPPv3NK8Avogadro2Io14Hdf5DataFormat11readDatasetERKNSt6stringERNSt6vectorIdEE"></span><span id="_CPPv2NK8Avogadro2Io14Hdf5DataFormat11readDatasetERKNSt6stringERNSt6vectorIdEE"></span><span id="Avogadro::Io::Hdf5DataFormat::readDataset__ssCR.std::vector:double:RC"></span><span class="target" id="class_avogadro_1_1_io_1_1_hdf5_data_format_1aa84b68431b46397420b6644f4046937d"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">readDataset</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">path</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">data</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro2Io14Hdf5DataFormat11readDatasetERKNSt6stringERNSt6vectorIdEE" title="Link to this definition">#</a><br /></dt>
+<dd><p>readDataset Populate the data container &#64;data with data at from the specified path in the currently opened HDF5 file. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> – An absolute path into the HDF5 data. </p></li>
+<li><p><strong>data</strong> – The data container to into which the HDF5 data shall be deserialized. <em>data</em> will be resized to fit the data. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A vector containing the dimensionality of the dataset, major dimension first. If an error occurs, an empty vector is returned and *data will be set to nullptr. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro2Io14Hdf5DataFormat11readDatasetERKNSt6stringERN4Core5ArrayIdEE">
+<span id="_CPPv3NK8Avogadro2Io14Hdf5DataFormat11readDatasetERKNSt6stringERN4Core5ArrayIdEE"></span><span id="_CPPv2NK8Avogadro2Io14Hdf5DataFormat11readDatasetERKNSt6stringERN4Core5ArrayIdEE"></span><span id="Avogadro::Io::Hdf5DataFormat::readDataset__ssCR.Core::Array:double:RC"></span><span class="target" id="class_avogadro_1_1_io_1_1_hdf5_data_format_1ac190cd787c4590a7364e51d2c8ad0039"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">readDataset</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">path</span></span>, <span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#_CPPv4I0EN8Avogadro4Core5ArrayE" title="Avogadro::Core::Array"><span class="n"><span class="pre">Array</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">data</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro2Io14Hdf5DataFormat11readDatasetERKNSt6stringERN4Core5ArrayIdEE" title="Link to this definition">#</a><br /></dt>
+<dd><p>readDataset Populate the data container &#64;data with data at from the specified path in the currently opened HDF5 file. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> – An absolute path into the HDF5 data. </p></li>
+<li><p><strong>data</strong> – The data container to into which the HDF5 data shall be deserialized. <em>data</em> will be resized to fit the data. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A vector containing the dimensionality of the dataset, major dimension first. If an error occurs, an empty vector is returned and *data will be set to nullptr. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro2Io14Hdf5DataFormat8datasetsEv">
+<span id="_CPPv3NK8Avogadro2Io14Hdf5DataFormat8datasetsEv"></span><span id="_CPPv2NK8Avogadro2Io14Hdf5DataFormat8datasetsEv"></span><span id="Avogadro::Io::Hdf5DataFormat::datasetsC"></span><span class="target" id="class_avogadro_1_1_io_1_1_hdf5_data_format_1aa1442e13cd27e3f52aaf67bb3a4e429a"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">datasets</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro2Io14Hdf5DataFormat8datasetsEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>datasets Traverse the currently opened file and return a list of all dataset objects in the file. </p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The list is not cached internal and is recalculated on each call. This may be expensive on large HDF5 files, so external caching is recommended if this data is frequently needed. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A list of datasets in the current file. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
 </section>
 
 
@@ -580,6 +912,46 @@ document.write(`
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro2Io14Hdf5DataFormatE"><code class="docutils literal notranslate"><span class="pre">Hdf5DataFormat</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro2Io14Hdf5DataFormat8OpenModeE"><code class="docutils literal notranslate"><span class="pre">Hdf5DataFormat::OpenMode</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro2Io14Hdf5DataFormat8OpenMode8ReadOnlyE"><code class="docutils literal notranslate"><span class="pre">Hdf5DataFormat::OpenMode::ReadOnly</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro2Io14Hdf5DataFormat8OpenMode17ReadWriteTruncateE"><code class="docutils literal notranslate"><span class="pre">Hdf5DataFormat::OpenMode::ReadWriteTruncate</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro2Io14Hdf5DataFormat8OpenMode15ReadWriteAppendE"><code class="docutils literal notranslate"><span class="pre">Hdf5DataFormat::OpenMode::ReadWriteAppend</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro2Io14Hdf5DataFormat14Hdf5DataFormatEv"><code class="docutils literal notranslate"><span class="pre">Hdf5DataFormat::Hdf5DataFormat()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro2Io14Hdf5DataFormatD0Ev"><code class="docutils literal notranslate"><span class="pre">Hdf5DataFormat::~Hdf5DataFormat()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro2Io14Hdf5DataFormat6isOpenEv"><code class="docutils literal notranslate"><span class="pre">Hdf5DataFormat::isOpen()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro2Io14Hdf5DataFormat8openFileERKNSt6stringE8OpenMode"><code class="docutils literal notranslate"><span class="pre">Hdf5DataFormat::openFile()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro2Io14Hdf5DataFormat8filenameEv"><code class="docutils literal notranslate"><span class="pre">Hdf5DataFormat::filename()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro2Io14Hdf5DataFormat9closeFileEv"><code class="docutils literal notranslate"><span class="pre">Hdf5DataFormat::closeFile()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro2Io14Hdf5DataFormat12setThresholdE6size_t"><code class="docutils literal notranslate"><span class="pre">Hdf5DataFormat::setThreshold()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro2Io14Hdf5DataFormat9thresholdEv"><code class="docutils literal notranslate"><span class="pre">Hdf5DataFormat::threshold()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro2Io14Hdf5DataFormat16exceedsThresholdE6size_t"><code class="docutils literal notranslate"><span class="pre">Hdf5DataFormat::exceedsThreshold()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro2Io14Hdf5DataFormat16exceedsThresholdERK7MatrixX"><code class="docutils literal notranslate"><span class="pre">Hdf5DataFormat::exceedsThreshold()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro2Io14Hdf5DataFormat16exceedsThresholdERKNSt6vectorIdEE"><code class="docutils literal notranslate"><span class="pre">Hdf5DataFormat::exceedsThreshold()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro2Io14Hdf5DataFormat16exceedsThresholdERKN4Core5ArrayIdEE"><code class="docutils literal notranslate"><span class="pre">Hdf5DataFormat::exceedsThreshold()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro2Io14Hdf5DataFormat13datasetExistsERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">Hdf5DataFormat::datasetExists()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro2Io14Hdf5DataFormat13removeDatasetERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">Hdf5DataFormat::removeDataset()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro2Io14Hdf5DataFormat17datasetDimensionsERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">Hdf5DataFormat::datasetDimensions()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro2Io14Hdf5DataFormat12writeDatasetERKNSt6stringERK7MatrixX"><code class="docutils literal notranslate"><span class="pre">Hdf5DataFormat::writeDataset()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro2Io14Hdf5DataFormat12writeDatasetERKNSt6stringERKNSt6vectorIdEEiP6size_t"><code class="docutils literal notranslate"><span class="pre">Hdf5DataFormat::writeDataset()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro2Io14Hdf5DataFormat12writeDatasetERKNSt6stringERKN4Core5ArrayIdEEiP6size_t"><code class="docutils literal notranslate"><span class="pre">Hdf5DataFormat::writeDataset()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro2Io14Hdf5DataFormat11readDatasetERKNSt6stringER7MatrixX"><code class="docutils literal notranslate"><span class="pre">Hdf5DataFormat::readDataset()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro2Io14Hdf5DataFormat11readDatasetERKNSt6stringERNSt6vectorIdEE"><code class="docutils literal notranslate"><span class="pre">Hdf5DataFormat::readDataset()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro2Io14Hdf5DataFormat11readDatasetERKNSt6stringERN4Core5ArrayIdEE"><code class="docutils literal notranslate"><span class="pre">Hdf5DataFormat::readDataset()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro2Io14Hdf5DataFormat8datasetsEv"><code class="docutils literal notranslate"><span class="pre">Hdf5DataFormat::datasets()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
 
   <div class="sidebar-secondary-item">
   

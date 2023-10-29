@@ -163,13 +163,6 @@
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../scripts/index.html">
-                        Script Plugins
-                      </a>
-                    </li>
-                
-
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="../index.html">
                         Develop
@@ -183,21 +176,13 @@
                       </a>
                     </li>
                 
-            <li class="nav-item dropdown">
-                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
-                    More
-                </button>
-                <ul id="pst-nav-more-links" class="dropdown-menu">
-                    
+
                 <li class="nav-item">
-                  <a class="nav-link dropdown-item nav-external" href="https://discuss.avogadro.cc">
+                  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
                     Discuss
                   </a>
                 </li>
                 
-                </ul>
-            </li>
-            
   </ul>
 </nav></div>
       
@@ -333,13 +318,6 @@ document.write(`
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../scripts/index.html">
-                        Script Plugins
-                      </a>
-                    </li>
-                
-
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="../index.html">
                         Develop
@@ -353,21 +331,13 @@ document.write(`
                       </a>
                     </li>
                 
-            <li class="nav-item dropdown">
-                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links-2">
-                    More
-                </button>
-                <ul id="pst-nav-more-links-2" class="dropdown-menu">
-                    
+
                 <li class="nav-item">
-                  <a class="nav-link dropdown-item nav-external" href="https://discuss.avogadro.cc">
+                  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
                     Discuss
                   </a>
                 </li>
                 
-                </ul>
-            </li>
-            
   </ul>
 </nav></div>
         
@@ -438,6 +408,7 @@ document.write(`
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">API</span></p>
 <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../scripts/index.html">Script Plugins</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../rpc.html">Avogadro Remote Procedure Call (RPC)</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../classlist.html">Class list</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../core.html">Core Classes</a></li>
@@ -554,6 +525,552 @@ document.write(`
                   
   <section id="class-avogadro-qtgui-interfacescript">
 <h1>Class Avogadro::QtGui::InterfaceScript<a class="headerlink" href="#class-avogadro-qtgui-interfacescript" title="Link to this heading">#</a></h1>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui15InterfaceScriptE">
+<span id="_CPPv3N8Avogadro5QtGui15InterfaceScriptE"></span><span id="_CPPv2N8Avogadro5QtGui15InterfaceScriptE"></span><span id="Avogadro::QtGui::InterfaceScript"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_interface_script"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">InterfaceScript</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">QObject</span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui15InterfaceScriptE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The Interface class provides an interface to external scripts. </p>
+<p><p>&lt;avogadro/molequeue/interfacescript.h&gt;</p>
+<p>The QuantumInput extension provides a scriptable method for users to add custom input generators to Avogadro. By writing an executable that implements the interface defined below, new input generators can be created faster and easier than writing full Avogadro extensions.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_interface_widget.html#class_avogadro_1_1_qt_gui_1_1_interface_widget"><span class="std std-ref">InterfaceWidget</span></a></p>
+</div>
+</p>
+<section id="class_avogadro_1_1_qt_gui_1_1_interface_script_1autotoc_md14">
+<h2>Script Entry Points<a class="headerlink" href="#class_avogadro_1_1_qt_gui_1_1_interface_script_1autotoc_md14" title="Link to this heading">#</a></h2>
+<p id="class_avogadro_1_1_qt_gui_1_1_interface_script_1autotoc_md14">The script must handle the following command-line arguments:<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">--debug</span></code> Enable extra debugging output. Used with other commands. It is not required that the script support extra debugging, but it should not crash when this option is passed.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--print-options</span></code> Print the available options supported by the script, e.g. simulation parameters, etc. See below for more details.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--generate-input</span></code> Read an option block from stdin and print input files to stdout. See below for more details.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--display-name</span></code> Print a user-friendly name for the input generator. This is used in the GUI for menu entries, window titles, etc.</p></li>
+</ul>
+</p>
+</section>
+<section id="class_avogadro_1_1_qt_gui_1_1_interface_script_1autotoc_md15">
+<h2>Specifying parameters with &lt;tt&gt;–print-options&lt;/tt&gt;<a class="headerlink" href="#class_avogadro_1_1_qt_gui_1_1_interface_script_1autotoc_md15" title="Link to this heading">#</a></h2>
+<p id="class_avogadro_1_1_qt_gui_1_1_interface_script_1autotoc_md15">The format of the <code class="docutils literal notranslate"><span class="pre">--print-options</span></code> output must be a JSON object of the following form: <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="s2">&quot;userOptions&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="s2">&quot;highlightStyles&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="s2">&quot;style&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Descriptive name&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;rules&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">          </span><span class="s2">&quot;patterns&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">],</span>
+<span class="w">          </span><span class="s2">&quot;format&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">...</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="s2">&quot;inputMoleculeFormat&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;cjson&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+ The <code class="docutils literal notranslate"><span class="pre">userOptions</span></code> block contains a JSON object keyed with option names (e.g. “First option name”), which are used in the GUI to label simulation parameter settings. Various parameter types are supported:</p>
+<section id="class_avogadro_1_1_qt_gui_1_1_interface_script_1autotoc_md16">
+<h3>Fixed Mutually-Exclusive Parameter Lists<a class="headerlink" href="#class_avogadro_1_1_qt_gui_1_1_interface_script_1autotoc_md16" title="Link to this heading">#</a></h3>
+<p id="class_avogadro_1_1_qt_gui_1_1_interface_script_1autotoc_md16">Parameters that have a fixed number of mutually-exclusive string values will be presented using a QComboBox. Such a parameter can be specified in the <code class="docutils literal notranslate"><span class="pre">userOptions</span></code> block as: <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="s2">&quot;userOptions&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;Parameter Name&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;stringList&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;values&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Option 1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Option 2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Option 3&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="s2">&quot;default&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+ Here, <code class="docutils literal notranslate"><span class="pre">Parameter</span> <span class="pre">Name</span></code> is the label that will be displayed in the GUI as a label next to the combo box. The array of strings in <code class="docutils literal notranslate"><span class="pre">values</span></code> will be used as the available entries in the combo box in the order they are written. <code class="docutils literal notranslate"><span class="pre">default</span></code> is a zero-based index into the <code class="docutils literal notranslate"><span class="pre">values</span></code> array and indicates which value should be initially selected by default.</p>
+</section>
+<section id="class_avogadro_1_1_qt_gui_1_1_interface_script_1autotoc_md17">
+<h3>Short Free-Form Text Parameters<a class="headerlink" href="#class_avogadro_1_1_qt_gui_1_1_interface_script_1autotoc_md17" title="Link to this heading">#</a></h3>
+<p id="class_avogadro_1_1_qt_gui_1_1_interface_script_1autotoc_md17">A short text string can be requested (e.g. for the “title” of an optimization) via: <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="s2">&quot;userOptions&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;Parameter Name&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;default&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;blah blah blah&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+ This will add a QLineEdit to the GUI, initialized with the text specified by <code class="docutils literal notranslate"><span class="pre">default</span></code>.</p>
+</section>
+<section id="class_avogadro_1_1_qt_gui_1_1_interface_script_1autotoc_md18">
+<h3>Existing files<a class="headerlink" href="#class_avogadro_1_1_qt_gui_1_1_interface_script_1autotoc_md18" title="Link to this heading">#</a></h3>
+<p id="class_avogadro_1_1_qt_gui_1_1_interface_script_1autotoc_md18">An input generator can ask for the absolute path to an existing file using the following option block: <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="s2">&quot;userOptions&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;Parameter Name&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;filePath&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;default&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;/path/to/some/file&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+ This will add an <a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_file_browse_widget.html#class_avogadro_1_1_qt_gui_1_1_file_browse_widget"><span class="std std-ref">Avogadro::QtGui::FileBrowseWidget</span></a> to the GUI, initialized to the file pointed to by default.</p>
+</section>
+<section id="class_avogadro_1_1_qt_gui_1_1_interface_script_1autotoc_md19">
+<h3>Clamped Integer Values<a class="headerlink" href="#class_avogadro_1_1_qt_gui_1_1_interface_script_1autotoc_md19" title="Link to this heading">#</a></h3>
+<p id="class_avogadro_1_1_qt_gui_1_1_interface_script_1autotoc_md19">Scripts may request integer values from a specified range by adding a user-option of the following form: <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="s2">&quot;userOptions&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;Parameter Name&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;integer&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;minimum&quot;</span><span class="o">:</span><span class="w"> </span><span class="o">-</span><span class="mf">5</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;maximum&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">5</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;default&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;prefix&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;some text &quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;suffix&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot; units&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+ This block will result in a QSpinBox, configured as follows:<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">minimum</span></code> and <code class="docutils literal notranslate"><span class="pre">maximum</span></code> indicate the valid range of integers for the parameter.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">default</span></code> is the integer value that will be shown initially.</p></li>
+<li><p>(optional) <code class="docutils literal notranslate"><span class="pre">prefix</span></code> and <code class="docutils literal notranslate"><span class="pre">suffix</span></code> are used to insert text before or after the integer value in the spin box. This is handy for specifying units. Note that any prefix or suffix will be stripped out of the corresponding entry in the call to <code class="docutils literal notranslate"><span class="pre">--generate-input</span></code>, and just the raw integer value will be sent.</p></li>
+</ul>
+</p>
+</section>
+<section id="class_avogadro_1_1_qt_gui_1_1_interface_script_1autotoc_md20">
+<h3>Boolean Parameters<a class="headerlink" href="#class_avogadro_1_1_qt_gui_1_1_interface_script_1autotoc_md20" title="Link to this heading">#</a></h3>
+<p id="class_avogadro_1_1_qt_gui_1_1_interface_script_1autotoc_md20">If a simple on/off value is needed, a boolean type option can be requested: <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="s2">&quot;userOptions&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;Parameter Name&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;boolean&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;default&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+ This will result in a QCheckBox in the dynamically generated GUI, with the initial check state shown in <code class="docutils literal notranslate"><span class="pre">default</span></code>.</p>
+</section>
+<section id="class_avogadro_1_1_qt_gui_1_1_interface_script_1autotoc_md21">
+<h3>Special Parameters<a class="headerlink" href="#class_avogadro_1_1_qt_gui_1_1_interface_script_1autotoc_md21" title="Link to this heading">#</a></h3>
+<p id="class_avogadro_1_1_qt_gui_1_1_interface_script_1autotoc_md21">Some parameters are common to most calculation codes. If the following parameter names are found, they will be handled specially while creating the GUI. It is recommended to use the names below for these options to provide a consistent interface and ensure that MoleQueue job staging uses correct values where appropriate.</p>
+<p>| Option name | type | description | | :————-&amp;#8212;: | :—–&amp;#8212;: | :—————————————————————&amp;#8212; | | “Title” | string | Input file title comment, MoleQueue job description. | | “Filename Base” | string | Input file base name, e.g. “job” in “job.inp”. | | “Processor Cores” | integer | Number of cores to use. Will be passed to MoleQueue. | | “Calculation Type” | stringList | Type of calculation, e.g. “Single Point” or “Equilibrium Geometry”. | | “Theory” | stringList | Levels of QM theory, e.g. “RHF”, “B3LYP”, “MP2”, “CCSD”, etc. | | “Basis” | stringList | Available basis sets, e.g. “STO-3G”, “6-31G**”, etc. | | “Charge” | integer | Charge on the system. | | “Multiplicity” | integer | Spin multiplicity of the system. |</p>
+</section>
+<section id="class_avogadro_1_1_qt_gui_1_1_interface_script_1autotoc_md22">
+<h3>Syntax Highlighting<a class="headerlink" href="#class_avogadro_1_1_qt_gui_1_1_interface_script_1autotoc_md22" title="Link to this heading">#</a></h3>
+<p id="class_avogadro_1_1_qt_gui_1_1_interface_script_1autotoc_md22">Rules for syntax highlighting can be specified as a collection of regular expressions or wildcard patterns and text format specifications in the “highlightRules” array. The <code class="docutils literal notranslate"><span class="pre">highlightRules</span></code> format is: <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;highlightStyles&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;style&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Style 1&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;rules&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">(</span><span class="nx">list</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">highlight</span><span class="w"> </span><span class="nx">rules</span><span class="p">,</span><span class="w"> </span><span class="nx">see</span><span class="w"> </span><span class="nx">below</span><span class="p">)</span><span class="w"> </span><span class="p">],</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;style&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Style 2&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;rules&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">(</span><span class="nx">list</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">highlight</span><span class="w"> </span><span class="nx">rules</span><span class="p">,</span><span class="w"> </span><span class="nx">see</span><span class="w"> </span><span class="nx">below</span><span class="p">)</span><span class="w"> </span><span class="p">],</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">...</span>
+<span class="p">],</span>
+</pre></div>
+</div>
+ The <code class="docutils literal notranslate"><span class="pre">style</span></code> name is unique to the style object, and used to associate a set of highlighting rules with particular output files. See the <code class="docutils literal notranslate"><span class="pre">--generate-input</span></code> documentation for more details.</p>
+<p>The general form of a highlight rule is: <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="s2">&quot;patterns&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s2">&quot;regexp&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;^Some regexp?$&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s2">&quot;wildcard&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;A * wildcard expression&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;An exact string to match.&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;caseSensitive&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="s2">&quot;format&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;preset&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;preset name&gt;&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
+<p>or,</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="s2">&quot;patterns&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="s2">&quot;format&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;foreground&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">255</span><span class="p">,</span><span class="w"> </span><span class="mf">128</span><span class="p">,</span><span class="w">  </span><span class="mf">64</span><span class="w"> </span><span class="p">],</span>
+<span class="w">    </span><span class="s2">&quot;background&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w">   </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">128</span><span class="p">,</span><span class="w"> </span><span class="mf">128</span><span class="w"> </span><span class="p">],</span>
+<span class="w">    </span><span class="s2">&quot;attributes&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;bold&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;italic&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;underline&quot;</span><span class="p">],</span>
+<span class="w">    </span><span class="s2">&quot;family&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;serif&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">patterns</span></code> array contains a collection of fixed strings, wildcard expressions, and regular expressions (using the QRegExp syntax flavor, see the QRegExp documentation) that are used to identify strings that should be formatted. There must be one of the following members present in each pattern object:<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">regexp</span></code> A QRegExp-style regular expression. If no capture groups (“(…)”) are defined, the entire match is formatted. If one or more capture groups, only the captured texts will be marked.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">wildcard</span></code> A wildcard expression</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">string</span></code> An exact string to match.</p></li>
+</ul>
+</p>
+<p>Any pattern object may also set a boolean <code class="docutils literal notranslate"><span class="pre">caseSensitive</span></code> member to indicate whether the match should consider character case. If omitted, a case-sensitive match is assumed.</p>
+<p>The preferred form of the <code class="docutils literal notranslate"><span class="pre">format</span></code> member is simply a specification of a preset format. This allows for consistent color schemes across input generators. The recognized presets are:<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;title&quot;</span></code>: A human readable title string.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;keyword&quot;</span></code>: directives defined by the target input format specification to have special meaning, such as tags indicating where coordinates are to be found.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;property&quot;</span></code>: A property of the simulation, such as level of theory, basis set, minimization method, etc.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;literal&quot;</span></code>: A numeric literal (i.e. a raw number, such as a coordinate).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;comment&quot;</span></code>: Sections of the input that are ignored by the simulation code.</p></li>
+</ul>
+</p>
+<p>If advanced formatting is desired, the second form of the <code class="docutils literal notranslate"><span class="pre">format</span></code> member allows fine-tuning of the font properties:<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">foreground</span></code> color as an RGB tuple, ranged 0-255</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">background</span></code> color as an RGB tuple, ranged 0-255</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">attributes</span></code> array of font attributes, valid strings are <code class="docutils literal notranslate"><span class="pre">&quot;bold&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;italic&quot;</span></code>, or <code class="docutils literal notranslate"><span class="pre">&quot;underline&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">family</span></code> of font. Valid values are <code class="docutils literal notranslate"><span class="pre">&quot;serif&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;sans&quot;</span></code>, or <code class="docutils literal notranslate"><span class="pre">&quot;mono&quot;</span></code></p></li>
+</ul>
+</p>
+<p>Any of the font property members may be omitted and default QTextCharFormat settings will be substituted.</p>
+<p>The input generator extension will apply the entries in the <code class="docutils literal notranslate"><span class="pre">highlightRules</span></code> object to the text in the order they appear. Thus, later rules will override the formatting of earlier rules should a conflict arise.</p>
+</section>
+<section id="class_avogadro_1_1_qt_gui_1_1_interface_script_1autotoc_md23">
+<h3>Requesting Full Structure of Current Molecule<a class="headerlink" href="#class_avogadro_1_1_qt_gui_1_1_interface_script_1autotoc_md23" title="Link to this heading">#</a></h3>
+<p id="class_avogadro_1_1_qt_gui_1_1_interface_script_1autotoc_md23">The <code class="docutils literal notranslate"><span class="pre">inputMoleculeFormat</span></code> is optional, and can be used to request a representation of the current molecule’s geometry when <code class="docutils literal notranslate"><span class="pre">--generate-input</span></code> is called. The corresponding value indicates the format of the molecule that the script expects. If this value is omitted, no representation of the structure will be provided.</p>
+<p></p>
+</section>
+</section>
+<section id="class_avogadro_1_1_qt_gui_1_1_interface_script_1autotoc_md24">
+<h2>Handling User Selections: &lt;tt&gt;–generate-input&lt;/tt&gt;<a class="headerlink" href="#class_avogadro_1_1_qt_gui_1_1_interface_script_1autotoc_md24" title="Link to this heading">#</a></h2>
+<p id="class_avogadro_1_1_qt_gui_1_1_interface_script_1autotoc_md24">When <code class="docutils literal notranslate"><span class="pre">--generate-input</span></code> is passed, the information needed to generate the input file will be written to the script’s standard input channel as JSON string of the following form: <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="s2">&quot;cjson&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{...},</span>
+<span class="w">  </span><span class="s2">&quot;options&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;First option name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Value 2&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;Second option name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Value 1&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+ The <code class="docutils literal notranslate"><span class="pre">cjson</span></code> entry will contain a Chemical JSON representation of the molecule if <code class="docutils literal notranslate"><span class="pre">inputMoleculeFormat</span></code> is set to “cjson” in the <code class="docutils literal notranslate"><span class="pre">--print-options</span></code> output. Similarly, a <code class="docutils literal notranslate"><span class="pre">cml</span></code> entry and CML string will exist if a Chemical Markup Language representation was requested. It will be omitted entirely if <code class="docutils literal notranslate"><span class="pre">inputMoleculeFormat</span></code> is not set. The <code class="docutils literal notranslate"><span class="pre">options</span></code> block contains key/value pairs for each of the options specified in the <code class="docutils literal notranslate"><span class="pre">userOptions</span></code> block of the <code class="docutils literal notranslate"><span class="pre">--print-options</span></code> output.</p>
+<p>If the script is called with <code class="docutils literal notranslate"><span class="pre">--generate-input</span></code>, it must write a JSON string to standard output with the following format: <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="s2">&quot;files&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="s2">&quot;filename&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;file1.ext&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;contents&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;highlightStyles&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">]</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="s2">&quot;filename&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;file2.ext&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;filePath&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;/path/to/file/on/local/filesystem&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="s2">&quot;warnings&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;First warning.&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Second warning.&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">],</span>
+<span class="w">  </span><span class="s2">&quot;mainFile&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;file2.ext&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+ The <code class="docutils literal notranslate"><span class="pre">files</span></code> block is an array of objects, which define the actual input files. The <code class="docutils literal notranslate"><span class="pre">filename</span></code> member provides the name of the file, and either <code class="docutils literal notranslate"><span class="pre">contents</span></code> or <code class="docutils literal notranslate"><span class="pre">filePath</span></code> provide the text that goes into the file. The <code class="docutils literal notranslate"><span class="pre">contents</span></code> string will be used as the file contents, and <code class="docutils literal notranslate"><span class="pre">filePath</span></code> should contain an absolute path to a file on the filesystem to read and use as the input file contents. The optional <code class="docutils literal notranslate"><span class="pre">highlightStyles</span></code> member is an array of strings describing any highlight styles to apply to the file (see <code class="docutils literal notranslate"><span class="pre">--print-options</span></code> documentation). Each string in this array must match a <code class="docutils literal notranslate"><span class="pre">style</span></code> description in a highlighting rule in the <code class="docutils literal notranslate"><span class="pre">--print-options</span></code> output. Zero or more highlighting styles may be applied to any file. The order of the files in the GUI will match the order of the files in the array, and the first file will be displayed first.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">warnings</span></code><p>member provides an array of strings that describe non-fatal warnings to be shown to the users. This is useful for describing the resolution of conflicting options, e.g. “Ignoring basis set for</p>
+<p>semi-empirical calculation.”. This member is optional and should be omitted if no warnings are present.</p>
+</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">mainFile</span></code> member points to the primary input file for a calculation. This is the file that will be used as a command line argument when executing the simulation code (if applicable), and used by MoleQueue to set the <code class="docutils literal notranslate"><span class="pre">$$inputFileName$$</span></code> and <code class="docutils literal notranslate"><span class="pre">$$inputFileBaseName$$</span></code> input template keywords. This is optional; if present, the filename must exist in the <code class="docutils literal notranslate"><span class="pre">files</span></code> array. If absent and only one file is specified in <code class="docutils literal notranslate"><span class="pre">files</span></code>, the single input file will be used. Otherwise, the main file will be left unspecified.</p>
+</section>
+<section id="class_avogadro_1_1_qt_gui_1_1_interface_script_1autotoc_md25">
+<h2>Automatic Generation of Geometry<a class="headerlink" href="#class_avogadro_1_1_qt_gui_1_1_interface_script_1autotoc_md25" title="Link to this heading">#</a></h2>
+<p id="class_avogadro_1_1_qt_gui_1_1_interface_script_1autotoc_md25">The generation of molecular geometry descriptions may be skipped in the script and deferred to the <a class="reference internal" href="#class_avogadro_1_1_qt_gui_1_1_interface_script"><span class="std std-ref">InterfaceScript</span></a> class by use of a special keyword. The “contents” string may contain a keyword of the form <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$$coords:[coordSpec]$$
+</pre></div>
+</div>
+ where <code class="docutils literal notranslate"><span class="pre">[coordSpec]</span></code> is a sequence of characters. The characters in <code class="docutils literal notranslate"><span class="pre">[coordSpec]</span></code> indicate the information needed about each atom in the coordinate block. See the CoordinateBlockGenerator documentation for a list of recognized characters.</p>
+<p>Other keywords that can be used in the input files are:<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">$$atomCount$$</span></code>: Number of atoms in the molecule.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$$bondCount$$</span></code>: Number of bonds in the molecule.</p></li>
+</ul>
+</p>
+</section>
+<section id="class_avogadro_1_1_qt_gui_1_1_interface_script_1autotoc_md26">
+<h2>Error Handling<a class="headerlink" href="#class_avogadro_1_1_qt_gui_1_1_interface_script_1autotoc_md26" title="Link to this heading">#</a></h2>
+<p id="class_avogadro_1_1_qt_gui_1_1_interface_script_1autotoc_md26">In general, these scripts should be written robustly so that they will not fail under normal circumstances. However, if for some reason an error occurs that must be reported to the user, simply write the error message to standard output as plain text (i.e. not JSON), and it will be shown to the user.</p>
+</section>
+<section id="class_avogadro_1_1_qt_gui_1_1_interface_script_1autotoc_md27">
+<h2>Debugging<a class="headerlink" href="#class_avogadro_1_1_qt_gui_1_1_interface_script_1autotoc_md27" title="Link to this heading">#</a></h2>
+<p id="class_avogadro_1_1_qt_gui_1_1_interface_script_1autotoc_md27">Debugging may be enabled by defining AVO_QM_INPUT_DEBUG in the process’s environment. This will cause the <code class="docutils literal notranslate"><span class="pre">debug</span></code> option to be passed in all calls to generator scripts, and will print extra information to the qDebug() stream from within avogadro. The script is free to handle the debug flag as the author wishes. </p>
+</section>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Currently valid options for inputMoleculeFormat are “cjson” for Chemical JSON or “cml” for Chemical Markup Language.</p>
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui15InterfaceScript15InterfaceScriptERK7QStringP7QObject">
+<span id="_CPPv3N8Avogadro5QtGui15InterfaceScript15InterfaceScriptERK7QStringP7QObject"></span><span id="_CPPv2N8Avogadro5QtGui15InterfaceScript15InterfaceScriptERK7QStringP7QObject"></span><span id="Avogadro::QtGui::InterfaceScript::InterfaceScript__QStringCR.QObjectP"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_interface_script_1ad6bf4e70335951734ecb0faf8575f911"></span><span class="k"><span class="pre">explicit</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">InterfaceScript</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">scriptFilePath_</span></span>, <span class="n"><span class="pre">QObject</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">parent_</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">nullptr</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui15InterfaceScript15InterfaceScriptERK7QStringP7QObject" title="Link to this definition">#</a><br /></dt>
+<dd><p>Constructor </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>scriptFilePath_</strong> – Absolute path to generator script. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui15InterfaceScript15InterfaceScriptEP7QObject">
+<span id="_CPPv3N8Avogadro5QtGui15InterfaceScript15InterfaceScriptEP7QObject"></span><span id="_CPPv2N8Avogadro5QtGui15InterfaceScript15InterfaceScriptEP7QObject"></span><span id="Avogadro::QtGui::InterfaceScript::InterfaceScript__QObjectP"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_interface_script_1a33efe56acade62f74c82b33df73e0b98"></span><span class="k"><span class="pre">explicit</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">InterfaceScript</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">QObject</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">parent_</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">nullptr</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui15InterfaceScript15InterfaceScriptEP7QObject" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui15InterfaceScriptD0Ev">
+<span id="_CPPv3N8Avogadro5QtGui15InterfaceScriptD0Ev"></span><span id="_CPPv2N8Avogadro5QtGui15InterfaceScriptD0Ev"></span><span id="Avogadro::QtGui::InterfaceScript::~InterfaceScript"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_interface_script_1ab6fb488fbf7725bb5f279af97091910a"></span><span class="sig-name descname"><span class="n"><span class="pre">~InterfaceScript</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui15InterfaceScriptD0Ev" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro5QtGui15InterfaceScript5debugEv">
+<span id="_CPPv3NK8Avogadro5QtGui15InterfaceScript5debugEv"></span><span id="_CPPv2NK8Avogadro5QtGui15InterfaceScript5debugEv"></span><span id="Avogadro::QtGui::InterfaceScript::debugC"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_interface_script_1a1d829a8cc5502cefd6713febc645035a"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">debug</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro5QtGui15InterfaceScript5debugEv" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if debugging is enabled. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro5QtGui15InterfaceScript7isValidEv">
+<span id="_CPPv3NK8Avogadro5QtGui15InterfaceScript7isValidEv"></span><span id="_CPPv2NK8Avogadro5QtGui15InterfaceScript7isValidEv"></span><span id="Avogadro::QtGui::InterfaceScript::isValidC"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_interface_script_1a5bc2a781be2586924afce4e4a4ea6697"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isValid</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro5QtGui15InterfaceScript7isValidEv" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the generator is configured with a valid script. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro5QtGui15InterfaceScript7optionsEv">
+<span id="_CPPv3NK8Avogadro5QtGui15InterfaceScript7optionsEv"></span><span id="_CPPv2NK8Avogadro5QtGui15InterfaceScript7optionsEv"></span><span id="Avogadro::QtGui::InterfaceScript::optionsC"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_interface_script_1aaed9d637f54ac10171aef0d68a66996c"></span><span class="n"><span class="pre">QJsonObject</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">options</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro5QtGui15InterfaceScript7optionsEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Query the script for the available options (<code class="docutils literal notranslate"><span class="pre">generate-options</span></code>) and return the output as a JSON object. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The results will be cached the first time this function is called and reused in subsequent calls. </p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If an error occurs, the error string will be set. Call <a class="reference internal" href="#class_avogadro_1_1_qt_gui_1_1_interface_script_1ab992cfc3a5b4e04ec9d8057d614a572c"><span class="std std-ref">hasErrors()</span></a> to check for success, and errorString() or <a class="reference internal" href="#class_avogadro_1_1_qt_gui_1_1_interface_script_1a08fb2df150486aca94c773f609f56df6"><span class="std std-ref">errorList()</span></a> to get a user-friendly description of the error. </p>
+</div>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro5QtGui15InterfaceScript11displayNameEv">
+<span id="_CPPv3NK8Avogadro5QtGui15InterfaceScript11displayNameEv"></span><span id="_CPPv2NK8Avogadro5QtGui15InterfaceScript11displayNameEv"></span><span id="Avogadro::QtGui::InterfaceScript::displayNameC"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_interface_script_1aacc388204f67d061b44e3b466a386328"></span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">displayName</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro5QtGui15InterfaceScript11displayNameEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Query the script for a user-friendly name (<code class="docutils literal notranslate"><span class="pre">display-name</span></code>). </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The results will be cached the first time this function is called and reused in subsequent calls. </p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If an error occurs, the error string will be set. Call <a class="reference internal" href="#class_avogadro_1_1_qt_gui_1_1_interface_script_1ab992cfc3a5b4e04ec9d8057d614a572c"><span class="std std-ref">hasErrors()</span></a> to check for success, and errorString() or <a class="reference internal" href="#class_avogadro_1_1_qt_gui_1_1_interface_script_1a08fb2df150486aca94c773f609f56df6"><span class="std std-ref">errorList()</span></a> to get a user-friendly description of the error. </p>
+</div>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro5QtGui15InterfaceScript8menuPathEv">
+<span id="_CPPv3NK8Avogadro5QtGui15InterfaceScript8menuPathEv"></span><span id="_CPPv2NK8Avogadro5QtGui15InterfaceScript8menuPathEv"></span><span id="Avogadro::QtGui::InterfaceScript::menuPathC"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_interface_script_1a4162f9c2ac7f3ead4a98288c49639caa"></span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">menuPath</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro5QtGui15InterfaceScript8menuPathEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Query the script for the menu path (<code class="docutils literal notranslate"><span class="pre">menu-path</span></code>). </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The results will be cached the first time this function is called and reused in subsequent calls. </p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If an error occurs, the error string will be set. Call <a class="reference internal" href="#class_avogadro_1_1_qt_gui_1_1_interface_script_1ab992cfc3a5b4e04ec9d8057d614a572c"><span class="std std-ref">hasErrors()</span></a> to check for success, and errorString() or <a class="reference internal" href="#class_avogadro_1_1_qt_gui_1_1_interface_script_1a08fb2df150486aca94c773f609f56df6"><span class="std std-ref">errorList()</span></a> to get a user-friendly description of the error. </p>
+</div>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro5QtGui15InterfaceScript14scriptFilePathEv">
+<span id="_CPPv3NK8Avogadro5QtGui15InterfaceScript14scriptFilePathEv"></span><span id="_CPPv2NK8Avogadro5QtGui15InterfaceScript14scriptFilePathEv"></span><span id="Avogadro::QtGui::InterfaceScript::scriptFilePathC"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_interface_script_1a2d90664e0dda3c954b7d3350aa94749b"></span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">scriptFilePath</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro5QtGui15InterfaceScript14scriptFilePathEv" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The path to the generator file. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui15InterfaceScript17setScriptFilePathERK7QString">
+<span id="_CPPv3N8Avogadro5QtGui15InterfaceScript17setScriptFilePathERK7QString"></span><span id="_CPPv2N8Avogadro5QtGui15InterfaceScript17setScriptFilePathERK7QString"></span><span id="Avogadro::QtGui::InterfaceScript::setScriptFilePath__QStringCR"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_interface_script_1a714c77d4285ed50ce9da3647007f68f1"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setScriptFilePath</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">scriptFile</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui15InterfaceScript17setScriptFilePathERK7QString" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the path to the input generator script file. This will reset any cached data held by this class. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui15InterfaceScript5resetEv">
+<span id="_CPPv3N8Avogadro5QtGui15InterfaceScript5resetEv"></span><span id="_CPPv2N8Avogadro5QtGui15InterfaceScript5resetEv"></span><span id="Avogadro::QtGui::InterfaceScript::reset"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_interface_script_1ad20897c5c8bd47f5d4005989bead0e55"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">reset</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui15InterfaceScript5resetEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Clear any cached data and return to an uninitialized state. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui15InterfaceScript10runCommandERK11QJsonObjectPN4Core8MoleculeE">
+<span id="_CPPv3N8Avogadro5QtGui15InterfaceScript10runCommandERK11QJsonObjectPN4Core8MoleculeE"></span><span id="_CPPv2N8Avogadro5QtGui15InterfaceScript10runCommandERK11QJsonObjectPN4Core8MoleculeE"></span><span id="Avogadro::QtGui::InterfaceScript::runCommand__QJsonObjectCR.Core::MoleculeP"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_interface_script_1a4f02f1aa7d305d92abe5509638a40bd0"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">runCommand</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QJsonObject</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">options_</span></span>, <span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">mol</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui15InterfaceScript10runCommandERK11QJsonObjectPN4Core8MoleculeE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Asynchronously run a command script using the supplied options object and molecule. See the class documentation for details on the <code class="docutils literal notranslate"><span class="pre">options_</span></code> object format.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If an error occurs, the error string will be set. Call <a class="reference internal" href="#class_avogadro_1_1_qt_gui_1_1_interface_script_1ab992cfc3a5b4e04ec9d8057d614a572c"><span class="std std-ref">hasErrors()</span></a> to check for success, and errorString() or <a class="reference internal" href="#class_avogadro_1_1_qt_gui_1_1_interface_script_1a08fb2df150486aca94c773f609f56df6"><span class="std std-ref">errorList()</span></a> to get a user-friendly description of the error. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>true on success and false on failure. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui15InterfaceScript14processCommandEPN4Core8MoleculeE">
+<span id="_CPPv3N8Avogadro5QtGui15InterfaceScript14processCommandEPN4Core8MoleculeE"></span><span id="_CPPv2N8Avogadro5QtGui15InterfaceScript14processCommandEPN4Core8MoleculeE"></span><span id="Avogadro::QtGui::InterfaceScript::processCommand__Core::MoleculeP"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_interface_script_1af2f0e2a20eca3a2f2483165521ce7ca4"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">processCommand</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">mol</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui15InterfaceScript14processCommandEPN4Core8MoleculeE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Finish processing an aynchronous command script </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui15InterfaceScript13generateInputERK11QJsonObjectRKN4Core8MoleculeE">
+<span id="_CPPv3N8Avogadro5QtGui15InterfaceScript13generateInputERK11QJsonObjectRKN4Core8MoleculeE"></span><span id="_CPPv2N8Avogadro5QtGui15InterfaceScript13generateInputERK11QJsonObjectRKN4Core8MoleculeE"></span><span id="Avogadro::QtGui::InterfaceScript::generateInput__QJsonObjectCR.Core::MoleculeCR"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_interface_script_1a86e46659fa691eef7148cfa24f1c6cb8"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">generateInput</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QJsonObject</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">options_</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">mol</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui15InterfaceScript13generateInputERK11QJsonObjectRKN4Core8MoleculeE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Request input files from the script using the supplied options object and molecule. See the class documentation for details on the <code class="docutils literal notranslate"><span class="pre">options_</span></code> object format.</p>
+<p>If the files are generated successfully, use the functions <a class="reference internal" href="#class_avogadro_1_1_qt_gui_1_1_interface_script_1adb34280375685fedee4efcf0167673f8"><span class="std std-ref">numberOfInputFiles()</span></a>, <a class="reference internal" href="#class_avogadro_1_1_qt_gui_1_1_interface_script_1ac9f5049a61e1b2579385efc2478b0ca7"><span class="std std-ref">fileNames()</span></a>, and <a class="reference internal" href="#class_avogadro_1_1_qt_gui_1_1_interface_script_1a25c9b5c07610c2a952b9c8d243da641f"><span class="std std-ref">fileContents()</span></a> to retrieve them.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If an error occurs, the error string will be set. Call <a class="reference internal" href="#class_avogadro_1_1_qt_gui_1_1_interface_script_1ab992cfc3a5b4e04ec9d8057d614a572c"><span class="std std-ref">hasErrors()</span></a> to check for success, and errorString() or <a class="reference internal" href="#class_avogadro_1_1_qt_gui_1_1_interface_script_1a08fb2df150486aca94c773f609f56df6"><span class="std std-ref">errorList()</span></a> to get a user-friendly description of the error. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>true on success and false on failure. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro5QtGui15InterfaceScript18numberOfInputFilesEv">
+<span id="_CPPv3NK8Avogadro5QtGui15InterfaceScript18numberOfInputFilesEv"></span><span id="_CPPv2NK8Avogadro5QtGui15InterfaceScript18numberOfInputFilesEv"></span><span id="Avogadro::QtGui::InterfaceScript::numberOfInputFilesC"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_interface_script_1adb34280375685fedee4efcf0167673f8"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">numberOfInputFiles</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro5QtGui15InterfaceScript18numberOfInputFilesEv" title="Link to this definition">#</a><br /></dt>
+<dd><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function is only valid after a successful call to <a class="reference internal" href="#class_avogadro_1_1_qt_gui_1_1_interface_script_1a86e46659fa691eef7148cfa24f1c6cb8"><span class="std std-ref">generateInput()</span></a>. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The number of input files stored by <a class="reference internal" href="#class_avogadro_1_1_qt_gui_1_1_interface_script_1a86e46659fa691eef7148cfa24f1c6cb8"><span class="std std-ref">generateInput()</span></a>. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro5QtGui15InterfaceScript9fileNamesEv">
+<span id="_CPPv3NK8Avogadro5QtGui15InterfaceScript9fileNamesEv"></span><span id="_CPPv2NK8Avogadro5QtGui15InterfaceScript9fileNamesEv"></span><span id="Avogadro::QtGui::InterfaceScript::fileNamesC"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_interface_script_1ac9f5049a61e1b2579385efc2478b0ca7"></span><span class="n"><span class="pre">QStringList</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">fileNames</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro5QtGui15InterfaceScript9fileNamesEv" title="Link to this definition">#</a><br /></dt>
+<dd><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function is only valid after a successful call to <a class="reference internal" href="#class_avogadro_1_1_qt_gui_1_1_interface_script_1a86e46659fa691eef7148cfa24f1c6cb8"><span class="std std-ref">generateInput()</span></a>. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A list of filenames created by <a class="reference internal" href="#class_avogadro_1_1_qt_gui_1_1_interface_script_1a86e46659fa691eef7148cfa24f1c6cb8"><span class="std std-ref">generateInput()</span></a>. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro5QtGui15InterfaceScript12mainFileNameEv">
+<span id="_CPPv3NK8Avogadro5QtGui15InterfaceScript12mainFileNameEv"></span><span id="_CPPv2NK8Avogadro5QtGui15InterfaceScript12mainFileNameEv"></span><span id="Avogadro::QtGui::InterfaceScript::mainFileNameC"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_interface_script_1a3bc1cc027523eec108c433704b51b45f"></span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">mainFileName</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro5QtGui15InterfaceScript12mainFileNameEv" title="Link to this definition">#</a><br /></dt>
+<dd><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function is only valid after a successful call to <a class="reference internal" href="#class_avogadro_1_1_qt_gui_1_1_interface_script_1a86e46659fa691eef7148cfa24f1c6cb8"><span class="std std-ref">generateInput()</span></a>. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The “main” input file of the collection. This is the input file used by MoleQueue to determine the $$inputFileName$$ and $$inputFileBaseName$$ keywords. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro5QtGui15InterfaceScript12fileContentsERK7QString">
+<span id="_CPPv3NK8Avogadro5QtGui15InterfaceScript12fileContentsERK7QString"></span><span id="_CPPv2NK8Avogadro5QtGui15InterfaceScript12fileContentsERK7QString"></span><span id="Avogadro::QtGui::InterfaceScript::fileContents__QStringCRC"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_interface_script_1a25c9b5c07610c2a952b9c8d243da641f"></span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">fileContents</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">fileName</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro5QtGui15InterfaceScript12fileContentsERK7QString" title="Link to this definition">#</a><br /></dt>
+<dd><p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#class_avogadro_1_1_qt_gui_1_1_interface_script_1ac9f5049a61e1b2579385efc2478b0ca7"><span class="std std-ref">fileNames</span></a></p>
+</div>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A file contents corresponding to <code class="docutils literal notranslate"><span class="pre">fileName</span></code>. Must call <a class="reference internal" href="#class_avogadro_1_1_qt_gui_1_1_interface_script_1a86e46659fa691eef7148cfa24f1c6cb8"><span class="std std-ref">generateInput()</span></a> first. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro5QtGui15InterfaceScript21createFileHighlighterERK7QString">
+<span id="_CPPv3NK8Avogadro5QtGui15InterfaceScript21createFileHighlighterERK7QString"></span><span id="_CPPv2NK8Avogadro5QtGui15InterfaceScript21createFileHighlighterERK7QString"></span><span id="Avogadro::QtGui::InterfaceScript::createFileHighlighter__QStringCRC"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_interface_script_1a0d7cd4721ca7b8816ca8903f242f5f67"></span><span class="n"><span class="pre">QtGui</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_generic_highlighter.html#_CPPv4N8Avogadro5QtGui18GenericHighlighterE" title="Avogadro::QtGui::GenericHighlighter"><span class="n"><span class="pre">GenericHighlighter</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">createFileHighlighter</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">fileName</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro5QtGui15InterfaceScript21createFileHighlighterERK7QString" title="Link to this definition">#</a><br /></dt>
+<dd><p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#class_avogadro_1_1_qt_gui_1_1_interface_script_1ac9f5049a61e1b2579385efc2478b0ca7"><span class="std std-ref">fileNames</span></a></p>
+</div>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A syntax highlighter for the file <em>fileName</em>. Must call <a class="reference internal" href="#class_avogadro_1_1_qt_gui_1_1_interface_script_1a86e46659fa691eef7148cfa24f1c6cb8"><span class="std std-ref">generateInput()</span></a> first. The caller takes ownership of the returned object. If no syntax highlighter is defined, this function returns nullptr. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro5QtGui15InterfaceScript9hasErrorsEv">
+<span id="_CPPv3NK8Avogadro5QtGui15InterfaceScript9hasErrorsEv"></span><span id="_CPPv2NK8Avogadro5QtGui15InterfaceScript9hasErrorsEv"></span><span id="Avogadro::QtGui::InterfaceScript::hasErrorsC"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_interface_script_1ab992cfc3a5b4e04ec9d8057d614a572c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">hasErrors</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro5QtGui15InterfaceScript9hasErrorsEv" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if an error is set. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui15InterfaceScript11clearErrorsEv">
+<span id="_CPPv3N8Avogadro5QtGui15InterfaceScript11clearErrorsEv"></span><span id="_CPPv2N8Avogadro5QtGui15InterfaceScript11clearErrorsEv"></span><span id="Avogadro::QtGui::InterfaceScript::clearErrors"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_interface_script_1a5a1056d4e9d26a692f621e83be8cd8d1"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">clearErrors</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui15InterfaceScript11clearErrorsEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Reset the error counter. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro5QtGui15InterfaceScript9errorListEv">
+<span id="_CPPv3NK8Avogadro5QtGui15InterfaceScript9errorListEv"></span><span id="_CPPv2NK8Avogadro5QtGui15InterfaceScript9errorListEv"></span><span id="Avogadro::QtGui::InterfaceScript::errorListC"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_interface_script_1a08fb2df150486aca94c773f609f56df6"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">QStringList</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">errorList</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro5QtGui15InterfaceScript9errorListEv" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A QStringList containing all errors that occurred in the last call to the input generator script. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro5QtGui15InterfaceScript11warningListEv">
+<span id="_CPPv3NK8Avogadro5QtGui15InterfaceScript11warningListEv"></span><span id="_CPPv2NK8Avogadro5QtGui15InterfaceScript11warningListEv"></span><span id="Avogadro::QtGui::InterfaceScript::warningListC"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_interface_script_1a2ab972a65a9b09cc91e19057e3f95b36"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">QStringList</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">warningList</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro5QtGui15InterfaceScript11warningListEv" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A QStringList containing all warnings returned by the input generator script in the last call to generateInput. These are script-specific warnings. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-slots">Public Slots</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui15InterfaceScript8setDebugEb">
+<span id="_CPPv3N8Avogadro5QtGui15InterfaceScript8setDebugEb"></span><span id="_CPPv2N8Avogadro5QtGui15InterfaceScript8setDebugEb"></span><span id="Avogadro::QtGui::InterfaceScript::setDebug__b"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_interface_script_1ab934152422e35855a5348466c113212d"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setDebug</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">d</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui15InterfaceScript8setDebugEb" title="Link to this definition">#</a><br /></dt>
+<dd><p>Enable/disable debugging. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui15InterfaceScript15commandFinishedEv">
+<span id="_CPPv3N8Avogadro5QtGui15InterfaceScript15commandFinishedEv"></span><span id="_CPPv2N8Avogadro5QtGui15InterfaceScript15commandFinishedEv"></span><span id="Avogadro::QtGui::InterfaceScript::commandFinished"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_interface_script_1a04eecc64d3cd562201010cda24c97980"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">commandFinished</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui15InterfaceScript15commandFinishedEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Receives a signal when asynchronous command scripts are finished </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-signals">Signals</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui15InterfaceScript8finishedEv">
+<span id="_CPPv3N8Avogadro5QtGui15InterfaceScript8finishedEv"></span><span id="_CPPv2N8Avogadro5QtGui15InterfaceScript8finishedEv"></span><span id="Avogadro::QtGui::InterfaceScript::finished"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_interface_script_1af7b21038ab82868484b3a459947b0dbf"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">finished</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui15InterfaceScript8finishedEv" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
 </section>
 
 
@@ -592,6 +1109,44 @@ document.write(`
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui15InterfaceScriptE"><code class="docutils literal notranslate"><span class="pre">InterfaceScript</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui15InterfaceScript15InterfaceScriptERK7QStringP7QObject"><code class="docutils literal notranslate"><span class="pre">InterfaceScript::InterfaceScript()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui15InterfaceScript15InterfaceScriptEP7QObject"><code class="docutils literal notranslate"><span class="pre">InterfaceScript::InterfaceScript()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui15InterfaceScriptD0Ev"><code class="docutils literal notranslate"><span class="pre">InterfaceScript::~InterfaceScript()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui15InterfaceScript5debugEv"><code class="docutils literal notranslate"><span class="pre">InterfaceScript::debug()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui15InterfaceScript7isValidEv"><code class="docutils literal notranslate"><span class="pre">InterfaceScript::isValid()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui15InterfaceScript7optionsEv"><code class="docutils literal notranslate"><span class="pre">InterfaceScript::options()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui15InterfaceScript11displayNameEv"><code class="docutils literal notranslate"><span class="pre">InterfaceScript::displayName()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui15InterfaceScript8menuPathEv"><code class="docutils literal notranslate"><span class="pre">InterfaceScript::menuPath()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui15InterfaceScript14scriptFilePathEv"><code class="docutils literal notranslate"><span class="pre">InterfaceScript::scriptFilePath()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui15InterfaceScript17setScriptFilePathERK7QString"><code class="docutils literal notranslate"><span class="pre">InterfaceScript::setScriptFilePath()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui15InterfaceScript5resetEv"><code class="docutils literal notranslate"><span class="pre">InterfaceScript::reset()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui15InterfaceScript10runCommandERK11QJsonObjectPN4Core8MoleculeE"><code class="docutils literal notranslate"><span class="pre">InterfaceScript::runCommand()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui15InterfaceScript14processCommandEPN4Core8MoleculeE"><code class="docutils literal notranslate"><span class="pre">InterfaceScript::processCommand()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui15InterfaceScript13generateInputERK11QJsonObjectRKN4Core8MoleculeE"><code class="docutils literal notranslate"><span class="pre">InterfaceScript::generateInput()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui15InterfaceScript18numberOfInputFilesEv"><code class="docutils literal notranslate"><span class="pre">InterfaceScript::numberOfInputFiles()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui15InterfaceScript9fileNamesEv"><code class="docutils literal notranslate"><span class="pre">InterfaceScript::fileNames()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui15InterfaceScript12mainFileNameEv"><code class="docutils literal notranslate"><span class="pre">InterfaceScript::mainFileName()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui15InterfaceScript12fileContentsERK7QString"><code class="docutils literal notranslate"><span class="pre">InterfaceScript::fileContents()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui15InterfaceScript21createFileHighlighterERK7QString"><code class="docutils literal notranslate"><span class="pre">InterfaceScript::createFileHighlighter()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui15InterfaceScript9hasErrorsEv"><code class="docutils literal notranslate"><span class="pre">InterfaceScript::hasErrors()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui15InterfaceScript11clearErrorsEv"><code class="docutils literal notranslate"><span class="pre">InterfaceScript::clearErrors()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui15InterfaceScript9errorListEv"><code class="docutils literal notranslate"><span class="pre">InterfaceScript::errorList()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui15InterfaceScript11warningListEv"><code class="docutils literal notranslate"><span class="pre">InterfaceScript::warningList()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui15InterfaceScript8setDebugEb"><code class="docutils literal notranslate"><span class="pre">InterfaceScript::setDebug()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui15InterfaceScript15commandFinishedEv"><code class="docutils literal notranslate"><span class="pre">InterfaceScript::commandFinished()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui15InterfaceScript8finishedEv"><code class="docutils literal notranslate"><span class="pre">InterfaceScript::finished()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
 
   <div class="sidebar-secondary-item">
   

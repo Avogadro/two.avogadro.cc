@@ -163,13 +163,6 @@
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../scripts/index.html">
-                        Script Plugins
-                      </a>
-                    </li>
-                
-
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="../index.html">
                         Develop
@@ -183,21 +176,13 @@
                       </a>
                     </li>
                 
-            <li class="nav-item dropdown">
-                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
-                    More
-                </button>
-                <ul id="pst-nav-more-links" class="dropdown-menu">
-                    
+
                 <li class="nav-item">
-                  <a class="nav-link dropdown-item nav-external" href="https://discuss.avogadro.cc">
+                  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
                     Discuss
                   </a>
                 </li>
                 
-                </ul>
-            </li>
-            
   </ul>
 </nav></div>
       
@@ -333,13 +318,6 @@ document.write(`
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../scripts/index.html">
-                        Script Plugins
-                      </a>
-                    </li>
-                
-
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="../index.html">
                         Develop
@@ -353,21 +331,13 @@ document.write(`
                       </a>
                     </li>
                 
-            <li class="nav-item dropdown">
-                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links-2">
-                    More
-                </button>
-                <ul id="pst-nav-more-links-2" class="dropdown-menu">
-                    
+
                 <li class="nav-item">
-                  <a class="nav-link dropdown-item nav-external" href="https://discuss.avogadro.cc">
+                  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
                     Discuss
                   </a>
                 </li>
                 
-                </ul>
-            </li>
-            
   </ul>
 </nav></div>
         
@@ -438,6 +408,7 @@ document.write(`
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">API</span></p>
 <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../scripts/index.html">Script Plugins</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../rpc.html">Avogadro Remote Procedure Call (RPC)</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../classlist.html">Class list</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active has-children"><a class="reference internal" href="../core.html">Core Classes</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
@@ -564,6 +535,228 @@ document.write(`
                   
   <section id="class-avogadro-core-basisset">
 <h1>Class Avogadro::Core::BasisSet<a class="headerlink" href="#class-avogadro-core-basisset" title="Link to this heading">#</a></h1>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core8BasisSetE">
+<span id="_CPPv3N8Avogadro4Core8BasisSetE"></span><span id="_CPPv2N8Avogadro4Core8BasisSetE"></span><span id="Avogadro::Core::BasisSet"></span><span class="target" id="class_avogadro_1_1_core_1_1_basis_set"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">BasisSet</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core8BasisSetE" title="Link to this definition">#</a><br /></dt>
+<dd><p><a class="reference internal" href="#class_avogadro_1_1_core_1_1_basis_set"><span class="std std-ref">BasisSet</span></a> contains basis set data. </p>
+<p>
+This is the base class for basis sets, and has two derived classes - <a class="reference internal" href="class_avogadro_1_1_core_1_1_gaussian_set.html#class_avogadro_1_1_core_1_1_gaussian_set"><span class="std std-ref">GaussianSet</span></a> and <a class="reference internal" href="class_avogadro_1_1_core_1_1_slater_set.html#class_avogadro_1_1_core_1_1_slater_set"><span class="std std-ref">SlaterSet</span></a>. It must be populated with data, with other classes capable of performing calculations on the data or writing it out. <dl class="simple">
+<dt><strong>Author</strong></dt><dd><p>Marcus D. Hanwell</p>
+</dd>
+</dl>
+</p>
+<p>Subclassed by <a class="reference internal" href="class_avogadro_1_1_core_1_1_gaussian_set.html#class_avogadro_1_1_core_1_1_gaussian_set"><span class="std std-ref">GaussianSet</span></a>, <a class="reference internal" href="class_avogadro_1_1_core_1_1_slater_set.html#class_avogadro_1_1_core_1_1_slater_set"><span class="std std-ref">SlaterSet</span></a></p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-types">Public Types</p>
+<dl class="cpp enum">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core8BasisSet12ElectronTypeE">
+<span id="_CPPv3N8Avogadro4Core8BasisSet12ElectronTypeE"></span><span id="_CPPv2N8Avogadro4Core8BasisSet12ElectronTypeE"></span><span class="target" id="class_avogadro_1_1_core_1_1_basis_set_1a3370950d874013ef0d6ae884e7c7f339"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ElectronType</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core8BasisSet12ElectronTypeE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The ElectronType enum describes the type of electrons being set or retrieved. If Paired, then Alpha and Beta cannot be set, if Alpha or Beta then both must be set. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core8BasisSet12ElectronType6PairedE">
+<span id="_CPPv3N8Avogadro4Core8BasisSet12ElectronType6PairedE"></span><span id="_CPPv2N8Avogadro4Core8BasisSet12ElectronType6PairedE"></span><span class="target" id="class_avogadro_1_1_core_1_1_basis_set_1a3370950d874013ef0d6ae884e7c7f339a3e33093c515b4cc0447bf0291331f46a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Paired</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core8BasisSet12ElectronType6PairedE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core8BasisSet12ElectronType5AlphaE">
+<span id="_CPPv3N8Avogadro4Core8BasisSet12ElectronType5AlphaE"></span><span id="_CPPv2N8Avogadro4Core8BasisSet12ElectronType5AlphaE"></span><span class="target" id="class_avogadro_1_1_core_1_1_basis_set_1a3370950d874013ef0d6ae884e7c7f339ab8e4fd775ba181b65c0fb6929cc7c6b3"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Alpha</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core8BasisSet12ElectronType5AlphaE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core8BasisSet12ElectronType4BetaE">
+<span id="_CPPv3N8Avogadro4Core8BasisSet12ElectronType4BetaE"></span><span id="_CPPv2N8Avogadro4Core8BasisSet12ElectronType4BetaE"></span><span class="target" id="class_avogadro_1_1_core_1_1_basis_set_1a3370950d874013ef0d6ae884e7c7f339aefbfbaaca302a957185ade21ac0f8fd2"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Beta</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core8BasisSet12ElectronType4BetaE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core8BasisSet8BasisSetEv">
+<span id="_CPPv3N8Avogadro4Core8BasisSet8BasisSetEv"></span><span id="_CPPv2N8Avogadro4Core8BasisSet8BasisSetEv"></span><span id="Avogadro::Core::BasisSet::BasisSet"></span><span class="target" id="class_avogadro_1_1_core_1_1_basis_set_1a902600fb65d5c4d7f7041316b1845b07"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">BasisSet</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core8BasisSet8BasisSetEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Constructor. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core8BasisSetD0Ev">
+<span id="_CPPv3N8Avogadro4Core8BasisSetD0Ev"></span><span id="_CPPv2N8Avogadro4Core8BasisSetD0Ev"></span><span id="Avogadro::Core::BasisSet::~BasisSet"></span><span class="target" id="class_avogadro_1_1_core_1_1_basis_set_1a4e2cef9c26e6be6cf67f8b57f1767fa9"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">~BasisSet</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core8BasisSetD0Ev" title="Link to this definition">#</a><br /></dt>
+<dd><p>Destructor. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core8BasisSet5cloneEv">
+<span id="_CPPv3NK8Avogadro4Core8BasisSet5cloneEv"></span><span id="_CPPv2NK8Avogadro4Core8BasisSet5cloneEv"></span><span id="Avogadro::Core::BasisSet::cloneC"></span><span class="target" id="class_avogadro_1_1_core_1_1_basis_set_1ab293a4a0b93cda49cb5c2f0edf452be1"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro4Core8BasisSetE" title="Avogadro::Core::BasisSet"><span class="n"><span class="pre">BasisSet</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">clone</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core8BasisSet5cloneEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Clone. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core8BasisSet16setElectronCountEj12ElectronType">
+<span id="_CPPv3N8Avogadro4Core8BasisSet16setElectronCountEj12ElectronType"></span><span id="_CPPv2N8Avogadro4Core8BasisSet16setElectronCountEj12ElectronType"></span><span id="Avogadro::Core::BasisSet::setElectronCount__unsigned-i.ElectronType"></span><span class="target" id="class_avogadro_1_1_core_1_1_basis_set_1ae3a4ba257266df85236191fca5b421d1"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setElectronCount</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">n</span></span>, <a class="reference internal" href="#_CPPv4N8Avogadro4Core8BasisSet12ElectronTypeE" title="Avogadro::Core::BasisSet::ElectronType"><span class="n"><span class="pre">ElectronType</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">type</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro4Core8BasisSet12ElectronType6PairedE" title="Avogadro::Core::BasisSet::Paired"><span class="n"><span class="pre">Paired</span></span></a><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core8BasisSet16setElectronCountEj12ElectronType" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the number of electrons in the <a class="reference internal" href="#class_avogadro_1_1_core_1_1_basis_set"><span class="std std-ref">BasisSet</span></a>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> – The number of electrons in the <a class="reference internal" href="#class_avogadro_1_1_core_1_1_basis_set"><span class="std std-ref">BasisSet</span></a>. </p></li>
+<li><p><strong>type</strong> – The type of the electrons (Alpha, Beta, or Paired). </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core8BasisSet13electronCountE12ElectronType">
+<span id="_CPPv3NK8Avogadro4Core8BasisSet13electronCountE12ElectronType"></span><span id="_CPPv2NK8Avogadro4Core8BasisSet13electronCountE12ElectronType"></span><span id="Avogadro::Core::BasisSet::electronCount__ElectronTypeC"></span><span class="target" id="class_avogadro_1_1_core_1_1_basis_set_1a861c21125497fded8c828ace64b73593"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">electronCount</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N8Avogadro4Core8BasisSet12ElectronTypeE" title="Avogadro::Core::BasisSet::ElectronType"><span class="n"><span class="pre">ElectronType</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">type</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro4Core8BasisSet12ElectronType6PairedE" title="Avogadro::Core::BasisSet::Paired"><span class="n"><span class="pre">Paired</span></span></a><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core8BasisSet13electronCountE12ElectronType" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>type</strong> – The type of the electrons (Alpha, Beta, or Paired). </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The number of electrons in the molecule. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core8BasisSet11setMoleculeEP8Molecule">
+<span id="_CPPv3N8Avogadro4Core8BasisSet11setMoleculeEP8Molecule"></span><span id="_CPPv2N8Avogadro4Core8BasisSet11setMoleculeEP8Molecule"></span><span id="Avogadro::Core::BasisSet::setMolecule__MoleculeP"></span><span class="target" id="class_avogadro_1_1_core_1_1_basis_set_1a88865a6437f67a6267a2f3175f7afff3"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setMolecule</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">molecule_</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core8BasisSet11setMoleculeEP8Molecule" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the molecule for the basis set. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core8BasisSet8moleculeEv">
+<span id="_CPPv3N8Avogadro4Core8BasisSet8moleculeEv"></span><span id="_CPPv2N8Avogadro4Core8BasisSet8moleculeEv"></span><span id="Avogadro::Core::BasisSet::molecule"></span><span class="target" id="class_avogadro_1_1_core_1_1_basis_set_1ac5667fabaee2049457ec53c8f38209c2"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">molecule</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core8BasisSet8moleculeEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the molecule this basis set belongs to. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core8BasisSet8moleculeEv">
+<span id="_CPPv3NK8Avogadro4Core8BasisSet8moleculeEv"></span><span id="_CPPv2NK8Avogadro4Core8BasisSet8moleculeEv"></span><span id="Avogadro::Core::BasisSet::moleculeC"></span><span class="target" id="class_avogadro_1_1_core_1_1_basis_set_1ab605513928f618c66ce90a58b68d93a2"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">molecule</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core8BasisSet8moleculeEv" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core8BasisSet7setNameERKNSt6stringE">
+<span id="_CPPv3N8Avogadro4Core8BasisSet7setNameERKNSt6stringE"></span><span id="_CPPv2N8Avogadro4Core8BasisSet7setNameERKNSt6stringE"></span><span id="Avogadro::Core::BasisSet::setName__ssCR"></span><span class="target" id="class_avogadro_1_1_core_1_1_basis_set_1a9d3a2685df23b5e7cbf59c19c4a1f9b5"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setName</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core8BasisSet7setNameERKNSt6stringE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the name of the basis set. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core8BasisSet4nameEv">
+<span id="_CPPv3NK8Avogadro4Core8BasisSet4nameEv"></span><span id="_CPPv2NK8Avogadro4Core8BasisSet4nameEv"></span><span id="Avogadro::Core::BasisSet::nameC"></span><span class="target" id="class_avogadro_1_1_core_1_1_basis_set_1a1d89c28bd42ba9a52da008bb69367171"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">name</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core8BasisSet4nameEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the name of the basis set. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core8BasisSet13setTheoryNameERKNSt6stringE">
+<span id="_CPPv3N8Avogadro4Core8BasisSet13setTheoryNameERKNSt6stringE"></span><span id="_CPPv2N8Avogadro4Core8BasisSet13setTheoryNameERKNSt6stringE"></span><span id="Avogadro::Core::BasisSet::setTheoryName__ssCR"></span><span class="target" id="class_avogadro_1_1_core_1_1_basis_set_1ab38bfce38d60095e1db03cbfc34280ab"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setTheoryName</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core8BasisSet13setTheoryNameERKNSt6stringE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the name of the basis set. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core8BasisSet10theoryNameEv">
+<span id="_CPPv3NK8Avogadro4Core8BasisSet10theoryNameEv"></span><span id="_CPPv2NK8Avogadro4Core8BasisSet10theoryNameEv"></span><span id="Avogadro::Core::BasisSet::theoryNameC"></span><span class="target" id="class_avogadro_1_1_core_1_1_basis_set_1a88b0c2696b3beef88583fbf29247363b"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">theoryName</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core8BasisSet10theoryNameEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the name of the basis set. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core8BasisSet21molecularOrbitalCountE12ElectronType">
+<span id="_CPPv3N8Avogadro4Core8BasisSet21molecularOrbitalCountE12ElectronType"></span><span id="_CPPv2N8Avogadro4Core8BasisSet21molecularOrbitalCountE12ElectronType"></span><span id="Avogadro::Core::BasisSet::molecularOrbitalCount__ElectronType"></span><span class="target" id="class_avogadro_1_1_core_1_1_basis_set_1a766a7383b50ca0c0fe5d400942d6d2f4"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">molecularOrbitalCount</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N8Avogadro4Core8BasisSet12ElectronTypeE" title="Avogadro::Core::BasisSet::ElectronType"><span class="n"><span class="pre">ElectronType</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">type</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro4Core8BasisSet12ElectronType6PairedE" title="Avogadro::Core::BasisSet::Paired"><span class="n"><span class="pre">Paired</span></span></a><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core8BasisSet21molecularOrbitalCountE12ElectronType" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The number of molecular orbitals in the <a class="reference internal" href="#class_avogadro_1_1_core_1_1_basis_set"><span class="std std-ref">BasisSet</span></a>. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core8BasisSet4homoEj">
+<span id="_CPPv3N8Avogadro4Core8BasisSet4homoEj"></span><span id="_CPPv2N8Avogadro4Core8BasisSet4homoEj"></span><span id="Avogadro::Core::BasisSet::homo__unsigned-i"></span><span class="target" id="class_avogadro_1_1_core_1_1_basis_set_1a0f2e5f4ee459d8a998c645d0e3cb03d6"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">homo</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">n</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core8BasisSet4homoEj" title="Link to this definition">#</a><br /></dt>
+<dd><p>Check if the given MO number is the HOMO or not. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>n</strong> – The MO number. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the given MO number is the HOMO. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core8BasisSet4homoEv">
+<span id="_CPPv3NK8Avogadro4Core8BasisSet4homoEv"></span><span id="_CPPv2NK8Avogadro4Core8BasisSet4homoEv"></span><span id="Avogadro::Core::BasisSet::homoC"></span><span class="target" id="class_avogadro_1_1_core_1_1_basis_set_1ab618e8cc185d6b7d9730a6ef2ac4b30a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">homo</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core8BasisSet4homoEv" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The molecular orbital number corresponding to the HOMO orbital. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core8BasisSet4lumoEj">
+<span id="_CPPv3N8Avogadro4Core8BasisSet4lumoEj"></span><span id="_CPPv2N8Avogadro4Core8BasisSet4lumoEj"></span><span id="Avogadro::Core::BasisSet::lumo__unsigned-i"></span><span class="target" id="class_avogadro_1_1_core_1_1_basis_set_1ad0caeae7d09f24d25a2cda1d330c4e6d"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lumo</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">n</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core8BasisSet4lumoEj" title="Link to this definition">#</a><br /></dt>
+<dd><p>Check if the given MO number is the LUMO or not. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>n</strong> – The MO number. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the given MO number is the LUMO. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core8BasisSet4lumoEv">
+<span id="_CPPv3NK8Avogadro4Core8BasisSet4lumoEv"></span><span id="_CPPv2NK8Avogadro4Core8BasisSet4lumoEv"></span><span id="Avogadro::Core::BasisSet::lumoC"></span><span class="target" id="class_avogadro_1_1_core_1_1_basis_set_1a6d406ddc41d43487f969fce4f0edf528"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lumo</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core8BasisSet4lumoEv" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The molecular orbital number corresponding to the LUMO orbital. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core8BasisSet7isValidEv">
+<span id="_CPPv3N8Avogadro4Core8BasisSet7isValidEv"></span><span id="_CPPv2N8Avogadro4Core8BasisSet7isValidEv"></span><span id="Avogadro::Core::BasisSet::isValid"></span><span class="target" id="class_avogadro_1_1_core_1_1_basis_set_1a2fc82837864087e3b50ebb62fab91d14"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isValid</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core8BasisSet7isValidEv" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True of the basis set is valid, false otherwise. Default is true, if false then the basis set is likely unusable. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-attributes">Protected Attributes</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core8BasisSet11m_electronsE">
+<span id="_CPPv3N8Avogadro4Core8BasisSet11m_electronsE"></span><span id="_CPPv2N8Avogadro4Core8BasisSet11m_electronsE"></span><span id="Avogadro::Core::BasisSet::m_electrons__unsigned-iA"></span><span class="target" id="class_avogadro_1_1_core_1_1_basis_set_1a4015e7b1f5843754ff74daed6db5e3cf"></span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_electrons</span></span></span><span class="p"><span class="pre">[</span></span><span class="m"><span class="pre">2</span></span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core8BasisSet11m_electronsE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Total number of electrons, 0 is alpha electrons and 1 is beta electrons. For closed shell calculations alpha is doubly occupied and there are no beta electrons. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core8BasisSet10m_moleculeE">
+<span id="_CPPv3N8Avogadro4Core8BasisSet10m_moleculeE"></span><span id="_CPPv2N8Avogadro4Core8BasisSet10m_moleculeE"></span><span id="Avogadro::Core::BasisSet::m_molecule__MoleculeP"></span><span class="target" id="class_avogadro_1_1_core_1_1_basis_set_1a9c612ea9246d7d604d45283e467b2e6a"></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">m_molecule</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core8BasisSet10m_moleculeE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The <a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#class_avogadro_1_1_core_1_1_molecule"><span class="std std-ref">Molecule</span></a> holds the atoms (and possibly bonds) read in from the output file. Most basis sets have orbitals around these atoms, but this is not necessarily the case. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core8BasisSet6m_nameE">
+<span id="_CPPv3N8Avogadro4Core8BasisSet6m_nameE"></span><span id="_CPPv2N8Avogadro4Core8BasisSet6m_nameE"></span><span id="Avogadro::Core::BasisSet::m_name__ss"></span><span class="target" id="class_avogadro_1_1_core_1_1_basis_set_1adb41893ba19e889e56c559f25fc1a68a"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_name</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core8BasisSet6m_nameE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The name of the basis set, this is usually a string identifier referencing a standard basis set when only one is used. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core8BasisSet12m_theoryNameE">
+<span id="_CPPv3N8Avogadro4Core8BasisSet12m_theoryNameE"></span><span id="_CPPv2N8Avogadro4Core8BasisSet12m_theoryNameE"></span><span id="Avogadro::Core::BasisSet::m_theoryName__ss"></span><span class="target" id="class_avogadro_1_1_core_1_1_basis_set_1ac94d544159b31486df00bcd699f822fa"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_theoryName</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core8BasisSet12m_theoryNameE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The name of the theory used for the calculation. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
 </section>
 
 
@@ -602,6 +795,46 @@ document.write(`
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core8BasisSetE"><code class="docutils literal notranslate"><span class="pre">BasisSet</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core8BasisSet12ElectronTypeE"><code class="docutils literal notranslate"><span class="pre">BasisSet::ElectronType</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core8BasisSet12ElectronType6PairedE"><code class="docutils literal notranslate"><span class="pre">BasisSet::ElectronType::Paired</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core8BasisSet12ElectronType5AlphaE"><code class="docutils literal notranslate"><span class="pre">BasisSet::ElectronType::Alpha</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core8BasisSet12ElectronType4BetaE"><code class="docutils literal notranslate"><span class="pre">BasisSet::ElectronType::Beta</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core8BasisSet8BasisSetEv"><code class="docutils literal notranslate"><span class="pre">BasisSet::BasisSet()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core8BasisSetD0Ev"><code class="docutils literal notranslate"><span class="pre">BasisSet::~BasisSet()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core8BasisSet5cloneEv"><code class="docutils literal notranslate"><span class="pre">BasisSet::clone()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core8BasisSet16setElectronCountEj12ElectronType"><code class="docutils literal notranslate"><span class="pre">BasisSet::setElectronCount()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core8BasisSet13electronCountE12ElectronType"><code class="docutils literal notranslate"><span class="pre">BasisSet::electronCount()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core8BasisSet11setMoleculeEP8Molecule"><code class="docutils literal notranslate"><span class="pre">BasisSet::setMolecule()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core8BasisSet8moleculeEv"><code class="docutils literal notranslate"><span class="pre">BasisSet::molecule()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core8BasisSet8moleculeEv"><code class="docutils literal notranslate"><span class="pre">BasisSet::molecule()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core8BasisSet7setNameERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">BasisSet::setName()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core8BasisSet4nameEv"><code class="docutils literal notranslate"><span class="pre">BasisSet::name()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core8BasisSet13setTheoryNameERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">BasisSet::setTheoryName()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core8BasisSet10theoryNameEv"><code class="docutils literal notranslate"><span class="pre">BasisSet::theoryName()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core8BasisSet21molecularOrbitalCountE12ElectronType"><code class="docutils literal notranslate"><span class="pre">BasisSet::molecularOrbitalCount()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core8BasisSet4homoEj"><code class="docutils literal notranslate"><span class="pre">BasisSet::homo()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core8BasisSet4homoEv"><code class="docutils literal notranslate"><span class="pre">BasisSet::homo()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core8BasisSet4lumoEj"><code class="docutils literal notranslate"><span class="pre">BasisSet::lumo()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core8BasisSet4lumoEv"><code class="docutils literal notranslate"><span class="pre">BasisSet::lumo()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core8BasisSet7isValidEv"><code class="docutils literal notranslate"><span class="pre">BasisSet::isValid()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core8BasisSet11m_electronsE"><code class="docutils literal notranslate"><span class="pre">BasisSet::m_electrons</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core8BasisSet10m_moleculeE"><code class="docutils literal notranslate"><span class="pre">BasisSet::m_molecule</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core8BasisSet6m_nameE"><code class="docutils literal notranslate"><span class="pre">BasisSet::m_name</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core8BasisSet12m_theoryNameE"><code class="docutils literal notranslate"><span class="pre">BasisSet::m_theoryName</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
 
   <div class="sidebar-secondary-item">
   

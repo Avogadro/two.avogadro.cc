@@ -163,13 +163,6 @@
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../scripts/index.html">
-                        Script Plugins
-                      </a>
-                    </li>
-                
-
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="../index.html">
                         Develop
@@ -183,21 +176,13 @@
                       </a>
                     </li>
                 
-            <li class="nav-item dropdown">
-                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
-                    More
-                </button>
-                <ul id="pst-nav-more-links" class="dropdown-menu">
-                    
+
                 <li class="nav-item">
-                  <a class="nav-link dropdown-item nav-external" href="https://discuss.avogadro.cc">
+                  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
                     Discuss
                   </a>
                 </li>
                 
-                </ul>
-            </li>
-            
   </ul>
 </nav></div>
       
@@ -333,13 +318,6 @@ document.write(`
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../scripts/index.html">
-                        Script Plugins
-                      </a>
-                    </li>
-                
-
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="../index.html">
                         Develop
@@ -353,21 +331,13 @@ document.write(`
                       </a>
                     </li>
                 
-            <li class="nav-item dropdown">
-                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links-2">
-                    More
-                </button>
-                <ul id="pst-nav-more-links-2" class="dropdown-menu">
-                    
+
                 <li class="nav-item">
-                  <a class="nav-link dropdown-item nav-external" href="https://discuss.avogadro.cc">
+                  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
                     Discuss
                   </a>
                 </li>
                 
-                </ul>
-            </li>
-            
   </ul>
 </nav></div>
         
@@ -438,6 +408,7 @@ document.write(`
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">API</span></p>
 <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../scripts/index.html">Script Plugins</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../rpc.html">Avogadro Remote Procedure Call (RPC)</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../classlist.html">Class list</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../core.html">Core Classes</a></li>
@@ -525,6 +496,107 @@ document.write(`
                   
   <section id="class-avogadro-molequeue-inputgeneratorwidget">
 <h1>Class Avogadro::MoleQueue::InputGeneratorWidget<a class="headerlink" href="#class-avogadro-molequeue-inputgeneratorwidget" title="Link to this heading">#</a></h1>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9MoleQueue20InputGeneratorWidgetE">
+<span id="_CPPv3N8Avogadro9MoleQueue20InputGeneratorWidgetE"></span><span id="_CPPv2N8Avogadro9MoleQueue20InputGeneratorWidgetE"></span><span id="Avogadro::MoleQueue::InputGeneratorWidget"></span><span class="target" id="class_avogadro_1_1_mole_queue_1_1_input_generator_widget"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">InputGeneratorWidget</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">JsonWidget</span></span><a class="headerlink" href="#_CPPv4N8Avogadro9MoleQueue20InputGeneratorWidgetE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The <a class="reference internal" href="#class_avogadro_1_1_mole_queue_1_1_input_generator_widget"><span class="std std-ref">InputGeneratorWidget</span></a> class provides a user interface for configuring, saving, editing, and running input files produced by <a class="reference internal" href="class_avogadro_1_1_mole_queue_1_1_input_generator.html#class_avogadro_1_1_mole_queue_1_1_input_generator"><span class="std std-ref">InputGenerator</span></a> scripts. </p>
+<p><p>&lt;avogadro/molequeue/inputgeneratorwidget.h&gt;</p>
+<p>The</p>
+<a class="reference internal" href="#class_avogadro_1_1_mole_queue_1_1_input_generator_widget"><span class="std std-ref">InputGeneratorWidget</span></a> creates a GUI to represent the options given by an input generator script, and has some utilities for job submission through MoleQueue.<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="class_avogadro_1_1_mole_queue_1_1_input_generator.html#class_avogadro_1_1_mole_queue_1_1_input_generator"><span class="std std-ref">InputGenerator</span></a> <a class="reference internal" href="class_avogadro_1_1_mole_queue_1_1_input_generator_dialog.html#class_avogadro_1_1_mole_queue_1_1_input_generator_dialog"><span class="std std-ref">InputGeneratorDialog</span></a></p>
+</div>
+</p>
+<p>By default, the widget will configure input files for a single molecule, which can be either written to disk or submitted for processing with MoleQueue.</p>
+<p>By enabling batch mode (<a class="reference internal" href="#class_avogadro_1_1_mole_queue_1_1_input_generator_widget_1a88ca7bd1085c09585a03eeda100ab4b8"><span class="std std-ref">setBatchMode()</span></a>), the current molecule is used to configure a calculation for submission to MoleQueue, and the parameters are saved. These may be used to configure and submit jobs for other molecules. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-unnamed-group">Unnamed Group</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9MoleQueue20InputGeneratorWidget14inputGeneratorEv">
+<span id="_CPPv3NK8Avogadro9MoleQueue20InputGeneratorWidget14inputGeneratorEv"></span><span id="_CPPv2NK8Avogadro9MoleQueue20InputGeneratorWidget14inputGeneratorEv"></span><span id="Avogadro::MoleQueue::InputGeneratorWidget::inputGeneratorC"></span><span class="target" id="class_avogadro_1_1_mole_queue_1_1_input_generator_widget_1a4375698d1a85c8b3a912a8f13e6c7a58"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_mole_queue_1_1_input_generator.html#_CPPv4N8Avogadro9MoleQueue14InputGeneratorE" title="Avogadro::MoleQueue::InputGenerator"><span class="n"><span class="pre">InputGenerator</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">inputGenerator</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9MoleQueue20InputGeneratorWidget14inputGeneratorEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Access to the underlying input generator object. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9MoleQueue20InputGeneratorWidget9batchModeEv">
+<span id="_CPPv3NK8Avogadro9MoleQueue20InputGeneratorWidget9batchModeEv"></span><span id="_CPPv2NK8Avogadro9MoleQueue20InputGeneratorWidget9batchModeEv"></span><span id="Avogadro::MoleQueue::InputGeneratorWidget::batchModeC"></span><span class="target" id="class_avogadro_1_1_mole_queue_1_1_input_generator_widget_1ab84e9410e3d2f3d7dc2a147c4a07fcef"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">batchMode</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9MoleQueue20InputGeneratorWidget9batchModeEv" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the widget is in batch mode. See the class documentation for details. Default is false. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9MoleQueue20InputGeneratorWidget17configureBatchJobER8BatchJob">
+<span id="_CPPv3NK8Avogadro9MoleQueue20InputGeneratorWidget17configureBatchJobER8BatchJob"></span><span id="_CPPv2NK8Avogadro9MoleQueue20InputGeneratorWidget17configureBatchJobER8BatchJob"></span><span id="Avogadro::MoleQueue::InputGeneratorWidget::configureBatchJob__BatchJobRC"></span><span class="target" id="class_avogadro_1_1_mole_queue_1_1_input_generator_widget_1a6c7bd3e493020d9602fdbc37066b172b"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">configureBatchJob</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="class_avogadro_1_1_mole_queue_1_1_batch_job.html#_CPPv4N8Avogadro9MoleQueue8BatchJobE" title="Avogadro::MoleQueue::BatchJob"><span class="n"><span class="pre">BatchJob</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">batch</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9MoleQueue20InputGeneratorWidget17configureBatchJobER8BatchJob" title="Link to this definition">#</a><br /></dt>
+<dd><p>Collect the current calculation parameters and prompt for MoleQueue options. Both option sets are stored in <em>batch</em>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9MoleQueue20InputGeneratorWidget11setMoleculeEPN5QtGui8MoleculeE">
+<span id="_CPPv3N8Avogadro9MoleQueue20InputGeneratorWidget11setMoleculeEPN5QtGui8MoleculeE"></span><span id="_CPPv2N8Avogadro9MoleQueue20InputGeneratorWidget11setMoleculeEPN5QtGui8MoleculeE"></span><span id="Avogadro::MoleQueue::InputGeneratorWidget::setMolecule__QtGui::MoleculeP"></span><span class="target" id="class_avogadro_1_1_mole_queue_1_1_input_generator_widget_1ae041e98de669f5ec1d9772383185c86f"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setMolecule</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">QtGui</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_molecule.html#_CPPv4N8Avogadro5QtGui8MoleculeE" title="Avogadro::QtGui::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">mol</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8Avogadro9MoleQueue20InputGeneratorWidget11setMoleculeEPN5QtGui8MoleculeE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Access to the underlying input generator object. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9MoleQueue20InputGeneratorWidget12setBatchModeEb">
+<span id="_CPPv3N8Avogadro9MoleQueue20InputGeneratorWidget12setBatchModeEb"></span><span id="_CPPv2N8Avogadro9MoleQueue20InputGeneratorWidget12setBatchModeEb"></span><span id="Avogadro::MoleQueue::InputGeneratorWidget::setBatchMode__b"></span><span class="target" id="class_avogadro_1_1_mole_queue_1_1_input_generator_widget_1a88ca7bd1085c09585a03eeda100ab4b8"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setBatchMode</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">m</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9MoleQueue20InputGeneratorWidget12setBatchModeEb" title="Link to this definition">#</a><br /></dt>
+<dd><p>Enable/disable ‘template mode’. See the class documentation for details. Default is off. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9MoleQueue20InputGeneratorWidget12closeClickedEv">
+<span id="_CPPv3N8Avogadro9MoleQueue20InputGeneratorWidget12closeClickedEv"></span><span id="_CPPv2N8Avogadro9MoleQueue20InputGeneratorWidget12closeClickedEv"></span><span id="Avogadro::MoleQueue::InputGeneratorWidget::closeClicked"></span><span class="target" id="class_avogadro_1_1_mole_queue_1_1_input_generator_widget_1af641b5f100d84dc64971c2e0cefc8314"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">closeClicked</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9MoleQueue20InputGeneratorWidget12closeClickedEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>closeClicked is emitted when the close button is clicked. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9MoleQueue20InputGeneratorWidget13openJobOutputERK9JobObject">
+<span id="_CPPv3N8Avogadro9MoleQueue20InputGeneratorWidget13openJobOutputERK9JobObject"></span><span id="_CPPv2N8Avogadro9MoleQueue20InputGeneratorWidget13openJobOutputERK9JobObject"></span><span id="Avogadro::MoleQueue::InputGeneratorWidget::openJobOutput__JobObjectCR"></span><span class="target" id="class_avogadro_1_1_mole_queue_1_1_input_generator_widget_1a6344bc77723e797ea223b287d22a6e1d"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">openJobOutput</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">JobObject</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">job</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9MoleQueue20InputGeneratorWidget13openJobOutputERK9JobObject" title="Link to this definition">#</a><br /></dt>
+<dd><p>Emitted when the user requests that a job’s output be loaded in Avogadro. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9MoleQueue20InputGeneratorWidget9showEventEP10QShowEvent">
+<span id="_CPPv3N8Avogadro9MoleQueue20InputGeneratorWidget9showEventEP10QShowEvent"></span><span id="_CPPv2N8Avogadro9MoleQueue20InputGeneratorWidget9showEventEP10QShowEvent"></span><span id="Avogadro::MoleQueue::InputGeneratorWidget::showEvent__QShowEventP"></span><span class="target" id="class_avogadro_1_1_mole_queue_1_1_input_generator_widget_1a73715010a6982e692c1409bb44c2ca21"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">showEvent</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">QShowEvent</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">e</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8Avogadro9MoleQueue20InputGeneratorWidget9showEventEP10QShowEvent" title="Link to this definition">#</a><br /></dt>
+<dd><p>Reimplemented to update preview text. Hidden dialogs will wait until they are reshown to update the text to prevent overwriting any modified buffers. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9MoleQueue20InputGeneratorWidget13updateOptionsEv">
+<span id="_CPPv3N8Avogadro9MoleQueue20InputGeneratorWidget13updateOptionsEv"></span><span id="_CPPv2N8Avogadro9MoleQueue20InputGeneratorWidget13updateOptionsEv"></span><span id="Avogadro::MoleQueue::InputGeneratorWidget::updateOptions"></span><span class="target" id="class_avogadro_1_1_mole_queue_1_1_input_generator_widget_1a341eb076d61b3f40ab14d2740bc422cf"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">updateOptions</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8Avogadro9MoleQueue20InputGeneratorWidget13updateOptionsEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Access to the underlying input generator object. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9MoleQueue20InputGeneratorWidget20InputGeneratorWidgetEP7QWidget">
+<span id="_CPPv3N8Avogadro9MoleQueue20InputGeneratorWidget20InputGeneratorWidgetEP7QWidget"></span><span id="_CPPv2N8Avogadro9MoleQueue20InputGeneratorWidget20InputGeneratorWidgetEP7QWidget"></span><span id="Avogadro::MoleQueue::InputGeneratorWidget::InputGeneratorWidget__QWidgetP"></span><span class="target" id="class_avogadro_1_1_mole_queue_1_1_input_generator_widget_1a440d9a8f467bb2ebf6d29b7e05c51a45"></span><span class="k"><span class="pre">explicit</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">InputGeneratorWidget</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">QWidget</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">parent_</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">nullptr</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9MoleQueue20InputGeneratorWidget20InputGeneratorWidgetEP7QWidget" title="Link to this definition">#</a><br /></dt>
+<dd><p>Construct a widget that dynamically generates a GUI to configure the <a class="reference internal" href="class_avogadro_1_1_mole_queue_1_1_input_generator.html#class_avogadro_1_1_mole_queue_1_1_input_generator"><span class="std std-ref">InputGenerator</span></a> script specified by scriptFilePath. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9MoleQueue20InputGeneratorWidgetD0Ev">
+<span id="_CPPv3N8Avogadro9MoleQueue20InputGeneratorWidgetD0Ev"></span><span id="_CPPv2N8Avogadro9MoleQueue20InputGeneratorWidgetD0Ev"></span><span id="Avogadro::MoleQueue::InputGeneratorWidget::~InputGeneratorWidget"></span><span class="target" id="class_avogadro_1_1_mole_queue_1_1_input_generator_widget_1afa805743d9b82f88fe46d72a3643a9aa"></span><span class="sig-name descname"><span class="n"><span class="pre">~InputGeneratorWidget</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8Avogadro9MoleQueue20InputGeneratorWidgetD0Ev" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9MoleQueue20InputGeneratorWidget23setInputGeneratorScriptERK7QString">
+<span id="_CPPv3N8Avogadro9MoleQueue20InputGeneratorWidget23setInputGeneratorScriptERK7QString"></span><span id="_CPPv2N8Avogadro9MoleQueue20InputGeneratorWidget23setInputGeneratorScriptERK7QString"></span><span id="Avogadro::MoleQueue::InputGeneratorWidget::setInputGeneratorScript__QStringCR"></span><span class="target" id="class_avogadro_1_1_mole_queue_1_1_input_generator_widget_1aafff3294cbd46a5795c7d3aad0e4fe35"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setInputGeneratorScript</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">scriptFilePath</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9MoleQueue20InputGeneratorWidget23setInputGeneratorScriptERK7QString" title="Link to this definition">#</a><br /></dt>
+<dd><p>Use the input generator script pointed to by scriptFilePath. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>scriptFilePath</strong> – Absolute path to generator script. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
 </section>
 
 
@@ -563,6 +635,30 @@ document.write(`
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9MoleQueue20InputGeneratorWidgetE"><code class="docutils literal notranslate"><span class="pre">InputGeneratorWidget</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro9MoleQueue20InputGeneratorWidget14inputGeneratorEv"><code class="docutils literal notranslate"><span class="pre">InputGeneratorWidget::inputGenerator()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro9MoleQueue20InputGeneratorWidget9batchModeEv"><code class="docutils literal notranslate"><span class="pre">InputGeneratorWidget::batchMode()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro9MoleQueue20InputGeneratorWidget17configureBatchJobER8BatchJob"><code class="docutils literal notranslate"><span class="pre">InputGeneratorWidget::configureBatchJob()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9MoleQueue20InputGeneratorWidget11setMoleculeEPN5QtGui8MoleculeE"><code class="docutils literal notranslate"><span class="pre">InputGeneratorWidget::setMolecule()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9MoleQueue20InputGeneratorWidget12setBatchModeEb"><code class="docutils literal notranslate"><span class="pre">InputGeneratorWidget::setBatchMode()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9MoleQueue20InputGeneratorWidget12closeClickedEv"><code class="docutils literal notranslate"><span class="pre">InputGeneratorWidget::closeClicked()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9MoleQueue20InputGeneratorWidget13openJobOutputERK9JobObject"><code class="docutils literal notranslate"><span class="pre">InputGeneratorWidget::openJobOutput()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9MoleQueue20InputGeneratorWidget9showEventEP10QShowEvent"><code class="docutils literal notranslate"><span class="pre">InputGeneratorWidget::showEvent()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9MoleQueue20InputGeneratorWidget13updateOptionsEv"><code class="docutils literal notranslate"><span class="pre">InputGeneratorWidget::updateOptions()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9MoleQueue20InputGeneratorWidget20InputGeneratorWidgetEP7QWidget"><code class="docutils literal notranslate"><span class="pre">InputGeneratorWidget::InputGeneratorWidget()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9MoleQueue20InputGeneratorWidgetD0Ev"><code class="docutils literal notranslate"><span class="pre">InputGeneratorWidget::~InputGeneratorWidget()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9MoleQueue20InputGeneratorWidget23setInputGeneratorScriptERK7QString"><code class="docutils literal notranslate"><span class="pre">InputGeneratorWidget::setInputGeneratorScript()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
 
   <div class="sidebar-secondary-item">
   
