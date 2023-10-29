@@ -62,7 +62,7 @@ Many examples of each can be found in the `avogadro/qtplugins/` subdirectories.
 
 ```{toctree}
 ---
-caption: API
+caption: Develop
 maxdepth: 2
 hidden: true
 ---
