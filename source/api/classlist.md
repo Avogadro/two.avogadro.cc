@@ -1,6 +1,6 @@
 (class-list)=
 
-# Class list
+# Class List
 
 ```{toctree}
 :glob: true
