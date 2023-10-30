@@ -139,7 +139,7 @@ a [feature][features], please report an issue on our [project tracker][tracker].
 
 install/index
 docs/index
-api/index
+develop/index
 contrib/index
 ```
 
