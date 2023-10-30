@@ -2,20 +2,25 @@
 
 # Develop
 
-Avogadro can be extended from both C++ and Python interfaces.
+Avogadro can be extended from both Python and C++ interfaces.
 
-In many cases,
+The code is inteded to be modular and extensible, so many times,
+you can add features without needing to understand the entire C++
+codebase.
 
 ## Script Plugins
 
 Many features in Avogadro can be extended with Python scripts, including:
 
-- menu commands
-- electrostatic models
-- force fields
-- input generators
+- [menu commands](scripts/commands)
+- [electrostatic models](scripts/charges)
+- [file format import/export](scripts/formats)
+- [force fields](scripts/energy)
+- [input generators](scripts/generators)
 
-For more details, see the [script plugin](../scripts/index) documentation.
+These scripts can be installed with drag-and-drop or from GitHub repositories.
+
+For more details, see the [script plugin](scripts/index) documentation.
 
 ## External Scripting
 
@@ -67,7 +72,7 @@ maxdepth: 2
 hidden: true
 ---
 
-../scripts/index
+scripts/index
 rpc
 classlist
 ```
