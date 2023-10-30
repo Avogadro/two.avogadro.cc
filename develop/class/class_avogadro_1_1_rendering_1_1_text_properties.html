@@ -1,0 +1,1075 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Class Avogadro::Rendering::TextProperties &#8212; Avogadro 1.98.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=ee427ece" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
+
+    <script src="../../_static/documentation_options.js?v=b35d0f43"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'develop/class/class_avogadro_1_1_rendering_1_1_text_properties';</script>
+    <link rel="canonical" href="https://two.avogadro.cc/develop/class/class_avogadro_1_1_rendering_1_1_text_properties.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Class Avogadro::Rendering::TextRenderStrategy" href="class_avogadro_1_1_rendering_1_1_text_render_strategy.html" />
+    <link rel="prev" title="Class Avogadro::Rendering::TextLabelBase" href="class_avogadro_1_1_rendering_1_1_text_label_base.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Avogadro</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../install/index.html">
+                        Install
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../docs/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        Develop
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../contrib/index.html">
+                        Contribute
+                      </a>
+                    </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+                    Discuss
+                  </a>
+                </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/AvogadroChem" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../install/index.html">
+                        Install
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../docs/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        Develop
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../contrib/index.html">
+                        Contribute
+                      </a>
+                    </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+                    Discuss
+                  </a>
+                </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/AvogadroChem" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Develop</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">Script Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rpc.html">Avogadro Remote Procedure Call (RPC)</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../classlist.html">Class List</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../core.html">Core Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../io.html">IO Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../molequeue.html">MoleQueue Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qtgui.html">QtGui Classes</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../rendering.html">Rendering Classes</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_ambient_occlusion_sphere_geometry.html">Class Avogadro::Rendering::AmbientOcclusionSphereGeometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_arrow_geometry.html">Class Avogadro::Rendering::ArrowGeometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_buffer_object.html">Class Avogadro::Rendering::BufferObject</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_camera.html">Class Avogadro::Rendering::Camera</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_cylinder.html">Class Avogadro::Rendering::Cylinder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_cylinder_geometry.html">Class Avogadro::Rendering::CylinderGeometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_drawable.html">Class Avogadro::Rendering::Drawable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_g_l_render_visitor.html">Class Avogadro::Rendering::GLRenderVisitor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_g_l_renderer.html">Class Avogadro::Rendering::GLRenderer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_geometry_node.html">Class Avogadro::Rendering::GeometryNode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_geometry_visitor.html">Class Avogadro::Rendering::GeometryVisitor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_group_node.html">Class Avogadro::Rendering::GroupNode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_line_strip_geometry.html">Class Avogadro::Rendering::LineStripGeometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_mesh_geometry.html">Class Avogadro::Rendering::MeshGeometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_node.html">Class Avogadro::Rendering::Node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_p_o_v_ray_visitor.html">Class Avogadro::Rendering::POVRayVisitor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_primitive.html">Class Avogadro::Rendering::Primitive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_scene.html">Class Avogadro::Rendering::Scene</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_shader.html">Class Avogadro::Rendering::Shader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_shader_program.html">Class Avogadro::Rendering::ShaderProgram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_sphere.html">Class Avogadro::Rendering::Sphere</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_sphere_geometry.html">Class Avogadro::Rendering::SphereGeometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_text_label2_d.html">Class Avogadro::Rendering::TextLabel2D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_text_label3_d.html">Class Avogadro::Rendering::TextLabel3D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_text_label_base.html">Class Avogadro::Rendering::TextLabelBase</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Class Avogadro::Rendering::TextProperties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_text_render_strategy.html">Class Avogadro::Rendering::TextRenderStrategy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_texture2_d.html">Class Avogadro::Rendering::Texture2D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_transform_node.html">Class Avogadro::Rendering::TransformNode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_v_r_m_l_visitor.html">Class Avogadro::Rendering::VRMLVisitor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_visitor.html">Class Avogadro::Rendering::Visitor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_volume_geometry.html">Class Avogadro::Rendering::VolumeGeometry</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../vtk.html">VTK Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Develop</a></li>
+    
+    
+    <li class="breadcrumb-item"><i class="fa-solid fa-ellipsis"></i></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../rendering.html" class="nav-link">Rendering Classes</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Class...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="class-avogadro-rendering-textproperties">
+<h1>Class Avogadro::Rendering::TextProperties<a class="headerlink" href="#class-avogadro-rendering-textproperties" title="Link to this heading">#</a></h1>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering14TextPropertiesE">
+<span id="_CPPv3N8Avogadro9Rendering14TextPropertiesE"></span><span id="_CPPv2N8Avogadro9Rendering14TextPropertiesE"></span><span id="Avogadro::Rendering::TextProperties"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TextProperties</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering14TextPropertiesE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The <a class="reference internal" href="#class_avogadro_1_1_rendering_1_1_text_properties"><span class="std std-ref">TextProperties</span></a> class controls formatting options for text. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-unnamed-group">Unnamed Group</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering14TextProperties12setColorRgbaEhhhh">
+<span id="_CPPv3N8Avogadro9Rendering14TextProperties12setColorRgbaEhhhh"></span><span id="_CPPv2N8Avogadro9Rendering14TextProperties12setColorRgbaEhhhh"></span><span id="Avogadro::Rendering::TextProperties::setColorRgba__unsigned-c.unsigned-c.unsigned-c.unsigned-c"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1a87eab1c055fdcec886e7a26438d7ab39"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setColorRgba</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">r</span></span>, <span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">g</span></span>, <span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">b</span></span>, <span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">a</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering14TextProperties12setColorRgbaEhhhh" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the color of the text. Components are in the range [0, 255] </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering14TextProperties12setColorRgbaEAL4E_Kh">
+<span id="_CPPv3N8Avogadro9Rendering14TextProperties12setColorRgbaEAL4E_Kh"></span><span id="_CPPv2N8Avogadro9Rendering14TextProperties12setColorRgbaEA4_Kh"></span><span id="Avogadro::Rendering::TextProperties::setColorRgba__unsigned-cCA"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1a48c5fe1a36b9c28aed55566853be4b23"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setColorRgba</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">rgba</span></span><span class="p"><span class="pre">[</span></span><span class="m"><span class="pre">4</span></span><span class="p"><span class="pre">]</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering14TextProperties12setColorRgbaEAL4E_Kh" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the color of the text. Components are in the range [0, 255] </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering14TextProperties12setColorRgbaERK9Vector4ub">
+<span id="_CPPv3N8Avogadro9Rendering14TextProperties12setColorRgbaERK9Vector4ub"></span><span id="_CPPv2N8Avogadro9Rendering14TextProperties12setColorRgbaERK9Vector4ub"></span><span id="Avogadro::Rendering::TextProperties::setColorRgba__Vector4ubCR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1a2e3a90753baec8934e248c43b98227b2"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setColorRgba</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Vector4ub</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">rgba</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering14TextProperties12setColorRgbaERK9Vector4ub" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the color of the text. Components are in the range [0, 255] </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering14TextProperties9colorRgbaEAL4E_h">
+<span id="_CPPv3NK8Avogadro9Rendering14TextProperties9colorRgbaEAL4E_h"></span><span id="_CPPv2NK8Avogadro9Rendering14TextProperties9colorRgbaEA4_h"></span><span id="Avogadro::Rendering::TextProperties::colorRgba__unsigned-cAC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1a0b109a1131487b6b39709ce349c22b56"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">colorRgba</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">rgba</span></span><span class="p"><span class="pre">[</span></span><span class="m"><span class="pre">4</span></span><span class="p"><span class="pre">]</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering14TextProperties9colorRgbaEAL4E_h" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the color of the text. Components are in the range [0, 255] </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering14TextProperties9colorRgbaEv">
+<span id="_CPPv3NK8Avogadro9Rendering14TextProperties9colorRgbaEv"></span><span id="_CPPv2NK8Avogadro9Rendering14TextProperties9colorRgbaEv"></span><span id="Avogadro::Rendering::TextProperties::colorRgbaC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1a4b5334cf45716a3fc5ce8276e5832644"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">Vector4ub</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">colorRgba</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering14TextProperties9colorRgbaEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the color of the text. Components are in the range [0, 255] </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering14TextProperties11setColorRgbEhhh">
+<span id="_CPPv3N8Avogadro9Rendering14TextProperties11setColorRgbEhhh"></span><span id="_CPPv2N8Avogadro9Rendering14TextProperties11setColorRgbEhhh"></span><span id="Avogadro::Rendering::TextProperties::setColorRgb__unsigned-c.unsigned-c.unsigned-c"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1addbc9395f936db9b138b6fc18851d662"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setColorRgb</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">r</span></span>, <span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">g</span></span>, <span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">b</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering14TextProperties11setColorRgbEhhh" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the color of the text. Components are in the range [0, 255] </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering14TextProperties11setColorRgbEAL3E_Kh">
+<span id="_CPPv3N8Avogadro9Rendering14TextProperties11setColorRgbEAL3E_Kh"></span><span id="_CPPv2N8Avogadro9Rendering14TextProperties11setColorRgbEA3_Kh"></span><span id="Avogadro::Rendering::TextProperties::setColorRgb__unsigned-cCA"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1aeecaa7daa11255f9112dabddc6be13e0"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setColorRgb</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">rgb</span></span><span class="p"><span class="pre">[</span></span><span class="m"><span class="pre">3</span></span><span class="p"><span class="pre">]</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering14TextProperties11setColorRgbEAL3E_Kh" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the color of the text. Components are in the range [0, 255] </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering14TextProperties11setColorRgbERK9Vector3ub">
+<span id="_CPPv3N8Avogadro9Rendering14TextProperties11setColorRgbERK9Vector3ub"></span><span id="_CPPv2N8Avogadro9Rendering14TextProperties11setColorRgbERK9Vector3ub"></span><span id="Avogadro::Rendering::TextProperties::setColorRgb__Vector3ubCR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1aab4de7af682f4b6b0804f5c75655e9a8"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setColorRgb</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Vector3ub</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">rgb</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering14TextProperties11setColorRgbERK9Vector3ub" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the color of the text. Components are in the range [0, 255] </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering14TextProperties8colorRgbEAL3E_h">
+<span id="_CPPv3NK8Avogadro9Rendering14TextProperties8colorRgbEAL3E_h"></span><span id="_CPPv2NK8Avogadro9Rendering14TextProperties8colorRgbEA3_h"></span><span id="Avogadro::Rendering::TextProperties::colorRgb__unsigned-cAC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1aaa4c92be6800e89075cd76e78f04e9e2"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">colorRgb</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">rgb</span></span><span class="p"><span class="pre">[</span></span><span class="m"><span class="pre">3</span></span><span class="p"><span class="pre">]</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering14TextProperties8colorRgbEAL3E_h" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the color of the text. Components are in the range [0, 255] </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering14TextProperties8colorRgbEv">
+<span id="_CPPv3NK8Avogadro9Rendering14TextProperties8colorRgbEv"></span><span id="_CPPv2NK8Avogadro9Rendering14TextProperties8colorRgbEv"></span><span id="Avogadro::Rendering::TextProperties::colorRgbC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1aad441694df5a3da0057b6df065b15bef"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">Vector3ub</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">colorRgb</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering14TextProperties8colorRgbEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the color of the text. Components are in the range [0, 255] </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering14TextProperties6setRedEh">
+<span id="_CPPv3N8Avogadro9Rendering14TextProperties6setRedEh"></span><span id="_CPPv2N8Avogadro9Rendering14TextProperties6setRedEh"></span><span id="Avogadro::Rendering::TextProperties::setRed__unsigned-c"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1a317d7d3cc81ee6950fda5c49db649881"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setRed</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">r</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering14TextProperties6setRedEh" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the color of the text. Components are in the range [0, 255] </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering14TextProperties3redEv">
+<span id="_CPPv3NK8Avogadro9Rendering14TextProperties3redEv"></span><span id="_CPPv2NK8Avogadro9Rendering14TextProperties3redEv"></span><span id="Avogadro::Rendering::TextProperties::redC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1a25a1d559f2d312edef2610218819a432"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">red</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering14TextProperties3redEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the color of the text. Components are in the range [0, 255] </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering14TextProperties8setGreenEh">
+<span id="_CPPv3N8Avogadro9Rendering14TextProperties8setGreenEh"></span><span id="_CPPv2N8Avogadro9Rendering14TextProperties8setGreenEh"></span><span id="Avogadro::Rendering::TextProperties::setGreen__unsigned-c"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1a1043f3eb5fc62713d34b3d99678071d8"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setGreen</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">g</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering14TextProperties8setGreenEh" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the color of the text. Components are in the range [0, 255] </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering14TextProperties5greenEv">
+<span id="_CPPv3NK8Avogadro9Rendering14TextProperties5greenEv"></span><span id="_CPPv2NK8Avogadro9Rendering14TextProperties5greenEv"></span><span id="Avogadro::Rendering::TextProperties::greenC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1a56dad7728cf27e4323959eeea71fba68"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">green</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering14TextProperties5greenEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the color of the text. Components are in the range [0, 255] </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering14TextProperties7setBlueEh">
+<span id="_CPPv3N8Avogadro9Rendering14TextProperties7setBlueEh"></span><span id="_CPPv2N8Avogadro9Rendering14TextProperties7setBlueEh"></span><span id="Avogadro::Rendering::TextProperties::setBlue__unsigned-c"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1a974ae079c5664c0f8e0780875e9d49b1"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setBlue</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">b</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering14TextProperties7setBlueEh" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the color of the text. Components are in the range [0, 255] </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering14TextProperties4blueEv">
+<span id="_CPPv3NK8Avogadro9Rendering14TextProperties4blueEv"></span><span id="_CPPv2NK8Avogadro9Rendering14TextProperties4blueEv"></span><span id="Avogadro::Rendering::TextProperties::blueC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1a9a0c9149b08e125cf325853eeae7bb5c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">blue</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering14TextProperties4blueEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the color of the text. Components are in the range [0, 255] </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering14TextProperties8setAlphaEh">
+<span id="_CPPv3N8Avogadro9Rendering14TextProperties8setAlphaEh"></span><span id="_CPPv2N8Avogadro9Rendering14TextProperties8setAlphaEh"></span><span id="Avogadro::Rendering::TextProperties::setAlpha__unsigned-c"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1ad3de15982f74a0636f0e677705c79552"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setAlpha</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">a</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering14TextProperties8setAlphaEh" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the color of the text. Components are in the range [0, 255] </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering14TextProperties5alphaEv">
+<span id="_CPPv3NK8Avogadro9Rendering14TextProperties5alphaEv"></span><span id="_CPPv2NK8Avogadro9Rendering14TextProperties5alphaEv"></span><span id="Avogadro::Rendering::TextProperties::alphaC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1aa4f0ed1217b2b1cb7972040f4019ff89"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">alpha</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering14TextProperties5alphaEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the color of the text. Components are in the range [0, 255] </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-types">Public Types</p>
+<dl class="cpp enum">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering14TextProperties10FontFamilyE">
+<span id="_CPPv3N8Avogadro9Rendering14TextProperties10FontFamilyE"></span><span id="_CPPv2N8Avogadro9Rendering14TextProperties10FontFamilyE"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1ae7247fa9921cce1e792edd0602a500b5"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">FontFamily</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering14TextProperties10FontFamilyE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Enum defining a minimal set of font families. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering14TextProperties10FontFamily9SansSerifE">
+<span id="_CPPv3N8Avogadro9Rendering14TextProperties10FontFamily9SansSerifE"></span><span id="_CPPv2N8Avogadro9Rendering14TextProperties10FontFamily9SansSerifE"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1ae7247fa9921cce1e792edd0602a500b5aeb977e4110ca29ecbdc14325e6b9e74c"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SansSerif</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering14TextProperties10FontFamily9SansSerifE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering14TextProperties10FontFamily5SerifE">
+<span id="_CPPv3N8Avogadro9Rendering14TextProperties10FontFamily5SerifE"></span><span id="_CPPv2N8Avogadro9Rendering14TextProperties10FontFamily5SerifE"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1ae7247fa9921cce1e792edd0602a500b5aca53cda57aa7662c4fa1370a4ff6e117"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Serif</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering14TextProperties10FontFamily5SerifE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering14TextProperties10FontFamily4MonoE">
+<span id="_CPPv3N8Avogadro9Rendering14TextProperties10FontFamily4MonoE"></span><span id="_CPPv2N8Avogadro9Rendering14TextProperties10FontFamily4MonoE"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1ae7247fa9921cce1e792edd0602a500b5a1b6b2929659177f6e04cdebdb6c80dab"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Mono</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering14TextProperties10FontFamily4MonoE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering14TextProperties6HAlignE">
+<span id="_CPPv3N8Avogadro9Rendering14TextProperties6HAlignE"></span><span id="_CPPv2N8Avogadro9Rendering14TextProperties6HAlignE"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1a241e7d8fe2feae417908a95c35b4fe44"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">HAlign</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering14TextProperties6HAlignE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Horizontal alignment options. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering14TextProperties6HAlign5HLeftE">
+<span id="_CPPv3N8Avogadro9Rendering14TextProperties6HAlign5HLeftE"></span><span id="_CPPv2N8Avogadro9Rendering14TextProperties6HAlign5HLeftE"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1a241e7d8fe2feae417908a95c35b4fe44adfb527c19f690d203b00ffa18490e448"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">HLeft</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering14TextProperties6HAlign5HLeftE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering14TextProperties6HAlign7HCenterE">
+<span id="_CPPv3N8Avogadro9Rendering14TextProperties6HAlign7HCenterE"></span><span id="_CPPv2N8Avogadro9Rendering14TextProperties6HAlign7HCenterE"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1a241e7d8fe2feae417908a95c35b4fe44a0453076376681bfe75525f61c73c0da0"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">HCenter</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering14TextProperties6HAlign7HCenterE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering14TextProperties6HAlign6HRightE">
+<span id="_CPPv3N8Avogadro9Rendering14TextProperties6HAlign6HRightE"></span><span id="_CPPv2N8Avogadro9Rendering14TextProperties6HAlign6HRightE"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1a241e7d8fe2feae417908a95c35b4fe44a1fc8b4810b0b4b3f552c923b8c9f83ca"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">HRight</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering14TextProperties6HAlign6HRightE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering14TextProperties6VAlignE">
+<span id="_CPPv3N8Avogadro9Rendering14TextProperties6VAlignE"></span><span id="_CPPv2N8Avogadro9Rendering14TextProperties6VAlignE"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1a60ddc3fff205fef1120d2d4a11db473e"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">VAlign</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering14TextProperties6VAlignE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Vertical alignment options. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering14TextProperties6VAlign4VTopE">
+<span id="_CPPv3N8Avogadro9Rendering14TextProperties6VAlign4VTopE"></span><span id="_CPPv2N8Avogadro9Rendering14TextProperties6VAlign4VTopE"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1a60ddc3fff205fef1120d2d4a11db473ea478d6f67758a8c4e099998c7f50d227f"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">VTop</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering14TextProperties6VAlign4VTopE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering14TextProperties6VAlign7VCenterE">
+<span id="_CPPv3N8Avogadro9Rendering14TextProperties6VAlign7VCenterE"></span><span id="_CPPv2N8Avogadro9Rendering14TextProperties6VAlign7VCenterE"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1a60ddc3fff205fef1120d2d4a11db473ea2e0bd45be4a550fb9c339f6f1f54dc29"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">VCenter</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering14TextProperties6VAlign7VCenterE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering14TextProperties6VAlign7VBottomE">
+<span id="_CPPv3N8Avogadro9Rendering14TextProperties6VAlign7VBottomE"></span><span id="_CPPv2N8Avogadro9Rendering14TextProperties6VAlign7VBottomE"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1a60ddc3fff205fef1120d2d4a11db473eaa90dd4e4d283200d13a9fa9faf3f94e1"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">VBottom</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering14TextProperties6VAlign7VBottomE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering14TextProperties9FontStyleE">
+<span id="_CPPv3N8Avogadro9Rendering14TextProperties9FontStyleE"></span><span id="_CPPv2N8Avogadro9Rendering14TextProperties9FontStyleE"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1a5e5699dd6b22c785fd82a0e87f2c5bfe"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">FontStyle</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering14TextProperties9FontStyleE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Flags for style options (bold, italic, …) </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering14TextProperties9FontStyle11NoFontStyleE">
+<span id="_CPPv3N8Avogadro9Rendering14TextProperties9FontStyle11NoFontStyleE"></span><span id="_CPPv2N8Avogadro9Rendering14TextProperties9FontStyle11NoFontStyleE"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1a5e5699dd6b22c785fd82a0e87f2c5bfea0a0eefd211654241265d05b3142816d6"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">NoFontStyle</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering14TextProperties9FontStyle11NoFontStyleE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering14TextProperties9FontStyle4BoldE">
+<span id="_CPPv3N8Avogadro9Rendering14TextProperties9FontStyle4BoldE"></span><span id="_CPPv2N8Avogadro9Rendering14TextProperties9FontStyle4BoldE"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1a5e5699dd6b22c785fd82a0e87f2c5bfeaa529a7a50505042b4f78439ecc3fb0d6"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Bold</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering14TextProperties9FontStyle4BoldE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering14TextProperties9FontStyle6ItalicE">
+<span id="_CPPv3N8Avogadro9Rendering14TextProperties9FontStyle6ItalicE"></span><span id="_CPPv2N8Avogadro9Rendering14TextProperties9FontStyle6ItalicE"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1a5e5699dd6b22c785fd82a0e87f2c5bfeac2a214096085052039c5b35d6aae7bd0"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Italic</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering14TextProperties9FontStyle6ItalicE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering14TextProperties9FontStyle9UnderlineE">
+<span id="_CPPv3N8Avogadro9Rendering14TextProperties9FontStyle9UnderlineE"></span><span id="_CPPv2N8Avogadro9Rendering14TextProperties9FontStyle9UnderlineE"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1a5e5699dd6b22c785fd82a0e87f2c5bfeaa909c5f2b588ba35fcc40b3b504ad2ed"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Underline</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering14TextProperties9FontStyle9UnderlineE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering14TextProperties10FontStylesE">
+<span id="_CPPv3N8Avogadro9Rendering14TextProperties10FontStylesE"></span><span id="_CPPv2N8Avogadro9Rendering14TextProperties10FontStylesE"></span><span id="Avogadro::Rendering::TextProperties::FontStyles"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1a1d498451691ae4a250b3df21061c59cd"></span><span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">FontStyles</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering14TextProperties10FontStylesE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Used for bitwise combinations of FontStyle values. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering14TextProperties14TextPropertiesEv">
+<span id="_CPPv3N8Avogadro9Rendering14TextProperties14TextPropertiesEv"></span><span id="_CPPv2N8Avogadro9Rendering14TextProperties14TextPropertiesEv"></span><span id="Avogadro::Rendering::TextProperties::TextProperties"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1af9371e4356cd23bac4151a0311081dd2"></span><span class="sig-name descname"><span class="n"><span class="pre">TextProperties</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering14TextProperties14TextPropertiesEv" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering14TextProperties14TextPropertiesERK14TextProperties">
+<span id="_CPPv3N8Avogadro9Rendering14TextProperties14TextPropertiesERK14TextProperties"></span><span id="_CPPv2N8Avogadro9Rendering14TextProperties14TextPropertiesERK14TextProperties"></span><span id="Avogadro::Rendering::TextProperties::TextProperties__TextPropertiesCR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1afb595ae00b9b59111abfd7f8673baf2f"></span><span class="sig-name descname"><span class="n"><span class="pre">TextProperties</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro9Rendering14TextProperties14TextPropertiesERK14TextProperties" title="Avogadro::Rendering::TextProperties::TextProperties"><span class="n"><span class="pre">TextProperties</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering14TextProperties14TextPropertiesERK14TextProperties" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering14TextPropertiesD0Ev">
+<span id="_CPPv3N8Avogadro9Rendering14TextPropertiesD0Ev"></span><span id="_CPPv2N8Avogadro9Rendering14TextPropertiesD0Ev"></span><span id="Avogadro::Rendering::TextProperties::~TextProperties"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1a621c11dcb17a2c33e544d0313415dba1"></span><span class="sig-name descname"><span class="n"><span class="pre">~TextProperties</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering14TextPropertiesD0Ev" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering14TextPropertiesaSE14TextProperties">
+<span id="_CPPv3N8Avogadro9Rendering14TextPropertiesaSE14TextProperties"></span><span id="_CPPv2N8Avogadro9Rendering14TextPropertiesaSE14TextProperties"></span><span id="Avogadro::Rendering::TextProperties::assign-operator__TextProperties"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1a6d3b5868ad833a5869b664435e2b0140"></span><a class="reference internal" href="#_CPPv4N8Avogadro9Rendering14TextPropertiesE" title="Avogadro::Rendering::TextProperties"><span class="n"><span class="pre">TextProperties</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N8Avogadro9Rendering14TextPropertiesE" title="Avogadro::Rendering::TextProperties"><span class="n"><span class="pre">TextProperties</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering14TextPropertiesaSE14TextProperties" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering14TextProperties4swapER14TextProperties">
+<span id="_CPPv3N8Avogadro9Rendering14TextProperties4swapER14TextProperties"></span><span id="_CPPv2N8Avogadro9Rendering14TextProperties4swapER14TextProperties"></span><span id="Avogadro::Rendering::TextProperties::swap__TextPropertiesR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1a900f31dbbdcb9e60566621031189a4a5"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">swap</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N8Avogadro9Rendering14TextPropertiesE" title="Avogadro::Rendering::TextProperties"><span class="n"><span class="pre">TextProperties</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering14TextProperties4swapER14TextProperties" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering14TextPropertieseqERK14TextProperties">
+<span id="_CPPv3NK8Avogadro9Rendering14TextPropertieseqERK14TextProperties"></span><span id="_CPPv2NK8Avogadro9Rendering14TextPropertieseqERK14TextProperties"></span><span id="Avogadro::Rendering::TextProperties::eq-operator__TextPropertiesCRC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1a8bd3bd5ed881233643953c22503f66c6"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">==</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro9Rendering14TextPropertiesE" title="Avogadro::Rendering::TextProperties"><span class="n"><span class="pre">TextProperties</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering14TextPropertieseqERK14TextProperties" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering14TextPropertiesneERK14TextProperties">
+<span id="_CPPv3NK8Avogadro9Rendering14TextPropertiesneERK14TextProperties"></span><span id="_CPPv2NK8Avogadro9Rendering14TextPropertiesneERK14TextProperties"></span><span id="Avogadro::Rendering::TextProperties::neq-operator__TextPropertiesCRC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1a25906495d4b36cb47a3d865cd55f318d"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">!=</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro9Rendering14TextPropertiesE" title="Avogadro::Rendering::TextProperties"><span class="n"><span class="pre">TextProperties</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering14TextPropertiesneERK14TextProperties" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering14TextProperties14setPixelHeightE6size_t">
+<span id="_CPPv3N8Avogadro9Rendering14TextProperties14setPixelHeightE6size_t"></span><span id="_CPPv2N8Avogadro9Rendering14TextProperties14setPixelHeightE6size_t"></span><span id="Avogadro::Rendering::TextProperties::setPixelHeight__s"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1af8d335609242f283901cc2480246e6b8"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setPixelHeight</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">height</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering14TextProperties14setPixelHeightE6size_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>The height of the text in pixels. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering14TextProperties11pixelHeightEv">
+<span id="_CPPv3NK8Avogadro9Rendering14TextProperties11pixelHeightEv"></span><span id="_CPPv2NK8Avogadro9Rendering14TextProperties11pixelHeightEv"></span><span id="Avogadro::Rendering::TextProperties::pixelHeightC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1aa5c4136445e717c529c61db89e9662ab"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">pixelHeight</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering14TextProperties11pixelHeightEv" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering14TextProperties9setHAlignE6HAlign">
+<span id="_CPPv3N8Avogadro9Rendering14TextProperties9setHAlignE6HAlign"></span><span id="_CPPv2N8Avogadro9Rendering14TextProperties9setHAlignE6HAlign"></span><span id="Avogadro::Rendering::TextProperties::setHAlign__HAlign"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1ac43247da68f1489d1b8a2877fbb0d79e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setHAlign</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N8Avogadro9Rendering14TextProperties6HAlignE" title="Avogadro::Rendering::TextProperties::HAlign"><span class="n"><span class="pre">HAlign</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">align</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering14TextProperties9setHAlignE6HAlign" title="Link to this definition">#</a><br /></dt>
+<dd><p>Horizontal alignment of the text. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering14TextProperties6hAlignEv">
+<span id="_CPPv3NK8Avogadro9Rendering14TextProperties6hAlignEv"></span><span id="_CPPv2NK8Avogadro9Rendering14TextProperties6hAlignEv"></span><span id="Avogadro::Rendering::TextProperties::hAlignC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1a32ae95aecf00422a89b37cc08fd82ad8"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro9Rendering14TextProperties6HAlignE" title="Avogadro::Rendering::TextProperties::HAlign"><span class="n"><span class="pre">HAlign</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">hAlign</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering14TextProperties6hAlignEv" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering14TextProperties9setVAlignE6VAlign">
+<span id="_CPPv3N8Avogadro9Rendering14TextProperties9setVAlignE6VAlign"></span><span id="_CPPv2N8Avogadro9Rendering14TextProperties9setVAlignE6VAlign"></span><span id="Avogadro::Rendering::TextProperties::setVAlign__VAlign"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1a593a40076be7f9c8d8c48551919edebf"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setVAlign</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N8Avogadro9Rendering14TextProperties6VAlignE" title="Avogadro::Rendering::TextProperties::VAlign"><span class="n"><span class="pre">VAlign</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">align</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering14TextProperties9setVAlignE6VAlign" title="Link to this definition">#</a><br /></dt>
+<dd><p>Vertical alignment of the text. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering14TextProperties6vAlignEv">
+<span id="_CPPv3NK8Avogadro9Rendering14TextProperties6vAlignEv"></span><span id="_CPPv2NK8Avogadro9Rendering14TextProperties6vAlignEv"></span><span id="Avogadro::Rendering::TextProperties::vAlignC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1a5677e65b3ee97b337faa2692d9fc211a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro9Rendering14TextProperties6VAlignE" title="Avogadro::Rendering::TextProperties::VAlign"><span class="n"><span class="pre">VAlign</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">vAlign</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering14TextProperties6vAlignEv" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering14TextProperties8setAlignE6HAlign6VAlign">
+<span id="_CPPv3N8Avogadro9Rendering14TextProperties8setAlignE6HAlign6VAlign"></span><span id="_CPPv2N8Avogadro9Rendering14TextProperties8setAlignE6HAlign6VAlign"></span><span id="Avogadro::Rendering::TextProperties::setAlign__HAlign.VAlign"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1a877ed8cfb8720619df403baa76d2d167"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setAlign</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N8Avogadro9Rendering14TextProperties6HAlignE" title="Avogadro::Rendering::TextProperties::HAlign"><span class="n"><span class="pre">HAlign</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">hAlign</span></span>, <a class="reference internal" href="#_CPPv4N8Avogadro9Rendering14TextProperties6VAlignE" title="Avogadro::Rendering::TextProperties::VAlign"><span class="n"><span class="pre">VAlign</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">vAlign</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering14TextProperties8setAlignE6HAlign6VAlign" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the horizontal and vertical alignment of the quad to the anchor point. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering14TextProperties20setRotationDegreesCWEf">
+<span id="_CPPv3N8Avogadro9Rendering14TextProperties20setRotationDegreesCWEf"></span><span id="_CPPv2N8Avogadro9Rendering14TextProperties20setRotationDegreesCWEf"></span><span id="Avogadro::Rendering::TextProperties::setRotationDegreesCW__float"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1a546db9f31e4a528c72c8496ceecdc138"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setRotationDegreesCW</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">rot</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering14TextProperties20setRotationDegreesCWEf" title="Link to this definition">#</a><br /></dt>
+<dd><p>Rotates the text clockwise. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering14TextProperties17rotationDegreesCWEv">
+<span id="_CPPv3NK8Avogadro9Rendering14TextProperties17rotationDegreesCWEv"></span><span id="_CPPv2NK8Avogadro9Rendering14TextProperties17rotationDegreesCWEv"></span><span id="Avogadro::Rendering::TextProperties::rotationDegreesCWC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1a8e26e65b7e52986c656bc9191d682b8e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">rotationDegreesCW</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering14TextProperties17rotationDegreesCWEv" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering14TextProperties13setFontFamilyE10FontFamily">
+<span id="_CPPv3N8Avogadro9Rendering14TextProperties13setFontFamilyE10FontFamily"></span><span id="_CPPv2N8Avogadro9Rendering14TextProperties13setFontFamilyE10FontFamily"></span><span id="Avogadro::Rendering::TextProperties::setFontFamily__FontFamily"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1a17ac3b8ee1887c536ac2b3b29e68d2d8"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setFontFamily</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N8Avogadro9Rendering14TextProperties10FontFamilyE" title="Avogadro::Rendering::TextProperties::FontFamily"><span class="n"><span class="pre">FontFamily</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">family</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering14TextProperties13setFontFamilyE10FontFamily" title="Link to this definition">#</a><br /></dt>
+<dd><p>The font family. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering14TextProperties10fontFamilyEv">
+<span id="_CPPv3NK8Avogadro9Rendering14TextProperties10fontFamilyEv"></span><span id="_CPPv2NK8Avogadro9Rendering14TextProperties10fontFamilyEv"></span><span id="Avogadro::Rendering::TextProperties::fontFamilyC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1a0e2d7594ea19b3cbf5bcc69a7d6f2436"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro9Rendering14TextProperties10FontFamilyE" title="Avogadro::Rendering::TextProperties::FontFamily"><span class="n"><span class="pre">FontFamily</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">fontFamily</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering14TextProperties10fontFamilyEv" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering14TextProperties13setFontStylesE10FontStyles">
+<span id="_CPPv3N8Avogadro9Rendering14TextProperties13setFontStylesE10FontStyles"></span><span id="_CPPv2N8Avogadro9Rendering14TextProperties13setFontStylesE10FontStyles"></span><span id="Avogadro::Rendering::TextProperties::setFontStyles__FontStyles"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1a551af2feae03231f628c36e5c0489799"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setFontStyles</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N8Avogadro9Rendering14TextProperties10FontStylesE" title="Avogadro::Rendering::TextProperties::FontStyles"><span class="n"><span class="pre">FontStyles</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">styles</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering14TextProperties13setFontStylesE10FontStyles" title="Link to this definition">#</a><br /></dt>
+<dd><p>Font style flags. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering14TextProperties10fontStylesEv">
+<span id="_CPPv3NK8Avogadro9Rendering14TextProperties10fontStylesEv"></span><span id="_CPPv2NK8Avogadro9Rendering14TextProperties10fontStylesEv"></span><span id="Avogadro::Rendering::TextProperties::fontStylesC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1a15d7017c16f7b16946d31cfe3ec361a7"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro9Rendering14TextProperties10FontStylesE" title="Avogadro::Rendering::TextProperties::FontStyles"><span class="n"><span class="pre">FontStyles</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">fontStyles</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering14TextProperties10fontStylesEv" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering14TextProperties7setBoldEb">
+<span id="_CPPv3N8Avogadro9Rendering14TextProperties7setBoldEb"></span><span id="_CPPv2N8Avogadro9Rendering14TextProperties7setBoldEb"></span><span id="Avogadro::Rendering::TextProperties::setBold__b"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1a3b51a6a1eb781452ec985e97df6e42c0"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setBold</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">b</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering14TextProperties7setBoldEb" title="Link to this definition">#</a><br /></dt>
+<dd><p>Toggle bold text. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering14TextProperties4boldEv">
+<span id="_CPPv3NK8Avogadro9Rendering14TextProperties4boldEv"></span><span id="_CPPv2NK8Avogadro9Rendering14TextProperties4boldEv"></span><span id="Avogadro::Rendering::TextProperties::boldC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1a3ddde7dd43a5f8aee294ec6374b8f9a3"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">bold</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering14TextProperties4boldEv" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering14TextProperties9setItalicEb">
+<span id="_CPPv3N8Avogadro9Rendering14TextProperties9setItalicEb"></span><span id="_CPPv2N8Avogadro9Rendering14TextProperties9setItalicEb"></span><span id="Avogadro::Rendering::TextProperties::setItalic__b"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1a7da0c280203c8cf981213894e383c6f7"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setItalic</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">b</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering14TextProperties9setItalicEb" title="Link to this definition">#</a><br /></dt>
+<dd><p>Toggle italic text. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering14TextProperties6italicEv">
+<span id="_CPPv3NK8Avogadro9Rendering14TextProperties6italicEv"></span><span id="_CPPv2NK8Avogadro9Rendering14TextProperties6italicEv"></span><span id="Avogadro::Rendering::TextProperties::italicC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1a9eade2d21360faf2abcad808d2ac9c07"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">italic</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering14TextProperties6italicEv" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering14TextProperties12setUnderlineEb">
+<span id="_CPPv3N8Avogadro9Rendering14TextProperties12setUnderlineEb"></span><span id="_CPPv2N8Avogadro9Rendering14TextProperties12setUnderlineEb"></span><span id="Avogadro::Rendering::TextProperties::setUnderline__b"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1acf38853cd41cd05ced06538e67151497"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setUnderline</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">b</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering14TextProperties12setUnderlineEb" title="Link to this definition">#</a><br /></dt>
+<dd><p>Toggle underlined text. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering14TextProperties9underlineEv">
+<span id="_CPPv3NK8Avogadro9Rendering14TextProperties9underlineEv"></span><span id="_CPPv2NK8Avogadro9Rendering14TextProperties9underlineEv"></span><span id="Avogadro::Rendering::TextProperties::underlineC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_text_properties_1a2bca0f4bbdaa5979b2178a893b0e2a14"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">underline</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering14TextProperties9underlineEv" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="class_avogadro_1_1_rendering_1_1_text_label_base.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Class Avogadro::Rendering::TextLabelBase</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="class_avogadro_1_1_rendering_1_1_text_render_strategy.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Class Avogadro::Rendering::TextRenderStrategy</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering14TextPropertiesE"><code class="docutils literal notranslate"><span class="pre">TextProperties</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering14TextProperties12setColorRgbaEhhhh"><code class="docutils literal notranslate"><span class="pre">TextProperties::setColorRgba()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering14TextProperties12setColorRgbaEAL4E_Kh"><code class="docutils literal notranslate"><span class="pre">TextProperties::setColorRgba()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering14TextProperties12setColorRgbaERK9Vector4ub"><code class="docutils literal notranslate"><span class="pre">TextProperties::setColorRgba()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro9Rendering14TextProperties9colorRgbaEAL4E_h"><code class="docutils literal notranslate"><span class="pre">TextProperties::colorRgba()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro9Rendering14TextProperties9colorRgbaEv"><code class="docutils literal notranslate"><span class="pre">TextProperties::colorRgba()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering14TextProperties11setColorRgbEhhh"><code class="docutils literal notranslate"><span class="pre">TextProperties::setColorRgb()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering14TextProperties11setColorRgbEAL3E_Kh"><code class="docutils literal notranslate"><span class="pre">TextProperties::setColorRgb()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering14TextProperties11setColorRgbERK9Vector3ub"><code class="docutils literal notranslate"><span class="pre">TextProperties::setColorRgb()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro9Rendering14TextProperties8colorRgbEAL3E_h"><code class="docutils literal notranslate"><span class="pre">TextProperties::colorRgb()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro9Rendering14TextProperties8colorRgbEv"><code class="docutils literal notranslate"><span class="pre">TextProperties::colorRgb()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering14TextProperties6setRedEh"><code class="docutils literal notranslate"><span class="pre">TextProperties::setRed()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro9Rendering14TextProperties3redEv"><code class="docutils literal notranslate"><span class="pre">TextProperties::red()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering14TextProperties8setGreenEh"><code class="docutils literal notranslate"><span class="pre">TextProperties::setGreen()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro9Rendering14TextProperties5greenEv"><code class="docutils literal notranslate"><span class="pre">TextProperties::green()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering14TextProperties7setBlueEh"><code class="docutils literal notranslate"><span class="pre">TextProperties::setBlue()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro9Rendering14TextProperties4blueEv"><code class="docutils literal notranslate"><span class="pre">TextProperties::blue()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering14TextProperties8setAlphaEh"><code class="docutils literal notranslate"><span class="pre">TextProperties::setAlpha()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro9Rendering14TextProperties5alphaEv"><code class="docutils literal notranslate"><span class="pre">TextProperties::alpha()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering14TextProperties10FontFamilyE"><code class="docutils literal notranslate"><span class="pre">TextProperties::FontFamily</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering14TextProperties10FontFamily9SansSerifE"><code class="docutils literal notranslate"><span class="pre">TextProperties::FontFamily::SansSerif</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering14TextProperties10FontFamily5SerifE"><code class="docutils literal notranslate"><span class="pre">TextProperties::FontFamily::Serif</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering14TextProperties10FontFamily4MonoE"><code class="docutils literal notranslate"><span class="pre">TextProperties::FontFamily::Mono</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering14TextProperties6HAlignE"><code class="docutils literal notranslate"><span class="pre">TextProperties::HAlign</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering14TextProperties6HAlign5HLeftE"><code class="docutils literal notranslate"><span class="pre">TextProperties::HAlign::HLeft</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering14TextProperties6HAlign7HCenterE"><code class="docutils literal notranslate"><span class="pre">TextProperties::HAlign::HCenter</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering14TextProperties6HAlign6HRightE"><code class="docutils literal notranslate"><span class="pre">TextProperties::HAlign::HRight</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering14TextProperties6VAlignE"><code class="docutils literal notranslate"><span class="pre">TextProperties::VAlign</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering14TextProperties6VAlign4VTopE"><code class="docutils literal notranslate"><span class="pre">TextProperties::VAlign::VTop</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering14TextProperties6VAlign7VCenterE"><code class="docutils literal notranslate"><span class="pre">TextProperties::VAlign::VCenter</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering14TextProperties6VAlign7VBottomE"><code class="docutils literal notranslate"><span class="pre">TextProperties::VAlign::VBottom</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering14TextProperties9FontStyleE"><code class="docutils literal notranslate"><span class="pre">TextProperties::FontStyle</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering14TextProperties9FontStyle11NoFontStyleE"><code class="docutils literal notranslate"><span class="pre">TextProperties::FontStyle::NoFontStyle</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering14TextProperties9FontStyle4BoldE"><code class="docutils literal notranslate"><span class="pre">TextProperties::FontStyle::Bold</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering14TextProperties9FontStyle6ItalicE"><code class="docutils literal notranslate"><span class="pre">TextProperties::FontStyle::Italic</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering14TextProperties9FontStyle9UnderlineE"><code class="docutils literal notranslate"><span class="pre">TextProperties::FontStyle::Underline</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering14TextProperties10FontStylesE"><code class="docutils literal notranslate"><span class="pre">TextProperties::FontStyles</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering14TextProperties14TextPropertiesEv"><code class="docutils literal notranslate"><span class="pre">TextProperties::TextProperties()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering14TextProperties14TextPropertiesERK14TextProperties"><code class="docutils literal notranslate"><span class="pre">TextProperties::TextProperties()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering14TextPropertiesD0Ev"><code class="docutils literal notranslate"><span class="pre">TextProperties::~TextProperties()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering14TextPropertiesaSE14TextProperties"><code class="docutils literal notranslate"><span class="pre">TextProperties::operator=()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering14TextProperties4swapER14TextProperties"><code class="docutils literal notranslate"><span class="pre">TextProperties::swap()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro9Rendering14TextPropertieseqERK14TextProperties"><code class="docutils literal notranslate"><span class="pre">TextProperties::operator==()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro9Rendering14TextPropertiesneERK14TextProperties"><code class="docutils literal notranslate"><span class="pre">TextProperties::operator!=()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering14TextProperties14setPixelHeightE6size_t"><code class="docutils literal notranslate"><span class="pre">TextProperties::setPixelHeight()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro9Rendering14TextProperties11pixelHeightEv"><code class="docutils literal notranslate"><span class="pre">TextProperties::pixelHeight()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering14TextProperties9setHAlignE6HAlign"><code class="docutils literal notranslate"><span class="pre">TextProperties::setHAlign()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro9Rendering14TextProperties6hAlignEv"><code class="docutils literal notranslate"><span class="pre">TextProperties::hAlign()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering14TextProperties9setVAlignE6VAlign"><code class="docutils literal notranslate"><span class="pre">TextProperties::setVAlign()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro9Rendering14TextProperties6vAlignEv"><code class="docutils literal notranslate"><span class="pre">TextProperties::vAlign()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering14TextProperties8setAlignE6HAlign6VAlign"><code class="docutils literal notranslate"><span class="pre">TextProperties::setAlign()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering14TextProperties20setRotationDegreesCWEf"><code class="docutils literal notranslate"><span class="pre">TextProperties::setRotationDegreesCW()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro9Rendering14TextProperties17rotationDegreesCWEv"><code class="docutils literal notranslate"><span class="pre">TextProperties::rotationDegreesCW()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering14TextProperties13setFontFamilyE10FontFamily"><code class="docutils literal notranslate"><span class="pre">TextProperties::setFontFamily()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro9Rendering14TextProperties10fontFamilyEv"><code class="docutils literal notranslate"><span class="pre">TextProperties::fontFamily()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering14TextProperties13setFontStylesE10FontStyles"><code class="docutils literal notranslate"><span class="pre">TextProperties::setFontStyles()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro9Rendering14TextProperties10fontStylesEv"><code class="docutils literal notranslate"><span class="pre">TextProperties::fontStyles()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering14TextProperties7setBoldEb"><code class="docutils literal notranslate"><span class="pre">TextProperties::setBold()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro9Rendering14TextProperties4boldEv"><code class="docutils literal notranslate"><span class="pre">TextProperties::bold()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering14TextProperties9setItalicEb"><code class="docutils literal notranslate"><span class="pre">TextProperties::setItalic()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro9Rendering14TextProperties6italicEv"><code class="docutils literal notranslate"><span class="pre">TextProperties::italic()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering14TextProperties12setUnderlineEb"><code class="docutils literal notranslate"><span class="pre">TextProperties::setUnderline()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro9Rendering14TextProperties9underlineEv"><code class="docutils literal notranslate"><span class="pre">TextProperties::underline()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/avogadro/two.avogadro.cc/edit/main/source/develop/class/class_avogadro_1_1_rendering_1_1_text_properties.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/develop/class/class_avogadro_1_1_rendering_1_1_text_properties.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">          <p>
+            ©2023 The OpenChemistry / Avogadro Teams 
+          </p>
+          <p>Covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
+          </p></div>
+      
+        <div class="footer-item">        <p>
+          <a href="contrib/index.html">Contribute</a>
+        </p></div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.2.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,951 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Class Avogadro::Core::Graph &#8212; Avogadro 1.98.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=ee427ece" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
+
+    <script src="../../_static/documentation_options.js?v=b35d0f43"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'develop/class/class_avogadro_1_1_core_1_1_graph';</script>
+    <link rel="canonical" href="https://two.avogadro.cc/develop/class/class_avogadro_1_1_core_1_1_graph.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Class Avogadro::Core::Mesh" href="class_avogadro_1_1_core_1_1_mesh.html" />
+    <link rel="prev" title="Class Avogadro::Core::GaussianSetTools" href="class_avogadro_1_1_core_1_1_gaussian_set_tools.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Avogadro</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../install/index.html">
+                        Install
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../docs/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        Develop
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../contrib/index.html">
+                        Contribute
+                      </a>
+                    </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+                    Discuss
+                  </a>
+                </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/AvogadroChem" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../install/index.html">
+                        Install
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../docs/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        Develop
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../contrib/index.html">
+                        Contribute
+                      </a>
+                    </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+                    Discuss
+                  </a>
+                </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/AvogadroChem" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Develop</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">Script Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rpc.html">Avogadro Remote Procedure Call (RPC)</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../classlist.html">Class List</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../core.html">Core Classes</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html">Class Avogadro::Core::Array</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_array_set.html">Class Avogadro::Core::ArraySet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_array_set_1_1_holder.html">Class Avogadro::Core::ArraySet::Holder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_array_set_1_1_place_holder.html">Class Avogadro::Core::ArraySet::PlaceHolder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_atom.html">Class Avogadro::Core::Atom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_atom_template.html">Class Avogadro::Core::AtomTemplate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_atom_typer.html">Class Avogadro::Core::AtomTyper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_avo_spglib.html">Class Avogadro::Core::AvoSpglib</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_basis_set.html">Class Avogadro::Core::BasisSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_bond.html">Class Avogadro::Core::Bond</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_bond_template.html">Class Avogadro::Core::BondTemplate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_color3f.html">Class Avogadro::Core::Color3f</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_coordinate_block_generator.html">Class Avogadro::Core::CoordinateBlockGenerator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_coordinate_set.html">Class Avogadro::Core::CoordinateSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_crystal_tools.html">Class Avogadro::Core::CrystalTools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_cube.html">Class Avogadro::Core::Cube</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_elements.html">Class Avogadro::Core::Elements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_gaussian_set.html">Class Avogadro::Core::GaussianSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_gaussian_set_tools.html">Class Avogadro::Core::GaussianSetTools</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Class Avogadro::Core::Graph</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_mesh.html">Class Avogadro::Core::Mesh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html">Class Avogadro::Core::Molecule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule_deserializer.html">Class Avogadro::Core::MoleculeDeserializer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule_serializer.html">Class Avogadro::Core::MoleculeSerializer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_mutex.html">Class Avogadro::Core::Mutex</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_name_atom_typer.html">Class Avogadro::Core::NameAtomTyper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_residue.html">Class Avogadro::Core::Residue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_residue_data.html">Class Avogadro::Core::ResidueData</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_ring_perceiver.html">Class Avogadro::Core::RingPerceiver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_shared_mutex.html">Class Avogadro::Core::SharedMutex</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_slater_set.html">Class Avogadro::Core::SlaterSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_slater_set_tools.html">Class Avogadro::Core::SlaterSetTools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_space_groups.html">Class Avogadro::Core::SpaceGroups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_symbol_atom_typer.html">Class Avogadro::Core::SymbolAtomTyper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_unit_cell.html">Class Avogadro::Core::UnitCell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_variant.html">Class Avogadro::Core::Variant</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_variant_map.html">Class Avogadro::Core::VariantMap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1internal_1_1_array_ref_container.html">Class Avogadro::Core::internal::ArrayRefContainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_type_traits.html">Class Avogadro::TypeTraits</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_type_traits_3_01char_01_4.html">Class Avogadro::TypeTraits&lt; char &gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_type_traits_3_01double_01_4.html">Class Avogadro::TypeTraits&lt; double &gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_type_traits_3_01float_01_4.html">Class Avogadro::TypeTraits&lt; float &gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_type_traits_3_01int_01_4.html">Class Avogadro::TypeTraits&lt; int &gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_type_traits_3_01short_01_4.html">Class Avogadro::TypeTraits&lt; short &gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_type_traits_3_01unsigned_01char_01_4.html">Class Avogadro::TypeTraits&lt; unsigned char &gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_type_traits_3_01unsigned_01int_01_4.html">Class Avogadro::TypeTraits&lt; unsigned int &gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_type_traits_3_01unsigned_01short_01_4.html">Class Avogadro::TypeTraits&lt; unsigned short &gt;</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../io.html">IO Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../molequeue.html">MoleQueue Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qtgui.html">QtGui Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rendering.html">Rendering Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vtk.html">VTK Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Develop</a></li>
+    
+    
+    <li class="breadcrumb-item"><i class="fa-solid fa-ellipsis"></i></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../core.html" class="nav-link">Core Classes</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Class...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="class-avogadro-core-graph">
+<h1>Class Avogadro::Core::Graph<a class="headerlink" href="#class-avogadro-core-graph" title="Link to this heading">#</a></h1>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core5GraphE">
+<span id="_CPPv3N8Avogadro4Core5GraphE"></span><span id="_CPPv2N8Avogadro4Core5GraphE"></span><span id="Avogadro::Core::Graph"></span><span class="target" id="class_avogadro_1_1_core_1_1_graph"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Graph</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core5GraphE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The <a class="reference internal" href="#class_avogadro_1_1_core_1_1_graph"><span class="std std-ref">Graph</span></a> class represents a graph data structure. </p>
+<p>A graph consists of vertices and edges, wherein every edge connects two vertices. Each vertex is assigned an index, starting from 0 up to <a class="reference internal" href="#class_avogadro_1_1_core_1_1_graph_1a259cb5a711406a8c3e5d937eb9350cca"><span class="std std-ref">size()</span></a> - 1. Each edge is also assigned an index, from 0 to <a class="reference internal" href="#class_avogadro_1_1_core_1_1_graph_1a961cd1d42d04b52fceb13766e0b4a66f"><span class="std std-ref">edgeCount()</span></a> - 1. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core5Graph5GraphEv">
+<span id="_CPPv3N8Avogadro4Core5Graph5GraphEv"></span><span id="_CPPv2N8Avogadro4Core5Graph5GraphEv"></span><span id="Avogadro::Core::Graph::Graph"></span><span class="target" id="class_avogadro_1_1_core_1_1_graph_1afc5ef9d72cc2c509814200791eaef62c"></span><span class="sig-name descname"><span class="n"><span class="pre">Graph</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core5Graph5GraphEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Creates a new, empty graph. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core5Graph5GraphE6size_t">
+<span id="_CPPv3N8Avogadro4Core5Graph5GraphE6size_t"></span><span id="_CPPv2N8Avogadro4Core5Graph5GraphE6size_t"></span><span id="Avogadro::Core::Graph::Graph__s"></span><span class="target" id="class_avogadro_1_1_core_1_1_graph_1a52c507f042f62cdc0678de748f4afbeb"></span><span class="k"><span class="pre">explicit</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Graph</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">n</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core5Graph5GraphE6size_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>Creates a new graph containing size <code class="docutils literal notranslate"><span class="pre">n</span></code> vertices. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core5GraphD0Ev">
+<span id="_CPPv3N8Avogadro4Core5GraphD0Ev"></span><span id="_CPPv2N8Avogadro4Core5GraphD0Ev"></span><span id="Avogadro::Core::Graph::~Graph"></span><span class="target" id="class_avogadro_1_1_core_1_1_graph_1af5a604e5e9e4d68dbc10b312e59f678f"></span><span class="sig-name descname"><span class="n"><span class="pre">~Graph</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core5GraphD0Ev" title="Link to this definition">#</a><br /></dt>
+<dd><p>Destroys the graph. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core5Graph7setSizeE6size_t">
+<span id="_CPPv3N8Avogadro4Core5Graph7setSizeE6size_t"></span><span id="_CPPv2N8Avogadro4Core5Graph7setSizeE6size_t"></span><span id="Avogadro::Core::Graph::setSize__s"></span><span class="target" id="class_avogadro_1_1_core_1_1_graph_1aa07d7e77694ea8aea1576e006bea524a"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setSize</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">n</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core5Graph7setSizeE6size_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>Sets the number of vertices in the graph to size <code class="docutils literal notranslate"><span class="pre">n</span></code>.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">n</span></code> is smaller than <code class="docutils literal notranslate"><a class="reference internal" href="#class_avogadro_1_1_core_1_1_graph_1a259cb5a711406a8c3e5d937eb9350cca"><span class="std std-ref"><span class="pre">size()</span></span></a></code>, this removes all vertices with index <code class="docutils literal notranslate"><span class="pre">n</span></code> or higher, as well as any edges connected to them, while preserving all other vertices and edges. These vertices keep their existing indices, while no guarantee is made regarding preserved edge indices.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">n</span></code> is larger than <code class="docutils literal notranslate"><a class="reference internal" href="#class_avogadro_1_1_core_1_1_graph_1a259cb5a711406a8c3e5d937eb9350cca"><span class="std std-ref"><span class="pre">size()</span></span></a></code>, a number of unconnected vertices are added, up to the requested size. All existing vertices and edges are preserved in their current form. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core5Graph4sizeEv">
+<span id="_CPPv3NK8Avogadro4Core5Graph4sizeEv"></span><span id="_CPPv2NK8Avogadro4Core5Graph4sizeEv"></span><span id="Avogadro::Core::Graph::sizeC"></span><span class="target" id="class_avogadro_1_1_core_1_1_graph_1a259cb5a711406a8c3e5d937eb9350cca"></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">size</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core5Graph4sizeEv" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the number of vertices in the graph. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core5Graph7isEmptyEv">
+<span id="_CPPv3NK8Avogadro4Core5Graph7isEmptyEv"></span><span id="_CPPv2NK8Avogadro4Core5Graph7isEmptyEv"></span><span id="Avogadro::Core::Graph::isEmptyC"></span><span class="target" id="class_avogadro_1_1_core_1_1_graph_1acf82f9b2937375c7b1cf3dccb3df3312"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isEmpty</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core5Graph7isEmptyEv" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">true</span></code> if the graph is empty (i.e. <a class="reference internal" href="#class_avogadro_1_1_core_1_1_graph_1a259cb5a711406a8c3e5d937eb9350cca"><span class="std std-ref">size()</span></a> == <code class="docutils literal notranslate"><span class="pre">0</span></code>). </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core5Graph5clearEv">
+<span id="_CPPv3N8Avogadro4Core5Graph5clearEv"></span><span id="_CPPv2N8Avogadro4Core5Graph5clearEv"></span><span id="Avogadro::Core::Graph::clear"></span><span class="target" id="class_avogadro_1_1_core_1_1_graph_1ac8bb3912a3ce86b15842e79d0b421204"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">clear</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core5Graph5clearEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Removes all vertices and edges from the graph. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core5Graph9addVertexEv">
+<span id="_CPPv3N8Avogadro4Core5Graph9addVertexEv"></span><span id="_CPPv2N8Avogadro4Core5Graph9addVertexEv"></span><span id="Avogadro::Core::Graph::addVertex"></span><span class="target" id="class_avogadro_1_1_core_1_1_graph_1a2f6dc0f636a38777fbec1b551e086c18"></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addVertex</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core5Graph9addVertexEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Adds a vertex to the graph and returns its index. The new vertex is initially not connected. All existing vertices and edges are preserved and their indices unchanged. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core5Graph12removeVertexE6size_t">
+<span id="_CPPv3N8Avogadro4Core5Graph12removeVertexE6size_t"></span><span id="_CPPv2N8Avogadro4Core5Graph12removeVertexE6size_t"></span><span id="Avogadro::Core::Graph::removeVertex__s"></span><span class="target" id="class_avogadro_1_1_core_1_1_graph_1a59c1d75427c518b83200c33075945555"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">removeVertex</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">index</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core5Graph12removeVertexE6size_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>Removes the vertex at <code class="docutils literal notranslate"><span class="pre">index</span></code> from the graph, as well as all edges to it. If <code class="docutils literal notranslate"><span class="pre">index</span></code> is not the highest vertex index in the graph, the vertex with highest index will be assigned the index of the removed vertex. All other vertices will keep their indices. No guarantees are made regarding edge indices. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core5Graph17swapVertexIndicesE6size_t6size_t">
+<span id="_CPPv3N8Avogadro4Core5Graph17swapVertexIndicesE6size_t6size_t"></span><span id="_CPPv2N8Avogadro4Core5Graph17swapVertexIndicesE6size_t6size_t"></span><span id="Avogadro::Core::Graph::swapVertexIndices__s.s"></span><span class="target" id="class_avogadro_1_1_core_1_1_graph_1a94e6bf295d4fd7bab18938787abcce81"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">swapVertexIndices</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">a</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">b</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core5Graph17swapVertexIndicesE6size_t6size_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>Swaps two vertices’ indices, without affecting connectivity. All other vertices and all edges keep their existing indices. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core5Graph11vertexCountEv">
+<span id="_CPPv3NK8Avogadro4Core5Graph11vertexCountEv"></span><span id="_CPPv2NK8Avogadro4Core5Graph11vertexCountEv"></span><span id="Avogadro::Core::Graph::vertexCountC"></span><span class="target" id="class_avogadro_1_1_core_1_1_graph_1a640ad54786237477e83e5ddedafe28f0"></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">vertexCount</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core5Graph11vertexCountEv" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the number of vertices in the graph. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core5Graph7addEdgeE6size_t6size_t">
+<span id="_CPPv3N8Avogadro4Core5Graph7addEdgeE6size_t6size_t"></span><span id="_CPPv2N8Avogadro4Core5Graph7addEdgeE6size_t6size_t"></span><span id="Avogadro::Core::Graph::addEdge__s.s"></span><span class="target" id="class_avogadro_1_1_core_1_1_graph_1ab2f5580367bfcb2003ece3247f163f0a"></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addEdge</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">a</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">b</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core5Graph7addEdgeE6size_t6size_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>Adds an edge between vertices <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> and returns its index. All existing vertices and edges are preserved unchanged. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core5Graph10removeEdgeE6size_t6size_t">
+<span id="_CPPv3N8Avogadro4Core5Graph10removeEdgeE6size_t6size_t"></span><span id="_CPPv2N8Avogadro4Core5Graph10removeEdgeE6size_t6size_t"></span><span id="Avogadro::Core::Graph::removeEdge__s.s"></span><span class="target" id="class_avogadro_1_1_core_1_1_graph_1a8c983154cde76bfb56ba151bc2946237"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">removeEdge</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">a</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">b</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core5Graph10removeEdgeE6size_t6size_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>Removes the edge between vertices <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code>. All vertices keep their indices. If the removed edge has an index lower than the highest edge index in the graph, the edge with the highest index is given the index of the removed edge. All other edges remain unchanged. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core5Graph10removeEdgeE6size_t">
+<span id="_CPPv3N8Avogadro4Core5Graph10removeEdgeE6size_t"></span><span id="_CPPv2N8Avogadro4Core5Graph10removeEdgeE6size_t"></span><span id="Avogadro::Core::Graph::removeEdge__s"></span><span class="target" id="class_avogadro_1_1_core_1_1_graph_1a1fb7f24a007a1de2d389deeaa10e1ea6"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">removeEdge</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">edgeIndex</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core5Graph10removeEdgeE6size_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>Removes edge with index <code class="docutils literal notranslate"><span class="pre">edgeIndex</span></code>. All vertices keep their indices. If <code class="docutils literal notranslate"><span class="pre">edgeIndex</span></code> is lower than the highest edge index in the graph, the edge with the highest index is given the index of the removed edge. All other edges remain unchanged. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core5Graph11removeEdgesEv">
+<span id="_CPPv3N8Avogadro4Core5Graph11removeEdgesEv"></span><span id="_CPPv2N8Avogadro4Core5Graph11removeEdgesEv"></span><span id="Avogadro::Core::Graph::removeEdges"></span><span class="target" id="class_avogadro_1_1_core_1_1_graph_1a96ba771845bfd9459053ec7c0c8d56c1"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">removeEdges</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core5Graph11removeEdgesEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Removes all of the edges from the graph, without affecting vertices. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core5Graph11removeEdgesE6size_t">
+<span id="_CPPv3N8Avogadro4Core5Graph11removeEdgesE6size_t"></span><span id="_CPPv2N8Avogadro4Core5Graph11removeEdgesE6size_t"></span><span id="Avogadro::Core::Graph::removeEdges__s"></span><span class="target" id="class_avogadro_1_1_core_1_1_graph_1a39f3143d1a8d149ebf3fb9f1eb3cc9ac"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">removeEdges</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">index</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core5Graph11removeEdgesE6size_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>Removes all of the edges that contain the vertex at <code class="docutils literal notranslate"><span class="pre">index</span></code> from the graph. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core5Graph15editEdgeInPlaceE6size_t6size_t6size_t">
+<span id="_CPPv3N8Avogadro4Core5Graph15editEdgeInPlaceE6size_t6size_t6size_t"></span><span id="_CPPv2N8Avogadro4Core5Graph15editEdgeInPlaceE6size_t6size_t6size_t"></span><span id="Avogadro::Core::Graph::editEdgeInPlace__s.s.s"></span><span class="target" id="class_avogadro_1_1_core_1_1_graph_1ad5454b13cf042e2301508ac025079cf8"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">editEdgeInPlace</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">edgeIndex</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">a</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">b</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core5Graph15editEdgeInPlaceE6size_t6size_t6size_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>Removes the edge at <code class="docutils literal notranslate"><span class="pre">edgeIndex</span></code>, and creates a new one between vertices <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code>, with the same index as the removed edge. All other edges and vertices keep their current indices. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core5Graph15swapEdgeIndicesE6size_t6size_t">
+<span id="_CPPv3N8Avogadro4Core5Graph15swapEdgeIndicesE6size_t6size_t"></span><span id="_CPPv2N8Avogadro4Core5Graph15swapEdgeIndicesE6size_t6size_t"></span><span id="Avogadro::Core::Graph::swapEdgeIndices__s.s"></span><span class="target" id="class_avogadro_1_1_core_1_1_graph_1ae7bac95de4f2e0f04018891a33f67c84"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">swapEdgeIndices</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">edgeIndex1</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">edgeIndex2</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core5Graph15swapEdgeIndicesE6size_t6size_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>Swaps two edges’ indices, without affecting connectivity. All other edges and all vertices keep their current indices. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core5Graph9edgeCountEv">
+<span id="_CPPv3NK8Avogadro4Core5Graph9edgeCountEv"></span><span id="_CPPv2NK8Avogadro4Core5Graph9edgeCountEv"></span><span id="Avogadro::Core::Graph::edgeCountC"></span><span class="target" id="class_avogadro_1_1_core_1_1_graph_1a961cd1d42d04b52fceb13766e0b4a66f"></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">edgeCount</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core5Graph9edgeCountEv" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the number of edges in the graph. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core5Graph9neighborsE6size_t">
+<span id="_CPPv3NK8Avogadro4Core5Graph9neighborsE6size_t"></span><span id="_CPPv2NK8Avogadro4Core5Graph9neighborsE6size_t"></span><span id="Avogadro::Core::Graph::neighbors__sC"></span><span class="target" id="class_avogadro_1_1_core_1_1_graph_1aa4755642d3766cbe00aefee6c6488864"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">neighbors</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">index</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core5Graph9neighborsE6size_t" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>a vector containing the indices of each vertex that the vertex at index shares an edge with. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core5Graph5edgesE6size_t">
+<span id="_CPPv3NK8Avogadro4Core5Graph5edgesE6size_t"></span><span id="_CPPv2NK8Avogadro4Core5Graph5edgesE6size_t"></span><span id="Avogadro::Core::Graph::edges__sC"></span><span class="target" id="class_avogadro_1_1_core_1_1_graph_1a5fa007453a77193948e8a11eb5003591"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">edges</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">index</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core5Graph5edgesE6size_t" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>a vector containing the indices of each edge that the vertex at <code class="docutils literal notranslate"><span class="pre">index</span></code> is an endpoint of; that is, the edges incident at it. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core5Graph9endpointsE6size_t">
+<span id="_CPPv3NK8Avogadro4Core5Graph9endpointsE6size_t"></span><span id="_CPPv2NK8Avogadro4Core5Graph9endpointsE6size_t"></span><span id="Avogadro::Core::Graph::endpoints__sC"></span><span class="target" id="class_avogadro_1_1_core_1_1_graph_1abbc2d19e55de3f479eb94158ef5397af"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">pair</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">endpoints</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">edgeIndex</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core5Graph9endpointsE6size_t" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the indices of the two vertices that the edge at <code class="docutils literal notranslate"><span class="pre">index</span></code> connects; that is, its endpoints. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core5Graph6degreeE6size_t">
+<span id="_CPPv3NK8Avogadro4Core5Graph6degreeE6size_t"></span><span id="_CPPv2NK8Avogadro4Core5Graph6degreeE6size_t"></span><span id="Avogadro::Core::Graph::degree__sC"></span><span class="target" id="class_avogadro_1_1_core_1_1_graph_1acf126e848d9f3ee3714db9952b173018"></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">degree</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">index</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core5Graph6degreeE6size_t" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the degree of the vertex at <code class="docutils literal notranslate"><span class="pre">index</span></code>. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core5Graph12containsEdgeE6size_t6size_t">
+<span id="_CPPv3NK8Avogadro4Core5Graph12containsEdgeE6size_t6size_t"></span><span id="_CPPv2NK8Avogadro4Core5Graph12containsEdgeE6size_t6size_t"></span><span id="Avogadro::Core::Graph::containsEdge__s.sC"></span><span class="target" id="class_avogadro_1_1_core_1_1_graph_1aa63c84159d0bb046b64199ccba84b452"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">containsEdge</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">a</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">b</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core5Graph12containsEdgeE6size_t6size_t" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">true</span></code> if the graph contains an edge between vertices <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code>. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core5Graph9edgePairsEv">
+<span id="_CPPv3NK8Avogadro4Core5Graph9edgePairsEv"></span><span id="_CPPv2NK8Avogadro4Core5Graph9edgePairsEv"></span><span id="Avogadro::Core::Graph::edgePairsC"></span><span class="target" id="class_avogadro_1_1_core_1_1_graph_1aea237b2951018ac572de56cadb658493"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#_CPPv4I0EN8Avogadro4Core5ArrayE" title="Avogadro::Core::Array"><span class="n"><span class="pre">Array</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">pair</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">edgePairs</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core5Graph9edgePairsEv" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>an array with all edges, where every element contains the indices of both endpoints of the edge with index equal to the element’s array index. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core5Graph19connectedComponentsEv">
+<span id="_CPPv3NK8Avogadro4Core5Graph19connectedComponentsEv"></span><span id="_CPPv2NK8Avogadro4Core5Graph19connectedComponentsEv"></span><span id="Avogadro::Core::Graph::connectedComponentsC"></span><span class="target" id="class_avogadro_1_1_core_1_1_graph_1af651fe968b8a7d5b87f634f722e119ec"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">set</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">connectedComponents</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core5Graph19connectedComponentsEv" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>a vector of vector containing the indices of each vertex in each connected component in the graph. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core5Graph18connectedComponentE6size_t">
+<span id="_CPPv3NK8Avogadro4Core5Graph18connectedComponentE6size_t"></span><span id="_CPPv2NK8Avogadro4Core5Graph18connectedComponentE6size_t"></span><span id="Avogadro::Core::Graph::connectedComponent__sC"></span><span class="target" id="class_avogadro_1_1_core_1_1_graph_1a1d4e4c26f8560097b961dbe9769edb25"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">set</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">connectedComponent</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">index</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core5Graph18connectedComponentE6size_t" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>a set containing the indices of each vertex connected with <code class="docutils literal notranslate"><span class="pre">index</span></code>. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core5Graph14subgraphsCountEv">
+<span id="_CPPv3NK8Avogadro4Core5Graph14subgraphsCountEv"></span><span id="_CPPv2NK8Avogadro4Core5Graph14subgraphsCountEv"></span><span id="Avogadro::Core::Graph::subgraphsCountC"></span><span class="target" id="class_avogadro_1_1_core_1_1_graph_1a55d5225fa793a69288f91dfbc469e84e"></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">subgraphsCount</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core5Graph14subgraphsCountEv" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the number of connected subgraphs. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core5Graph8subgraphE6size_t">
+<span id="_CPPv3NK8Avogadro4Core5Graph8subgraphE6size_t"></span><span id="_CPPv2NK8Avogadro4Core5Graph8subgraphE6size_t"></span><span id="Avogadro::Core::Graph::subgraph__sC"></span><span class="target" id="class_avogadro_1_1_core_1_1_graph_1a22ac283872cfa27f2c72add742f75d5c"></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">subgraph</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">index</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core5Graph8subgraphE6size_t" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the subgraph ID of the connected subgraph <code class="docutils literal notranslate"><span class="pre">index</span></code> lies in. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core5Graph13subgraphCountE6size_t">
+<span id="_CPPv3NK8Avogadro4Core5Graph13subgraphCountE6size_t"></span><span id="_CPPv2NK8Avogadro4Core5Graph13subgraphCountE6size_t"></span><span id="Avogadro::Core::Graph::subgraphCount__sC"></span><span class="target" id="class_avogadro_1_1_core_1_1_graph_1a0cc87319b00b120f6f44268bd14fdc97"></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">subgraphCount</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">index</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core5Graph13subgraphCountE6size_t" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the size of the connected subgraph that includes <code class="docutils literal notranslate"><span class="pre">index</span></code>, that is, the number of connected vertices in it. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core5Graph14getConnectedIDE6size_t">
+<span id="_CPPv3NK8Avogadro4Core5Graph14getConnectedIDE6size_t"></span><span id="_CPPv2NK8Avogadro4Core5Graph14getConnectedIDE6size_t"></span><span id="Avogadro::Core::Graph::getConnectedID__sC"></span><span class="target" id="class_avogadro_1_1_core_1_1_graph_1a253e9544dc6a9095a7a7bcd04d43fc0d"></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getConnectedID</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">index</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core5Graph14getConnectedIDE6size_t" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the subgraph ID of the connected subgraph <code class="docutils literal notranslate"><span class="pre">index</span></code> lies in. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="class_avogadro_1_1_core_1_1_gaussian_set_tools.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Class Avogadro::Core::GaussianSetTools</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="class_avogadro_1_1_core_1_1_mesh.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Class Avogadro::Core::Mesh</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core5GraphE"><code class="docutils literal notranslate"><span class="pre">Graph</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core5Graph5GraphEv"><code class="docutils literal notranslate"><span class="pre">Graph::Graph()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core5Graph5GraphE6size_t"><code class="docutils literal notranslate"><span class="pre">Graph::Graph()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core5GraphD0Ev"><code class="docutils literal notranslate"><span class="pre">Graph::~Graph()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core5Graph7setSizeE6size_t"><code class="docutils literal notranslate"><span class="pre">Graph::setSize()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core5Graph4sizeEv"><code class="docutils literal notranslate"><span class="pre">Graph::size()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core5Graph7isEmptyEv"><code class="docutils literal notranslate"><span class="pre">Graph::isEmpty()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core5Graph5clearEv"><code class="docutils literal notranslate"><span class="pre">Graph::clear()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core5Graph9addVertexEv"><code class="docutils literal notranslate"><span class="pre">Graph::addVertex()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core5Graph12removeVertexE6size_t"><code class="docutils literal notranslate"><span class="pre">Graph::removeVertex()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core5Graph17swapVertexIndicesE6size_t6size_t"><code class="docutils literal notranslate"><span class="pre">Graph::swapVertexIndices()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core5Graph11vertexCountEv"><code class="docutils literal notranslate"><span class="pre">Graph::vertexCount()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core5Graph7addEdgeE6size_t6size_t"><code class="docutils literal notranslate"><span class="pre">Graph::addEdge()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core5Graph10removeEdgeE6size_t6size_t"><code class="docutils literal notranslate"><span class="pre">Graph::removeEdge()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core5Graph10removeEdgeE6size_t"><code class="docutils literal notranslate"><span class="pre">Graph::removeEdge()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core5Graph11removeEdgesEv"><code class="docutils literal notranslate"><span class="pre">Graph::removeEdges()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core5Graph11removeEdgesE6size_t"><code class="docutils literal notranslate"><span class="pre">Graph::removeEdges()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core5Graph15editEdgeInPlaceE6size_t6size_t6size_t"><code class="docutils literal notranslate"><span class="pre">Graph::editEdgeInPlace()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core5Graph15swapEdgeIndicesE6size_t6size_t"><code class="docutils literal notranslate"><span class="pre">Graph::swapEdgeIndices()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core5Graph9edgeCountEv"><code class="docutils literal notranslate"><span class="pre">Graph::edgeCount()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core5Graph9neighborsE6size_t"><code class="docutils literal notranslate"><span class="pre">Graph::neighbors()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core5Graph5edgesE6size_t"><code class="docutils literal notranslate"><span class="pre">Graph::edges()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core5Graph9endpointsE6size_t"><code class="docutils literal notranslate"><span class="pre">Graph::endpoints()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core5Graph6degreeE6size_t"><code class="docutils literal notranslate"><span class="pre">Graph::degree()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core5Graph12containsEdgeE6size_t6size_t"><code class="docutils literal notranslate"><span class="pre">Graph::containsEdge()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core5Graph9edgePairsEv"><code class="docutils literal notranslate"><span class="pre">Graph::edgePairs()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core5Graph19connectedComponentsEv"><code class="docutils literal notranslate"><span class="pre">Graph::connectedComponents()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core5Graph18connectedComponentE6size_t"><code class="docutils literal notranslate"><span class="pre">Graph::connectedComponent()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core5Graph14subgraphsCountEv"><code class="docutils literal notranslate"><span class="pre">Graph::subgraphsCount()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core5Graph8subgraphE6size_t"><code class="docutils literal notranslate"><span class="pre">Graph::subgraph()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core5Graph13subgraphCountE6size_t"><code class="docutils literal notranslate"><span class="pre">Graph::subgraphCount()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core5Graph14getConnectedIDE6size_t"><code class="docutils literal notranslate"><span class="pre">Graph::getConnectedID()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/avogadro/two.avogadro.cc/edit/main/source/develop/class/class_avogadro_1_1_core_1_1_graph.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/develop/class/class_avogadro_1_1_core_1_1_graph.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">          <p>
+            ©2023 The OpenChemistry / Avogadro Teams 
+          </p>
+          <p>Covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
+          </p></div>
+      
+        <div class="footer-item">        <p>
+          <a href="contrib/index.html">Contribute</a>
+        </p></div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.2.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

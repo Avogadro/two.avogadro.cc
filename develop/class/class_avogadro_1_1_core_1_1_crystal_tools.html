@@ -1,0 +1,838 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Class Avogadro::Core::CrystalTools &#8212; Avogadro 1.98.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=ee427ece" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
+
+    <script src="../../_static/documentation_options.js?v=b35d0f43"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'develop/class/class_avogadro_1_1_core_1_1_crystal_tools';</script>
+    <link rel="canonical" href="https://two.avogadro.cc/develop/class/class_avogadro_1_1_core_1_1_crystal_tools.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Class Avogadro::Core::Cube" href="class_avogadro_1_1_core_1_1_cube.html" />
+    <link rel="prev" title="Class Avogadro::Core::CoordinateSet" href="class_avogadro_1_1_core_1_1_coordinate_set.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Avogadro</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../install/index.html">
+                        Install
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../docs/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        Develop
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../contrib/index.html">
+                        Contribute
+                      </a>
+                    </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+                    Discuss
+                  </a>
+                </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/AvogadroChem" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../install/index.html">
+                        Install
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../docs/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        Develop
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../contrib/index.html">
+                        Contribute
+                      </a>
+                    </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+                    Discuss
+                  </a>
+                </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/AvogadroChem" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Develop</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">Script Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rpc.html">Avogadro Remote Procedure Call (RPC)</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../classlist.html">Class List</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../core.html">Core Classes</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html">Class Avogadro::Core::Array</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_array_set.html">Class Avogadro::Core::ArraySet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_array_set_1_1_holder.html">Class Avogadro::Core::ArraySet::Holder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_array_set_1_1_place_holder.html">Class Avogadro::Core::ArraySet::PlaceHolder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_atom.html">Class Avogadro::Core::Atom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_atom_template.html">Class Avogadro::Core::AtomTemplate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_atom_typer.html">Class Avogadro::Core::AtomTyper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_avo_spglib.html">Class Avogadro::Core::AvoSpglib</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_basis_set.html">Class Avogadro::Core::BasisSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_bond.html">Class Avogadro::Core::Bond</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_bond_template.html">Class Avogadro::Core::BondTemplate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_color3f.html">Class Avogadro::Core::Color3f</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_coordinate_block_generator.html">Class Avogadro::Core::CoordinateBlockGenerator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_coordinate_set.html">Class Avogadro::Core::CoordinateSet</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Class Avogadro::Core::CrystalTools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_cube.html">Class Avogadro::Core::Cube</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_elements.html">Class Avogadro::Core::Elements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_gaussian_set.html">Class Avogadro::Core::GaussianSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_gaussian_set_tools.html">Class Avogadro::Core::GaussianSetTools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_graph.html">Class Avogadro::Core::Graph</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_mesh.html">Class Avogadro::Core::Mesh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html">Class Avogadro::Core::Molecule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule_deserializer.html">Class Avogadro::Core::MoleculeDeserializer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule_serializer.html">Class Avogadro::Core::MoleculeSerializer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_mutex.html">Class Avogadro::Core::Mutex</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_name_atom_typer.html">Class Avogadro::Core::NameAtomTyper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_residue.html">Class Avogadro::Core::Residue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_residue_data.html">Class Avogadro::Core::ResidueData</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_ring_perceiver.html">Class Avogadro::Core::RingPerceiver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_shared_mutex.html">Class Avogadro::Core::SharedMutex</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_slater_set.html">Class Avogadro::Core::SlaterSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_slater_set_tools.html">Class Avogadro::Core::SlaterSetTools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_space_groups.html">Class Avogadro::Core::SpaceGroups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_symbol_atom_typer.html">Class Avogadro::Core::SymbolAtomTyper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_unit_cell.html">Class Avogadro::Core::UnitCell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_variant.html">Class Avogadro::Core::Variant</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_variant_map.html">Class Avogadro::Core::VariantMap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1internal_1_1_array_ref_container.html">Class Avogadro::Core::internal::ArrayRefContainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_type_traits.html">Class Avogadro::TypeTraits</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_type_traits_3_01char_01_4.html">Class Avogadro::TypeTraits&lt; char &gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_type_traits_3_01double_01_4.html">Class Avogadro::TypeTraits&lt; double &gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_type_traits_3_01float_01_4.html">Class Avogadro::TypeTraits&lt; float &gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_type_traits_3_01int_01_4.html">Class Avogadro::TypeTraits&lt; int &gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_type_traits_3_01short_01_4.html">Class Avogadro::TypeTraits&lt; short &gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_type_traits_3_01unsigned_01char_01_4.html">Class Avogadro::TypeTraits&lt; unsigned char &gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_type_traits_3_01unsigned_01int_01_4.html">Class Avogadro::TypeTraits&lt; unsigned int &gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_type_traits_3_01unsigned_01short_01_4.html">Class Avogadro::TypeTraits&lt; unsigned short &gt;</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../io.html">IO Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../molequeue.html">MoleQueue Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qtgui.html">QtGui Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rendering.html">Rendering Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vtk.html">VTK Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Develop</a></li>
+    
+    
+    <li class="breadcrumb-item"><i class="fa-solid fa-ellipsis"></i></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../core.html" class="nav-link">Core Classes</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Class...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="class-avogadro-core-crystaltools">
+<h1>Class Avogadro::Core::CrystalTools<a class="headerlink" href="#class-avogadro-core-crystaltools" title="Link to this heading">#</a></h1>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core12CrystalToolsE">
+<span id="_CPPv3N8Avogadro4Core12CrystalToolsE"></span><span id="_CPPv2N8Avogadro4Core12CrystalToolsE"></span><span id="Avogadro::Core::CrystalTools"></span><span class="target" id="class_avogadro_1_1_core_1_1_crystal_tools"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CrystalTools</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core12CrystalToolsE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The <a class="reference internal" href="#class_avogadro_1_1_core_1_1_crystal_tools"><span class="std std-ref">CrystalTools</span></a> class contains a collection of static functions that perform common crystallographic operations on a <a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#class_avogadro_1_1_core_1_1_molecule"><span class="std std-ref">Core::Molecule</span></a>. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-types">Public Types</p>
+<dl class="cpp enum">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core12CrystalTools6OptionE">
+<span id="_CPPv3N8Avogadro4Core12CrystalTools6OptionE"></span><span id="_CPPv2N8Avogadro4Core12CrystalTools6OptionE"></span><span class="target" id="class_avogadro_1_1_core_1_1_crystal_tools_1a0e65ad13124ea2cb5e255b640464e35f"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Option</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core12CrystalTools6OptionE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The Option enum provides bitwise option flags for the various algorithms. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core12CrystalTools6Option4NoneE">
+<span id="_CPPv3N8Avogadro4Core12CrystalTools6Option4NoneE"></span><span id="_CPPv2N8Avogadro4Core12CrystalTools6Option4NoneE"></span><span class="target" id="class_avogadro_1_1_core_1_1_crystal_tools_1a0e65ad13124ea2cb5e255b640464e35fac9d3e887722f2bc482bcca9d41c512af"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">None</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core12CrystalTools6Option4NoneE" title="Link to this definition">#</a><br /></dt>
+<dd><p>No options specified. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core12CrystalTools6Option14TransformAtomsE">
+<span id="_CPPv3N8Avogadro4Core12CrystalTools6Option14TransformAtomsE"></span><span id="_CPPv2N8Avogadro4Core12CrystalTools6Option14TransformAtomsE"></span><span class="target" id="class_avogadro_1_1_core_1_1_crystal_tools_1a0e65ad13124ea2cb5e255b640464e35faea976dffb943a327ef42143a098d912e"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TransformAtoms</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core12CrystalTools6Option14TransformAtomsE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Transform atoms along with the unit cell. </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core12CrystalTools7OptionsE">
+<span id="_CPPv3N8Avogadro4Core12CrystalTools7OptionsE"></span><span id="_CPPv2N8Avogadro4Core12CrystalTools7OptionsE"></span><span id="Avogadro::Core::CrystalTools::Options"></span><span class="target" id="class_avogadro_1_1_core_1_1_crystal_tools_1ae37eea0a77c18a45124f58dc5b2a0a5a"></span><span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Options</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core12CrystalTools7OptionsE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-functions">Public Static Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core12CrystalTools19wrapAtomsToUnitCellER8Molecule">
+<span id="_CPPv3N8Avogadro4Core12CrystalTools19wrapAtomsToUnitCellER8Molecule"></span><span id="_CPPv2N8Avogadro4Core12CrystalTools19wrapAtomsToUnitCellER8Molecule"></span><span id="Avogadro::Core::CrystalTools::wrapAtomsToUnitCell__MoleculeR"></span><span class="target" id="class_avogadro_1_1_core_1_1_crystal_tools_1aaf1bd62bb156aec40b852b8570bae03c"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">wrapAtomsToUnitCell</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">molecule</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core12CrystalTools19wrapAtomsToUnitCellER8Molecule" title="Link to this definition">#</a><br /></dt>
+<dd><p>Adjust the atomic positions in <em>molecule</em> so that the fractional (lattice) coordinates of all atoms are in the range [0, 1]. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True on success, false otherwise. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core12CrystalTools27rotateToStandardOrientationER8Molecule7Options">
+<span id="_CPPv3N8Avogadro4Core12CrystalTools27rotateToStandardOrientationER8Molecule7Options"></span><span id="_CPPv2N8Avogadro4Core12CrystalTools27rotateToStandardOrientationER8Molecule7Options"></span><span id="Avogadro::Core::CrystalTools::rotateToStandardOrientation__MoleculeR.Options"></span><span class="target" id="class_avogadro_1_1_core_1_1_crystal_tools_1afe16c2b54ab2771aba2c17ec607cfdfa"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">rotateToStandardOrientation</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">molecule</span></span>, <a class="reference internal" href="#_CPPv4N8Avogadro4Core12CrystalTools7OptionsE" title="Avogadro::Core::CrystalTools::Options"><span class="n"><span class="pre">Options</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">opts</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro4Core12CrystalTools6Option4NoneE" title="Avogadro::Core::CrystalTools::None"><span class="n"><span class="pre">None</span></span></a><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core12CrystalTools27rotateToStandardOrientationER8Molecule7Options" title="Link to this definition">#</a><br /></dt>
+<dd><p>This function will rotate the input molecule so that the unit cell’s ‘a’ vector is aligned to the x-axis, and the ‘b’ axis is in the xy-plane. It does not use trig functions or the cell parameters, since such implementations are fragile and cannot handle negative cell angles. The derivation of this algorithm can be found at <a class="reference external" href="http://xtalopt.openmolecules.net/misc/rotateToStdOrientation.pdf">http://xtalopt.openmolecules.net/misc/rotateToStdOrientation.pdf</a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>opts</strong> – If TransformAtoms is specified, the atoms in <em>molecule</em> are rotated along with the unit cell. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True on success, false otherwise. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core12CrystalTools9setVolumeER8Molecule4Real7Options">
+<span id="_CPPv3N8Avogadro4Core12CrystalTools9setVolumeER8Molecule4Real7Options"></span><span id="_CPPv2N8Avogadro4Core12CrystalTools9setVolumeER8Molecule4Real7Options"></span><span id="Avogadro::Core::CrystalTools::setVolume__MoleculeR.Real.Options"></span><span class="target" id="class_avogadro_1_1_core_1_1_crystal_tools_1aa3d943aeeb1d913a8854231185d80c85"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setVolume</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">molecule</span></span>, <span class="n"><span class="pre">Real</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">newVolume</span></span>, <a class="reference internal" href="#_CPPv4N8Avogadro4Core12CrystalTools7OptionsE" title="Avogadro::Core::CrystalTools::Options"><span class="n"><span class="pre">Options</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">opts</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro4Core12CrystalTools6Option4NoneE" title="Avogadro::Core::CrystalTools::None"><span class="n"><span class="pre">None</span></span></a><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core12CrystalTools9setVolumeER8Molecule4Real7Options" title="Link to this definition">#</a><br /></dt>
+<dd><p>Isotropically scale the volume of the unit cell in <em>molecule</em> to <em>newVolume</em> (in cubic angstrom). </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>opts</strong> – If TransformAtoms is specified, the atoms in <em>molecule</em> are adjusted so that their fractional (lattice) coordinates are preserved. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True on success, false on failure. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core12CrystalTools12niggliReduceER8Molecule7Options">
+<span id="_CPPv3N8Avogadro4Core12CrystalTools12niggliReduceER8Molecule7Options"></span><span id="_CPPv2N8Avogadro4Core12CrystalTools12niggliReduceER8Molecule7Options"></span><span id="Avogadro::Core::CrystalTools::niggliReduce__MoleculeR.Options"></span><span class="target" id="class_avogadro_1_1_core_1_1_crystal_tools_1aefc0aed4ea16e0a275a19fa3571bc642"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">niggliReduce</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">molecule</span></span>, <a class="reference internal" href="#_CPPv4N8Avogadro4Core12CrystalTools7OptionsE" title="Avogadro::Core::CrystalTools::Options"><span class="n"><span class="pre">Options</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">opts</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro4Core12CrystalTools6Option4NoneE" title="Avogadro::Core::CrystalTools::None"><span class="n"><span class="pre">None</span></span></a><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core12CrystalTools12niggliReduceER8Molecule7Options" title="Link to this definition">#</a><br /></dt>
+<dd><p>Perform a Niggli reduction on <em>molecule’s</em> unit cell. This produces a canonical unit cell representation that strives to be as cubic as possible. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Implements the niggli reduction algorithm detailed in: Grosse-Kunstleve RW, Sauter NK, Adams PD. Numerically stable algorithms for the computation of reduced unit cells. Acta Crystallographica Section A Foundations of Crystallography. 2003;60(1):1-6. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>opts</strong> – If TransformAtoms is specified, the atom positions are modified to ensure that the same extended atomic structure from the input is represented by the output. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True on success, false on failure. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core12CrystalTools15isNiggliReducedERK8Molecule">
+<span id="_CPPv3N8Avogadro4Core12CrystalTools15isNiggliReducedERK8Molecule"></span><span id="_CPPv2N8Avogadro4Core12CrystalTools15isNiggliReducedERK8Molecule"></span><span id="Avogadro::Core::CrystalTools::isNiggliReduced__MoleculeCR"></span><span class="target" id="class_avogadro_1_1_core_1_1_crystal_tools_1afcfc18fc19958c016c570ab908458343"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isNiggliReduced</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">mol</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core12CrystalTools15isNiggliReducedERK8Molecule" title="Link to this definition">#</a><br /></dt>
+<dd><p>Return true if the unit cell in <em>molecule</em> is already Niggli-reduced. This method checks the conditions listed in the paper Gruber B.. Acta Cryst. A. 1973;29(4):433-440. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core12CrystalTools14buildSupercellER8Moleculejjj">
+<span id="_CPPv3N8Avogadro4Core12CrystalTools14buildSupercellER8Moleculejjj"></span><span id="_CPPv2N8Avogadro4Core12CrystalTools14buildSupercellER8Moleculejjj"></span><span id="Avogadro::Core::CrystalTools::buildSupercell__MoleculeR.unsigned-i.unsigned-i.unsigned-i"></span><span class="target" id="class_avogadro_1_1_core_1_1_crystal_tools_1ad0fb11472fcdb0fa534376490ea5cfd7"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">buildSupercell</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">molecule</span></span>, <span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">a</span></span>, <span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">b</span></span>, <span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">c</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core12CrystalTools14buildSupercellER8Moleculejjj" title="Link to this definition">#</a><br /></dt>
+<dd><p>Build a supercell by expanding upon the unit cell of <em>molecule</em>. It will only return false if the molecule does not have a unit cell or if a, b, or c is set to zero. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> – The number of units along lattice vector a for the supercell </p></li>
+<li><p><strong>b</strong> – The number of units along lattice vector b for the supercell </p></li>
+<li><p><strong>c</strong> – The number of units along lattice vector c for the supercell </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True on success, false on failure. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core12CrystalTools13setCellMatrixER8MoleculeRK7Matrix37Options">
+<span id="_CPPv3N8Avogadro4Core12CrystalTools13setCellMatrixER8MoleculeRK7Matrix37Options"></span><span id="_CPPv2N8Avogadro4Core12CrystalTools13setCellMatrixER8MoleculeRK7Matrix37Options"></span><span id="Avogadro::Core::CrystalTools::setCellMatrix__MoleculeR.Matrix3CR.Options"></span><span class="target" id="class_avogadro_1_1_core_1_1_crystal_tools_1aa966a215da1fc4731210871cdbd640c3"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setCellMatrix</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">molecule</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Matrix3</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">newCellColMatrix</span></span>, <a class="reference internal" href="#_CPPv4N8Avogadro4Core12CrystalTools7OptionsE" title="Avogadro::Core::CrystalTools::Options"><span class="n"><span class="pre">Options</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">opt</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro4Core12CrystalTools6Option4NoneE" title="Avogadro::Core::CrystalTools::None"><span class="n"><span class="pre">None</span></span></a><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core12CrystalTools13setCellMatrixER8MoleculeRK7Matrix37Options" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the unit cell in <em>molecule</em> to represent the real-space column-vector unit cell description in <em>newCellColMatrix</em>. A unit cell is created if needed. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>opt</strong> – If TransformAtoms is specified, the atoms in <em>molecule</em> are adjusted so that their fractional (lattice) coordinates are preserved. This option is ignored if the input molecule has no unit cell. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True on success, false otherwise. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core12CrystalTools21fractionalCoordinatesERK8UnitCellRK5ArrayI7Vector3ER5ArrayI7Vector3E">
+<span id="_CPPv3N8Avogadro4Core12CrystalTools21fractionalCoordinatesERK8UnitCellRK5ArrayI7Vector3ER5ArrayI7Vector3E"></span><span id="_CPPv2N8Avogadro4Core12CrystalTools21fractionalCoordinatesERK8UnitCellRK5ArrayI7Vector3ER5ArrayI7Vector3E"></span><span id="Avogadro::Core::CrystalTools::fractionalCoordinates__UnitCellCR.Array:Vector3:CR.Array:Vector3:R"></span><span class="target" id="class_avogadro_1_1_core_1_1_crystal_tools_1a296c801033ad7ac1d92c3dd93380b733"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">fractionalCoordinates</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_core_1_1_unit_cell.html#_CPPv4N8Avogadro4Core8UnitCellE" title="Avogadro::Core::UnitCell"><span class="n"><span class="pre">UnitCell</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">unitCell</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#_CPPv4I0EN8Avogadro4Core5ArrayE" title="Avogadro::Core::Array"><span class="n"><span class="pre">Array</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Vector3</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">cart</span></span>, <a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#_CPPv4I0EN8Avogadro4Core5ArrayE" title="Avogadro::Core::Array"><span class="n"><span class="pre">Array</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Vector3</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">frac</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core12CrystalTools21fractionalCoordinatesERK8UnitCellRK5ArrayI7Vector3ER5ArrayI7Vector3E" title="Link to this definition">#</a><br /></dt>
+<dd><p>Populate the <em>frac</em> vector with the fractional representation of the cartesian coordinates in <em>cart</em>, using <em>unitCell</em> to perform the coordinate transformation. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True on success, false otherwise. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core12CrystalTools21fractionalCoordinatesERK8MoleculeR5ArrayI7Vector3E">
+<span id="_CPPv3N8Avogadro4Core12CrystalTools21fractionalCoordinatesERK8MoleculeR5ArrayI7Vector3E"></span><span id="_CPPv2N8Avogadro4Core12CrystalTools21fractionalCoordinatesERK8MoleculeR5ArrayI7Vector3E"></span><span id="Avogadro::Core::CrystalTools::fractionalCoordinates__MoleculeCR.Array:Vector3:R"></span><span class="target" id="class_avogadro_1_1_core_1_1_crystal_tools_1a0901426823a29b2097d175b210bc1342"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">fractionalCoordinates</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">molecule</span></span>, <a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#_CPPv4I0EN8Avogadro4Core5ArrayE" title="Avogadro::Core::Array"><span class="n"><span class="pre">Array</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Vector3</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">coords</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core12CrystalTools21fractionalCoordinatesERK8MoleculeR5ArrayI7Vector3E" title="Link to this definition">#</a><br /></dt>
+<dd><p>Populate the <em>coords</em> vector with the fractional coordinates of the atoms in <em>molecule</em>, using the unit cell of <em>molecule</em> to perform the coordinate transformation. Coordinates are ordered the same as the <a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#class_avogadro_1_1_core_1_1_molecule_1a08503bedf12747b094a1a37bb1d5e23f"><span class="std std-ref">Molecule::atomPositions3d()</span></a> result. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True on success, false otherwise. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core12CrystalTools24setFractionalCoordinatesER8MoleculeRK5ArrayI7Vector3E">
+<span id="_CPPv3N8Avogadro4Core12CrystalTools24setFractionalCoordinatesER8MoleculeRK5ArrayI7Vector3E"></span><span id="_CPPv2N8Avogadro4Core12CrystalTools24setFractionalCoordinatesER8MoleculeRK5ArrayI7Vector3E"></span><span id="Avogadro::Core::CrystalTools::setFractionalCoordinates__MoleculeR.Array:Vector3:CR"></span><span class="target" id="class_avogadro_1_1_core_1_1_crystal_tools_1a71a8cc0615ede264f7e0b6577f005f76"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setFractionalCoordinates</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">molecule</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#_CPPv4I0EN8Avogadro4Core5ArrayE" title="Avogadro::Core::Array"><span class="n"><span class="pre">Array</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Vector3</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">coords</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core12CrystalTools24setFractionalCoordinatesER8MoleculeRK5ArrayI7Vector3E" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the atomic positions of <em>molecule</em> to the fractional coordinates in <em>coords</em>, using the unit cell of <em>molecule</em> to perform the coordinate transformation. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="class_avogadro_1_1_core_1_1_coordinate_set.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Class Avogadro::Core::CoordinateSet</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="class_avogadro_1_1_core_1_1_cube.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Class Avogadro::Core::Cube</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core12CrystalToolsE"><code class="docutils literal notranslate"><span class="pre">CrystalTools</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core12CrystalTools6OptionE"><code class="docutils literal notranslate"><span class="pre">CrystalTools::Option</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core12CrystalTools6Option4NoneE"><code class="docutils literal notranslate"><span class="pre">CrystalTools::Option::None</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core12CrystalTools6Option14TransformAtomsE"><code class="docutils literal notranslate"><span class="pre">CrystalTools::Option::TransformAtoms</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core12CrystalTools7OptionsE"><code class="docutils literal notranslate"><span class="pre">CrystalTools::Options</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core12CrystalTools19wrapAtomsToUnitCellER8Molecule"><code class="docutils literal notranslate"><span class="pre">CrystalTools::wrapAtomsToUnitCell()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core12CrystalTools27rotateToStandardOrientationER8Molecule7Options"><code class="docutils literal notranslate"><span class="pre">CrystalTools::rotateToStandardOrientation()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core12CrystalTools9setVolumeER8Molecule4Real7Options"><code class="docutils literal notranslate"><span class="pre">CrystalTools::setVolume()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core12CrystalTools12niggliReduceER8Molecule7Options"><code class="docutils literal notranslate"><span class="pre">CrystalTools::niggliReduce()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core12CrystalTools15isNiggliReducedERK8Molecule"><code class="docutils literal notranslate"><span class="pre">CrystalTools::isNiggliReduced()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core12CrystalTools14buildSupercellER8Moleculejjj"><code class="docutils literal notranslate"><span class="pre">CrystalTools::buildSupercell()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core12CrystalTools13setCellMatrixER8MoleculeRK7Matrix37Options"><code class="docutils literal notranslate"><span class="pre">CrystalTools::setCellMatrix()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core12CrystalTools21fractionalCoordinatesERK8UnitCellRK5ArrayI7Vector3ER5ArrayI7Vector3E"><code class="docutils literal notranslate"><span class="pre">CrystalTools::fractionalCoordinates()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core12CrystalTools21fractionalCoordinatesERK8MoleculeR5ArrayI7Vector3E"><code class="docutils literal notranslate"><span class="pre">CrystalTools::fractionalCoordinates()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core12CrystalTools24setFractionalCoordinatesER8MoleculeRK5ArrayI7Vector3E"><code class="docutils literal notranslate"><span class="pre">CrystalTools::setFractionalCoordinates()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/avogadro/two.avogadro.cc/edit/main/source/develop/class/class_avogadro_1_1_core_1_1_crystal_tools.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/develop/class/class_avogadro_1_1_core_1_1_crystal_tools.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">          <p>
+            ©2023 The OpenChemistry / Avogadro Teams 
+          </p>
+          <p>Covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
+          </p></div>
+      
+        <div class="footer-item">        <p>
+          <a href="contrib/index.html">Contribute</a>
+        </p></div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.2.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

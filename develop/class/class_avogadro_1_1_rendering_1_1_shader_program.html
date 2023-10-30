@@ -1,0 +1,941 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Class Avogadro::Rendering::ShaderProgram &#8212; Avogadro 1.98.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=ee427ece" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
+
+    <script src="../../_static/documentation_options.js?v=b35d0f43"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'develop/class/class_avogadro_1_1_rendering_1_1_shader_program';</script>
+    <link rel="canonical" href="https://two.avogadro.cc/develop/class/class_avogadro_1_1_rendering_1_1_shader_program.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Class Avogadro::Rendering::Sphere" href="class_avogadro_1_1_rendering_1_1_sphere.html" />
+    <link rel="prev" title="Class Avogadro::Rendering::Shader" href="class_avogadro_1_1_rendering_1_1_shader.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Avogadro</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../install/index.html">
+                        Install
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../docs/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        Develop
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../contrib/index.html">
+                        Contribute
+                      </a>
+                    </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+                    Discuss
+                  </a>
+                </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/AvogadroChem" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../install/index.html">
+                        Install
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../docs/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        Develop
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../contrib/index.html">
+                        Contribute
+                      </a>
+                    </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+                    Discuss
+                  </a>
+                </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/AvogadroChem" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Develop</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">Script Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rpc.html">Avogadro Remote Procedure Call (RPC)</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../classlist.html">Class List</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../core.html">Core Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../io.html">IO Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../molequeue.html">MoleQueue Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qtgui.html">QtGui Classes</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../rendering.html">Rendering Classes</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_ambient_occlusion_sphere_geometry.html">Class Avogadro::Rendering::AmbientOcclusionSphereGeometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_arrow_geometry.html">Class Avogadro::Rendering::ArrowGeometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_buffer_object.html">Class Avogadro::Rendering::BufferObject</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_camera.html">Class Avogadro::Rendering::Camera</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_cylinder.html">Class Avogadro::Rendering::Cylinder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_cylinder_geometry.html">Class Avogadro::Rendering::CylinderGeometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_drawable.html">Class Avogadro::Rendering::Drawable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_g_l_render_visitor.html">Class Avogadro::Rendering::GLRenderVisitor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_g_l_renderer.html">Class Avogadro::Rendering::GLRenderer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_geometry_node.html">Class Avogadro::Rendering::GeometryNode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_geometry_visitor.html">Class Avogadro::Rendering::GeometryVisitor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_group_node.html">Class Avogadro::Rendering::GroupNode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_line_strip_geometry.html">Class Avogadro::Rendering::LineStripGeometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_mesh_geometry.html">Class Avogadro::Rendering::MeshGeometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_node.html">Class Avogadro::Rendering::Node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_p_o_v_ray_visitor.html">Class Avogadro::Rendering::POVRayVisitor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_primitive.html">Class Avogadro::Rendering::Primitive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_scene.html">Class Avogadro::Rendering::Scene</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_shader.html">Class Avogadro::Rendering::Shader</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Class Avogadro::Rendering::ShaderProgram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_sphere.html">Class Avogadro::Rendering::Sphere</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_sphere_geometry.html">Class Avogadro::Rendering::SphereGeometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_text_label2_d.html">Class Avogadro::Rendering::TextLabel2D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_text_label3_d.html">Class Avogadro::Rendering::TextLabel3D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_text_label_base.html">Class Avogadro::Rendering::TextLabelBase</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_text_properties.html">Class Avogadro::Rendering::TextProperties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_text_render_strategy.html">Class Avogadro::Rendering::TextRenderStrategy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_texture2_d.html">Class Avogadro::Rendering::Texture2D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_transform_node.html">Class Avogadro::Rendering::TransformNode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_v_r_m_l_visitor.html">Class Avogadro::Rendering::VRMLVisitor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_visitor.html">Class Avogadro::Rendering::Visitor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_volume_geometry.html">Class Avogadro::Rendering::VolumeGeometry</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../vtk.html">VTK Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Develop</a></li>
+    
+    
+    <li class="breadcrumb-item"><i class="fa-solid fa-ellipsis"></i></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../rendering.html" class="nav-link">Rendering Classes</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Class...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="class-avogadro-rendering-shaderprogram">
+<h1>Class Avogadro::Rendering::ShaderProgram<a class="headerlink" href="#class-avogadro-rendering-shaderprogram" title="Link to this heading">#</a></h1>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13ShaderProgramE">
+<span id="_CPPv3N8Avogadro9Rendering13ShaderProgramE"></span><span id="_CPPv2N8Avogadro9Rendering13ShaderProgramE"></span><span id="Avogadro::Rendering::ShaderProgram"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_shader_program"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ShaderProgram</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13ShaderProgramE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The <a class="reference internal" href="#class_avogadro_1_1_rendering_1_1_shader_program"><span class="std std-ref">ShaderProgram</span></a> uses one or more <a class="reference internal" href="class_avogadro_1_1_rendering_1_1_shader.html#class_avogadro_1_1_rendering_1_1_shader"><span class="std std-ref">Shader</span></a> objects. </p>
+<p>
+This class creates a Vertex or Fragment shader, that can be attached to a <a class="reference internal" href="#class_avogadro_1_1_rendering_1_1_shader_program"><span class="std std-ref">ShaderProgram</span></a> in order to render geometry etc. <dl class="simple">
+<dt><strong>Author</strong></dt><dd><p>Marcus D. Hanwell</p>
+</dd>
+</dl>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-unnamed-group">Unnamed Group</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13ShaderProgram15setUniformValueERKNSt6stringERK8Vector3f">
+<span id="_CPPv3N8Avogadro9Rendering13ShaderProgram15setUniformValueERKNSt6stringERK8Vector3f"></span><span id="_CPPv2N8Avogadro9Rendering13ShaderProgram15setUniformValueERKNSt6stringERK8Vector3f"></span><span id="Avogadro::Rendering::ShaderProgram::setUniformValue__ssCR.Vector3fCR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_shader_program_1a5bd46e2a23277dea3f9f934c8f9e8100"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setUniformValue</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Vector3f</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">v</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram15setUniformValueERKNSt6stringERK8Vector3f" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the <code class="docutils literal notranslate"><span class="pre">name</span></code> uniform value to the supplied value. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13ShaderProgram15setUniformValueERKNSt6stringERK8Vector2i">
+<span id="_CPPv3N8Avogadro9Rendering13ShaderProgram15setUniformValueERKNSt6stringERK8Vector2i"></span><span id="_CPPv2N8Avogadro9Rendering13ShaderProgram15setUniformValueERKNSt6stringERK8Vector2i"></span><span id="Avogadro::Rendering::ShaderProgram::setUniformValue__ssCR.Vector2iCR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_shader_program_1ab2b5c2892b519187840407f00100c8e8"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setUniformValue</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Vector2i</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">v</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram15setUniformValueERKNSt6stringERK8Vector2i" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the <code class="docutils literal notranslate"><span class="pre">name</span></code> uniform value to the supplied value. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13ShaderProgram15setUniformValueERKNSt6stringERK9Vector3ub">
+<span id="_CPPv3N8Avogadro9Rendering13ShaderProgram15setUniformValueERKNSt6stringERK9Vector3ub"></span><span id="_CPPv2N8Avogadro9Rendering13ShaderProgram15setUniformValueERKNSt6stringERK9Vector3ub"></span><span id="Avogadro::Rendering::ShaderProgram::setUniformValue__ssCR.Vector3ubCR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_shader_program_1a42476858810f68d2fa8689ff9f965fd1"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setUniformValue</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Vector3ub</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">v</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram15setUniformValueERKNSt6stringERK9Vector3ub" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the <code class="docutils literal notranslate"><span class="pre">name</span></code> uniform value to the supplied value. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-types">Public Types</p>
+<dl class="cpp enum">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13ShaderProgram15NormalizeOptionE">
+<span id="_CPPv3N8Avogadro9Rendering13ShaderProgram15NormalizeOptionE"></span><span id="_CPPv2N8Avogadro9Rendering13ShaderProgram15NormalizeOptionE"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_shader_program_1a5cf2e880e86d6f24098d770bfc02403e"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">NormalizeOption</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram15NormalizeOptionE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Options for attribute normalization. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13ShaderProgram15NormalizeOption9NormalizeE">
+<span id="_CPPv3N8Avogadro9Rendering13ShaderProgram15NormalizeOption9NormalizeE"></span><span id="_CPPv2N8Avogadro9Rendering13ShaderProgram15NormalizeOption9NormalizeE"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_shader_program_1a5cf2e880e86d6f24098d770bfc02403ea4f6bc3e35432a7e20c757280be0d1f6b"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Normalize</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram15NormalizeOption9NormalizeE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The values range across the limits of the numeric type. This option instructs the rendering engine to normalize them to the range [0.0, 1.0] for unsigned types, and [-1.0, 1.0] for signed types. For example, unsigned char values will be mapped so that 0 = 0.0, and 255 = 1.0. The resulting floating point numbers will be passed into the shader program. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13ShaderProgram15NormalizeOption11NoNormalizeE">
+<span id="_CPPv3N8Avogadro9Rendering13ShaderProgram15NormalizeOption11NoNormalizeE"></span><span id="_CPPv2N8Avogadro9Rendering13ShaderProgram15NormalizeOption11NoNormalizeE"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_shader_program_1a5cf2e880e86d6f24098d770bfc02403eac8d5e20ed7d5f787a836767e05f13132"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">NoNormalize</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram15NormalizeOption11NoNormalizeE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The values should be used as-is. Do not perform any normalization. </p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13ShaderProgram13ShaderProgramEv">
+<span id="_CPPv3N8Avogadro9Rendering13ShaderProgram13ShaderProgramEv"></span><span id="_CPPv2N8Avogadro9Rendering13ShaderProgram13ShaderProgramEv"></span><span id="Avogadro::Rendering::ShaderProgram::ShaderProgram"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_shader_program_1a6d38e145a0d49b7d9e681491f5993aec"></span><span class="sig-name descname"><span class="n"><span class="pre">ShaderProgram</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram13ShaderProgramEv" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13ShaderProgramD0Ev">
+<span id="_CPPv3N8Avogadro9Rendering13ShaderProgramD0Ev"></span><span id="_CPPv2N8Avogadro9Rendering13ShaderProgramD0Ev"></span><span id="Avogadro::Rendering::ShaderProgram::~ShaderProgram"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_shader_program_1a125c633bc151bb729fb9ab5b3f68bc9f"></span><span class="sig-name descname"><span class="n"><span class="pre">~ShaderProgram</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13ShaderProgramD0Ev" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13ShaderProgram12attachShaderERK6Shader">
+<span id="_CPPv3N8Avogadro9Rendering13ShaderProgram12attachShaderERK6Shader"></span><span id="_CPPv2N8Avogadro9Rendering13ShaderProgram12attachShaderERK6Shader"></span><span id="Avogadro::Rendering::ShaderProgram::attachShader__ShaderCR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_shader_program_1ad4267539cd1d156eba002388cd2d5485"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">attachShader</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_shader.html#_CPPv4N8Avogadro9Rendering6ShaderE" title="Avogadro::Rendering::Shader"><span class="n"><span class="pre">Shader</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">shader</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram12attachShaderERK6Shader" title="Link to this definition">#</a><br /></dt>
+<dd><p>Attach the supplied shader to this program. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A maximum of one Vertex shader and one Fragment shader can be attached to a shader prorgram. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>true on success. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13ShaderProgram12detachShaderERK6Shader">
+<span id="_CPPv3N8Avogadro9Rendering13ShaderProgram12detachShaderERK6Shader"></span><span id="_CPPv2N8Avogadro9Rendering13ShaderProgram12detachShaderERK6Shader"></span><span id="Avogadro::Rendering::ShaderProgram::detachShader__ShaderCR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_shader_program_1afae9eaa4d4f8ccf40eaadf4d99c844df"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">detachShader</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_shader.html#_CPPv4N8Avogadro9Rendering6ShaderE" title="Avogadro::Rendering::Shader"><span class="n"><span class="pre">Shader</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">shader</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram12detachShaderERK6Shader" title="Link to this definition">#</a><br /></dt>
+<dd><p>Detach the supplied shader from this program. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A maximum of one Vertex shader and one Fragment shader can be attached to a shader prorgram. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>true on success. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13ShaderProgram4linkEv">
+<span id="_CPPv3N8Avogadro9Rendering13ShaderProgram4linkEv"></span><span id="_CPPv2N8Avogadro9Rendering13ShaderProgram4linkEv"></span><span id="Avogadro::Rendering::ShaderProgram::link"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_shader_program_1a389ae784c7f2bbfc0deb3bb2db922fdf"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">link</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram4linkEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Attempt to link the shader program. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The shaders attached to the program must have been compiled. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>false on failure. Query error to get the reason. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13ShaderProgram4bindEv">
+<span id="_CPPv3N8Avogadro9Rendering13ShaderProgram4bindEv"></span><span id="_CPPv2N8Avogadro9Rendering13ShaderProgram4bindEv"></span><span id="Avogadro::Rendering::ShaderProgram::bind"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_shader_program_1a16873539a1053d46eebcbf393002ff6b"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">bind</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram4bindEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Bind the program in order to use it. If the program has not been linked then <a class="reference internal" href="#class_avogadro_1_1_rendering_1_1_shader_program_1a389ae784c7f2bbfc0deb3bb2db922fdf"><span class="std std-ref">link()</span></a> will be called. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13ShaderProgram7releaseEv">
+<span id="_CPPv3N8Avogadro9Rendering13ShaderProgram7releaseEv"></span><span id="_CPPv2N8Avogadro9Rendering13ShaderProgram7releaseEv"></span><span id="Avogadro::Rendering::ShaderProgram::release"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_shader_program_1a23b477d0e2d399f75d585d154c346591"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">release</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram7releaseEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Releases the shader program from the current context. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering13ShaderProgram5errorEv">
+<span id="_CPPv3NK8Avogadro9Rendering13ShaderProgram5errorEv"></span><span id="_CPPv2NK8Avogadro9Rendering13ShaderProgram5errorEv"></span><span id="Avogadro::Rendering::ShaderProgram::errorC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_shader_program_1ab0ca267c415968ee3bc1c6b144dcbf56"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">error</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering13ShaderProgram5errorEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the error message (empty if none) for the shader program. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13ShaderProgram20enableAttributeArrayERKNSt6stringE">
+<span id="_CPPv3N8Avogadro9Rendering13ShaderProgram20enableAttributeArrayERKNSt6stringE"></span><span id="_CPPv2N8Avogadro9Rendering13ShaderProgram20enableAttributeArrayERKNSt6stringE"></span><span id="Avogadro::Rendering::ShaderProgram::enableAttributeArray__ssCR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_shader_program_1a1da2d2c06a6099934ef08af969c9adb7"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">enableAttributeArray</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram20enableAttributeArrayERKNSt6stringE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Enable the named attribute array. Return false if the attribute array is not contained in the linked shader program. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13ShaderProgram21disableAttributeArrayERKNSt6stringE">
+<span id="_CPPv3N8Avogadro9Rendering13ShaderProgram21disableAttributeArrayERKNSt6stringE"></span><span id="_CPPv2N8Avogadro9Rendering13ShaderProgram21disableAttributeArrayERKNSt6stringE"></span><span id="Avogadro::Rendering::ShaderProgram::disableAttributeArray__ssCR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_shader_program_1a4b3dac6be3b750140f9cba204e2e86c0"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">disableAttributeArray</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram21disableAttributeArrayERKNSt6stringE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Disable the named attribute array. Return false if the attribute array is not contained in the linked shader program. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13ShaderProgram17useAttributeArrayERKNSt6stringEi6size_tN8Avogadro4TypeEi15NormalizeOption">
+<span id="_CPPv3N8Avogadro9Rendering13ShaderProgram17useAttributeArrayERKNSt6stringEi6size_tN8Avogadro4TypeEi15NormalizeOption"></span><span id="_CPPv2N8Avogadro9Rendering13ShaderProgram17useAttributeArrayERKNSt6stringEi6size_tN8Avogadro4TypeEi15NormalizeOption"></span><span id="Avogadro::Rendering::ShaderProgram::useAttributeArray__ssCR.i.s.Avogadro::Type.i.NormalizeOption"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_shader_program_1a26ef8fd17c295ea5a245615fb35bc386"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">useAttributeArray</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">offset</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">stride</span></span>, <span class="n"><span class="pre">Avogadro</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Type</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">elementType</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">elementTupleSize</span></span>, <a class="reference internal" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram15NormalizeOptionE" title="Avogadro::Rendering::ShaderProgram::NormalizeOption"><span class="n"><span class="pre">NormalizeOption</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">normalize</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram17useAttributeArrayERKNSt6stringEi6size_tN8Avogadro4TypeEi15NormalizeOption" title="Link to this definition">#</a><br /></dt>
+<dd><p>Use the named attribute array with the bound <a class="reference internal" href="class_avogadro_1_1_rendering_1_1_buffer_object.html#class_avogadro_1_1_rendering_1_1_buffer_object"><span class="std std-ref">BufferObject</span></a>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> – of the attribute (as seen in the shader program). </p></li>
+<li><p><strong>offset</strong> – into the bound <a class="reference internal" href="class_avogadro_1_1_rendering_1_1_buffer_object.html#class_avogadro_1_1_rendering_1_1_buffer_object"><span class="std std-ref">BufferObject</span></a>. </p></li>
+<li><p><strong>stride</strong> – The stride of the element access (i.e. the size of each element in the currently bound <a class="reference internal" href="class_avogadro_1_1_rendering_1_1_buffer_object.html#class_avogadro_1_1_rendering_1_1_buffer_object"><span class="std std-ref">BufferObject</span></a>). 0 may be used to indicate tightly packed data. </p></li>
+<li><p><strong>elementType</strong> – Tag identifying the memory representation of the element. </p></li>
+<li><p><strong>elementTupleSize</strong> – The number of elements per vertex (e.g. a 3D position attribute would be 3). </p></li>
+<li><p><strong>normalize</strong> – Indicates the range used by the attribute data. See NormalizeOption for more information. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>false if the attribute array does not exist. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN8Avogadro9Rendering13ShaderProgram17setAttributeArrayEbRKNSt6stringERK10ContainerTi15NormalizeOption">
+<span id="_CPPv3I0EN8Avogadro9Rendering13ShaderProgram17setAttributeArrayERKNSt6stringERK10ContainerTi15NormalizeOption"></span><span id="_CPPv2I0EN8Avogadro9Rendering13ShaderProgram17setAttributeArrayERKNSt6stringERK10ContainerTi15NormalizeOption"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ContainerT</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="class_avogadro_1_1_rendering_1_1_shader_program_1aa3ad8a7e4f6a246e6ac49c0ffa513f36"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setAttributeArray</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN8Avogadro9Rendering13ShaderProgram17setAttributeArrayEbRKNSt6stringERK10ContainerTi15NormalizeOption" title="Avogadro::Rendering::ShaderProgram::setAttributeArray::ContainerT"><span class="n"><span class="pre">ContainerT</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">array</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">tupleSize</span></span>, <a class="reference internal" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram15NormalizeOptionE" title="Avogadro::Rendering::ShaderProgram::NormalizeOption"><span class="n"><span class="pre">NormalizeOption</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">normalize</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN8Avogadro9Rendering13ShaderProgram17setAttributeArrayEbRKNSt6stringERK10ContainerTi15NormalizeOption" title="Link to this definition">#</a><br /></dt>
+<dd><p>Upload the supplied array of tightly packed values to the named attribute. <a class="reference internal" href="class_avogadro_1_1_rendering_1_1_buffer_object.html#class_avogadro_1_1_rendering_1_1_buffer_object"><span class="std std-ref">BufferObject</span></a> attributes should be preferred and this may be removed in future.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The ContainerT type must have tightly packed values of ContainerT::value_type accessible by reference via ContainerT::operator[]. Additionally, the standard size() and empty() methods must be implemented. The std::vector and <a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#class_avogadro_1_1_core_1_1_array"><span class="std std-ref">Avogadro::Core::Array</span></a> classes are examples of such supported containers. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> – Attribute name </p></li>
+<li><p><strong>array</strong> – Container of data. See note. </p></li>
+<li><p><strong>tupleSize</strong> – The number of elements per vertex, e.g. a 3D coordinate array will have a tuple size of 3. </p></li>
+<li><p><strong>normalize</strong> – Indicates the range used by the attribute data. See NormalizeOption for more information.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13ShaderProgram17setTextureSamplerERKNSt6stringERK9Texture2D">
+<span id="_CPPv3N8Avogadro9Rendering13ShaderProgram17setTextureSamplerERKNSt6stringERK9Texture2D"></span><span id="_CPPv2N8Avogadro9Rendering13ShaderProgram17setTextureSamplerERKNSt6stringERK9Texture2D"></span><span id="Avogadro::Rendering::ShaderProgram::setTextureSampler__ssCR.Texture2DCR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_shader_program_1a4e7ca001daf9726a9d17b512588442ad"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setTextureSampler</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">samplerName</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_texture2_d.html#_CPPv4N8Avogadro9Rendering9Texture2DE" title="Avogadro::Rendering::Texture2D"><span class="n"><span class="pre">Texture2D</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">texture</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram17setTextureSamplerERKNSt6stringERK9Texture2D" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the sampler <em>samplerName</em> to use the specified texture. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13ShaderProgram15setUniformValueERKNSt6stringEi">
+<span id="_CPPv3N8Avogadro9Rendering13ShaderProgram15setUniformValueERKNSt6stringEi"></span><span id="_CPPv2N8Avogadro9Rendering13ShaderProgram15setUniformValueERKNSt6stringEi"></span><span id="Avogadro::Rendering::ShaderProgram::setUniformValue__ssCR.i"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_shader_program_1a8257ed29726b9c0a779c68b45fdb6a10"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setUniformValue</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram15setUniformValueERKNSt6stringEi" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the <code class="docutils literal notranslate"><span class="pre">name</span></code> uniform value to int <code class="docutils literal notranslate"><span class="pre">i</span></code>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13ShaderProgram15setUniformValueERKNSt6stringEf">
+<span id="_CPPv3N8Avogadro9Rendering13ShaderProgram15setUniformValueERKNSt6stringEf"></span><span id="_CPPv2N8Avogadro9Rendering13ShaderProgram15setUniformValueERKNSt6stringEf"></span><span id="Avogadro::Rendering::ShaderProgram::setUniformValue__ssCR.float"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_shader_program_1ab0b91e43ca7dabdcda49c0ead1d116b2"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setUniformValue</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span>, <span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">f</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram15setUniformValueERKNSt6stringEf" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the <code class="docutils literal notranslate"><span class="pre">name</span></code> uniform value to float <code class="docutils literal notranslate"><span class="pre">f</span></code>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13ShaderProgram15setUniformValueERKNSt6stringERKN5Eigen8Matrix3fE">
+<span id="_CPPv3N8Avogadro9Rendering13ShaderProgram15setUniformValueERKNSt6stringERKN5Eigen8Matrix3fE"></span><span id="_CPPv2N8Avogadro9Rendering13ShaderProgram15setUniformValueERKNSt6stringERKN5Eigen8Matrix3fE"></span><span id="Avogadro::Rendering::ShaderProgram::setUniformValue__ssCR.Eigen::Matrix3fCR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_shader_program_1ad626bafe8a55e0d0d0a6f825568929ca"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setUniformValue</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Matrix3f</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">matrix</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram15setUniformValueERKNSt6stringERKN5Eigen8Matrix3fE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the <code class="docutils literal notranslate"><span class="pre">name</span></code> uniform value to <code class="docutils literal notranslate"><span class="pre">matrix</span></code>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13ShaderProgram15setUniformValueERKNSt6stringERKN5Eigen8Matrix4fE">
+<span id="_CPPv3N8Avogadro9Rendering13ShaderProgram15setUniformValueERKNSt6stringERKN5Eigen8Matrix4fE"></span><span id="_CPPv2N8Avogadro9Rendering13ShaderProgram15setUniformValueERKNSt6stringERKN5Eigen8Matrix4fE"></span><span id="Avogadro::Rendering::ShaderProgram::setUniformValue__ssCR.Eigen::Matrix4fCR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_shader_program_1a2d3ac02a54b32b137c1d0e038f4bdf3b"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setUniformValue</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Matrix4f</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">matrix</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram15setUniformValueERKNSt6stringERKN5Eigen8Matrix4fE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-functions">Protected Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13ShaderProgram25setAttributeArrayInternalERKNSt6stringEPvN8Avogadro4TypeEi15NormalizeOption">
+<span id="_CPPv3N8Avogadro9Rendering13ShaderProgram25setAttributeArrayInternalERKNSt6stringEPvN8Avogadro4TypeEi15NormalizeOption"></span><span id="_CPPv2N8Avogadro9Rendering13ShaderProgram25setAttributeArrayInternalERKNSt6stringEPvN8Avogadro4TypeEi15NormalizeOption"></span><span id="Avogadro::Rendering::ShaderProgram::setAttributeArrayInternal__ssCR.voidP.Avogadro::Type.i.NormalizeOption"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_shader_program_1a60fc894cfab6c423cf9e0f2a902e61a2"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setAttributeArrayInternal</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span>, <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">buffer</span></span>, <span class="n"><span class="pre">Avogadro</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Type</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">type</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">tupleSize</span></span>, <a class="reference internal" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram15NormalizeOptionE" title="Avogadro::Rendering::ShaderProgram::NormalizeOption"><span class="n"><span class="pre">NormalizeOption</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">normalize</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram25setAttributeArrayInternalERKNSt6stringEPvN8Avogadro4TypeEi15NormalizeOption" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-attributes">Protected Attributes</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13ShaderProgram8m_handleE">
+<span id="_CPPv3N8Avogadro9Rendering13ShaderProgram8m_handleE"></span><span id="_CPPv2N8Avogadro9Rendering13ShaderProgram8m_handleE"></span><span id="Avogadro::Rendering::ShaderProgram::m_handle__Index"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_shader_program_1a32ca000911f39d49a36b8beac29bfde3"></span><span class="n"><span class="pre">Index</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_handle</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram8m_handleE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13ShaderProgram14m_vertexShaderE">
+<span id="_CPPv3N8Avogadro9Rendering13ShaderProgram14m_vertexShaderE"></span><span id="_CPPv2N8Avogadro9Rendering13ShaderProgram14m_vertexShaderE"></span><span id="Avogadro::Rendering::ShaderProgram::m_vertexShader__Index"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_shader_program_1a0dd1d9ed060562771ff628137f24f208"></span><span class="n"><span class="pre">Index</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_vertexShader</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram14m_vertexShaderE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13ShaderProgram16m_fragmentShaderE">
+<span id="_CPPv3N8Avogadro9Rendering13ShaderProgram16m_fragmentShaderE"></span><span id="_CPPv2N8Avogadro9Rendering13ShaderProgram16m_fragmentShaderE"></span><span id="Avogadro::Rendering::ShaderProgram::m_fragmentShader__Index"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_shader_program_1ac50241313a311ab985dfbcd491ea267e"></span><span class="n"><span class="pre">Index</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_fragmentShader</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram16m_fragmentShaderE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13ShaderProgram8m_linkedE">
+<span id="_CPPv3N8Avogadro9Rendering13ShaderProgram8m_linkedE"></span><span id="_CPPv2N8Avogadro9Rendering13ShaderProgram8m_linkedE"></span><span id="Avogadro::Rendering::ShaderProgram::m_linked__b"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_shader_program_1afc5514657416b8bb096cc76d9cb7eb86"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_linked</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram8m_linkedE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13ShaderProgram7m_errorE">
+<span id="_CPPv3N8Avogadro9Rendering13ShaderProgram7m_errorE"></span><span id="_CPPv2N8Avogadro9Rendering13ShaderProgram7m_errorE"></span><span id="Avogadro::Rendering::ShaderProgram::m_error__ss"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_shader_program_1a02924780457fc1937ca66c26baee8a2c"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_error</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram7m_errorE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13ShaderProgram12m_attributesE">
+<span id="_CPPv3N8Avogadro9Rendering13ShaderProgram12m_attributesE"></span><span id="_CPPv2N8Avogadro9Rendering13ShaderProgram12m_attributesE"></span><span id="Avogadro::Rendering::ShaderProgram::m_attributes__std::map:ss.i:"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_shader_program_1a935b795f16123d0db29c97542485f013"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">map</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_attributes</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram12m_attributesE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13ShaderProgram21m_textureUnitBindingsE">
+<span id="_CPPv3N8Avogadro9Rendering13ShaderProgram21m_textureUnitBindingsE"></span><span id="_CPPv2N8Avogadro9Rendering13ShaderProgram21m_textureUnitBindingsE"></span><span id="Avogadro::Rendering::ShaderProgram::m_textureUnitBindings__std::map:Texture2DCP.i:"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_shader_program_1a34f883befd9f50f6476e8eed6993724e"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">map</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_texture2_d.html#_CPPv4N8Avogadro9Rendering9Texture2DE" title="Avogadro::Rendering::Texture2D"><span class="n"><span class="pre">Texture2D</span></span></a><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_textureUnitBindings</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram21m_textureUnitBindingsE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13ShaderProgram19m_boundTextureUnitsE">
+<span id="_CPPv3N8Avogadro9Rendering13ShaderProgram19m_boundTextureUnitsE"></span><span id="_CPPv2N8Avogadro9Rendering13ShaderProgram19m_boundTextureUnitsE"></span><span id="Avogadro::Rendering::ShaderProgram::m_boundTextureUnits__std::vector:b:"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_shader_program_1a0cd42963445013403e8474a43d8f3321"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">bool</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_boundTextureUnits</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram19m_boundTextureUnitsE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="class_avogadro_1_1_rendering_1_1_shader.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Class Avogadro::Rendering::Shader</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="class_avogadro_1_1_rendering_1_1_sphere.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Class Avogadro::Rendering::Sphere</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13ShaderProgramE"><code class="docutils literal notranslate"><span class="pre">ShaderProgram</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram15setUniformValueERKNSt6stringERK8Vector3f"><code class="docutils literal notranslate"><span class="pre">ShaderProgram::setUniformValue()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram15setUniformValueERKNSt6stringERK8Vector2i"><code class="docutils literal notranslate"><span class="pre">ShaderProgram::setUniformValue()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram15setUniformValueERKNSt6stringERK9Vector3ub"><code class="docutils literal notranslate"><span class="pre">ShaderProgram::setUniformValue()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram15NormalizeOptionE"><code class="docutils literal notranslate"><span class="pre">ShaderProgram::NormalizeOption</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram15NormalizeOption9NormalizeE"><code class="docutils literal notranslate"><span class="pre">ShaderProgram::NormalizeOption::Normalize</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram15NormalizeOption11NoNormalizeE"><code class="docutils literal notranslate"><span class="pre">ShaderProgram::NormalizeOption::NoNormalize</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram13ShaderProgramEv"><code class="docutils literal notranslate"><span class="pre">ShaderProgram::ShaderProgram()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13ShaderProgramD0Ev"><code class="docutils literal notranslate"><span class="pre">ShaderProgram::~ShaderProgram()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram12attachShaderERK6Shader"><code class="docutils literal notranslate"><span class="pre">ShaderProgram::attachShader()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram12detachShaderERK6Shader"><code class="docutils literal notranslate"><span class="pre">ShaderProgram::detachShader()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram4linkEv"><code class="docutils literal notranslate"><span class="pre">ShaderProgram::link()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram4bindEv"><code class="docutils literal notranslate"><span class="pre">ShaderProgram::bind()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram7releaseEv"><code class="docutils literal notranslate"><span class="pre">ShaderProgram::release()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro9Rendering13ShaderProgram5errorEv"><code class="docutils literal notranslate"><span class="pre">ShaderProgram::error()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram20enableAttributeArrayERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">ShaderProgram::enableAttributeArray()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram21disableAttributeArrayERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">ShaderProgram::disableAttributeArray()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram17useAttributeArrayERKNSt6stringEi6size_tN8Avogadro4TypeEi15NormalizeOption"><code class="docutils literal notranslate"><span class="pre">ShaderProgram::useAttributeArray()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I0EN8Avogadro9Rendering13ShaderProgram17setAttributeArrayEbRKNSt6stringERK10ContainerTi15NormalizeOption"><code class="docutils literal notranslate"><span class="pre">ShaderProgram::setAttributeArray()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram17setTextureSamplerERKNSt6stringERK9Texture2D"><code class="docutils literal notranslate"><span class="pre">ShaderProgram::setTextureSampler()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram15setUniformValueERKNSt6stringEi"><code class="docutils literal notranslate"><span class="pre">ShaderProgram::setUniformValue()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram15setUniformValueERKNSt6stringEf"><code class="docutils literal notranslate"><span class="pre">ShaderProgram::setUniformValue()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram15setUniformValueERKNSt6stringERKN5Eigen8Matrix3fE"><code class="docutils literal notranslate"><span class="pre">ShaderProgram::setUniformValue()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram15setUniformValueERKNSt6stringERKN5Eigen8Matrix4fE"><code class="docutils literal notranslate"><span class="pre">ShaderProgram::setUniformValue()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram25setAttributeArrayInternalERKNSt6stringEPvN8Avogadro4TypeEi15NormalizeOption"><code class="docutils literal notranslate"><span class="pre">ShaderProgram::setAttributeArrayInternal()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram8m_handleE"><code class="docutils literal notranslate"><span class="pre">ShaderProgram::m_handle</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram14m_vertexShaderE"><code class="docutils literal notranslate"><span class="pre">ShaderProgram::m_vertexShader</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram16m_fragmentShaderE"><code class="docutils literal notranslate"><span class="pre">ShaderProgram::m_fragmentShader</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram8m_linkedE"><code class="docutils literal notranslate"><span class="pre">ShaderProgram::m_linked</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram7m_errorE"><code class="docutils literal notranslate"><span class="pre">ShaderProgram::m_error</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram12m_attributesE"><code class="docutils literal notranslate"><span class="pre">ShaderProgram::m_attributes</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram21m_textureUnitBindingsE"><code class="docutils literal notranslate"><span class="pre">ShaderProgram::m_textureUnitBindings</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13ShaderProgram19m_boundTextureUnitsE"><code class="docutils literal notranslate"><span class="pre">ShaderProgram::m_boundTextureUnits</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/avogadro/two.avogadro.cc/edit/main/source/develop/class/class_avogadro_1_1_rendering_1_1_shader_program.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/develop/class/class_avogadro_1_1_rendering_1_1_shader_program.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">          <p>
+            ©2023 The OpenChemistry / Avogadro Teams 
+          </p>
+          <p>Covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
+          </p></div>
+      
+        <div class="footer-item">        <p>
+          <a href="contrib/index.html">Contribute</a>
+        </p></div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.2.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

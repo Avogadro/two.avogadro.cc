@@ -1,0 +1,805 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Example Plugin Script - Part 2 &#8212; Avogadro 1.98.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=ee427ece" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
+
+    <script src="../../_static/documentation_options.js?v=b35d0f43"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'develop/scripts/example2';</script>
+    <link rel="canonical" href="https://two.avogadro.cc/develop/scripts/example2.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Charges / Electrostatics" href="charges.html" />
+    <link rel="prev" title="Example Plugin Script - Part 1" href="example1.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Avogadro</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../install/index.html">
+                        Install
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../docs/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        Develop
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../contrib/index.html">
+                        Contribute
+                      </a>
+                    </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+                    Discuss
+                  </a>
+                </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/AvogadroChem" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../install/index.html">
+                        Install
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../docs/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        Develop
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../contrib/index.html">
+                        Contribute
+                      </a>
+                    </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+                    Discuss
+                  </a>
+                </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/AvogadroChem" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Develop</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Script Plugins</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="install.html">Installing Script Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interface.html">Script Interfaces</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="commands.html">Command Scripts</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="example1.html">Example Plugin Script - Part 1</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Example Plugin Script - Part 2</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="charges.html">Charges / Electrostatics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="energy.html">Energy / Force Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="formats.html">File Formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generators.html">Input Generators</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../rpc.html">Avogadro Remote Procedure Call (RPC)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classlist.html">Class List</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Develop</a></li>
+    
+    
+    <li class="breadcrumb-item"><i class="fa-solid fa-ellipsis"></i></li>
+    
+    
+    <li class="breadcrumb-item"><a href="commands.html" class="nav-link">Command Scripts</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Example...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="example-plugin-script-part-2">
+<h1>Example Plugin Script - Part 2<a class="headerlink" href="#example-plugin-script-part-2" title="Link to this heading">#</a></h1>
+<section id="providing-input-to-run-command">
+<h2>Providing Input to Run Command<a class="headerlink" href="#providing-input-to-run-command" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>The output of the script depends on the <strong>input argument</strong> as mentioned above in the docs.</p></li>
+<li><p>The testing molecule for running the command may be in <strong>CJSON format</strong></p></li>
+</ul>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;chemicalJson&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="nt">&quot;atoms&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;coords&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;3d&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.617532</span><span class="p">,</span><span class="w"> </span><span class="mf">-0.027246</span><span class="p">,</span><span class="w"> </span><span class="mf">0.481009</span><span class="p">,</span><span class="w"> </span>
+<span class="w">               </span><span class="mf">0.156663</span><span class="p">,</span><span class="w"> </span><span class="mf">0.031752</span><span class="p">,</span><span class="w"> </span><span class="mf">-0.362419</span><span class="p">,</span><span class="w"> </span>
+<span class="w">               </span><span class="mf">-0.774185</span><span class="p">,</span><span class="w"> </span><span class="mf">-0.004516</span><span class="p">,</span><span class="w"> </span><span class="mf">-0.11859</span><span class="p">],</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;elements&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;number&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">]}</span>
+<span class="p">},</span>
+<span class="nt">&quot;bonds&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;connections&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;index&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">]},</span>
+<span class="w">        </span><span class="nt">&quot;order&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">]},</span>
+</pre></div>
+</div>
+<p>The above segment represent a water molecule in CJSON format.
+So, an example input molecule for the replace or alloy command may look like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s1">&#39;{&quot;Find&quot;: &quot;Hydrogen&quot;, </span>
+<span class="s2">&quot;Percent&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span> 
+<span class="s2">&quot;Replace&quot;</span><span class="p">:</span> <span class="s2">&quot;Carbon&quot;</span><span class="p">,</span>
+<span class="s2">&quot;cjson&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;chemicalJson&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="s2">&quot;atoms&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;coords&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;3d&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.617532</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.027246</span><span class="p">,</span> <span class="mf">0.481009</span><span class="p">,</span> <span class="mf">0.156663</span><span class="p">,</span> <span class="mf">0.031752</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.362419</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.774185</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.004516</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.11859</span><span class="p">]},</span>   
+          <span class="s2">&quot;elements&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;number&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">]}},</span>      
+          <span class="s2">&quot;bonds&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;connections&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;index&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]},</span> 
+                    <span class="s2">&quot;order&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]}}</span>
+<span class="p">}</span><span class="s1">&#39;| python replace.py --run-command  </span>
+</pre></div>
+</div>
+<p>where</p>
+<ul class="simple">
+<li><p>‘Find’,‘percent’,‘replace’ represent the user inputs to the script interface options</p></li>
+<li><p>The –run-command signifies the input argument.</p></li>
+</ul>
+<p>To run the plugin , as mentioned above, you must use <code class="docutils literal notranslate"><span class="pre">--run-command</span></code> as the input argument which will execute the  <code class="docutils literal notranslate"><span class="pre">runCommand()</span></code> function</p>
+</section>
+<section id="runcommand-function">
+<h2>runCommand() Function<a class="headerlink" href="#runcommand-function" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">runCommand</span><span class="p">():</span>
+    <span class="c1"># Read options from stdin</span>
+    <span class="n">stdinStr</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+    <span class="c1"># Parse the JSON strings</span>
+    <span class="n">opts</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">stdinStr</span><span class="p">)</span>
+
+    <span class="c1"># Prepare the result</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">result</span><span class="p">[</span><span class="s1">&#39;cjson&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">replace_element</span><span class="p">(</span><span class="n">opts</span><span class="p">,</span> <span class="n">opts</span><span class="p">[</span><span class="s1">&#39;cjson&#39;</span><span class="p">])</span> <span class="c1">#Operation Function and its arguments here</span>
+    <span class="k">return</span> <span class="n">result</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">runCommand</span></code> function is responsible for executing the (in this example, element replacement) operation based on the user options and input data.</p>
+<ol class="arabic simple">
+<li><p><strong>Read Options from Standard Input</strong>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">stdinStr</span> <span class="pre">=</span> <span class="pre">sys.stdin.read()</span></code>: This line reads data from the standard input (stdin).</p></li>
+</ul>
+</li>
+<li><p><strong>Parse JSON Data</strong>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">opts</span> <span class="pre">=</span> <span class="pre">json.loads(stdinStr)</span></code>: The <code class="docutils literal notranslate"><span class="pre">json.loads</span></code> function is used to parse the JSON data (in <code class="docutils literal notranslate"><span class="pre">stdinStr</span></code>) into a Python dictionary.</p></li>
+</ul>
+</li>
+<li><p><strong>Element Replacement</strong>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">result['cjson']</span> <span class="pre">=</span> <span class="pre">replace_element(opts,</span> <span class="pre">opts['cjson'])</span></code>:  It calls the <code class="docutils literal notranslate"><span class="pre">replace_element</span></code> function to perform the actual element replacement operation.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">opts</span></code> contains the user options, including the element to find, the percentage to replace, and the replacement element.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">opts['cjson']</span></code>  holds the molecular structure in CJSON format.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">replace_element</span></code> function takes these options and the molecular structure and returns a modified structure with the specified element replacements.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Return the Result</strong>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">result</span></code>: contains the modified molecular structure in CJSON format.</p></li>
+</ul>
+</li>
+</ol>
+<p>In summary, the <code class="docutils literal notranslate"><span class="pre">runCommand</span></code> function acts as a bridge between the Avogadro environment and the element replacement operation.</p>
+<p>It reads user options, triggers the replacement operation, and returns the modified molecular structure.</p>
+</section>
+<section id="operation-function">
+<h2>Operation Function<a class="headerlink" href="#operation-function" title="Link to this heading">#</a></h2>
+<p>This function gets executed through the runCommand() function. It is responsible for the required changes in the input molecule and thus, returns the modified molecule.</p>
+<section id="retrieving-necessary-components">
+<h3>Retrieving necessary components<a class="headerlink" href="#retrieving-necessary-components" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">replace_element</span><span class="p">(</span><span class="n">opts</span><span class="p">,</span> <span class="n">mol</span><span class="p">):</span>
+    <span class="n">original</span><span class="o">=</span> <span class="n">element_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">opts</span><span class="p">[</span><span class="s1">&#39;Find&#39;</span><span class="p">])</span>
+    <span class="n">percent</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">opts</span><span class="p">[</span><span class="s1">&#39;Percent&#39;</span><span class="p">])</span>
+    <span class="n">replace</span><span class="o">=</span> <span class="n">element_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">opts</span><span class="p">[</span><span class="s1">&#39;Replace&#39;</span><span class="p">])</span>
+
+    <span class="c1">#Code to make Changes to the molecule here</span>
+
+</pre></div>
+</div>
+<p>Since opts is collective python dictionary which contains the user inputs(in this case, the element to find, the percentage to replace, and the replacement element) and input molecule, .get is used to retrieve the necessary components from the opts dictionary.
+For example,</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">original</span> <span class="pre">=</span> <span class="pre">element_dict.get(opts['Find'])</span></code>: This line retrieves the atomic number of the element to be replaced, specified by the user in the “Find Element” option. It uses the element_dict dictionary to map the element name to its atomic number.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">percent</span> <span class="pre">=</span> <span class="pre">float(opts['Percent'])</span></code>: This line obtains the user-specified percentage of atoms to be replaced with the new element.</p></li>
+</ul>
+</section>
+<section id="support-for-selection">
+<h3>Support for Selection<a class="headerlink" href="#support-for-selection" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>It is usually preferable to have selection support that is, for example, minor tweaks which indicate the atoms selected by the user such that <strong>the changes must only be done on those specific atoms</strong></p></li>
+<li><p>Here the input also consists of an additional selected component which is a list indicating the atoms selected, <strong>1 for selected atom and 0 for non selected atom</strong>
+For example:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s1">&#39;{&quot;Find&quot;: &quot;Hydrogen&quot;, </span>
+<span class="s2">&quot;Percent&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span> 
+<span class="s2">&quot;Replace&quot;</span><span class="p">:</span> <span class="s2">&quot;Carbon&quot;</span><span class="p">,</span>
+<span class="s2">&quot;cjson&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;chemicalJson&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="s2">&quot;atoms&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;coords&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;3d&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.617532</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.027246</span><span class="p">,</span> <span class="mf">0.481009</span><span class="p">,</span> <span class="mf">0.156663</span><span class="p">,</span> <span class="mf">0.031752</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.362419</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.774185</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.004516</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.11859</span><span class="p">]},</span>  
+          <span class="s2">&quot;selected&quot;</span><span class="p">:[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+          <span class="s2">&quot;elements&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;number&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">]}},</span>      
+          <span class="s2">&quot;bonds&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;connections&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;index&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]},</span> 
+                    <span class="s2">&quot;order&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]}}</span>
+<span class="p">}</span><span class="s1">&#39;| python replace.py --run-command  </span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>If no such component is present we consider all the atoms to have been selected.</p></li>
+</ul>
+<p>Have a look at the code for selection support for the Alloy or Replace command</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># check if the user has any atoms selected</span>
+    <span class="n">any_selected</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">if</span> <span class="s1">&#39;selected&#39;</span> <span class="ow">in</span> <span class="n">mol</span><span class="p">[</span><span class="s1">&#39;atoms&#39;</span><span class="p">]:</span>
+        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">mol</span><span class="p">[</span><span class="s1">&#39;atoms&#39;</span><span class="p">][</span><span class="s1">&#39;selected&#39;</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="n">item</span><span class="p">:</span>
+                <span class="n">any_selected</span> <span class="o">=</span> <span class="kc">True</span>
+                <span class="k">break</span> <span class="c1"># we have *some* atoms selected</span>
+
+    <span class="n">atomic_numbers</span> <span class="o">=</span> <span class="n">mol</span><span class="p">[</span><span class="s1">&#39;atoms&#39;</span><span class="p">][</span><span class="s1">&#39;elements&#39;</span><span class="p">][</span><span class="s1">&#39;number&#39;</span><span class="p">]</span>
+    <span class="n">indices</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">atomic_numbers</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">num</span> <span class="o">==</span> <span class="n">original</span><span class="p">:</span>
+            <span class="c1"># two possibilities - nothing selected =&gt; do all atoms</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">any_selected</span><span class="p">:</span>
+                <span class="n">indices</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+            <span class="c1"># or only do selected atoms</span>
+            <span class="k">elif</span> <span class="n">mol</span><span class="p">[</span><span class="s1">&#39;atoms&#39;</span><span class="p">][</span><span class="s1">&#39;selected&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]:</span>
+                <span class="n">indices</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+    <span class="n">occurences</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">indices</span><span class="p">)</span>
+    <span class="n">number_of_atoms</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">percent</span><span class="o">*</span><span class="n">occurences</span><span class="p">)</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">selected_indices</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">indices</span><span class="p">,</span> <span class="n">number_of_atoms</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="n">selected_indices</span><span class="p">:</span>
+        <span class="n">atomic_numbers</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">replace</span>
+</pre></div>
+</div>
+<p>Here, replacement takes place only for the selected atoms</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">return</span> <span class="n">mol</span> 
+</pre></div>
+</div>
+<p>Finally we get the modified molecule output in the <strong>CJSON format</strong></p>
+</section>
+</section>
+<section id="sample-input-and-output">
+<h2>Sample Input and Output<a class="headerlink" href="#sample-input-and-output" title="Link to this heading">#</a></h2>
+<p>For example when we give the following input to the alchemy script:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s1">&#39;{&quot;Find&quot;: &quot;Hydrogen&quot;, </span>
+<span class="s2">&quot;Percent&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span> 
+<span class="s2">&quot;Replace&quot;</span><span class="p">:</span> <span class="s2">&quot;Carbon&quot;</span><span class="p">,</span>
+<span class="s2">&quot;cjson&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;chemicalJson&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="s2">&quot;atoms&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;coords&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;3d&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.617532</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.027246</span><span class="p">,</span> <span class="mf">0.481009</span><span class="p">,</span> <span class="mf">0.156663</span><span class="p">,</span> <span class="mf">0.031752</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.362419</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.774185</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.004516</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.11859</span><span class="p">]},</span>  
+          <span class="s2">&quot;selected&quot;</span><span class="p">:[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+          <span class="s2">&quot;elements&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;number&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">]}},</span>      
+          <span class="s2">&quot;bonds&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;connections&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;index&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]},</span> 
+                    <span class="s2">&quot;order&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]}}</span>
+<span class="p">}</span><span class="s1">&#39;| python replace.py --run-command</span>
+</pre></div>
+</div>
+<p>we get the following output:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">&quot;cjson&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;chemicalJson&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;atoms&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;coords&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;3d&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.617532</span><span class="p">,</span><span class="w"> </span><span class="mf">-0.027246</span><span class="p">,</span><span class="w"> </span><span class="mf">0.481009</span><span class="p">,</span><span class="w"> </span><span class="mf">0.156663</span><span class="p">,</span><span class="w"> </span><span class="mf">0.031752</span><span class="p">,</span><span class="w"> </span><span class="mf">-0.362419</span><span class="p">,</span><span class="w"> </span><span class="mf">-0.774185</span><span class="p">,</span><span class="w"> </span><span class="mf">-0.004516</span><span class="p">,</span><span class="w"> </span><span class="mf">-0.11859</span><span class="p">]},</span><span class="w"> </span><span class="nt">&quot;selected&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="nt">&quot;elements&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;number&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">]}},</span><span class="w"> </span><span class="nt">&quot;bonds&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;connections&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;index&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">]},</span><span class="w"> </span><span class="nt">&quot;order&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">]}}}</span>
+</pre></div>
+</div>
+<p>Thus, indicating only 50% of the selected hydrogen atoms have been replaced with carbon.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="example1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Example Plugin Script - Part 1</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="charges.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Charges / Electrostatics</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#providing-input-to-run-command">Providing Input to Run Command</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#runcommand-function">runCommand() Function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operation-function">Operation Function</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#retrieving-necessary-components">Retrieving necessary components</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#support-for-selection">Support for Selection</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-input-and-output">Sample Input and Output</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/avogadro/two.avogadro.cc/edit/main/source/develop/scripts/example2.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/develop/scripts/example2.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">          <p>
+            ©2023 The OpenChemistry / Avogadro Teams 
+          </p>
+          <p>Covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
+          </p></div>
+      
+        <div class="footer-item">        <p>
+          <a href="contrib/index.html">Contribute</a>
+        </p></div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.2.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

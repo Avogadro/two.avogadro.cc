@@ -1,0 +1,793 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Class Avogadro::VTK::vtkGLWidget &#8212; Avogadro 1.98.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=ee427ece" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
+
+    <script src="../../_static/documentation_options.js?v=b35d0f43"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'develop/class/class_avogadro_1_1_v_t_k_1_1vtk_g_l_widget';</script>
+    <link rel="canonical" href="https://two.avogadro.cc/develop/class/class_avogadro_1_1_v_t_k_1_1vtk_g_l_widget.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Class vtkAvogadroActor" href="classvtk_avogadro_actor.html" />
+    <link rel="prev" title="Class Avogadro::VTK::VtkPlot" href="class_avogadro_1_1_v_t_k_1_1_vtk_plot.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Avogadro</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../install/index.html">
+                        Install
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../docs/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        Develop
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../contrib/index.html">
+                        Contribute
+                      </a>
+                    </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+                    Discuss
+                  </a>
+                </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/AvogadroChem" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../install/index.html">
+                        Install
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../docs/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        Develop
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../contrib/index.html">
+                        Contribute
+                      </a>
+                    </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+                    Discuss
+                  </a>
+                </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/AvogadroChem" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Develop</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">Script Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rpc.html">Avogadro Remote Procedure Call (RPC)</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../classlist.html">Class List</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../core.html">Core Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../io.html">IO Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../molequeue.html">MoleQueue Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qtgui.html">QtGui Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rendering.html">Rendering Classes</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../vtk.html">VTK Classes</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_v_t_k_1_1_vtk_plot.html">Class Avogadro::VTK::VtkPlot</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Class Avogadro::VTK::vtkGLWidget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classvtk_avogadro_actor.html">Class vtkAvogadroActor</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Develop</a></li>
+    
+    
+    <li class="breadcrumb-item"><i class="fa-solid fa-ellipsis"></i></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../vtk.html" class="nav-link">VTK Classes</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Class...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="class-avogadro-vtk-vtkglwidget">
+<h1>Class Avogadro::VTK::vtkGLWidget<a class="headerlink" href="#class-avogadro-vtk-vtkglwidget" title="Link to this heading">#</a></h1>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro3VTK11vtkGLWidgetE">
+<span id="_CPPv3N8Avogadro3VTK11vtkGLWidgetE"></span><span id="_CPPv2N8Avogadro3VTK11vtkGLWidgetE"></span><span id="Avogadro::VTK::vtkGLWidget"></span><span class="target" id="class_avogadro_1_1_v_t_k_1_1vtk_g_l_widget"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">vtkGLWidget</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">QVTKWidget</span></span><a class="headerlink" href="#_CPPv4N8Avogadro3VTK11vtkGLWidgetE" title="Link to this definition">#</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-unnamed-group">Unnamed Group</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro3VTK11vtkGLWidget8moleculeEv">
+<span id="_CPPv3N8Avogadro3VTK11vtkGLWidget8moleculeEv"></span><span id="_CPPv2N8Avogadro3VTK11vtkGLWidget8moleculeEv"></span><span id="Avogadro::VTK::vtkGLWidget::molecule"></span><span class="target" id="class_avogadro_1_1_v_t_k_1_1vtk_g_l_widget_1a7d2b707654f72f71284f61b11ba58199"></span><span class="n"><span class="pre">QtGui</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_molecule.html#_CPPv4N8Avogadro5QtGui8MoleculeE" title="Avogadro::QtGui::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">molecule</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro3VTK11vtkGLWidget8moleculeEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the molecule being rendered by the widget. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro3VTK11vtkGLWidget8moleculeEv">
+<span id="_CPPv3NK8Avogadro3VTK11vtkGLWidget8moleculeEv"></span><span id="_CPPv2NK8Avogadro3VTK11vtkGLWidget8moleculeEv"></span><span id="Avogadro::VTK::vtkGLWidget::moleculeC"></span><span class="target" id="class_avogadro_1_1_v_t_k_1_1vtk_g_l_widget_1a7d91dee7a6b89d355dc6a66adee81f80"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QtGui</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_molecule.html#_CPPv4N8Avogadro5QtGui8MoleculeE" title="Avogadro::QtGui::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">molecule</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro3VTK11vtkGLWidget8moleculeEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the molecule being rendered by the widget. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-unnamed-group">Unnamed Group</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro3VTK11vtkGLWidget10sceneModelEv">
+<span id="_CPPv3N8Avogadro3VTK11vtkGLWidget10sceneModelEv"></span><span id="_CPPv2N8Avogadro3VTK11vtkGLWidget10sceneModelEv"></span><span id="Avogadro::VTK::vtkGLWidget::sceneModel"></span><span class="target" id="class_avogadro_1_1_v_t_k_1_1vtk_g_l_widget_1a6ad5a28488fbc68b0ee5019e63131135"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">QtGui</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_scene_plugin_model.html#_CPPv4N8Avogadro5QtGui16ScenePluginModelE" title="Avogadro::QtGui::ScenePluginModel"><span class="n"><span class="pre">ScenePluginModel</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">sceneModel</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro3VTK11vtkGLWidget10sceneModelEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the GLWidget’s ScenePluginModel, used to add, delete and modify the scene plugin items. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro3VTK11vtkGLWidget10sceneModelEv">
+<span id="_CPPv3NK8Avogadro3VTK11vtkGLWidget10sceneModelEv"></span><span id="_CPPv2NK8Avogadro3VTK11vtkGLWidget10sceneModelEv"></span><span id="Avogadro::VTK::vtkGLWidget::sceneModelC"></span><span class="target" id="class_avogadro_1_1_v_t_k_1_1vtk_g_l_widget_1a806dc21320021c4e922787e94d03f39d"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QtGui</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_scene_plugin_model.html#_CPPv4N8Avogadro5QtGui16ScenePluginModelE" title="Avogadro::QtGui::ScenePluginModel"><span class="n"><span class="pre">ScenePluginModel</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">sceneModel</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro3VTK11vtkGLWidget10sceneModelEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the GLWidget’s ScenePluginModel, used to add, delete and modify the scene plugin items. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro3VTK11vtkGLWidget11vtkGLWidgetEP7QWidgetN2Qt11WindowFlagsE">
+<span id="_CPPv3N8Avogadro3VTK11vtkGLWidget11vtkGLWidgetEP7QWidgetN2Qt11WindowFlagsE"></span><span id="_CPPv2N8Avogadro3VTK11vtkGLWidget11vtkGLWidgetEP7QWidgetN2Qt11WindowFlagsE"></span><span id="Avogadro::VTK::vtkGLWidget::vtkGLWidget__QWidgetP.Qt::WindowFlags"></span><span class="target" id="class_avogadro_1_1_v_t_k_1_1vtk_g_l_widget_1a13736eab6095defaaba63e260407f87d"></span><span class="sig-name descname"><span class="n"><span class="pre">vtkGLWidget</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">QWidget</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">p</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">nullptr</span></span>, <span class="n"><span class="pre">Qt</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">WindowFlags</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">f</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">Qt</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">WindowFlags</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro3VTK11vtkGLWidget11vtkGLWidgetEP7QWidgetN2Qt11WindowFlagsE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro3VTK11vtkGLWidgetD0Ev">
+<span id="_CPPv3N8Avogadro3VTK11vtkGLWidgetD0Ev"></span><span id="_CPPv2N8Avogadro3VTK11vtkGLWidgetD0Ev"></span><span id="Avogadro::VTK::vtkGLWidget::~vtkGLWidget"></span><span class="target" id="class_avogadro_1_1_v_t_k_1_1vtk_g_l_widget_1a354789b3e8e8a83f95abaa88e103666a"></span><span class="sig-name descname"><span class="n"><span class="pre">~vtkGLWidget</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro3VTK11vtkGLWidgetD0Ev" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro3VTK11vtkGLWidget11setMoleculeEPN5QtGui8MoleculeE">
+<span id="_CPPv3N8Avogadro3VTK11vtkGLWidget11setMoleculeEPN5QtGui8MoleculeE"></span><span id="_CPPv2N8Avogadro3VTK11vtkGLWidget11setMoleculeEPN5QtGui8MoleculeE"></span><span id="Avogadro::VTK::vtkGLWidget::setMolecule__QtGui::MoleculeP"></span><span class="target" id="class_avogadro_1_1_v_t_k_1_1vtk_g_l_widget_1ae2c649d8c8422cb5669690484bcdf311"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setMolecule</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">QtGui</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_molecule.html#_CPPv4N8Avogadro5QtGui8MoleculeE" title="Avogadro::QtGui::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">molecule</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro3VTK11vtkGLWidget11setMoleculeEPN5QtGui8MoleculeE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the molecule the widget will render. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro3VTK11vtkGLWidget8rendererEv">
+<span id="_CPPv3N8Avogadro3VTK11vtkGLWidget8rendererEv"></span><span id="_CPPv2N8Avogadro3VTK11vtkGLWidget8rendererEv"></span><span id="Avogadro::VTK::vtkGLWidget::renderer"></span><span class="target" id="class_avogadro_1_1_v_t_k_1_1vtk_g_l_widget_1a03180aefa60214dd083e277c7a2bd1ce"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">Rendering</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_g_l_renderer.html#_CPPv4N8Avogadro9Rendering10GLRendererE" title="Avogadro::Rendering::GLRenderer"><span class="n"><span class="pre">GLRenderer</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">renderer</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro3VTK11vtkGLWidget8rendererEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get a reference to the renderer for the widget. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro3VTK11vtkGLWidget3lutEv">
+<span id="_CPPv3NK8Avogadro3VTK11vtkGLWidget3lutEv"></span><span id="_CPPv2NK8Avogadro3VTK11vtkGLWidget3lutEv"></span><span id="Avogadro::VTK::vtkGLWidget::lutC"></span><span class="target" id="class_avogadro_1_1_v_t_k_1_1vtk_g_l_widget_1ab6396106b62f8a9f95cec4ad8a1d9ee6"></span><span class="n"><span class="pre">vtkColorTransferFunction</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">lut</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro3VTK11vtkGLWidget3lutEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the color loop up table for the volume renderer. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro3VTK11vtkGLWidget15opacityFunctionEv">
+<span id="_CPPv3NK8Avogadro3VTK11vtkGLWidget15opacityFunctionEv"></span><span id="_CPPv2NK8Avogadro3VTK11vtkGLWidget15opacityFunctionEv"></span><span id="Avogadro::VTK::vtkGLWidget::opacityFunctionC"></span><span class="target" id="class_avogadro_1_1_v_t_k_1_1vtk_g_l_widget_1acb6b6adb686211df070ed27d700af72a"></span><span class="n"><span class="pre">vtkPiecewiseFunction</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">opacityFunction</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro3VTK11vtkGLWidget15opacityFunctionEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the opacity function for the volume renderer. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro3VTK11vtkGLWidget9imageDataEv">
+<span id="_CPPv3NK8Avogadro3VTK11vtkGLWidget9imageDataEv"></span><span id="_CPPv2NK8Avogadro3VTK11vtkGLWidget9imageDataEv"></span><span id="Avogadro::VTK::vtkGLWidget::imageDataC"></span><span class="target" id="class_avogadro_1_1_v_t_k_1_1vtk_g_l_widget_1a2e443206adfa139b7628879bc14ee33f"></span><span class="n"><span class="pre">vtkImageData</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">imageData</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro3VTK11vtkGLWidget9imageDataEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the vtkImageData that is being rendered. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro3VTK11vtkGLWidget7setCubeEPN4Core4CubeE">
+<span id="_CPPv3N8Avogadro3VTK11vtkGLWidget7setCubeEPN4Core4CubeE"></span><span id="_CPPv2N8Avogadro3VTK11vtkGLWidget7setCubeEPN4Core4CubeE"></span><span id="Avogadro::VTK::vtkGLWidget::setCube__Core::CubeP"></span><span class="target" id="class_avogadro_1_1_v_t_k_1_1vtk_g_l_widget_1a3cab01464ef6b42a748b52a1a4a40a30"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setCube</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_cube.html#_CPPv4N8Avogadro4Core4CubeE" title="Avogadro::Core::Cube"><span class="n"><span class="pre">Cube</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">cube</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro3VTK11vtkGLWidget7setCubeEPN4Core4CubeE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the cube to render. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro3VTK11vtkGLWidget4cubeEv">
+<span id="_CPPv3N8Avogadro3VTK11vtkGLWidget4cubeEv"></span><span id="_CPPv2N8Avogadro3VTK11vtkGLWidget4cubeEv"></span><span id="Avogadro::VTK::vtkGLWidget::cube"></span><span class="target" id="class_avogadro_1_1_v_t_k_1_1vtk_g_l_widget_1a02e3edacad6f79bfb7545df6c5771e4d"></span><span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_cube.html#_CPPv4N8Avogadro4Core4CubeE" title="Avogadro::Core::Cube"><span class="n"><span class="pre">Cube</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">cube</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro3VTK11vtkGLWidget4cubeEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the cube being rendered, this is the input for the imageData. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro3VTK11vtkGLWidget12renderVolumeEb">
+<span id="_CPPv3N8Avogadro3VTK11vtkGLWidget12renderVolumeEb"></span><span id="_CPPv2N8Avogadro3VTK11vtkGLWidget12renderVolumeEb"></span><span id="Avogadro::VTK::vtkGLWidget::renderVolume__b"></span><span class="target" id="class_avogadro_1_1_v_t_k_1_1vtk_g_l_widget_1a5143105df5d41151f87dcd34ea417265"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">renderVolume</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">enable</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro3VTK11vtkGLWidget12renderVolumeEb" title="Link to this definition">#</a><br /></dt>
+<dd><p>Display the volume rendering. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro3VTK11vtkGLWidget16renderIsosurfaceEb">
+<span id="_CPPv3N8Avogadro3VTK11vtkGLWidget16renderIsosurfaceEb"></span><span id="_CPPv2N8Avogadro3VTK11vtkGLWidget16renderIsosurfaceEb"></span><span id="Avogadro::VTK::vtkGLWidget::renderIsosurface__b"></span><span class="target" id="class_avogadro_1_1_v_t_k_1_1vtk_g_l_widget_1aaf2769c4adb58175a958b59b5cf8655c"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">renderIsosurface</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">enable</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro3VTK11vtkGLWidget16renderIsosurfaceEb" title="Link to this definition">#</a><br /></dt>
+<dd><p>Display an isosurface. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro3VTK11vtkGLWidget11setIsoValueEd">
+<span id="_CPPv3N8Avogadro3VTK11vtkGLWidget11setIsoValueEd"></span><span id="_CPPv2N8Avogadro3VTK11vtkGLWidget11setIsoValueEd"></span><span id="Avogadro::VTK::vtkGLWidget::setIsoValue__double"></span><span class="target" id="class_avogadro_1_1_v_t_k_1_1vtk_g_l_widget_1a570934a56657ada7173f1957ef48d694"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setIsoValue</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro3VTK11vtkGLWidget11setIsoValueEd" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the isovalue for the isosurface. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro3VTK11vtkGLWidget10setOpacityEd">
+<span id="_CPPv3N8Avogadro3VTK11vtkGLWidget10setOpacityEd"></span><span id="_CPPv2N8Avogadro3VTK11vtkGLWidget10setOpacityEd"></span><span id="Avogadro::VTK::vtkGLWidget::setOpacity__double"></span><span class="target" id="class_avogadro_1_1_v_t_k_1_1vtk_g_l_widget_1ad456df7ed864be8c70083a4e63f31f2e"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setOpacity</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro3VTK11vtkGLWidget10setOpacityEd" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the isovalue for the isosurface. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-slots">Public Slots</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro3VTK11vtkGLWidget11updateSceneEv">
+<span id="_CPPv3N8Avogadro3VTK11vtkGLWidget11updateSceneEv"></span><span id="_CPPv2N8Avogadro3VTK11vtkGLWidget11updateSceneEv"></span><span id="Avogadro::VTK::vtkGLWidget::updateScene"></span><span class="target" id="class_avogadro_1_1_v_t_k_1_1vtk_g_l_widget_1ada6a3f14c996a0c96b0488b092f335d0"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">updateScene</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro3VTK11vtkGLWidget11updateSceneEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Update the scene plugins for the widget, this will generate geometry in the scene etc. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro3VTK11vtkGLWidget10clearSceneEv">
+<span id="_CPPv3N8Avogadro3VTK11vtkGLWidget10clearSceneEv"></span><span id="_CPPv2N8Avogadro3VTK11vtkGLWidget10clearSceneEv"></span><span id="Avogadro::VTK::vtkGLWidget::clearScene"></span><span class="target" id="class_avogadro_1_1_v_t_k_1_1vtk_g_l_widget_1a448ed3edddb28aff222719bfabe5e067"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">clearScene</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro3VTK11vtkGLWidget10clearSceneEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Clear the contents of the scene. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro3VTK11vtkGLWidget11resetCameraEv">
+<span id="_CPPv3N8Avogadro3VTK11vtkGLWidget11resetCameraEv"></span><span id="_CPPv2N8Avogadro3VTK11vtkGLWidget11resetCameraEv"></span><span id="Avogadro::VTK::vtkGLWidget::resetCamera"></span><span class="target" id="class_avogadro_1_1_v_t_k_1_1vtk_g_l_widget_1a395cfd3b5286442312051da532ffa579"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">resetCamera</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro3VTK11vtkGLWidget11resetCameraEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Reset the view to fit the entire scene. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro3VTK11vtkGLWidget13resetGeometryEv">
+<span id="_CPPv3N8Avogadro3VTK11vtkGLWidget13resetGeometryEv"></span><span id="_CPPv2N8Avogadro3VTK11vtkGLWidget13resetGeometryEv"></span><span id="Avogadro::VTK::vtkGLWidget::resetGeometry"></span><span class="target" id="class_avogadro_1_1_v_t_k_1_1vtk_g_l_widget_1af9d53cf2095cc836535071f4d1f1f030"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">resetGeometry</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro3VTK11vtkGLWidget13resetGeometryEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Reset the geometry when the molecule etc changes. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro3VTK11vtkGLWidget10cubeVolumeEPN4Core4CubeE">
+<span id="_CPPv3N8Avogadro3VTK11vtkGLWidget10cubeVolumeEPN4Core4CubeE"></span><span id="_CPPv2N8Avogadro3VTK11vtkGLWidget10cubeVolumeEPN4Core4CubeE"></span><span id="Avogadro::VTK::vtkGLWidget::cubeVolume__Core::CubeP"></span><span class="target" id="class_avogadro_1_1_v_t_k_1_1vtk_g_l_widget_1a4eb88b72e112fc2bf93d1810ed18dd36"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cubeVolume</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_cube.html#_CPPv4N8Avogadro4Core4CubeE" title="Avogadro::Core::Cube"><span class="n"><span class="pre">Cube</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">cube</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro3VTK11vtkGLWidget10cubeVolumeEPN4Core4CubeE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Volume render the supplied cube. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-signals">Signals</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro3VTK11vtkGLWidget16imageDataUpdatedEv">
+<span id="_CPPv3N8Avogadro3VTK11vtkGLWidget16imageDataUpdatedEv"></span><span id="_CPPv2N8Avogadro3VTK11vtkGLWidget16imageDataUpdatedEv"></span><span id="Avogadro::VTK::vtkGLWidget::imageDataUpdated"></span><span class="target" id="class_avogadro_1_1_v_t_k_1_1vtk_g_l_widget_1aec18a11aaf1c3357a510466ec0a66b5f"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">imageDataUpdated</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro3VTK11vtkGLWidget16imageDataUpdatedEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Emitted if the image data is updated so that histograms etc can update. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="class_avogadro_1_1_v_t_k_1_1_vtk_plot.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Class Avogadro::VTK::VtkPlot</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="classvtk_avogadro_actor.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Class vtkAvogadroActor</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro3VTK11vtkGLWidgetE"><code class="docutils literal notranslate"><span class="pre">vtkGLWidget</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro3VTK11vtkGLWidget8moleculeEv"><code class="docutils literal notranslate"><span class="pre">vtkGLWidget::molecule()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro3VTK11vtkGLWidget8moleculeEv"><code class="docutils literal notranslate"><span class="pre">vtkGLWidget::molecule()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro3VTK11vtkGLWidget10sceneModelEv"><code class="docutils literal notranslate"><span class="pre">vtkGLWidget::sceneModel()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro3VTK11vtkGLWidget10sceneModelEv"><code class="docutils literal notranslate"><span class="pre">vtkGLWidget::sceneModel()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro3VTK11vtkGLWidget11vtkGLWidgetEP7QWidgetN2Qt11WindowFlagsE"><code class="docutils literal notranslate"><span class="pre">vtkGLWidget::vtkGLWidget()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro3VTK11vtkGLWidgetD0Ev"><code class="docutils literal notranslate"><span class="pre">vtkGLWidget::~vtkGLWidget()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro3VTK11vtkGLWidget11setMoleculeEPN5QtGui8MoleculeE"><code class="docutils literal notranslate"><span class="pre">vtkGLWidget::setMolecule()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro3VTK11vtkGLWidget8rendererEv"><code class="docutils literal notranslate"><span class="pre">vtkGLWidget::renderer()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro3VTK11vtkGLWidget3lutEv"><code class="docutils literal notranslate"><span class="pre">vtkGLWidget::lut()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro3VTK11vtkGLWidget15opacityFunctionEv"><code class="docutils literal notranslate"><span class="pre">vtkGLWidget::opacityFunction()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro3VTK11vtkGLWidget9imageDataEv"><code class="docutils literal notranslate"><span class="pre">vtkGLWidget::imageData()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro3VTK11vtkGLWidget7setCubeEPN4Core4CubeE"><code class="docutils literal notranslate"><span class="pre">vtkGLWidget::setCube()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro3VTK11vtkGLWidget4cubeEv"><code class="docutils literal notranslate"><span class="pre">vtkGLWidget::cube()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro3VTK11vtkGLWidget12renderVolumeEb"><code class="docutils literal notranslate"><span class="pre">vtkGLWidget::renderVolume()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro3VTK11vtkGLWidget16renderIsosurfaceEb"><code class="docutils literal notranslate"><span class="pre">vtkGLWidget::renderIsosurface()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro3VTK11vtkGLWidget11setIsoValueEd"><code class="docutils literal notranslate"><span class="pre">vtkGLWidget::setIsoValue()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro3VTK11vtkGLWidget10setOpacityEd"><code class="docutils literal notranslate"><span class="pre">vtkGLWidget::setOpacity()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro3VTK11vtkGLWidget11updateSceneEv"><code class="docutils literal notranslate"><span class="pre">vtkGLWidget::updateScene()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro3VTK11vtkGLWidget10clearSceneEv"><code class="docutils literal notranslate"><span class="pre">vtkGLWidget::clearScene()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro3VTK11vtkGLWidget11resetCameraEv"><code class="docutils literal notranslate"><span class="pre">vtkGLWidget::resetCamera()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro3VTK11vtkGLWidget13resetGeometryEv"><code class="docutils literal notranslate"><span class="pre">vtkGLWidget::resetGeometry()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro3VTK11vtkGLWidget10cubeVolumeEPN4Core4CubeE"><code class="docutils literal notranslate"><span class="pre">vtkGLWidget::cubeVolume()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro3VTK11vtkGLWidget16imageDataUpdatedEv"><code class="docutils literal notranslate"><span class="pre">vtkGLWidget::imageDataUpdated()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/avogadro/two.avogadro.cc/edit/main/source/develop/class/class_avogadro_1_1_v_t_k_1_1vtk_g_l_widget.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/develop/class/class_avogadro_1_1_v_t_k_1_1vtk_g_l_widget.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">          <p>
+            ©2023 The OpenChemistry / Avogadro Teams 
+          </p>
+          <p>Covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
+          </p></div>
+      
+        <div class="footer-item">        <p>
+          <a href="contrib/index.html">Contribute</a>
+        </p></div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.2.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

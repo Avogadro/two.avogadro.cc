@@ -1,0 +1,982 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Class Avogadro::Rendering::Texture2D &#8212; Avogadro 1.98.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=ee427ece" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
+
+    <script src="../../_static/documentation_options.js?v=b35d0f43"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'develop/class/class_avogadro_1_1_rendering_1_1_texture2_d';</script>
+    <link rel="canonical" href="https://two.avogadro.cc/develop/class/class_avogadro_1_1_rendering_1_1_texture2_d.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Class Avogadro::Rendering::TransformNode" href="class_avogadro_1_1_rendering_1_1_transform_node.html" />
+    <link rel="prev" title="Class Avogadro::Rendering::TextRenderStrategy" href="class_avogadro_1_1_rendering_1_1_text_render_strategy.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Avogadro</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../install/index.html">
+                        Install
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../docs/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        Develop
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../contrib/index.html">
+                        Contribute
+                      </a>
+                    </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+                    Discuss
+                  </a>
+                </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/AvogadroChem" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../install/index.html">
+                        Install
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../docs/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        Develop
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../contrib/index.html">
+                        Contribute
+                      </a>
+                    </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+                    Discuss
+                  </a>
+                </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/AvogadroChem" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Develop</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">Script Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rpc.html">Avogadro Remote Procedure Call (RPC)</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../classlist.html">Class List</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../core.html">Core Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../io.html">IO Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../molequeue.html">MoleQueue Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qtgui.html">QtGui Classes</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../rendering.html">Rendering Classes</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_ambient_occlusion_sphere_geometry.html">Class Avogadro::Rendering::AmbientOcclusionSphereGeometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_arrow_geometry.html">Class Avogadro::Rendering::ArrowGeometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_buffer_object.html">Class Avogadro::Rendering::BufferObject</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_camera.html">Class Avogadro::Rendering::Camera</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_cylinder.html">Class Avogadro::Rendering::Cylinder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_cylinder_geometry.html">Class Avogadro::Rendering::CylinderGeometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_drawable.html">Class Avogadro::Rendering::Drawable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_g_l_render_visitor.html">Class Avogadro::Rendering::GLRenderVisitor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_g_l_renderer.html">Class Avogadro::Rendering::GLRenderer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_geometry_node.html">Class Avogadro::Rendering::GeometryNode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_geometry_visitor.html">Class Avogadro::Rendering::GeometryVisitor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_group_node.html">Class Avogadro::Rendering::GroupNode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_line_strip_geometry.html">Class Avogadro::Rendering::LineStripGeometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_mesh_geometry.html">Class Avogadro::Rendering::MeshGeometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_node.html">Class Avogadro::Rendering::Node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_p_o_v_ray_visitor.html">Class Avogadro::Rendering::POVRayVisitor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_primitive.html">Class Avogadro::Rendering::Primitive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_scene.html">Class Avogadro::Rendering::Scene</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_shader.html">Class Avogadro::Rendering::Shader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_shader_program.html">Class Avogadro::Rendering::ShaderProgram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_sphere.html">Class Avogadro::Rendering::Sphere</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_sphere_geometry.html">Class Avogadro::Rendering::SphereGeometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_text_label2_d.html">Class Avogadro::Rendering::TextLabel2D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_text_label3_d.html">Class Avogadro::Rendering::TextLabel3D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_text_label_base.html">Class Avogadro::Rendering::TextLabelBase</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_text_properties.html">Class Avogadro::Rendering::TextProperties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_text_render_strategy.html">Class Avogadro::Rendering::TextRenderStrategy</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Class Avogadro::Rendering::Texture2D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_transform_node.html">Class Avogadro::Rendering::TransformNode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_v_r_m_l_visitor.html">Class Avogadro::Rendering::VRMLVisitor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_visitor.html">Class Avogadro::Rendering::Visitor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_volume_geometry.html">Class Avogadro::Rendering::VolumeGeometry</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../vtk.html">VTK Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Develop</a></li>
+    
+    
+    <li class="breadcrumb-item"><i class="fa-solid fa-ellipsis"></i></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../rendering.html" class="nav-link">Rendering Classes</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Class...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="class-avogadro-rendering-texture2d">
+<h1>Class Avogadro::Rendering::Texture2D<a class="headerlink" href="#class-avogadro-rendering-texture2d" title="Link to this heading">#</a></h1>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering9Texture2DE">
+<span id="_CPPv3N8Avogadro9Rendering9Texture2DE"></span><span id="_CPPv2N8Avogadro9Rendering9Texture2DE"></span><span id="Avogadro::Rendering::Texture2D"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_texture2_d"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Texture2D</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering9Texture2DE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The <a class="reference internal" href="#class_avogadro_1_1_rendering_1_1_texture2_d"><span class="std std-ref">Texture2D</span></a> class manages texture resources in graphics libraries. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-unnamed-group">Unnamed Group</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering9Texture2D12setWrappingSE14WrappingOption">
+<span id="_CPPv3N8Avogadro9Rendering9Texture2D12setWrappingSE14WrappingOption"></span><span id="_CPPv2N8Avogadro9Rendering9Texture2D12setWrappingSE14WrappingOption"></span><span id="Avogadro::Rendering::Texture2D::setWrappingS__WrappingOption"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_texture2_d_1ababf44efed0a88c724d90d3366a5b492"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setWrappingS</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N8Avogadro9Rendering9Texture2D14WrappingOptionE" title="Avogadro::Rendering::Texture2D::WrappingOption"><span class="n"><span class="pre">WrappingOption</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">opt</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering9Texture2D12setWrappingSE14WrappingOption" title="Link to this definition">#</a><br /></dt>
+<dd><p>Wrapping options in the s-direction. Default is Repeat. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering9Texture2D9wrappingSEv">
+<span id="_CPPv3NK8Avogadro9Rendering9Texture2D9wrappingSEv"></span><span id="_CPPv2NK8Avogadro9Rendering9Texture2D9wrappingSEv"></span><span id="Avogadro::Rendering::Texture2D::wrappingSC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_texture2_d_1af2d841dc7737ede76a4749557084b4b4"></span><a class="reference internal" href="#_CPPv4N8Avogadro9Rendering9Texture2D14WrappingOptionE" title="Avogadro::Rendering::Texture2D::WrappingOption"><span class="n"><span class="pre">WrappingOption</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">wrappingS</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering9Texture2D9wrappingSEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Wrapping options in the s-direction. Default is Repeat. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-unnamed-group">Unnamed Group</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering9Texture2D12setWrappingTE14WrappingOption">
+<span id="_CPPv3N8Avogadro9Rendering9Texture2D12setWrappingTE14WrappingOption"></span><span id="_CPPv2N8Avogadro9Rendering9Texture2D12setWrappingTE14WrappingOption"></span><span id="Avogadro::Rendering::Texture2D::setWrappingT__WrappingOption"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_texture2_d_1ad1621cd4a8ad6efb424f86a14f2ceb1b"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setWrappingT</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N8Avogadro9Rendering9Texture2D14WrappingOptionE" title="Avogadro::Rendering::Texture2D::WrappingOption"><span class="n"><span class="pre">WrappingOption</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">opt</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering9Texture2D12setWrappingTE14WrappingOption" title="Link to this definition">#</a><br /></dt>
+<dd><p>Wrapping options in the t-direction. Default is Repeat. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering9Texture2D9wrappingTEv">
+<span id="_CPPv3NK8Avogadro9Rendering9Texture2D9wrappingTEv"></span><span id="_CPPv2NK8Avogadro9Rendering9Texture2D9wrappingTEv"></span><span id="Avogadro::Rendering::Texture2D::wrappingTC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_texture2_d_1a5726748859bd7bee5ef3f9b041e42311"></span><a class="reference internal" href="#_CPPv4N8Avogadro9Rendering9Texture2D14WrappingOptionE" title="Avogadro::Rendering::Texture2D::WrappingOption"><span class="n"><span class="pre">WrappingOption</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">wrappingT</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering9Texture2D9wrappingTEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Wrapping options in the t-direction. Default is Repeat. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-types">Public Types</p>
+<dl class="cpp enum">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering9Texture2D12FilterOptionE">
+<span id="_CPPv3N8Avogadro9Rendering9Texture2D12FilterOptionE"></span><span id="_CPPv2N8Avogadro9Rendering9Texture2D12FilterOptionE"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_texture2_d_1a934fc98137f27eac110ee8f415ddacd6"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">FilterOption</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering9Texture2D12FilterOptionE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The FilterOption enum defines options for interpolating texels onto pixels. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering9Texture2D12FilterOption13InvalidFilterE">
+<span id="_CPPv3N8Avogadro9Rendering9Texture2D12FilterOption13InvalidFilterE"></span><span id="_CPPv2N8Avogadro9Rendering9Texture2D12FilterOption13InvalidFilterE"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_texture2_d_1a934fc98137f27eac110ee8f415ddacd6a9614f8bc39f5611943bf9acb5284056f"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">InvalidFilter</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering9Texture2D12FilterOption13InvalidFilterE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering9Texture2D12FilterOption7NearestE">
+<span id="_CPPv3N8Avogadro9Rendering9Texture2D12FilterOption7NearestE"></span><span id="_CPPv2N8Avogadro9Rendering9Texture2D12FilterOption7NearestE"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_texture2_d_1a934fc98137f27eac110ee8f415ddacd6a02bcbe686019f8ce26f3a1b282a8f2d1"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Nearest</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering9Texture2D12FilterOption7NearestE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Use the nearest texel for the pixel value. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering9Texture2D12FilterOption6LinearE">
+<span id="_CPPv3N8Avogadro9Rendering9Texture2D12FilterOption6LinearE"></span><span id="_CPPv2N8Avogadro9Rendering9Texture2D12FilterOption6LinearE"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_texture2_d_1a934fc98137f27eac110ee8f415ddacd6a1a1f3bc55fefa098d9034cc46e2e7a2b"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Linear</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering9Texture2D12FilterOption6LinearE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Interpolate the four neighboring texels for the pixel value. </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering9Texture2D14WrappingOptionE">
+<span id="_CPPv3N8Avogadro9Rendering9Texture2D14WrappingOptionE"></span><span id="_CPPv2N8Avogadro9Rendering9Texture2D14WrappingOptionE"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_texture2_d_1ab4c544e6967a8b0f607df6561c56d87b"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">WrappingOption</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering9Texture2D14WrappingOptionE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The WrappingOption enum defines options for handling texture coordinates outside of the range [0, 1]. Note that these are specified separately for each dimension of the texture. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering9Texture2D14WrappingOption15InvalidWrappingE">
+<span id="_CPPv3N8Avogadro9Rendering9Texture2D14WrappingOption15InvalidWrappingE"></span><span id="_CPPv2N8Avogadro9Rendering9Texture2D14WrappingOption15InvalidWrappingE"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_texture2_d_1ab4c544e6967a8b0f607df6561c56d87baa5f75f5adfede3ed001b92118090f8c3"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">InvalidWrapping</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering9Texture2D14WrappingOption15InvalidWrappingE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering9Texture2D14WrappingOption11ClampToEdgeE">
+<span id="_CPPv3N8Avogadro9Rendering9Texture2D14WrappingOption11ClampToEdgeE"></span><span id="_CPPv2N8Avogadro9Rendering9Texture2D14WrappingOption11ClampToEdgeE"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_texture2_d_1ab4c544e6967a8b0f607df6561c56d87ba8b630ca681f170b19f059dd83798f6bf"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ClampToEdge</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering9Texture2D14WrappingOption11ClampToEdgeE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Use the texel at the nearest edge. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering9Texture2D14WrappingOption14MirroredRepeatE">
+<span id="_CPPv3N8Avogadro9Rendering9Texture2D14WrappingOption14MirroredRepeatE"></span><span id="_CPPv2N8Avogadro9Rendering9Texture2D14WrappingOption14MirroredRepeatE"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_texture2_d_1ab4c544e6967a8b0f607df6561c56d87ba5c93d920b7abf0e038ddf6ff28faa5f8"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">MirroredRepeat</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering9Texture2D14WrappingOption14MirroredRepeatE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Repeat the texels such that texture coordinates in the range [1, 2] map to [1, 0]; [2, 3] map to [0, 1], and so on. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering9Texture2D14WrappingOption6RepeatE">
+<span id="_CPPv3N8Avogadro9Rendering9Texture2D14WrappingOption6RepeatE"></span><span id="_CPPv2N8Avogadro9Rendering9Texture2D14WrappingOption6RepeatE"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_texture2_d_1ab4c544e6967a8b0f607df6561c56d87ba93634d32da4cb8f0204b4f8929fda514"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Repeat</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering9Texture2D14WrappingOption6RepeatE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Repeat the texels such that integer components of the texture coordinates are ignored (e.g. 1.7 becomes 0.7, 2.3 becomes 0.3, etc). </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering9Texture2D14InternalFormatE">
+<span id="_CPPv3N8Avogadro9Rendering9Texture2D14InternalFormatE"></span><span id="_CPPv2N8Avogadro9Rendering9Texture2D14InternalFormatE"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_texture2_d_1a9694fc9d542f6ed658f19b2cefea662d"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">InternalFormat</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering9Texture2D14InternalFormatE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The InternalFormat enum defines how the texture data will be stored by the graphics library implementation. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering9Texture2D14InternalFormat21InvalidInternalFormatE">
+<span id="_CPPv3N8Avogadro9Rendering9Texture2D14InternalFormat21InvalidInternalFormatE"></span><span id="_CPPv2N8Avogadro9Rendering9Texture2D14InternalFormat21InvalidInternalFormatE"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_texture2_d_1a9694fc9d542f6ed658f19b2cefea662da774a6cc076b1fdf428f4468506d32079"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">InvalidInternalFormat</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering9Texture2D14InternalFormat21InvalidInternalFormatE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering9Texture2D14InternalFormat13InternalDepthE">
+<span id="_CPPv3N8Avogadro9Rendering9Texture2D14InternalFormat13InternalDepthE"></span><span id="_CPPv2N8Avogadro9Rendering9Texture2D14InternalFormat13InternalDepthE"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_texture2_d_1a9694fc9d542f6ed658f19b2cefea662da37f0acc15b4cb9fcb77d808051d66594"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">InternalDepth</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering9Texture2D14InternalFormat13InternalDepthE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Each element is a single depth component. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering9Texture2D14InternalFormat20InternalDepthStencilE">
+<span id="_CPPv3N8Avogadro9Rendering9Texture2D14InternalFormat20InternalDepthStencilE"></span><span id="_CPPv2N8Avogadro9Rendering9Texture2D14InternalFormat20InternalDepthStencilE"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_texture2_d_1a9694fc9d542f6ed658f19b2cefea662dafe02d1c534ba6eb705e698373e42a275"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">InternalDepthStencil</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering9Texture2D14InternalFormat20InternalDepthStencilE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Each element contains a depth component and a stencil value. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering9Texture2D14InternalFormat9InternalRE">
+<span id="_CPPv3N8Avogadro9Rendering9Texture2D14InternalFormat9InternalRE"></span><span id="_CPPv2N8Avogadro9Rendering9Texture2D14InternalFormat9InternalRE"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_texture2_d_1a9694fc9d542f6ed658f19b2cefea662dab28aac8b46f631d8356f8472806c45ef"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">InternalR</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering9Texture2D14InternalFormat9InternalRE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Each element contains a single color value. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering9Texture2D14InternalFormat10InternalRGE">
+<span id="_CPPv3N8Avogadro9Rendering9Texture2D14InternalFormat10InternalRGE"></span><span id="_CPPv2N8Avogadro9Rendering9Texture2D14InternalFormat10InternalRGE"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_texture2_d_1a9694fc9d542f6ed658f19b2cefea662da29fd4e3324f3e22d8a8eefff2bb36f61"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">InternalRG</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering9Texture2D14InternalFormat10InternalRGE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Each element contains two color values. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering9Texture2D14InternalFormat11InternalRGBE">
+<span id="_CPPv3N8Avogadro9Rendering9Texture2D14InternalFormat11InternalRGBE"></span><span id="_CPPv2N8Avogadro9Rendering9Texture2D14InternalFormat11InternalRGBE"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_texture2_d_1a9694fc9d542f6ed658f19b2cefea662da913e3dcfb025cb6788c7d5092f82e9f6"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">InternalRGB</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering9Texture2D14InternalFormat11InternalRGBE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Each element contains three color values. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering9Texture2D14InternalFormat12InternalRGBAE">
+<span id="_CPPv3N8Avogadro9Rendering9Texture2D14InternalFormat12InternalRGBAE"></span><span id="_CPPv2N8Avogadro9Rendering9Texture2D14InternalFormat12InternalRGBAE"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_texture2_d_1a9694fc9d542f6ed658f19b2cefea662dae7a45eefe5f7976d7f5527ed32a84339"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">InternalRGBA</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering9Texture2D14InternalFormat12InternalRGBAE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Each element contains four color values. </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering9Texture2D14IncomingFormatE">
+<span id="_CPPv3N8Avogadro9Rendering9Texture2D14IncomingFormatE"></span><span id="_CPPv2N8Avogadro9Rendering9Texture2D14IncomingFormatE"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_texture2_d_1affae79168c0394e875a72ac36fdd06f4"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">IncomingFormat</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering9Texture2D14IncomingFormatE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The IncomingFormat enum defines the supported formats for incoming texture data. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering9Texture2D14IncomingFormat21InvalidIncomingFormatE">
+<span id="_CPPv3N8Avogadro9Rendering9Texture2D14IncomingFormat21InvalidIncomingFormatE"></span><span id="_CPPv2N8Avogadro9Rendering9Texture2D14IncomingFormat21InvalidIncomingFormatE"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_texture2_d_1affae79168c0394e875a72ac36fdd06f4ae10fa1dff346aec51c63fd9d2adbd266"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">InvalidIncomingFormat</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering9Texture2D14IncomingFormat21InvalidIncomingFormatE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering9Texture2D14IncomingFormat9IncomingRE">
+<span id="_CPPv3N8Avogadro9Rendering9Texture2D14IncomingFormat9IncomingRE"></span><span id="_CPPv2N8Avogadro9Rendering9Texture2D14IncomingFormat9IncomingRE"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_texture2_d_1affae79168c0394e875a72ac36fdd06f4a136f62e82aa9480fa60f12cc31744438"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">IncomingR</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering9Texture2D14IncomingFormat9IncomingRE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Each element is a single red component. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering9Texture2D14IncomingFormat10IncomingRGE">
+<span id="_CPPv3N8Avogadro9Rendering9Texture2D14IncomingFormat10IncomingRGE"></span><span id="_CPPv2N8Avogadro9Rendering9Texture2D14IncomingFormat10IncomingRGE"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_texture2_d_1affae79168c0394e875a72ac36fdd06f4aa9fd203dc4a53e2e268e985a976d22c2"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">IncomingRG</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering9Texture2D14IncomingFormat10IncomingRGE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Each element is a red then green component. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering9Texture2D14IncomingFormat11IncomingRGBE">
+<span id="_CPPv3N8Avogadro9Rendering9Texture2D14IncomingFormat11IncomingRGBE"></span><span id="_CPPv2N8Avogadro9Rendering9Texture2D14IncomingFormat11IncomingRGBE"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_texture2_d_1affae79168c0394e875a72ac36fdd06f4a7ad65161dbbee5594f6732bb6549548f"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">IncomingRGB</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering9Texture2D14IncomingFormat11IncomingRGBE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Each element is a red, green, then blue component. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering9Texture2D14IncomingFormat11IncomingBGRE">
+<span id="_CPPv3N8Avogadro9Rendering9Texture2D14IncomingFormat11IncomingBGRE"></span><span id="_CPPv2N8Avogadro9Rendering9Texture2D14IncomingFormat11IncomingBGRE"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_texture2_d_1affae79168c0394e875a72ac36fdd06f4a8f7b5b345135e3afc00a358272a2367a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">IncomingBGR</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering9Texture2D14IncomingFormat11IncomingBGRE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Each element is a blue, green, then red component. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering9Texture2D14IncomingFormat12IncomingRGBAE">
+<span id="_CPPv3N8Avogadro9Rendering9Texture2D14IncomingFormat12IncomingRGBAE"></span><span id="_CPPv2N8Avogadro9Rendering9Texture2D14IncomingFormat12IncomingRGBAE"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_texture2_d_1affae79168c0394e875a72ac36fdd06f4a9b0fd8f721eaea7448d27be111438bf2"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">IncomingRGBA</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering9Texture2D14IncomingFormat12IncomingRGBAE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Each element is a red, green, blue, then alpha component. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering9Texture2D14IncomingFormat12IncomingBGRAE">
+<span id="_CPPv3N8Avogadro9Rendering9Texture2D14IncomingFormat12IncomingBGRAE"></span><span id="_CPPv2N8Avogadro9Rendering9Texture2D14IncomingFormat12IncomingBGRAE"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_texture2_d_1affae79168c0394e875a72ac36fdd06f4ad58555f62eeded269bef66052cd8a8bf"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">IncomingBGRA</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering9Texture2D14IncomingFormat12IncomingBGRAE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Each element is a blue, green, red, then alpha component. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering9Texture2D14IncomingFormat13IncomingDepthE">
+<span id="_CPPv3N8Avogadro9Rendering9Texture2D14IncomingFormat13IncomingDepthE"></span><span id="_CPPv2N8Avogadro9Rendering9Texture2D14IncomingFormat13IncomingDepthE"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_texture2_d_1affae79168c0394e875a72ac36fdd06f4af63e042f94790e8c43b385aca552fb3c"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">IncomingDepth</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering9Texture2D14IncomingFormat13IncomingDepthE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Each element is a single depth component. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering9Texture2D14IncomingFormat20IncomingDepthStencilE">
+<span id="_CPPv3N8Avogadro9Rendering9Texture2D14IncomingFormat20IncomingDepthStencilE"></span><span id="_CPPv2N8Avogadro9Rendering9Texture2D14IncomingFormat20IncomingDepthStencilE"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_texture2_d_1affae79168c0394e875a72ac36fdd06f4a11eab9af5e5086ec8e01e8ecfce41cba"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">IncomingDepthStencil</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering9Texture2D14IncomingFormat20IncomingDepthStencilE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Each element is a depth component followed by a stencil value. </p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering9Texture2D9Texture2DEv">
+<span id="_CPPv3N8Avogadro9Rendering9Texture2D9Texture2DEv"></span><span id="_CPPv2N8Avogadro9Rendering9Texture2D9Texture2DEv"></span><span id="Avogadro::Rendering::Texture2D::Texture2D"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_texture2_d_1a6ee82522b7dce39aa96e1e0f2af7eae9"></span><span class="sig-name descname"><span class="n"><span class="pre">Texture2D</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering9Texture2D9Texture2DEv" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering9Texture2DD0Ev">
+<span id="_CPPv3N8Avogadro9Rendering9Texture2DD0Ev"></span><span id="_CPPv2N8Avogadro9Rendering9Texture2DD0Ev"></span><span id="Avogadro::Rendering::Texture2D::~Texture2D"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_texture2_d_1a060332aea614a81a914cd2e55f1794df"></span><span class="sig-name descname"><span class="n"><span class="pre">~Texture2D</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering9Texture2DD0Ev" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering9Texture2D6handleEv">
+<span id="_CPPv3NK8Avogadro9Rendering9Texture2D6handleEv"></span><span id="_CPPv2NK8Avogadro9Rendering9Texture2D6handleEv"></span><span id="Avogadro::Rendering::Texture2D::handleC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_texture2_d_1a9ae56f8b08b9ab4828ff8c83c7a1340a"></span><span class="n"><span class="pre">Index</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">handle</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering9Texture2D6handleEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>A unique integer value identifying the texture. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering9Texture2D5readyEv">
+<span id="_CPPv3NK8Avogadro9Rendering9Texture2D5readyEv"></span><span id="_CPPv2NK8Avogadro9Rendering9Texture2D5readyEv"></span><span id="Avogadro::Rendering::Texture2D::readyC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_texture2_d_1ae0659ce466366fc566dc1425c658a019"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ready</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering9Texture2D5readyEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>True if the texture is ready to use. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering9Texture2D12setMinFilterE12FilterOption">
+<span id="_CPPv3N8Avogadro9Rendering9Texture2D12setMinFilterE12FilterOption"></span><span id="_CPPv2N8Avogadro9Rendering9Texture2D12setMinFilterE12FilterOption"></span><span id="Avogadro::Rendering::Texture2D::setMinFilter__FilterOption"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_texture2_d_1a1f7c66c87f8e5304bd3594a43b400713"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setMinFilter</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N8Avogadro9Rendering9Texture2D12FilterOptionE" title="Avogadro::Rendering::Texture2D::FilterOption"><span class="n"><span class="pre">FilterOption</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">opt</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering9Texture2D12setMinFilterE12FilterOption" title="Link to this definition">#</a><br /></dt>
+<dd><p>Filtering options for interpolating pixel values. Default is Linear. {&#64; </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering9Texture2D9minFilterEv">
+<span id="_CPPv3NK8Avogadro9Rendering9Texture2D9minFilterEv"></span><span id="_CPPv2NK8Avogadro9Rendering9Texture2D9minFilterEv"></span><span id="Avogadro::Rendering::Texture2D::minFilterC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_texture2_d_1a276fa3de63c2a7de8c05a09d71d26935"></span><a class="reference internal" href="#_CPPv4N8Avogadro9Rendering9Texture2D12FilterOptionE" title="Avogadro::Rendering::Texture2D::FilterOption"><span class="n"><span class="pre">FilterOption</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">minFilter</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering9Texture2D9minFilterEv" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering9Texture2D12setMagFilterE12FilterOption">
+<span id="_CPPv3N8Avogadro9Rendering9Texture2D12setMagFilterE12FilterOption"></span><span id="_CPPv2N8Avogadro9Rendering9Texture2D12setMagFilterE12FilterOption"></span><span id="Avogadro::Rendering::Texture2D::setMagFilter__FilterOption"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_texture2_d_1aa4d9805ab8c92aa1a31a78ae2d5dccab"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setMagFilter</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N8Avogadro9Rendering9Texture2D12FilterOptionE" title="Avogadro::Rendering::Texture2D::FilterOption"><span class="n"><span class="pre">FilterOption</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">opt</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering9Texture2D12setMagFilterE12FilterOption" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering9Texture2D9magFilterEv">
+<span id="_CPPv3NK8Avogadro9Rendering9Texture2D9magFilterEv"></span><span id="_CPPv2NK8Avogadro9Rendering9Texture2D9magFilterEv"></span><span id="Avogadro::Rendering::Texture2D::magFilterC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_texture2_d_1abdb7342ce2b93ae3827c80e563849320"></span><a class="reference internal" href="#_CPPv4N8Avogadro9Rendering9Texture2D12FilterOptionE" title="Avogadro::Rendering::Texture2D::FilterOption"><span class="n"><span class="pre">FilterOption</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">magFilter</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering9Texture2D9magFilterEv" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN8Avogadro9Rendering9Texture2D6uploadEbRK10ContainerTRK8Vector2i14IncomingFormat14InternalFormat">
+<span id="_CPPv3I0EN8Avogadro9Rendering9Texture2D6uploadERK10ContainerTRK8Vector2i14IncomingFormat14InternalFormat"></span><span id="_CPPv2I0EN8Avogadro9Rendering9Texture2D6uploadERK10ContainerTRK8Vector2i14IncomingFormat14InternalFormat"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ContainerT</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="class_avogadro_1_1_rendering_1_1_texture2_d_1af98e3dabb0b37ceb59eea19401f50e0b"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">upload</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN8Avogadro9Rendering9Texture2D6uploadEbRK10ContainerTRK8Vector2i14IncomingFormat14InternalFormat" title="Avogadro::Rendering::Texture2D::upload::ContainerT"><span class="n"><span class="pre">ContainerT</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">buffer</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Vector2i</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">dims</span></span>, <a class="reference internal" href="#_CPPv4N8Avogadro9Rendering9Texture2D14IncomingFormatE" title="Avogadro::Rendering::Texture2D::IncomingFormat"><span class="n"><span class="pre">IncomingFormat</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">dataFormat</span></span>, <a class="reference internal" href="#_CPPv4N8Avogadro9Rendering9Texture2D14InternalFormatE" title="Avogadro::Rendering::Texture2D::InternalFormat"><span class="n"><span class="pre">InternalFormat</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">internalFormat</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN8Avogadro9Rendering9Texture2D6uploadEbRK10ContainerTRK8Vector2i14IncomingFormat14InternalFormat" title="Link to this definition">#</a><br /></dt>
+<dd><p>Upload a buffer of texture data to the graphics library.</p>
+<p>
+The buffer must contain homogeneous elements of the follow types: unsigned char, char, unsigned short, short, unsigned int, int, or float.</p>
+<p>The first element of <em>buffer</em> is the lower-left texel. Subsequent elements are ordered such that rows are contiguous, moving right and up.</p>
+<p>The ContainerT must satisfy the following requirements (short version: use std::vector or <a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#class_avogadro_1_1_core_1_1_array"><span class="std std-ref">Avogadro::Core::Array</span></a>):<ul class="simple">
+<li><p>ContainerT must have tightly packed values of ContainerT::value_type</p></li>
+<li><p>elements must be accessible by reference via ContainerT::operator[].</p></li>
+<li><p>ContainerT::size() must return the number of elements in the container as integral type ContainerT::size_type. </p></li>
+</ul>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>buffer</strong> – The texture data (see below for requirements of ContainerT). </p></li>
+<li><p><strong>dims</strong> – The width and height of the texture data. </p></li>
+<li><p><strong>dataFormat</strong> – The ordering of components in the buffer data. </p></li>
+<li><p><strong>internalFormat</strong> – The internal storage ordering of components in the buffer data.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering9Texture2D4bindEv">
+<span id="_CPPv3NK8Avogadro9Rendering9Texture2D4bindEv"></span><span id="_CPPv2NK8Avogadro9Rendering9Texture2D4bindEv"></span><span id="Avogadro::Rendering::Texture2D::bindC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_texture2_d_1aee1ec06bbaef0ed3847797d66c02fc5d"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">bind</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering9Texture2D4bindEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Bind the texture for rendering. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering9Texture2D7releaseEv">
+<span id="_CPPv3NK8Avogadro9Rendering9Texture2D7releaseEv"></span><span id="_CPPv2NK8Avogadro9Rendering9Texture2D7releaseEv"></span><span id="Avogadro::Rendering::Texture2D::releaseC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_texture2_d_1afbb47a679631d2dfdf77518b5444111a"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">release</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering9Texture2D7releaseEv" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering9Texture2D5errorEv">
+<span id="_CPPv3NK8Avogadro9Rendering9Texture2D5errorEv"></span><span id="_CPPv2NK8Avogadro9Rendering9Texture2D5errorEv"></span><span id="Avogadro::Rendering::Texture2D::errorC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_texture2_d_1ab0ca267c415968ee3bc1c6b144dcbf56"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">error</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering9Texture2D5errorEv" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="class_avogadro_1_1_rendering_1_1_text_render_strategy.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Class Avogadro::Rendering::TextRenderStrategy</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="class_avogadro_1_1_rendering_1_1_transform_node.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Class Avogadro::Rendering::TransformNode</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering9Texture2DE"><code class="docutils literal notranslate"><span class="pre">Texture2D</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering9Texture2D12setWrappingSE14WrappingOption"><code class="docutils literal notranslate"><span class="pre">Texture2D::setWrappingS()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro9Rendering9Texture2D9wrappingSEv"><code class="docutils literal notranslate"><span class="pre">Texture2D::wrappingS()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering9Texture2D12setWrappingTE14WrappingOption"><code class="docutils literal notranslate"><span class="pre">Texture2D::setWrappingT()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro9Rendering9Texture2D9wrappingTEv"><code class="docutils literal notranslate"><span class="pre">Texture2D::wrappingT()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering9Texture2D12FilterOptionE"><code class="docutils literal notranslate"><span class="pre">Texture2D::FilterOption</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering9Texture2D12FilterOption13InvalidFilterE"><code class="docutils literal notranslate"><span class="pre">Texture2D::FilterOption::InvalidFilter</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering9Texture2D12FilterOption7NearestE"><code class="docutils literal notranslate"><span class="pre">Texture2D::FilterOption::Nearest</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering9Texture2D12FilterOption6LinearE"><code class="docutils literal notranslate"><span class="pre">Texture2D::FilterOption::Linear</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering9Texture2D14WrappingOptionE"><code class="docutils literal notranslate"><span class="pre">Texture2D::WrappingOption</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering9Texture2D14WrappingOption15InvalidWrappingE"><code class="docutils literal notranslate"><span class="pre">Texture2D::WrappingOption::InvalidWrapping</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering9Texture2D14WrappingOption11ClampToEdgeE"><code class="docutils literal notranslate"><span class="pre">Texture2D::WrappingOption::ClampToEdge</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering9Texture2D14WrappingOption14MirroredRepeatE"><code class="docutils literal notranslate"><span class="pre">Texture2D::WrappingOption::MirroredRepeat</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering9Texture2D14WrappingOption6RepeatE"><code class="docutils literal notranslate"><span class="pre">Texture2D::WrappingOption::Repeat</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering9Texture2D14InternalFormatE"><code class="docutils literal notranslate"><span class="pre">Texture2D::InternalFormat</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering9Texture2D14InternalFormat21InvalidInternalFormatE"><code class="docutils literal notranslate"><span class="pre">Texture2D::InternalFormat::InvalidInternalFormat</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering9Texture2D14InternalFormat13InternalDepthE"><code class="docutils literal notranslate"><span class="pre">Texture2D::InternalFormat::InternalDepth</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering9Texture2D14InternalFormat20InternalDepthStencilE"><code class="docutils literal notranslate"><span class="pre">Texture2D::InternalFormat::InternalDepthStencil</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering9Texture2D14InternalFormat9InternalRE"><code class="docutils literal notranslate"><span class="pre">Texture2D::InternalFormat::InternalR</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering9Texture2D14InternalFormat10InternalRGE"><code class="docutils literal notranslate"><span class="pre">Texture2D::InternalFormat::InternalRG</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering9Texture2D14InternalFormat11InternalRGBE"><code class="docutils literal notranslate"><span class="pre">Texture2D::InternalFormat::InternalRGB</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering9Texture2D14InternalFormat12InternalRGBAE"><code class="docutils literal notranslate"><span class="pre">Texture2D::InternalFormat::InternalRGBA</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering9Texture2D14IncomingFormatE"><code class="docutils literal notranslate"><span class="pre">Texture2D::IncomingFormat</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering9Texture2D14IncomingFormat21InvalidIncomingFormatE"><code class="docutils literal notranslate"><span class="pre">Texture2D::IncomingFormat::InvalidIncomingFormat</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering9Texture2D14IncomingFormat9IncomingRE"><code class="docutils literal notranslate"><span class="pre">Texture2D::IncomingFormat::IncomingR</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering9Texture2D14IncomingFormat10IncomingRGE"><code class="docutils literal notranslate"><span class="pre">Texture2D::IncomingFormat::IncomingRG</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering9Texture2D14IncomingFormat11IncomingRGBE"><code class="docutils literal notranslate"><span class="pre">Texture2D::IncomingFormat::IncomingRGB</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering9Texture2D14IncomingFormat11IncomingBGRE"><code class="docutils literal notranslate"><span class="pre">Texture2D::IncomingFormat::IncomingBGR</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering9Texture2D14IncomingFormat12IncomingRGBAE"><code class="docutils literal notranslate"><span class="pre">Texture2D::IncomingFormat::IncomingRGBA</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering9Texture2D14IncomingFormat12IncomingBGRAE"><code class="docutils literal notranslate"><span class="pre">Texture2D::IncomingFormat::IncomingBGRA</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering9Texture2D14IncomingFormat13IncomingDepthE"><code class="docutils literal notranslate"><span class="pre">Texture2D::IncomingFormat::IncomingDepth</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering9Texture2D14IncomingFormat20IncomingDepthStencilE"><code class="docutils literal notranslate"><span class="pre">Texture2D::IncomingFormat::IncomingDepthStencil</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering9Texture2D9Texture2DEv"><code class="docutils literal notranslate"><span class="pre">Texture2D::Texture2D()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering9Texture2DD0Ev"><code class="docutils literal notranslate"><span class="pre">Texture2D::~Texture2D()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro9Rendering9Texture2D6handleEv"><code class="docutils literal notranslate"><span class="pre">Texture2D::handle()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro9Rendering9Texture2D5readyEv"><code class="docutils literal notranslate"><span class="pre">Texture2D::ready()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering9Texture2D12setMinFilterE12FilterOption"><code class="docutils literal notranslate"><span class="pre">Texture2D::setMinFilter()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro9Rendering9Texture2D9minFilterEv"><code class="docutils literal notranslate"><span class="pre">Texture2D::minFilter()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering9Texture2D12setMagFilterE12FilterOption"><code class="docutils literal notranslate"><span class="pre">Texture2D::setMagFilter()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro9Rendering9Texture2D9magFilterEv"><code class="docutils literal notranslate"><span class="pre">Texture2D::magFilter()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I0EN8Avogadro9Rendering9Texture2D6uploadEbRK10ContainerTRK8Vector2i14IncomingFormat14InternalFormat"><code class="docutils literal notranslate"><span class="pre">Texture2D::upload()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro9Rendering9Texture2D4bindEv"><code class="docutils literal notranslate"><span class="pre">Texture2D::bind()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro9Rendering9Texture2D7releaseEv"><code class="docutils literal notranslate"><span class="pre">Texture2D::release()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro9Rendering9Texture2D5errorEv"><code class="docutils literal notranslate"><span class="pre">Texture2D::error()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/avogadro/two.avogadro.cc/edit/main/source/develop/class/class_avogadro_1_1_rendering_1_1_texture2_d.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/develop/class/class_avogadro_1_1_rendering_1_1_texture2_d.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">          <p>
+            ©2023 The OpenChemistry / Avogadro Teams 
+          </p>
+          <p>Covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
+          </p></div>
+      
+        <div class="footer-item">        <p>
+          <a href="contrib/index.html">Contribute</a>
+        </p></div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.2.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

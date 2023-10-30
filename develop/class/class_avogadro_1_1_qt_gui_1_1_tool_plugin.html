@@ -1,0 +1,926 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Class Avogadro::QtGui::ToolPlugin &#8212; Avogadro 1.98.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=ee427ece" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
+
+    <script src="../../_static/documentation_options.js?v=b35d0f43"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'develop/class/class_avogadro_1_1_qt_gui_1_1_tool_plugin';</script>
+    <link rel="canonical" href="https://two.avogadro.cc/develop/class/class_avogadro_1_1_qt_gui_1_1_tool_plugin.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Class Avogadro::QtGui::ToolPluginFactory" href="class_avogadro_1_1_qt_gui_1_1_tool_plugin_factory.html" />
+    <link rel="prev" title="Class Avogadro::QtGui::ScriptLoader" href="class_avogadro_1_1_qt_gui_1_1_script_loader.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Avogadro</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../install/index.html">
+                        Install
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../docs/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        Develop
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../contrib/index.html">
+                        Contribute
+                      </a>
+                    </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+                    Discuss
+                  </a>
+                </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/AvogadroChem" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../install/index.html">
+                        Install
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../docs/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        Develop
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../contrib/index.html">
+                        Contribute
+                      </a>
+                    </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+                    Discuss
+                  </a>
+                </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/AvogadroChem" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Develop</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">Script Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rpc.html">Avogadro Remote Procedure Call (RPC)</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../classlist.html">Class List</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../core.html">Core Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../io.html">IO Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../molequeue.html">MoleQueue Classes</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../qtgui.html">QtGui Classes</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_background_file_format.html">Class Avogadro::QtGui::BackgroundFileFormat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_container_widget.html">Class Avogadro::QtGui::ContainerWidget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_custom_element_dialog.html">Class Avogadro::QtGui::CustomElementDialog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_element_detail.html">Class Avogadro::QtGui::ElementDetail</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_element_item.html">Class Avogadro::QtGui::ElementItem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_element_translator.html">Class Avogadro::QtGui::ElementTranslator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_extension_plugin.html">Class Avogadro::QtGui::ExtensionPlugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_extension_plugin_factory.html">Class Avogadro::QtGui::ExtensionPluginFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_file_browse_widget.html">Class Avogadro::QtGui::FileBrowseWidget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_file_format_dialog.html">Class Avogadro::QtGui::FileFormatDialog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_generic_highlighter.html">Class Avogadro::QtGui::GenericHighlighter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_generic_highlighter_1_1_rule.html">Class Avogadro::QtGui::GenericHighlighter::Rule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_hydrogen_tools.html">Class Avogadro::QtGui::HydrogenTools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_interface_script.html">Class Avogadro::QtGui::InterfaceScript</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_interface_widget.html">Class Avogadro::QtGui::InterfaceWidget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_mesh_generator.html">Class Avogadro::QtGui::MeshGenerator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_molecule.html">Class Avogadro::QtGui::Molecule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_molecule_model.html">Class Avogadro::QtGui::MoleculeModel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_multi_view_widget.html">Class Avogadro::QtGui::MultiViewWidget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_periodic_table_scene.html">Class Avogadro::QtGui::PeriodicTableScene</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_periodic_table_view.html">Class Avogadro::QtGui::PeriodicTableView</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_persistent_atom.html">Class Avogadro::QtGui::PersistentAtom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_persistent_bond.html">Class Avogadro::QtGui::PersistentBond</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_python_script.html">Class Avogadro::QtGui::PythonScript</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_r_w_atom.html">Class Avogadro::QtGui::RWAtom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_r_w_bond.html">Class Avogadro::QtGui::RWBond</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_r_w_molecule.html">Class Avogadro::QtGui::RWMolecule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_scene_plugin.html">Class Avogadro::QtGui::ScenePlugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_scene_plugin_factory.html">Class Avogadro::QtGui::ScenePluginFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_scene_plugin_model.html">Class Avogadro::QtGui::ScenePluginModel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_script_loader.html">Class Avogadro::QtGui::ScriptLoader</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Class Avogadro::QtGui::ToolPlugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_tool_plugin_factory.html">Class Avogadro::QtGui::ToolPluginFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_view_factory.html">Class Avogadro::QtGui::ViewFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_open_g_l_1_1_active_objects.html">Class Avogadro::QtOpenGL::ActiveObjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_open_g_l_1_1_g_l_widget.html">Class Avogadro::QtOpenGL::GLWidget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_open_g_l_1_1_qt_text_render_strategy.html">Class Avogadro::QtOpenGL::QtTextRenderStrategy</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../rendering.html">Rendering Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vtk.html">VTK Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Develop</a></li>
+    
+    
+    <li class="breadcrumb-item"><i class="fa-solid fa-ellipsis"></i></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../qtgui.html" class="nav-link">QtGui Classes</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Class...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="class-avogadro-qtgui-toolplugin">
+<h1>Class Avogadro::QtGui::ToolPlugin<a class="headerlink" href="#class-avogadro-qtgui-toolplugin" title="Link to this heading">#</a></h1>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10ToolPluginE">
+<span id="_CPPv3N8Avogadro5QtGui10ToolPluginE"></span><span id="_CPPv2N8Avogadro5QtGui10ToolPluginE"></span><span id="Avogadro::QtGui::ToolPlugin"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_tool_plugin"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ToolPlugin</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">QObject</span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10ToolPluginE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The base class for plugins that interact with <a class="reference internal" href="class_avogadro_1_1_qt_open_g_l_1_1_g_l_widget.html#class_avogadro_1_1_qt_open_g_l_1_1_g_l_widget"><span class="std std-ref">QtOpenGL::GLWidget</span></a>. </p>
+<p><dl class="simple">
+<dt><strong>Author</strong></dt><dd><p>Allison Vacanti </p>
+</dd>
+</dl>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-unnamed-group">Unnamed Group</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10ToolPlugin15mousePressEventEP11QMouseEvent">
+<span id="_CPPv3N8Avogadro5QtGui10ToolPlugin15mousePressEventEP11QMouseEvent"></span><span id="_CPPv2N8Avogadro5QtGui10ToolPlugin15mousePressEventEP11QMouseEvent"></span><span id="Avogadro::QtGui::ToolPlugin::mousePressEvent__QMouseEventP"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_tool_plugin_1a4b94c27cbc68691a9fd279492dd0b4fc"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">QUndoCommand</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">mousePressEvent</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">QMouseEvent</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">e</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10ToolPlugin15mousePressEventEP11QMouseEvent" title="Link to this definition">#</a><br /></dt>
+<dd><p>Respond to user-input events. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>e</strong> – The QEvent object. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A QUndoCommand that can be used to undo any changes to the molecule. If no undoable change is made, the method may return nullptr. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10ToolPlugin17mouseReleaseEventEP11QMouseEvent">
+<span id="_CPPv3N8Avogadro5QtGui10ToolPlugin17mouseReleaseEventEP11QMouseEvent"></span><span id="_CPPv2N8Avogadro5QtGui10ToolPlugin17mouseReleaseEventEP11QMouseEvent"></span><span id="Avogadro::QtGui::ToolPlugin::mouseReleaseEvent__QMouseEventP"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_tool_plugin_1abfc61b79397f4152eae0e757d7329f9c"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">QUndoCommand</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">mouseReleaseEvent</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">QMouseEvent</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">e</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10ToolPlugin17mouseReleaseEventEP11QMouseEvent" title="Link to this definition">#</a><br /></dt>
+<dd><p>Respond to user-input events. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>e</strong> – The QEvent object. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A QUndoCommand that can be used to undo any changes to the molecule. If no undoable change is made, the method may return nullptr. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10ToolPlugin14mouseMoveEventEP11QMouseEvent">
+<span id="_CPPv3N8Avogadro5QtGui10ToolPlugin14mouseMoveEventEP11QMouseEvent"></span><span id="_CPPv2N8Avogadro5QtGui10ToolPlugin14mouseMoveEventEP11QMouseEvent"></span><span id="Avogadro::QtGui::ToolPlugin::mouseMoveEvent__QMouseEventP"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_tool_plugin_1afcc431610b1aa47c42d726a70c0f94da"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">QUndoCommand</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">mouseMoveEvent</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">QMouseEvent</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">e</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10ToolPlugin14mouseMoveEventEP11QMouseEvent" title="Link to this definition">#</a><br /></dt>
+<dd><p>Respond to user-input events. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>e</strong> – The QEvent object. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A QUndoCommand that can be used to undo any changes to the molecule. If no undoable change is made, the method may return nullptr. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10ToolPlugin21mouseDoubleClickEventEP11QMouseEvent">
+<span id="_CPPv3N8Avogadro5QtGui10ToolPlugin21mouseDoubleClickEventEP11QMouseEvent"></span><span id="_CPPv2N8Avogadro5QtGui10ToolPlugin21mouseDoubleClickEventEP11QMouseEvent"></span><span id="Avogadro::QtGui::ToolPlugin::mouseDoubleClickEvent__QMouseEventP"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_tool_plugin_1ac729d904b550779e692e9fbb9a337519"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">QUndoCommand</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">mouseDoubleClickEvent</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">QMouseEvent</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">e</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10ToolPlugin21mouseDoubleClickEventEP11QMouseEvent" title="Link to this definition">#</a><br /></dt>
+<dd><p>Respond to user-input events. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>e</strong> – The QEvent object. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A QUndoCommand that can be used to undo any changes to the molecule. If no undoable change is made, the method may return nullptr. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10ToolPlugin10wheelEventEP11QWheelEvent">
+<span id="_CPPv3N8Avogadro5QtGui10ToolPlugin10wheelEventEP11QWheelEvent"></span><span id="_CPPv2N8Avogadro5QtGui10ToolPlugin10wheelEventEP11QWheelEvent"></span><span id="Avogadro::QtGui::ToolPlugin::wheelEvent__QWheelEventP"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_tool_plugin_1ad41aecb7a182816b48f9b80284bca949"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">QUndoCommand</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">wheelEvent</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">QWheelEvent</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">e</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10ToolPlugin10wheelEventEP11QWheelEvent" title="Link to this definition">#</a><br /></dt>
+<dd><p>Respond to user-input events. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>e</strong> – The QEvent object. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A QUndoCommand that can be used to undo any changes to the molecule. If no undoable change is made, the method may return nullptr. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10ToolPlugin13keyPressEventEP9QKeyEvent">
+<span id="_CPPv3N8Avogadro5QtGui10ToolPlugin13keyPressEventEP9QKeyEvent"></span><span id="_CPPv2N8Avogadro5QtGui10ToolPlugin13keyPressEventEP9QKeyEvent"></span><span id="Avogadro::QtGui::ToolPlugin::keyPressEvent__QKeyEventP"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_tool_plugin_1a0638f0ff9b64575ee8b738950a3d31b8"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">QUndoCommand</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">keyPressEvent</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">QKeyEvent</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">e</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10ToolPlugin13keyPressEventEP9QKeyEvent" title="Link to this definition">#</a><br /></dt>
+<dd><p>Respond to user-input events. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>e</strong> – The QEvent object. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A QUndoCommand that can be used to undo any changes to the molecule. If no undoable change is made, the method may return nullptr. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10ToolPlugin15keyReleaseEventEP9QKeyEvent">
+<span id="_CPPv3N8Avogadro5QtGui10ToolPlugin15keyReleaseEventEP9QKeyEvent"></span><span id="_CPPv2N8Avogadro5QtGui10ToolPlugin15keyReleaseEventEP9QKeyEvent"></span><span id="Avogadro::QtGui::ToolPlugin::keyReleaseEvent__QKeyEventP"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_tool_plugin_1a761a1f49dd765306d465626b916bc915"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">QUndoCommand</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">keyReleaseEvent</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">QKeyEvent</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">e</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10ToolPlugin15keyReleaseEventEP9QKeyEvent" title="Link to this definition">#</a><br /></dt>
+<dd><p>Respond to user-input events. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>e</strong> – The QEvent object. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A QUndoCommand that can be used to undo any changes to the molecule. If no undoable change is made, the method may return nullptr. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10ToolPlugin10ToolPluginEP7QObject">
+<span id="_CPPv3N8Avogadro5QtGui10ToolPlugin10ToolPluginEP7QObject"></span><span id="_CPPv2N8Avogadro5QtGui10ToolPlugin10ToolPluginEP7QObject"></span><span id="Avogadro::QtGui::ToolPlugin::ToolPlugin__QObjectP"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_tool_plugin_1a98df41adff55e6c47e6a88a188d432f8"></span><span class="k"><span class="pre">explicit</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ToolPlugin</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">QObject</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">parent</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">nullptr</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10ToolPlugin10ToolPluginEP7QObject" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10ToolPluginD0Ev">
+<span id="_CPPv3N8Avogadro5QtGui10ToolPluginD0Ev"></span><span id="_CPPv2N8Avogadro5QtGui10ToolPluginD0Ev"></span><span id="Avogadro::QtGui::ToolPlugin::~ToolPlugin"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_tool_plugin_1abdbf44b2d60e90c341b19bf723f828bc"></span><span class="sig-name descname"><span class="n"><span class="pre">~ToolPlugin</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10ToolPluginD0Ev" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro5QtGui10ToolPlugin4nameEv">
+<span id="_CPPv3NK8Avogadro5QtGui10ToolPlugin4nameEv"></span><span id="_CPPv2NK8Avogadro5QtGui10ToolPlugin4nameEv"></span><span id="Avogadro::QtGui::ToolPlugin::nameC"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_tool_plugin_1a73f1eb795ef20ec4f072d143a28bf6c8"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">name</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro5QtGui10ToolPlugin4nameEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>The name of the tool, will be displayed in the user interface. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro5QtGui10ToolPlugin11descriptionEv">
+<span id="_CPPv3NK8Avogadro5QtGui10ToolPlugin11descriptionEv"></span><span id="_CPPv2NK8Avogadro5QtGui10ToolPlugin11descriptionEv"></span><span id="Avogadro::QtGui::ToolPlugin::descriptionC"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_tool_plugin_1a323f1eccbe1645600f1e6242ef47ae62"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">description</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro5QtGui10ToolPlugin11descriptionEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>A description of the tool, may be displayed in the user interface. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro5QtGui10ToolPlugin8priorityEv">
+<span id="_CPPv3NK8Avogadro5QtGui10ToolPlugin8priorityEv"></span><span id="_CPPv2NK8Avogadro5QtGui10ToolPlugin8priorityEv"></span><span id="Avogadro::QtGui::ToolPlugin::priorityC"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_tool_plugin_1ab33a33fce7379a921ea0b0d78ba71a66"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">priority</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro5QtGui10ToolPlugin8priorityEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>A priority of the tool for sorting in the user interface. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro5QtGui10ToolPlugin14activateActionEv">
+<span id="_CPPv3NK8Avogadro5QtGui10ToolPlugin14activateActionEv"></span><span id="_CPPv2NK8Avogadro5QtGui10ToolPlugin14activateActionEv"></span><span id="Avogadro::QtGui::ToolPlugin::activateActionC"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_tool_plugin_1ac25bcce16f2c6d60a64ffce27e24b28f"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">QAction</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">activateAction</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro5QtGui10ToolPlugin14activateActionEv" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The QAction that will cause this tool to become active. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro5QtGui10ToolPlugin10toolWidgetEv">
+<span id="_CPPv3NK8Avogadro5QtGui10ToolPlugin10toolWidgetEv"></span><span id="_CPPv2NK8Avogadro5QtGui10ToolPlugin10toolWidgetEv"></span><span id="Avogadro::QtGui::ToolPlugin::toolWidgetC"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_tool_plugin_1a04a2e6b54c91078be51a786bad217cd8"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">QWidget</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">toolWidget</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro5QtGui10ToolPlugin10toolWidgetEv" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A QWidget that will be displayed to the user while this tool is active. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10ToolPlugin4drawERN9Rendering9GroupNodeE">
+<span id="_CPPv3N8Avogadro5QtGui10ToolPlugin4drawERN9Rendering9GroupNodeE"></span><span id="_CPPv2N8Avogadro5QtGui10ToolPlugin4drawERN9Rendering9GroupNodeE"></span><span id="Avogadro::QtGui::ToolPlugin::draw__Rendering::GroupNodeR"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_tool_plugin_1a137835badf52b3ca795f41faecad4883"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">draw</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Rendering</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_group_node.html#_CPPv4N8Avogadro9Rendering9GroupNodeE" title="Avogadro::Rendering::GroupNode"><span class="n"><span class="pre">GroupNode</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">node</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10ToolPlugin4drawERN9Rendering9GroupNodeE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Override this method to add drawables to the scene graph. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10ToolPlugin13handleCommandERK7QStringRK11QVariantMap">
+<span id="_CPPv3N8Avogadro5QtGui10ToolPlugin13handleCommandERK7QStringRK11QVariantMap"></span><span id="_CPPv2N8Avogadro5QtGui10ToolPlugin13handleCommandERK7QStringRK11QVariantMap"></span><span id="Avogadro::QtGui::ToolPlugin::handleCommand__QStringCR.QVariantMapCR"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_tool_plugin_1ad867bbd737d052a02bce1d919d4588af"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">handleCommand</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">command</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QVariantMap</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">options</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10ToolPlugin13handleCommandERK7QStringRK11QVariantMap" title="Link to this definition">#</a><br /></dt>
+<dd><p>Called by the app to handle a command registered by the plugin. (e.g., “renderMovie” or “drawAtom”, etc.)</p>
+<p>The app will turn the command into a string and pass it to the tool. and any options will go from a JSON dictionary to a QVariantMap.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>true if the command was handled, false otherwise. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10ToolPlugin16registerCommandsEv">
+<span id="_CPPv3N8Avogadro5QtGui10ToolPlugin16registerCommandsEv"></span><span id="_CPPv2N8Avogadro5QtGui10ToolPlugin16registerCommandsEv"></span><span id="Avogadro::QtGui::ToolPlugin::registerCommands"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_tool_plugin_1aa0923652f276fe8ec3e202d77cdd09d7"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">registerCommands</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10ToolPlugin16registerCommandsEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Called by the app to tell the tool to register commands. If the tool has commands, it should emit the registerCommand signals. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-slots">Public Slots</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10ToolPlugin11setMoleculeEPN5QtGui8MoleculeE">
+<span id="_CPPv3N8Avogadro5QtGui10ToolPlugin11setMoleculeEPN5QtGui8MoleculeE"></span><span id="_CPPv2N8Avogadro5QtGui10ToolPlugin11setMoleculeEPN5QtGui8MoleculeE"></span><span id="Avogadro::QtGui::ToolPlugin::setMolecule__QtGui::MoleculeP"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_tool_plugin_1ab42b533bc95c799fb0f8bb9055182b4e"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setMolecule</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">QtGui</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_molecule.html#_CPPv4N8Avogadro5QtGui8MoleculeE" title="Avogadro::QtGui::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">mol</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10ToolPlugin11setMoleculeEPN5QtGui8MoleculeE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Called when the current molecule changes. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10ToolPlugin15setEditMoleculeEPN5QtGui10RWMoleculeE">
+<span id="_CPPv3N8Avogadro5QtGui10ToolPlugin15setEditMoleculeEPN5QtGui10RWMoleculeE"></span><span id="_CPPv2N8Avogadro5QtGui10ToolPlugin15setEditMoleculeEPN5QtGui10RWMoleculeE"></span><span id="Avogadro::QtGui::ToolPlugin::setEditMolecule__QtGui::RWMoleculeP"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_tool_plugin_1ab52c59c09fdea1b0870a1aeb4b4e7d5e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setEditMolecule</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">QtGui</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_r_w_molecule.html#_CPPv4N8Avogadro5QtGui10RWMoleculeE" title="Avogadro::QtGui::RWMolecule"><span class="n"><span class="pre">RWMolecule</span></span></a><span class="p"><span class="pre">*</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10ToolPlugin15setEditMoleculeEPN5QtGui10RWMoleculeE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10ToolPlugin11setGLWidgetEPN8QtOpenGL8GLWidgetE">
+<span id="_CPPv3N8Avogadro5QtGui10ToolPlugin11setGLWidgetEPN8QtOpenGL8GLWidgetE"></span><span id="_CPPv2N8Avogadro5QtGui10ToolPlugin11setGLWidgetEPN8QtOpenGL8GLWidgetE"></span><span id="Avogadro::QtGui::ToolPlugin::setGLWidget__QtOpenGL::GLWidgetP"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_tool_plugin_1ab3f658975df93404d1271bb8bcfccc16"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setGLWidget</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">QtOpenGL</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_qt_open_g_l_1_1_g_l_widget.html#_CPPv4N8Avogadro8QtOpenGL8GLWidgetE" title="Avogadro::QtOpenGL::GLWidget"><span class="n"><span class="pre">GLWidget</span></span></a><span class="p"><span class="pre">*</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10ToolPlugin11setGLWidgetEPN8QtOpenGL8GLWidgetE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the GLWidget used by the tool. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10ToolPlugin15setActiveWidgetEP7QWidget">
+<span id="_CPPv3N8Avogadro5QtGui10ToolPlugin15setActiveWidgetEP7QWidget"></span><span id="_CPPv2N8Avogadro5QtGui10ToolPlugin15setActiveWidgetEP7QWidget"></span><span id="Avogadro::QtGui::ToolPlugin::setActiveWidget__QWidgetP"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_tool_plugin_1ab70f2f21d1189b98ab8a320fd029484b"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setActiveWidget</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">QWidget</span></span><span class="p"><span class="pre">*</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10ToolPlugin15setActiveWidgetEP7QWidget" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the active widget used by the tool, this can be anything derived from QWidget. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10ToolPlugin13setGLRendererEPN9Rendering10GLRendererE">
+<span id="_CPPv3N8Avogadro5QtGui10ToolPlugin13setGLRendererEPN9Rendering10GLRendererE"></span><span id="_CPPv2N8Avogadro5QtGui10ToolPlugin13setGLRendererEPN9Rendering10GLRendererE"></span><span id="Avogadro::QtGui::ToolPlugin::setGLRenderer__Rendering::GLRendererP"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_tool_plugin_1a27ecd5d389e7acb7d3e40288f0ddb95b"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setGLRenderer</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Rendering</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_g_l_renderer.html#_CPPv4N8Avogadro9Rendering10GLRendererE" title="Avogadro::Rendering::GLRenderer"><span class="n"><span class="pre">GLRenderer</span></span></a><span class="p"><span class="pre">*</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10ToolPlugin13setGLRendererEPN9Rendering10GLRendererE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the GLRenderer used by the tool. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-signals">Signals</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10ToolPlugin16drawablesChangedEv">
+<span id="_CPPv3N8Avogadro5QtGui10ToolPlugin16drawablesChangedEv"></span><span id="_CPPv2N8Avogadro5QtGui10ToolPlugin16drawablesChangedEv"></span><span id="Avogadro::QtGui::ToolPlugin::drawablesChanged"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_tool_plugin_1af6f01548726f094b9155364173a70c8a"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">drawablesChanged</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10ToolPlugin16drawablesChangedEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Emitted when <a class="reference internal" href="#class_avogadro_1_1_qt_gui_1_1_tool_plugin_1a137835badf52b3ca795f41faecad4883"><span class="std std-ref">draw()</span></a> needs to be called again due to updates. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10ToolPlugin15updateRequestedEv">
+<span id="_CPPv3N8Avogadro5QtGui10ToolPlugin15updateRequestedEv"></span><span id="_CPPv2N8Avogadro5QtGui10ToolPlugin15updateRequestedEv"></span><span id="Avogadro::QtGui::ToolPlugin::updateRequested"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_tool_plugin_1a00495ffcc9efa6d03edd67ba4d8b3e8f"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">updateRequested</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10ToolPlugin15updateRequestedEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Emitted when something changed (camera, etc) and the molecule should be redrawn. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10ToolPlugin15registerCommandE7QString7QString">
+<span id="_CPPv3N8Avogadro5QtGui10ToolPlugin15registerCommandE7QString7QString"></span><span id="_CPPv2N8Avogadro5QtGui10ToolPlugin15registerCommandE7QString7QString"></span><span id="Avogadro::QtGui::ToolPlugin::registerCommand__QString.QString"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_tool_plugin_1a938833b0da3be5b50100549f3e605efb"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">registerCommand</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">command</span></span>, <span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">description</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10ToolPlugin15registerCommandE7QString7QString" title="Link to this definition">#</a><br /></dt>
+<dd><p>Register a new command with the application. The command will be available through scripting (e.g., “renderMovie” or “generateSurface”, etc.)</p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#class_avogadro_1_1_qt_gui_1_1_tool_plugin_1ad867bbd737d052a02bce1d919d4588af"><span class="std std-ref">handleCommand</span></a></p>
+</div>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>command</strong> – The name of the command to register. </p></li>
+<li><p><strong>description</strong> – A description of the command.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="class_avogadro_1_1_qt_gui_1_1_script_loader.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Class Avogadro::QtGui::ScriptLoader</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="class_avogadro_1_1_qt_gui_1_1_tool_plugin_factory.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Class Avogadro::QtGui::ToolPluginFactory</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10ToolPluginE"><code class="docutils literal notranslate"><span class="pre">ToolPlugin</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10ToolPlugin15mousePressEventEP11QMouseEvent"><code class="docutils literal notranslate"><span class="pre">ToolPlugin::mousePressEvent()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10ToolPlugin17mouseReleaseEventEP11QMouseEvent"><code class="docutils literal notranslate"><span class="pre">ToolPlugin::mouseReleaseEvent()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10ToolPlugin14mouseMoveEventEP11QMouseEvent"><code class="docutils literal notranslate"><span class="pre">ToolPlugin::mouseMoveEvent()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10ToolPlugin21mouseDoubleClickEventEP11QMouseEvent"><code class="docutils literal notranslate"><span class="pre">ToolPlugin::mouseDoubleClickEvent()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10ToolPlugin10wheelEventEP11QWheelEvent"><code class="docutils literal notranslate"><span class="pre">ToolPlugin::wheelEvent()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10ToolPlugin13keyPressEventEP9QKeyEvent"><code class="docutils literal notranslate"><span class="pre">ToolPlugin::keyPressEvent()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10ToolPlugin15keyReleaseEventEP9QKeyEvent"><code class="docutils literal notranslate"><span class="pre">ToolPlugin::keyReleaseEvent()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10ToolPlugin10ToolPluginEP7QObject"><code class="docutils literal notranslate"><span class="pre">ToolPlugin::ToolPlugin()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10ToolPluginD0Ev"><code class="docutils literal notranslate"><span class="pre">ToolPlugin::~ToolPlugin()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui10ToolPlugin4nameEv"><code class="docutils literal notranslate"><span class="pre">ToolPlugin::name()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui10ToolPlugin11descriptionEv"><code class="docutils literal notranslate"><span class="pre">ToolPlugin::description()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui10ToolPlugin8priorityEv"><code class="docutils literal notranslate"><span class="pre">ToolPlugin::priority()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui10ToolPlugin14activateActionEv"><code class="docutils literal notranslate"><span class="pre">ToolPlugin::activateAction()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui10ToolPlugin10toolWidgetEv"><code class="docutils literal notranslate"><span class="pre">ToolPlugin::toolWidget()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10ToolPlugin4drawERN9Rendering9GroupNodeE"><code class="docutils literal notranslate"><span class="pre">ToolPlugin::draw()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10ToolPlugin13handleCommandERK7QStringRK11QVariantMap"><code class="docutils literal notranslate"><span class="pre">ToolPlugin::handleCommand()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10ToolPlugin16registerCommandsEv"><code class="docutils literal notranslate"><span class="pre">ToolPlugin::registerCommands()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10ToolPlugin11setMoleculeEPN5QtGui8MoleculeE"><code class="docutils literal notranslate"><span class="pre">ToolPlugin::setMolecule()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10ToolPlugin15setEditMoleculeEPN5QtGui10RWMoleculeE"><code class="docutils literal notranslate"><span class="pre">ToolPlugin::setEditMolecule()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10ToolPlugin11setGLWidgetEPN8QtOpenGL8GLWidgetE"><code class="docutils literal notranslate"><span class="pre">ToolPlugin::setGLWidget()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10ToolPlugin15setActiveWidgetEP7QWidget"><code class="docutils literal notranslate"><span class="pre">ToolPlugin::setActiveWidget()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10ToolPlugin13setGLRendererEPN9Rendering10GLRendererE"><code class="docutils literal notranslate"><span class="pre">ToolPlugin::setGLRenderer()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10ToolPlugin16drawablesChangedEv"><code class="docutils literal notranslate"><span class="pre">ToolPlugin::drawablesChanged()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10ToolPlugin15updateRequestedEv"><code class="docutils literal notranslate"><span class="pre">ToolPlugin::updateRequested()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10ToolPlugin15registerCommandE7QString7QString"><code class="docutils literal notranslate"><span class="pre">ToolPlugin::registerCommand()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/avogadro/two.avogadro.cc/edit/main/source/develop/class/class_avogadro_1_1_qt_gui_1_1_tool_plugin.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/develop/class/class_avogadro_1_1_qt_gui_1_1_tool_plugin.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">          <p>
+            ©2023 The OpenChemistry / Avogadro Teams 
+          </p>
+          <p>Covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
+          </p></div>
+      
+        <div class="footer-item">        <p>
+          <a href="contrib/index.html">Contribute</a>
+        </p></div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.2.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

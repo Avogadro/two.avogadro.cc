@@ -48,7 +48,7 @@
     <link rel="canonical" href="https://two.avogadro.cc/docs/optimizing-geometry/index.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Display Types" href="../display-types/index.html" />
+    <link rel="next" title="Geometry Constraints" href="constraints.html" />
     <link rel="prev" title="Building a Supercell" href="../building-materials/supercell.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -121,14 +121,6 @@
   
   
   
-    
-    
-      
-    
-    
-    <img src="../../_static/avogadro2.png" class="logo__image only-light" alt=""/>
-    <script>document.write(`<img src="../../_static/avogadro2.png" class="logo__image only-dark" alt=""/>`);</script>
-  
   
     <p class="title logo__title">Avogadro</p>
   
@@ -164,7 +156,7 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../api/index.html">
+                      <a class="nav-link nav-internal" href="../../develop/index.html">
                         Develop
                       </a>
                     </li>
@@ -319,7 +311,7 @@ document.write(`
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../api/index.html">
+                      <a class="nav-link nav-internal" href="../../develop/index.html">
                         Develop
                       </a>
                     </li>
@@ -415,7 +407,12 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="../menus/index.html">Menus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../building-molecules/index.html">Building Molecules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../building-materials/index.html">Building Materials</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Optimizing Geometry</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Optimizing Geometry</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="constraints.html">Geometry Constraints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conformers.html">Finding Conformers of Molecules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="force-fields.html">Introduction to Molecular Mechanics</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../display-types/index.html">Display Types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
 </ul>
@@ -476,7 +473,37 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="optimizing-geometry">
-<h1>Optimizing Geometry<a class="headerlink" href="#optimizing-geometry" title="Link to this heading">#</a></h1>
+<span id="optimize"></span><h1>Optimizing Geometry<a class="headerlink" href="#optimizing-geometry" title="Link to this heading">#</a></h1>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Optimization</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="constraints.html">Geometry Constraints</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="constraints.html#constraints">Constraints</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="constraints.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="constraints.html#optimizations">Optimizations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="constraints.html#example-cont">Example cont.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="conformers.html">Finding Conformers of Molecules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="conformers.html#start-with-your-molecule-of-interest">Start with your molecule of interest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conformers.html#optimize-the-geometry">Optimize the geometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conformers.html#change-the-force-field-options">Change the force field options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conformers.html#set-the-conformer-search-options">Set the conformer search options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conformers.html#pick-a-search-method-and-start-the-search">Pick a search method and start the search</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="force-fields.html">Introduction to Molecular Mechanics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="force-fields.html#uff">UFF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="force-fields.html#mmff94-s">MMFF94(s)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="force-fields.html#gaff">GAFF</a></li>
+</ul>
+</li>
+</ul>
+</div>
 </section>
 
 
@@ -499,11 +526,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="../display-types/index.html"
+       href="constraints.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Display Types</p>
+        <p class="prev-next-title">Geometry Constraints</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
