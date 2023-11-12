@@ -141,6 +141,7 @@ install/index
 docs/index
 develop/index
 contrib/index
+teach/index
 ```
 
 [avogadro discussion]: https://discuss.avogadro.cc/
