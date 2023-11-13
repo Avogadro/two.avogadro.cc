@@ -23,7 +23,8 @@ be specified in the `userOptions` block as:
   }
 }
 ```
-![Alt text](image-1.png)
+![image](https://github.com/DHRUVJ2003/two.avogadro.cc/assets/91372908/94111870-2443-4119-a828-ecd6b17748e6)
+
 
 Here, "Parameter Name" is the default label that will be displayed in
 the GUI as a label next to the combo box. If you wish to have the label
@@ -39,7 +40,7 @@ differ from the JSON key, you can add a "label" key pair:
   }
 }
 ```
-![Alt text](image-2.png)
+![image](https://github.com/DHRUVJ2003/two.avogadro.cc/assets/91372908/07c5cd56-3777-452a-ac7b-ab2cbad173d4)
 
 Use of the "label" is optional, but encouraged, since it greatly
 facilitates translation and localization (e.g., "color" vs. "colour").
@@ -67,7 +68,7 @@ optimization) via:
 This will add a blank text box to the GUI, initialized with the text
 specified by default.
 
-![Alt text](image-3.png)
+![image](https://github.com/DHRUVJ2003/two.avogadro.cc/assets/91372908/56437fe9-6735-4195-b39e-acb5b1f20d2b)
 
 
 ## Existing files
@@ -88,7 +89,7 @@ following option block:
 This will add an option to select a file to the GUI, initialized to the
 file pointed to by default.
 
-![Alt text](image-5.png)
+![image](https://github.com/DHRUVJ2003/two.avogadro.cc/assets/91372908/213e5724-d5fc-42a3-9a63-fdb1f43c147d)
 
 
 
@@ -113,7 +114,7 @@ user-option of the following form:
 ```
 This block will result in a QSpinBox, configured as follows:
 
-![Alt text](image.png)
+![image](https://github.com/DHRUVJ2003/two.avogadro.cc/assets/91372908/e49ebc6b-b526-4865-98e2-b09cbae7b6fa)
 - minimum and maximum indicate the valid range of integers for the
   parameter.
 - default is the integer value that will be shown initially.
@@ -161,4 +162,5 @@ requested:
 
 This will result in a check box in the dynamically generated GUI, with
 the initial check state shown in default.
-![Alt text](image-6.png)
+
+![image](https://github.com/DHRUVJ2003/two.avogadro.cc/assets/91372908/6012c6ee-01d6-4108-ba4d-f1eb869a514b)
