@@ -23,8 +23,7 @@ be specified in the `userOptions` block as:
   }
 }
 ```
-![image](https://github.com/DHRUVJ2003/two.avogadro.cc/assets/91372908/94111870-2443-4119-a828-ecd6b17748e6)
-
+![Alt text](./screenshots/image.png)
 
 Here, "Parameter Name" is the default label that will be displayed in
 the GUI as a label next to the combo box. If you wish to have the label
@@ -40,7 +39,7 @@ differ from the JSON key, you can add a "label" key pair:
   }
 }
 ```
-![image](https://github.com/DHRUVJ2003/two.avogadro.cc/assets/91372908/07c5cd56-3777-452a-ac7b-ab2cbad173d4)
+![Alt text](./screenshots/image-1.png)
 
 Use of the "label" is optional, but encouraged, since it greatly
 facilitates translation and localization (e.g., "color" vs. "colour").
@@ -68,8 +67,7 @@ optimization) via:
 This will add a blank text box to the GUI, initialized with the text
 specified by default.
 
-![image](https://github.com/DHRUVJ2003/two.avogadro.cc/assets/91372908/56437fe9-6735-4195-b39e-acb5b1f20d2b)
-
+![Alt text](./screenshots/image-2.png)
 
 ## Existing files
 
@@ -89,8 +87,7 @@ following option block:
 This will add an option to select a file to the GUI, initialized to the
 file pointed to by default.
 
-![image](https://github.com/DHRUVJ2003/two.avogadro.cc/assets/91372908/213e5724-d5fc-42a3-9a63-fdb1f43c147d)
-
+![Alt text](./screenshots/image-3.png)
 
 
 ## Integer Values
@@ -114,7 +111,7 @@ user-option of the following form:
 ```
 This block will result in a QSpinBox, configured as follows:
 
-![image](https://github.com/DHRUVJ2003/two.avogadro.cc/assets/91372908/e49ebc6b-b526-4865-98e2-b09cbae7b6fa)
+![Alt text](./screenshots/image-4.png)
 - minimum and maximum indicate the valid range of integers for the
   parameter.
 - default is the integer value that will be shown initially.
@@ -163,4 +160,4 @@ requested:
 This will result in a check box in the dynamically generated GUI, with
 the initial check state shown in default.
 
-![image](https://github.com/DHRUVJ2003/two.avogadro.cc/assets/91372908/6012c6ee-01d6-4108-ba4d-f1eb869a514b)
+![Alt text](./screenshots/image-5.png)
