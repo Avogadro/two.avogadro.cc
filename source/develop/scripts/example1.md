@@ -77,7 +77,7 @@ def getOptions():
 The getOptions function is used to specify the [script Interfaces](https://two.avogadro.cc/scripts/inte**rface.html#script-interfaces) or **the pop-up menu** for the script. For each option in the userOptions list, Avogadro will create appropriate labels, menus, text boxes, check boxes, etc.
 Interface will look something like this:
 
-![Alt text](image-7.png)
+![image](https://github.com/DHRUVJ2003/two.avogadro.cc/assets/91372908/e6ad5378-9354-4d71-ac39-33e859226740)
 
 It is called in the command line when `--print-options` is given as the input argument. 
 
