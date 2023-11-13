@@ -23,6 +23,7 @@ be specified in the `userOptions` block as:
   }
 }
 ```
+![Alt text](image-1.png)
 
 Here, "Parameter Name" is the default label that will be displayed in
 the GUI as a label next to the combo box. If you wish to have the label
@@ -38,6 +39,7 @@ differ from the JSON key, you can add a "label" key pair:
   }
 }
 ```
+![Alt text](image-2.png)
 
 Use of the "label" is optional, but encouraged, since it greatly
 facilitates translation and localization (e.g., "color" vs. "colour").
@@ -62,9 +64,11 @@ optimization) via:
   }
 }
 ```
-
 This will add a blank text box to the GUI, initialized with the text
 specified by default.
+
+![Alt text](image-3.png)
+
 
 ## Existing files
 
@@ -81,9 +85,12 @@ following option block:
   }
 }
 ```
-
 This will add an option to select a file to the GUI, initialized to the
 file pointed to by default.
+
+![Alt text](image-5.png)
+
+
 
 ## Integer Values
 
@@ -104,9 +111,9 @@ user-option of the following form:
   }
 }
 ```
-
 This block will result in a QSpinBox, configured as follows:
 
+![Alt text](image.png)
 - minimum and maximum indicate the valid range of integers for the
   parameter.
 - default is the integer value that will be shown initially.
@@ -154,3 +161,4 @@ requested:
 
 This will result in a check box in the dynamically generated GUI, with
 the initial check state shown in default.
+![Alt text](image-6.png)
