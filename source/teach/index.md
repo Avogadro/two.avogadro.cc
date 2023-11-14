@@ -6,7 +6,7 @@
 This section is in the process of being migrated from the original Avogadro documentation. Some instructions and screenshots may be out of date.
 ```
 
-Avogadro is intended not only for molecular modeling research, but also for educational use. This category is intended to help educators around the world find lessons and tips for using Avogadro2 in teaching chemistry. If you have an exercise or article that you would like to list here, please get in touch via [Avogadro Discussion](https://discuss.avogadro.cc).
+Avogadro is intended not only for molecular modeling research, but also for educational use. This category is intended to help educators around the world find lessons and tips for using Avogadro 2 in teaching chemistry. If you have an exercise or article that you would like to list here, please get in touch via [Avogadro Discussion](https://discuss.avogadro.cc).
 
 [1,3-diaxial interactions](diaxial_interactions)
 
@@ -18,7 +18,7 @@ Investigate the stability of alkene isomers due to steric interactions.
 
 [Basic VSEPR](basic_vsepr)
 
-Investigate molecules geometries using VSEPR rules.
+Investigate molecular geometries using VSEPR rules.
 
 [HCN dipole](hcn_dipole)
 
@@ -36,7 +36,7 @@ Investigate the hydrogen molecule and its bond length using different force fiel
 
 Investigate the stability of reactions using Markovnikov's rule.
 
-[Organic Hybridization](organic_hybridisation)
+[Organic Hybridization](organic_hybridization)
 
 Illustrate the geometry and bond lengths in sp<sup>3</sup>, sp<sup>2</sup> and sp hybridized carbons.
 
@@ -61,13 +61,10 @@ hcn_dipole
 hydrogen_clusters
 hydrogen_molecule
 markovnikovs_rule
-organic_hybridisation
+organic_hybridization
 water
 acid_base
 
-credits
-translate
-code
 ```
 
 [avogadro forum]: https://discuss.avogadro.cc
