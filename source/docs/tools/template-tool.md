@@ -58,15 +58,15 @@ As an example, we will build the salen ligand and add the attachment point for t
 
 After creating your ligand molecule, you should select the atoms which will be the attachement sites:
 
-![salen molecule with four selected atoms: two oxygen and two nitrogen](../../static/Ligand-SelectAtoms.png)
+![salen molecule with four selected atoms: two oxygen and two nitrogen](../../_static/Ligand-SelectAtoms.png)
 
 The Build ⇒ Add Centroid command will add a dummy atom at the center of the selected atoms:
 
-![menu indicating "Add Centroid" command](../../static/Ligand-CentroidMenu.png)
+![menu indicating "Add Centroid" command](../../_static/Ligand-CentroidMenu.png)
 
 The ligand will now have a centroid dummy atom added. Draw bonds as desired to the attachment sites.
 
-![salen ligand with four selected atoms and new centroid dummy atom](../../static/Ligand-AddCentroid.png)
+![salen ligand with four selected atoms and new centroid dummy atom](../../_static/Ligand-AddCentroid.png)
 
 The ligand can either be copied to the clipboard to insert via the Clipboard ligand type, or saved as CJSON to contribute to the [fragment repository](https://github.com/openchemistry/fragments)
 
@@ -76,22 +76,22 @@ Haptic ligands indicate bonding between a metal center and a delocalized pi syst
 
 As an example, we will build up an η4-cyclooctatetraene ligand. Either draw the molecule or use File ⇒ Import ⇒ Download by Name… to insert the basic molecule.
 
-![cyclooctatetraene molecule](../../static/Template-COD.png)
+![cyclooctatetraene molecule](../../_static/Template-COD.png)
 
 Now select the four atoms to use for the haptic ligand:
 
-![cyclooctatetraene molecule indicating four selected carbon atoms](../../static/Template-COD2.png)
+![cyclooctatetraene molecule indicating four selected carbon atoms](../../_static/Template-COD2.png)
 
 Now use the "Add Centroid" command to add a dummy atom at the centroid of the selected atoms. This is useful to create distinct hapticity (e.g., η3 cyclopentadienyl after selecting three carbon atoms instead of five):
 
-![cyclooctatetraene molecule indicating four selected carbon atoms and dummy attachment point](../../static/Template-COD3.png)
+![cyclooctatetraene molecule indicating four selected carbon atoms and dummy attachment point](../../_static/Template-COD3.png)
 
 For a haptic ligand, we need one more dummy atom, perpendicular to the pi system. We can add an additional dummy atom **perpendicular** to the centroid:
 
-![Menu indicating "Add Perpendicular" item for haptic attachment points](../../static/Template-LigandPerpendicular.png)
+![Menu indicating "Add Perpendicular" item for haptic attachment points](../../_static/Template-LigandPerpendicular.png)
 
 After adding the perpendicular attachment, draw a bond between the centroid and the attachment site.
 
-![](../../static/Template-COD4.png)
+![](../../_static/Template-COD4.png)
 
 You can either save this file as CJSON to contribute to the repository, or "Select None" to deselect all atoms and copy the ligand to insert into a new molecule.
