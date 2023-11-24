@@ -8,26 +8,58 @@ responsive to users and contributors alike. Our hope is that many will
 build on top of the core Avogadro framework, so we are very
 grateful to all contributors:
 
-## Code
+## Creators
+
+Avogadro was started by Geoff Hutchison, working with Donald Curtis and
+Marcus Hanwell. The Avogadro v2 effort was started with Marcus Hanwell,
+Allison Vacanti, and others at Kitware, Inc. as part of the Open
+Chemistry effort.
+
+## Contributors to Avogadro v2
+
+```{include} contributors.md
+```
+
+## Contributors to Avogadro v1
 
 - Shahzad Ali
+- Patrick Avery
+- Kristof Bal
 - Michael Banck
+- Heiko Becker
+- Edward Betts
 - Ross Braithwaite
 - James Bunt
+- Taylor Cornell
 - Donald Curtis
+- Raphael Kubo da Costa
+- Reinis Danne
+- Zackary Falls
 - Naomi Fox
-- [Marcus Hanwell]
+- Raimondas Galvelis
+- [Marcus D. Hanwell]
 - [Geoff Hutchison]
-- [Benoît Jacob]
-- Jordan Mantha
+- Dagmar Lenk
+- Gary Kedziora
 - Thomas Margraf
-- [Carsten Niehaus]
+- Jordan Mantha
+- Julien Nabet
+- Carsten Niehaus
+- Katsuhiko Nishimra
 - Simon Ochsenreither
+- Andreas Schwab
+- Sergey Smirnov
+- Casper Steinmann
+- Jens Thomas
+- Jonathan Tinkham
 - Konstantin Tokarev
+- David Toneian
 - Allison Vacanti
-- [Tim Vandermeersch]
+- Tim Vandermeersch
+- Jure Varlec
+- Egon Willighagen
 
-All the Avogadro Translators
+## Avogadro Translators
 
 ## Funding
 
@@ -50,20 +82,17 @@ Avogadro relies on a number of projects for dependencies and other
 - [Chemical Structures Database]
 - [CMake]
 - [Eigen]
-- [Qt Software]
+- [Qt Software](https://qt.io/)
 - [Open Babel]
 
 And of course, we'd like to thank [Johann Loschmidt] and [Amedeo
 Avogadro][amedeo avogadro] for their fundamental work in chemistry.
 
 [amedeo avogadro]: http://en.wikipedia.org/wiki/Amedeo_Avogadro
-[benoît jacob]: http://www.math.toronto.edu/bjaco
 [blue obelisk group]: http://blueobelisk.sourceforge.net/wiki/Main_Page
 [pybind11]: https://pybind11.readthedocs.io/
-[carsten niehaus]: http://cniehaus.livejournal.com/
 [chemical structures database]: http://chem-file.sourceforge.net/
 [cmake]: http://www.cmake.org/
-[donald curtis]: http://www.cs.uiowa.edu/~dcurtis/
 [eigen]: http://eigen.tuxfamily.org/
 [geoff hutchison]: https://hutchisonlab.org/
 [gl2ps]: http://geuz.org/gl2ps/
@@ -76,7 +105,5 @@ Avogadro][amedeo avogadro] for their fundamental work in chemistry.
 [nokia & qt software]: http://qt.nokia.com/
 [open babel]: http://openbabel.org/wiki/THANKS
 [research corporation]: http://www.rescorp.org/
-[tim vandermeersch]: http://timvdm.blogspot.com/
-[translators]: /translators
 [university of pittsburgh]: http://www.chem.pitt.edu/
 [upstream tracker]: http://linuxtesting.org/upstream-tracker/
