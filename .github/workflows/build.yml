@@ -1,9 +1,6 @@
 name: Build Sphinx
 
 on: 
-  schedule:
-    # * is a special character in YAML so you have to quote this string
-    - cron:  '31 2 * * *'
   workflow_dispatch:
   push:
     branches:    
@@ -16,7 +13,7 @@ jobs:
     permissions:
       contents: write
     concurrency:
-      group: ${{ github.workflow }}-${{ github.ref }}
+      group: ${{ github.workflow }}
       cancel-in-progress: true
 
     steps:
