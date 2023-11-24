@@ -18,4 +18,4 @@ Clicking and dragging your cursor is another way molecules, or fragments of mole
 
 ![](../../_static/tutorial-select-drag.png)
 
-More information on selections can be found in the ["Tools" section](tools) and the "Select" menu.
+More information on selections can be found in the ["Tools" section](tools) and the ["Select" menu](select-menu).
