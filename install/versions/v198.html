@@ -504,15 +504,19 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="release-notes-v1-98-0">
 <span id="v198"></span><h1>Release Notes v1.98.0<a class="headerlink" href="#release-notes-v1-98-0" title="Link to this heading">#</a></h1>
 <section id="highlights-tldr">
-<h2>Highlights (tldr)<a class="headerlink" href="#highlights-tldr" title="Link to this heading">#</a></h2>
+<h2>🌟 Highlights (tldr)<a class="headerlink" href="#highlights-tldr" title="Link to this heading">#</a></h2>
 <ul class="simple">
+<li><p>Integration with 3Dconnexion input devices on Mac and Windows</p>
+<ul>
+<li><p>Many thanks to 3Dconnexion and Patryk Skowroński (&#64;pskowronskiTDx)</p></li>
+</ul>
+</li>
 <li><p>Improved rendering including ambient occlusion and real-time shadows</p></li>
 <li><p>New template tool for assembly of inorganic complexes and ligands or attaching functional groups (e.g, “click to add phenyl group”) (#1075)</p></li>
 <li><p><a class="reference external" href="https://discuss.avogadro.cc/t/new-force-field-framework/4921?u=ghutchis">New forcefield framework</a> supporting external Python scripts (e.g., XTB, ASE, ANI-2x, etc.) (#1370)</p></li>
 <li><p>Better perception of bond orders</p></li>
-<li><p>Align tool #1364</p></li>
+<li><p>Align tool (#1364)</p></li>
 <li><p>Manual translate / rotate dialog</p></li>
-<li><p>Integration with 3Dconnexion input devices on Mac and Windows</p></li>
 <li><p>Fetch molecule names from PubChem, including markup</p></li>
 <li><p>Commands to create centroid and center-of-mass points</p></li>
 <li><p>Improved “fill unit cell” (#1375)</p></li>
@@ -520,7 +524,7 @@ document.write(`
 <li><p>Build improvements, including initial support for Qt6 and VTK9 fixes &#64;cryos</p></li>
 <li><p>Integrated Orca ouputfile support (from Orca-enhanced Avogadro) (#1326)</p></li>
 <li><p>Add a generic compchem output reader (i.e., should automatically handle <code class="docutils literal notranslate"><span class="pre">.out</span></code> and <code class="docutils literal notranslate"><span class="pre">.log</span></code> files) (#1347)</p></li>
-<li><p>Initial scripting support (e.g., used to generate preview images) (#1344)</p></li>
+<li><p>Initial scripting support (e.g., used to generate preview images through a directory) (#1344)</p></li>
 <li><p>Several updated toolbar icons</p></li>
 </ul>
 </section>
@@ -528,7 +532,7 @@ document.write(`
 <h2>✨ Features<a class="headerlink" href="#features" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Reading Gaussian fchk vibrations when present &#64;ghutchis (#1380)</p></li>
-<li><p>Add support for atom labels (e.g., C1, C2, H1…) in the coordinate editor &#64;ghutchis (#1362)</p></li>
+<li><p>Add support for atom labels (e.g., C1, C2, H1…) in the coordinate editor using “L” symbol &#64;ghutchis (#1362)</p></li>
 <li><p>More pybind methods and properties &#64;ghutchis (#1342)</p></li>
 <li><p>Perceive bond orders when requested by Python scripts &#64;ghutchis (#1211)</p></li>
 <li><p>Support for color PLY format &#64;spotenza2016 (#1177)</p></li>
@@ -567,6 +571,10 @@ document.write(`
 <section id="bug-fixes">
 <h2>🐛 Bug Fixes<a class="headerlink" href="#bug-fixes" title="Link to this heading">#</a></h2>
 <ul class="simple">
+<li><p>Add molden as a possible reader for generic <code class="docutils literal notranslate"><span class="pre">.out</span></code> files &#64;ghutchis (#1409)</p></li>
+<li><p>Fix a few UI / UX issues in the surface dialog &#64;ghutchis (#1404)</p></li>
+<li><p>Fix spurious “change layer” crash with the selection tool (#1406) (#1408)</p></li>
+<li><p>Fix for reading imaginary vibrational frequencies in ORCA outputs. &#64;dtelsing (#1398)</p></li>
 <li><p>Ensure the VTK plot widget has a minimum size &#64;cryos (#1231)</p></li>
 <li><p>Add uncommon “ent” extension for PDB entries &#64;ghutchis (#1144)</p></li>
 <li><p>Put charge / spin in one line with two labels &#64;ghutchis (#1143)</p></li>
@@ -659,7 +667,7 @@ document.write(`
 </section>
 <section id="credits">
 <h2>Credits<a class="headerlink" href="#credits" title="Link to this heading">#</a></h2>
-<p>Thanks to many contributors, including: &#64;DDinghoya, &#64;DasJott, &#64;Lisapple, &#64;M3CG, &#64;NorwayFun, &#64;OfficerBrasidas, &#64;SantosSi, &#64;StefanBruens, &#64;Surajjalpun2002, &#64;WilliamBeltranC, &#64;Xav83, &#64;aerkiaga, &#64;ahenao, &#64;anmorgunov, &#64;awvwgk, &#64;balducci, &#64;berquist, &#64;comradekingu, &#64;cryos, &#64;dependabot, &#64;dependabot[bot], &#64;dominikflorjan, &#64;dtelsing, &#64;e-kwsm, &#64;ghutchis, &#64;github-actions, &#64;grsousajunior, &#64;hgokhanb, &#64;koenr, &#64;matterhorn103, &#64;mck89, &#64;milotype, &#64;nbehrnd, &#64;nicolazanna, &#64;ovari, &#64;pskowronskiTDx, &#64;salif, &#64;simmon-nplob, &#64;spotenza2016, &#64;tacitcoast, &#64;tictactoe101, &#64;trollixx, &#64;vamsibarnala, &#64;weblate, &#64;yurivict, Ajith, Alejandro Díaz-Moscoso, Alex B, Eisuke Kawashima, FAN JI, Hugel, Jörg S, Kateryna Golovanvoa, Patryk Skowroński, Shusong Zhang, Translator, gallegonovato and victor dargallo</p>
+<p>Thanks to many contributors, including: &#64;DDinghoya, &#64;DasJott, &#64;Lisapple, &#64;M3CG, &#64;NorwayFun, &#64;OfficerBrasidas, &#64;SantosSi, &#64;StefanBruens, &#64;Surajjalpun2002, &#64;WilliamBeltranC, &#64;Xav83, &#64;adityaomar3, &#64;aerkiaga, &#64;ahenao, &#64;anmorgunov, &#64;awvwgk, &#64;balducci, &#64;berquist, &#64;comradekingu, &#64;cryos, &#64;dependabot, &#64;dominikflorjan, &#64;dtelsing, &#64;e-kwsm, &#64;ghutchis, &#64;github-actions, &#64;grsousajunior, &#64;hgokhanb, &#64;koenr, &#64;matterhorn103, &#64;mck89, &#64;milotype, &#64;nbehrnd, &#64;nicolazanna, &#64;ovari, &#64;pskowronskiTDx, &#64;salif, &#64;simmon-nplob, &#64;spotenza2016, &#64;tacitcoast, &#64;tictactoe101, &#64;trollixx, &#64;vamsibarnala, &#64;weblate, &#64;yurivict, Ajith, Alejandro Díaz-Moscoso, Alex B, Eisuke Kawashima, FAN JI, Hugel, Jörg S, Kateryna Golovanvoa, Patryk Skowroński, Shusong Zhang, Weblate Translators, gallegonovato and victor dargallo</p>
 </section>
 </section>
 
@@ -706,7 +714,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#highlights-tldr">Highlights (tldr)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#highlights-tldr">🌟 Highlights (tldr)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#features">✨ Features</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bug-fixes">🐛 Bug Fixes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-improvements">🚀 Performance Improvements</a></li>
