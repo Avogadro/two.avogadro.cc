@@ -103,6 +103,7 @@ breathe_default_members = ('members', 'undoc-members', 'protected-members')
 
 # The theme to use for HTML and HTML Help pages.
 html_theme ='pydata_sphinx_theme'
+html_show_sourcelink = False
 
 html_baseurl = 'https://two.avogadro.cc'
 
