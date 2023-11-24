@@ -2,61 +2,53 @@
 
 # Draw Tool
 
-## 1. Creating a Molecule
+Molecules are built and edited with the [draw tool](draw-tool), which allows a "free-hand" sketch of new molecules.
 
-Molecules can be built and edited with the draw tool.
+```{tip} **New in 2.0**
+You can also use the new [template tool](template-tool) which makes it easier
+to attach functional groups or assemble inorganic / organometallic complexes.
+```
 
-![](../../_static/creating-a-molecule%20%281%29.png)
+![Screenshot of the draw tool](../../_static/draw-tool.png)
 
-## 2.
+Left clicking on the display will allow you to begin your journey into molecule creation. A left click will generate a carbon atom. A right click will delete the atom.
 
-You can begin creating a molecule by left clicking on the black display. This will generate a carbon atom. Right clicking on the atom will delete it.
+![](../../_static/first-carbon.png)
 
-![](../../_static/920ffd71-e049-4985-8321-4add7cd04bf2.png)
+Left clicking the initial atom and dragging your mouse will generate a bond to another carbon atom.
 
-## 3.
+![](../../_static/drag-to-build.png)
 
-Left clicking and dragging the mouse will generate a bond to another carbon atom.
+Avogadro uses carbon as the default element. A different element can be selected through the "Element" drop down menu. Typing the atomic symbol (e.g., "O" for Oxygen, "A-s" for Arsenic) is a shortcut for changing the selected element.
 
-![](../../_static/f394d0be-61bc-46ec-ab0f-5bb1ae905293.png)
+![](../../_static/pick-an-element.png)
 
-## 4.
-
-Avogadro uses carbon as the default element. A different element can be selected through the "Element" drop down menu. Typing the atomic symbol \(e.g., "A-s" for Arsenic\) is a shortcut for changing the selected element.
-
-![](../../_static/a64918a4-9158-427c-92d3-f70839c39b7f.png)
-
-## 5.
-
-Let's say you wanted to create water. You can either type in "O", or select "Oxygen \(8\)" from the drop down menu, and then click on the black display.
+Let's say you wanted to create water. You can either type in "O", or select "Oxygen (8)" from the drop down menu, and then click on the black display.
 
 Left clicking on an atom that has already been generated will also change the element. In this case, clicking on the initial carbon atom changed it into an oxygen atom.
 
-![](../../_static/e87cd104-b0a5-4b7a-80bd-562252aed8b6.png)
+![](../../_static/tutorial-water.png)
 
-## 6.
+If the "Adjust Hydrogens" box is checked, hydrogen atoms in the molecule will be automatically adjusted to satisfy valency (as shown above).
 
-If the "Adjust Hydrogens" box is checked, hydrogen atoms in the molecule are automatically adjusted to satisfy valency \(as shown above\).
+![](../../_static/tutorial-adjust-hydrogens.png)
 
-![](../../_static/60e63e32-ca96-495d-8238-bfa03b2cf0f8.png)
+Bond order is changed through the "Bond Order" drop down menu, or by typing the numbers "1", "2", or "3". Bonds are added by left clicking on a bond that has already been created. Right clicking on a bond deletes the bond.
 
-## 7.
+![](../../_static/tutorial-bond-order.png)
 
-Bond order is changed through the "Bond Order" drop down menu, or by typing the numbers "1", "2", or "3". Bonds are added by left clicking on a bond that has already been created. Right clicking on a bond deletes the bond, and the atom it's bonded to.
+```{tip} **New in 2.0**
+The default bond order is "Automatic," and will adjust with the length of the bond.
+```
 
-![](../../_static/d8a2035c-15e6-47b1-a6fd-3903ea7c1599.png)
+### Creating Carbon Dioxide
 
-## 8.
+Begin drawing the "O-C-O" structure. After the structure is drawn, all you need to do is left click on the bonds. Left clicking on the bonds will create a double bond (shown below).
 
-Creating Carbon Dioxide:
-
-Begin drawing the "O-C-O" structure. After the structure is drawn, all you need to do is left click on the bonds. Left clicking on the bonds will create a double bond \(shown below\).
-
-![](../../_static/e90a230d-8b65-4f23-93a6-cfb628709bf4.png)
-
-## 9.
+![](../../_static/tutorial-co2-step1.png)
+![](../../_static/tutorial-co2-step2.png)
+![](../../_static/tutorial-co2-step3.png)
 
 Once you've created your molecule, you can optimize it's geometry through the extensions menu. Selecting the "Extensions" menu, and clicking "Optimize Geometry" will provide your molecule with proper bond lengths and angles.
 
-![](../../_static/df25a76f-030a-4414-bb0c-ae2ca98c1f78.png)
-
+![](../../_static/ada26872-ede7-4601-bd4e-d790c10ad614.png)
