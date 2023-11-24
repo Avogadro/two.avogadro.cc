@@ -73,6 +73,7 @@ sd_fontawesome_latex = True
 
 locale_dirs = ['locale/']   # path is example but recommended.
 gettext_compact = 'docs'    # one file 
+language = "en"             # default language
 
 myst_substitutions = {
   "release": release,
@@ -115,6 +116,7 @@ html_theme_options = {
     'github_url': 'https://github.com/openchemistry/avogadrolibs',
     'use_edit_page_button': True,
     'show_toc_level': 2,
+    "header_links_before_dropdown": 6,
     'collapse_navigation': True,
     "logo": {
         "text": "Avogadro",
