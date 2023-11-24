@@ -24,5 +24,4 @@ Clicking and dragging your cursor is another way molecules, or fragments of mole
 
 ![](../../_static/300264d3-31a2-4380-8c24-205fe639ae4d.png)
 
-More information on selections can be found in the "Tools" section.
-
+More information on selections can be found in the ["Tools" section](tools).

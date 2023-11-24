@@ -71,6 +71,9 @@ myst_enable_extensions = [
 # Make sure icons show in LaTeX / PDF output
 sd_fontawesome_latex = True
 
+locale_dirs = ['locale/']   # path is example but recommended.
+gettext_compact = 'docs'    # one file 
+
 myst_substitutions = {
   "release": release,
   "macurl": f"https://github.com/OpenChemistry/avogadrolibs/releases/download/{version}/Avogadro2-{version}-Darwin.dmg",
