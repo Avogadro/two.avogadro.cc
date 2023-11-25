@@ -72,6 +72,19 @@ sources. We would particularly like to thank:
 - US Department of Defense (DoD) through the PETTT program
 - [Research Corporation] -- Through the Cottrell Scholar Award
 
+Financial backers through [Open Collective](https://opencollective.com/open-chemistry) include:
+
+1. Igor Filippov
+2. Qinghui Ge
+3. Colton Hicks
+4. Serkan Holat
+5. Kitware, Inc.
+6. Google Open Source
+7. [GitHub Sponsors](https://github.com/sponsors/openchemistry)
+    - Geoff Hutchison
+    - Harshavardhan Kamarthi
+8. Triplebyte
+
 ## Other Projects
 
 Avogadro relies on a number of projects for dependencies and other
@@ -102,8 +115,7 @@ Avogadro][amedeo avogadro] for their fundamental work in chemistry.
 [kde]: http://www.kde.org/
 [kitware, inc.]: http://www.kitware.com/
 [marcus hanwell]: http://blog.cryos.net/
-[nokia & qt software]: http://qt.nokia.com/
-[open babel]: http://openbabel.org/wiki/THANKS
+[open babel]: http://openbabel.org/
 [research corporation]: http://www.rescorp.org/
 [university of pittsburgh]: http://www.chem.pitt.edu/
 [upstream tracker]: http://linuxtesting.org/upstream-tracker/
