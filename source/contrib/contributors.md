@@ -138,3 +138,4 @@
 - yavgech
 - yuri@FreeBSD
 - Ondřej Čertík
+- Kailin Xing
