@@ -1,8 +1,6 @@
 (Guide)=
 
-# User Guide
-
-## Avogadro: Molecular Editor and Visualization
+# Introduction
 
 Avogadro is a free, open source molecular editor and visualization tool, designed for use on Mac, Windows, and Linux in computational chemistry, molecular modeling, bioinformatics, materials science, and related areas. It offers flexible high quality rendering and a powerful plugin architecture.
 
