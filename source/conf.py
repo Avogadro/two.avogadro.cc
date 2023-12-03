@@ -44,6 +44,7 @@ extensions = [
     'sphinx.ext.githubpages',
     'sphinx.ext.ifconfig',
     'sphinx.ext.intersphinx',
+    'sphinxext.rediraffe',
     'sphinx.ext.mathjax',
     'sphinx.ext.napoleon',
     'sphinx.ext.viewcode',
@@ -67,6 +68,10 @@ myst_enable_extensions = [
     "substitution",
     "tasklist",
 ]
+
+# set up redirects
+rediraffe_branch = 'main'
+rediraffe_redirects = "redirects.txt"
 
 # Make sure icons show in LaTeX / PDF output
 sd_fontawesome_latex = True
