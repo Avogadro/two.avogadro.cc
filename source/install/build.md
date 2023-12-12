@@ -71,7 +71,7 @@ You can install prerequisites with the following commands:
 apt-get update && \
  apt-get install -y cmake curl build-essential qtbase5-dev qtdeclarative5-dev zlib1g-dev libxml2-dev git libqt5svg5-dev libqt5gui5 libqt5concurrent5 rapidjson && \
 ```
-If you need a newer cmake version (replace aarch64 with your [architecture](https://github.com/Kitware/CMake/releases/download/v3.26.5/))
+If you need a newer cmake version (replace aarch64 with your architecture or go to [CMake Releases](https://github.com/Kitware/CMake/releases/latest/))
 ```bash
 apt-get purge cmake && \
  curl -L -v -o /tmp/bin https://github.com/Kitware/CMake/releases/download/v3.26.5/cmake-3.26.5-linux-aarch64.sh && \
