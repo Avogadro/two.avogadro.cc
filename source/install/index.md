@@ -10,6 +10,7 @@ In addition to installing the latest release ({{release}}), there are nightly bu
 {fab}`apple;fa-2x` MacOS
 ^^^
 {{ '<a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-primary reference external" href="' + macurl + '"><span>Download DMG</span></a>'}}
+{{ '<a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-primary reference external" href="' + macarmurl + '"><span>Download DMG arm64</span></a>'}}
 ++++
 <a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-primary reference external" href="https://nightly.link/OpenChemistry/avogadrolibs/workflows/build_cmake/master/macOS.dmg.zip"><span>Download Nightly Build</span></a>
 :::
