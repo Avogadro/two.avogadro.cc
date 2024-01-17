@@ -1,8 +1,8 @@
 (Guide)=
 
-# User Guide 
+# Welcome 
 
-Avogadro is a free, open source molecular editor and visualization tool, designed for use on Mac, Windows, and Linux in computational chemistry, molecular modeling, bioinformatics, materials science, and related areas. It offers flexible high quality rendering and a powerful plugin architecture.
+Avogadro is a free, open-source molecular editor and visualization tool, designed for use on Mac, Windows, and Linux in computational chemistry, molecular modeling, chemistry education, bioinformatics, materials science, and related areas. It offers flexible high-quality rendering and a powerful plugin architecture.
 
 ## Avogadro 2
 
@@ -13,11 +13,11 @@ For new features, a "**New in 2.0**" heading is included.
 The revised manual also includes tips and warnings as call-out sections:
 
 ```{warning}
-This is a warning - pay attention to something that may cause problems
+This is a warning – pay attention to something that may cause problems
 ```
 
 ```{tip}
-This is a tip - something that can help you work better
+This is a tip – something that can help you work better
 ```
 
 ## Thanks
@@ -32,7 +32,7 @@ Funding for the Avogadro manual was provided by the [University of Pittsburgh De
 ```{toctree}
 ---
 hidden: true
-caption: User Guide
+caption: Welcome
 ---
 
 self
