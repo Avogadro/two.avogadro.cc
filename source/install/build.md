@@ -80,6 +80,13 @@ apt-get purge cmake && \
  /tmp/bin
 ```
 
+### Fedora 39
+
+```bash
+sudo dnf update
+sudo dnf install -y cmake gcc gcc-g++ qt5-qtbase-devel zlib-devel libxml2-devel git curl qt5-qtsvg-devel kernel-devel glew-devel
+```
+
 ## Building
 
 It is recommended that you create a build tree outside of the source
