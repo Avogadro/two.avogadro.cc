@@ -1,4 +1,4 @@
-(script-charges)=
+(develop-scripts-charges)=
 
 # Charges / Electrostatics
 

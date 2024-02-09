@@ -1,4 +1,4 @@
-(code-conventions)=
+(contrib-conventions)=
 
 # Coding Conventions (C++)
 

@@ -1,4 +1,4 @@
-(code-documentation)=
+(contrib-documentation)=
 
 # Documenting Code
 

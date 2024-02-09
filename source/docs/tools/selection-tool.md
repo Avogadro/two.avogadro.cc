@@ -1,6 +1,8 @@
+(tools-selection-tool)=
+
 # Selection Tool
 
-The selection tool allows the indiviual selection of atoms, bonds, or fragments.
+The selection tool allows the individual selection of atoms, bonds, or fragments.
 
 ![](../../_static/tutorial-select-tool.png)
 

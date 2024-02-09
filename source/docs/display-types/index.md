@@ -1,4 +1,4 @@
-(rendering)=
+(display-types)=
 
 # Display Types
 
