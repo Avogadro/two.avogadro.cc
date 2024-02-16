@@ -25,7 +25,7 @@ try:
     response = requests.get("https://api.github.com/repos/openchemistry/avogadrolibs/releases/latest")
     release = response.json()['tag_name']
 except requests.exceptions.ConnectionError:
-    release = "1.97.0"
+    release = "1.99.0"
 version = release
 
 year = date.today().year
@@ -153,7 +153,7 @@ html_sidebars = {
   #'index': []
 }
 
-html_logo = '_images/avogadro2.png'
+html_logo = '_static/avogadro2.png'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
