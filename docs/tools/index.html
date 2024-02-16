@@ -48,7 +48,7 @@
     <link rel="canonical" href="https://two.avogadro.cc/docs/tools/index.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Navigate Tool" href="navigate-tool.html" />
+    <link rel="next" title="Navigation Tool" href="navigation-tool.html" />
     <link rel="prev" title="Saving Files" href="../getting-started/saving-files.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -153,7 +153,7 @@
 
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="../index.html">
-                        User Guide
+                        Welcome
                       </a>
                     </li>
                 
@@ -316,7 +316,7 @@ document.write(`
 
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="../index.html">
-                        User Guide
+                        Welcome
                       </a>
                     </li>
                 
@@ -418,19 +418,20 @@ document.write(`
 <nav class="bd-docs-nav bd-links"
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
-  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Welcome</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../whats-new-in-avogadro-2/index.html">What’s New in Avogadro 2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting-started/index.html">Getting Started</a></li>
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Tools</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="navigate-tool.html">Navigate Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="navigation-tool.html">Navigation Tool</a></li>
 <li class="toctree-l2"><a class="reference internal" href="draw-tool.html">Draw Tool</a></li>
 <li class="toctree-l2"><a class="reference internal" href="template-tool.html">Template Tool</a></li>
 <li class="toctree-l2"><a class="reference internal" href="selection-tool.html">Selection Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="manipulate-tool.html">Manipulate Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bond-centric-manipulate-tool.html">Bond-Centric Manipulate Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulation-tool.html">Manipulation Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bond-centric-manipulation-tool.html">Bond-Centric Manipulation Tool</a></li>
 <li class="toctree-l2"><a class="reference internal" href="measure-tool.html">Measure Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animation-tool.html">Animation Tool</a></li>
 <li class="toctree-l2"><a class="reference internal" href="align-tool.html">Align Tool</a></li>
 </ul>
 </li>
@@ -478,7 +479,7 @@ document.write(`
       </a>
     </li>
     
-    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">User Guide</a></li>
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Welcome</a></li>
     
     <li class="breadcrumb-item active" aria-current="page">Tools</li>
   </ul>
@@ -499,10 +500,14 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="tools">
 <span id="id1"></span><h1>Tools<a class="headerlink" href="#tools" title="Link to this heading">#</a></h1>
+<p>Each tool in Avogadro has an associated icon in the toolbar:</p>
+<p><img alt="Toolbar" src="_static/toolbar_dark.svg" /></p>
+<p>Hovering over a tool with the mouse gives a brief description of how to use it.</p>
+<p>After selecting a tool, the name of the tool and any options available for the tool are displayed in the <a class="reference internal" href="#panes-tool-pane"><span class="xref myst">Tool Pane</span></a>.</p>
 <div class="toctree-wrapper compound">
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tools</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="navigate-tool.html">Navigate Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="navigation-tool.html">Navigation Tool</a></li>
 <li class="toctree-l1"><a class="reference internal" href="draw-tool.html">Draw Tool</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="draw-tool.html#creating-carbon-dioxide">Creating Carbon Dioxide</a></li>
 </ul>
@@ -516,14 +521,23 @@ document.write(`
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="selection-tool.html">Selection Tool</a></li>
-<li class="toctree-l1"><a class="reference internal" href="manipulate-tool.html">Manipulate Tool</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bond-centric-manipulate-tool.html">Bond-Centric Manipulate Tool</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="bond-centric-manipulate-tool.html#starting-with-the-basics">Starting with the basics:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bond-centric-manipulate-tool.html#adjusting-bonds-and-torsion-angles">Adjusting Bonds and Torsion Angles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manipulation-tool.html">Manipulation Tool</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="manipulation-tool.html#basic-usage">Basic usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulation-tool.html#pane-options">Pane options</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bond-centric-manipulation-tool.html">Bond-Centric Manipulation Tool</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="bond-centric-manipulation-tool.html#starting-with-the-basics">Starting with the basics:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bond-centric-manipulation-tool.html#adjusting-bonds-and-torsion-angles">Adjusting Bonds and Torsion Angles</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="measure-tool.html">Measure Tool</a></li>
-<li class="toctree-l1"><a class="reference internal" href="align-tool.html">Align Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="animation-tool.html">Animation Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="align-tool.html">Align Tool</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="align-tool.html#basic-usage">Basic usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="align-tool.html#pane-options">Pane options</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </section>
@@ -548,11 +562,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="navigate-tool.html"
+       href="navigation-tool.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Navigate Tool</p>
+        <p class="prev-next-title">Navigation Tool</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

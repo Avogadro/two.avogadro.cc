@@ -1,4 +1,4 @@
-(scripts)=
+(develop-scripts)=
 
 # Script Plugins
 

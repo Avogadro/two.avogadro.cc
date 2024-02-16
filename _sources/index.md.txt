@@ -88,11 +88,11 @@ This documentation site is for Avogadro 2, currently in development.
 {fas}`book;fa-2x` User Guide
 ^^^
 
-Coming Soon for Avogadro2:
+Coming Soon for Avogadro 2:
 
-- Getting Started
-- Tutorials
-- Manual
+- [Getting Started](getting-started)
+- [Manual](docs)
+- [Tutorials](tutorials)
 :::
 
 :::{grid-item-card}
@@ -104,7 +104,7 @@ Develop scripts and C++ code with Avogadro:
 
 - [Script Plugins](Scripts)
 - Jupyter Notebooks
-- [C++ API](API)
+- [C++ API](develop)
 
 :::
 :::{grid-item-card}

@@ -49,7 +49,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Menus" href="../menus/index.html" />
-    <link rel="prev" title="Measure Tool" href="measure-tool.html" />
+    <link rel="prev" title="Animation Tool" href="animation-tool.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -153,7 +153,7 @@
 
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="../index.html">
-                        User Guide
+                        Welcome
                       </a>
                     </li>
                 
@@ -316,7 +316,7 @@ document.write(`
 
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="../index.html">
-                        User Guide
+                        Welcome
                       </a>
                     </li>
                 
@@ -418,19 +418,20 @@ document.write(`
 <nav class="bd-docs-nav bd-links"
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
-  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Welcome</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../whats-new-in-avogadro-2/index.html">What’s New in Avogadro 2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting-started/index.html">Getting Started</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Tools</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="navigate-tool.html">Navigate Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="navigation-tool.html">Navigation Tool</a></li>
 <li class="toctree-l2"><a class="reference internal" href="draw-tool.html">Draw Tool</a></li>
 <li class="toctree-l2"><a class="reference internal" href="template-tool.html">Template Tool</a></li>
 <li class="toctree-l2"><a class="reference internal" href="selection-tool.html">Selection Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="manipulate-tool.html">Manipulate Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bond-centric-manipulate-tool.html">Bond-Centric Manipulate Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulation-tool.html">Manipulation Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bond-centric-manipulation-tool.html">Bond-Centric Manipulation Tool</a></li>
 <li class="toctree-l2"><a class="reference internal" href="measure-tool.html">Measure Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animation-tool.html">Animation Tool</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Align Tool</a></li>
 </ul>
 </li>
@@ -478,7 +479,7 @@ document.write(`
       </a>
     </li>
     
-    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">User Guide</a></li>
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Welcome</a></li>
     
     
     <li class="breadcrumb-item"><a href="index.html" class="nav-link">Tools</a></li>
@@ -501,18 +502,30 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="align-tool">
-<h1>Align Tool<a class="headerlink" href="#align-tool" title="Link to this heading">#</a></h1>
-<p>The align tool rotates, and translates a molecule(s) into a specific reference frame.</p>
+<span id="tools-align-tool"></span><h1>Align Tool<a class="headerlink" href="#align-tool" title="Link to this heading">#</a></h1>
+<p><img alt="The icon of the Align Tool in light mode." src="../../_images/icon_align.svg" /></p>
+<p>The Align Tool is used to rotate and translate a molecule(s) so that it aligns with one of the Cartesian axes.</p>
+<section id="basic-usage">
+<h2>Basic usage<a class="headerlink" href="#basic-usage" title="Link to this heading">#</a></h2>
+<p>First, an alignment axis is chosen from the <code class="docutils literal notranslate"><span class="pre">Axis</span></code> drop-down menu in the Align Pane. The <kbd>x</kbd>, <kbd>y</kbd>, and <kbd>z</kbd> keys on the keyboard are shortcuts for changing the alignment axis.</p>
+<p>Secondly, select either one or two atoms in the view frame with the left mouse button. The labels #1 and #2 will be displayed on each.</p>
+<p>Clicking <code class="docutils literal notranslate"><span class="pre">Align</span></code> will then reposition the molecule as desired.</p>
+<p>If only one atom was selected, the molecule will simply be translated so that it is placed at the origin (i.e. the Cartesian coordinates (0,0,0)).</p>
+<p>If two atoms were selected, the first will be placed at the origin, and the second will be placed along the chosen axis.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The red axis is designated as the X axis, green is designated as the Y axis, and blue is designated as the Z axis.</p>
+</div>
+</section>
+<section id="pane-options">
+<h2>Pane options<a class="headerlink" href="#pane-options" title="Link to this heading">#</a></h2>
 <p><img alt="" src="../../_images/e3143779-956e-4d83-ac28-dc2f79bf2194.png" /></p>
-<p>An alignment axis can be chosen from the “Axis” drop down menu. Typing “x”, “y”, or “z” is a shortcut for changing the alignment axis.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Axis</span></code> drop-down menu allows you to choose which Cartesian axis the molecule will be aligned to.</p>
 <p><img alt="" src="../../_images/ec6c967d-5df0-41b8-b692-93123f8a0462.png" /></p>
-<p>The align tool can be used to align everything in the frame, or a specific molecule with “Molecule” option in the “Align” drop down menu. As shown below, two atoms will be used as reference points to align your selection.</p>
+<p>By default, the relative positions of everything in the view frame will remain the same and the same transformation will be applied to all objects. By choosing the “Molecule” option in the <code class="docutils literal notranslate"><span class="pre">Align</span></code> drop-down menu in the Align Pane, only the molecule containing the selected atoms will be affected by the change.</p>
 <p><img alt="" src="../../_images/c1839173-f147-444d-b9c9-9ebb2e0a28f4.png" /></p>
-<p>Clicking “Align” will then reposition the molecule/frame with the new alignment. The alignment axes are displayed in the bottom left corner.</p>
-<ul class="simple">
-<li><p>The red axis is designated as the X axis, green is designated as the Y axis, and blue is designated as the z axis.</p></li>
-</ul>
 <p><img alt="" src="../../_images/ca04487a-6f68-45ca-a5bf-92a2daf99194.png" /></p>
+</section>
 </section>
 
 
@@ -526,12 +539,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="measure-tool.html"
+       href="animation-tool.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Measure Tool</p>
+        <p class="prev-next-title">Animation Tool</p>
       </div>
     </a>
     <a class="right-next"
@@ -552,6 +565,19 @@ document.write(`
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-usage">Basic usage</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pane-options">Pane options</a></li>
+</ul>
+  </nav></div>
 
   <div class="sidebar-secondary-item">
 

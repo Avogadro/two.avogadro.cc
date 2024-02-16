@@ -153,7 +153,7 @@
 
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="../index.html">
-                        User Guide
+                        Welcome
                       </a>
                     </li>
                 
@@ -316,7 +316,7 @@ document.write(`
 
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="../index.html">
-                        User Guide
+                        Welcome
                       </a>
                     </li>
                 
@@ -418,9 +418,9 @@ document.write(`
 <nav class="bd-docs-nav bd-links"
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
-  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Welcome</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">What’s New in Avogadro 2</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="index.html">What’s New in Avogadro 2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="major-new-features.html">Major New Features</a></li>
@@ -473,7 +473,7 @@ document.write(`
       </a>
     </li>
     
-    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">User Guide</a></li>
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Welcome</a></li>
     
     
     <li class="breadcrumb-item"><a href="index.html" class="nav-link">What’s New in Avogadro 2</a></li>
@@ -500,19 +500,30 @@ document.write(`
 <p>Many parts of the interface have changed in Avogadro 2.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>When saving files, File =&gt; Save allows saving to CJSON and CML formats,
-which will retain all data and options.</p>
-<p>If you wish to <strong>export</strong> to other formats (e.g., XYZ, PDB, SDF, etc.) use
-File =&gt; Export =&gt; Molecule…</p>
-</div>
-<p><img alt="Screenshot indicating File =&gt; Export =&gt; Molecule menu item" src="../../_images/FileExportMolecule.png" /></p>
 <p>During the development of Avogadro 2 betas, the interface is currently in flux,
 and menu items and tool icons will change.</p>
 <p>Consequently, this documentation is still a work in progress. Some instructions and screenshots may be out of date.</p>
+</div>
+<section id="save-vs-export">
+<h2>Save vs Export<a class="headerlink" href="#save-vs-export" title="Link to this heading">#</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><code class="docutils literal notranslate"><span class="pre">File</span></code> ⇒ <code class="docutils literal notranslate"><span class="pre">Save</span></code> now only allows saving to CJSON and CML formats.</p>
+<p>All other formats are now <strong>exported</strong> instead, using <code class="docutils literal notranslate"><span class="pre">File</span></code> ⇒ <code class="docutils literal notranslate"><span class="pre">Export</span></code> ⇒ <code class="docutils literal notranslate"><span class="pre">Molecule…</span></code></p>
+</div>
+<p>In Avogadro 1.0–1.2, users would be surprised that when saving to some formats (e.g., XYZ, PDB) and bond orders or other information would be lost. As a result, <code class="docutils literal notranslate"><span class="pre">File</span></code> ⇒ <code class="docutils literal notranslate"><span class="pre">Save</span></code> is now reserved for saving to CJSON and CML formats, which will retain all data and options.</p>
+<p>If you wish to <strong>export</strong> to other formats (e.g., XYZ, PDB, SDF, etc.) use
+<code class="docutils literal notranslate"><span class="pre">File</span></code> ⇒ <code class="docutils literal notranslate"><span class="pre">Export</span></code> ⇒ <code class="docutils literal notranslate"><span class="pre">Molecule…</span></code> instead.</p>
+<p><img alt="Screenshot indicating File ⇒ Export ⇒ Molecule menu item" src="../../_images/FileExportMolecule.png" /></p>
+</section>
+<section id="menu-organization">
+<h2>Menu organization<a class="headerlink" href="#menu-organization" title="Link to this heading">#</a></h2>
+<p>Many menu options have been moved and are now located in different places or have different names. In all cases this is with the intention of making functionality easier to find and understand for users.</p>
+</section>
 <section id="input-generators">
-<h2>Input Generators<a class="headerlink" href="#input-generators" title="Link to this heading">#</a></h2>
-<p>The <em>input generators</em> which help format input for external programs like Gaussian, ORCA, CP2K, and LAMMPS have moved into a new “Input” menu of their own.</p>
-<p>Many of these menu items use <a class="reference internal" href="../../develop/scripts/generators.html#input-generators"><span class="std std-ref">Python scripts</span></a>, so if your menu does not include many options, make sure that Python is installed and configured.</p>
+<h2>Input generators<a class="headerlink" href="#input-generators" title="Link to this heading">#</a></h2>
+<p>The <em>input generators</em> which help format input for external programs like Gaussian, ORCA, CP2K, and LAMMPS have moved into a new <code class="docutils literal notranslate"><span class="pre">Input</span></code> menu of their own.</p>
+<p>Many of these menu items use <a class="reference internal" href="#input-generators"><span class="xref myst">Python scripts</span></a>, so if your menu does not include many options, make sure that Python is installed and configured to enable them.</p>
 <p><img alt="Screenshot indicating Input menu and commands from Python scripts" src="../../_images/InputMenu.png" /></p>
 </section>
 </section>
@@ -563,7 +574,9 @@ and menu items and tool icons will change.</p>
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input-generators">Input Generators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#save-vs-export">Save vs Export</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menu-organization">Menu organization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input-generators">Input generators</a></li>
 </ul>
   </nav></div>
 

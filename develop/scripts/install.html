@@ -153,7 +153,7 @@
 
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="../../docs/index.html">
-                        User Guide
+                        Welcome
                       </a>
                     </li>
                 
@@ -316,7 +316,7 @@ document.write(`
 
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="../../docs/index.html">
-                        User Guide
+                        Welcome
                       </a>
                     </li>
                 
@@ -493,7 +493,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="installing-script-plugins">
-<span id="script-install"></span><h1>Installing Script Plugins<a class="headerlink" href="#installing-script-plugins" title="Link to this heading">#</a></h1>
+<span id="develop-scripts-install"></span><h1>Installing Script Plugins<a class="headerlink" href="#installing-script-plugins" title="Link to this heading">#</a></h1>
 <p>Scripts can either be installed manually, by dragging to the Avogadro window:</p>
 <p><img alt="installing script" src="develop/_static/install-script.png" /></p>
 <p>Scripts can also be installed from GitHub repositories through the “Download Plugins…” command:</p>
@@ -501,23 +501,40 @@ document.write(`
 <section id="directories">
 <h2>Directories<a class="headerlink" href="#directories" title="Link to this heading">#</a></h2>
 <p>Avogadro will look for plugins either as individual files or subdirectories
-in a few paths, including system and user directories. Each type of plugin
-should be in the corresponding subdirectory, e.g.:</p>
-<p><img alt="plugin subdirectories" src="develop/_static/plugin-directories.png" /></p>
-<p>The main directory for installing plugins is determined by <code class="docutils literal notranslate"><span class="pre">QStandardPaths::standardLocations(QStandardPaths::AppLocalDataLocation)</span></code>:</p>
+in a few different paths, including system and user directories.</p>
+<p>User-installed plugins are found within the Avogadro data folder, the location
+of which is determined by
+<code class="docutils literal notranslate"><span class="pre">QStandardPaths::standardLocations(QStandardPaths::AppLocalDataLocation)</span></code>:</p>
 <ul class="simple">
-<li><p><strong>Linux and BSD</strong>: <code class="docutils literal notranslate"><span class="pre">~/.local/share/avogadro/</span></code></p></li>
-<li><p><strong>macOS</strong>: <code class="docutils literal notranslate"><span class="pre">Library/Application\</span> <span class="pre">Support/OpenChemistry/Avogadro</span></code></p></li>
-<li><p><strong>Windows</strong>: <code class="docutils literal notranslate"><span class="pre">C:/Users/USER/AppData/Local/Avogadro</span></code></p></li>
+<li><p><strong>Linux and BSD</strong>: <code class="docutils literal notranslate"><span class="pre">~/.local/share/OpenChemistry/Avogadro</span></code></p></li>
+<li><p><strong>macOS</strong>: <code class="docutils literal notranslate"><span class="pre">~/Library/Application</span> <span class="pre">Support/OpenChemistry/Avogadro</span></code></p></li>
+<li><p><strong>Windows</strong>: <code class="docutils literal notranslate"><span class="pre">C:/Users/&lt;USER&gt;/AppData/Local/OpenChemistry/Avogadro</span></code></p></li>
 </ul>
-<p>Inside each of these paths, subdirectories for each category of plugin will be
-scanned for both individual files and directories containing <code class="docutils literal notranslate"><span class="pre">plugin.json</span></code> files
-indicating a plugin “package.”</p>
+<p>Within this data folder, plugins are found in subdirectories organized by the
+category of plugin.</p>
+<p><img alt="plugin subdirectories" src="develop/_static/plugin-directories.png" /></p>
+<p>Current plugin categories and their respective subdirectories:</p>
+<ul class="simple">
+<li><p>Scripts for calculating charges and electrostatic potentials – found in <code class="docutils literal notranslate"><span class="pre">charges</span></code></p></li>
+<li><p>Scripts to add menu options for commands, which perform custom operations – found in <code class="docutils literal notranslate"><span class="pre">commands</span></code></p></li>
+<li><p>Scripts that calculate energies and gradients on request by parts of Avogadro that run calculations – found in <code class="docutils literal notranslate"><span class="pre">energy</span></code></p></li>
+<li><p>Scripts that generate input files for computational chemistry programs – found in <code class="docutils literal notranslate"><span class="pre">inputGenerators</span></code></p></li>
+<li><p>Scripts that translate between different chemical file formats – found in <code class="docutils literal notranslate"><span class="pre">formatScripts</span></code></p></li>
+</ul>
+<p>On startup, each of these subdirectories will be scanned for individual
+plugin files, as well as plugin “packages” – directories containing mutliple
+files as well as a <code class="docutils literal notranslate"><span class="pre">plugin.json</span></code> with information about the plugin.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The main data folder should not be used for plugin files and plugins saved
+there will not be loaded.</p>
+<p>Plugins must be saved within the appropriate subdirectory for their type.</p>
+</div>
 </section>
 <section id="plugin-packages-and-repositories">
 <h2>Plugin Packages and Repositories<a class="headerlink" href="#plugin-packages-and-repositories" title="Link to this heading">#</a></h2>
 <p>Since some plugins may require additional scripts or resources to function,
-they can be installed as an entire directory.</p>
+they can be installed as entire self-contained directory to make a “package”.</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/OpenChemistry/avogadro-cclib">avogadro-cclib</a> - <a class="reference internal" href="formats.html"><span class="doc std std-doc">reads files</span></a> through the <code class="docutils literal notranslate"><span class="pre">cclib</span></code> Python module and needs a <code class="docutils literal notranslate"><span class="pre">utils.py</span></code> helper script</p></li>
 <li><p><a class="reference external" href="https://github.com/ghutchis/avogadro-rdkit">avogadro-rdkit</a> - packages multiple <a class="reference internal" href="commands.html"><span class="doc std std-doc">command</span></a> scripts together since they all use the <code class="docutils literal notranslate"><span class="pre">rdkit</span></code> package</p></li>

@@ -1,4 +1,4 @@
-(qtgui-classes)=
+(develop-qtgui)=
 
 # QtGui Classes
 

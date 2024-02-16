@@ -1,4 +1,4 @@
-(script-install)=
+(develop-scripts-install)=
 
 # Installing Script Plugins
 
@@ -13,25 +13,43 @@ Scripts can also be installed from GitHub repositories through the "Download Plu
 ## Directories
 
 Avogadro will look for plugins either as individual files or subdirectories
-in a few paths, including system and user directories. Each type of plugin
-should be in the corresponding subdirectory, e.g.:
+in a few different paths, including system and user directories.
+
+User-installed plugins are found within the Avogadro data folder, the location
+of which is determined by
+`QStandardPaths::standardLocations(QStandardPaths::AppLocalDataLocation)`:
+
+- **Linux and BSD**: `~/.local/share/OpenChemistry/Avogadro`
+- **macOS**: `~/Library/Application Support/OpenChemistry/Avogadro`
+- **Windows**: `C:/Users/<USER>/AppData/Local/OpenChemistry/Avogadro`
+
+Within this data folder, plugins are found in subdirectories organized by the
+category of plugin.
 
 ![plugin subdirectories](../_static/plugin-directories.png)
 
-The main directory for installing plugins is determined by `QStandardPaths::standardLocations(QStandardPaths::AppLocalDataLocation)`:
+Current plugin categories and their respective subdirectories:
+- Scripts for calculating charges and electrostatic potentials – found in `charges`
+- Scripts to add menu options for commands, which perform custom operations – found in `commands`
+- Scripts that calculate energies and gradients on request by parts of Avogadro that run calculations – found in `energy`
+- Scripts that generate input files for computational chemistry programs – found in `inputGenerators`
+- Scripts that translate between different chemical file formats – found in `formatScripts`
 
-- **Linux and BSD**: `~/.local/share/avogadro/`
-- **macOS**: `Library/Application\ Support/OpenChemistry/Avogadro`
-- **Windows**: `C:/Users/USER/AppData/Local/Avogadro`
+On startup, each of these subdirectories will be scanned for individual
+plugin files, as well as plugin "packages" – directories containing mutliple
+files as well as a `plugin.json` with information about the plugin.
 
-Inside each of these paths, subdirectories for each category of plugin will be
-scanned for both individual files and directories containing `plugin.json` files
-indicating a plugin "package."
+```{warning}
+The main data folder should not be used for plugin files and plugins saved
+there will not be loaded.
+
+Plugins must be saved within the appropriate subdirectory for their type.
+```
 
 ## Plugin Packages and Repositories
 
 Since some plugins may require additional scripts or resources to function,
-they can be installed as an entire directory.
+they can be installed as entire self-contained directory to make a "package".
 
 - [avogadro-cclib](https://github.com/OpenChemistry/avogadro-cclib) - [reads files](formats) through the `cclib` Python module and needs a `utils.py` helper script
 - [avogadro-rdkit](https://github.com/ghutchis/avogadro-rdkit) - packages multiple [command](commands) scripts together since they all use the `rdkit` package
