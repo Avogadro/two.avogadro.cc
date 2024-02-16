@@ -1,3 +1,5 @@
+(menus-build-menu)=
+
 # Build Menu
 
 The build menu helps to ease the process of constructing molecules.

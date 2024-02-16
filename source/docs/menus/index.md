@@ -1,3 +1,5 @@
+(menus)=
+
 # Menus
 
 ```{toctree}

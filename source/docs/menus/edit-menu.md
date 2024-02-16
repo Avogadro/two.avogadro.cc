@@ -1,3 +1,5 @@
+(menus-edit-menu)=
+
 # Edit Menu
 
 The edit menu administers basic file revisions.

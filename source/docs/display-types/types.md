@@ -1,3 +1,5 @@
+(display-types-types)=
+
 # Different Display Styles
 
 Avogadro comes equipped with various display types to aid in molecular interpretation.

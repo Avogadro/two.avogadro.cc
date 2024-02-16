@@ -1,3 +1,5 @@
+(display-types-coloring)=
+
 # Coloring Part of a Molecules
 
 Coloring various parts of a molecule can provide a more visually stimulating way to display qualitative information.

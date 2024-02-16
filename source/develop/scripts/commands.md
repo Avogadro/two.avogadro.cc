@@ -1,4 +1,4 @@
-(command-scripts)=
+(develop-scripts-commands)=
 
 # Command Scripts
 

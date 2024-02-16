@@ -1,10 +1,10 @@
-(code-contributions)=
+(contrib-code)=
 
 # Contributing Code
 
 If you're interested in contributing code to Avogadro, we recommend
 that you understand the [GitHub Flow] including [Forking Repositories]
-to make changes with the [Git] version control system, and financially
+to make changes with the [Git] version control system, and finally
 making a [Pull Request] for others to review, test, and merge into
 the main version of Avogadro.
 

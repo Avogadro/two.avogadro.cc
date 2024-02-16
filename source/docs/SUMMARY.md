@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Preface](index.md)
+* [Welcome](index.md)
 * [What's New in Avogadro 2](whats-new-in-avogadro-2/README.md)
   * [Major New Features](whats-new-in-avogadro-2/major-new-features.md)
   * [Interface Changes](whats-new-in-avogadro-2/interface-changes.md)

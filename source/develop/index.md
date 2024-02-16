@@ -1,10 +1,10 @@
-(api)=
+(develop)=
 
 # Develop
 
 Avogadro can be extended from both Python and C++ interfaces.
 
-The code is inteded to be modular and extensible, so many times,
+The code is intended to be modular and extensible, so in many cases
 you can add features without needing to understand the entire C++
 codebase.
 
@@ -18,9 +18,9 @@ Many features in Avogadro can be extended with Python scripts, including:
 - [force fields](scripts/energy)
 - [input generators](scripts/generators)
 
-These scripts can be installed with drag-and-drop or from GitHub repositories.
+These scripts can be installed by drag-and-drop into the main Avogadro window or from GitHub repositories.
 
-For more details, see the [script plugin](scripts/index) documentation.
+For more details, see the [script plugin](develop-scripts) documentation.
 
 ## External Scripting
 
@@ -28,7 +28,7 @@ Avogadro supports sending messages from external scripts, through
 remote procedure call (RPC) JSON. This can be very helpful for rendering
 images of molecules, generating orbitals, etc.
 
-For more details, see the [RPC](rpc) documentation.
+For more details, see the [RPC](develop-rpc) documentation.
 
 ## Libraries
 
@@ -49,7 +49,7 @@ useful to get acquainted with are:
   - Core::Bond : Class representing bonds in a molecule.
 - Io::FileFormatManager : Convenience functions for file format wrangling.
 - Io::FileFormat : Base class for all file format readers and writers.
-  - Io::CjsonFormat : Chemical JSON format reader and writeer.
+  - Io::CjsonFormat : Chemical JSON format reader and writer.
 - Rendering::Scene : Class managing the main scene graph used for rendering.
 - Rendering::Drawable : Base class for drawable items in the scene.
   - Rendering::SphereGeometry : Drawable item for spheres.
