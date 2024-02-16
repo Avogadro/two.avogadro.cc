@@ -1,15 +1,17 @@
 # Saving Files
 
-By default, Avogadro saves files to "native" formats CJSON (Chemical JSON) and CML (Chemical Markup Language), which store as much chemical information as possible.
+By default, Avogadro saves files to its "native" format [CJSON](https://github.com/OpenChemistry/chemicaljson) (Chemical JSON), which stores as much chemical information as possible and is the recommended format. 
 
 ![Screenshot indicating File => Save and Save As menu items](../../_static/tutorial-save.png)
 
-In particular the default [Chemical JSON](https://github.com/OpenChemistry/chemicaljson) format will retain atoms, bond orders, formal charges, unit cell parameters, space group information, surfaces, orbitals, vibrations and other spectra, selections, custom colors, etc.
+In particular, CJSON will retain atoms, bond orders, formal charges, unit cell parameters, space group information, surfaces, orbitals, vibrations and other spectra, selections, custom colors, etc.
 
-## Exporting to Other Formats
+CML (Chemical Markup Language) was the original save format for Avogadro and support is still retained.
+
+## Exporting to other formats
 
 If you wish to **export** to other formats (e.g., XYZ, PDB, SDF, etc.) use
-File => Export => Molecule…
+`File` ⇒ `Export` ⇒ `Molecule…`
 
 ![Screenshot indicating File => Export => Molecule menu item](../../_static/FileExportMolecule.png)
 

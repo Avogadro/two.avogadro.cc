@@ -1,4 +1,4 @@
-(script-interfaces)=
+(develop-scripts-interfaces)=
 
 # Script Interfaces
 

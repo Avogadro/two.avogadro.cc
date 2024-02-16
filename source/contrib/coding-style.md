@@ -1,4 +1,4 @@
-(coding-style)=
+(contrib-coding-style)=
 
 # Coding Style (C++)
 

@@ -1,6 +1,8 @@
-# Bond-Centric Manipulate Tool
+(tools-bond-centric-manipulation-tool)=
 
-The Bond-Centric Manipulate tool alters angles, bonds, and torsions of a molecule.
+# Bond-Centric Manipulation Tool
+
+The Bond-Centric Manipulation Tool is a powerful tool that allows you to focus on a specific bond and change its length and the surrounding angles, while keeping the rest of the molecule the same.
 
 ![](../../_static/bb1e744d-c5be-45b9-a6ce-b3de75ae47e2.png)
 
@@ -21,11 +23,11 @@ The Bond-Centric Manipulate tool alters angles, bonds, and torsions of a molecul
 
 ## Adjusting Bonds and Torsion Angles
 
-Once a plane is selected the atoms on either end of the plane can be manipulated, by left clicking on the atom and dragging. The displayed angles will automatically adjust, and the selected bond will _not_ change in length.
+Once a plane is selected the atoms on either end of the plane can be manipulated, by left-clicking on the atom and dragging. The displayed angles will automatically adjust, and the selected bond will _not_ change in length.
 
 ![](../../_static/fbd1fea3-fd8c-42fe-9ea7-f5e6a41b5ceb.png)
 
-Left clicking on a substituent, or in this case a hydrogen bonded to one of the selected carbon atoms will allow you to adjust the torsion angle.
+Left-clicking on a substituent, or in this case a hydrogen bonded to one of the selected carbon atoms will allow you to adjust the torsion angle.
 
 ![](../../_static/298f626b-051e-4c3f-b53c-693a36201bf9.png)
 
