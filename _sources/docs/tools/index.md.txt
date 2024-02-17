@@ -13,6 +13,7 @@ After selecting a tool, the name of the tool and any options available for the t
 ```{toctree}
 ---
 caption: Tools
+maxdepth: 1
 ---
 
 navigation-tool
