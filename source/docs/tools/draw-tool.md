@@ -5,7 +5,7 @@
 Molecules are built and edited with the Draw Tool, which allows "free-hand" sketching of new molecules.
 
 ```{tip} **New in 2.0**
-You can also use the new [Template Tool](tools-template-tool), which makes it quicker and easier to attach functional groups or assemble inorganic/organometallic complexes.
+You can also use the new [Template Tool](template-tool), which makes it quicker and easier to attach functional groups or assemble inorganic/organometallic complexes.
 ```
 
 ![Screenshot of the draw tool](../../_static/draw-tool.png)
