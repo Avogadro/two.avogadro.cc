@@ -1,10 +1,14 @@
+import os
 from github import Github
 from github import Auth
 
-access_token = "YOUR_ACCESS_TOKEN"
+# get access token from environment variable in github actions
+access_token = os.environ.get("GITHUB_TOKEN")
+
+if not access_token:
+    raise ValueError("GITHUB_TOKEN environment variable not set")
 
 auth = Auth.Token(access_token)
-
 g = Github(auth=auth)
 
 repositories = [
@@ -16,7 +20,6 @@ repositories = [
     "openchemistry/avogenerators",
     "openchemistry/avogadro-commands",
     "openchemistry/avogadro-cclib",
-    "cryos/avogadro",
 ]
 
 unique_contributors = set()
@@ -28,20 +31,15 @@ with open("contributors.md", "w") as contributors_file:
 
         for contributor in contributors:
             username = contributor.login
-            unique_contributors.add(username)
-            contributors_file.write(f"- {username}\n")
 
-sorted_contributors = sorted(unique_contributors)
+            if username not in unique_contributors:
+                user = g.get_user(username)
 
-with open("credits.md", "r") as credits_file:
-    credits_content = credits_file.read()
+                # check if the user has a full name and if so, use it else use username
+                if user is not None and user.name is not None:
+                    contributors_file.write(f"- [{user.name}]({user.html_url})\n")
+                else:
+                    contributors_file.write(f"- [{username}](https://github.com/{username})\n")
+                unique_contributors.add(username)
 
-updated_credits_content = credits_content.replace(
-    "```{include} contributors.md```",
-    f"```{{include}} contributors.md\n\n" + "\n".join(sorted_contributors) + "\n```"
-)
-
-with open("credits.md", "w") as credits_file:
-    credits_file.write(updated_credits_content)
-
-print("Contributors have been updated in contributors.md and credits.md.")
+print("Contributors have been updated in contributors.md")
