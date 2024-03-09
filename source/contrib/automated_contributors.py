@@ -23,23 +23,30 @@ repositories = [
 ]
 
 unique_contributors = set()
+contributors_list = []
+
+
+for repo_name in repositories:
+    repo = g.get_repo(repo_name)
+    contributors = repo.get_contributors()
+
+    for contributor in contributors:
+        username = contributor.login
+
+        if username not in unique_contributors:
+            user = g.get_user(username)
+
+            # check if the user has a full name and if so, use it else use username
+            if user is not None and user.name is not None:
+                contributors_list.append((user.name, username))
+            else:
+                contributors_list.append((username, username))
+            unique_contributors.add(username)
+
+contributors_list.sort()
 
 with open("contributors.md", "w") as contributors_file:
-    for repo_name in repositories:
-        repo = g.get_repo(repo_name)
-        contributors = repo.get_contributors()
-
-        for contributor in contributors:
-            username = contributor.login
-
-            if username not in unique_contributors:
-                user = g.get_user(username)
-
-                # check if the user has a full name and if so, use it else use username
-                if user is not None and user.name is not None:
-                    contributors_file.write(f"- [{user.name}]({user.html_url})\n")
-                else:
-                    contributors_file.write(f"- [{username}](https://github.com/{username})\n")
-                unique_contributors.add(username)
+    for real_name, username in contributors_list:
+        contributors_file.write(f"- [{real_name}](https://github.com/{username})\n")
 
 print("Contributors have been updated in contributors.md")
