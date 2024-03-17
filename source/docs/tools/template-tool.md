@@ -2,6 +2,10 @@
 
 # Template Tool
 
+![The icon of the Template Tool in light mode.](../../_static/icon_template.svg)
+
+Keyboard shortcut: <kbd>Ctrl</kbd>+<kbd>3</kbd>
+
 The template tool makes it easy to build up molecules from pre-defined ligands or functional groups, for example metal complexes or organometallic species.
 
 ![Template tool window indicating menus for element, formal charge, and coordination geometry](../../_static/Template-CenterDialog.png)
