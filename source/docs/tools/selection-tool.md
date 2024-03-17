@@ -2,13 +2,18 @@
 
 # Selection Tool
 
+![The icon of the Selection Tool in light mode.](../../_static/icon_select.svg)
+
+Keyboard shortcut: <kbd>Ctrl</kbd>+<kbd>5</kbd>
+
 The selection tool allows the individual selection of atoms, bonds, or fragments.
 
 ![](../../_static/tutorial-select-tool.png)
 
-The select provides you with the ability to select a single atom within a molecule. This is achieved by left clicking the atom. Press and holding the "shift" key allows for the selection of multiple atoms.
+The select provides you with the ability to select a single atom within a molecule.
+This is achieved by left-clicking the atom. Press and holding the "shift" key allows for the selection of multiple atoms.
 
-Right clicking on the black display will clear the selection made.
+Right-clicking on the black display will clear the selection made.
 
 ![](../../_static/tutorial-select-atom.png)
 
