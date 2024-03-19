@@ -9,55 +9,77 @@ Keyboard shortcut: <kbd>Ctrl</kbd>+<kbd>2</kbd>
 Molecules are built and edited with the Draw Tool, which allows "free-hand" sketching of new molecules.
 
 ```{tip} **New in 2.0**
-You can also use the new [Template Tool](template-tool), which makes it quicker and easier to attach functional groups or assemble inorganic/organometallic complexes.
+The default bond order setting is "Automatic" – it will adjust intelligently with the length of the bond.
 ```
-
-![Screenshot of the draw tool](../../_static/draw-tool.png)
-
-Left-clicking on the display will allow you to begin your journey into molecule creation. A left-click will create a carbon atom. A right-click will delete the atom.
-
-![](../../_static/first-carbon.png)
-
-Left-clicking the initial atom and dragging your mouse will create a bond to another carbon atom.
-
-![](../../_static/drag-to-build.png)
-
-Avogadro uses carbon as the default element. A different element can be selected through the `Element` drop-down menu.
-Typing the atomic symbol (e.g., <kbd>O</kbd> for Oxygen, <kbd>A</kbd><kbd>s</kbd> for Arsenic) is a shortcut for changing the selected element.
-
-![](../../_static/pick-an-element.png)
-
-Let's say you wanted to create water. You can either type in "O", or select "Oxygen (8)" from the drop-down menu, and then click on the black display.
-
-Left-clicking on an atom that has already been generated will also change the element.
-In this case, clicking on the initial carbon atom changed it into an oxygen atom.
-
-![](../../_static/tutorial-water.png)
-
-If the `Adjust Hydrogens` box is checked, hydrogen atoms in the molecule will be automatically adjusted to satisfy valency (as shown above).
-
-![](../../_static/tutorial-adjust-hydrogens.png)
-
-Bond order is changed through the `Bond Order` drop-down menu, or by typing the numbers <kbd>1</kbd>, <kbd>2</kbd>, or <kbd>3</kbd>.
-Bonds are added by left-clicking on a bond that has already been created. Right-clicking on a bond deletes the bond.
-
-![](../../_static/tutorial-bond-order.png)
 
 ```{tip} **New in 2.0**
-The default bond order is "Automatic," and will adjust with the length of the bond.
+To help rapidly build your structure you can also use the new [Template Tool](tools-template-tool), which makes it quicker and easier to attach functional groups or assemble inorganic/organometallic complexes.
 ```
 
-### Creating Carbon Dioxide
+## Basic usage
 
-Begin drawing the "O-C-O" structure.
-After the structure is drawn, all you need to do is left-click on the bonds.
-Left-clicking on the bonds will create a double bond (shown below).
+Atoms and bonds are drawn using the mouse.
 
-![](../../_static/tutorial-co2-step1.png)
-![](../../_static/tutorial-co2-step2.png)
-![](../../_static/tutorial-co2-step3.png)
+Left-clicking on an empty space in the view creates an atom of the currently selected element.
 
-Once you've created your molecule, you can optimize its geometry through the `Extensions` menu.
-Selecting the `Extensions` menu, and clicking `Optimize Geometry` will provide your molecule with proper bond lengths and angles.
+A left-click on an existing atom will change its element to the one currently selected.
 
-![](../../_static/ada26872-ede7-4601-bd4e-d790c10ad614.png)
+Left-click and drag from an atom will create a new bond starting from that atom.
+A new atom of the currently selected element is automatically created at the end of the new bond and is visible while dragging.
+
+```{tip}
+New atoms and bonds will be created in a plane that is parallel to the screen and includes the atom the bond originates from.
+```
+
+If, during the drag, the mouse is moved over an existing atom, the mouse will "snap" to it, and the new atom will disappear.
+The new bond will be drawn to this existing atom instead.
+
+By default, the bond order of a new bond is selected automatically based on the distance between the atoms: long bonds will be single bonds, short bonds will be double bonds, and very short bonds will be triple bonds.
+
+A left-click on an existing bond will increase its bond order by one.
+Left-clicking on a triple bond turns it back into a single bond.
+
+Atoms and bonds can be deleted by right-clicking on them.
+
+## Pane options
+
+The default element selected is carbon.
+The currently selected element can be changed by selecting from the `Element` drop-down menu in the Draw Pane.
+Alternatively, use the handy keyboard shortcuts – just type the atomic symbol of the desired element (e.g., <kbd>O</kbd> for Oxygen, <kbd>A</kbd><kbd>s</kbd> for Arsenic).
+
+The bond order of new bonds can be chosen with the `Bond Order` drop-down menu.
+There are keyboard shortcuts for this too – <kbd>1</kbd> selects single, <kbd>2</kbd> double, and so on.
+
+When the bond order setting is set to "Automatic", new bonds are given a bond order based on their length.
+The cut-offs are determined by the elements of the atoms at either end of the bond.
+
+```{tip}
+Single bonds are created when the bond length exceeds the sum of the atoms' covalent radii.
+Double bonds are created when the bond length is between 91% and 100% of the sum of the covalent radii, and anything shorter than 91% becomes a triple bond.
+
+For a carbon-carbon bond, the lower cut-offs are thus approx. 1.52 Å for a single bond and 1.38 Å for a double.
+```
+
+If the `Adjust Hydrogens` box is checked, extra hydrogen atoms will be automatically added to new atoms to satisfy their valency.
+When a bond is created or the order of a bond is changed, the number of hydrogen atoms on the atoms at each end of the bond will be adjusted.
+
+```{warning}
+It may not be possible to deliberately add or remove hydrogen atoms (for example, to create a radical or an ion) while this setting is checked.
+
+If this is desired, turn off the setting while manually adjusting the hydrogens.
+Turning the setting back on will not cause the number of hydrogen atoms to be readjusted.
+```
+
+## Adjusting the structure
+
+It is challenging to draw structures in 3D on a 2D screen.
+Using the Draw Tool alone will probably not give you a molecule that looks sensible and is representative of the real geometry.
+
+For manual adjustment, the position of the atoms can be fine-tuned by using the [Manipulation Tool](tools-manipulation-tool) in combination with the [Navigation Tool](tools-navigation-tool) to rotate and pan the view.
+
+To quickly get a sensible geometry, make use of the [`Optimize Geometry`](calculations-optimization) extension.
+This can be conveniently activated using the shortcut <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>O</kbd>.
+
+## Tutorial
+
+A step-by-step tutorial for some simple molecules can be found [here](tutorials-drawing-simple-molecules).
