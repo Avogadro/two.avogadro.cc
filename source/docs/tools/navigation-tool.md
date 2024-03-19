@@ -37,4 +37,5 @@ The zoom level can be increased and decreased using the mouse scroll wheel.
 
 ## Pane options
 
-
+The direction that is zoomed when scrolled can be toggled using the checkbox.
+Note that the default behavior is determined by your operating system's settings.
