@@ -83,7 +83,7 @@ For bidentate, tridentate, tetradentate, and hexadentate ligands, one hydrogen a
 
 ![Iron bipyridine molecule](../../_static/FeBipy.png)
 
-## Groups tab
+### Groups tab
 
 Functional groups are similar to monodentate ligands in that they attach to a molecule through one new bond, and there is some overlap in the available fragments.
 
