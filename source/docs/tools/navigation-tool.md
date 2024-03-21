@@ -6,7 +6,7 @@
 
 Keyboard shortcut: <kbd>Ctrl</kbd>+<kbd>1</kbd>
 
-The Navigation Tool is used to rotate, pan, and zoom the view of a molecule within the view frame.
+The Navigation Tool is used to rotate, pan, and zoom the view of a molecule within the view pane.
 
 Only the perspective of the view is changed, and the positions in space of all atoms are preserved.
 To move atoms, fragments, or molecules within 3D space, use the [Manipulation Tool](tools-manipulation-tool) instead.
@@ -20,7 +20,7 @@ For example, left-click and drag will also rotate the view while the [Animation 
 
 ## Basic usage
 
-The view can be rotated by clicking and dragging anywhere on the view frame with the left mouse button.
+The view can be rotated by clicking and dragging anywhere on the view pane with the left mouse button.
 
 Moving the mouse in a particular direction will rotate the view such that the part of the molecule nearest to you moves in the same direction.
 For example, clicking and dragging to the left will cause the molecule to rotate clockwise (as considered looking from the top down).
