@@ -9,7 +9,7 @@ Keyboard shortcut: <kbd>Ctrl</kbd>+<kbd>2</kbd>
 Molecules are built and edited with the Draw Tool, which allows "free-hand" sketching of new molecules.
 
 ```{tip} **New in 2.0**
-The default bond order setting is "Automatic" – it will adjust intelligently with the length of the bond.
+The default bond order setting is "Automatic" -- it will adjust intelligently with the length of the bond.
 ```
 
 ```{tip} **New in 2.0**
@@ -20,7 +20,7 @@ To help rapidly build your structure you can also use the new [Template Tool](to
 
 Atoms and bonds are drawn using the mouse.
 
-Left-clicking on an empty space in the view creates an atom of the currently selected element.
+Left-clicking on an empty space in the view pane creates an atom of the currently selected element.
 
 A left-click on an existing atom will change its element to the one currently selected.
 
@@ -43,12 +43,15 @@ Atoms and bonds can be deleted by right-clicking on them.
 
 ## Pane options
 
-The default element selected is carbon.
 The currently selected element can be changed by selecting from the `Element` drop-down menu in the Draw Pane.
-Alternatively, use the handy keyboard shortcuts – just type the atomic symbol of the desired element (e.g., <kbd>O</kbd> for Oxygen, <kbd>A</kbd><kbd>s</kbd> for Arsenic).
+
+Various common elements are shown for easy access, but any element can be selected from the periodic table by choosing "Other…".
+Used elements are remembered and will appear in the drop-down in future.
+
+Alternatively, use the handy keyboard shortcuts -- just type the atomic symbol of the desired element (e.g., <kbd>O</kbd> for Oxygen, <kbd>A</kbd><kbd>s</kbd> for Arsenic).
 
 The bond order of new bonds can be chosen with the `Bond Order` drop-down menu.
-There are keyboard shortcuts for this too – <kbd>1</kbd> selects single, <kbd>2</kbd> double, and so on.
+There are keyboard shortcuts for this too -- <kbd>1</kbd> selects single, <kbd>2</kbd> double, and so on.
 
 When the bond order setting is set to "Automatic", new bonds are given a bond order based on their length.
 The cut-offs are determined by the elements of the atoms at either end of the bond.
@@ -60,8 +63,11 @@ Double bonds are created when the bond length is between 91% and 100% of the sum
 For a carbon-carbon bond, the lower cut-offs are thus approx. 1.52 Å for a single bond and 1.38 Å for a double.
 ```
 
-If the `Adjust Hydrogens` box is checked, extra hydrogen atoms will be automatically added to new atoms to satisfy their valency.
+If the `Adjust Hydrogens` box is checked (default), extra hydrogen atoms will be automatically added to new atoms to satisfy their valency.
 When a bond is created or the order of a bond is changed, the number of hydrogen atoms on the atoms at each end of the bond will be adjusted.
+
+For main-group elements, the default valency is always that predicted by the octet rule, while metal atoms are always created alone, without bonded atoms.
+To create metal centers or hypervalent main-group centers, it is often better to use the [Template Tool](tools-template-tool).
 
 ```{warning}
 It may not be possible to deliberately add or remove hydrogen atoms (for example, to create a radical or an ion) while this setting is checked.

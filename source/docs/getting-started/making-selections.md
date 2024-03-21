@@ -6,7 +6,7 @@ The [Selection Tool](tools-selection-tool) is also a useful feature to master wh
 
 The Selection Tool provides you with the ability to select a single atom within a molecule. This is achieved by left-clicking the atom. Pressing and holding <kbd>shift</kbd> while clicking allows for the selection of multiple atoms.
 
-Right-clicking on an empty part of the view will clear the selection made.
+Right-clicking on an empty part of the view pane will clear the selection made.
 
 ```{warning}
 A known bug means that on some systems, multiple left-clicks are required to clear the selection.
