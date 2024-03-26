@@ -8,6 +8,11 @@ Keyboard shortcut: <kbd>Ctrl</kbd>+<kbd>7</kbd>
 
 The Bond-Centric Manipulation Tool is a powerful tool that allows you to focus on a specific bond and change its length and the surrounding angles, while keeping the rest of the molecule the same.
 
+```{tip}
+The Bond-Centric Manipulation Tool provides mouse-based manual adjustment of bond lengths and angles.
+If you wish to set these quantities to specific, exact values, it may be more convenient to do this in the relevant [Properties pane](panes-properties).
+```
+
 ![](../../_static/bb1e744d-c5be-45b9-a6ce-b3de75ae47e2.png)
 
 ## Starting with the basics:
