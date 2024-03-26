@@ -12,13 +12,13 @@ For new features, a "**New in 2.0**" heading is included.
 
 The revised manual also includes tips and warnings as call-out sections:
 
-```{warning}
+:::{warning}
 This is a warning – pay attention to something that may cause problems
-```
+:::
 
-```{tip}
+:::{tip}
 This is a tip – something that can help you work better
-```
+:::
 
 ## Thanks
 
@@ -29,7 +29,7 @@ Initial funding for the Avogadro manual was provided by the [University of Pitts
 * Version 1 - Summer 2015 - Taylor Cornell and Geoffrey Hutchison
 * Version 2 - 2022-204 - Geoffrey Hutchison
 
-```{toctree}
+:::{toctree}
 ---
 hidden: true
 caption: User Documentation
@@ -46,4 +46,4 @@ optimizing-geometry/index
 display-types/index
 extensions/index
 tutorials/index
-```
+:::
