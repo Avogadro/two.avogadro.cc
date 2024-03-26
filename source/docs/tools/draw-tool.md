@@ -8,12 +8,12 @@ Keyboard shortcut: <kbd>Ctrl</kbd>+<kbd>2</kbd>
 
 Molecules are **built** and **edited** with the **Draw Tool**, which allows "free-hand" sketching of new molecules.
 
-:::{tip} **New in 2.0**
-The default bond order setting is **Automatic** -- it will adjust intelligently with the length of the bond.
+:::{tip}
+To help rapidly build your structure you can also use the new [Template Tool](tools-template-tool), which makes it quicker and easier to attach functional groups or assemble inorganic/organometallic complexes.
 :::
 
-:::{tip} **New in 2.0**
-To help rapidly build your structure you can also use the new [Template Tool](tools-template-tool), which makes it quicker and easier to attach functional groups or assemble inorganic/organometallic complexes.
+:::{versionadded} 2.0
+The default bond order setting is now **Automatic** -- it will adjust intelligently with the length of the bond.
 :::
 
 ## Basic usage

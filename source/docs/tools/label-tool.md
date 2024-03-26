@@ -20,16 +20,18 @@ Press <kbd>Enter</kbd> or click anywhere else in the view pane to confirm the ne
 :::{warning}
 By default, atom labels are not visible in Avogadro!
 
-To show labels, enable the `Labels` display type in the [Display Types pane](panes-display-types).
+To show labels, enable the `Labels` display type in the [Display Types pane](panes-display-types). Open the options for the `Labels` display type by clicking the three bullets **⋯**
 
-To show the custom labels:
-
-* Open the options for the `Labels` display type by clicking the three bullets **⋯**
-* In the `Atom Label` drop-down of the Display Type Configuration pane, change the selected label type to **Custom**.
+Then, to show the custom labels, in the `Atom Label` drop-down of the Display Type Configuration pane, change the selected label type to **Custom**.
 :::
+
+Edit an existing label by left-clicking on it.
+Its position will raise slightly to indicate that it is being edited.
 
 ## Pane options
 
 There are currently no options for this tool in the Edit Labels pane.
+
+The Label Tool is a work in progress and the ability to customize individual labels will likely come in future releases.
 
 Display settings for *all* labels, such as text color and placement, can be changed in the [Display Type Configuration pane](panes-display-types-labels) for the `Labels` display type.

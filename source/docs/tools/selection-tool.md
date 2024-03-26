@@ -6,23 +6,60 @@
 
 Keyboard shortcut: <kbd>Ctrl</kbd>+<kbd>5</kbd>
 
-The selection tool allows the individual selection of atoms, bonds, or fragments.
+The **Selection Tool** is used to **select atoms** with the mouse, either by individually picking them out or using a marquee selection box.
 
-![](../../_static/tutorial-select-tool.png)
+:::{tip}
+Further useful selection functionality is available in the [`Select` menu](menus-select-menu).
+:::
 
-The select provides you with the ability to select a single atom within a molecule.
-This is achieved by left-clicking the atom. Press and holding the "shift" key allows for the selection of multiple atoms.
+## Basic usage
 
-Right-clicking on the black display will clear the selection made.
+**Left-click** on an individual atom to **select** it.
 
-![](../../_static/tutorial-select-atom.png)
+![A single atom selected after clicking on it.](../../_static/tutorial-select-atom.png){height=300px align=center}
 
-You can also double-click on an atom to select all atoms connected in that fragment or molecule.
+**Left-click and drag** to **select multiple** atoms by drawing a marquee selection box that covers the desired selection.
 
-![](../../_static/tutorial-select-all.png)
+![A selection box as visible while dragging.](../../_static/tutorial-select-drag.png){height=300px align=center}
 
-Clicking and dragging your cursor is another way molecules, or fragments of molecules can be selected.
+Hold <kbd>Shift</kbd> or <kbd>Ctrl</kbd> while selecting atoms to **add them** to the current selection.
+This works for both the above selection methods.
 
-![](../../_static/tutorial-select-drag.png)
+**Double-left-click** on an atom to instantly **select all connected atoms**.
+"Connected" atoms are any that can be traced to the clicked atom through bonds, including over multiple bonds i.e. the whole molecule or fragment.
 
-More information on selections can be found in the ["Select" menu](select-menu).
+![An entire molecule selected after clicking on one of its constituent atoms.](../../_static/tutorial-select-all.png){height=300px align=center}
+
+:::{tip}
+Use `Select`⇒`Enlarge Selection` to increase the selection from an atom to only its immediate neighbors rather than the whole molecule.
+:::
+
+Hold <kbd>Ctrl</kbd> and **double-left-click** on an atom to select the **inverse** of the current selection; the currently selected atoms will be deselected, and all other atoms of the molecule will be selected instead.
+Note that this is only carried out for **connected atoms**, unlike when `Select`⇒`Invert Selection` is used.
+
+**Select all atoms** using the keyboard shortcut <kbd>Ctrl</kbd>+<kbd>A</kbd>.
+
+**Clear the selection** by **right-clicking** in an empty part of the view pane or using the keyboard shortcut <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>A</kbd>.
+
+:::{tip}
+The keyboard shortcuts for select/deselect are always available, not only when the Selection Tool is the currently selected tool.
+:::
+
+:::{warning}
+A known bug means that right-clicking to clear the selection does not work on some systems. A triple-left-click on empty space or a left-click on any currently selected atom should do the trick instead.
+:::
+
+## Pane options
+
+Apply Color
+: Pick a color and apply it to the currently selected atoms.
+
+  Clicking the colored rectangle will open a color picker.
+  After choosing a color, click `OK` to apply it.
+
+Change Layer
+: Move the selected atoms to a different layer.
+
+  Putting parts of a molecule, or members of an ensemble, into different layers allows different visual settings to be applied to different elements within the same ["Molecule"](panes-molecules) (what Avogadro calls a file).
+  
+  See [Layers](panes-layers) for more information on how to use them.
