@@ -5,35 +5,52 @@ html_theme.show_prev_next: false
 ---
 
 (about)=
+# Avogadro
 
-Avogadro is an advanced molecule editor and visualizer designed for cross-platform use in computational chemistry, molecular modeling, bioinformatics, materials science, and related areas. It offers flexible high quality rendering and a powerful plugin architecture.
+Avogadro is a free and open source molecular editor and visualization tool.
 
-This documentation site is for Avogadro 2, currently in development.
+It is highly capable and designed for use in computational chemistry, molecular modeling, chemistry education, bioinformatics, materials science, and related areas.
+
+It offers flexible high-quality rendering, a modern UI with native styling, and a powerful plugin architecture.
+
+Avogadro is designed for cross-platform use and is fully supported on macOS, Windows, and Linux.
+
+This site is for the new Avogadro 2, currently in development.
 
 ::::{card-carousel} 3
+% Only use images with aspect ratio of 5:4 so that they all match!
 :::{card}
-![Thumbnail for benzene molecular orbital](/_static/benzene-mo.png)
+:img-background: /_static/benzene-mo.png
+:img-alt: Benzene with rendered molecular orbital
 :::
 :::{card}
-![Thumbnail for zeolite rendering](/_static/zeolite.png)
+:img-background: /_static/covid-spike.png
+:img-alt: COVID spike protein
 :::
 :::{card}
-![Thumbnail for COVID spike protein](/_static/covid-spike.png)
+:img-background: /_static/ferrocene.png
+:img-alt: Ferrocene
 :::
 :::{card}
-![Thumbnail for COVID spike protein](/_static/AuNP.png)
+:img-background: /_static/zeolite.png
+:img-alt: Zeolite rendering
 :::
 :::{card}
-![Thumbnail for bond-centric editing](/_static/bondcentric.png)
+:img-background: /_static/C180.png
+:img-alt: Symmetry analysis of C180
+
 :::
 :::{card}
-![Thumbnail for symmetry analysis of C180](/_static/C180.png)
+:img-background: /_static/bondcentric.png
+:img-alt: Bond-centric editing
 :::
 :::{card}
-![Thumbnail for ferrocene](/_static/ferrocene.png)
+:img-background: /_static/AuNP.png
+:img-alt: A gold nanoparticle
 :::
 :::{card}
-![Thumbnail for QTAim analysis](/_static/phenol-qtaim.png)
+:img-background: /_static/phenol-qtaim.png
+:img-alt: QTAim analysis
 :::
 ::::
 
@@ -42,8 +59,8 @@ This documentation site is for Avogadro 2, currently in development.
 ::::{grid} 3
 :::{grid-item-card}
 :text-align: center
-:class-header: sd-font-weight-bold sd-bg-light
-{fab}`apple;fa-2x` MacOS
+:class-header: sd-font-weight-bold sd-bg-light sd-text-dark
+{fab}`apple;fa-2x` macOS
 ^^^
 {{ '<a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-primary reference external" href="' + macurl + '"><span>Download DMG</span></a>'}}
 ++++
@@ -52,7 +69,7 @@ This documentation site is for Avogadro 2, currently in development.
 
 :::{grid-item-card}
 :text-align: center
-:class-header: sd-font-weight-bold sd-bg-light
+:class-header: sd-font-weight-bold sd-bg-light sd-text-dark
 {fab}`windows;fa-2x` Windows
 ^^^
 {{ '<a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-primary reference external" href="' + winurl + '"><span>Download Installer</span></a>'}}
@@ -62,7 +79,7 @@ This documentation site is for Avogadro 2, currently in development.
 
 :::{grid-item-card}
 :text-align: center
-:class-header: sd-font-weight-bold sd-bg-light
+:class-header: sd-font-weight-bold sd-bg-light sd-text-dark
 {fab}`linux;fa-2x` Linux
 ^^^
 {{ '<a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-primary reference external" href="' + appurl + '"><span>Download AppImage</span></a>'}}
@@ -74,17 +91,17 @@ This documentation site is for Avogadro 2, currently in development.
 
 ## Features
 
-- Free, Open Source: Easy to install and all source code and documentation is available to modify or extend.
-- International: Translations into English, French, German, Hungarian, Indonesian, Japanese, Portuguese, Serbian, Turkish, and others, with [more languages to come](https://hosted.weblate.org/engage/avogadro/).
-- Intuitive: Built to work easily for students and advanced researchers both.
-- Fast: Supports multi-threaded rendering and computation.
-- Extensible: Plugin architecture for developers, including rendering, interactive tools, commands, and Python scripts.
+- **Free, Open Source**: Easy to install and all source code and documentation is available to modify or extend.
+- **International**: Translations into English, French, German, Hungarian, Indonesian, Japanese, Portuguese, Serbian, Turkish, and others, with [more languages to come](https://hosted.weblate.org/engage/avogadro/).
+- **Intuitive**: Built to work easily for students and advanced researchers both.
+- **Fast**: Supports multi-threaded rendering and computation.
+- **Extensible**: Plugin architecture for developers, including rendering, interactive tools, commands, and Python scripts.
 
 ## Resources
 
 ::::{grid} 3
 :::{grid-item-card}
-:class-header: sd-font-weight-bold sd-bg-light sd-text-center
+:class-header: sd-font-weight-bold sd-bg-light sd-text-center sd-text-dark
 {fas}`book;fa-2x` User Guide
 ^^^
 
@@ -96,7 +113,7 @@ Coming Soon for Avogadro 2:
 :::
 
 :::{grid-item-card}
-:class-header: sd-font-weight-bold sd-bg-light sd-text-center
+:class-header: sd-font-weight-bold sd-bg-light sd-text-center sd-text-dark
 {fas}`laptop-code;fa-2x` Develop
 ^^^
 
@@ -108,7 +125,7 @@ Develop scripts and C++ code with Avogadro:
 
 :::
 :::{grid-item-card}
-:class-header: sd-font-weight-bold sd-bg-light sd-text-center
+:class-header: sd-font-weight-bold sd-bg-light sd-text-center sd-text-dark
 {fas}`users;fa-2x` Contribute
 ^^^
 
