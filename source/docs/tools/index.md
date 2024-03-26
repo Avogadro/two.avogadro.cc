@@ -10,7 +10,11 @@ Within Avogadro, hovering over a tool icon with the mouse gives a brief descript
 
 Tools can be selected either by left-clicking the icon, or using the keyboard by pressing <kbd>Ctrl</kbd> and the corresponding number key (1 through 9 and 0, left to right).
 
-After selecting a tool, the name of the tool and any options available for the tool are displayed to the left in the [Tool Pane](panes-tool-pane).
+After selecting a tool, the name of the tool and any options available for the tool are displayed to the left in the [Tool pane](panes-tool-pane).
+
+:::{versionadded} 2.0
+The Template Tool, Label Tool and Animation Tool are all completely new tools.
+:::
 
 ```{toctree}
 ---

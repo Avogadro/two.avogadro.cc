@@ -12,6 +12,9 @@ The Template Tool makes it easy to build up metal complexes or organometallic sp
 
 The Template Tool also enables rapid addition of functional groups to an organic framework.
 
+:::{versionadded} 2.0
+:::
+
 ## Basic usage
 
 Ligands and functional groups must be added to an existing atom (a "center"), whether this be an atom within an organic framework or a metal center.
@@ -38,7 +41,7 @@ For example, the Template Tool could be used to rapidly add acyl groups to sugar
 The Template Tool is designed for quickly appending ligands and functional groups to an existing molecule.
 Discrete small organic molecules can not be created with the Template Tool by clicking on an empty space.
 
-To create organic molecules with a single click, use [`Build` ⇒ `Insert` ⇒ `Molecule…`](menus-build-menu-insert) instead.
+To create organic molecules with a single click, use [`Build`⇒`Insert`⇒`Molecule…`](menus-build-menu-insert) instead.
 :::
 
 ## Pane options
@@ -132,7 +135,7 @@ After creating your ligand molecule, select the atoms which will be the attachme
 
 ![salen molecule with four selected atoms: two oxygen and two nitrogen](../../_static/Ligand-SelectAtoms.png){height=300px align=center}
 
-The `Build` ⇒ `Add Centroid` command will add a dummy atom at the center of the selected atoms:
+The `Build`⇒`Add Centroid` command will add a dummy atom at the center of the selected atoms:
 
 ![menu indicating "Add Centroid" command](../../_static/Ligand-CentroidMenu.png){height=300px align=center}
 
@@ -149,7 +152,7 @@ The ligand can either be copied to the clipboard to allow insertion via the **Fr
 Haptic ligands indicate bonding between a metal center and a delocalized pi system, such as an aromatic ligand.
 
 As an example, we will build up an η{sup}`4`-cyclooctatetraene ligand.
-Either draw the molecule or use `File` ⇒ `Import` ⇒ `Download by Name…` to insert the basic molecule.
+Either draw the molecule or use `File`⇒`Import`⇒`Download by Name…` to insert the basic molecule.
 
 ![cyclooctatetraene molecule](../../_static/Template-COD.png){height=300px align=center}
 
@@ -157,13 +160,13 @@ Now select the four atoms to use for the haptic ligand:
 
 ![cyclooctatetraene molecule indicating four selected carbon atoms](../../_static/Template-COD2.png){height=300px align=center}
 
-Now use the `Build` ⇒ `Add Centroid` command to add a dummy atom at the centroid of the selected atoms.
+Now use the `Build`⇒`Add Centroid` command to add a dummy atom at the centroid of the selected atoms.
 This is useful to create distinct hapticity (e.g. η{sup}`3`-cyclopentadienyl after selecting three carbon atoms instead of five):
 
 ![cyclooctatetraene molecule indicating four selected carbon atoms and dummy attachment point](../../_static/Template-COD3.png){height=300px align=center}
 
 For a haptic ligand, we need one more dummy atom, perpendicular to the pi system.
-We can add an additional dummy atom **perpendicular** to the centroid using the `Build` ⇒ `Add Perpendicular` command:
+We can add an additional dummy atom **perpendicular** to the centroid using the `Build`⇒`Add Perpendicular` command:
 
 ![Menu indicating "Add Perpendicular" item for haptic attachment points](../../_static/Template-LigandPerpendicular.png){height=300px align=center}
 
