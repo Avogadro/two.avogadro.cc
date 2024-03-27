@@ -4,11 +4,11 @@
 
 Scripts can either be installed manually, by dragging to the Avogadro window:
 
-![installing script](../_static/install-script.png)
+![installing script](../../_static/install-script.png)
 
 Scripts can also be installed from GitHub repositories through the "Download Plugins…" command:
 
-![plugin download](../_static/plugin-download.png)
+![plugin download](../../_static/plugin-download.png)
 
 ## Directories
 
@@ -26,7 +26,7 @@ of which is determined by
 Within this data folder, plugins are found in subdirectories organized by the
 category of plugin.
 
-![plugin subdirectories](../_static/plugin-directories.png)
+![plugin subdirectories](../../_static/plugin-directories.png)
 
 Current plugin categories and their respective subdirectories:
 - Scripts for calculating charges and electrostatic potentials – found in `charges`
