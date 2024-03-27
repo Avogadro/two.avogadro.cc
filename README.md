@@ -41,7 +41,7 @@ Contributing
 ------------
 
 Our project uses the standard GitHub pull request process for code review
-and integration. PThe GitHub issue
+and integration. The GitHub issue
 tracker can be used to report bugs, make feature suggestions, etc.
 
   [Avogadro2Logo]: https://raw.githubusercontent.com/OpenChemistry/avogadrolibs/master/docs/avogadro2_64.png "Avogadro2"
