@@ -22,11 +22,8 @@ Further useful selection functionality is available in the [`Select` menu](menus
 
 ![A selection box as visible while dragging.](../../_static/tutorial-select-drag.png){height=300px align=center}
 
-Hold <kbd>Shift</kbd> or <kbd>Ctrl</kbd> while selecting atoms to **add them** to the current selection.
-This works for both the above selection methods.
-
 **Double-left-click** on an atom to instantly **select all connected atoms**.
-"Connected" atoms are any that can be traced to the clicked atom through bonds, including over multiple bonds i.e. the whole molecule or fragment.
+"Connected" atoms are any that can be traced to the clicked atom through bonds, including over multiple bonds i.e. the whole molecule.
 
 ![An entire molecule selected after clicking on one of its constituent atoms.](../../_static/tutorial-select-all.png){height=300px align=center}
 
@@ -34,15 +31,26 @@ This works for both the above selection methods.
 Use `Select`⇒`Enlarge Selection` to increase the selection from an atom to only its immediate neighbors rather than the whole molecule.
 :::
 
-Hold <kbd>Ctrl</kbd> and **double-left-click** on an atom to select the **inverse** of the current selection; the currently selected atoms will be deselected, and all other atoms of the molecule will be selected instead.
-Note that this is only carried out for **connected atoms**, unlike when `Select`⇒`Invert Selection` is used.
+Holding <kbd>Shift</kbd> or <kbd>Ctrl</kbd> while doing the above actions modifies their behaviour.
+
+The effects of the modifier keys are best summarized in the table below:
+
+|                         | with no modifier                    | with <kbd>Shift</kbd>                           | with <kbd>Ctrl</kbd>                                                                  |
+| ---                     | ---                                 | ---                                             | ---                                                                                   |
+| *general effect*        | *select*                            | *add*                                           | *toggle/invert*                                                                       |
+| **click**               | Atom is selected.                   | Atom is added to selection.                     | Atom is toggled between selected and unselected.                                      |
+| **click and drag**      | All atoms within box are selected.  | All atoms within box are added to selection.    | Unselected atoms within box are selected, but selected atoms are deselected.          | 
+| **double-click**        | Whole molecule is selected.         | Whole molecule is added to selection.           | Unselected atoms within the molecule are selected, but selected atoms are deselected. |
+| *effect on other atoms* | Other atoms are deselected.         | All previously selected atoms remain selected.  | Other atoms remain as they were.                                                      |
+
+Note that while <kbd>Ctrl</kbd> and **double-left-click** inverts the selection, this only affects **connected atoms**, whereas when `Select`⇒`Invert Selection` is used, the inversion applies to all atoms.
 
 **Select all atoms** using the keyboard shortcut <kbd>Ctrl</kbd>+<kbd>A</kbd>.
 
 **Clear the selection** by **right-clicking** in an empty part of the view pane or using the keyboard shortcut <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>A</kbd>.
 
 :::{tip}
-The keyboard shortcuts for select/deselect are always available, not only when the Selection Tool is the currently selected tool.
+The keyboard shortcuts for select/deselect all are always available, not only when the Selection Tool is the currently selected tool.
 :::
 
 :::{warning}
