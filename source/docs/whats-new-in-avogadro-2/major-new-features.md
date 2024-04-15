@@ -50,7 +50,7 @@ Future development will enable the use layers for complex simulations (e.g., QM/
 
 ### Symmetry properties
 
-Avogadro 2 includes a new tool to perceive molecular symmetry, display symmetry elements, and explore subgroups and classes of symmetric atoms. You can find it under Analysis ⇒ Properties.
+Avogadro 2 includes a new tool to perceive molecular symmetry, display symmetry elements, and explore subgroups and classes of symmetric atoms. You can find it under `Analysis`⇒`Properties`⇒`Symmetry…`.
 
 <figure><img src="../../_static/Symmetry.png" alt="Example of symmetry detection and rendering in C60" width="375"><figcaption><p>Example of symmetry detection and rendering on a C60 molecule, showing the inversion center and C5 rotations</p></figcaption></figure>
 

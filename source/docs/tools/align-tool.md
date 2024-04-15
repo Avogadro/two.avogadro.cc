@@ -8,9 +8,11 @@ The Align Tool is used to rotate and translate a molecule(s) so that it aligns w
 
 ## Basic usage
 
-First, an alignment axis is chosen from the `Axis` drop-down menu in the Align Pane. The <kbd>x</kbd>, <kbd>y</kbd>, and <kbd>z</kbd> keys on the keyboard are shortcuts for changing the alignment axis.
+First, an alignment axis is chosen from the `Axis` drop-down menu in the Align Pane.
+The <kbd>x</kbd>, <kbd>y</kbd>, and <kbd>z</kbd> keys on the keyboard are shortcuts for changing the alignment axis.
 
-Secondly, select either one or two atoms in the view frame with the left mouse button. The labels #1 and #2 will be displayed on each.
+Secondly, select either one or two atoms in the view frame with the left mouse button.
+The labels #1 and #2 will be displayed on each.
 
 Clicking `Align` will then reposition the molecule as desired.
 
@@ -30,7 +32,8 @@ The `Axis` drop-down menu allows you to choose which Cartesian axis the molecule
 
 ![](../../_static/ec6c967d-5df0-41b8-b692-93123f8a0462.png)
 
-By default, the relative positions of everything in the view frame will remain the same and the same transformation will be applied to all objects. By choosing the "Molecule" option in the `Align` drop-down menu in the Align Pane, only the molecule containing the selected atoms will be affected by the change.
+By default, the relative positions of everything in the view frame will remain the same and the same transformation will be applied to all objects.
+By choosing the "Molecule" option in the `Align` drop-down menu in the Align Pane, only the molecule containing the selected atoms will be affected by the change.
 
 ![](../../_static/c1839173-f147-444d-b9c9-9ebb2e0a28f4.png)
 

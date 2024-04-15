@@ -9,7 +9,7 @@ to attach functional groups or assemble inorganic and organometallic complexes.
 
 ![Screenshot of the draw tool](../../_static/draw-tool.png)
 
-With the Draw Tool selected, left-clicking on the view frame will begin your journey into molecule creation. A left-click will create a carbon atom. A right-click on the atom will delete it.
+With the Draw Tool selected, left-clicking on the view pane will begin your journey into molecule creation. A left-click will create a carbon atom. A right-click on the atom will delete it.
 
 ![](../../_static/first-carbon.png)
 
@@ -21,7 +21,7 @@ Avogadro uses carbon as the default element. A different element can be selected
 
 ![](../../_static/pick-an-element.png)
 
-Let's say you wanted to create water. You can either type in <kbd>O</kbd>, or select "Oxygen (8)" from the drop-down menu, and then click on the black view.
+Let's say you wanted to create water. You can either type in <kbd>O</kbd>, or select "Oxygen (8)" from the drop-down menu, and then click on the (by default black) view pane.
 
 Left-clicking on an atom that has already been generated will also change the element. In this case, clicking on the initial carbon atom changed it into an oxygen atom.
 

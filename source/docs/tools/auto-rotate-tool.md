@@ -4,7 +4,8 @@ The auto rotate tool allows for the continuous rotation of a molecule.
 
 ![](../../_static/bcfbd92f-d657-492e-8a93-1332a59ada97.png)
 
-To rotate the molecule, adjust the x, y, and z rotation scales as desired. Then select "Start".
+To rotate the molecule, adjust the x, y, and z rotation scales as desired.
+Then select "Start".
 
 ![](../../_static/a328868b-9edd-452d-b6db-81f8f8e70343.png)
 

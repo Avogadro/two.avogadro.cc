@@ -57,6 +57,7 @@ The displayed data can also be modified according to your personal preference, o
 ![](../../_static/remove-hydrogens.png)
 
 ## Insert
+(menus-build-menu-insert)=
 
 "Insert" provides a faster, simpler way of building molecules. A depicted below, you can insert DNA/RNA, a Fragment, a Peptide, and can also insert a molecule based on SMILES text.
 

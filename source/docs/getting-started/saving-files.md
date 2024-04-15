@@ -11,7 +11,7 @@ CML (Chemical Markup Language) was the original save format for Avogadro and sup
 ## Exporting to other formats
 
 If you wish to **export** to other formats (e.g., XYZ, PDB, SDF, etc.) use
-`File` ⇒ `Export` ⇒ `Molecule…`
+`File`⇒`Export`⇒`Molecule…`
 
 ![Screenshot indicating File => Export => Molecule menu item](../../_static/FileExportMolecule.png)
 
