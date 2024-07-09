@@ -1,0 +1,31 @@
+(v1981)=
+
+# Avogadro v1.98.1
+
+2 November 2023
+
+This is a bug-fix release, particularly for Windows users, removing a filename filter that affected opening and saving files.
+
+This also includes the openbabel-3.dll which was left out of Windows releases.
+
+## 🐛 Bug Fixes
+
+- Make sure to grab openbabel*.dll on Windows package @ghutchis
+- Migrated typedefs and changed const to constexpr @Atharva-Kanherkar
+- Fix Python module install dir @antonio-rojas
+- Revert validation of filenames. @ghutchis
+- Parsing orca output would crash when swapping orbitals @ghutchis
+
+## 🧰 Maintenance
+
+- Add workflow concurrency - should stop builds during quick changes @ghutchis
+- vtk: Add missing OpenGL link target @antonio-rojas
+
+## 📚 Translations
+
+- Translations update from Hosted Weblate @weblate
+- Automated translation updates @github-actions
+
+## Credits
+
+Thanks to many contributors, including: @Atharva-Kanherkar, @antonio-rojas, @atharrrva15, @ghutchis, @github-actions, @ovari, @weblate, Alejandro Díaz-Moscoso and Martin Slavík

@@ -1,0 +1,108 @@
+(v197)=
+
+# Avogadro v1.97.0
+
+21 July 2022
+
+We are pleased to announce the latest release of Avogadro, including piles of bug fixes and many feature enhancements, including contributions from @aerkiaga as part of Google Summer of Code.
+Thanks to many for suggestions, bug reports, and discussions.
+
+Draft developer documentation can be found at https://two.avogadro.cc
+
+You can download Linux, Windows, and Mac versions at: https://github.com/openchemistry/avogadrolibs/releases/latest
+
+If you have comments or suggestions, please join us at https://discuss.avogadro.cc and as always, help and contributions
+in many forms are very welcome, **particularly if you'd like to help with user documentation or website developement.**
+
+## Highlights (tldr)
+
+* Adds molecular surfaces, solvent-accessible, and solvent-excluded surfaces
+* Adds support for a range of partial charge models, including coloring electrostatic potentials on surfaces.
+  * This includes writing Python scripts to assign atomic charges or electrostatic potential
+* Adds improved hydrogen-bond, chalcogen, and halogen bond rendering.
+* Add improved close-contact and salt-bridge rendering
+* Significantly improves interface translation, properly loading translation files, and including a dialog to choose your preferred user interface language (thanks to @ovari for significant help)
+    * Includes English, Hungarian, Serbian, Esperanto, Portuguese, Turkish, German, Georgian, French, and Japanese translations with at least 45% coverage. [Anyone can help via Weblate](https://hosted.weblate.org/engage/avogadro/)
+* Now supports VTK-9 and Mac and Windows packages are updated to use Qt 5.15.
+
+## ✨ Features
+
+- Add tabbed interface to Close Contacts plugin @aerkiaga (#1026)
+- Add "select backbone" and "select sidechain" commands @ghutchis (#1023)
+- Initial salt bridge rendering @aerkiaga (#1021)
+- Implement support for Turbomole coord format (also used by xtb) @ghutchis (#1012)
+- Add ability to choose charge model in Surfaces @aerkiaga (#1016)
+- Color electrostatic mesh  @aerkiaga (#997)
+- Add select water, enlarge selection and shrink selection @ghutchis (#1011)
+- Enable editing of atom, bond, angle, torsion properties @ghutchis (#913)
+- Add AM1-BCC charges using `antechamber` @ghutchis (#999)
+- Add Python charge scripts. First example `xtb` GFN2 charges @ghutchis (#998)
+- Enable Open Babel charge models, including caching partial charges @ghutchis (#984)
+- Add arrow key navigation of the periodic table @ghutchis (#982)
+- Assign atom colors by partial charges @ghutchis (#986)
+- Implement basic tabbed interface for NonCovalent rendering @aerkiaga (#969)
+- Implement basic hydrogen bond rendering @aerkiaga (#926)
+- Add "Automatic" resolution, smoothing pass UI, optimization @aerkiaga (#976)
+- Implement Laplacian mesh smoothing @aerkiaga (#975)
+- Implement Solvent Excluded Surfaces @aerkiaga (#972)
+- Initial electrostatics framework @ghutchis (#970)
+- Add molecular surfaces code @aerkiaga (#897)
+- Add missing acceptors and make distance relative (non-covalent) @aerkiaga (#966)
+- Add halogen and chalcogen bonds, tune parameters @aerkiaga (#949)
+- Add electron pair angle check for hydrogen bonds @aerkiaga (#946)
+- Add line widths to the non-covalent / h-bond rendering @ghutchis (#934)
+- Make use of angle tolerance for hole detection @aerkiaga (#939)
+- Rename intensities to IR and add Raman intensities if available @ghutchis (#938)
+- Check for Open Babel CJSON support: use it if available @ghutchis (#937)
+
+## 🐛 Bug Fixes
+
+- Clarify error messages of chargeScripts when antechamber or xtb is unavailable @e-kwsm (#1039)
+- Fix input generators (and other scripts) with translation @ghutchis (#1037)
+- Fix crash when layer names are translated (hu_HU right now) @ghutchis (#1038)
+- Fix two minor input generator bugs @ghutchis (#1033)
+- Drop alpha channel in the OpenGL context on Linux to avoid transparent windows
+- Fix crashes in Surfaces and Select Backbone @aerkiaga (#1031)
+- Workaround charge models locking up or not running @aerkiaga (#1020)
+- Make sure to process events while rendering an animation @ghutchis (#1030)
+- No longer bundle the "scale" example script - these can be downloaded @ghutchis (#1029)
+- Use single-point calculation for AM1-BCC with Antechamber @ghutchis (#1002)
+- When finding connected atoms, only ignore rings containing the bond @ghutchis (#1006)
+- Fix incorrect hydrogen geometries @aerkiaga (#980)
+- GAMESS-US and NWChem output reader sanity check @TiborGY (#930)
+- Add case-insensitive lookup for file extensions @ghutchis (#935)
+
+
+## 🚀 Performance Improvements
+
+- Optimize mesh smoothing @aerkiaga (#985)
+
+## 🧰 Maintenance
+
+- Allow more render plugins to be "layer enabled" @ghutchis (#1008)
+- Modernize using clang tidy fixes @ghutchis (#1005)
+- Use float within Cube instead of double @aerkiaga (#990)
+- Switch to a new clang-tidy script for secure pull-request comments @ghutchis (#988)
+- Fix notarization for Mac M1 builds @ghutchis (#981)
+- Bump Qt version to 5.15.2 (LTS) now that VTK-9 is working @ghutchis (#977)
+- Port vtk9 @cryos (#973)
+- Update source header comments to new format @ghutchis (#965)
+- Fix some inconsistent overrides and headers @ghutchis (#960)
+- Build Mac M1 binaries on self-hosted runner @ghutchis (#936)
+- Fix error when notarizing Mac DMG - use the right working dir @ghutchis (#927)
+
+## 📚 Translations
+
+- Fix bug to successfully load translation files
+- Automated translation updates
+- Fix translation errors with About menu item and 3D View button @ghutchis
+- Make sure to install qt base translations for Mac and Windows @ghutchis
+- Make sure that render names in the layer list show up w/ i18n @ghutchis (#992)
+- Translate editor element list @ghutchis (#964)
+- Fix several i18n problems @ghutchis (#956)
+- Make sure to translate menu paths for Python scripts. @ghutchis (#948)
+- Translations update from Hosted Weblate @weblate (#928)
+
+## Credits
+
+Thanks to many contributors, including: @NorwayFun, @TiborGY, @aerkiaga, @ahenao, @artemmolotov, @cryos, @e-kwsm, @ghutchis, @github-actions, @matterhorn103, @ovari, @tacitcoast, @usta, @weblate, Julen Larrucea, Translator and МАН69К

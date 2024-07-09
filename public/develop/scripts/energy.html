@@ -1,0 +1,791 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Energy / Force Fields &#8212; Avogadro 1.99.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=ee427ece" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=c288451a"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'develop/scripts/energy';</script>
+    <link rel="canonical" href="https://two.avogadro.cc/develop/scripts/energy.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="File Formats" href="formats.html" />
+    <link rel="prev" title="Example Plugin Script - Part 2" href="example2.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/avogadro2.png" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="../../_static/avogadro2.png" class="logo__image only-dark" alt=""/>`);</script>
+  
+  
+    <p class="title logo__title">Avogadro</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../install/index.html">
+    Install
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../docs/index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Develop
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../contrib/index.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../teach/index.html">
+    Teach
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+    Discuss
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/AvogadroChem" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../install/index.html">
+    Install
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../docs/index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Develop
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../contrib/index.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../teach/index.html">
+    Teach
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+    Discuss
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/AvogadroChem" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Develop</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Script Plugins</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="install.html">Installing Script Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interface.html">Script Interfaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="charges.html">Charges / Electrostatics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commands.html">Command Scripts</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Energy / Force Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="formats.html">File Formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generators.html">Input Generators</a></li>
+</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../rpc.html">Avogadro Remote Procedure Call (RPC)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classlist.html">Class List</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Develop</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Script Plugins</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Energy /...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="energy-force-fields">
+<span id="develop-scripts-energy"></span><h1>Energy / Force Fields<a class="headerlink" href="#energy-force-fields" title="Link to this heading">#</a></h1>
+<p>Avogadro allows scripts to calculate energies and gradients for optimizing geometry.</p>
+<p>The script must handle the following command line arguments:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">--metadata</span></code> Print metadata describing the script</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--display-name</span></code> Print the name to display in user options</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--lang</span> <span class="pre">en</span></code> Optionally respond to language translation codes</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--file</span> <span class="pre">FILE</span></code> Calculate energies and gradients for a particular molecule</p></li>
+</ul>
+<p>With the exception of <code class="docutils literal notranslate"><span class="pre">--metadata</span></code> and <code class="docutils literal notranslate"><span class="pre">--display-name</span></code> options</p>
+<section id="identify-the-script-with-metadata">
+<h2>Identify the Script with <code class="docutils literal notranslate"><span class="pre">--metadata</span></code><a class="headerlink" href="#identify-the-script-with-metadata" title="Link to this heading">#</a></h2>
+<p>Running the script with the <code class="docutils literal notranslate"><span class="pre">--metadata</span></code> option should print a JSON object
+of the following form:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;inputFormat&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pdb&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;identifier&quot;</span><span class="p">:</span><span class="w"> </span><span class="nt">&quot;Unique Name&quot;</span>
+<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;User-Friendly Name&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Description of method or citation.&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;elements&quot;</span><span class="p">:</span><span class="w"> </span><span class="nt">&quot;1,6-9&quot;</span>
+<span class="w">  </span><span class="nt">&quot;unitCell&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;gradients&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">True</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ion&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;radical&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Details:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">inputFormat</span></code> indicates the molecular file format that Avogadro should
+supply to the script. Allowed values are <code class="docutils literal notranslate"><span class="pre">&quot;cml&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;cjson&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;pdb&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;sdf&quot;</span></code>
+or <code class="docutils literal notranslate"><span class="pre">&quot;xyz&quot;</span></code>. Instead of <code class="docutils literal notranslate"><span class="pre">&quot;sdf&quot;</span></code>, the extensions <code class="docutils literal notranslate"><span class="pre">&quot;mdl&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;mol&quot;</span></code> are also
+allowed.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">identifier</span></code> is a unique identifier. The value must only be unique amongst
+script charges, since it is used internally.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code> is a user-friendly name for the method, which will be used in menus.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">description</span></code> is an <em>optional</em> description of the method, along with any
+relevant help text for users.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">elements</span></code> is a list indicating the atomic numbers supported by the method.
+Both commas <code class="docutils literal notranslate"><span class="pre">1,</span> <span class="pre">6,</span> <span class="pre">7</span></code> and ranges <code class="docutils literal notranslate"><span class="pre">1-86</span></code> are supported.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">unitCell</span></code> is either <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code> as to whether systems with lattice vectors are supported by the method.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gradients</span></code> indicates <code class="docutils literal notranslate"><span class="pre">True</span></code> if analytical gradients will be calculated by the method or <code class="docutils literal notranslate"><span class="pre">False</span></code> if Avogadro should calculate numeric gradients.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ion</span></code> indicates <code class="docutils literal notranslate"><span class="pre">True</span></code> if the method can handle systems with non-zero total charge (e.g., cations, anions, etc.)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">radical</span></code> indicates <code class="docutils literal notranslate"><span class="pre">True</span></code> if the method can handle systems with unpaired spins (i.e., spin multiplicity beyond singlet).</p></li>
+</ul>
+<dl class="simple myst">
+<dt>Optional members are:</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">description</span></code></p></li>
+</ul>
+</dd>
+</dl>
+<p>Make sure to specify the <code class="docutils literal notranslate"><span class="pre">elements</span></code> list correctly. Avogadro will automatically
+exclude a script in the list of available methods if a molecule contains
+elements not in the list (e.g., if it does not support metals), or based on the <code class="docutils literal notranslate"><span class="pre">unitCell</span></code>, <code class="docutils literal notranslate"><span class="pre">ion</span></code>, and <code class="docutils literal notranslate"><span class="pre">radical</span></code> fields.</p>
+</section>
+<section id="calculating-energies-and-gradients">
+<h2>Calculating Energies and Gradients<a class="headerlink" href="#calculating-energies-and-gradients" title="Link to this heading">#</a></h2>
+<p>Avogadro will write a temporary file in the specified file format and supply the filename when calling the script, e.g. <code class="docutils literal notranslate"><span class="pre">script.py</span> <span class="pre">-f</span> <span class="pre">tempfile.mol</span></code>.</p>
+<p>For example a script using Open Babel might use code like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># we declared &quot;inputFormat&quot;: &quot;cml&quot; in the metadata</span>
+<span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="c1"># we get the molecule from the supplied filename</span>
+    <span class="c1">#  in cjson format (it&#39;s a temporary file created by Avogadro)</span>
+    <span class="n">mol</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">pybel</span><span class="o">.</span><span class="n">readfile</span><span class="p">(</span><span class="s2">&quot;cml&quot;</span><span class="p">,</span> <span class="n">filename</span><span class="p">))</span>
+ 
+    <span class="n">ff</span> <span class="o">=</span> <span class="n">pybel</span><span class="o">.</span><span class="n">_forcefields</span><span class="p">[</span><span class="s2">&quot;uff&quot;</span><span class="p">]</span>
+    <span class="n">success</span> <span class="o">=</span> <span class="n">ff</span><span class="o">.</span><span class="n">Setup</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">OBMol</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">success</span><span class="p">:</span>
+        <span class="c1"># should never happen, but just in case</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="s2">&quot;UFF force field setup failed&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Another example is to use cjson and get elements and coordinates:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="c1"># we get the molecule from the supplied filename</span>
+    <span class="c1">#  in cjson format (it&#39;s a temporary file created by Avogadro)</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">mol_cjson</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+ 
+    <span class="c1"># get the atomic numbers</span>
+    <span class="n">atoms</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">mol_cjson</span><span class="p">[</span><span class="s2">&quot;atoms&quot;</span><span class="p">][</span><span class="s2">&quot;elements&quot;</span><span class="p">][</span><span class="s2">&quot;number&quot;</span><span class="p">])</span>
+    <span class="c1"># get the coordinates in a list of [ [x, y, z], [x, y, z] … ]</span>
+    <span class="n">coord_list</span> <span class="o">=</span> <span class="n">mol_cjson</span><span class="p">[</span><span class="s2">&quot;atoms&quot;</span><span class="p">][</span><span class="s2">&quot;coords&quot;</span><span class="p">][</span><span class="s2">&quot;3d&quot;</span><span class="p">]</span>
+    <span class="n">coordinates</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">coord_list</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>After reading coordinates from the tempory filename on the command-line arguments, Avogadro will supply updated coordinates through standard input and expect energies and gradients on the standard output.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># we loop forever - Avogadro will kill the process when done</span>
+    <span class="n">num_atoms</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">atoms</span><span class="p">)</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="c1"># read new coordinates from stdin</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_atoms</span><span class="p">):</span>
+            <span class="n">coordinates</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span><span class="nb">input</span><span class="p">(),</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+            <span class="n">atom</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">atoms</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">atom</span><span class="o">.</span><span class="n">OBAtom</span><span class="o">.</span><span class="n">SetVector</span><span class="p">(</span><span class="n">coordinates</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">coordinates</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">coordinates</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+ 
+        <span class="c1"># update the molecule geometry for the next energy</span>
+        <span class="n">ff</span><span class="o">.</span><span class="n">SetCoordinates</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">OBMol</span><span class="p">)</span>
+ 
+        <span class="c1"># first print the energy of these coordinates</span>
+        <span class="n">energy</span> <span class="o">=</span> <span class="n">ff</span><span class="o">.</span><span class="n">Energy</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># in kJ/mol</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;AvogadroEnergy:&quot;</span><span class="p">,</span> <span class="n">energy</span><span class="p">)</span>  <span class="c1"># in kJ/mol</span>
+
+        <span class="c1"># now print the gradient on each atom</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;AvogadroGradient:&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">atom</span> <span class="ow">in</span> <span class="n">mol</span><span class="o">.</span><span class="n">atoms</span><span class="p">:</span>
+            <span class="n">grad</span> <span class="o">=</span> <span class="n">ff</span><span class="o">.</span><span class="n">GetGradient</span><span class="p">(</span><span class="n">atom</span><span class="o">.</span><span class="n">OBAtom</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="o">*</span><span class="n">grad</span><span class="o">.</span><span class="n">GetX</span><span class="p">(),</span> <span class="o">-</span><span class="mf">1.0</span><span class="o">*</span><span class="n">grad</span><span class="o">.</span><span class="n">GetY</span><span class="p">(),</span> <span class="o">-</span><span class="mf">1.0</span><span class="o">*</span><span class="n">grad</span><span class="o">.</span><span class="n">GetZ</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>Note that Avogadro expects energies and gradients with the indicated tags:</p>
+<p><code class="docutils literal notranslate"><span class="pre">AvogadroEnergy:</span> <span class="pre">[energy]</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>AvogadroGradient:
+x y z
+x y z
+x y z
+x y z
+…
+</pre></div>
+</div>
+</section>
+<section id="unit-cells-total-charge-and-spin-multiplicity">
+<h2>Unit Cells, Total Charge, and Spin Multiplicity<a class="headerlink" href="#unit-cells-total-charge-and-spin-multiplicity" title="Link to this heading">#</a></h2>
+<p>If your method involves unit cells, total charge, or spin multiplicity, the <code class="docutils literal notranslate"><span class="pre">cjson</span></code> format is likely your best option.</p>
+<section id="lattice-vectors-and-fractional-coordinates">
+<h3>Lattice Vectors and Fractional Coordinates<a class="headerlink" href="#lattice-vectors-and-fractional-coordinates" title="Link to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">cjson</span></code> format from Avogadro will provide both real-space Cartesian coordinates as <code class="docutils literal notranslate"><span class="pre">cjson[&quot;atoms&quot;][&quot;coords&quot;][&quot;3d&quot;]</span></code> and fractional coordinates as <code class="docutils literal notranslate"><span class="pre">cjson[&quot;atoms&quot;][&quot;coords&quot;][&quot;3dFractional&quot;]</span></code>. For both cases, the coordinates are supplied as a 1D array, which can be reshaped via <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, e.g. <code class="docutils literal notranslate"><span class="pre">np.array(coord_list,</span> <span class="pre">dtype=float).reshape(-1,</span> <span class="pre">3)</span></code>.</p>
+<p>The unit cell parameters and lattice vectors are also available in <code class="docutils literal notranslate"><span class="pre">cjson</span></code>:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="nt">&quot;unitCell&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;a&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">4.0862</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;alpha&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">90.0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;b&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">4.0862</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;beta&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">90.0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;c&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">4.0862</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;cellVectors&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="mf">4.0862</span><span class="p">,</span>
+<span class="w">      </span><span class="mf">0.0</span><span class="p">,</span>
+<span class="w">      </span><span class="mf">0.0</span><span class="p">,</span>
+<span class="w">      </span><span class="mf">0.0</span><span class="p">,</span>
+<span class="w">      </span><span class="mf">4.0862</span><span class="p">,</span>
+<span class="w">      </span><span class="mf">0.0</span><span class="p">,</span>
+<span class="w">      </span><span class="mf">0.0</span><span class="p">,</span>
+<span class="w">      </span><span class="mf">0.0</span><span class="p">,</span>
+<span class="w">      </span><span class="mf">4.0862</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;gamma&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">90.0</span>
+<span class="w">  </span><span class="p">}</span>
+</pre></div>
+</div>
+<p>For example, if your script needs the lattice vectors, you can use <code class="docutils literal notranslate"><span class="pre">cjson[&quot;unitCell&quot;][&quot;cellVectors&quot;]</span></code> to get a 1D list of the vectors and can reshape via <code class="docutils literal notranslate"><span class="pre">np.array(cell_list,</span> <span class="pre">dtype=float).reshape(3,3)</span></code>. Alternatively, you can access:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">cjson[&quot;unitCell&quot;][&quot;a&quot;]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">cjson[&quot;unitCell&quot;][&quot;a&quot;]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">c</span> <span class="pre">=</span> <span class="pre">cjson[&quot;unitCell&quot;][&quot;a&quot;]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">alpha</span> <span class="pre">=</span> <span class="pre">cjson[&quot;unitCell&quot;][&quot;alpha&quot;]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">beta</span> <span class="pre">=</span> <span class="pre">cjson[&quot;unitCell&quot;][&quot;beta&quot;]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gamma</span> <span class="pre">=</span> <span class="pre">cjson[&quot;unitCell&quot;][&quot;gamma&quot;]</span></code></p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="example2.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Example Plugin Script - Part 2</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="formats.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">File Formats</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identify-the-script-with-metadata">Identify the Script with <code class="docutils literal notranslate"><span class="pre">--metadata</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-energies-and-gradients">Calculating Energies and Gradients</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-cells-total-charge-and-spin-multiplicity">Unit Cells, Total Charge, and Spin Multiplicity</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lattice-vectors-and-fractional-coordinates">Lattice Vectors and Fractional Coordinates</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/avogadro/two.avogadro.cc/edit/main/source/develop/scripts/energy.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">          <p>
+            ©2024 The OpenChemistry / Avogadro Teams 
+          </p>
+          <p>Covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
+          </p></div>
+      
+        <div class="footer-item">        <p>
+          <a href="/contrib/index.html">Contribute</a>
+        </p></div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.4.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

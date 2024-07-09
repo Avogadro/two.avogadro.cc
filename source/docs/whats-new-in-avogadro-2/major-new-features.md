@@ -20,6 +20,19 @@ The new rendering system not only handles more atoms, but real-time shadows (als
 
 <figure><img src="../../_static/Caffeine.png" alt="Ball and stick model of caffeine molecule illustrating real-time shading" width="222"><figcaption><p>Ball-and-stick model of a caffeine molecule showing real-time shading</p></figcaption></figure>
 
+#### DEPTH-BLUR
+
+The new rendering system not only handles more atoms, but real-time **depth-blur** provides **depth effects** which make even the **structure of the molecules** look more three-dimensional. Depth-blur is used to enhance the visibility of the *depth* of molecules, making their spatial arrangement and **depth** more apparent. After applying depth-blur, the **depth** and **relative positioning** of the molecular structures should be clearly visible, enhancing the overall visual clarity and aiding in a better understanding of the molecule's geometry.
+
+<figure><img src="../../_static/blur-new-feature.png" alt="illustration of depth-blur"><figcaption><p>illustration of depth-blur</p></figcaption></figure>
+
+
+#### FOG
+
+The new rendering system not only handles more atoms, but real-time **fog** effects enhance the depth perception within molecules. **Fog** is used to simulate atmospheric conditions within the molecular environment, making the spatial arrangement and **depth** more perceptible. By applying **fog**, the **depth** and **relative positioning** of molecular structures become clearer, improving the overall visual clarity and aiding in a better understanding of the molecule's geometry.
+
+<figure><img src="../../_static/fog-new-feature.png" alt="illustration of fog" ><figcaption><p>illustration of FOG</p></figcaption></figure>
+
 #### New "close-contact" rendering
 
 This new rendering type visualizes various types of non-bonded close-contact interactions, including salt bridge and repulsive electrostatic interactions.

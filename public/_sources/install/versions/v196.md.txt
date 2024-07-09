@@ -1,0 +1,83 @@
+(v196)=
+
+# Avogadro v1.96.0
+
+2 June 2022
+
+## Changes
+
+We are pleased to announce the latest release of Avogadro, including piles of bug fixes and feature enhancements, including contributions from @aerkiaga as part of Google Summer of Code.
+Thanks to many for suggestions, bug reports, and discussions.
+
+Draft developer documentation can be found at https://two.avogadro.cc
+
+As part of this release, we have an official [AppImage](https://appimage.github.io/apps/) build for Linux, as well as a code-signed release for macOS.
+
+If you have comments or suggestions, please join us at https://discuss.avogadro.cc and as always, help and contributions
+in many forms are very welcome, **particularly if you'd like to help with user documentation or website developement.**
+
+## ✨ Features
+
+- Insert DNA/RNA dialog @ghutchis (#909)
+- Render close contacts @aerkiaga (#898)
+- Create new layer from selection @ghutchis (#899)
+- Tweak the mesh lighting .. now lights "from the top" @ghutchis (#880)
+- Add an initial config widget to set mesh colors and opacity @ghutchis (#877)
+- Import and retain space group information @ghutchis (#875)
+- Write Gaussian cube files @ghutchis (#873)
+- Add plugin to focus or unfocus selection @aerkiaga (#868)
+- Implement close contact perception logic @aerkiaga (#862)
+- Add formal charge to atom property tables @ghutchis (#839)
+- Add support for formal charges @aerkiaga (#831)
+- Add setting to reverse direction of scroll-to-zoom @ghutchis (#778)
+- Tweak icons for label editor and selection @ghutchis (#776)
+- Add tooltips to tools @ghutchis (#777)
+- Add label editor to create custom labels @serk12 (#740)
+- Add a copy graphics action
+
+## 🚀 Performance Fixes
+
+- Subgraph rewrite @aerkiaga (#878)
+- Approximate cartoon B-spline from a small local neighborhood @aerkiaga (#860)
+- Bond graph optimization @aerkiaga (#832)
+- Faster bond perception @aerkiaga (#829)
+- Optimize secondary structure @aerkiaga (#833)
+
+## 🐛 Bug Fixes
+
+- Add .cjson extension to files if none is present
+- Update atomic masses @ghutchis (#894)
+- Fix layer memory crash @ghutchis (#876)
+- Fix memory leak with OpenGL: Detaching and deleting shaders/programs on updates @octycs (#855)
+- Remove call for Core::Molecule rendering to eliminate casting @ghutchis (#871)
+- Fix reading generic file formats with Open Babel @ghutchis (#848)
+- Fix erratic editing behavior @aerkiaga (#819)
+- Solve problems writing files with no extension @ghutchis (#835)
+- Convert 2-letter PDB symbols to appropriate case @aerkiaga (#830)
+- Fix Manipulation and Bond Centric Manipulation tools @aerkiaga (#825)
+- Fall back to Wikipedia method for dihedral angles @ghutchis (#808)
+- Be careful about assign or copy from molecules with no layers @ghutchis (#806)
+- Disable dynamic bonding during animation @ghutchis (#767)
+- Try to use 'python' in the path as a fallback @ghutchis (#746)
+
+## 🧰 Maintenance
+
+- Fix Valgrind uninitialized errors @aerkiaga (#887)
+- Add tests using various sanitizers @ghutchis (#888)
+- Make sure to sign and notarize the Mac build @ghutchis (#893) (#885)
+- Only build overlayaxes if USE\_OPENGL is enabled @ghutchis (#879)
+- Try using Windows 2019 to build wheels @ghutchis (#861)
+- Create Codacy scans @ghutchis (#850)
+- test ">=0" within machine precision (>-EPS) @drew-parsons (#813)
+- Add defaultBehavior method to render plugins @serk12 (#807)
+- Update setup.py with long description from README.md and URLs @ghutchis (#750)
+
+## 📚 Translations
+
+- Translations update from Hosted Weblate @weblate
+- Automated translation updates @github-actions (#853)
+- Minor tweaks to the automated pull request @ghutchis (#761)
+
+## Credits
+
+Thanks to many contributors, including: @HoangTuan110, @Lisapple, @M3CG, @SantosSi, @aerkiaga, @comradekingu, @drew-parsons, @ejatjon, @ersen0, @ghutchis, @github-actions, @github-actions[bot], @milotype, @nicolasfella, @octycs, @ovari, @rezaalmanda, @serk12, @urkawa, @weblate, J. Lavoie, Pa, Temuri Doghonadze, phlostically and 刘韬

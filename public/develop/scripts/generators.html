@@ -1,0 +1,1039 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Input Generators &#8212; Avogadro 1.99.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=ee427ece" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=c288451a"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'develop/scripts/generators';</script>
+    <link rel="canonical" href="https://two.avogadro.cc/develop/scripts/generators.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Avogadro Remote Procedure Call (RPC)" href="../rpc.html" />
+    <link rel="prev" title="File Formats" href="formats.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/avogadro2.png" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="../../_static/avogadro2.png" class="logo__image only-dark" alt=""/>`);</script>
+  
+  
+    <p class="title logo__title">Avogadro</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../install/index.html">
+    Install
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../docs/index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Develop
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../contrib/index.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../teach/index.html">
+    Teach
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+    Discuss
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/AvogadroChem" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../install/index.html">
+    Install
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../docs/index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Develop
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../contrib/index.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../teach/index.html">
+    Teach
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+    Discuss
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/AvogadroChem" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Develop</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Script Plugins</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="install.html">Installing Script Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interface.html">Script Interfaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="charges.html">Charges / Electrostatics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commands.html">Command Scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="energy.html">Energy / Force Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="formats.html">File Formats</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Input Generators</a></li>
+</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../rpc.html">Avogadro Remote Procedure Call (RPC)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classlist.html">Class List</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Develop</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Script Plugins</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Input Generators</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="input-generators">
+<span id="develop-scripts-generators"></span><h1>Input Generators<a class="headerlink" href="#input-generators" title="Link to this heading">#</a></h1>
+<p>Input generators offer several unique capabilities for formatting text
+input for programs, including syntax highlighting rules and capabilities
+for creating multiple files as part of one input (e.g., separate files
+for geometry and keywords).</p>
+<p>Avogadro will call input generator scripts using several command-line arguments
+to generate JSON both for the user interface form and for the input to send
+to the external programs.</p>
+<section id="script-entry-points">
+<h2>Script Entry Points<a class="headerlink" href="#script-entry-points" title="Link to this heading">#</a></h2>
+<p>The script must handle the following command-line arguments:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">--debug</span></code> Enable extra debugging output. Used with other commands.
+It is not required that the script support extra debugging, but it should
+not crash when this option is passed.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--print-options</span></code> Print the available options supported by the
+script, e.g. simulation parameters, etc. See below for more details.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--generate-input</span></code> Read an option block from stdin and print
+input files to stdout. See below for more details.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--display-name</span></code> Print a user-friendly name for the input generator.
+This is used in the GUI for menu entries, window titles, etc.</p></li>
+</ul>
+</section>
+<section id="specifying-parameters-with-print-options">
+<h2>Specifying parameters with <code class="docutils literal notranslate"><span class="pre">--print-options</span></code><a class="headerlink" href="#specifying-parameters-with-print-options" title="Link to this heading">#</a></h2>
+<p>The format of the <code class="docutils literal notranslate"><span class="pre">--print-options</span></code> output must be a JSON object of
+the following form:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">   </span><span class="nt">&quot;userOptions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="err">...</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="nt">&quot;highlightStyles&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;style&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Descriptive name&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;rules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">         </span><span class="p">{</span>
+<span class="w">           </span><span class="nt">&quot;patterns&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">],</span>
+<span class="w">            </span><span class="nt">&quot;format&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">}</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">         </span><span class="err">...</span>
+<span class="w">        </span><span class="p">],</span>
+<span class="w">     </span><span class="p">},</span>
+<span class="w">     </span><span class="err">...</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">   </span><span class="nt">&quot;inputMoleculeFormat&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cjson&quot;</span>
+<span class="w"> </span><span class="p">}</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">userOptions</span></code> block contains a JSON object keyed with option names
+(e.g. “First option name”), which are used in the GUI to label simulation
+parameter settings. Various parameter types are supported.</p>
+</section>
+<section id="special-parameters">
+<h2>Special Parameters<a class="headerlink" href="#special-parameters" title="Link to this heading">#</a></h2>
+<p>Some parameters are common to most calculation codes.
+If the following parameter names are found, they will be handled specially
+while creating the GUI (e.g., the charge and spin will be placed on one line)</p>
+<p>It is recommended to use the names below for these options to provide a
+consistent interface and ensure that MoleQueue job staging uses correct
+values where appropriate.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Option Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>“Title”</p></td>
+<td><p>string</p></td>
+<td><p>Input file title comment, MoleQueue job description.</p></td>
+</tr>
+<tr class="row-odd"><td><p>“Filename Base”</p></td>
+<td><p>string</p></td>
+<td><p>Input file base name, e.g. “job” in “job.inp”.</p></td>
+</tr>
+<tr class="row-even"><td><p>“Processor Cores”</p></td>
+<td><p>integer</p></td>
+<td><p>Number of cores to use. Will be passed to MoleQueue.</p></td>
+</tr>
+<tr class="row-odd"><td><p>“Calculation Type”</p></td>
+<td><p>stringList</p></td>
+<td><p>Type of calculation, e.g. “Single Point” or “Equilibrium Geometry”.</p></td>
+</tr>
+<tr class="row-even"><td><p>“Theory”</p></td>
+<td><p>stringList</p></td>
+<td><p>Levels of QM theory, e.g. “RHF”, “B3LYP”, “MP2”, “CCSD”, etc.</p></td>
+</tr>
+<tr class="row-odd"><td><p>“Basis”</p></td>
+<td><p>stringList</p></td>
+<td><p>Available basis sets, e.g. “STO-3G”, “6-31G**”, etc.</p></td>
+</tr>
+<tr class="row-even"><td><p>“Charge”</p></td>
+<td><p>integer</p></td>
+<td><p>Charge on the system.</p></td>
+</tr>
+<tr class="row-odd"><td><p>“Multiplicity”</p></td>
+<td><p>integer</p></td>
+<td><p>Spin multiplicity of the system.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="syntax-highlighting">
+<h2>Syntax Highlighting<a class="headerlink" href="#syntax-highlighting" title="Link to this heading">#</a></h2>
+<p>Rules for syntax highlighting can be specified as a collection of
+regular expressions or wildcard patterns and text format specifications
+in the “highlightRules” array. The highlightRules format is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;highlightStyles&quot;</span><span class="p">:</span> <span class="p">[</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;style&quot;</span><span class="p">:</span> <span class="s2">&quot;Style 1&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;rules&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="p">(</span><span class="nb">list</span> <span class="n">of</span> <span class="n">highlight</span> <span class="n">rules</span><span class="p">,</span> <span class="n">see</span> <span class="n">below</span><span class="p">)</span> <span class="p">],</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;style&quot;</span><span class="p">:</span> <span class="s2">&quot;Style 2&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;rules&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="p">(</span><span class="nb">list</span> <span class="n">of</span> <span class="n">highlight</span> <span class="n">rules</span><span class="p">,</span> <span class="n">see</span> <span class="n">below</span><span class="p">)</span> <span class="p">],</span>
+  <span class="p">},</span>
+  <span class="o">...</span>
+<span class="p">],</span>
+</pre></div>
+</div>
+<p>The style name is unique to the style object, and used to associate a
+set of highlighting rules with particular output files. See the
+–generate-input documentation for more details.</p>
+<p>The general form of a highlight rule is:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;patterns&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;regexp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;^Some regexp?$&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;wildcard&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A * wildcard expression&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;string&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;An exact string to match.&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;caseSensitive&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="err">...</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;format&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;preset&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;preset name&gt;&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>or,</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;patterns&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="err">...</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;format&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;foreground&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="mi">128</span><span class="p">,</span><span class="w">  </span><span class="mi">64</span><span class="w"> </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;background&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">   </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">128</span><span class="p">,</span><span class="w"> </span><span class="mi">128</span><span class="w"> </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;attributes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;bold&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;italic&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;underline&quot;</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;family&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;serif&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The patterns array contains a collection of fixed strings, wildcard
+expressions, and regular expressions (using the QRegExp syntax flavor,
+see the QRegExp documentation) that are used to identify strings that
+should be formatted. There must be one of the following members present
+in each pattern object:</p>
+<ul class="simple">
+<li><p>regexp A <code class="docutils literal notranslate"><span class="pre">QRegExp</span></code>-style regular expression. If no capture groups
+(“(…)”) are defined, the entire match is formatted. If one or more
+capture groups, only the captured texts will be marked.</p></li>
+<li><p>wildcard A wildcard expression</p></li>
+<li><p>string An exact string to match. Any pattern object may also set a
+boolean caseSensitive member to indicate whether the match should
+consider character case. If omitted, a case-sensitive match is
+assumed.</p></li>
+</ul>
+<p>The preferred form of the format member is simply a specification of a
+preset format. This allows for consistent color schemes across input
+generators. The recognized presets are:</p>
+<ul class="simple">
+<li><p>“title”: A human readable title string.</p></li>
+<li><p>“keyword”: directives defined by the target input format
+specification to have special meaning, such as tags indicating where
+coordinates are to be found.</p></li>
+<li><p>“property”: A property of the simulation, such as level of theory,
+basis set, minimization method, etc.</p></li>
+<li><p>“literal”: A numeric literal (i.e. a raw number, such as a
+coordinate).</p></li>
+<li><p>“comment”: Sections of the input that are ignored by the simulation
+code.</p></li>
+</ul>
+<p>If advanced formatting is desired, the second form of the format member
+allows fine-tuning of the font properties:</p>
+<ul class="simple">
+<li><p>foreground color as an RGB tuple, ranged 0-255</p></li>
+<li><p>background color as an RGB tuple, ranged 0-255</p></li>
+<li><p>attributes array of font attributes, valid strings are “bold”, “italic”, or “underline”</p></li>
+<li><p>family of font. Valid values are “serif”, “sans”, or “mono” Any of the font property members may be omitted and default QTextCharFormat settings will be substituted.</p></li>
+</ul>
+<p>The input generator extension will apply the entries in the highlightRules object to the text in the order they appear. Thus, later rules will override the formatting of earlier rules should a conflict arise.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;patterns&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="err">...</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;format&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;foreground&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="mi">128</span><span class="p">,</span><span class="w">  </span><span class="mi">64</span><span class="w"> </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;background&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">   </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">128</span><span class="p">,</span><span class="w"> </span><span class="mi">128</span><span class="w"> </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;attributes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;bold&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;italic&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;underline&quot;</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;family&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;serif&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">patterns</span></code> array contains a collection of fixed strings, wildcard
+expressions, and regular expressions (using the QRegExp syntax flavor, see
+the QRegExp documentation) that are used to identify strings that should be
+formatted.</p>
+<p>There must be one of the following members present in each pattern object:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">regexp</span></code> A <code class="docutils literal notranslate"><span class="pre">QRegExp</span></code>-style regular expression. If no capture groups (“(…)”)
+are defined, the entire match is formatted. If one or more capture groups,
+only the captured texts will be marked.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">wildcard</span></code> A wildcard expression</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">string</span></code> An exact string to match.</p></li>
+</ul>
+<p>Any pattern object may also set a boolean <code class="docutils literal notranslate"><span class="pre">caseSensitive</span></code> member to indicate
+whether the match should consider character case. If omitted, a
+case-sensitive match is assumed.</p>
+<p>The preferred form of the <code class="docutils literal notranslate"><span class="pre">format</span></code> member is simply a specification of a
+preset format. This allows for consistent color schemes across input generators.
+The recognized presets are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;title&quot;</span></code>: A human readable title string.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;keyword&quot;</span></code>: directives defined by the target input format specification
+to have special meaning, such as tags indicating where coordinates are
+to be found.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;property&quot;</span></code>: A property of the simulation, such as level of theory, basis
+set, minimization method, etc.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;literal&quot;</span></code>: A numeric literal (i.e. a raw number, such as a coordinate).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;comment&quot;</span></code>: Sections of the input that are ignored by the simulation code.</p></li>
+</ul>
+<p>If advanced formatting is desired, the second form of the <code class="docutils literal notranslate"><span class="pre">format</span></code> member
+allows fine-tuning of the font properties:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">foreground</span></code> color as an RGB tuple, ranged 0-255</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">background</span></code> color as an RGB tuple, ranged 0-255</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">attributes</span></code> array of font attributes, valid strings are <code class="docutils literal notranslate"><span class="pre">&quot;bold&quot;</span></code>,
+<code class="docutils literal notranslate"><span class="pre">&quot;italic&quot;</span></code>, or <code class="docutils literal notranslate"><span class="pre">&quot;underline&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">family</span></code> of font. Valid values are <code class="docutils literal notranslate"><span class="pre">&quot;serif&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;sans&quot;</span></code>, or <code class="docutils literal notranslate"><span class="pre">&quot;mono&quot;</span></code></p></li>
+</ul>
+<p>Any of the font property members may be omitted and default QTextCharFormat
+settings will be substituted.</p>
+<p>The input generator extension will apply the entries in the <code class="docutils literal notranslate"><span class="pre">highlightRules</span></code>
+object to the text in the order they appear. Thus, later rules will
+override the formatting of earlier rules should a conflict arise.</p>
+</section>
+<section id="requesting-full-structure-of-current-molecule">
+<h2>Requesting Full Structure of Current Molecule<a class="headerlink" href="#requesting-full-structure-of-current-molecule" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">inputMoleculeFormat</span></code> is optional, and can be used to request a
+representation of the current molecule’s geometry when
+<code class="docutils literal notranslate"><span class="pre">--generate-input</span></code> is called. The corresponding value
+indicates the format of the molecule that the script expects. If this value
+is omitted, no representation of the structure will be provided.</p>
+<p>note Currently valid options for inputMoleculeFormat are “cjson” for
+Chemical JSON or “cml” for Chemical Markup Language.</p>
+</section>
+<section id="handling-user-selections-generate-input">
+<h2>Handling User Selections: <code class="docutils literal notranslate"><span class="pre">--generate-input</span></code><a class="headerlink" href="#handling-user-selections-generate-input" title="Link to this heading">#</a></h2>
+<p>When <code class="docutils literal notranslate"><span class="pre">--generate-input</span></code> is passed, the information needed to generate
+the input file will be written to the script’s standard input
+channel as JSON string of the following form:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;cjson&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="nt">&quot;First option name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Value 2&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Second option name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Value 1&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="err">...</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">cjson</span></code> entry will contain a Chemical JSON representation
+of the molecule if <code class="docutils literal notranslate"><span class="pre">inputMoleculeFormat</span></code> is set to “cjson” in the
+<code class="docutils literal notranslate"><span class="pre">--print-options</span></code> output.
+Similarly, a <code class="docutils literal notranslate"><span class="pre">cml</span></code> entry and CML string will exist if a Chemical Markup
+Language representation was requested.
+It will be omitted entirely if <code class="docutils literal notranslate"><span class="pre">inputMoleculeFormat</span></code> is not set.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">options</span></code> block contains key/value
+pairs for each of the options specified in the <code class="docutils literal notranslate"><span class="pre">userOptions</span></code> block of the
+<code class="docutils literal notranslate"><span class="pre">--print-options</span></code> output.</p>
+<p>If the script is called with <code class="docutils literal notranslate"><span class="pre">--generate-input</span></code>, it must write a JSON
+string to standard output with the following format:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;files&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;filename&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;file1.ext&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;contents&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;highlightStyles&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">]</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;filename&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;file2.ext&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;filePath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/path/to/file/on/local/filesystem&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="err">...</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;warnings&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;First warning.&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Second warning.&quot;</span><span class="p">,</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;mainFile&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;file2.ext&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">files</span></code> block is an array of objects, which define the actual input
+files. The <code class="docutils literal notranslate"><span class="pre">filename</span></code> member provides the name of the file, and
+either <code class="docutils literal notranslate"><span class="pre">contents</span></code> or <code class="docutils literal notranslate"><span class="pre">filePath</span></code> provide the text that goes into the file.
+The <code class="docutils literal notranslate"><span class="pre">contents</span></code> string will be used as the file contents, and <code class="docutils literal notranslate"><span class="pre">filePath</span></code>
+should contain an absolute path to a file on the filesystem to read and use
+as the input file contents.</p>
+<p>The optional <code class="docutils literal notranslate"><span class="pre">highlightStyles</span></code> member is an array of strings describing any
+highlight styles to apply to the file (see <code class="docutils literal notranslate"><span class="pre">--print-options</span></code> documentation).
+Each string in this array must match a <code class="docutils literal notranslate"><span class="pre">style</span></code> description in a highlighting
+rule in the <code class="docutils literal notranslate"><span class="pre">--print-options</span></code> output.
+Zero or more highlighting styles may be applied to any file.</p>
+<p>The order of the files in the
+GUI will match the order of the files in the array, and the first file will
+be displayed first.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">warnings</span></code> member provides an array of strings that describe non-fatal
+warnings to be shown to the users. This is useful for describing
+the resolution of conflicting options, e.g. “Ignoring basis set for
+semi-empirical calculation.”. This member is optional and should be omitted
+if no warnings are present.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">mainFile</span></code> member points to the primary input file for a calculation.
+This is the file that will be used as a command line argument when executing
+the simulation code (if applicable), and used by MoleQueue to set the
+<code class="docutils literal notranslate"><span class="pre">$$inputFileName$$</span></code> and <code class="docutils literal notranslate"><span class="pre">$$inputFileBaseName$$</span></code> input template keywords.
+This is optional; if present, the filename must exist in the <code class="docutils literal notranslate"><span class="pre">files</span></code> array.
+If absent and only one file is specified in <code class="docutils literal notranslate"><span class="pre">files</span></code>, the single input file
+will be used. Otherwise, the main file will be left unspecified.</p>
+</section>
+<section id="automatic-generation-of-geometry">
+<h2>Automatic Generation of Geometry<a class="headerlink" href="#automatic-generation-of-geometry" title="Link to this heading">#</a></h2>
+<p>The generation of molecular geometry descriptions may be skipped in the
+script and deferred to the InputGenerator class by use of a special keyword.
+The “contents” string may contain a keyword of the form</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$$coords:[coordSpec]$$
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">[coordSpec]</span></code> is a sequence of characters.
+The characters in <code class="docutils literal notranslate"><span class="pre">[coordSpec]</span></code> indicate the information needed about each
+atom in the coordinate block.</p>
+<p>Other keywords that can be used in the input files are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">$$atomCount$$</span></code>: Number of atoms in the molecule.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$$bondCount$$</span></code>: Number of bonds in the molecule.</p></li>
+</ul>
+<section id="coordinate-blocks">
+<h3>Coordinate Blocks<a class="headerlink" href="#coordinate-blocks" title="Link to this heading">#</a></h3>
+<p>The characters in the specification string indicate the information
+needed about each atom in the coordinate block.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">#</span></code>: Atom index (one-based index)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Z</span></code>: Atomic number (e.g. “6” for carbon)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G</span></code>: GAMESS-styled Atomic number (e.g. “6.0” for carbon)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">S</span></code>: Element symbol (e.g. “C” for carbon)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">N</span></code>: Element name (e.g. “Carbon”)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code>: X cartesian coordinate</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">y</span></code>: Y cartesian coordinate</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">z</span></code>: Z cartesian coordinate</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span></code>: ‘a’ lattice coordinate (unit cell required)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">b</span></code>: ‘b’ lattice coordinate (unit cell required)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">c</span></code>: ‘c’ lattice coordinate (unit cell required)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code>: A literal “0”. Useful for optimization flags.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code>: A literal “1”. Useful for optimization flags.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">_</span></code>: A space character. Useful for alignment.</p></li>
+</ul>
+<p>For example, the specification string</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">__SZxyz110</span>
+</pre></div>
+</div>
+<p>will be replaced by a molecule-specific block of text similar to the
+following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">C</span>  <span class="mi">6</span>    <span class="mf">1.126214</span>  <span class="mf">0.765886</span>  <span class="mf">0.000000</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">0</span>
+<span class="n">C</span>  <span class="mi">6</span>    <span class="mf">0.819345</span> <span class="o">-</span><span class="mf">0.564955</span>  <span class="mf">0.000000</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">0</span>
+<span class="n">C</span>  <span class="mi">6</span>   <span class="o">-</span><span class="mf">0.598383</span> <span class="o">-</span><span class="mf">0.795127</span>  <span class="mf">0.000000</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">0</span>
+<span class="n">C</span>  <span class="mi">6</span>   <span class="o">-</span><span class="mf">1.310706</span>  <span class="mf">0.370165</span>  <span class="mf">0.000000</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">0</span>
+<span class="n">S</span>  <span class="mi">16</span>  <span class="o">-</span><span class="mf">0.285330</span>  <span class="mf">1.757144</span>  <span class="mf">0.000000</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">0</span>
+<span class="n">H</span>  <span class="mi">1</span>    <span class="mf">2.130424</span>  <span class="mf">1.185837</span>  <span class="mf">0.000000</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">0</span>
+<span class="n">H</span>  <span class="mi">1</span>    <span class="mf">1.548377</span> <span class="o">-</span><span class="mf">1.375303</span>  <span class="mf">0.000000</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">0</span>
+<span class="n">H</span>  <span class="mi">1</span>   <span class="o">-</span><span class="mf">1.033768</span> <span class="o">-</span><span class="mf">1.794407</span>  <span class="mf">0.000000</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">0</span>
+<span class="n">H</span>  <span class="mi">1</span>   <span class="o">-</span><span class="mf">2.396173</span>  <span class="mf">0.450760</span>  <span class="mf">0.000000</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="error-handling">
+<h2>Error Handling<a class="headerlink" href="#error-handling" title="Link to this heading">#</a></h2>
+<p>In general, these scripts should be written robustly so that they will not
+fail under normal circumstances. However, if for some reason an error
+occurs that must be reported to the user, simply write the error message to
+standard output as plain text (i.e. not JSON), and it will be shown to the
+user.</p>
+</section>
+<section id="debugging">
+<h2>Debugging<a class="headerlink" href="#debugging" title="Link to this heading">#</a></h2>
+<p>Debugging may be enabled by defining <code class="docutils literal notranslate"><span class="pre">AVO_PYTHON_SCRIPT_DEBUG</span></code> in the process’s
+environment. This will cause the <code class="docutils literal notranslate"><span class="pre">--debug</span></code> option to be passed in
+all calls to generator scripts, and will print extra information to the
+qDebug() stream from within Avogadro. The script is free to handle the
+debug flag as the author wishes.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="formats.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">File Formats</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../rpc.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Avogadro Remote Procedure Call (RPC)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#script-entry-points">Script Entry Points</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specifying-parameters-with-print-options">Specifying parameters with <code class="docutils literal notranslate"><span class="pre">--print-options</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#special-parameters">Special Parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax-highlighting">Syntax Highlighting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requesting-full-structure-of-current-molecule">Requesting Full Structure of Current Molecule</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-user-selections-generate-input">Handling User Selections: <code class="docutils literal notranslate"><span class="pre">--generate-input</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#automatic-generation-of-geometry">Automatic Generation of Geometry</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coordinate-blocks">Coordinate Blocks</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#error-handling">Error Handling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/avogadro/two.avogadro.cc/edit/main/source/develop/scripts/generators.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">          <p>
+            ©2024 The OpenChemistry / Avogadro Teams 
+          </p>
+          <p>Covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
+          </p></div>
+      
+        <div class="footer-item">        <p>
+          <a href="/contrib/index.html">Contribute</a>
+        </p></div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.4.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
