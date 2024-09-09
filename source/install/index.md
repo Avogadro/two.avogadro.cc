@@ -2,46 +2,176 @@
 
 # Install
 
-In addition to installing the latest release ({{release}}), there are nightly builds and anyone can build Avogadro from source code.
+Most users will want to use the current official release ({{release}}).
 
-:::{card}
+If you have problems using the current release or want to use the latest features, try out one of the **"nightly" builds** created every night from the current source code, which contains all improvements and bug fixes since the last release.
+
+We're open-source, so if you would like to compile Avogadro yourself from the code, you can – see [Building Source Code](install-build).
+
+
+::::::{grid} 3
+:gutter: 0
+
+% Title row
+::::{grid-item}
+% Empty
+::::
+
+
+::::{grid-item-card}
 :text-align: center
-:class-header: sd-font-weight-bold sd-bg-light
-{fab}`apple;fa-2x` MacOS
-^^^
-{{ '<a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-primary reference external" href="' + macurl + '"><span>Download DMG</span></a>'}}
-++++
-<a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-primary reference external" href="https://nightly.link/OpenChemistry/avogadrolibs/workflows/build_cmake/master/macOS.dmg.zip"><span>Download Nightly Build</span></a>
+:shadow: none
+:class-card: sd-font-weight-bold sd-bg-light
+Current Release ({{release}})
+::::
+
+
+::::{grid-item-card}
+:text-align: center
+:shadow: none
+:class-card: sd-font-weight-bold sd-bg-light
+Nightly Build
+::::
+
+
+% Mac row
+::::{grid-item-card}
+:text-align: center
+:shadow: none
+:class-card: sd-font-weight-bold sd-bg-light
+{fab}`apple;fa-2x` macOS
+::::
+
+
+::::{grid-item-card}
+:text-align: center
+:shadow: none
+
+:::{button-link} {{macurl}}
+:color: primary
+:outline:
+Download DMG
 :::
+::::
 
-:::{card}
+
+::::{grid-item-card}
 :text-align: center
-:class-header: sd-font-weight-bold sd-bg-light
+:shadow: none
+
+:::{button-link} https://nightly.link/OpenChemistry/avogadrolibs/workflows/build_cmake/master/macOS.dmg.zip
+:color: secondary
+:outline:
+Download Nightly Build
+:::
+::::
+
+
+% Windows row
+::::{grid-item-card}
+:text-align: center
+:shadow: none
+:class-card: sd-font-weight-bold sd-bg-light
 {fab}`windows;fa-2x` Windows
-^^^
-{{ '<a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-primary reference external" href="' + winurl + '"><span>Download Installer</span></a>'}}
-++++
-<a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-primary reference external" href="https://nightly.link/OpenChemistry/avogadrolibs/workflows/build_cmake/master/Win64.exe.zip"><span>Download Nightly Build</span></a>
-:::
+::::
 
-:::{card}
+
+::::{grid-item-card}
 :text-align: center
-:class-header: sd-font-weight-bold sd-bg-light
+:shadow: none
+
+:::{button-link} {{winurl}}
+:color: primary
+:outline:
+Download Installer
+:::
+::::
+
+
+::::{grid-item-card}
+:text-align: center
+:shadow: none
+
+:::{button-link} https://nightly.link/OpenChemistry/avogadrolibs/workflows/build_cmake/master/Win64.exe.zip
+:color: secondary
+:outline:
+Download Nightly Build
+:::
+::::
+
+
+% Linux row
+::::{grid-item-card}
+:text-align: center
+:shadow: none
+:class-card: sd-font-weight-bold sd-bg-light
 {fab}`linux;fa-2x` Linux
-^^^
-{{ '<a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-primary reference external" href="' + appurl + '"><span>Download AppImage</span></a>'}} <a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-primary reference external" href="https://dl.flathub.org/repo/appstream/org.openchemistry.Avogadro2.flatpakref"><span>Download Flatpak</span></a>
-++++
-<a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-primary reference external" href="https://nightly.link/OpenChemistry/avogadrolibs/workflows/build_cmake/master/Avogadro2.AppImage.zip"><span>Download Nightly AppImage</span></a>
-<a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-primary reference external" href="build.html"><span>Build from source</span></a>
+::::
+
+::::{grid-item-card}
+:text-align: center
+:shadow: none
+
+:::{button-link} {{appurl}}
+:color: primary
+:outline:
+Download AppImage
 :::
 
-:::{card} 
-:text-align: center
-:class-header: sd-font-weight-bold sd-bg-light sd-text-danger
-{fab}`freebsd;fa-2x` FreeBSD
-^^^
-<a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-primary reference external" href="https://www.freshports.org/science/avogadro2/"><span>`pkg install avogadro2`</span></a>
+:::{button-link} https://flathub.org/apps/org.openchemistry.Avogadro2
+:color: primary
+:outline:
+Download Flatpak
 :::
+
+:::{button-link} https://repology.org/project/avogadro2/versions
+:color: primary
+:outline:
+Check your distro's repositories
+:::
+::::
+
+
+::::{grid-item-card}
+:text-align: center
+:shadow: none
+
+:::{button-link} https://nightly.link/OpenChemistry/avogadrolibs/workflows/build_cmake/master/Avogadro2.AppImage.zip
+:color: secondary
+:outline:
+Nightly AppImage
+:::
+::::
+
+
+% BSD row
+::::{grid-item-card}
+:text-align: center
+:shadow: none
+:class-card: sd-font-weight-bold sd-bg-light
+{fab}`freebsd;fa-2x` FreeBSD
+::::
+
+::::{grid-item-card}
+:text-align: center
+:shadow: none
+
+:::{button-link} https://www.freshports.org/science/avogadro2/
+:color: primary
+:outline:
+`pkg install avogadro2`
+:::
+::::
+
+::::{grid-item-card}
+:text-align: center
+:shadow: none
+% Empty
+::::
+
+
+::::::
+
 
 ```{toctree}
 ---
