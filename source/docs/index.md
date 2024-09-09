@@ -28,15 +28,6 @@ This feature now behaves differently.
 
 The revised manual also includes annotations:
 
-<<<<<<< HEAD
-```{warning}
-This is a warning – pay attention to something that may cause problems
-```
-
-```{tip}
-This is a tip – something that can help you work better
-```
-=======
 :::{warning}
 This is a warning -- something that may cause problems.
 :::
@@ -48,7 +39,6 @@ This is a tip -- something that can help you work better.
 :::{note}
 This is a note -- further relevant information.
 :::
->>>>>>> 02947ff (Tidy up main page including standardizing image size and fixing card header contrast in dark mode)
 
 ## Thanks
 

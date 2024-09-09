@@ -258,13 +258,8 @@ The Qt base means Avogadro looks native and fits right in on your desktop.
 {fab}`linux;fa-2x` Linux
 ^^^
 {{ '<a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-primary reference external" href="' + appurl + '"><span>Download AppImage</span></a>'}}
-<<<<<<< HEAD
-++++
-<a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-primary reference external" href="build.html"><span>Build from source</span></a>
-=======
 ---
 <a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-primary reference external" href="install/build.html"><span>Build from source</span></a>
->>>>>>> 17f891f (Homepage redesign proposal)
 :::
 
 ::::
