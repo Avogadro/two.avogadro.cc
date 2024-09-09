@@ -6,8 +6,9 @@ Most users will want to use the current official release ({{release}}).
 
 If you have problems using the current release or want to use the latest features, try out one of the **"nightly" builds** created every night from the current source code, which contains all improvements and bug fixes since the last release.
 
-We're open-source, so if you would like to compile Avogadro yourself from the code, you can – see [Building Source Code](install-build).
+We're open-source, so if you would like to compile Avogadro yourself from the code, you can -- see [Building Source Code](install-build) for more on how.
 
+<release:Darwin-arm64.dmg>
 
 ::::::{grid} 3
 :gutter: 0
@@ -21,7 +22,7 @@ We're open-source, so if you would like to compile Avogadro yourself from the co
 ::::{grid-item-card}
 :text-align: center
 :shadow: none
-:class-card: sd-font-weight-bold sd-bg-light
+:class-card: sd-font-weight-bold sd-bg-light sd-text-dark
 Current Release ({{release}})
 ::::
 
@@ -29,7 +30,7 @@ Current Release ({{release}})
 ::::{grid-item-card}
 :text-align: center
 :shadow: none
-:class-card: sd-font-weight-bold sd-bg-light
+:class-card: sd-font-weight-bold sd-bg-light sd-text-dark
 Nightly Build
 ::::
 
@@ -38,8 +39,10 @@ Nightly Build
 ::::{grid-item-card}
 :text-align: center
 :shadow: none
-:class-card: sd-font-weight-bold sd-bg-light
-{fab}`apple;fa-2x` macOS
+:class-card: sd-font-weight-bold sd-bg-light sd-text-dark
+{fab}`apple;fa-2x`
+
+macOS
 ::::
 
 
@@ -47,10 +50,18 @@ Nightly Build
 :text-align: center
 :shadow: none
 
+%:::{button-link} {{ 'https://github.com/OpenChemistry/avogadrolibs/releases/download/{}/Avogadro2-{}-Darwin-arm64.dmg'.format(release) }}
+:::{button-link} {{macarmurl}}
+:ref-type: myst
+:color: primary
+:outline:
+Download DMG (Apple Silicon)
+:::
+
 :::{button-link} {{macurl}}
 :color: primary
 :outline:
-Download DMG
+Download DMG (Intel)
 :::
 ::::
 
@@ -62,7 +73,7 @@ Download DMG
 :::{button-link} https://nightly.link/OpenChemistry/avogadrolibs/workflows/build_cmake/master/macOS.dmg.zip
 :color: secondary
 :outline:
-Download Nightly Build
+Download Nightly Build (Intel)
 :::
 ::::
 
@@ -71,8 +82,10 @@ Download Nightly Build
 ::::{grid-item-card}
 :text-align: center
 :shadow: none
-:class-card: sd-font-weight-bold sd-bg-light
-{fab}`windows;fa-2x` Windows
+:class-card: sd-font-weight-bold sd-bg-light sd-text-dark
+{fab}`windows;fa-2x`
+
+Windows
 ::::
 
 
@@ -104,8 +117,10 @@ Download Nightly Build
 ::::{grid-item-card}
 :text-align: center
 :shadow: none
-:class-card: sd-font-weight-bold sd-bg-light
-{fab}`linux;fa-2x` Linux
+:class-card: sd-font-weight-bold sd-bg-light sd-text-dark
+{fab}`linux;fa-2x`
+
+Linux
 ::::
 
 ::::{grid-item-card}
@@ -148,8 +163,10 @@ Nightly AppImage
 ::::{grid-item-card}
 :text-align: center
 :shadow: none
-:class-card: sd-font-weight-bold sd-bg-light
-{fab}`freebsd;fa-2x` FreeBSD
+:class-card: sd-font-weight-bold sd-bg-light sd-text-dark
+{fab}`freebsd;fa-2x`
+
+FreeBSD
 ::::
 
 ::::{grid-item-card}
@@ -167,6 +184,39 @@ Nightly AppImage
 :text-align: center
 :shadow: none
 % Empty
+::::
+
+
+% Source code row
+::::{grid-item-card}
+:text-align: center
+:shadow: none
+:class-card: sd-font-weight-bold sd-bg-light sd-text-dark
+{fas}`code;fa-2x`
+
+Source Code
+::::
+
+::::{grid-item-card}
+:text-align: center
+:shadow: none
+
+:::{button-link} {{sourceurl}}
+:color: primary
+:outline:
+Download .zip
+:::
+::::
+
+::::{grid-item-card}
+:text-align: center
+:shadow: none
+
+:::{button-link} https://github.com/OpenChemistry/avogadrolibs
+:color: secondary
+:outline:
+Go to GitHub {fab}`github;fa-1x`
+:::
 ::::
 
 
