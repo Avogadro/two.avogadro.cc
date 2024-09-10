@@ -229,40 +229,13 @@ The Qt base means Avogadro looks native and fits right in on your desktop.
 :::::::
 
 
-## Install
-
-::::{grid} 3
-:::{grid-item-card}
-:text-align: center
-:class-header: sd-font-weight-bold sd-bg-light sd-text-dark
-{fab}`apple;fa-2x` macOS
-^^^
-{{ '<a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-primary reference external" href="' + macurl + '"><span>Download DMG</span></a>'}}
----
-<a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-primary reference external" href="https://nightly.link/OpenChemistry/avogadrolibs/workflows/build_cmake/master/macOS.dmg.zip"><span>Download Nightly Build</span></a>
+:::{button-ref} install
+:color: primary
+:shadow:
+:expand:
+Get Avogadro
 :::
 
-:::{grid-item-card}
-:text-align: center
-:class-header: sd-font-weight-bold sd-bg-light sd-text-dark
-{fab}`windows;fa-2x` Windows
-^^^
-{{ '<a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-primary reference external" href="' + winurl + '"><span>Download Installer</span></a>'}}
----
-<a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-primary reference external" href="https://nightly.link/OpenChemistry/avogadrolibs/workflows/build_cmake/master/Win64.exe.zip"><span>Download Nightly Build</span></a>
-:::
-
-:::{grid-item-card}
-:text-align: center
-:class-header: sd-font-weight-bold sd-bg-light sd-text-dark
-{fab}`linux;fa-2x` Linux
-^^^
-{{ '<a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-primary reference external" href="' + appurl + '"><span>Download AppImage</span></a>'}}
----
-<a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-primary reference external" href="install/build.html"><span>Build from source</span></a>
-:::
-
-::::
 
 ## Resources
 
