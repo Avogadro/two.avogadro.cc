@@ -239,8 +239,11 @@ Get Avogadro
 
 ## Resources
 
-:::::{grid} 3
+:::::{grid}
+:gutter: 3
+
 ::::{grid-item-card}
+:columns: 4
 :class-header: sd-font-weight-bold sd-bg-light sd-text-center sd-text-dark
 :class-body: sd-text-center
 {fas}`book;fa-2x` User Guide
@@ -268,7 +271,9 @@ Tutorials
 :::
 ::::
 
+
 ::::{grid-item-card}
+:columns: 4
 :class-header: sd-font-weight-bold sd-bg-light sd-text-center sd-text-dark
 :class-body: sd-text-center
 {fas}`laptop-code;fa-2x` Development
@@ -296,7 +301,9 @@ C++ API
 :::
 ::::
 
+
 ::::{grid-item-card}
+:columns: 4
 :class-header: sd-font-weight-bold sd-bg-light sd-text-center sd-text-dark
 :class-body: sd-text-center
 {fas}`users;fa-2x` Get Involved
@@ -314,34 +321,90 @@ Contribute
 :color: primary
 :outline:
 :align: center
-Translation / Localization
+Help with translation
 :::
 :::{button-ref} issues
 :color: primary
 :outline:
 :align: center
-Bugs / Issues
+Report a bug or issue
 :::
 :::{button-ref} features
 :color: primary
 :outline:
 :align: center
-Feature Requests
+Request a feature
 :::
 ::::
+
+::::{grid-item}
+:columns: 2
+::::
+
+::::{grid-item-card}
+:columns: 4
+:class-header: sd-font-weight-bold sd-bg-light sd-text-center sd-text-dark
+:class-body: sd-text-center
+{fas}`graduation-cap;fa-2x` Education
+^^^
+
+Learn how Avogadro can be used in education:
+
+:::{button-ref} teach
+:color: primary
+:shadow:
+:align: center
+Teach
+:::
+:::{button-ref} teaching-articles
+:color: primary
+:outline:
+:align: center
+Publications using Avogadro
+:::
+::::
+
+::::{grid-item-card}
+:columns: 4
+:class-header: sd-font-weight-bold sd-bg-light sd-text-center sd-text-dark
+:class-body: sd-text-center
+{fas}`comments;fa-2x` Community
+^^^
+
+Ask questions, get feedback, and suggest ideas:
+
+:::{button-ref} avogadro discussion
+:color: primary
+:shadow:
+:align: center
+Discuss
+:::
+:::{button-ref} https://fosstodon.org/@avogadrochem
+:color: primary
+:outline:
+:align: center
+Follow on Mastodon
+:::
+:::{button-ref} twitter
+:color: primary
+:outline:
+:align: center
+Follow on X
+:::
+:::{button-ref} tracker
+:color: primary
+:outline:
+:align: center
+GitHub project tracker
+:::
+::::
+
+::::{grid-item}
+:columns: 2
+::::
+
 :::::
 
-## Community
-
-There are various ways to get in touch with the Avogadro community:
-
-- [Avogadro Discussion] is the best place to ask questions and is a
-  great way to get feedback from other users on how to approach a problem,
-  suggest ideas, etc.
-- If you think you've found a [bug][issues], or would like to request
-a [feature][features], please report an issue on our [project tracker][tracker].
-- You can also find more information about Avogadro on [Twitter] or <a rel="me" href="http://fosstodon.org/@avogadrochem">Mastodon</a>. Feel free to
-  tag us on your papers and images!
 
 ```{toctree}
 :hidden: true
