@@ -239,11 +239,11 @@ Get Avogadro
 
 ## Resources
 
-:::::{grid}
+:::::{grid} 1 2 3 3
 :gutter: 3
+:class-row: sd-align-major-center
 
 ::::{grid-item-card}
-:columns: 4
 :class-header: sd-font-weight-bold sd-bg-light sd-text-center sd-text-dark
 :class-body: sd-text-center
 {fas}`book;fa-2x` User Guide
@@ -273,7 +273,6 @@ Tutorials
 
 
 ::::{grid-item-card}
-:columns: 4
 :class-header: sd-font-weight-bold sd-bg-light sd-text-center sd-text-dark
 :class-body: sd-text-center
 {fas}`laptop-code;fa-2x` Development
@@ -303,7 +302,6 @@ C++ API
 
 
 ::::{grid-item-card}
-:columns: 4
 :class-header: sd-font-weight-bold sd-bg-light sd-text-center sd-text-dark
 :class-body: sd-text-center
 {fas}`users;fa-2x` Get Involved
@@ -337,12 +335,8 @@ Request a feature
 :::
 ::::
 
-::::{grid-item}
-:columns: 2
-::::
 
 ::::{grid-item-card}
-:columns: 4
 :class-header: sd-font-weight-bold sd-bg-light sd-text-center sd-text-dark
 :class-body: sd-text-center
 {fas}`graduation-cap;fa-2x` Education
@@ -365,7 +359,6 @@ Publications using Avogadro
 ::::
 
 ::::{grid-item-card}
-:columns: 4
 :class-header: sd-font-weight-bold sd-bg-light sd-text-center sd-text-dark
 :class-body: sd-text-center
 {fas}`comments;fa-2x` Community
@@ -399,9 +392,6 @@ GitHub project tracker
 :::
 ::::
 
-::::{grid-item}
-:columns: 2
-::::
 
 :::::
 
