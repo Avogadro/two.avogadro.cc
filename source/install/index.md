@@ -8,18 +8,19 @@ If you have problems using the current release or want to use the latest feature
 
 We're open-source, so if you would like to compile Avogadro yourself from the code, you can -- see [Building Source Code](install-build) for more on how.
 
-<release:Darwin-arm64.dmg>
 
-::::::{grid} 3
+::::::{grid}
 :gutter: 0
 
 % Title row
 ::::{grid-item}
+:columns: 4 4 2 2
 % Empty
 ::::
 
 
 ::::{grid-item-card}
+:columns: 4 4 5 5
 :text-align: center
 :shadow: none
 :class-card: sd-font-weight-bold sd-bg-light sd-text-dark
@@ -28,6 +29,7 @@ Current Release ({{release}})
 
 
 ::::{grid-item-card}
+:columns: 4 4 5 5
 :text-align: center
 :shadow: none
 :class-card: sd-font-weight-bold sd-bg-light sd-text-dark
@@ -37,6 +39,7 @@ Nightly Build
 
 % Mac row
 ::::{grid-item-card}
+:columns: 4 4 2 2
 :text-align: center
 :shadow: none
 :class-card: sd-font-weight-bold sd-bg-light sd-text-dark
@@ -47,6 +50,7 @@ macOS
 
 
 ::::{grid-item-card}
+:columns: 4 4 5 5
 :text-align: center
 :shadow: none
 
@@ -67,6 +71,7 @@ Download DMG (Intel)
 
 
 ::::{grid-item-card}
+:columns: 4 4 5 5
 :text-align: center
 :shadow: none
 
@@ -80,6 +85,7 @@ Download Nightly Build (Intel)
 
 % Windows row
 ::::{grid-item-card}
+:columns: 4 4 2 2
 :text-align: center
 :shadow: none
 :class-card: sd-font-weight-bold sd-bg-light sd-text-dark
@@ -90,6 +96,7 @@ Windows
 
 
 ::::{grid-item-card}
+:columns: 4 4 5 5
 :text-align: center
 :shadow: none
 
@@ -102,6 +109,7 @@ Download Installer
 
 
 ::::{grid-item-card}
+:columns: 4 4 5 5
 :text-align: center
 :shadow: none
 
@@ -115,6 +123,7 @@ Download Nightly Build
 
 % Linux row
 ::::{grid-item-card}
+:columns: 4 4 2 2
 :text-align: center
 :shadow: none
 :class-card: sd-font-weight-bold sd-bg-light sd-text-dark
@@ -124,6 +133,7 @@ Linux
 ::::
 
 ::::{grid-item-card}
+:columns: 4 4 5 5
 :text-align: center
 :shadow: none
 
@@ -148,6 +158,7 @@ Check your distro's repositories
 
 
 ::::{grid-item-card}
+:columns: 4 4 5 5
 :text-align: center
 :shadow: none
 
@@ -161,6 +172,7 @@ Nightly AppImage
 
 % BSD row
 ::::{grid-item-card}
+:columns: 4 4 2 2
 :text-align: center
 :shadow: none
 :class-card: sd-font-weight-bold sd-bg-light sd-text-dark
@@ -170,6 +182,7 @@ FreeBSD
 ::::
 
 ::::{grid-item-card}
+:columns: 4 4 5 5
 :text-align: center
 :shadow: none
 
@@ -181,6 +194,7 @@ FreeBSD
 ::::
 
 ::::{grid-item-card}
+:columns: 4 4 5 5
 :text-align: center
 :shadow: none
 % Empty
@@ -189,6 +203,7 @@ FreeBSD
 
 % Source code row
 ::::{grid-item-card}
+:columns: 4 4 2 2
 :text-align: center
 :shadow: none
 :class-card: sd-font-weight-bold sd-bg-light sd-text-dark
@@ -198,10 +213,11 @@ Source Code
 ::::
 
 ::::{grid-item-card}
+:columns: 4 4 5 5
 :text-align: center
 :shadow: none
 
-:::{button-link} {{sourceurl}}
+:::{button-link} test
 :color: primary
 :outline:
 Download .zip
@@ -209,6 +225,7 @@ Download .zip
 ::::
 
 ::::{grid-item-card}
+:columns: 4 4 5 5
 :text-align: center
 :shadow: none
 
@@ -218,7 +235,6 @@ Download .zip
 Go to GitHub {fab}`github;fa-1x`
 :::
 ::::
-
 
 ::::::
 
