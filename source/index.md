@@ -194,7 +194,7 @@ Development is public and contributions are welcomed.
 :class-card: sd-border-0
 :shadow: none
 :class-title: sd-fs-4 sd-text-primary
-Translations available for English, French, German, Hungarian, Indonesian, Japanese, Portuguese, Serbian, Turkish, and others, with [more languages to come](https://hosted.weblate.org/engage/avogadro/).
+Translations available for Simplified Chinese, English, Esperanto, French, Georgian, German, Hungarian, Japanese, Korean, Portuguese, Romanian, Serbian, and Turkish, with [more languages being added all the time](https://hosted.weblate.org/engage/avogadro/).
 :::::
 
 :::::{grid-item-card}
@@ -321,13 +321,13 @@ Contribute
 :align: center
 Help with translation
 :::
-:::{button-ref} issues
+:::{button-link} https://github.com/OpenChemistry/avogadrolibs/issues/new?template=bug_report.md
 :color: primary
 :outline:
 :align: center
 Report a bug or issue
 :::
-:::{button-ref} features
+:::{button-link} https://github.com/OpenChemistry/avogadrolibs/issues/new?template=feature_request.md
 :color: primary
 :outline:
 :align: center
@@ -366,25 +366,25 @@ Publications using Avogadro
 
 Ask questions, get feedback, and suggest ideas:
 
-:::{button-ref} avogadro discussion
+:::{button-link} https://discuss.avogadro.cc/
 :color: primary
 :shadow:
 :align: center
 Discuss
 :::
-:::{button-ref} https://fosstodon.org/@avogadrochem
+:::{button-link} https://fosstodon.org/@avogadrochem
 :color: primary
 :outline:
 :align: center
 Follow on Mastodon
 :::
-:::{button-ref} twitter
+:::{button-link} https://x.com/AvogadroChem
 :color: primary
 :outline:
 :align: center
 Follow on X
 :::
-:::{button-ref} tracker
+:::{button-link} https://github.com/openchemistry/avogadrolibs/issues
 :color: primary
 :outline:
 :align: center
