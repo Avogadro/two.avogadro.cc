@@ -13,7 +13,7 @@ Tools can be selected either by left-clicking the icon, or using the keyboard by
 After selecting a tool, the name of the tool and any options available for the tool are displayed to the left in the [Tool pane](panes-tool-pane).
 
 :::{versionadded} 2.0
-The Template Tool, Label Tool and Animation Tool are all completely new tools.
+The [Template Tool](tools-template-tool), [Label Tool](tools-label-tool) and [Animation Tool](tools-animation-tool) are all completely new tools.
 :::
 
 ```{toctree}
