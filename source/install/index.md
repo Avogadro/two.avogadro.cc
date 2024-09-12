@@ -54,15 +54,14 @@ macOS
 :text-align: center
 :shadow: none
 
-%:::{button-link} {{ 'https://github.com/OpenChemistry/avogadrolibs/releases/download/{}/Avogadro2-{}-Darwin-arm64.dmg'.format(release) }}
-:::{button-link} {{macarmurl}}
+:::{button-link} https://github.com/OpenChemistry/avogadrolibs/releases/latest/download/Avogadro2-1.99.0-Darwin-arm64.dmg
 :ref-type: myst
 :color: primary
 :outline:
 Download DMG (Apple Silicon)
 :::
 
-:::{button-link} {{macurl}}
+:::{button-link} https://github.com/OpenChemistry/avogadrolibs/releases/latest/download/Avogadro2-1.99.0-Darwin.dmg
 :color: primary
 :outline:
 Download DMG (Intel)
@@ -100,7 +99,7 @@ Windows
 :text-align: center
 :shadow: none
 
-:::{button-link} {{winurl}}
+:::{button-link} https://github.com/OpenChemistry/avogadrolibs/releases/latest/download/Avogadro2-1.99.0-win64.exe
 :color: primary
 :outline:
 Download Installer
@@ -137,7 +136,7 @@ Linux
 :text-align: center
 :shadow: none
 
-:::{button-link} {{appurl}}
+:::{button-link} https://github.com/OpenChemistry/avogadrolibs/releases/latest/download/Avogadro2-x86_64.AppImage
 :color: primary
 :outline:
 Download AppImage
@@ -217,10 +216,15 @@ Source Code
 :text-align: center
 :shadow: none
 
-:::{button-link} test
+:::{button-link} https://github.com/OpenChemistry/avogadrolibs/releases/latest/
 :color: primary
 :outline:
-Download .zip
+`avogadrolibs`
+:::
+:::{button-link} https://github.com/OpenChemistry/avogadroapp/releases/latest/
+:color: primary
+:outline:
+`avogadroapp`
 :::
 ::::
 
@@ -232,7 +236,7 @@ Download .zip
 :::{button-link} https://github.com/OpenChemistry/avogadrolibs
 :color: secondary
 :outline:
-Go to GitHub {fab}`github;fa-1x`
+Avogadro on GitHub {fab}`github;fa-1x`
 :::
 ::::
 
