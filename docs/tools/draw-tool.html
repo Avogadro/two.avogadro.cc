@@ -433,6 +433,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="navigation-tool.html">Navigation Tool</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Draw Tool</a></li>
 <li class="toctree-l2"><a class="reference internal" href="template-tool.html">Template Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="label-tool.html">Label Tool</a></li>
 <li class="toctree-l2"><a class="reference internal" href="selection-tool.html">Selection Tool</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manipulation-tool.html">Manipulation Tool</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bond-centric-manipulation-tool.html">Bond-Centric Manipulation Tool</a></li>
@@ -510,39 +511,78 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="draw-tool">
 <span id="tools-draw-tool"></span><h1>Draw Tool<a class="headerlink" href="#draw-tool" title="Link to this heading">#</a></h1>
-<p>Molecules are built and edited with the Draw Tool, which allows “free-hand” sketching of new molecules.</p>
+<p><img alt="The icon of the Draw Tool in light mode." src="../../_images/icon_draw.svg" /></p>
+<p>Keyboard shortcut: <kbd>Ctrl</kbd>+<kbd>2</kbd></p>
+<p>Molecules are <strong>built</strong> and <strong>edited</strong> with the <strong>Draw Tool</strong>, which allows “free-hand” sketching of new molecules.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p><strong>New in 2.0</strong>
-You can also use the new <a class="reference internal" href="template-tool.html#template-tool"><span class="std std-ref">Template Tool</span></a>, which makes it quicker and easier to attach functional groups or assemble inorganic/organometallic complexes.</p>
+<p>To help rapidly build your structure you can also use the new <a class="reference internal" href="template-tool.html#tools-template-tool"><span class="std std-ref">Template Tool</span></a>, which makes it quicker and easier to attach functional groups or assemble inorganic/organometallic complexes.</p>
 </div>
-<p><img alt="Screenshot of the draw tool" src="../../_images/draw-tool.png" /></p>
-<p>Left-clicking on the display will allow you to begin your journey into molecule creation. A left-click will create a carbon atom. A right-click will delete the atom.</p>
-<p><img alt="" src="../../_images/first-carbon.png" /></p>
-<p>Left-clicking the initial atom and dragging your mouse will create a bond to another carbon atom.</p>
-<p><img alt="" src="../../_images/drag-to-build.png" /></p>
-<p>Avogadro uses carbon as the default element. A different element can be selected through the <code class="docutils literal notranslate"><span class="pre">Element</span></code> drop-down menu. Typing the atomic symbol (e.g., <kbd>O</kbd> for Oxygen, <kbd>A</kbd><kbd>s</kbd> for Arsenic) is a shortcut for changing the selected element.</p>
-<p><img alt="" src="../../_images/pick-an-element.png" /></p>
-<p>Let’s say you wanted to create water. You can either type in “O”, or select “Oxygen (8)” from the drop-down menu, and then click on the black display.</p>
-<p>Left-clicking on an atom that has already been generated will also change the element. In this case, clicking on the initial carbon atom changed it into an oxygen atom.</p>
-<p><img alt="" src="../../_images/tutorial-water.png" /></p>
-<p>If the <code class="docutils literal notranslate"><span class="pre">Adjust</span> <span class="pre">Hydrogens</span></code> box is checked, hydrogen atoms in the molecule will be automatically adjusted to satisfy valency (as shown above).</p>
-<p><img alt="" src="../../_images/tutorial-adjust-hydrogens.png" /></p>
-<p>Bond order is changed through the <code class="docutils literal notranslate"><span class="pre">Bond</span> <span class="pre">Order</span></code> drop-down menu, or by typing the numbers <kbd>1</kbd>, <kbd>2</kbd>, or <kbd>3</kbd>. Bonds are added by left-clicking on a bond that has already been created. Right-clicking on a bond deletes the bond.</p>
-<p><img alt="" src="../../_images/tutorial-bond-order.png" /></p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 2.0: </span>The default bond order setting is now <strong>Automatic</strong> – it will adjust intelligently with the length of the bond.</p>
+</div>
+<section id="basic-usage">
+<h2>Basic usage<a class="headerlink" href="#basic-usage" title="Link to this heading">#</a></h2>
+<p>Atoms and bonds are drawn using the mouse.</p>
+<p>Left-click on an <strong>empty space</strong> in the view pane to <strong>create an atom</strong> of the currently selected element.</p>
+<p>Left-click on an <strong>existing atom</strong> to <strong>change its element</strong> to the one currently selected.</p>
+<p><strong>Left-click and drag</strong> from an atom to <strong>create a new bond</strong> starting from that atom.
+A new atom of the currently selected element is automatically created at the end of the new bond and is visible while dragging.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p><strong>New in 2.0</strong>
-The default bond order is “Automatic,” and will adjust with the length of the bond.</p>
+<p>New atoms and bonds will be created in a plane that is parallel to the screen and includes the atom the bond originates from.</p>
 </div>
-<section id="creating-carbon-dioxide">
-<h2>Creating Carbon Dioxide<a class="headerlink" href="#creating-carbon-dioxide" title="Link to this heading">#</a></h2>
-<p>Begin drawing the “O-C-O” structure. After the structure is drawn, all you need to do is left-click on the bonds. Left-clicking on the bonds will create a double bond (shown below).</p>
-<p><img alt="" src="../../_images/tutorial-co2-step1.png" />
-<img alt="" src="../../_images/tutorial-co2-step2.png" />
-<img alt="" src="../../_images/tutorial-co2-step3.png" /></p>
-<p>Once you’ve created your molecule, you can optimize its geometry through the <code class="docutils literal notranslate"><span class="pre">Extensions</span></code> menu. Selecting the <code class="docutils literal notranslate"><span class="pre">Extensions</span></code> menu, and clicking <code class="docutils literal notranslate"><span class="pre">Optimize</span> <span class="pre">Geometry</span></code> will provide your molecule with proper bond lengths and angles.</p>
-<p><img alt="" src="../../_images/ada26872-ede7-4601-bd4e-d790c10ad614.png" /></p>
+<p>If, during the drag, the mouse is moved over an existing atom, the mouse will “snap” to it, and the new atom will disappear.
+The new bond will be drawn to this existing atom instead.</p>
+<p>By default, the bond order of a new bond is selected automatically based on the distance between the atoms: long bonds will be single bonds, short bonds will be double bonds, and very short bonds will be triple bonds.</p>
+<p>Left-click on an <strong>existing bond</strong> to <strong>increase its bond order</strong> by one.
+Left-clicking on a triple bond turns it back into a single bond.</p>
+<p><strong>Delete</strong> atoms and bonds by <strong>right-clicking</strong> on them.</p>
+</section>
+<section id="pane-options">
+<h2>Pane options<a class="headerlink" href="#pane-options" title="Link to this heading">#</a></h2>
+<dl class="simple myst">
+<dt>Element</dt><dd><p>Choose the element of new atoms.</p>
+<p>Various common elements are shown in the drop-down for easy access, but any element can be selected from the periodic table by choosing <strong>Other…</strong>.
+Used elements are remembered and will appear in the drop-down in future.</p>
+<p>Alternatively, use the handy keyboard shortcuts – just type the atomic symbol of the desired element (e.g., <kbd>O</kbd> for Oxygen, <kbd>A</kbd><kbd>s</kbd> for Arsenic).</p>
+</dd>
+<dt>Bond Order</dt><dd><p>Choose the bond order of new bonds.</p>
+<p>There are keyboard shortcuts for this too – <kbd>1</kbd> selects single, <kbd>2</kbd> double, and so on.</p>
+<p>When the bond order setting is set to <strong>Automatic</strong> (default), new bonds are given a bond order based on their length.
+The cut-offs are determined by the elements of the atoms at either end of the bond.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Single bonds are created when the bond length exceeds the sum of the atoms’ covalent radii.
+Double bonds are created when the bond length is between 91% and 100% of the sum of the covalent radii, and anything shorter than 91% becomes a triple bond.</p>
+<p>For a carbon-carbon bond, the lower cut-offs are thus approx. 1.52 Å for a single bond and 1.38 Å for a double.</p>
+</div>
+</dd>
+<dt>Adjust Hydrogens</dt><dd><p>Toggle automatically addition and removal of hydrogen atoms to fill valencies.</p>
+<p>If this box is checked (default), extra hydrogen atoms will be automatically added to new atoms to satisfy their valency.
+When a bond is created or the order of a bond is changed, the number of hydrogen atoms on the atoms at each end of the bond will also be adjusted.</p>
+<p>For main-group elements, the default valency is always that predicted by the octet rule, while metal atoms are always created alone, without bonded atoms.
+To create metal centers or hypervalent main-group centers, it is often better to use the <a class="reference internal" href="template-tool.html#tools-template-tool"><span class="std std-ref">Template Tool</span></a>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It may not be possible to deliberately add or remove hydrogen atoms (for example, to create a radical or an ion) while this setting is checked.</p>
+<p>If this is desired, turn off the setting while manually adjusting the hydrogens.
+Turning the setting back on will not cause the number of hydrogen atoms to be readjusted.</p>
+</div>
+</dd>
+</dl>
+</section>
+<section id="adjusting-the-structure">
+<h2>Adjusting the structure<a class="headerlink" href="#adjusting-the-structure" title="Link to this heading">#</a></h2>
+<p>It is challenging to draw structures in 3D on a 2D screen.
+Using the Draw Tool alone will probably not give you a molecule that looks sensible and is representative of the real geometry.</p>
+<p>For manual adjustment, the position of the atoms can be fine-tuned by using the <a class="reference internal" href="manipulation-tool.html#tools-manipulation-tool"><span class="std std-ref">Manipulation Tool</span></a> in combination with the <a class="reference internal" href="navigation-tool.html#tools-navigation-tool"><span class="std std-ref">Navigation Tool</span></a> to rotate and pan the view.</p>
+<p>To quickly get a sensible geometry, make use of the <a class="reference internal" href="#calculations-optimization"><span class="xref myst"><code class="docutils literal notranslate"><span class="pre">Optimize</span> <span class="pre">Geometry</span></code></span></a> extension.
+This can be conveniently activated using the shortcut <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>O</kbd>.</p>
+</section>
+<section id="tutorial">
+<h2>Tutorial<a class="headerlink" href="#tutorial" title="Link to this heading">#</a></h2>
+<p>A step-by-step tutorial for some simple molecules can be found <a class="reference internal" href="../tutorials/drawing-simple-molecules.html#tutorials-drawing-simple-molecules"><span class="std std-ref">here</span></a>.</p>
 </section>
 </section>
 
@@ -592,7 +632,10 @@ The default bond order is “Automatic,” and will adjust with the length of th
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-carbon-dioxide">Creating Carbon Dioxide</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-usage">Basic usage</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pane-options">Pane options</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adjusting-the-structure">Adjusting the structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial">Tutorial</a></li>
 </ul>
   </nav></div>
 

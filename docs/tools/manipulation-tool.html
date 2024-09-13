@@ -433,6 +433,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="navigation-tool.html">Navigation Tool</a></li>
 <li class="toctree-l2"><a class="reference internal" href="draw-tool.html">Draw Tool</a></li>
 <li class="toctree-l2"><a class="reference internal" href="template-tool.html">Template Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="label-tool.html">Label Tool</a></li>
 <li class="toctree-l2"><a class="reference internal" href="selection-tool.html">Selection Tool</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Manipulation Tool</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bond-centric-manipulation-tool.html">Bond-Centric Manipulation Tool</a></li>
@@ -510,33 +511,59 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="manipulation-tool">
 <span id="tools-manipulation-tool"></span><h1>Manipulation Tool<a class="headerlink" href="#manipulation-tool" title="Link to this heading">#</a></h1>
-<p>The Manipulation Tool allows you to move individual atoms as well as fragments.</p>
-<p><img alt="" src="../../_images/520ebec1-6470-4f93-af26-c94ac5ea6f9d.png" /></p>
-<p>If one or more atoms have been selected with the <a class="reference internal" href="selection-tool.html#tools-selection-tool"><span class="std std-ref">Selection Tool</span></a>, all operations will be carried out on the entire selection as one unit. If nothing has been selected, whichever atom is dragged will be moved.</p>
+<p><img alt="The icon of the Manipulation Tool in light mode." src="../../_images/icon_manipulate.svg" /></p>
+<p>Keyboard shortcut: <kbd>Ctrl</kbd>+<kbd>6</kbd></p>
+<p>The <strong>Manipulation Tool</strong> allows you to <strong>move</strong> atoms, molecules, and fragments.</p>
 <section id="basic-usage">
 <h2>Basic usage<a class="headerlink" href="#basic-usage" title="Link to this heading">#</a></h2>
-<p>Atoms can be translated by clicking and dragging with the left mouse button.</p>
+<p><strong>Click and drag</strong> an atom to <strong>manipulate</strong> it.</p>
+<p>The Manipulation Tool operates in two different modes:</p>
+<ol class="arabic simple">
+<li><p>If one or more atoms have been selected, for example with the <a class="reference internal" href="selection-tool.html#tools-selection-tool"><span class="std std-ref">Selection Tool</span></a>, all transformations will be carried out on the entire current selection as one unit.</p></li>
+<li><p>If nothing has been selected, whichever atom is clicked will be moved.</p></li>
+</ol>
+<p><strong>Translate atoms</strong> or fragments by clicking and dragging them with the <strong>left mouse button</strong>.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>When translating with click and drag, atoms will always move parallel to the screen; their depth will not change. For effective positioning within 3D space, it is thus necessary to combine the Manipulation Tool with the Navigation Tool to rotate the molecule.</p>
+<p>When translating with click and drag, atoms will always move parallel to the screen; their depth will not change.
+For effective positioning within 3D space, it is thus necessary to combine the Manipulation Tool with the Navigation Tool to rotate the molecule.</p>
 </div>
-<p>Atoms can be rotated by clicking and dragging with the right mouse button.</p>
+<p><strong>Rotate atoms</strong> or fragments by clicking and dragging them with the <strong>right mouse button</strong>.
+On a single atom this will have no visible effect.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Rotation with click and drag will always be about the geometric center of the selection.</p>
 </div>
-<p>The Manipulation Tool is automatically selected after inserting a fragment, to enable quick and easy positioning of the new fragment.</p>
+<p>The Manipulation Tool is automatically selected after <a class="reference internal" href="../menus/build-menu.html#menus-build-menu-insert"><span class="std std-ref">inserting a fragment</span></a> via <code class="docutils literal notranslate"><span class="pre">Build</span></code>⇒<code class="docutils literal notranslate"><span class="pre">Insert</span></code>, to enable quick and easy positioning of the new fragment.</p>
 </section>
 <section id="pane-options">
 <h2>Pane options<a class="headerlink" href="#pane-options" title="Link to this heading">#</a></h2>
 <p>The options in the Manipulate Pane allow you to apply transformations mathematically to the currently selected atoms.</p>
-<p>Shifts along the X-, Y-, and Z-axes can be specified in angstrom.</p>
-<p><img alt="" src="../../_images/0f89679e-9bee-4005-8793-fc96682ecd34.png" /></p>
-<p>The “Rotate around:” section allows you to rotate your selection around the current geometry, or the origin. After choosing how many degrees to rotate your selection click “Apply”.</p>
-<p><img alt="" src="../../_images/14c1bee4-7288-4fa7-8660-d9fc58578631.png" /></p>
-<p>Clicking “Reset” will reset all information in the translation, and rotation boxes. This does not reset the molecule, if you want to undo your adjustments go to the “Edit” menu in the top bar and select “Undo Manipulate Atom”.</p>
-<p><img alt="" src="../../_images/e711ffa1-6a52-4748-af42-e734581bf36b.png" /></p>
+<dl class="simple myst">
+<dt>Translate by:</dt><dd><p>Specify the distances, in angstrom, to shift the selection along the X-, Y-, and Z-axes.</p>
+</dd>
+</dl>
+<p><a class="reference internal" href="../../_images/0f89679e-9bee-4005-8793-fc96682ecd34.png"><img alt="Applying a mathematical translation." class="align-center" src="../../_images/0f89679e-9bee-4005-8793-fc96682ecd34.png" style="height: 300px;" /></a></p>
+<dl class="simple myst">
+<dt>Rotate around:</dt><dd><p>Specify the angles, in degrees, to rotate the selection around the X-, Y-, and Z-axes, as well as the centre of the rotation.</p>
+<p>The rotation can be carried out around the center of the current geometry or the origin, selected from the drop-down menu.
+The X-, Y-, and Z-axes used for the rotation will be considered to intersect at this point.</p>
+</dd>
+</dl>
+<p><a class="reference internal" href="../../_images/14c1bee4-7288-4fa7-8660-d9fc58578631.png"><img alt="Applying a mathematical rotation." class="align-center" src="../../_images/14c1bee4-7288-4fa7-8660-d9fc58578631.png" style="height: 300px;" /></a></p>
+<dl class="simple myst">
+<dt>Apply</dt><dd><p>Apply the specified transformations to the current selection.</p>
+<p>If values for both translation and rotation have been entered, both will be applied.</p>
+</dd>
+<dt>Reset</dt><dd><p>Reset all values in the translation and rotation boxes to 0.</p>
+<p>This does not reset the molecule or reverse any transformations; if you want to undo your adjustments, go to the <code class="docutils literal notranslate"><span class="pre">Edit</span></code> menu in the top bar and select <code class="docutils literal notranslate"><span class="pre">Undo</span> <span class="pre">Manipulate</span> <span class="pre">Atom</span></code>.</p>
+</dd>
+</dl>
+<p><a class="reference internal" href="../../_images/e711ffa1-6a52-4748-af42-e734581bf36b.png"><img alt="Undoing transformations." class="align-center" src="../../_images/e711ffa1-6a52-4748-af42-e734581bf36b.png" style="height: 600px;" /></a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>The icon for the Manipulation Tool is adapted from a design by <a class="reference external" href="https://thenounproject.com/ryandeel/">Ryan Dell</a>, a contributor to the Noun Project.</p>
+</div>
 </section>
 </section>
 

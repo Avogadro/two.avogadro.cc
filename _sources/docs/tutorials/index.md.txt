@@ -7,6 +7,7 @@
 caption: Tutorials
 ---
 
+drawing-simple-molecules
 naming-a-molecule
 viewing-molecular-orbitals
 viewing-vibrations
