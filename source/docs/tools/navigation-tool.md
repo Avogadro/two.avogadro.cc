@@ -1,26 +1,43 @@
+(tools-navigation-tool)=
+
 # Navigation Tool
 
-The Navigation Tool is used to pan, rotate, and scale the view of a molecule.
+![The icon of the Navigation Tool in light mode.](../../_static/icon_navigate.svg)
 
-![](../../_static/ae875d6f-8727-4046-a615-d05606267865.png)
+Keyboard shortcut: <kbd>Ctrl</kbd>+<kbd>1</kbd>
 
-If the "Display visual cues" box is checked, yellow arrows will display what type of navigation is taking place.
+The **Navigation Tool** is used to **rotate**, **pan**, and **zoom** the view of a molecule within the view pane.
 
-![](../../_static/1d3f24d3-2090-459b-9c21-a68840c203b1.png)
+Only the perspective of the view is changed, and the positions in space of all atoms are preserved.
+To move atoms, fragments, or molecules within 3D space, use the [Manipulation Tool](tools-manipulation-tool) instead.
 
-Clicking anywhere on the black display and dragging the mouse will tilt, and rotate the entire molecule \(as shown below\).
+:::{tip}
+When using any of the other tools, if a mouse or keyboard action is not defined for that tool but it is defined for the Navigation Tool, the action will have the same effect as if the Navigation Tool was selected.
 
-![](../../_static/5bdfcdc2-53a3-43e0-a35a-3f157a685ed8.png)
+This means that many of the below actions will also work from some other tools.
+For example, left-click and drag will also rotate the view while the [Animation Tool](tools-animation-tool) is selected.
+:::
 
-A molecule can also be rotated about an atom by clicking the atom and dragging the mouse. Depicted below, acetone is being rotated about its initial carbon.
+## Basic usage
 
-![](../../_static/56ffe995-b194-4fe3-9f9c-21bf24c7c6e9.png)
+**Rotate** the view by clicking and dragging anywhere on the view pane with the **left mouse button**.
 
-Right clicking allows you to change the molecules location on the display. Double clicking the molecule will reset the molecule's view.
+Moving the mouse in a particular direction will rotate the view such that the part of the molecule nearest to you moves in the same direction.
+For example, clicking and dragging to the left will cause the molecule to rotate clockwise (as considered looking from the top down).
 
-![](../../_static/51e78183-938b-4c4e-a422-fc72d2a16876.png)
+:::{tip}
+Rotation with click and drag will always be about the geometric center of the molecule.
+:::
 
-Using the middle scroll bar on a mouse will allow you to zoom in and out.
+**Pan** the view can be panned by clicking and dragging with the **right mouse button**.
 
-![](../../_static/2e656d2b-c082-4edf-8dc2-bafbe8a11834.png)
+Again, when panning, the molecule will move in the direction the mouse is moved in.
 
+The **zoom level** can be increased and decreased using the **mouse scroll wheel**.
+
+## Pane options
+
+Reverse Direction of Zoom on Scroll
+: Toggle the direction that is zoomed when scrolled.
+
+  Note that the default behavior is determined by your operating system's settings.
