@@ -86,7 +86,16 @@ myst_substitutions = {
   "macurl": f"https://github.com/OpenChemistry/avogadrolibs/releases/download/{version}/Avogadro2-{version}-Darwin.dmg",
   "macarmurl": f"https://github.com/OpenChemistry/avogadrolibs/releases/download/{version}/Avogadro2-{version}-Darwin-arm64.dmg",
   "winurl": f"https://github.com/OpenChemistry/avogadrolibs/releases/download/{version}/Avogadro2-{version}-win64.exe",
-  "appurl": f"https://github.com/OpenChemistry/avogadrolibs/releases/download/{version}/Avogadro2-x86_64.AppImage"
+  "appurl": f"https://github.com/OpenChemistry/avogadrolibs/releases/download/{version}/Avogadro2-x86_64.AppImage",
+  "sourceurl": f"https://github.com/OpenChemistry/avogadrolibs/archive/refs/tags/{version}.zip",
+}
+
+myst_url_schemes = {
+    "http": None,
+    "https": None,
+    "release": f"https://github.com/OpenChemistry/avogadrolibs/releases/download/{version}/Avogadro2-{version}-" + "{{file}}",
+    "release-no-version": f"https://github.com/OpenChemistry/avogadrolibs/releases/download/{version}/Avogadro2-" + "{{file}}",
+    "source": f"https://github.com/OpenChemistry/avogadrolibs/archive/refs/tags/{version}" + "{{file}}",
 }
 
 # List of patterns, relative to source directory, that match files and
