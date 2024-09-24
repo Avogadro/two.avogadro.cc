@@ -65,15 +65,15 @@ If you wish to extend Avogadro the main base classes are:
 
 Many examples of each can be found in the `avogadro/qtplugins/` subdirectories.
 
-```{toctree}
+:::{toctree}
 ---
 caption: Develop
 maxdepth: 2
 hidden: true
 ---
-self
+Introduction <self>
 build
 scripts/index
 rpc
 classlist
-```
+:::

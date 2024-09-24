@@ -32,16 +32,17 @@ and Python scripts and utilities.
 - Help {doc}`translate<translate>` Avogadro into your language.
 - [Donate financially](https://opencollective.com/open-chemistry) to pay for server hosting, user meetings, and bug bounties.
 
-```{toctree}
+:::{toctree}
 ---
 caption: Contributing
 hidden: true
 ---
 
+Introduction <self>
 credits
 translate
 code
-```
+:::
 
 [avogadro forum]: https://discuss.avogadro.cc
 [github tracker]: https://github.com/OpenChemistry/avogadrolibs/issues
