@@ -1,4 +1,4 @@
-(install-build)=
+(develop-build)=
 
 # Building Source Code
 

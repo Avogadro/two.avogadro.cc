@@ -6,7 +6,7 @@ Most users will want to use the current official release ({{release}}).
 
 If you have problems using the current release or want to use the latest features, try out one of the **"nightly" builds** created every night from the current source code, which contains all improvements and bug fixes since the last release.
 
-We're open-source, so if you would like to compile Avogadro yourself from the code, you can -- see [Building Source Code](install-build) for more on how.
+We're open-source, so if you would like to compile Avogadro yourself from the code, you can -- see [Building Source Code](develop-build) for more on how.
 
 
 ::::::{grid}
@@ -249,6 +249,5 @@ hidden: true
 caption: Installation
 ---
 self
-build
 versions/index
 ```

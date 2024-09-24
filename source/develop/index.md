@@ -71,7 +71,8 @@ caption: Develop
 maxdepth: 2
 hidden: true
 ---
-
+self
+build
 scripts/index
 rpc
 classlist
