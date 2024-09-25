@@ -2,21 +2,145 @@
 
 # Building Source Code
 
-The Open Chemistry project uses Git for version control, and CMake to
-direct the build process. The [openchemistry
-repository](https://github.com/OpenChemistry/openchemistry) contains
-git submodules with other actively developed projects such as Avogadro and
-MoleQueue. It will also automatically download and build third party dependencies, with variables named USE_SYSTEM_LIBRARY to attempt to find and build against system versions.
+This guide has been updated to include detailed instructions for compiling Avogadro on each major operating system and has been verified to work for the 2.0 release on all of them.
 
-This page goes through the steps of building the Open Chemistry projects
-using the openchemistry git repository. It is entirely possible to build
-each project individually without using the "superbuild" approach, but
-you will need to ensure all dependencies are built and can be found by
-the project.
+However, Avogadro is a large project with many pieces, resulting in a somewhat complex build process that also varies from platform to platform.
+If you encounter difficulties you are encouraged to reach out on the [forum](https://discuss.avogadro.cc) for help.
 
-Once successfully built you will be left with several build
-directories which you can treat as normal build directories, developing
-and compiling from inside them largely ignoring the outer build tree.
+The Avogadro desktop application brings together several of the Open Chemistry subprojects (see [Project Structure](develop-structure)).
+The easiest way to build Avogadro is to use the [openchemistry
+repository](https://github.com/OpenChemistry/openchemistry) as a basis, as it will automatically download and build many of the dependencies (including third-party ones) for you.
+
+It is also entirely possible to build each project individually without using the "superbuild" approach, but you will need to ensure all dependencies are built and can be found by the project.
+
+For simplicity, this guide will focus on the first approach.
+
+:::{tip}
+Platform-specific instructions, guidance, and information is provided in expandable callouts marked by the respective icons {fab}`windows` {fab}`apple` {fab}`linux`.
+:::
+
+
+## System
+
+Only 64-bit operated systems are supported.
+
+The primary supported operating systems are those for which binaries are distributed:
+
+- Windows 10+ (`x64` only)
+- macOS (Intel and Apple Silicon)
+- Linux (`x64` only)
+
+Others may work, but this guide will not cover them.
+
+:::{admonition} Windows {fab}`windows`
+:class: dropdown
+Windows on ARM will be fully supported by Qt from around Qt 6.8 onwards, so it is likely that Avogadro will likewise support ARM once the port to Qt6 is complete.
+:::
+
+## Dependencies and prerequisites
+
+:::{admonition} Windows {fab}`windows`
+:class: dropdown
+All the software can of course be obtained by downloading from the respective websites, which are generally linked, and running an installer.
+
+Alternatively, much of it can these days be obtained from the Windows Package Manager using [`winget`](https://learn.microsoft.com/en-us/windows/package-manager/winget/).
+
+The third-party [winget.run](https://winget.run/) can be a helpful site to see whether a package is available in this way.
+:::
+
+:::{admonition} macOS {fab}`apple`
+:class: dropdown
+The [Homebrew](https://brew.sh/) package manager works well for getting development software on macOS.
+:::
+
+:::{admonition} Linux {fab}`linux`
+:class: dropdown
+On Linux, all of the necessary (non-Open-Chemistry) software is almost certainly available via your distribution's package manager.
+
+A notable exception to this is Open Babel, which as of the time of writing (September 2024) is generally only available from distro repos as version 3.3.1, whereas Avogadro requires a patched version incorporating many CJSON-related changes over the past few years.
+
+The easiest thing is just to let the build process automatically download and compile Open Babel for you (the default behavior).
+If you particularly wish to use Open Babel from your system, you will have to have compiled it from [source](https://github.com/openbabel/openbabel) yourself.
+:::
+
+### Development tools
+
+The Open Chemistry project uses [Git](https://git-scm.com/) for version control, and [CMake](cmake.org) to direct the build process, so the first step is to ensure that you have both of these installed and set up on your system.
+
+
+### Compiler
+
+Broadly, you will need a C/C++ compiler that supports C++17.
+
+:::{admonition} Windows {fab}`windows`
+:class: dropdown
+On Windows, [Visual Studio](https://visualstudio.microsoft.com/) is best supported, and it includes the MSVC compiler.
+:::
+
+:::{admonition} macOS {fab}`apple`
+:class: dropdown
+We recommend to use [Clang 17](https://clang.llvm.org/) on a Mac.
+:::
+
+:::{admonition} Linux {fab}`linux`
+:class: dropdown
+Both `gcc`/`g++` and `clang`/`clang++` generally work fine, as do both Unix Makefiles and Ninja for generating the Make files.
+
+If in doubt, stick to the combination of **gcc with Ninja**; this is what the automatic preparation of Avogadro binaries with GitHub actions uses, so if it is working successfully there, it should also work for you.
+:::
+
+
+### Python and Perl
+
+To compile Avogadro you will need to have both Python and Perl on your system.
+
+It is important that Python is in the PATH so that Avogadro can find it.
+
+:::{admonition} Windows {fab}`windows`
+:class: dropdown
+A Python interpreter can be downloaded and installed from [python.org](https://www.python.org/downloads/windows/).
+The option to add to the PATH is offered at install time, so make sure to check this.
+
+The best way to get Perl on Windows is the [Strawberry Perl](https://strawberryperl.com/) distribution.
+:::
+
+
+### Libraries
+
+#### Qt
+
+Avogadro is built using the open-source [Qt framework](https://www.qt.io/download-open-source).
+
+Avogadro is in the process of moving to Qt6, which will be hopefully complete by the release of Avogadro 2.0 – see [the forum tracking thread](https://discuss.avogadro.cc/t/qt6-tracking-thread/5592) for progress.
+For now though, you will probably need to obtain Qt5.
+
+:::{admonition} Windows {fab}`windows`
+:class: dropdown
+Be sure to make a note of the install directory of Qt (e.g. `C:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5`) as it will be of importance later.
+:::
+
+:::{admonition} Linux {fab}`linux`
+:class: dropdown
+Qt is large, so on Linux distributions it is often broken up into its modules.
+
+You should make sure the following Qt modules are installed:
+
+- `QtCore`
+- `QtWidgets`
+- `QtGui`
+- `QtOpenGL`
+- `QtConcurrent`
+- `QtNetwork`
+- `QtSvg`
+
+If building with Qt6, you will also need:
+
+- `QtOpenGLWidgets`
+- `QtCore5Compat`
+
+There are often separate `-devel` versions of each module as well, in which case, you will need those.
+:::
+
 
 (cloning-repositories)=
 

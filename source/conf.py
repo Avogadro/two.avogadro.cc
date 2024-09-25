@@ -50,6 +50,7 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinx_design',
     'sphinx_copybutton',
+    'sphinx_togglebutton',
     'breathe',
     'myst_parser',
 ]
