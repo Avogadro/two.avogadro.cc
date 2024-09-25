@@ -19,7 +19,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-# build the doxygen XML for breathe
+    # build the doxygen XML for breathe
     - name: Checkout openchemistry
       uses: actions/checkout@v4
       with:
@@ -38,9 +38,16 @@ jobs:
         sudo apt-get -qq update
         sudo apt-get -qq install doxygen ninja-build libeigen3-dev libglew-dev libxml2-dev qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools libqt5x11extras5-dev libqt5svg5-dev
 
+    - name: Install uv
+      uses: astral-sh/setup-uv@v2
+    
+    - name: "Set up Python"
+      uses: actions/setup-python@v5
+      with:
+        python-version-file: ".python-version"
+
     - name: Install Sphinx and requirements
-      run: |
-        pip install -U sphinx myst-parser breathe pydata-sphinx-theme sphinxext-rediraffe sphinx-design sphinx-copybutton linkify-it-py pygments
+      run: uv pip install --system --break-system-packages -r pyproject.toml
 
     - name: Configure
       run: |
