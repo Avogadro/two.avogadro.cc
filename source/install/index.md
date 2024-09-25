@@ -2,46 +2,246 @@
 
 # Install
 
-In addition to installing the latest release ({{release}}), there are nightly builds and anyone can build Avogadro from source code.
+Most users will want to use the current official release ({{release}}).
 
-:::{card}
+If you have problems using the current release or want to use the latest features, try out one of the **"nightly" builds** created every night from the current source code, which contains all improvements and bug fixes since the last release.
+
+We're open-source, so if you would like to compile Avogadro yourself from the code, you can -- see [Building Source Code](install-build) for more on how.
+
+
+::::::{grid}
+:gutter: 0
+
+% Title row
+::::{grid-item}
+:columns: 4 4 2 2
+% Empty
+::::
+
+
+::::{grid-item-card}
+:columns: 4 4 5 5
 :text-align: center
-:class-header: sd-font-weight-bold sd-bg-light
-{fab}`apple;fa-2x` MacOS
-^^^
-{{ '<a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-primary reference external" href="' + macurl + '"><span>Download DMG</span></a>'}}
-++++
-<a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-primary reference external" href="https://nightly.link/OpenChemistry/avogadrolibs/workflows/build_cmake/master/macOS.dmg.zip"><span>Download Nightly Build</span></a>
+:shadow: none
+:class-card: sd-font-weight-bold sd-bg-light sd-text-dark
+Current Release ({{release}})
+::::
+
+
+::::{grid-item-card}
+:columns: 4 4 5 5
+:text-align: center
+:shadow: none
+:class-card: sd-font-weight-bold sd-bg-light sd-text-dark
+Nightly Build
+::::
+
+
+% Mac row
+::::{grid-item-card}
+:columns: 4 4 2 2
+:text-align: center
+:shadow: none
+:class-card: sd-font-weight-bold sd-bg-light sd-text-dark
+{fab}`apple;fa-2x`
+
+macOS
+::::
+
+
+::::{grid-item-card}
+:columns: 4 4 5 5
+:text-align: center
+:shadow: none
+
+:::{button-link} https://github.com/OpenChemistry/avogadrolibs/releases/latest/download/Avogadro2-1.99.0-Darwin-arm64.dmg
+:ref-type: myst
+:color: primary
+:outline:
+Download DMG (Apple Silicon)
 :::
 
-:::{card}
+:::{button-link} https://github.com/OpenChemistry/avogadrolibs/releases/latest/download/Avogadro2-1.99.0-Darwin.dmg
+:color: primary
+:outline:
+Download DMG (Intel)
+:::
+::::
+
+
+::::{grid-item-card}
+:columns: 4 4 5 5
 :text-align: center
-:class-header: sd-font-weight-bold sd-bg-light
-{fab}`windows;fa-2x` Windows
-^^^
-{{ '<a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-primary reference external" href="' + winurl + '"><span>Download Installer</span></a>'}}
-++++
-<a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-primary reference external" href="https://nightly.link/OpenChemistry/avogadrolibs/workflows/build_cmake/master/Win64.exe.zip"><span>Download Nightly Build</span></a>
+:shadow: none
+
+:::{button-link} https://nightly.link/OpenChemistry/avogadrolibs/workflows/build_cmake/master/macOS.dmg.zip
+:color: secondary
+:outline:
+Download Nightly Build (Intel)
+:::
+::::
+
+
+% Windows row
+::::{grid-item-card}
+:columns: 4 4 2 2
+:text-align: center
+:shadow: none
+:class-card: sd-font-weight-bold sd-bg-light sd-text-dark
+{fab}`windows;fa-2x`
+
+Windows
+::::
+
+
+::::{grid-item-card}
+:columns: 4 4 5 5
+:text-align: center
+:shadow: none
+
+:::{button-link} https://github.com/OpenChemistry/avogadrolibs/releases/latest/download/Avogadro2-1.99.0-win64.exe
+:color: primary
+:outline:
+Download Installer
+:::
+::::
+
+
+::::{grid-item-card}
+:columns: 4 4 5 5
+:text-align: center
+:shadow: none
+
+:::{button-link} https://nightly.link/OpenChemistry/avogadrolibs/workflows/build_cmake/master/Win64.exe.zip
+:color: secondary
+:outline:
+Download Nightly Build
+:::
+::::
+
+
+% Linux row
+::::{grid-item-card}
+:columns: 4 4 2 2
+:text-align: center
+:shadow: none
+:class-card: sd-font-weight-bold sd-bg-light sd-text-dark
+{fab}`linux;fa-2x`
+
+Linux
+::::
+
+::::{grid-item-card}
+:columns: 4 4 5 5
+:text-align: center
+:shadow: none
+
+:::{button-link} https://github.com/OpenChemistry/avogadrolibs/releases/latest/download/Avogadro2-x86_64.AppImage
+:color: primary
+:outline:
+Download AppImage
 :::
 
-:::{card}
-:text-align: center
-:class-header: sd-font-weight-bold sd-bg-light
-{fab}`linux;fa-2x` Linux
-^^^
-{{ '<a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-primary reference external" href="' + appurl + '"><span>Download AppImage</span></a>'}} <a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-primary reference external" href="https://dl.flathub.org/repo/appstream/org.openchemistry.Avogadro2.flatpakref"><span>Download Flatpak</span></a>
-++++
-<a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-primary reference external" href="https://nightly.link/OpenChemistry/avogadrolibs/workflows/build_cmake/master/Avogadro2.AppImage.zip"><span>Download Nightly AppImage</span></a>
-<a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-primary reference external" href="build.html"><span>Build from source</span></a>
+:::{button-link} https://flathub.org/apps/org.openchemistry.Avogadro2
+:color: primary
+:outline:
+Download Flatpak
 :::
 
-:::{card} 
-:text-align: center
-:class-header: sd-font-weight-bold sd-bg-light sd-text-danger
-{fab}`freebsd;fa-2x` FreeBSD
-^^^
-<a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-primary reference external" href="https://www.freshports.org/science/avogadro2/"><span>`pkg install avogadro2`</span></a>
+:::{button-link} https://repology.org/project/avogadro2/versions
+:color: primary
+:outline:
+Check your distro's repositories
 :::
+::::
+
+
+::::{grid-item-card}
+:columns: 4 4 5 5
+:text-align: center
+:shadow: none
+
+:::{button-link} https://nightly.link/OpenChemistry/avogadrolibs/workflows/build_cmake/master/Avogadro2.AppImage.zip
+:color: secondary
+:outline:
+Nightly AppImage
+:::
+::::
+
+
+% BSD row
+::::{grid-item-card}
+:columns: 4 4 2 2
+:text-align: center
+:shadow: none
+:class-card: sd-font-weight-bold sd-bg-light sd-text-dark
+{fab}`freebsd;fa-2x`
+
+FreeBSD
+::::
+
+::::{grid-item-card}
+:columns: 4 4 5 5
+:text-align: center
+:shadow: none
+
+:::{button-link} https://www.freshports.org/science/avogadro2/
+:color: primary
+:outline:
+`pkg install avogadro2`
+:::
+::::
+
+::::{grid-item-card}
+:columns: 4 4 5 5
+:text-align: center
+:shadow: none
+% Empty
+::::
+
+
+% Source code row
+::::{grid-item-card}
+:columns: 4 4 2 2
+:text-align: center
+:shadow: none
+:class-card: sd-font-weight-bold sd-bg-light sd-text-dark
+{fas}`code;fa-2x`
+
+Source Code
+::::
+
+::::{grid-item-card}
+:columns: 4 4 5 5
+:text-align: center
+:shadow: none
+
+:::{button-link} https://github.com/OpenChemistry/avogadrolibs/releases/latest/
+:color: primary
+:outline:
+`avogadrolibs`
+:::
+:::{button-link} https://github.com/OpenChemistry/avogadroapp/releases/latest/
+:color: primary
+:outline:
+`avogadroapp`
+:::
+::::
+
+::::{grid-item-card}
+:columns: 4 4 5 5
+:text-align: center
+:shadow: none
+
+:::{button-link} https://github.com/OpenChemistry/avogadrolibs
+:color: secondary
+:outline:
+Avogadro on GitHub {fab}`github;fa-1x`
+:::
+::::
+
+::::::
+
 
 ```{toctree}
 ---
