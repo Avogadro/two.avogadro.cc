@@ -40,14 +40,17 @@ jobs:
 
     - name: Install uv
       uses: astral-sh/setup-uv@v2
-    
+      with:
+        enable-cache: true
+        cache-dependency-glob: "uv.lock"
+
     - name: "Set up Python"
       uses: actions/setup-python@v5
       with:
         python-version-file: ".python-version"
 
     - name: Install Sphinx and requirements
-      run: uv pip install --system --break-system-packages -r pyproject.toml
+      run: uv sync
 
     - name: Configure
       run: |
@@ -68,7 +71,7 @@ jobs:
     - name: Build Sphinx
       run: |
         cd source
-        sphinx-build -j auto -E . ../public
+        uv run sphinx-build -j auto -E . ../public
         cd ..
         git status
       shell: bash
