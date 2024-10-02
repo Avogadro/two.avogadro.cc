@@ -32,7 +32,7 @@ The primary supported operating systems are those for which binaries are distrib
 
 Others may work, but this guide will not cover them.
 
-:::{admonition} Windows {fab}`windows`
+:::{admonition} Windows on ARM {fab}`windows`
 :class: dropdown
 Windows on ARM will be fully supported by Qt from around Qt 6.8 onwards, so it is likely that Avogadro will likewise support ARM once the port to Qt6 is complete.
 :::
@@ -41,7 +41,7 @@ Windows on ARM will be fully supported by Qt from around Qt 6.8 onwards, so it i
 
 :::{admonition} Windows {fab}`windows`
 :class: dropdown
-All the software can of course be obtained by downloading from the respective websites, which are generally linked, and running an installer.
+All the software listed here can of course be obtained in the traditional way by downloading from the respective websites, which are generally linked, and running an installer.
 
 Alternatively, much of it can these days be obtained from the Windows Package Manager using [`winget`](https://learn.microsoft.com/en-us/windows/package-manager/winget/).
 
@@ -116,14 +116,19 @@ For now though, you will probably need to obtain Qt5.
 
 :::{admonition} Windows {fab}`windows`
 :class: dropdown
+On Windows you should download and install Qt from the Qt website.
+
 Be sure to make a note of the install directory of Qt (e.g. `C:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5`) as it will be of importance later.
 :::
 
 :::{admonition} Linux {fab}`linux`
 :class: dropdown
-Qt is large, so on Linux distributions it is often broken up into its modules.
+Qt is widely used in the open-source community, including as the base for the KDE Plasma desktop environment, so it is generally either already installed (though not necessarily including the development libraries that you need) or easily available from package managers.
 
-You should make sure the following Qt modules are installed:
+Qt is large, so on Linux distributions it is often broken up into its modules.
+Unfortunately, the names of the packages for the modules varies from distro to distro, such that it is hard to say exactly which packages you should install.
+
+You should however make sure the following Qt modules are installed:
 
 - `QtCore`
 - `QtWidgets`
@@ -138,7 +143,51 @@ If building with Qt6, you will also need:
 - `QtOpenGLWidgets`
 - `QtCore5Compat`
 
-There are often separate `-devel` versions of each module as well, in which case, you will need those.
+There are often separate `-devel` versions of each module as well, in which case, you will also need those.
+:::
+
+:::{admonition} Debian/Ubuntu-based distributions {fab}`linux`
+:class: dropdown 
+
+You can install prerequisites with the following commands:
+
+```bash
+apt-get update && \
+ apt-get install -y cmake curl build-essential qtbase5-dev qtdeclarative5-dev zlib1g-dev libxml2-dev git libqt5svg5-dev libqt5gui5 libqt5concurrent5 rapidjson && \
+```
+If you need a newer cmake version (replace aarch64 with your architecture or go to [CMake Releases](https://github.com/Kitware/CMake/releases/latest/))
+```bash
+apt-get purge cmake && \
+ curl -L -v -o /tmp/bin https://github.com/Kitware/CMake/releases/download/v3.26.5/cmake-3.26.5-linux-aarch64.sh && \
+ chmod +x /tmp/bin && \
+ cd /usr && \
+ /tmp/bin
+```
+:::
+
+:::{admonition} openSUSE Tumbleweed {fab}`linux`
+:class: dropdown
+
+Many of the following may already be installed on your system.
+
+```bash
+sudo zypper refresh
+sudo zypper install libqt5-qtbase libqt5-qtbase-devel libqt5-qtbase-common-devel glew-devel libOpenGL Spglib libarchive libxml2 glu readline xz libeigen3 libboost
+```
+
+The `libqt5-qtbase*` patterns should include all the Qt dependencies you need, but it is worth checking that all the modules are installed still using:
+
+```bash
+sudo zypper search libQt5
+```
+:::
+
+:::{admonition} Fedora {fab}`linux`
+:class: dropdown
+
+```bash
+sudo dnf update
+sudo dnf install -y cmake gcc gcc-g++ qt5-qtbase-devel zlib-devel libxml2-devel git curl qt5-qtsvg-devel kernel-devel glew-devel
 :::
 
 
@@ -187,28 +236,7 @@ a guide you will need:
 - CMake
 - Python
 
-### Debian-based Distribution or Ubuntu
 
-You can install prerequisites with the following commands:
-
-```bash
-apt-get update && \
- apt-get install -y cmake curl build-essential qtbase5-dev qtdeclarative5-dev zlib1g-dev libxml2-dev git libqt5svg5-dev libqt5gui5 libqt5concurrent5 rapidjson && \
-```
-If you need a newer cmake version (replace aarch64 with your architecture or go to [CMake Releases](https://github.com/Kitware/CMake/releases/latest/))
-```bash
-apt-get purge cmake && \
- curl -L -v -o /tmp/bin https://github.com/Kitware/CMake/releases/download/v3.26.5/cmake-3.26.5-linux-aarch64.sh && \
- chmod +x /tmp/bin && \
- cd /usr && \
- /tmp/bin
-```
-
-### Fedora 39
-
-```bash
-sudo dnf update
-sudo dnf install -y cmake gcc gcc-g++ qt5-qtbase-devel zlib-devel libxml2-devel git curl qt5-qtsvg-devel kernel-devel glew-devel
 ```
 
 ## Building
