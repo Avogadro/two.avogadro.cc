@@ -64,12 +64,13 @@ Beyond published articles, we include a variety of activities contributed by the
 
 * Investigate the pH-dependent protonation of amino acids.
 
-```{toctree}
+:::{toctree}
 ---
 caption: Teach
 hidden: true
 ---
 
+Introduction <self>
 articles
 diaxial_interactions
 acid_base
@@ -81,7 +82,7 @@ hydrogen_molecule
 markovnikovs_rule
 organic_hybridization
 water
-```
+:::
 
 [avogadro forum]: https://discuss.avogadro.cc
 [github tracker]: https://github.com/OpenChemistry/avogadrolibs/issues

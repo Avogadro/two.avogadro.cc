@@ -8,7 +8,19 @@ The code is intended to be modular and extensible, so in many cases
 you can add features without needing to understand the entire C++
 codebase.
 
-## Script Plugins
+## Working on the Avogadro codebase
+
+Do you want to fix a bug in Avogadro, or integrate a new feature directly into the main code?
+
+In order to start contributing code, you will need to first familiarize yourself with the [structure of the project](develop-structure) and make sure you can successfully [build Avogadro](develop-build).
+See the respective pages for guides on this.
+
+Avogadro welcomes pull requests via GitHub.
+For guidance on how the project is managed, the coding style, and how to go about contributing in a constructive manner, see [Contribute](contrib).
+
+## Interfacing to and extending Avogadro
+
+### Script plugins
 
 Many features in Avogadro can be extended with Python scripts, including:
 
@@ -22,7 +34,7 @@ These scripts can be installed by drag-and-drop into the main Avogadro window or
 
 For more details, see the [script plugin](develop-scripts) documentation.
 
-## External Scripting
+### External scripting
 
 Avogadro supports sending messages from external scripts, through
 remote procedure call (RPC) JSON. This can be very helpful for rendering
@@ -30,12 +42,12 @@ images of molecules, generating orbitals, etc.
 
 For more details, see the [RPC](develop-rpc) documentation.
 
-## Libraries
+### Libraries
 
 The Avogadro libraries are developed to support the Avogadro2 application, and
 provide liberally BSD-licensed, open-source reusable components for both C++ and Python. At its core it is a platform for developing molecular visualization, editing and interactive simulation applications. This is achieved using a collection of libraries, along with a plugin interface allowing the platform to be easily extended and used in a variety of environments.
 
-## Main Classes
+#### Main classes
 
 The Avogadro libraries are implemented as a set of libraries, where all classes
 are implemented in the Avogadro `namespace`, and each library uses a namespace
@@ -65,14 +77,16 @@ If you wish to extend Avogadro the main base classes are:
 
 Many examples of each can be found in the `avogadro/qtplugins/` subdirectories.
 
-```{toctree}
+:::{toctree}
 ---
 caption: Develop
 maxdepth: 2
 hidden: true
 ---
-
+Introduction <self>
+structure
+build
 scripts/index
 rpc
 classlist
-```
+:::
