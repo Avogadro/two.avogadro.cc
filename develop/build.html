@@ -30,6 +30,7 @@
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=ee427ece" />
   
@@ -39,17 +40,23 @@
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../_static/documentation_options.js?v=c288451a"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'install/build';</script>
-    <link rel="canonical" href="https://two.avogadro.cc/install/build.html" />
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'develop/build';</script>
+    <link rel="canonical" href="https://two.avogadro.cc/develop/build.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Version History" href="versions/index.html" />
-    <link rel="prev" title="Install" href="index.html" />
+    <link rel="next" title="Script Plugins" href="scripts/index.html" />
+    <link rel="prev" title="Project Structure" href="structure.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -147,8 +154,8 @@
 <nav>
   <ul class="bd-navbar-elements navbar-nav">
     
-<li class="nav-item current active">
-  <a class="nav-link nav-internal" href="index.html">
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../install/index.html">
     Install
   </a>
 </li>
@@ -161,8 +168,8 @@
 </li>
 
 
-<li class="nav-item ">
-  <a class="nav-link nav-internal" href="../develop/index.html">
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
     Develop
   </a>
 </li>
@@ -312,8 +319,8 @@ document.write(`
 <nav>
   <ul class="bd-navbar-elements navbar-nav">
     
-<li class="nav-item current active">
-  <a class="nav-link nav-internal" href="index.html">
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../install/index.html">
     Install
   </a>
 </li>
@@ -326,8 +333,8 @@ document.write(`
 </li>
 
 
-<li class="nav-item ">
-  <a class="nav-link nav-internal" href="../develop/index.html">
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
     Develop
   </a>
 </li>
@@ -424,11 +431,14 @@ document.write(`
 <nav class="bd-docs-nav bd-links"
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
-  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Installation</span></p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Develop</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="index.html">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structure.html">Project Structure</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Building Source Code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="versions/index.html">Version History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripts/index.html">Script Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rpc.html">Avogadro Remote Procedure Call (RPC)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classlist.html">Class List</a></li>
 </ul>
 </div>
 </nav></div>
@@ -467,7 +477,7 @@ document.write(`
       </a>
     </li>
     
-    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Install</a></li>
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Develop</a></li>
     
     <li class="breadcrumb-item active" aria-current="page">Building Source Code</li>
   </ul>
@@ -487,20 +497,157 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="building-source-code">
-<span id="install-build"></span><h1>Building Source Code<a class="headerlink" href="#building-source-code" title="Link to this heading">#</a></h1>
-<p>The Open Chemistry project uses Git for version control, and CMake to
-direct the build process. The <a class="reference external" href="https://github.com/OpenChemistry/openchemistry">openchemistry
-repository</a> contains
-git submodules with other actively developed projects such as Avogadro and
-MoleQueue. It will also automatically download and build third party dependencies, with variables named USE_SYSTEM_LIBRARY to attempt to find and build against system versions.</p>
-<p>This page goes through the steps of building the Open Chemistry projects
-using the openchemistry git repository. It is entirely possible to build
-each project individually without using the “superbuild” approach, but
-you will need to ensure all dependencies are built and can be found by
-the project.</p>
-<p>Once successfully built you will be left with several build
-directories which you can treat as normal build directories, developing
-and compiling from inside them largely ignoring the outer build tree.</p>
+<span id="develop-build"></span><h1>Building Source Code<a class="headerlink" href="#building-source-code" title="Link to this heading">#</a></h1>
+<p>This guide has been updated to include detailed instructions for compiling Avogadro on each major operating system and has been verified to work for the 2.0 release on all of them.</p>
+<p>However, Avogadro is a large project with many pieces, resulting in a somewhat complex build process that also varies from platform to platform.
+If you encounter difficulties you are encouraged to reach out on the <a class="reference external" href="https://discuss.avogadro.cc">forum</a> for help.</p>
+<p>The Avogadro desktop application brings together several of the Open Chemistry subprojects (see <a class="reference internal" href="structure.html#develop-structure"><span class="std std-ref">Project Structure</span></a>).
+The easiest way to build Avogadro is to use the <a class="reference external" href="https://github.com/OpenChemistry/openchemistry">openchemistry
+repository</a> as a basis, as it will automatically download and build many of the dependencies (including third-party ones) for you.</p>
+<p>It is also entirely possible to build each project individually without using the “superbuild” approach, but you will need to ensure all dependencies are built and can be found by the project.</p>
+<p>For simplicity, this guide will focus on the first approach.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Platform-specific instructions, guidance, and information is provided in expandable callouts marked by the respective icons <span class="fab fa-windows"></span> <span class="fab fa-apple"></span> <span class="fab fa-linux"></span>.</p>
+</div>
+<section id="system">
+<h2>System<a class="headerlink" href="#system" title="Link to this heading">#</a></h2>
+<p>Only 64-bit operated systems are supported.</p>
+<p>The primary supported operating systems are those for which binaries are distributed:</p>
+<ul class="simple">
+<li><p>Windows 10+ (<code class="docutils literal notranslate"><span class="pre">x64</span></code> only)</p></li>
+<li><p>macOS (Intel and Apple Silicon)</p></li>
+<li><p>Linux (<code class="docutils literal notranslate"><span class="pre">x64</span></code> only)</p></li>
+</ul>
+<p>Others may work, but this guide will not cover them.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Windows on ARM <span class="fab fa-windows"></span></p>
+<p>Windows on ARM will be fully supported by Qt from around Qt 6.8 onwards, so it is likely that Avogadro will likewise support ARM once the port to Qt6 is complete.</p>
+</div>
+</section>
+<section id="dependencies-and-prerequisites">
+<h2>Dependencies and prerequisites<a class="headerlink" href="#dependencies-and-prerequisites" title="Link to this heading">#</a></h2>
+<div class="dropdown admonition">
+<p class="admonition-title">Windows <span class="fab fa-windows"></span></p>
+<p>All the software listed here can of course be obtained in the traditional way by downloading from the respective websites, which are generally linked, and running an installer.</p>
+<p>Alternatively, much of it can these days be obtained from the Windows Package Manager using <a class="reference external" href="https://learn.microsoft.com/en-us/windows/package-manager/winget/"><code class="docutils literal notranslate"><span class="pre">winget</span></code></a>.</p>
+<p>The third-party <a class="reference external" href="https://winget.run/">winget.run</a> can be a helpful site to see whether a package is available in this way.</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">macOS <span class="fab fa-apple"></span></p>
+<p>The <a class="reference external" href="https://brew.sh/">Homebrew</a> package manager works well for getting development software on macOS.</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Linux <span class="fab fa-linux"></span></p>
+<p>On Linux, all of the necessary (non-Open-Chemistry) software is almost certainly available via your distribution’s package manager.</p>
+<p>A notable exception to this is Open Babel, which as of the time of writing (September 2024) is generally only available from distro repos as version 3.3.1, whereas Avogadro requires a patched version incorporating many CJSON-related changes over the past few years.</p>
+<p>The easiest thing is just to let the build process automatically download and compile Open Babel for you (the default behavior).
+If you particularly wish to use Open Babel from your system, you will have to have compiled it from <a class="reference external" href="https://github.com/openbabel/openbabel">source</a> yourself.</p>
+</div>
+<section id="development-tools">
+<h3>Development tools<a class="headerlink" href="#development-tools" title="Link to this heading">#</a></h3>
+<p>The Open Chemistry project uses <a class="reference external" href="https://git-scm.com/">Git</a> for version control, and <a class="reference internal" href="#cmake.org"><span class="xref myst">CMake</span></a> to direct the build process, so the first step is to ensure that you have both of these installed and set up on your system.</p>
+</section>
+<section id="compiler">
+<h3>Compiler<a class="headerlink" href="#compiler" title="Link to this heading">#</a></h3>
+<p>Broadly, you will need a C/C++ compiler that supports C++17.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Windows <span class="fab fa-windows"></span></p>
+<p>On Windows, <a class="reference external" href="https://visualstudio.microsoft.com/">Visual Studio</a> is best supported, and it includes the MSVC compiler.</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">macOS <span class="fab fa-apple"></span></p>
+<p>We recommend to use <a class="reference external" href="https://clang.llvm.org/">Clang 17</a> on a Mac.</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Linux <span class="fab fa-linux"></span></p>
+<p>Both <code class="docutils literal notranslate"><span class="pre">gcc</span></code>/<code class="docutils literal notranslate"><span class="pre">g++</span></code> and <code class="docutils literal notranslate"><span class="pre">clang</span></code>/<code class="docutils literal notranslate"><span class="pre">clang++</span></code> generally work fine, as do both Unix Makefiles and Ninja for generating the Make files.</p>
+<p>If in doubt, stick to the combination of <strong>gcc with Ninja</strong>; this is what the automatic preparation of Avogadro binaries with GitHub actions uses, so if it is working successfully there, it should also work for you.</p>
+</div>
+</section>
+<section id="python-and-perl">
+<h3>Python and Perl<a class="headerlink" href="#python-and-perl" title="Link to this heading">#</a></h3>
+<p>To compile Avogadro you will need to have both Python and Perl on your system.</p>
+<p>It is important that Python is in the PATH so that Avogadro can find it.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Windows <span class="fab fa-windows"></span></p>
+<p>A Python interpreter can be downloaded and installed from <a class="reference external" href="https://www.python.org/downloads/windows/">python.org</a>.
+The option to add to the PATH is offered at install time, so make sure to check this.</p>
+<p>The best way to get Perl on Windows is the <a class="reference external" href="https://strawberryperl.com/">Strawberry Perl</a> distribution.</p>
+</div>
+</section>
+<section id="libraries">
+<h3>Libraries<a class="headerlink" href="#libraries" title="Link to this heading">#</a></h3>
+<section id="qt">
+<h4>Qt<a class="headerlink" href="#qt" title="Link to this heading">#</a></h4>
+<p>Avogadro is built using the open-source <a class="reference external" href="https://www.qt.io/download-open-source">Qt framework</a>.</p>
+<p>Avogadro is in the process of moving to Qt6, which will be hopefully complete by the release of Avogadro 2.0 – see <a class="reference external" href="https://discuss.avogadro.cc/t/qt6-tracking-thread/5592">the forum tracking thread</a> for progress.
+For now though, you will probably need to obtain Qt5.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Windows <span class="fab fa-windows"></span></p>
+<p>On Windows you should download and install Qt from the Qt website.</p>
+<p>Be sure to make a note of the install directory of Qt (e.g. <code class="docutils literal notranslate"><span class="pre">C:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5</span></code>) as it will be of importance later.</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Linux <span class="fab fa-linux"></span></p>
+<p>Qt is widely used in the open-source community, including as the base for the KDE Plasma desktop environment, so it is generally either already installed (though not necessarily including the development libraries that you need) or easily available from package managers.</p>
+<p>Qt is large, so on Linux distributions it is often broken up into its modules.
+Unfortunately, the names of the packages for the modules varies from distro to distro, such that it is hard to say exactly which packages you should install.</p>
+<p>You should however make sure the following Qt modules are installed:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">QtCore</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">QtWidgets</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">QtGui</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">QtOpenGL</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">QtConcurrent</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">QtNetwork</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">QtSvg</span></code></p></li>
+</ul>
+<p>If building with Qt6, you will also need:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">QtOpenGLWidgets</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">QtCore5Compat</span></code></p></li>
+</ul>
+<p>There are often separate <code class="docutils literal notranslate"><span class="pre">-devel</span></code> versions of each module as well, in which case, you will also need those.</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Debian/Ubuntu-based distributions <span class="fab fa-linux"></span></p>
+<p>You can install prerequisites with the following commands:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>apt-get<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>cmake<span class="w"> </span>curl<span class="w"> </span>build-essential<span class="w"> </span>qtbase5-dev<span class="w"> </span>qtdeclarative5-dev<span class="w"> </span>zlib1g-dev<span class="w"> </span>libxml2-dev<span class="w"> </span>git<span class="w"> </span>libqt5svg5-dev<span class="w"> </span>libqt5gui5<span class="w"> </span>libqt5concurrent5<span class="w"> </span>rapidjson<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+</pre></div>
+</div>
+<p>If you need a newer cmake version (replace aarch64 with your architecture or go to <a class="reference external" href="https://github.com/Kitware/CMake/releases/latest/">CMake Releases</a>)</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>apt-get<span class="w"> </span>purge<span class="w"> </span>cmake<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<span class="w"> </span>curl<span class="w"> </span>-L<span class="w"> </span>-v<span class="w"> </span>-o<span class="w"> </span>/tmp/bin<span class="w"> </span>https://github.com/Kitware/CMake/releases/download/v3.26.5/cmake-3.26.5-linux-aarch64.sh<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>/tmp/bin<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/usr<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<span class="w"> </span>/tmp/bin
+</pre></div>
+</div>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">openSUSE Tumbleweed <span class="fab fa-linux"></span></p>
+<p>Many of the following may already be installed on your system.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>zypper<span class="w"> </span>refresh
+sudo<span class="w"> </span>zypper<span class="w"> </span>install<span class="w"> </span>libqt5-qtbase<span class="w"> </span>libqt5-qtbase-devel<span class="w"> </span>libqt5-qtbase-common-devel<span class="w"> </span>glew-devel<span class="w"> </span>libOpenGL<span class="w"> </span>Spglib<span class="w"> </span>libarchive<span class="w"> </span>libxml2<span class="w"> </span>glu<span class="w"> </span>readline<span class="w"> </span>xz<span class="w"> </span>libeigen3<span class="w"> </span>libboost
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">libqt5-qtbase*</span></code> patterns should include all the Qt dependencies you need, but it is worth checking that all the modules are installed still using:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>zypper<span class="w"> </span>search<span class="w"> </span>libQt5
+</pre></div>
+</div>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Fedora <span class="fab fa-linux"></span></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>dnf<span class="w"> </span>update
+sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>cmake<span class="w"> </span>gcc<span class="w"> </span>gcc-g++<span class="w"> </span>qt5-qtbase-devel<span class="w"> </span>zlib-devel<span class="w"> </span>libxml2-devel<span class="w"> </span>git<span class="w"> </span>curl<span class="w"> </span>qt5-qtsvg-devel<span class="w"> </span>kernel-devel<span class="w"> </span>glew-devel
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+</section>
 <section id="cloning-repositories">
 <span id="id1"></span><h2>Cloning Repositories<a class="headerlink" href="#cloning-repositories" title="Link to this heading">#</a></h2>
 <p>To clone the Open Chemistry repository that
@@ -539,39 +686,18 @@ a guide you will need:</p>
 <li><p>CMake</p></li>
 <li><p>Python</p></li>
 </ul>
-<section id="debian-based-distribution-or-ubuntu">
-<h3>Debian-based Distribution or Ubuntu<a class="headerlink" href="#debian-based-distribution-or-ubuntu" title="Link to this heading">#</a></h3>
-<p>You can install prerequisites with the following commands:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>apt-get<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
-<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>cmake<span class="w"> </span>curl<span class="w"> </span>build-essential<span class="w"> </span>qtbase5-dev<span class="w"> </span>qtdeclarative5-dev<span class="w"> </span>zlib1g-dev<span class="w"> </span>libxml2-dev<span class="w"> </span>git<span class="w"> </span>libqt5svg5-dev<span class="w"> </span>libqt5gui5<span class="w"> </span>libqt5concurrent5<span class="w"> </span>rapidjson<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
-</pre></div>
-</div>
-<p>If you need a newer cmake version (replace aarch64 with your architecture or go to <a class="reference external" href="https://github.com/Kitware/CMake/releases/latest/">CMake Releases</a>)</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>apt-get<span class="w"> </span>purge<span class="w"> </span>cmake<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
-<span class="w"> </span>curl<span class="w"> </span>-L<span class="w"> </span>-v<span class="w"> </span>-o<span class="w"> </span>/tmp/bin<span class="w"> </span>https://github.com/Kitware/CMake/releases/download/v3.26.5/cmake-3.26.5-linux-aarch64.sh<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
-<span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>/tmp/bin<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
-<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/usr<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
-<span class="w"> </span>/tmp/bin
-</pre></div>
-</div>
-</section>
-<section id="fedora-39">
-<h3>Fedora 39<a class="headerlink" href="#fedora-39" title="Link to this heading">#</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>dnf<span class="w"> </span>update
-sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>cmake<span class="w"> </span>gcc<span class="w"> </span>gcc-g++<span class="w"> </span>qt5-qtbase-devel<span class="w"> </span>zlib-devel<span class="w"> </span>libxml2-devel<span class="w"> </span>git<span class="w"> </span>curl<span class="w"> </span>qt5-qtsvg-devel<span class="w"> </span>kernel-devel<span class="w"> </span>glew-devel
-</pre></div>
-</div>
-</section>
-</section>
-<section id="building">
-<h2>Building<a class="headerlink" href="#building" title="Link to this heading">#</a></h2>
-<p>It is recommended that you create a build tree outside of the source
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+## Building
+
+It is recommended that you create a build tree outside of the source
 tree. Assuming you are in the directory where you cloned the repository
-the following commands will create a build tree, configure it and build.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>openchemistry-build
-<span class="nb">cd</span><span class="w"> </span>openchemistry-build
-cmake<span class="w"> </span>../openchemistry
-cmake<span class="w"> </span>--build<span class="w"> </span>.<span class="w"> </span>--config<span class="w"> </span>Release
+the following commands will create a build tree, configure it and build.
+
+```shell
+mkdir openchemistry-build
+cd openchemistry-build
+cmake ../openchemistry
+cmake --build . --config Release
 </pre></div>
 </div>
 <p>You may wish to run cmake-gui in the build directory once it has been
@@ -666,20 +792,20 @@ installer will be created in the build directory.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="index.html"
+       href="structure.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Install</p>
+        <p class="prev-next-title">Project Structure</p>
       </div>
     </a>
     <a class="right-next"
-       href="versions/index.html"
+       href="scripts/index.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Version History</p>
+        <p class="prev-next-title">Script Plugins</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -701,14 +827,20 @@ installer will be created in the build directory.</p>
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#system">System</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dependencies-and-prerequisites">Dependencies and prerequisites</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#development-tools">Development tools</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compiler">Compiler</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-and-perl">Python and Perl</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#libraries">Libraries</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#qt">Qt</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cloning-repositories">Cloning Repositories</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#updating">Updating</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#debian-based-distribution-or-ubuntu">Debian-based Distribution or Ubuntu</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fedora-39">Fedora 39</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building">Building</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-qt-windows-generators">Finding Qt, Windows Generators</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normal-development">Normal Development</a></li>
 </ul>
@@ -725,7 +857,7 @@ installer will be created in the build directory.</p>
 
   
   <div class="tocsection editthispage">
-    <a href="https://github.com/avogadro/two.avogadro.cc/edit/main/source/install/build.md">
+    <a href="https://github.com/avogadro/two.avogadro.cc/edit/main/source/develop/build.md">
       <i class="fa-solid fa-pencil"></i>
       
       
@@ -771,7 +903,7 @@ installer will be created in the build directory.</p>
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.0.2.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
     <br/>
   </p>
 </div>

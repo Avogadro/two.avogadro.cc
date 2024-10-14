@@ -30,6 +30,7 @@
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=ee427ece" />
   
@@ -39,16 +40,22 @@
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../_static/documentation_options.js?v=c288451a"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'develop/index';</script>
     <link rel="canonical" href="https://two.avogadro.cc/develop/index.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Script Plugins" href="scripts/index.html" />
+    <link rel="next" title="Project Structure" href="structure.html" />
     <link rel="prev" title="Using QTAIM (Atoms in Molecules) Analysis" href="../docs/tutorials/using-qtaim-and-wfn.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -425,7 +432,10 @@ document.write(`
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Develop</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structure.html">Project Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="build.html">Building Source Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scripts/index.html">Script Plugins</a></li>
 <li class="toctree-l1"><a class="reference internal" href="rpc.html">Avogadro Remote Procedure Call (RPC)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="classlist.html">Class List</a></li>
@@ -489,8 +499,18 @@ document.write(`
 <p>The code is intended to be modular and extensible, so in many cases
 you can add features without needing to understand the entire C++
 codebase.</p>
+<section id="working-on-the-avogadro-codebase">
+<h2>Working on the Avogadro codebase<a class="headerlink" href="#working-on-the-avogadro-codebase" title="Link to this heading">#</a></h2>
+<p>Do you want to fix a bug in Avogadro, or integrate a new feature directly into the main code?</p>
+<p>In order to start contributing code, you will need to first familiarize yourself with the <a class="reference internal" href="structure.html#develop-structure"><span class="std std-ref">structure of the project</span></a> and make sure you can successfully <a class="reference internal" href="build.html#develop-build"><span class="std std-ref">build Avogadro</span></a>.
+See the respective pages for guides on this.</p>
+<p>Avogadro welcomes pull requests via GitHub.
+For guidance on how the project is managed, the coding style, and how to go about contributing in a constructive manner, see <a class="reference internal" href="../contrib/index.html#contrib"><span class="std std-ref">Contribute</span></a>.</p>
+</section>
+<section id="interfacing-to-and-extending-avogadro">
+<h2>Interfacing to and extending Avogadro<a class="headerlink" href="#interfacing-to-and-extending-avogadro" title="Link to this heading">#</a></h2>
 <section id="script-plugins">
-<h2>Script Plugins<a class="headerlink" href="#script-plugins" title="Link to this heading">#</a></h2>
+<h3>Script plugins<a class="headerlink" href="#script-plugins" title="Link to this heading">#</a></h3>
 <p>Many features in Avogadro can be extended with Python scripts, including:</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripts/commands.html"><span class="doc std std-doc">menu commands</span></a></p></li>
@@ -503,19 +523,18 @@ codebase.</p>
 <p>For more details, see the <a class="reference internal" href="scripts/index.html#develop-scripts"><span class="std std-ref">script plugin</span></a> documentation.</p>
 </section>
 <section id="external-scripting">
-<h2>External Scripting<a class="headerlink" href="#external-scripting" title="Link to this heading">#</a></h2>
+<h3>External scripting<a class="headerlink" href="#external-scripting" title="Link to this heading">#</a></h3>
 <p>Avogadro supports sending messages from external scripts, through
 remote procedure call (RPC) JSON. This can be very helpful for rendering
 images of molecules, generating orbitals, etc.</p>
 <p>For more details, see the <a class="reference internal" href="rpc.html#develop-rpc"><span class="std std-ref">RPC</span></a> documentation.</p>
 </section>
 <section id="libraries">
-<h2>Libraries<a class="headerlink" href="#libraries" title="Link to this heading">#</a></h2>
+<h3>Libraries<a class="headerlink" href="#libraries" title="Link to this heading">#</a></h3>
 <p>The Avogadro libraries are developed to support the Avogadro2 application, and
 provide liberally BSD-licensed, open-source reusable components for both C++ and Python. At its core it is a platform for developing molecular visualization, editing and interactive simulation applications. This is achieved using a collection of libraries, along with a plugin interface allowing the platform to be easily extended and used in a variety of environments.</p>
-</section>
 <section id="main-classes">
-<h2>Main Classes<a class="headerlink" href="#main-classes" title="Link to this heading">#</a></h2>
+<h4>Main classes<a class="headerlink" href="#main-classes" title="Link to this heading">#</a></h4>
 <p>The Avogadro libraries are implemented as a set of libraries, where all classes
 are implemented in the Avogadro <code class="docutils literal notranslate"><span class="pre">namespace</span></code>, and each library uses a namespace
 to distinguish members of that library. Include directories are also divided
@@ -556,6 +575,8 @@ useful to get acquainted with are:</p>
 </div>
 </section>
 </section>
+</section>
+</section>
 
 
                 </article>
@@ -577,11 +598,11 @@ useful to get acquainted with are:</p>
       </div>
     </a>
     <a class="right-next"
-       href="scripts/index.html"
+       href="structure.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Script Plugins</p>
+        <p class="prev-next-title">Project Structure</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -603,10 +624,16 @@ useful to get acquainted with are:</p>
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#script-plugins">Script Plugins</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#external-scripting">External Scripting</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#libraries">Libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#main-classes">Main Classes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-on-the-avogadro-codebase">Working on the Avogadro codebase</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interfacing-to-and-extending-avogadro">Interfacing to and extending Avogadro</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#script-plugins">Script plugins</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#external-scripting">External scripting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#libraries">Libraries</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#main-classes">Main classes</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
@@ -660,7 +687,7 @@ useful to get acquainted with are:</p>
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.0.2.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
     <br/>
   </p>
 </div>
