@@ -79,8 +79,6 @@ Download DMG (Intel)
 :outline:
 Download Nightly Build (Apple Silicon)
 :::
-::::
-
 
 :::{button-link} https://nightly.link/OpenChemistry/avogadrolibs/workflows/build_cmake/master/macOS.dmg.zip
 :color: secondary
