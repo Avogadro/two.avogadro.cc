@@ -502,9 +502,25 @@ document.write(`
 <h2>What is Open Chemistry?<a class="headerlink" href="#what-is-open-chemistry" title="Link to this heading">#</a></h2>
 <p><a class="reference external" href="https://www.openchemistry.org/">Open Chemistry</a> is an umbrella for the development of several open-source chemical tools.
 Avogadro is its primary subproject, but it also oversees the <a class="reference external" href="https://github.com/OpenChemistry/chemicaljson">Chemical JSON</a> file format as well as <a class="reference external" href="https://github.com/orgs/OpenChemistry/repositories">a bunch of other cool stuff</a>.</p>
-<p>The Avogadro desktop application is made up primarily of the <code class="docutils literal notranslate"><span class="pre">avogadrolibs</span></code> module, which does all the behind-the-scenes work, and the <code class="docutils literal notranslate"><span class="pre">avogadroapp</span></code> module, which provides a GUI on top.
-In practice,</p>
-<p>relies on various other Open Chemistry modules to function.</p>
+<p>The Avogadro desktop application is made up primarily of the <code class="docutils literal notranslate"><span class="pre">avogadrolibs</span></code> module, which does all the behind-the-scenes work, and the <code class="docutils literal notranslate"><span class="pre">avogadroapp</span></code> which provides a GUI on top. This split allows functions from <code class="docutils literal notranslate"><span class="pre">avogadrolibs</span></code> to be available in Python modules, for example to read chemistry files, generate molecular orbital surfaces.</p>
+<p>In practice, most functionality and features are provided by <code class="docutils literal notranslate"><span class="pre">[avogadrolibs](https://github.com/OpenChemistry/avogadrolibs)</span></code> and particularly by various plugin classes.</p>
+<p>The main project uses various other Open Chemistry modules to function.
+<a class="reference external" href="https://github.com/OpenChemistry/">avogadro-i18n</a></p>
+<dl class="myst field-list simple">
+<dt class="field-odd"> Language translations and localization handled through [Weblate](https<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="//hosted.weblate.org/engage/avogadro/">//hosted.weblate.org/engage/avogadro/</a>)</p>
+</dd>
+</dl>
+<dl class="simple myst">
+<dt><a class="reference external" href="https://github.com/OpenChemistry/">avogenerators</a></dt><dd><p>Scripts providing input generator dialogs for various computational packages such as Gaussian, Orca, etc.</p>
+</dd>
+<dt><a class="reference external" href="https://github.com/OpenChemistry/">crystals</a></dt><dd><p>Example crystal structures provided through File ⇒ Import ⇒ Crystal</p>
+</dd>
+<dt><a class="reference external" href="https://github.com/OpenChemistry/fragments">fragments</a></dt><dd><p>Common inorganic ligands and functional groups provided through the Template Tool</p>
+</dd>
+<dt><a class="reference external" href="https://github.com/OpenChemistry/">molecules</a></dt><dd><p>Common molecules provided through Build ⇒ Insert ⇒ Molecule</p>
+</dd>
+</dl>
 </section>
 </section>
 
