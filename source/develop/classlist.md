@@ -1,9 +1,10 @@
 (develop-classlist)=
 
-# Class List
+# API Documentation
 
 ```{toctree}
 :glob: true
+:maxdepth: 1
 
 core
 io

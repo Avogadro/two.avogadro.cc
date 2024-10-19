@@ -1,6 +1,6 @@
 (develop-io)=
 
-# IO Classes
+# Avogadro::IO
 
 The IO classes handle Avogadro's native file input/output. Beyond these
 classes, an Open Babel plugin loads translation via `obabel` command calls
