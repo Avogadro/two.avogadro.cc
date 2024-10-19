@@ -1,4 +1,4 @@
-Class Avogadro::Rendering::Sphere
+Avogadro::Rendering::Sphere
 =================================
 
 .. doxygenclass:: Avogadro::Rendering::Sphere

@@ -1,4 +1,4 @@
-Class Avogadro::QtGui::RWAtom
+Avogadro::QtGui::RWAtom
 =============================
 
 .. doxygenclass:: Avogadro::QtGui::RWAtom

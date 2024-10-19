@@ -1,4 +1,4 @@
-Class Avogadro::Core::Graph
+Avogadro::Core::Graph
 ===========================
 
 .. doxygenclass:: Avogadro::Core::Graph

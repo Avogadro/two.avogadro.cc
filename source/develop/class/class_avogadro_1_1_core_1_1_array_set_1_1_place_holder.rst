@@ -1,4 +1,4 @@
-Class Avogadro::Core::ArraySet::PlaceHolder
+Avogadro::Core::ArraySet::PlaceHolder
 ===========================================
 
 .. doxygenclass:: Avogadro::Core::ArraySet::PlaceHolder

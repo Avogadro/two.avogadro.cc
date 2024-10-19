@@ -1,4 +1,4 @@
-Class Avogadro::Rendering::Visitor
+Avogadro::Rendering::Visitor
 ==================================
 
 .. doxygenclass:: Avogadro::Rendering::Visitor

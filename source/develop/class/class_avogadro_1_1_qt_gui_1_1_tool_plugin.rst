@@ -1,4 +1,4 @@
-Class Avogadro::QtGui::ToolPlugin
+Avogadro::QtGui::ToolPlugin
 =================================
 
 .. doxygenclass:: Avogadro::QtGui::ToolPlugin

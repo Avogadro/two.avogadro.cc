@@ -1,4 +1,4 @@
-Class Avogadro::QtGui::ScriptLoader
+Avogadro::QtGui::ScriptLoader
 ===================================
 
 .. doxygenclass:: Avogadro::QtGui::ScriptLoader

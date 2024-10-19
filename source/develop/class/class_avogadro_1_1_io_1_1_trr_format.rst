@@ -1,4 +1,4 @@
-Class Avogadro::Io::TrrFormat
+Avogadro::Io::TrrFormat
 =============================
 
 .. doxygenclass:: Avogadro::Io::TrrFormat

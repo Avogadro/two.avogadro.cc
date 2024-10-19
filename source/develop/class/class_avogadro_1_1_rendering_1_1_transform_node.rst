@@ -1,4 +1,4 @@
-Class Avogadro::Rendering::TransformNode
+Avogadro::Rendering::TransformNode
 ========================================
 
 .. doxygenclass:: Avogadro::Rendering::TransformNode

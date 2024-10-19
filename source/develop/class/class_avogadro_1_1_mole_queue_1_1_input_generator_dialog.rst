@@ -1,4 +1,4 @@
-Class Avogadro::MoleQueue::InputGeneratorDialog
+Avogadro::MoleQueue::InputGeneratorDialog
 ===============================================
 
 .. doxygenclass:: Avogadro::MoleQueue::InputGeneratorDialog

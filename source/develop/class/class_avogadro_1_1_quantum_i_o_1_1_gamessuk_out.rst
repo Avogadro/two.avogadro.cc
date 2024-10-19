@@ -1,4 +1,4 @@
-Class Avogadro::QuantumIO::GamessukOut
+Avogadro::QuantumIO::GamessukOut
 ======================================
 
 .. doxygenclass:: Avogadro::QuantumIO::GamessukOut

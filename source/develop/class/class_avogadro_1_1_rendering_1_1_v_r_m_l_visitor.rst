@@ -1,4 +1,4 @@
-Class Avogadro::Rendering::VRMLVisitor
+Avogadro::Rendering::VRMLVisitor
 ======================================
 
 .. doxygenclass:: Avogadro::Rendering::VRMLVisitor

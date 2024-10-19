@@ -1,4 +1,4 @@
-Class Avogadro::Io::Hdf5DataFormat
+Avogadro::Io::Hdf5DataFormat
 ==================================
 
 .. doxygenclass:: Avogadro::Io::Hdf5DataFormat

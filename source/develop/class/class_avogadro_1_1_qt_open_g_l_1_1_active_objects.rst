@@ -1,4 +1,4 @@
-Class Avogadro::QtOpenGL::ActiveObjects
+Avogadro::QtOpenGL::ActiveObjects
 =======================================
 
 .. doxygenclass:: Avogadro::QtOpenGL::ActiveObjects

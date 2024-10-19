@@ -1,4 +1,4 @@
-Class Avogadro::QtGui::HydrogenTools
+Avogadro::QtGui::HydrogenTools
 ====================================
 
 .. doxygenclass:: Avogadro::QtGui::HydrogenTools

@@ -1,4 +1,4 @@
-Class Avogadro::QuantumIO::NWChemJson
+Avogadro::QuantumIO::NWChemJson
 =====================================
 
 .. doxygenclass:: Avogadro::QuantumIO::NWChemJson

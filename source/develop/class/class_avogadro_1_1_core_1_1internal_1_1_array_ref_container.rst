@@ -1,4 +1,4 @@
-Class Avogadro::Core::internal::ArrayRefContainer
+Avogadro::Core::internal::ArrayRefContainer
 =================================================
 
 .. doxygenclass:: Avogadro::Core::internal::ArrayRefContainer

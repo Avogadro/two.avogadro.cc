@@ -1,4 +1,4 @@
-Class Avogadro::Io::CjsonFormat
+Avogadro::Io::CjsonFormat
 ===============================
 
 .. doxygenclass:: Avogadro::Io::CjsonFormat

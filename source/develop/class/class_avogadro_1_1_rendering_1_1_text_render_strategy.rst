@@ -1,4 +1,4 @@
-Class Avogadro::Rendering::TextRenderStrategy
+Avogadro::Rendering::TextRenderStrategy
 =============================================
 
 .. doxygenclass:: Avogadro::Rendering::TextRenderStrategy

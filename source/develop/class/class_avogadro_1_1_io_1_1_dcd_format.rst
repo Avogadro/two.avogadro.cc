@@ -1,4 +1,4 @@
-Class Avogadro::Io::DcdFormat
+Avogadro::Io::DcdFormat
 =============================
 
 .. doxygenclass:: Avogadro::Io::DcdFormat

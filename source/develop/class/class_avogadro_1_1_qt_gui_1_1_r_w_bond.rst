@@ -1,4 +1,4 @@
-Class Avogadro::QtGui::RWBond
+Avogadro::QtGui::RWBond
 =============================
 
 .. doxygenclass:: Avogadro::QtGui::RWBond

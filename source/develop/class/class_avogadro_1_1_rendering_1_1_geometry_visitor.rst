@@ -1,4 +1,4 @@
-Class Avogadro::Rendering::GeometryVisitor
+Avogadro::Rendering::GeometryVisitor
 ==========================================
 
 .. doxygenclass:: Avogadro::Rendering::GeometryVisitor

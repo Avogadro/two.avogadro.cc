@@ -1,4 +1,4 @@
-Class Avogadro::Rendering::GeometryNode
+Avogadro::Rendering::GeometryNode
 =======================================
 
 .. doxygenclass:: Avogadro::Rendering::GeometryNode

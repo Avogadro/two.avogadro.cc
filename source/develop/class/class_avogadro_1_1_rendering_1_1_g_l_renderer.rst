@@ -1,4 +1,4 @@
-Class Avogadro::Rendering::GLRenderer
+Avogadro::Rendering::GLRenderer
 =====================================
 
 .. doxygenclass:: Avogadro::Rendering::GLRenderer

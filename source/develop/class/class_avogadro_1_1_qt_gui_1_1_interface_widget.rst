@@ -1,4 +1,4 @@
-Class Avogadro::QtGui::InterfaceWidget
+Avogadro::QtGui::InterfaceWidget
 ======================================
 
 .. doxygenclass:: Avogadro::QtGui::InterfaceWidget

@@ -1,4 +1,4 @@
-Class Avogadro::MoleQueue::MoleQueueWidget
+Avogadro::MoleQueue::MoleQueueWidget
 ==========================================
 
 .. doxygenclass:: Avogadro::MoleQueue::MoleQueueWidget

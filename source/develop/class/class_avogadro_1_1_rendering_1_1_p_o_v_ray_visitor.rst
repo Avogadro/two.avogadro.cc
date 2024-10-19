@@ -1,4 +1,4 @@
-Class Avogadro::Rendering::POVRayVisitor
+Avogadro::Rendering::POVRayVisitor
 ========================================
 
 .. doxygenclass:: Avogadro::Rendering::POVRayVisitor

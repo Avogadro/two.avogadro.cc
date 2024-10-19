@@ -1,4 +1,4 @@
-Class Avogadro::QuantumIO::GaussianFchk
+Avogadro::QuantumIO::GaussianFchk
 =======================================
 
 .. doxygenclass:: Avogadro::QuantumIO::GaussianFchk

@@ -1,4 +1,4 @@
-Class Avogadro::Rendering::Camera
+Avogadro::Rendering::Camera
 =================================
 
 .. doxygenclass:: Avogadro::Rendering::Camera

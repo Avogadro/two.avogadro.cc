@@ -1,4 +1,4 @@
-Class Avogadro::QtGui::ContainerWidget
+Avogadro::QtGui::ContainerWidget
 ======================================
 
 .. doxygenclass:: Avogadro::QtGui::ContainerWidget

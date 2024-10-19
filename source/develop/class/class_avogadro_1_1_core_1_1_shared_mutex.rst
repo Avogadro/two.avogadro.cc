@@ -1,4 +1,4 @@
-Class Avogadro::Core::SharedMutex
+Avogadro::Core::SharedMutex
 =================================
 
 .. doxygenclass:: Avogadro::Core::SharedMutex

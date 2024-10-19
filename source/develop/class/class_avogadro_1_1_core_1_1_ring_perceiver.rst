@@ -1,4 +1,4 @@
-Class Avogadro::Core::RingPerceiver
+Avogadro::Core::RingPerceiver
 ===================================
 
 .. doxygenclass:: Avogadro::Core::RingPerceiver

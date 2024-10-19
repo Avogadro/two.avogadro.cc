@@ -1,4 +1,4 @@
-Class Avogadro::Rendering::TextLabelBase
+Avogadro::Rendering::TextLabelBase
 ========================================
 
 .. doxygenclass:: Avogadro::Rendering::TextLabelBase

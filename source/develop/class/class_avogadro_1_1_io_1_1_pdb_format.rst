@@ -1,4 +1,4 @@
-Class Avogadro::Io::PdbFormat
+Avogadro::Io::PdbFormat
 =============================
 
 .. doxygenclass:: Avogadro::Io::PdbFormat

@@ -1,4 +1,4 @@
-Class Avogadro::Core::Residue
+Avogadro::Core::Residue
 =============================
 
 .. doxygenclass:: Avogadro::Core::Residue

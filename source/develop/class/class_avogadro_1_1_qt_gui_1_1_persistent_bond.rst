@@ -1,4 +1,4 @@
-Class Avogadro::QtGui::PersistentBond
+Avogadro::QtGui::PersistentBond
 =====================================
 
 .. doxygenclass:: Avogadro::QtGui::PersistentBond

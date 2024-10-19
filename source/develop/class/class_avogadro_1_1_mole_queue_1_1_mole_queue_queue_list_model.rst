@@ -1,4 +1,4 @@
-Class Avogadro::MoleQueue::MoleQueueQueueListModel
+Avogadro::MoleQueue::MoleQueueQueueListModel
 ==================================================
 
 .. doxygenclass:: Avogadro::MoleQueue::MoleQueueQueueListModel

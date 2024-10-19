@@ -1,4 +1,4 @@
-Class Avogadro::Core::Mesh
+Avogadro::Core::Mesh
 ==========================
 
 .. doxygenclass:: Avogadro::Core::Mesh

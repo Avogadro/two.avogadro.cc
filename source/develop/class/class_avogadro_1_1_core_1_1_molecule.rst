@@ -1,4 +1,4 @@
-Class Avogadro::Core::Molecule
+Avogadro::Core::Molecule
 ==============================
 
 .. doxygenclass:: Avogadro::Core::Molecule

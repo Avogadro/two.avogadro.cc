@@ -1,4 +1,4 @@
-Class Avogadro::QtGui::InterfaceScript
+Avogadro::QtGui::InterfaceScript
 ======================================
 
 .. doxygenclass:: Avogadro::QtGui::InterfaceScript

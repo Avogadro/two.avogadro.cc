@@ -1,4 +1,4 @@
-Class Avogadro::QtGui::BackgroundFileFormat
+Avogadro::QtGui::BackgroundFileFormat
 ===========================================
 
 .. doxygenclass:: Avogadro::QtGui::BackgroundFileFormat

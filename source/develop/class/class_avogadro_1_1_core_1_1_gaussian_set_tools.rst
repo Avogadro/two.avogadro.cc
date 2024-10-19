@@ -1,4 +1,4 @@
-Class Avogadro::Core::GaussianSetTools
+Avogadro::Core::GaussianSetTools
 ======================================
 
 .. doxygenclass:: Avogadro::Core::GaussianSetTools

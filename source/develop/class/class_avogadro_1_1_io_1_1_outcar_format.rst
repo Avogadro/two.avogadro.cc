@@ -1,4 +1,4 @@
-Class Avogadro::Io::OutcarFormat
+Avogadro::Io::OutcarFormat
 ================================
 
 .. doxygenclass:: Avogadro::Io::OutcarFormat

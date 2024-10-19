@@ -1,4 +1,4 @@
-Class Avogadro::Core::MoleculeSerializer
+Avogadro::Core::MoleculeSerializer
 ========================================
 
 .. doxygenclass:: Avogadro::Core::MoleculeSerializer

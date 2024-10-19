@@ -1,4 +1,4 @@
-Class Avogadro::Core::CrystalTools
+Avogadro::Core::CrystalTools
 ==================================
 
 .. doxygenclass:: Avogadro::Core::CrystalTools
