@@ -12,6 +12,7 @@ The Avogadro desktop application is made up primarily of the `avogadrolibs` modu
 In practice, most functionality and features are provided by `[avogadrolibs](https://github.com/OpenChemistry/avogadrolibs)` and particularly by various plugin classes.
 
 The main project uses various other Open Chemistry modules to function.
+
 [avogadro-i18n](https://github.com/OpenChemistry/)
 : Language translations and localization handled through [Weblate](https://hosted.weblate.org/engage/avogadro/)
 
