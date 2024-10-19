@@ -1,6 +1,6 @@
 (develop-core)=
 
-# Core Classes
+# Avogadro::Core
 
 ```{toctree}
 :glob: true
