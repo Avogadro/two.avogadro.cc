@@ -8,6 +8,7 @@ and [Script Formats](script-formats) allow user scripts to translate to native f
 
 ```{toctree}
 :glob: true
+:maxdepth: 1
 
 class/class_avogadro_1_1_io*
 class/class_avogadro_1_1_quantum_i_o*

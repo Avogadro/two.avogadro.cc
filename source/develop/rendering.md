@@ -8,6 +8,7 @@ protein cartoons, meshes, orbitals, etc.
 
 ```{toctree}
 :glob: true
+:maxdepth: 1
 
 class/class_avogadro_1_1_render*
 ```
