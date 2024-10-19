@@ -1,4 +1,4 @@
-Class Avogadro::VTK::vtkGLWidget
+Avogadro::VTK::vtkGLWidget
 ================================
 
 .. doxygenclass:: Avogadro::VTK::vtkGLWidget

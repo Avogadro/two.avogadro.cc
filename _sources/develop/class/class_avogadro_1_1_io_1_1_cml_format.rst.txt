@@ -1,4 +1,4 @@
-Class Avogadro::Io::CmlFormat
+Avogadro::Io::CmlFormat
 =============================
 
 .. doxygenclass:: Avogadro::Io::CmlFormat

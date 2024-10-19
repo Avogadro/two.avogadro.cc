@@ -1,4 +1,4 @@
-Class Avogadro::QtGui::MultiViewWidget
+Avogadro::QtGui::MultiViewWidget
 ======================================
 
 .. doxygenclass:: Avogadro::QtGui::MultiViewWidget

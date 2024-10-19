@@ -1,4 +1,4 @@
-Class Avogadro::QuantumIO::GaussianCube
+Avogadro::QuantumIO::GaussianCube
 =======================================
 
 .. doxygenclass:: Avogadro::QuantumIO::GaussianCube

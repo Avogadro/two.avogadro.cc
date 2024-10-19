@@ -1,4 +1,4 @@
-Class Avogadro::QtGui::PeriodicTableView
+Avogadro::QtGui::PeriodicTableView
 ========================================
 
 .. doxygenclass:: Avogadro::QtGui::PeriodicTableView

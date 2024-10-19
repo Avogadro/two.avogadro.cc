@@ -1,4 +1,4 @@
-Class Avogadro::Rendering::Scene
+Avogadro::Rendering::Scene
 ================================
 
 .. doxygenclass:: Avogadro::Rendering::Scene

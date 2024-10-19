@@ -1,4 +1,4 @@
-Class Avogadro::QtGui::FileFormatDialog
+Avogadro::QtGui::FileFormatDialog
 =======================================
 
 .. doxygenclass:: Avogadro::QtGui::FileFormatDialog

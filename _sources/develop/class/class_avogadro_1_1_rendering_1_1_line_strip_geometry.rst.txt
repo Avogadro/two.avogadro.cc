@@ -1,4 +1,4 @@
-Class Avogadro::Rendering::LineStripGeometry
+Avogadro::Rendering::LineStripGeometry
 ============================================
 
 .. doxygenclass:: Avogadro::Rendering::LineStripGeometry

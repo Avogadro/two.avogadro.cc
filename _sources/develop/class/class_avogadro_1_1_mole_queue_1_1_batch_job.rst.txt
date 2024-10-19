@@ -1,4 +1,4 @@
-Class Avogadro::MoleQueue::BatchJob
+Avogadro::MoleQueue::BatchJob
 ===================================
 
 .. doxygenclass:: Avogadro::MoleQueue::BatchJob

@@ -1,4 +1,4 @@
-Class Avogadro::Rendering::Cylinder
+Avogadro::Rendering::Cylinder
 ===================================
 
 .. doxygenclass:: Avogadro::Rendering::Cylinder

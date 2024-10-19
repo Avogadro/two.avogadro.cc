@@ -1,4 +1,4 @@
-Class Avogadro::Core::ResidueData
+Avogadro::Core::ResidueData
 =================================
 
 .. doxygenclass:: Avogadro::Core::ResidueData

@@ -1,4 +1,4 @@
-Class Avogadro::Core::BondTemplate
+Avogadro::Core::BondTemplate
 ==================================
 
 .. doxygenclass:: Avogadro::Core::BondTemplate

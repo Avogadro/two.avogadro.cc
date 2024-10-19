@@ -1,4 +1,4 @@
-Class Avogadro::TypeTraits< int >
+Avogadro::TypeTraits< int >
 =================================
 
 .. doxygenclass:: Avogadro::TypeTraits< int >

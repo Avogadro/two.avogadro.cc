@@ -1,4 +1,4 @@
-Class Avogadro::Core::SymbolAtomTyper
+Avogadro::Core::SymbolAtomTyper
 =====================================
 
 .. doxygenclass:: Avogadro::Core::SymbolAtomTyper

@@ -1,4 +1,4 @@
-Class Avogadro::QtGui::CustomElementDialog
+Avogadro::QtGui::CustomElementDialog
 ==========================================
 
 .. doxygenclass:: Avogadro::QtGui::CustomElementDialog

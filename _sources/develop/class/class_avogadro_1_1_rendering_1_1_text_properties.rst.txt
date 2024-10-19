@@ -1,4 +1,4 @@
-Class Avogadro::Rendering::TextProperties
+Avogadro::Rendering::TextProperties
 =========================================
 
 .. doxygenclass:: Avogadro::Rendering::TextProperties

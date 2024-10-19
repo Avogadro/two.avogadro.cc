@@ -1,4 +1,4 @@
-Class Avogadro::Rendering::BufferObject
+Avogadro::Rendering::BufferObject
 =======================================
 
 .. doxygenclass:: Avogadro::Rendering::BufferObject

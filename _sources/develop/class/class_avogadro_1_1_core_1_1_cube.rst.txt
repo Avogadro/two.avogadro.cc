@@ -1,4 +1,4 @@
-Class Avogadro::Core::Cube
+Avogadro::Core::Cube
 ==========================
 
 .. doxygenclass:: Avogadro::Core::Cube

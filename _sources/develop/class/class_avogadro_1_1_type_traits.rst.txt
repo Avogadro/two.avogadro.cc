@@ -1,4 +1,4 @@
-Class Avogadro::TypeTraits
+Avogadro::TypeTraits
 ==========================
 
 .. doxygenclass:: Avogadro::TypeTraits

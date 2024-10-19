@@ -1,4 +1,4 @@
-Class Avogadro::Rendering::TextLabel2D
+Avogadro::Rendering::TextLabel2D
 ======================================
 
 .. doxygenclass:: Avogadro::Rendering::TextLabel2D

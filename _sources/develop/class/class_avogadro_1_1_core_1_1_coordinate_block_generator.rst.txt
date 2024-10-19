@@ -1,4 +1,4 @@
-Class Avogadro::Core::CoordinateBlockGenerator
+Avogadro::Core::CoordinateBlockGenerator
 ==============================================
 
 .. doxygenclass:: Avogadro::Core::CoordinateBlockGenerator

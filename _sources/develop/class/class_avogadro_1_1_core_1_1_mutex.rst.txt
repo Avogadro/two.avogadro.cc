@@ -1,4 +1,4 @@
-Class Avogadro::Core::Mutex
+Avogadro::Core::Mutex
 ===========================
 
 .. doxygenclass:: Avogadro::Core::Mutex

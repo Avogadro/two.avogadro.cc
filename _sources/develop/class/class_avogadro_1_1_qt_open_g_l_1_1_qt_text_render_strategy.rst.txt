@@ -1,4 +1,4 @@
-Class Avogadro::QtOpenGL::QtTextRenderStrategy
+Avogadro::QtOpenGL::QtTextRenderStrategy
 ==============================================
 
 .. doxygenclass:: Avogadro::QtOpenGL::QtTextRenderStrategy

@@ -1,4 +1,4 @@
-Class Avogadro::Rendering::SphereGeometry
+Avogadro::Rendering::SphereGeometry
 =========================================
 
 .. doxygenclass:: Avogadro::Rendering::SphereGeometry

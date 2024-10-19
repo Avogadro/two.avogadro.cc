@@ -1,4 +1,4 @@
-Class Avogadro::QtGui::FileBrowseWidget
+Avogadro::QtGui::FileBrowseWidget
 =======================================
 
 .. doxygenclass:: Avogadro::QtGui::FileBrowseWidget

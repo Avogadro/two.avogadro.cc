@@ -1,4 +1,4 @@
-Class Avogadro::QuantumIO::GAMESSUSOutput
+Avogadro::QuantumIO::GAMESSUSOutput
 =========================================
 
 .. doxygenclass:: Avogadro::QuantumIO::GAMESSUSOutput

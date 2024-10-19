@@ -1,4 +1,4 @@
-Class Avogadro::Core::Elements
+Avogadro::Core::Elements
 ==============================
 
 .. doxygenclass:: Avogadro::Core::Elements

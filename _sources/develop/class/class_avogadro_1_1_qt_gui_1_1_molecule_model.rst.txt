@@ -1,4 +1,4 @@
-Class Avogadro::QtGui::MoleculeModel
+Avogadro::QtGui::MoleculeModel
 ====================================
 
 .. doxygenclass:: Avogadro::QtGui::MoleculeModel

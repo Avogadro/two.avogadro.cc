@@ -1,4 +1,4 @@
-Class vtkAvogadroActor
+vtkAvogadroActor
 ======================
 
 .. doxygenclass:: vtkAvogadroActor

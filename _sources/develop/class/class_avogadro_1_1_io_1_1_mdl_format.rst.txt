@@ -1,4 +1,4 @@
-Class Avogadro::Io::MdlFormat
+Avogadro::Io::MdlFormat
 =============================
 
 .. doxygenclass:: Avogadro::Io::MdlFormat

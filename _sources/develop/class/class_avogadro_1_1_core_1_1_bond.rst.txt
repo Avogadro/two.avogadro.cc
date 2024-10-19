@@ -1,4 +1,4 @@
-Class Avogadro::Core::Bond
+Avogadro::Core::Bond
 ==========================
 
 .. doxygenclass:: Avogadro::Core::Bond

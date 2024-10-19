@@ -1,4 +1,4 @@
-Class Avogadro::Core::VariantMap
+Avogadro::Core::VariantMap
 ================================
 
 .. doxygenclass:: Avogadro::Core::VariantMap

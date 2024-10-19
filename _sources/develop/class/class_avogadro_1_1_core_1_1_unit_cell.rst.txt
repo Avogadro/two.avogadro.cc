@@ -1,4 +1,4 @@
-Class Avogadro::Core::UnitCell
+Avogadro::Core::UnitCell
 ==============================
 
 .. doxygenclass:: Avogadro::Core::UnitCell

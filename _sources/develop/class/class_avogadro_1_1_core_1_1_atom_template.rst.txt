@@ -1,4 +1,4 @@
-Class Avogadro::Core::AtomTemplate
+Avogadro::Core::AtomTemplate
 ==================================
 
 .. doxygenclass:: Avogadro::Core::AtomTemplate

@@ -1,4 +1,4 @@
-Class Avogadro::QtGui::GenericHighlighter::Rule
+Avogadro::QtGui::GenericHighlighter::Rule
 ===============================================
 
 .. doxygenclass:: Avogadro::QtGui::GenericHighlighter::Rule

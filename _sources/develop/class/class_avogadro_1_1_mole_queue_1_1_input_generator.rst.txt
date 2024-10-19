@@ -1,4 +1,4 @@
-Class Avogadro::MoleQueue::InputGenerator
+Avogadro::MoleQueue::InputGenerator
 =========================================
 
 .. doxygenclass:: Avogadro::MoleQueue::InputGenerator

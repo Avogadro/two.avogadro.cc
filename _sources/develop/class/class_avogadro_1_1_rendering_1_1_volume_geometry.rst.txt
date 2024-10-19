@@ -1,4 +1,4 @@
-Class Avogadro::Rendering::VolumeGeometry
+Avogadro::Rendering::VolumeGeometry
 =========================================
 
 .. doxygenclass:: Avogadro::Rendering::VolumeGeometry

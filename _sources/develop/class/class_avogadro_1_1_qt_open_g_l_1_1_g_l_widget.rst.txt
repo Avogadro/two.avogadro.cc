@@ -1,4 +1,4 @@
-Class Avogadro::QtOpenGL::GLWidget
+Avogadro::QtOpenGL::GLWidget
 ==================================
 
 .. doxygenclass:: Avogadro::QtOpenGL::GLWidget

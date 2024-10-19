@@ -1,4 +1,4 @@
-Class Avogadro::Core::ArraySet
+Avogadro::Core::ArraySet
 ==============================
 
 .. doxygenclass:: Avogadro::Core::ArraySet

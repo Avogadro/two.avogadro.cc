@@ -1,4 +1,4 @@
-Class Avogadro::Rendering::GLRenderVisitor
+Avogadro::Rendering::GLRenderVisitor
 ==========================================
 
 .. doxygenclass:: Avogadro::Rendering::GLRenderVisitor

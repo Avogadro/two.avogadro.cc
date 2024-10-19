@@ -1,4 +1,4 @@
-Class Avogadro::Io::FileFormatManager
+Avogadro::Io::FileFormatManager
 =====================================
 
 .. doxygenclass:: Avogadro::Io::FileFormatManager

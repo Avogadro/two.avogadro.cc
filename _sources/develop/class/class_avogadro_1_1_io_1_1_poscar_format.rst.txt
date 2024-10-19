@@ -1,4 +1,4 @@
-Class Avogadro::Io::PoscarFormat
+Avogadro::Io::PoscarFormat
 ================================
 
 .. doxygenclass:: Avogadro::Io::PoscarFormat
