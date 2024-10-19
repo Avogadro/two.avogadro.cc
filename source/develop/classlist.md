@@ -4,7 +4,7 @@
 
 ```{toctree}
 :glob: true
-:maxdepth: 2
+:maxdepth: 1
 
 core
 io
