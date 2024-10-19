@@ -1,4 +1,4 @@
-Class Avogadro::Core::Atom
+Avogadro::Core::Atom
 ==========================
 
 .. doxygenclass:: Avogadro::Core::Atom

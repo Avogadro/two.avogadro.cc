@@ -1,4 +1,4 @@
-Class Avogadro::Rendering::Drawable
+Avogadro::Rendering::Drawable
 ===================================
 
 .. doxygenclass:: Avogadro::Rendering::Drawable

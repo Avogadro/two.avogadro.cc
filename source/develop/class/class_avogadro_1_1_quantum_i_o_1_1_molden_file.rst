@@ -1,4 +1,4 @@
-Class Avogadro::QuantumIO::MoldenFile
+Avogadro::QuantumIO::MoldenFile
 =====================================
 
 .. doxygenclass:: Avogadro::QuantumIO::MoldenFile

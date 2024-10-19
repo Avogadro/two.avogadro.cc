@@ -1,4 +1,4 @@
-Class Avogadro::Core::SpaceGroups
+Avogadro::Core::SpaceGroups
 =================================
 
 .. doxygenclass:: Avogadro::Core::SpaceGroups

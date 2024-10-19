@@ -1,4 +1,4 @@
-Class Avogadro::QuantumIO::GUKBasisSet
+Avogadro::QuantumIO::GUKBasisSet
 ======================================
 
 .. doxygenclass:: Avogadro::QuantumIO::GUKBasisSet

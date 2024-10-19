@@ -1,4 +1,4 @@
-Class Avogadro::QuantumIO::MopacAux
+Avogadro::QuantumIO::MopacAux
 ===================================
 
 .. doxygenclass:: Avogadro::QuantumIO::MopacAux

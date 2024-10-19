@@ -1,4 +1,4 @@
-Class Avogadro::QtGui::ElementTranslator
+Avogadro::QtGui::ElementTranslator
 ========================================
 
 .. doxygenclass:: Avogadro::QtGui::ElementTranslator

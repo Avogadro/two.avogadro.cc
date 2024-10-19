@@ -1,4 +1,4 @@
-Class Avogadro::Io::XyzFormat
+Avogadro::Io::XyzFormat
 =============================
 
 .. doxygenclass:: Avogadro::Io::XyzFormat

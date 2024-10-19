@@ -1,4 +1,4 @@
-Class Avogadro::Core::CoordinateSet
+Avogadro::Core::CoordinateSet
 ===================================
 
 .. doxygenclass:: Avogadro::Core::CoordinateSet

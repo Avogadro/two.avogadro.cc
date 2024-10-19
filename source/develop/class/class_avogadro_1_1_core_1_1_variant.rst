@@ -1,4 +1,4 @@
-Class Avogadro::Core::Variant
+Avogadro::Core::Variant
 =============================
 
 .. doxygenclass:: Avogadro::Core::Variant

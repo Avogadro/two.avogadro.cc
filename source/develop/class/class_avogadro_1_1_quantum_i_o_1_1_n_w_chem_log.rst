@@ -1,4 +1,4 @@
-Class Avogadro::QuantumIO::NWChemLog
+Avogadro::QuantumIO::NWChemLog
 ====================================
 
 .. doxygenclass:: Avogadro::QuantumIO::NWChemLog

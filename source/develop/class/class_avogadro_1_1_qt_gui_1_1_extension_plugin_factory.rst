@@ -1,4 +1,4 @@
-Class Avogadro::QtGui::ExtensionPluginFactory
+Avogadro::QtGui::ExtensionPluginFactory
 =============================================
 
 .. doxygenclass:: Avogadro::QtGui::ExtensionPluginFactory

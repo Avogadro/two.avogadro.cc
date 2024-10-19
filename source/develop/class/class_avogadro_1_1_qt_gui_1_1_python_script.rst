@@ -1,4 +1,4 @@
-Class Avogadro::QtGui::PythonScript
+Avogadro::QtGui::PythonScript
 ===================================
 
 .. doxygenclass:: Avogadro::QtGui::PythonScript

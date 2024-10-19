@@ -1,4 +1,4 @@
-Class Avogadro::Rendering::GroupNode
+Avogadro::Rendering::GroupNode
 ====================================
 
 .. doxygenclass:: Avogadro::Rendering::GroupNode

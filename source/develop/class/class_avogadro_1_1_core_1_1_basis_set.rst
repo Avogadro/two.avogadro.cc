@@ -1,4 +1,4 @@
-Class Avogadro::Core::BasisSet
+Avogadro::Core::BasisSet
 ==============================
 
 .. doxygenclass:: Avogadro::Core::BasisSet

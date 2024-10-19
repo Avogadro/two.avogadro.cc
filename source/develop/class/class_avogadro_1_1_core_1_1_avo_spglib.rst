@@ -1,4 +1,4 @@
-Class Avogadro::Core::AvoSpglib
+Avogadro::Core::AvoSpglib
 ===============================
 
 .. doxygenclass:: Avogadro::Core::AvoSpglib

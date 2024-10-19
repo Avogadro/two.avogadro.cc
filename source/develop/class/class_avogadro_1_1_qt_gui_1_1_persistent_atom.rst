@@ -1,4 +1,4 @@
-Class Avogadro::QtGui::PersistentAtom
+Avogadro::QtGui::PersistentAtom
 =====================================
 
 .. doxygenclass:: Avogadro::QtGui::PersistentAtom

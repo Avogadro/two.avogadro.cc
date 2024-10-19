@@ -1,4 +1,4 @@
-Class Avogadro::Io::LammpsDataFormat
+Avogadro::Io::LammpsDataFormat
 ====================================
 
 .. doxygenclass:: Avogadro::Io::LammpsDataFormat

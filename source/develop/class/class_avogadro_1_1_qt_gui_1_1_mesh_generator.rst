@@ -1,4 +1,4 @@
-Class Avogadro::QtGui::MeshGenerator
+Avogadro::QtGui::MeshGenerator
 ====================================
 
 .. doxygenclass:: Avogadro::QtGui::MeshGenerator

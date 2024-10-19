@@ -1,4 +1,4 @@
-Class Avogadro::Rendering::ArrowGeometry
+Avogadro::Rendering::ArrowGeometry
 ========================================
 
 .. doxygenclass:: Avogadro::Rendering::ArrowGeometry

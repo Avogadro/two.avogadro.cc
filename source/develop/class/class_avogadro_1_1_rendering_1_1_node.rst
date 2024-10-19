@@ -1,4 +1,4 @@
-Class Avogadro::Rendering::Node
+Avogadro::Rendering::Node
 ===============================
 
 .. doxygenclass:: Avogadro::Rendering::Node

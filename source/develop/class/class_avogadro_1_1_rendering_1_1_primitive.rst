@@ -1,4 +1,4 @@
-Class Avogadro::Rendering::Primitive
+Avogadro::Rendering::Primitive
 ====================================
 
 .. doxygenclass:: Avogadro::Rendering::Primitive

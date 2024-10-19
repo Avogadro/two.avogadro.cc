@@ -1,4 +1,4 @@
-Class Avogadro::Rendering::CylinderGeometry
+Avogadro::Rendering::CylinderGeometry
 ===========================================
 
 .. doxygenclass:: Avogadro::Rendering::CylinderGeometry

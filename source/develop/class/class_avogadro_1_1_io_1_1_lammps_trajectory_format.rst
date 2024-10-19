@@ -1,4 +1,4 @@
-Class Avogadro::Io::LammpsTrajectoryFormat
+Avogadro::Io::LammpsTrajectoryFormat
 ==========================================
 
 .. doxygenclass:: Avogadro::Io::LammpsTrajectoryFormat

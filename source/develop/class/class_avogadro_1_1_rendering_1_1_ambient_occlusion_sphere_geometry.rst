@@ -1,4 +1,4 @@
-Class Avogadro::Rendering::AmbientOcclusionSphereGeometry
+Avogadro::Rendering::AmbientOcclusionSphereGeometry
 =========================================================
 
 .. doxygenclass:: Avogadro::Rendering::AmbientOcclusionSphereGeometry

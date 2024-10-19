@@ -1,4 +1,4 @@
-Class Avogadro::Rendering::MeshGeometry
+Avogadro::Rendering::MeshGeometry
 =======================================
 
 .. doxygenclass:: Avogadro::Rendering::MeshGeometry

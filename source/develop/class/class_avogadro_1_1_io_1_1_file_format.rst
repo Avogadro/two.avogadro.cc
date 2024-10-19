@@ -1,4 +1,4 @@
-Class Avogadro::Io::FileFormat
+Avogadro::Io::FileFormat
 ==============================
 
 .. doxygenclass:: Avogadro::Io::FileFormat

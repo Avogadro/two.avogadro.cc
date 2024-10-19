@@ -1,4 +1,4 @@
-Class Avogadro::Core::SlaterSet
+Avogadro::Core::SlaterSet
 ===============================
 
 .. doxygenclass:: Avogadro::Core::SlaterSet

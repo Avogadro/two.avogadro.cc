@@ -1,4 +1,4 @@
-Class Avogadro::QtGui::ViewFactory
+Avogadro::QtGui::ViewFactory
 ==================================
 
 .. doxygenclass:: Avogadro::QtGui::ViewFactory

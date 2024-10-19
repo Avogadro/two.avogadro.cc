@@ -1,4 +1,4 @@
-Class Avogadro::QtGui::ElementDetail
+Avogadro::QtGui::ElementDetail
 ====================================
 
 .. doxygenclass:: Avogadro::QtGui::ElementDetail

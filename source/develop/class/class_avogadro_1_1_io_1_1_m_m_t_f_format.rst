@@ -1,4 +1,4 @@
-Class Avogadro::Io::MMTFFormat
+Avogadro::Io::MMTFFormat
 ==============================
 
 .. doxygenclass:: Avogadro::Io::MMTFFormat

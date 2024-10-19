@@ -1,4 +1,4 @@
-Class Avogadro::QtGui::ScenePlugin
+Avogadro::QtGui::ScenePlugin
 ==================================
 
 .. doxygenclass:: Avogadro::QtGui::ScenePlugin

@@ -1,4 +1,4 @@
-Class Avogadro::Rendering::Texture2D
+Avogadro::Rendering::Texture2D
 ====================================
 
 .. doxygenclass:: Avogadro::Rendering::Texture2D

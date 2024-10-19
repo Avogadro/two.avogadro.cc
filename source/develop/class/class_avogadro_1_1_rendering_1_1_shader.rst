@@ -1,4 +1,4 @@
-Class Avogadro::Rendering::Shader
+Avogadro::Rendering::Shader
 =================================
 
 .. doxygenclass:: Avogadro::Rendering::Shader

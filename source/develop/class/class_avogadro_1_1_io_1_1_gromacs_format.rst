@@ -1,4 +1,4 @@
-Class Avogadro::Io::GromacsFormat
+Avogadro::Io::GromacsFormat
 =================================
 
 .. doxygenclass:: Avogadro::Io::GromacsFormat

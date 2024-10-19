@@ -1,4 +1,4 @@
-Class Avogadro::QtGui::PeriodicTableScene
+Avogadro::QtGui::PeriodicTableScene
 =========================================
 
 .. doxygenclass:: Avogadro::QtGui::PeriodicTableScene

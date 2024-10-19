@@ -1,4 +1,4 @@
-Class Avogadro::VTK::VtkPlot
+Avogadro::VTK::VtkPlot
 ============================
 
 .. doxygenclass:: Avogadro::VTK::VtkPlot

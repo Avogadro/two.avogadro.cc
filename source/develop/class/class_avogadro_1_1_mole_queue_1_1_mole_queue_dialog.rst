@@ -1,4 +1,4 @@
-Class Avogadro::MoleQueue::MoleQueueDialog
+Avogadro::MoleQueue::MoleQueueDialog
 ==========================================
 
 .. doxygenclass:: Avogadro::MoleQueue::MoleQueueDialog

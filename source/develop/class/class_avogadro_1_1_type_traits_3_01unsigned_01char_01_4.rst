@@ -1,4 +1,4 @@
-Class Avogadro::TypeTraits< unsigned char >
+Avogadro::TypeTraits< unsigned char >
 ===========================================
 
 .. doxygenclass:: Avogadro::TypeTraits< unsigned char >
