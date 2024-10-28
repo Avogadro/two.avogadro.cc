@@ -13,17 +13,20 @@ In practice, most functionality and features are provided by `[avogadrolibs](htt
 
 The main project uses various other Open Chemistry modules to function.
 
-[avogadro-i18n](https://github.com/OpenChemistry/)
+[avogadroapp](https://github.com/OpenChemistry/avogadroapp)
+: Code to handle [the desktop app events and interface](develop-avogadroapp)
+
+[avogadro-i18n](https://github.com/OpenChemistry/avogadro-i18n)
 : Language translations and localization handled through [Weblate](https://hosted.weblate.org/engage/avogadro/)
 
-[avogenerators](https://github.com/OpenChemistry/)
+[avogenerators](https://github.com/OpenChemistry/avogenerators)
 : Scripts providing input generator dialogs for various computational packages such as Gaussian, Orca, etc.
 
-[crystals](https://github.com/OpenChemistry/)
+[crystals](https://github.com/OpenChemistry/crystals)
 : Example crystal structures provided through File ⇒ Import ⇒ Crystal
 
 [fragments](https://github.com/OpenChemistry/fragments)
 : Common inorganic ligands and functional groups provided through the Template Tool
 
-[molecules](https://github.com/OpenChemistry/)
+[molecules](https://github.com/OpenChemistry/molecules)
 : Common molecules provided through Build ⇒ Insert ⇒ Molecule
