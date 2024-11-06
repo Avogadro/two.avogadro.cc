@@ -291,6 +291,7 @@ This is done in two individual steps.
 Again, the following instructions assume you are using the "superbuild" approach.
 
 
+(configuring-build)=
 ### Configuring CMake
 
 It is recommended that you create the build tree outside of the source tree.
@@ -321,6 +322,29 @@ or if building against Qt 6:
 
 ```shell
 cmake -DQT_VERSION=6 -DBUILD_MOLEQUEUE=OFF -DQt6_DIR=C:/Qt/6.8.0/msvc2022_64/lib/cmake/Qt6 -DCMAKE_TOOLCHAIN_FILE=C:/Qt/6.8.0/msvc2022_64/lib/cmake/Qt6/Qt6Config.cmake -DCMAKE_PREFIX_PATH="C:/Qt/6.8.0/msvc2022_64/lib/cmake/Qt6;C:/Qt/6.8.0/msvc2022_64/lib/cmake" -DQT_ADDITIONAL_PACKAGES_PREFIX_PATH=C:/Qt/6.8.0/msvc2022_64 -S ./openchemistry -B ./build
+```
+:::
+
+
+(build-types)=
+#### Build types
+
+By default, Avogadro will be built in "Debug" mode, which, as the name hints, makes it easier to track down bugs, but at the cost of an increased package size and less optimized (read: slower) code in comparison to "Release" mode
+
+To change the build type used, use the corresponding flag for `cmake` during the configuration step, e.g.:
+
+```shell
+cmake -DQT_VERSION=5 -DBUILD_MOLEQUEUE=OFF -DCMAKE_BUILD_TYPE=Release -S ./openchemistry -B ./build
+```
+
+Possible build types for Avogadro are "Debug", "Release", "MinSizeRel" and "RelWithDebInfo".
+
+:::{admonition} Windows {fab}`windows`
+:class: dropdown
+On Windows the build type cannot be set in this way and must instead be indicated during the [build step](running-build) by e.g.:
+
+```shell
+cmake --build ./build --config Release
 ```
 :::
 
@@ -385,6 +409,7 @@ For this to work, you need to download the exact versions specified in `openchem
 The alternative is to turn off the use of each of these dependencies (see above for the necessary flags).
 
 
+(running-build)=
 ### Starting the build
 
 Once everything is configured, actually building is a simple matter of running:
@@ -395,11 +420,13 @@ cmake --build ./build
 
 :::{admonition} Windows {fab}`windows`
 :class: dropdown
-On Windows you may wish to build a slimmed-down version of the program by running the build instead with:
+On Windows you may wish to build a better optimized version of the program by running the build instead with:
 
 ```shell
 cmake --build ./build --config Release
 ```
+
+See [Build types](build-types) for more information.
 :::
 
 :::{admonition} Linux {fab}`linux`
