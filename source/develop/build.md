@@ -329,7 +329,7 @@ cmake -DQT_VERSION=6 -DBUILD_MOLEQUEUE=OFF -DQt6_DIR=C:/Qt/6.8.0/msvc2022_64/lib
 (build-types)=
 #### Build types
 
-By default, Avogadro will be built in "Debug" mode, which, as the name hints, makes it easier to track down bugs, but at the cost of an increased package size and less optimized (read: slower) code in comparison to "Release" mode
+By default, Avogadro will be built in "Debug" mode, which, as the name hints, makes it easier to track down bugs, but at the cost of an increased package size and less optimized (read: slower) code in comparison to "Release" mode.
 
 To change the build type used, use the corresponding flag for `cmake` during the configuration step, e.g.:
 
@@ -354,7 +354,6 @@ cmake --build ./build --config Release
 Avogadro's build process can be configured in a variety of ways by passing extra flags to the above `cmake` command.
 In particular this is a good way to add extra functionality or to keep the build slim.
 Here is a *non-exhaustive* list of some useful ones, with a short explanation and the default.
-To use them, prefix them with `-D`.
 
 ```
 BUILD_SHARED_LIBS "Build with shared libraries" ON
@@ -372,6 +371,13 @@ BUILD_AVOGADRO "Build the Avogadro 2 application" ON
 BUILD_GPL_PLUGINS "Build GPL plugins, i.e. QTAIM in Avogadro" OFF
 BUILD_DOCUMENTATION "Build documentation (Doxygen)" OFF
 ENABLE_TESTING "Enable testing for Open Chemistry projects" OFF
+```
+
+To use them, prefix them with `-D`.
+For example, to build with the VTK functionality and the automatically generated API documentation, you might run:
+
+```shell
+cmake -DQT_VERSION=6 -DBUILD_MOLEQUEUE=OFF -DUSE_VTK=ON -DBUILD_DOCUMENTATION=ON -S ./openchemistry -B ./build
 ```
 
 The following should, when used, also be passed on to `avogadrolibs` to configure its build.
