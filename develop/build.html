@@ -481,13 +481,19 @@ The easiest way to build Avogadro is to use the <a class="reference external" hr
 repository</a> as a basis, as it will automatically download and build many of the dependencies (including third-party ones) for you.</p>
 <p>It is also entirely possible to build each project individually without using the “superbuild” approach, but you will need to ensure all dependencies are built and can be found by the project.</p>
 <p>For simplicity, this guide will focus on the first approach.</p>
+<p>The instructions in this guide assume that you know how to execute commands in a terminal.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Platform-specific instructions, guidance, and information is provided in expandable callouts marked by the respective icons <span class="fab fa-windows"></span> <span class="fab fa-apple"></span> <span class="fab fa-linux"></span>.</p>
 </div>
+<div class="dropdown admonition">
+<p class="admonition-title">Windows <span class="fab fa-windows"></span></p>
+<p>For steps that require using the command line in a terminal, we recommend using Powershell 7 within Microsoft Terminal, which should be installed on your system already if you are using Windows 11 – if not, you can get it from the <a class="reference external" href="https://apps.microsoft.com/detail/9n0dx20hk701?ocid=webpdpshare">Microsoft Store</a>.</p>
+<p>In recent versions of Powershell, Linux/macOS commands like <code class="docutils literal notranslate"><span class="pre">cd</span></code> are aliased to their Powershell equivalents, so all of the commands that you are instructed to carry out here should work fine.</p>
+</div>
 <section id="system">
 <h2>System<a class="headerlink" href="#system" title="Link to this heading">#</a></h2>
-<p>Only 64-bit operated systems are supported.</p>
+<p>Only 64-bit operating systems are supported.</p>
 <p>The primary supported operating systems are those for which binaries are distributed:</p>
 <ul class="simple">
 <li><p>Windows 10+ (<code class="docutils literal notranslate"><span class="pre">x64</span></code> only)</p></li>
@@ -521,23 +527,35 @@ If you particularly wish to use Open Babel from your system, you will have to ha
 </div>
 <section id="development-tools">
 <h3>Development tools<a class="headerlink" href="#development-tools" title="Link to this heading">#</a></h3>
-<p>The Open Chemistry project uses <a class="reference external" href="https://git-scm.com/">Git</a> for version control, and <a class="reference internal" href="#cmake.org"><span class="xref myst">CMake</span></a> to direct the build process, so the first step is to ensure that you have both of these installed and set up on your system.</p>
+<p>The Open Chemistry project uses <a class="reference external" href="https://git-scm.com/">Git</a> for version control, so the first step is to ensure that you have it installed and set up on your system.</p>
 </section>
-<section id="compiler">
-<h3>Compiler<a class="headerlink" href="#compiler" title="Link to this heading">#</a></h3>
-<p>Broadly, you will need a C/C++ compiler that supports C++17.</p>
+<section id="compiler-and-build-system">
+<h3>Compiler and build system<a class="headerlink" href="#compiler-and-build-system" title="Link to this heading">#</a></h3>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>For those unfamiliar with compiling programs from source, or C++ ones in particular, building a modern C++ program typically uses three critical components:</p>
+<ul class="simple">
+<li><p>a compiler, which turns source code files into “object” files containing machine code</p></li>
+<li><p>a build tool, which automates the compilation and makes sure all compiler commands are run in the right order</p></li>
+<li><p>a build-system generator, which creates configuration files for a build tool based on a set of instructions; this makes building complex projects on multiple platforms with potentially different build tools and compilers much easier</p></li>
+</ul>
+</div>
+<p>Broadly, you will need a C/C++ compiler that supports C++17, a build tool such as <a class="reference external" href="https://ninja-build.org/">Ninja</a>, and <a class="reference internal" href="#cmake.org"><span class="xref myst">CMake</span></a>.</p>
 <div class="dropdown admonition">
 <p class="admonition-title">Windows <span class="fab fa-windows"></span></p>
-<p>On Windows, <a class="reference external" href="https://visualstudio.microsoft.com/">Visual Studio</a> is best supported, and it includes the MSVC compiler.</p>
+<p>On Windows, the MSVC compiler is best supported, which is obtained as part of <a class="reference external" href="https://visualstudio.microsoft.com/">Visual Studio</a>.</p>
+<p>If, when installing Qt (see below), you choose to install “Developer and Designer Tools”, this will install Ninja and CMake at the same time.
+Otherwise, you will need to download and install them separately.</p>
+<p>CMake can also be installed using <code class="docutils literal notranslate"><span class="pre">winget</span> <span class="pre">install</span> <span class="pre">--exact</span> <span class="pre">--id</span> <span class="pre">Kitware.CMake</span></code>.</p>
 </div>
 <div class="dropdown admonition">
 <p class="admonition-title">macOS <span class="fab fa-apple"></span></p>
-<p>We recommend to use <a class="reference external" href="https://clang.llvm.org/">Clang 17</a> on a Mac.</p>
+<p>We recommend to use <a class="reference external" href="https://clang.llvm.org/">Clang 17</a> on a Mac, with Ninja and CMake.</p>
 </div>
 <div class="dropdown admonition">
 <p class="admonition-title">Linux <span class="fab fa-linux"></span></p>
-<p>Both <code class="docutils literal notranslate"><span class="pre">gcc</span></code>/<code class="docutils literal notranslate"><span class="pre">g++</span></code> and <code class="docutils literal notranslate"><span class="pre">clang</span></code>/<code class="docutils literal notranslate"><span class="pre">clang++</span></code> generally work fine, as do both Unix Makefiles and Ninja for generating the Make files.</p>
-<p>If in doubt, stick to the combination of <strong>gcc with Ninja</strong>; this is what the automatic preparation of Avogadro binaries with GitHub actions uses, so if it is working successfully there, it should also work for you.</p>
+<p>Both <code class="docutils literal notranslate"><span class="pre">gcc</span></code>/<code class="docutils literal notranslate"><span class="pre">g++</span></code> and <code class="docutils literal notranslate"><span class="pre">clang</span></code>/<code class="docutils literal notranslate"><span class="pre">clang++</span></code> generally work fine, as do both Unix Makefiles and Ninja.</p>
+<p>If you find you have problems compiling, stick to the combination of <strong>gcc with Ninja</strong>; this is what the automatic preparation of Avogadro binaries with GitHub actions uses, so if it is working successfully there, it should also work for you.</p>
 </div>
 </section>
 <section id="python-and-perl">
@@ -574,184 +592,279 @@ Unfortunately, the names of the packages for the modules varies from distro to d
 <li><p><code class="docutils literal notranslate"><span class="pre">QtWidgets</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">QtGui</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">QtOpenGL</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">QtOpenGLWidgets</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">QtConcurrent</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">QtNetwork</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">QtSvg</span></code></p></li>
 </ul>
-<p>If building with Qt6, you will also need:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">QtOpenGLWidgets</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">QtCore5Compat</span></code></p></li>
-</ul>
 <p>There are often separate <code class="docutils literal notranslate"><span class="pre">-devel</span></code> versions of each module as well, in which case, you will also need those.</p>
 </div>
+</section>
+<section id="other-libraries">
+<h4>Other libraries<a class="headerlink" href="#other-libraries" title="Link to this heading">#</a></h4>
+<section id="necessary">
+<h5>Necessary<a class="headerlink" href="#necessary" title="Link to this heading">#</a></h5>
 <div class="dropdown admonition">
-<p class="admonition-title">Debian/Ubuntu-based distributions <span class="fab fa-linux"></span></p>
-<p>You can install prerequisites with the following commands:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>apt-get<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
-<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>cmake<span class="w"> </span>curl<span class="w"> </span>build-essential<span class="w"> </span>qtbase5-dev<span class="w"> </span>qtdeclarative5-dev<span class="w"> </span>zlib1g-dev<span class="w"> </span>libxml2-dev<span class="w"> </span>git<span class="w"> </span>libqt5svg5-dev<span class="w"> </span>libqt5gui5<span class="w"> </span>libqt5concurrent5<span class="w"> </span>rapidjson<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
-</pre></div>
-</div>
-<p>If you need a newer cmake version (replace aarch64 with your architecture or go to <a class="reference external" href="https://github.com/Kitware/CMake/releases/latest/">CMake Releases</a>)</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>apt-get<span class="w"> </span>purge<span class="w"> </span>cmake<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
-<span class="w"> </span>curl<span class="w"> </span>-L<span class="w"> </span>-v<span class="w"> </span>-o<span class="w"> </span>/tmp/bin<span class="w"> </span>https://github.com/Kitware/CMake/releases/download/v3.26.5/cmake-3.26.5-linux-aarch64.sh<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
-<span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>/tmp/bin<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
-<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/usr<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
-<span class="w"> </span>/tmp/bin
-</pre></div>
-</div>
+<p class="admonition-title">Windows <span class="fab fa-windows"></span></p>
+<p>The main other library you will need to get is OpenSSL 3.3.2, either from the <a class="reference external" href="https://slproweb.com/products/Win32OpenSSL.html">Shining Light Productions website</a> or using <code class="docutils literal notranslate"><span class="pre">winget</span> <span class="pre">install</span> <span class="pre">--exact</span> <span class="pre">--id</span> <span class="pre">ShiningLight.OpenSSL.Dev</span></code></p>
 </div>
 <div class="dropdown admonition">
-<p class="admonition-title">openSUSE Tumbleweed <span class="fab fa-linux"></span></p>
-<p>Many of the following may already be installed on your system.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>zypper<span class="w"> </span>refresh
-sudo<span class="w"> </span>zypper<span class="w"> </span>install<span class="w"> </span>libqt5-qtbase<span class="w"> </span>libqt5-qtbase-devel<span class="w"> </span>libqt5-qtbase-common-devel<span class="w"> </span>glew-devel<span class="w"> </span>libOpenGL<span class="w"> </span>Spglib<span class="w"> </span>libarchive<span class="w"> </span>libxml2<span class="w"> </span>glu<span class="w"> </span>readline<span class="w"> </span>xz<span class="w"> </span>libeigen3<span class="w"> </span>libboost
-</pre></div>
-</div>
-<p>The <code class="docutils literal notranslate"><span class="pre">libqt5-qtbase*</span></code> patterns should include all the Qt dependencies you need, but it is worth checking that all the modules are installed still using:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>zypper<span class="w"> </span>search<span class="w"> </span>libQt5
-</pre></div>
-</div>
-</div>
-<div class="dropdown admonition">
-<p class="admonition-title">Fedora <span class="fab fa-linux"></span></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>dnf<span class="w"> </span>update
-sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>cmake<span class="w"> </span>gcc<span class="w"> </span>gcc-g++<span class="w"> </span>qt5-qtbase-devel<span class="w"> </span>zlib-devel<span class="w"> </span>libxml2-devel<span class="w"> </span>git<span class="w"> </span>curl<span class="w"> </span>qt5-qtsvg-devel<span class="w"> </span>kernel-devel<span class="w"> </span>glew-devel
-</pre></div>
-</div>
-</div>
-</section>
-</section>
-</section>
-<section id="cloning-repositories">
-<span id="id1"></span><h2>Cloning Repositories<a class="headerlink" href="#cloning-repositories" title="Link to this heading">#</a></h2>
-<p>To clone the Open Chemistry repository that
-contains the other projects as submodules,</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>--recursive<span class="w"> </span>https://github.com/OpenChemistry/openchemistry.git
-</pre></div>
-</div>
-<p>Or if you have a GitHub account with SSH key (e.g., for contributing
-changes):</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>--recursive<span class="w"> </span>git@github.com:OpenChemistry/openchemistry.git
-</pre></div>
-</div>
-</section>
-<section id="updating">
-<h2>Updating<a class="headerlink" href="#updating" title="Link to this heading">#</a></h2>
-<p>In order to update the repository from the openchemistry module you can
-run,</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>pull
-git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--init
-</pre></div>
-</div>
-</section>
-<section id="prerequisites">
-<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading">#</a></h2>
-<p>The Open Chemistry projects have a number of prerequisites, and these
-vary by platform. On Windows Visual Studio 2017 is best supported. The
-superbuild will attempt to build a number of dependencies, on Linux you
-are likely best off installing these with your package manager, and on
-macOS the homebrew package manager works well.</p>
-<p>We should add a package listing for various Linux distributions, but as
-a guide you will need:</p>
+<p class="admonition-title">Linux <span class="fab fa-linux"></span></p>
+<p>You will need to install the following from your package manager, or similarly named equivalents:</p>
 <ul class="simple">
-<li><p>a C/C++ compiler that supports C++17</p></li>
-<li><p>OpenGL</p></li>
-<li><p>Qt 5.6+</p></li>
-<li><p>CMake</p></li>
-<li><p>Python</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">glu-devel</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">libxml2-devel</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">xz-devel</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">readline-devel</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rapidjson-devel</span></code></p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-## Building
-
-It is recommended that you create a build tree outside of the source
-tree. Assuming you are in the directory where you cloned the repository
-the following commands will create a build tree, configure it and build.
-
-```shell
-mkdir openchemistry-build
-cd openchemistry-build
-cmake ../openchemistry
-cmake --build . --config Release
+<p>You will also need <code class="docutils literal notranslate"><span class="pre">libopenssl</span></code> – either v1.1 if are building with Qt 5, or &gt;3.0 if you are building with Qt 6.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>For a successful build of Open Babel and therefore a successful build of Avogadro, the <code class="docutils literal notranslate"><span class="pre">rapidjson</span></code> version used cannot be the v1.1.0 release; it must have been patched to include at least <a class="reference external" href="https://github.com/Tencent/rapidjson/pull/719">this patch</a> from 2016.
+Your distro probably distributes a version including this patch, but if you have problems with the Open Babel build step, this may be why.</p>
+</div>
+</div>
+<div class="docutils">
+<p class="rubric" id="optional"><span id="system-deps"></span>Optional</p>
+<p>Many dependencies that Avogadro needs will be automatically downloaded and built during the build process.
+This means you do not need to install them in advance, and versions will be used that the Avogadro team has determined are compatible.</p>
+<p>However, if you would prefer to use versions of these libraries that are installed on your system, you can build Avogadro with CMake flags of the style <code class="docutils literal notranslate"><span class="pre">-DUSE_SYSTEM_EIGEN</span></code>.
+For some of them it is also possible to do without them altogether by telling Avogadro to build without the features that require it.</p>
+<p>This list includes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">glew</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">eigen</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">OpenBabel</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">spglib</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">libarchive</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">msgpackc</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mmtf-cpp</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">libmsym</span></code></p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If these libraries are not available on your machine, internet access will be required during the build step.</p>
+<p>See <a class="reference internal" href="#building-offline"><span class="std std-ref">Building offline</span></a> for assistance in circumventing the need for an internet connection.</p>
+</div>
+</div>
+</section>
+</section>
+</section>
+</section>
+<section id="getting-the-source-code">
+<span id="cloning-repositories"></span><h2>Getting the source code<a class="headerlink" href="#getting-the-source-code" title="Link to this heading">#</a></h2>
+<p>All further instructions will assume you are using <code class="docutils literal notranslate"><span class="pre">git</span></code> on the command line.</p>
+<p>As mentioned above, by far the easiest way to build Avogadro is to use the Open Chemistry repository as a basis, which contains the other projects as submodules.
+Though building each submodule separately is possible, this “superbuild” approach is the only option we explicitly recommend and support.</p>
+<p>The submodules of the main repo can be cloned all in one go, or manually for finer control over which ones are downloaded.</p>
+<section id="recursive-clone">
+<h3>Recursive clone<a class="headerlink" href="#recursive-clone" title="Link to this heading">#</a></h3>
+<p>You can clone the main repo and all submodules automatically using:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>--recursive<span class="w"> </span>https://github.com/OpenChemistry/openchemistry.git
+git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--init<span class="w"> </span>--recursive
 </pre></div>
 </div>
-<p>You may wish to run cmake-gui in the build directory once it has been
-configured. You can build against system libraries to avoid building
-them (examples include Boost, Eigen, etc), and turn testing on globally
-(ENABLE_TESTS) if you would like to ensure all tests are configured and
-built for sub-projects. The –config argument to cmake –build is only
-used on the Windows platform with MSVC, and can be removed elsewhere.</p>
-<section id="finding-qt-windows-generators">
-<span id="id2"></span><h3>Finding Qt, Windows Generators<a class="headerlink" href="#finding-qt-windows-generators" title="Link to this heading">#</a></h3>
-<p>We go to great care to use Qt5_DIR as the base for all Qt 5 modules, so
-setting the correct Qt5_DIR should result in a valid tree, you can also
-use CMAKE_PREFIX_PATH to point at the install prefix of Qt. When setting
-Qt5_DIR for Windows, using Qt 5.10.1 as an example, you should set the
-variable to ‘C:/Qt/Qt5.10.1/5.10.1/msvc2017_64/lib/cmake/Qt5’ (without
-the quotes). As you upgrade, you can usually just replace the version
-(that occurs twice), you must also be careful to match the CMake
-generator to the compiler and architecture on Windows, I recommend
-‘Visual Studio 15 2017 Win64’, we no longer build/test 32 bit binaries
-on any platform.</p>
+<p>You can then later easily update all modules at once using:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--remote
+</pre></div>
+</div>
+<p>See the <a class="reference external" href="https://git-scm.com/book/en/v2/Git-Tools-Submodules">git submodule documentation</a> for further help.</p>
 </section>
-<section id="normal-development">
-<span id="id3"></span><h3>Normal Development<a class="headerlink" href="#normal-development" title="Link to this heading">#</a></h3>
-<p>You can also open the top-level CMakeLists.txt in Qt Creator, choose the
-build location, have that configure and build and then open the
-top-level CMakeLists.txt for each of the sub-projects. When setting the
-build location choose the openchemistry-build/avogadrolibs for Avogadro,
-openchemistry-build/molequeue for MoleQueue, etc. Once you have compiled
-the top-level, for normal day-to-day development you are free to ignore
-it and perform the majority of work in the project being developed.</p>
+<section id="manual-clone">
+<h3>Manual clone<a class="headerlink" href="#manual-clone" title="Link to this heading">#</a></h3>
+<p>You may prefer to only clone some of the submodules, or you may encounter problems with the recursive clone.
+In this case, you are still recommended to clone the main repo, but take the following manual approach instead:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/OpenChemistry/openchemistry.git
+<span class="nb">cd</span><span class="w"> </span>openchemistry
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/OpenChemistry/avogadrolibs.git
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/OpenChemistry/avogadroapp.git
+</pre></div>
+</div>
+<p>This will overwrite each git submodule with a new normal git repository, and can be continued for as many submodules as desired.</p>
+<section id="required-and-optional-submodules">
+<h4>Required and optional submodules<a class="headerlink" href="#required-and-optional-submodules" title="Link to this heading">#</a></h4>
+<p>To build the Avogadro desktop program, only the main Open Chemistry repo and the following submodules are strictly required:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">avogadrolibs</span></code> from <a class="github reference external" href="https://github.com/OpenChemistry/avogadrolibs.git">OpenChemistry/avogadrolibs.git</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">avogadroapp</span></code> from <a class="github reference external" href="https://github.com/OpenChemistry/avogadroapp.git">OpenChemistry/avogadroapp.git</a></p></li>
+</ul>
+<p>The following submodules are optional and add extra functionality to Avogadro:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">avogadro-i18n</span></code>, for languages other than US English, from <a class="github reference external" href="https://github.com/OpenChemistry/avogadro-i18n.git">OpenChemistry/avogadro-i18n.git</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">avogadrogenerators</span></code>, for generation of input files for computational packages, from <a class="github reference external" href="https://github.com/OpenChemistry/avogenerators.git">OpenChemistry/avogenerators.git</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">crystals</span></code>, <code class="docutils literal notranslate"><span class="pre">fragments</span></code> and <code class="docutils literal notranslate"><span class="pre">molecules</span></code>, which populate the libraries of ready-to-use structures, from <a class="github reference external" href="https://github.com/OpenChemistry/crystals.git">OpenChemistry/crystals.git</a>, <a class="github reference external" href="https://github.com/OpenChemistry/fragments.git">OpenChemistry/fragments.git</a>, and <a class="github reference external" href="https://github.com/OpenChemistry/molecules.git">OpenChemistry/molecules.git</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">avogadrodata</span></code>, which contains only a few files for testing, from <a class="github reference external" href="https://github.com/OpenChemistry/avogadrodata.git">OpenChemistry/avogadrodata.git</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">molequeue</span></code>, which lets you queue computational calculations from Avogadro, but is currently unmaintained, from <a class="github reference external" href="https://github.com/OpenChemistry/molequeue.git">OpenChemistry/molequeue.git</a></p></li>
+</ul>
+<p>More information on the contents of each can be found at <a class="reference internal" href="structure.html#develop-structure"><span class="std std-ref">Project Structure</span></a>.</p>
 </section>
 </section>
-<section id="build-tree-layout">
-<span id="id4"></span><h2>Build Tree Layout<a class="headerlink" href="#build-tree-layout" title="Link to this heading">#</a></h2>
-<p>The build tree mirrors the source tree for most active projects. So
-avogadrolibs is in the same relative path in the source and build trees.
-For things such as Boost which are built from a source tarball they can
-be found only in the build tree, and are under thirdparty/boost-prefix,
-these projects are dependencies but are not expected to be edited in
-place.</p>
-<p>There is a prefix directory in the base of the build tree. This acts as
-an install prefix for all projects, with the normal include, bin, share
-and lib directories. This can be used to inject an additional prefix in
-CMAKE_PREFIX_PATH to ensure projects build by the superbuild are found.
-It keeps the sub-projects relatively simple as they either find stuff in
-the prefix, or normal system paths.</p>
+</section>
+<section id="building-avogadro">
+<h2>Building Avogadro<a class="headerlink" href="#building-avogadro" title="Link to this heading">#</a></h2>
+<p>The Open Chemistry project uses CMake to direct builds, so builds are configured and started using the <code class="docutils literal notranslate"><span class="pre">cmake</span></code> command.
+This is done in two individual steps.</p>
+<p>Again, the following instructions assume you are using the “superbuild” approach.</p>
+<section id="configuring-cmake">
+<span id="configuring-build"></span><h3>Configuring CMake<a class="headerlink" href="#configuring-cmake" title="Link to this heading">#</a></h3>
+<p>It is recommended that you create the build tree outside of the source tree.</p>
+<p>To set up the build tree, first navigate to the directory containing the cloned <code class="docutils literal notranslate"><span class="pre">openchemistry</span></code> repository, then run the following command:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>cmake<span class="w"> </span>-DQT_VERSION<span class="o">=</span><span class="m">5</span><span class="w"> </span>-DBUILD_MOLEQUEUE<span class="o">=</span>OFF<span class="w"> </span>-S<span class="w"> </span>./openchemistry<span class="w"> </span>-B<span class="w"> </span>./build
+</pre></div>
+</div>
+<p>This will create a new directory, <code class="docutils literal notranslate"><span class="pre">build</span></code>, in the current directory next to <code class="docutils literal notranslate"><span class="pre">openchemistry</span></code>, then construct the build tree within it.</p>
+<p>To configure the build to build against Qt 6, use <code class="docutils literal notranslate"><span class="pre">-DQT_VERSION=6</span></code> instead.</p>
+<p>To use a different compiler (such as <code class="docutils literal notranslate"><span class="pre">clang</span></code> on Linux when the default is <code class="docutils literal notranslate"><span class="pre">gcc</span></code>), add the flags <code class="docutils literal notranslate"><span class="pre">-DCMAKE_C_COMPILER=clang</span> <span class="pre">-DCMAKE_CXX_COMPILER=clang++</span></code>.</p>
+<p>To use a different build tool than whatever the default is on your system, add e.g. <code class="docutils literal notranslate"><span class="pre">-G</span> <span class="pre">Ninja</span></code>.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Windows <span class="fab fa-windows"></span></p>
+<p>On Windows you may need to run with any or all of the following flags, with the paths adjusted as appropriate:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>cmake<span class="w"> </span>-DQT_VERSION<span class="o">=</span><span class="m">5</span><span class="w"> </span>-DBUILD_MOLEQUEUE<span class="o">=</span>OFF<span class="w"> </span>-DQt5_DIR<span class="o">=</span>C:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5<span class="w"> </span>-DCMAKE_TOOLCHAIN_FILE<span class="o">=</span>C:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5/Qt5Config.cmake<span class="w"> </span>-S<span class="w"> </span>./openchemistry<span class="w"> </span>-B<span class="w"> </span>./build
+</pre></div>
+</div>
+<p>or if building against Qt 6:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>cmake<span class="w"> </span>-DQT_VERSION<span class="o">=</span><span class="m">6</span><span class="w"> </span>-DBUILD_MOLEQUEUE<span class="o">=</span>OFF<span class="w"> </span>-DQt6_DIR<span class="o">=</span>C:/Qt/6.8.0/msvc2022_64/lib/cmake/Qt6<span class="w"> </span>-DCMAKE_TOOLCHAIN_FILE<span class="o">=</span>C:/Qt/6.8.0/msvc2022_64/lib/cmake/Qt6/Qt6Config.cmake<span class="w"> </span>-DCMAKE_PREFIX_PATH<span class="o">=</span><span class="s2">&quot;C:/Qt/6.8.0/msvc2022_64/lib/cmake/Qt6;C:/Qt/6.8.0/msvc2022_64/lib/cmake&quot;</span><span class="w"> </span>-DQT_ADDITIONAL_PACKAGES_PREFIX_PATH<span class="o">=</span>C:/Qt/6.8.0/msvc2022_64<span class="w"> </span>-S<span class="w"> </span>./openchemistry<span class="w"> </span>-B<span class="w"> </span>./build
+</pre></div>
+</div>
+</div>
+<section id="build-types">
+<span id="id1"></span><h4>Build types<a class="headerlink" href="#build-types" title="Link to this heading">#</a></h4>
+<p>By default, Avogadro will be built in “Debug” mode, which, as the name hints, makes it easier to track down bugs, but at the cost of an increased package size and less optimized (read: slower) code in comparison to “Release” mode.</p>
+<p>To change the build type used, use the corresponding flag for <code class="docutils literal notranslate"><span class="pre">cmake</span></code> during the configuration step, e.g.:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>cmake<span class="w"> </span>-DQT_VERSION<span class="o">=</span><span class="m">5</span><span class="w"> </span>-DBUILD_MOLEQUEUE<span class="o">=</span>OFF<span class="w"> </span>-DCMAKE_BUILD_TYPE<span class="o">=</span>Release<span class="w"> </span>-S<span class="w"> </span>./openchemistry<span class="w"> </span>-B<span class="w"> </span>./build
+</pre></div>
+</div>
+<p>Possible build types for Avogadro are “Debug”, “Release”, “MinSizeRel” and “RelWithDebInfo”.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Windows <span class="fab fa-windows"></span></p>
+<p>On Windows the build type cannot be set in this way and must instead be indicated during the <a class="reference internal" href="#running-build"><span class="std std-ref">build step</span></a> by e.g.:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>cmake<span class="w"> </span>--build<span class="w"> </span>./build<span class="w"> </span>--config<span class="w"> </span>Release
+</pre></div>
+</div>
+</div>
+</section>
+<section id="avogadro-specific-cmake-flags">
+<h4>Avogadro-specific CMake flags<a class="headerlink" href="#avogadro-specific-cmake-flags" title="Link to this heading">#</a></h4>
+<p>Avogadro’s build process can be configured in a variety of ways by passing extra flags to the above <code class="docutils literal notranslate"><span class="pre">cmake</span></code> command.
+In particular this is a good way to add extra functionality or to keep the build slim.
+Here is a <em>non-exhaustive</em> list of some useful ones, with a short explanation and the default.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">BUILD_SHARED_LIBS</span> <span class="s2">&quot;Build with shared libraries&quot;</span> <span class="n">ON</span>
+<span class="n">DOWNLOAD_TO_SOURCE_DIR</span> <span class="s2">&quot;Download external dependency source archives to CMAKE_CURRENT_SOURCE_DIR/Downloads&quot;</span> <span class="n">OFF</span>
+<span class="n">DOWNLOAD_TO_BINARY_DIR</span> <span class="s2">&quot;Download external dependency source archives to CMAKE_CURRENT_BINARY_DIR/Downloads&quot;</span> <span class="n">ON</span>
+<span class="c1"># If both the above are set to `ON` then the SOURCE directory will be used</span>
+<span class="c1"># If both the above are set to `OFF` then the user&#39;s personal Downloads folder will be used</span>
+<span class="n">USE_VTK</span> <span class="s2">&quot;Enable libraries that use VTK in Avogadro&quot;</span> <span class="n">OFF</span>
+<span class="n">USE_HDF5</span> <span class="s2">&quot;Enable functionality that requires HDF5&quot;</span> <span class="n">OFF</span>
+<span class="n">USE_PYTHON</span> <span class="s2">&quot;Enable functionality that requires Python&quot;</span> <span class="n">OFF</span>
+<span class="n">USE_YAEHMOP</span> <span class="s2">&quot;Enable functionality that requires Yaehmop&quot;</span> <span class="n">OFF</span>
+<span class="n">USE_SYSTEM_</span><span class="p">{</span><span class="n">Dependency</span><span class="p">}</span> <span class="s2">&quot;Use a system installation of </span><span class="si">{Dependency}</span><span class="s2">&quot;</span> <span class="n">OFF</span>
+<span class="n">BUILD_MOLEQUEUE</span> <span class="s2">&quot;Build the MoleQueue application&quot;</span> <span class="c1"># Default depends on the Qt version</span>
+<span class="n">BUILD_AVOGADRO</span> <span class="s2">&quot;Build the Avogadro 2 application&quot;</span> <span class="n">ON</span>
+<span class="n">BUILD_GPL_PLUGINS</span> <span class="s2">&quot;Build GPL plugins, i.e. QTAIM in Avogadro&quot;</span> <span class="n">OFF</span>
+<span class="n">BUILD_DOCUMENTATION</span> <span class="s2">&quot;Build documentation (Doxygen)&quot;</span> <span class="n">OFF</span>
+<span class="n">ENABLE_TESTING</span> <span class="s2">&quot;Enable testing for Open Chemistry projects&quot;</span> <span class="n">OFF</span>
+</pre></div>
+</div>
+<p>To use them, prefix them with <code class="docutils literal notranslate"><span class="pre">-D</span></code>.
+For example, to build with the VTK functionality and the automatically generated API documentation, you might run:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>cmake<span class="w"> </span>-DQT_VERSION<span class="o">=</span><span class="m">6</span><span class="w"> </span>-DBUILD_MOLEQUEUE<span class="o">=</span>OFF<span class="w"> </span>-DUSE_VTK<span class="o">=</span>ON<span class="w"> </span>-DBUILD_DOCUMENTATION<span class="o">=</span>ON<span class="w"> </span>-S<span class="w"> </span>./openchemistry<span class="w"> </span>-B<span class="w"> </span>./build
+</pre></div>
+</div>
+<p>The following should, when used, also be passed on to <code class="docutils literal notranslate"><span class="pre">avogadrolibs</span></code> to configure its build.
+If the desktop application is being built, they are not particularly useful.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">USE_OPENGL</span> <span class="s2">&quot;Enable libraries that use OpenGL&quot;</span> <span class="n">ON</span>
+<span class="n">USE_LIBARCHIVE</span> <span class="s2">&quot;Enable optional Libarchive features&quot;</span> <span class="n">ON</span>
+<span class="n">USE_LIBMSYM</span> <span class="s2">&quot;Enable optional features using libmsym&quot;</span> <span class="n">ON</span>
+<span class="n">USE_SPGLIB</span> <span class="s2">&quot;Enable optional features using spglib&quot;</span> <span class="n">ON</span>
+<span class="n">USE_MMTF</span> <span class="s2">&quot;Enable optional features using mmtf&quot;</span> <span class="n">ON</span>
+</pre></div>
+</div>
+<p>Likewise, the following should be passed on to <code class="docutils literal notranslate"><span class="pre">avogadroapp</span></code> when given.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Avogadro_ENABLE_RPC</span> <span class="s2">&quot;Enable RPC server&quot;</span> <span class="n">ON</span>
+</pre></div>
+</div>
+<p>For all available flags, see the <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> file in the top level of each project.</p>
+</section>
+</section>
+<section id="building-offline">
+<span id="id2"></span><h3>Building offline<a class="headerlink" href="#building-offline" title="Link to this heading">#</a></h3>
+<p>In some situations it may not be possible or desirable to have the build process download the source code for the third-party dependencies during the build itself.</p>
+<p>One way to do this is to download the source code manually in advance and place the <strong>compressed archives</strong> in the <em>source</em> directory under <code class="docutils literal notranslate"><span class="pre">openchemistry/Downloads</span></code>.
+This needs to be done for all the dependencies listed as <a class="reference internal" href="#system-deps"><span class="std std-ref">optional dependencies</span></a>.</p>
+<p>Then, when running the above <code class="docutils literal notranslate"><span class="pre">cmake</span></code> configure step, pass <code class="docutils literal notranslate"><span class="pre">-DDOWNLOAD_TO_SOURCE_DIR=ON</span></code> as one of the flags.</p>
+<p>For this to work, you need to download the exact versions specified in <code class="docutils literal notranslate"><span class="pre">openchemistry/cmake/projects.cmake</span></code>, in the archive format expected.</p>
+<p>The alternative is to turn off the use of each of these dependencies (see above for the necessary flags).</p>
+</section>
+<section id="starting-the-build">
+<span id="running-build"></span><h3>Starting the build<a class="headerlink" href="#starting-the-build" title="Link to this heading">#</a></h3>
+<p>Once everything is configured, actually building is a simple matter of running:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>cmake<span class="w"> </span>--build<span class="w"> </span>./build
+</pre></div>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Windows <span class="fab fa-windows"></span></p>
+<p>On Windows you may wish to build a better optimized version of the program by running the build instead with:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>cmake<span class="w"> </span>--build<span class="w"> </span>./build<span class="w"> </span>--config<span class="w"> </span>Release
+</pre></div>
+</div>
+<p>See <a class="reference internal" href="#build-types"><span class="std std-ref">Build types</span></a> for more information.</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Linux <span class="fab fa-linux"></span></p>
+<p>If you used Ninja by passing <code class="docutils literal notranslate"><span class="pre">-G</span> <span class="pre">Ninja</span></code> in the configuration step, the build will automatically run in parallel.</p>
+<p>If you are using the default GNU Makefiles instead, the build will by default only use a single thread; to run in parallel use:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>cmake<span class="w"> </span>--build<span class="w"> </span>./build<span class="w"> </span>-j<span class="w"> </span><span class="m">4</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">4</span></code> is replaced by the number of threads you wish to use.
+This results in significant speed-ups (roughly n times faster in the author’s brief tests!).</p>
+</div>
+</section>
+</section>
+<section id="layout-of-the-build-directory">
+<span id="build-tree-layout"></span><h2>Layout of the build directory<a class="headerlink" href="#layout-of-the-build-directory" title="Link to this heading">#</a></h2>
+<p>Each submodule and project will initially be built within its own directories within the build directory, mirroring the source tree.</p>
+<p>When using the “superbuild” strategy detailed here, all compiled libraries, objects, and binaries, as well as all supporting resources such as icons and metadata, are additionally installed to the <code class="docutils literal notranslate"><span class="pre">prefix</span></code> directory within the build directory, so that everything can be found in one convenient location.</p>
+<p><code class="docutils literal notranslate"><span class="pre">prefix</span></code> contains the normal <code class="docutils literal notranslate"><span class="pre">include</span></code>, <code class="docutils literal notranslate"><span class="pre">bin</span></code>, <code class="docutils literal notranslate"><span class="pre">share</span></code> and <code class="docutils literal notranslate"><span class="pre">lib</span></code> subdirectories.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>This can be used to inject an additional prefix in <code class="docutils literal notranslate"><span class="pre">CMAKE_PREFIX_PATH</span></code> to ensure that projects built by the superbuild are found by each other.</p>
+<p>It keeps the sub-projects relatively simple as they either find stuff in the prefix, or normal system paths.</p>
+</div>
+</section>
 <section id="running-executables">
-<span id="id5"></span><h3>Running Executables<a class="headerlink" href="#running-executables" title="Link to this heading">#</a></h3>
-<p>It is recommended that you run the binaries from within the prefix
-directory in the build tree. The top-level targets (avogadroapp,
-molequeue, monogochem) all install to the prefix, if running make from
-within the individual build trees run make install to ensure you are
-using the latest version. On Linux and Windows running Avogadro 2 looks
-like,</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>./openchemistry-build/prefix/bin/avogadro2
+<span id="id3"></span><h2>Running executables<a class="headerlink" href="#running-executables" title="Link to this heading">#</a></h2>
+<p>It is recommended that you run the binaries from within the <code class="docutils literal notranslate"><span class="pre">prefix</span></code> directory in the build directory, e.g.:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>./build/prefix/bin/avogadro2
 </pre></div>
 </div>
-<p>On Mac, it might be:</p>
+<p>or on Windows:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>./build/prefix/bin/avogadro2.exe
+</pre></div>
+</div>
+<p>On Mac on the other hand it might be:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>open<span class="w"> </span>/Users/your-user/openchemistry-build/avogadroapp/bin/Avogadro2.app
 </pre></div>
 </div>
-<p>Note that on Mac with Apple Silicon, you must sign all binaries before opening:</p>
+<div class="dropdown admonition">
+<p class="admonition-title">macOS <span class="fab fa-apple"></span></p>
+<p>Note that on macOS running on Apple Silicon, you must sign all binaries before opening:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>codesign<span class="w"> </span>--force<span class="w"> </span>--deep<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;Developer ID Application: Username (Team ID)&quot;</span><span class="w"> </span>prefix/Avogadro2.app
 </pre></div>
 </div>
-</section>
-<section id="building-packages">
-<span id="id6"></span><h3>Building Packages<a class="headerlink" href="#building-packages" title="Link to this heading">#</a></h3>
-<p>The molequeue and avogadroapps projects can build installers.
-In order to do this you must cd into the appropriate subdirectory and
-call make package. So to build the Avogadro 2 package,</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>avogadroapp
+</div>
+<section id="building-installers">
+<span id="id4"></span><h3>Building installers<a class="headerlink" href="#building-installers" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">avogadroapp</span></code> can build installers for Avogadro.</p>
+<p>In order to do this, move into the cd into the appropriate subdirectory within the build tree and call <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">package</span></code>. So, to build the Avogadro 2 package:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>build/avogadroapp
 make<span class="w"> </span>package
 </pre></div>
 </div>
-<p>You may need to run cmake-gui, toggle advanced variables and
-enable/disable packages you are interested in. They are prefixed by
-CPACK, and can be toggled before calling make package. A binary
-installer will be created in the build directory.</p>
+<p>You may need to run cmake-gui, toggle advanced variables and enable/disable packages you are interested in.
+They are prefixed by CPACK, and can be toggled before calling <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">package</span></code>.
+A binary installer will be created in the build directory.</p>
 </section>
 </section>
 </section>
@@ -806,24 +919,39 @@ installer will be created in the build directory.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#system">System</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dependencies-and-prerequisites">Dependencies and prerequisites</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#development-tools">Development tools</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compiler">Compiler</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compiler-and-build-system">Compiler and build system</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-and-perl">Python and Perl</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#libraries">Libraries</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#qt">Qt</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#other-libraries">Other libraries</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#necessary">Necessary</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cloning-repositories">Cloning Repositories</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#updating">Updating</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-qt-windows-generators">Finding Qt, Windows Generators</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normal-development">Normal Development</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-tree-layout">Build Tree Layout</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-executables">Running Executables</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#building-packages">Building Packages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-the-source-code">Getting the source code</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recursive-clone">Recursive clone</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#manual-clone">Manual clone</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#required-and-optional-submodules">Required and optional submodules</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-avogadro">Building Avogadro</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-cmake">Configuring CMake</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#build-types">Build types</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#avogadro-specific-cmake-flags">Avogadro-specific CMake flags</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#building-offline">Building offline</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-the-build">Starting the build</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#layout-of-the-build-directory">Layout of the build directory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-executables">Running executables</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#building-installers">Building installers</a></li>
 </ul>
 </li>
 </ul>
