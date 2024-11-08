@@ -151,7 +151,7 @@ Download AppImage
 :::{button-link} https://flathub.org/apps/org.openchemistry.Avogadro2
 :color: primary
 :outline:
-Download Flatpak
+Install the Flatpak
 :::
 
 :::{button-link} https://repology.org/project/avogadro2/versions
@@ -171,6 +171,12 @@ Check your distro's repositories
 :color: secondary
 :outline:
 Nightly AppImage
+:::
+
+:::{button-ref} install-flatpak-beta
+:color: secondary
+:outline:
+Install the Beta Flatpak
 :::
 ::::
 
@@ -255,5 +261,6 @@ hidden: true
 caption: Installation
 ---
 self
+flatpak
 versions/index
 ```
