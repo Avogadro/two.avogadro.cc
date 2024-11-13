@@ -79,7 +79,7 @@ rediraffe_redirects = "redirects.txt"
 sd_fontawesome_latex = True
 
 locale_dirs = ['locale/']   # path is example but recommended.
-gettext_compact = 'docs'    # one file 
+gettext_compact = 'docs'    # one file
 language = "en"             # default language
 
 myst_substitutions = {
@@ -139,9 +139,9 @@ html_theme_options = {
     },
     "icon_links": [
         {
-            "name": "Twitter",
-            "url": "https://twitter.com/AvogadroChem",
-            "icon": "fa-brands fa-square-twitter",
+            "name": "Bluesky",
+            "url": "https://bsky.app/profile/avogadro.cc",
+            "icon": "fa-brands fa-bluesky",
         },
         {
             "name": "Mastodon",
@@ -177,5 +177,3 @@ html_css_files = [
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
-
-
