@@ -572,6 +572,8 @@ document.write(`
 <p><dl class="simple">
 <dt><strong>Author</strong></dt><dd><p>Marcus D. Hanwell </p>
 </dd>
+<dt><strong>Author</strong></dt><dd><p>Perminder Singh </p>
+</dd>
 </dl>
 </p>
 <div class="breathe-sectiondef docutils container">
@@ -772,7 +774,7 @@ document.write(`
 <span id="_CPPv3N8Avogadro4Core4Cube4dataEv"></span><span id="_CPPv2N8Avogadro4Core4Cube4dataEv"></span><span id="Avogadro::Core::Cube::data"></span><span class="target" id="class_avogadro_1_1_core_1_1_cube_1acb98f7cafc8897b33000c995781d533c"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">float</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">data</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core4Cube4dataEv" title="Link to this definition">#</a><br /></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Vector containing all the data in a one-dimensional array. </p>
+<dd class="field-odd"><p>Pointer to the vector containing all the data in a one-dimensional array. </p>
 </dd>
 </dl>
 </dd></dl>
@@ -792,6 +794,16 @@ document.write(`
 <dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core4Cube7addDataERKNSt6vectorIfEE">
 <span id="_CPPv3N8Avogadro4Core4Cube7addDataERKNSt6vectorIfEE"></span><span id="_CPPv2N8Avogadro4Core4Cube7addDataERKNSt6vectorIfEE"></span><span id="Avogadro::Core::Cube::addData__std::vector:float:CR"></span><span class="target" id="class_avogadro_1_1_core_1_1_cube_1aa72b2c739d632255b1bd33a4eeffefba"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addData</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">float</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">values</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core4Cube7addDataERKNSt6vectorIfEE" title="Link to this definition">#</a><br /></dt>
 <dd><p>Adds the values in the cube to those passed in the vector. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core4Cube10getRowIterEii">
+<span id="_CPPv3NK8Avogadro4Core4Cube10getRowIterEii"></span><span id="_CPPv2NK8Avogadro4Core4Cube10getRowIterEii"></span><span id="Avogadro::Core::Cube::getRowIter__i.iC"></span><span class="target" id="class_avogadro_1_1_core_1_1_cube_1a265a404290f67bbc320ab9c035c37bc2"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">float</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">const_iterator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getRowIter</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">j</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">k</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core4Cube10getRowIterEii" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Const iterator to the beginning of a specific row in the cube data. </p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="cpp function">
@@ -986,6 +998,97 @@ document.write(`
 <dd><p>Provides locking. </p>
 </dd></dl>
 
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core4Cube15computeGradientEiii">
+<span id="_CPPv3NK8Avogadro4Core4Cube15computeGradientEiii"></span><span id="_CPPv2NK8Avogadro4Core4Cube15computeGradientEiii"></span><span id="Avogadro::Core::Cube::computeGradient__i.i.iC"></span><span class="target" id="class_avogadro_1_1_core_1_1_cube_1a082e376989b49285b889c174dd1d3581"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">float</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">3</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">computeGradient</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">j</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">k</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core4Cube15computeGradientEiii" title="Link to this definition">#</a><br /></dt>
+<dd><p>Compute the gradient at a specific point in the cube. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>i</strong> – x index </p></li>
+<li><p><strong>j</strong> – y index </p></li>
+<li><p><strong>k</strong> – z index </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Gradient vector at the specified point. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core4Cube11getValsCubeEiii">
+<span id="_CPPv3NK8Avogadro4Core4Cube11getValsCubeEiii"></span><span id="_CPPv2NK8Avogadro4Core4Cube11getValsCubeEiii"></span><span id="Avogadro::Core::Cube::getValsCube__i.i.iC"></span><span class="target" id="class_avogadro_1_1_core_1_1_cube_1aaa342139d6297be7b60f5eba889fe3d2"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">float</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">8</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getValsCube</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">j</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">k</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core4Cube11getValsCubeEiii" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the values of the eight corners of a cube defined by the indices (i, j, k). </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>i</strong> – x index </p></li>
+<li><p><strong>j</strong> – y index </p></li>
+<li><p><strong>k</strong> – z index </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#class_avogadro_1_1_core_1_1_array"><span class="std std-ref">Array</span></a> of values at the eight corners. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core4Cube11getGradCubeEiii">
+<span id="_CPPv3NK8Avogadro4Core4Cube11getGradCubeEiii"></span><span id="_CPPv2NK8Avogadro4Core4Cube11getGradCubeEiii"></span><span id="Avogadro::Core::Cube::getGradCube__i.i.iC"></span><span class="target" id="class_avogadro_1_1_core_1_1_cube_1aee0ec5f90bb0d0e1b82c89075a368c5f"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">float</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">3</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">8</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getGradCube</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">j</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">k</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core4Cube11getGradCubeEiii" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the gradients at the eight corners of the cube defined by the indices (i, j, k). </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>i</strong> – x index </p></li>
+<li><p><strong>j</strong> – y index </p></li>
+<li><p><strong>k</strong> – z index </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#class_avogadro_1_1_core_1_1_array"><span class="std std-ref">Array</span></a> of gradients at the eight corners. Each gradient is a 3D vector. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core4Cube7getDataEiii">
+<span id="_CPPv3NK8Avogadro4Core4Cube7getDataEiii"></span><span id="_CPPv2NK8Avogadro4Core4Cube7getDataEiii"></span><span id="Avogadro::Core::Cube::getData__i.i.iC"></span><span class="target" id="class_avogadro_1_1_core_1_1_cube_1a5a8fd42c025c1a0b8994df3222b3fd60"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getData</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">j</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">k</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core4Cube7getDataEiii" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the data value at the specified indices. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>i</strong> – x index </p></li>
+<li><p><strong>j</strong> – y index </p></li>
+<li><p><strong>k</strong> – z index </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Value at the specified indices. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core4Cube10getPosCubeEiii">
+<span id="_CPPv3NK8Avogadro4Core4Cube10getPosCubeEiii"></span><span id="_CPPv2NK8Avogadro4Core4Cube10getPosCubeEiii"></span><span id="Avogadro::Core::Cube::getPosCube__i.i.iC"></span><span class="target" id="class_avogadro_1_1_core_1_1_cube_1adc80ecf50b1b4276f1ce83ac8720ed06"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">float</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">3</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">8</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getPosCube</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">j</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">k</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core4Cube10getPosCubeEiii" title="Link to this definition">#</a><br /></dt>
+<dd><p>Retrieves the positions of the eight corners of a cube at grid indices (i, j, k).</p>
+<p>The indices (i, j, k) are converted to real-space positions (xpos, ypos, zpos), mapping grid indices to physical coordinates. The method returns a cube that spans one step in each of the x, y, and z directions, with step sizes defined by <code class="docutils literal notranslate"><span class="pre">m_spacing</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>i</strong> – X-index. </p></li>
+<li><p><strong>j</strong> – Y-index. </p></li>
+<li><p><strong>k</strong> – Z-index. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A <code class="docutils literal notranslate"><span class="pre">std::array</span></code> of eight <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y,</span> <span class="pre">z)</span></code> coordinates representing the cube’s corners. </p>
+</dd>
+</dl>
+</dd></dl>
+
 </div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-attributes">Protected Attributes</p>
@@ -1119,6 +1222,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core4Cube4dataEv"><code class="docutils literal notranslate"><span class="pre">Cube::data()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core4Cube7setDataERKNSt6vectorIfEE"><code class="docutils literal notranslate"><span class="pre">Cube::setData()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core4Cube7addDataERKNSt6vectorIfEE"><code class="docutils literal notranslate"><span class="pre">Cube::addData()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core4Cube10getRowIterEii"><code class="docutils literal notranslate"><span class="pre">Cube::getRowIter()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core4Cube12closestIndexERK7Vector3"><code class="docutils literal notranslate"><span class="pre">Cube::closestIndex()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core4Cube11indexVectorERK7Vector3"><code class="docutils literal notranslate"><span class="pre">Cube::indexVector()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core4Cube8positionEj"><code class="docutils literal notranslate"><span class="pre">Cube::position()</span></code></a></li>
@@ -1137,6 +1241,11 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core4Cube11setCubeTypeE4Type"><code class="docutils literal notranslate"><span class="pre">Cube::setCubeType()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core4Cube8cubeTypeEv"><code class="docutils literal notranslate"><span class="pre">Cube::cubeType()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core4Cube4lockEv"><code class="docutils literal notranslate"><span class="pre">Cube::lock()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core4Cube15computeGradientEiii"><code class="docutils literal notranslate"><span class="pre">Cube::computeGradient()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core4Cube11getValsCubeEiii"><code class="docutils literal notranslate"><span class="pre">Cube::getValsCube()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core4Cube11getGradCubeEiii"><code class="docutils literal notranslate"><span class="pre">Cube::getGradCube()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core4Cube7getDataEiii"><code class="docutils literal notranslate"><span class="pre">Cube::getData()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core4Cube10getPosCubeEiii"><code class="docutils literal notranslate"><span class="pre">Cube::getPosCube()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core4Cube6m_dataE"><code class="docutils literal notranslate"><span class="pre">Cube::m_data</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core4Cube5m_minE"><code class="docutils literal notranslate"><span class="pre">Cube::m_min</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core4Cube5m_maxE"><code class="docutils literal notranslate"><span class="pre">Cube::m_max</span></code></a></li>
