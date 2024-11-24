@@ -118,7 +118,7 @@ Download Installer
 :text-align: center
 :shadow: none
 
-:::{button-link} https://nightly.link/OpenChemistry/avogadrolibs/workflows/build_cmake/master/Win64.exe.zip
+:::{button-link} https://nightly.link/OpenChemistry/avogadrolibs/workflows/build_windows/master/Win64-signed.exe.zip
 :color: secondary
 :outline:
 Download Nightly Build
