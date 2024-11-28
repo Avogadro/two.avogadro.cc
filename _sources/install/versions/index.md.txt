@@ -7,7 +7,7 @@ previous versions of Avogadro (1.2 and older)
 
 ```{toctree}
 ---
-maxdepth: 1
+maxdepth: 2
 ---
 v199
 v1981
