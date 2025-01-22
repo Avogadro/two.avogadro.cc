@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Avogadro::MoleQueue::MoleQueueQueueListModel &#8212; Avogadro 1.99.0 documentation</title>
+    <title>Avogadro::MoleQueue::MoleQueueQueueListModel &#8212; Avogadro 1.100.0 documentation</title>
   
   
   
@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../_static/documentation_options.js?v=c288451a"></script>
+    <script src="../../_static/documentation_options.js?v=d87f2dab"></script>
     <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -530,10 +530,10 @@ document.write(`
 <dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9MoleQueue23MoleQueueQueueListModelE">
 <span id="_CPPv3N8Avogadro9MoleQueue23MoleQueueQueueListModelE"></span><span id="_CPPv2N8Avogadro9MoleQueue23MoleQueueQueueListModelE"></span><span id="Avogadro::MoleQueue::MoleQueueQueueListModel"></span><span class="target" id="class_avogadro_1_1_mole_queue_1_1_mole_queue_queue_list_model"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">MoleQueueQueueListModel</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">QAbstractItemModel</span></span><a class="headerlink" href="#_CPPv4N8Avogadro9MoleQueue23MoleQueueQueueListModelE" title="Link to this definition">#</a><br /></dt>
 <dd><p>The <a class="reference internal" href="#class_avogadro_1_1_mole_queue_1_1_mole_queue_queue_list_model"><span class="std std-ref">MoleQueueQueueListModel</span></a> class is Qt item model representing the tree of available queues and programs in a running MoleQueue process. </p>
-<p>&lt;avogadro/molequeue/molequeuequeuelistmodel.h&gt;</p>
+<p>&lt;avogadro/molequeue/molequeuequeuelistmodel.h&gt; </p>
 <p>This class provides access to the available MoleQueue queues and programs in a convenient tree item model. Resources can be queried directly using the <a class="reference internal" href="#class_avogadro_1_1_mole_queue_1_1_mole_queue_queue_list_model_1a4445e57c9ea0f3b8972dfd2bdbf44712"><span class="std std-ref">queues()</span></a> and <a class="reference internal" href="#class_avogadro_1_1_mole_queue_1_1_mole_queue_queue_list_model_1a96f894f6d96303df4d1a9ee418537f7e"><span class="std std-ref">programs()</span></a> methods, or this item model may be used with a Qt model view class, such a QTreeView.</p>
 <p>QModelIndex objects that match a queue or program node may be found using the <a class="reference internal" href="#class_avogadro_1_1_mole_queue_1_1_mole_queue_queue_list_model_1afba443d1867e1e6a8702b92b4c9e81e2"><span class="std std-ref">findQueueIndices()</span></a> and <a class="reference internal" href="#class_avogadro_1_1_mole_queue_1_1_mole_queue_queue_list_model_1add26dc3a10fd9f1575cd3608ebf4d2d1"><span class="std std-ref">findProgramIndices()</span></a> methods. A program model index may be translated into queue and program strings using the <a class="reference internal" href="#class_avogadro_1_1_mole_queue_1_1_mole_queue_queue_list_model_1adb5b0df32e9fe4269b0f638322313d1d"><span class="std std-ref">lookupProgram()</span></a> method.</p>
-<p>An instance of this class is obtained by calling <a class="reference internal" href="class_avogadro_1_1_mole_queue_1_1_mole_queue_manager.html#class_avogadro_1_1_mole_queue_1_1_mole_queue_manager_1af1cf42047ce8ca2f16ce04afe367f5fd"><span class="std std-ref">MoleQueueManager::instance()</span></a>.queueListModel(), and can be updated by calling <a class="reference internal" href="class_avogadro_1_1_mole_queue_1_1_mole_queue_manager.html#class_avogadro_1_1_mole_queue_1_1_mole_queue_manager_1af1cf42047ce8ca2f16ce04afe367f5fd"><span class="std std-ref">MoleQueueManager::instance()</span></a>.requestQueueList() and waiting for the <a class="reference internal" href="class_avogadro_1_1_mole_queue_1_1_mole_queue_manager.html#class_avogadro_1_1_mole_queue_1_1_mole_queue_manager_1ac02271730c6f96562e7a26df96f743ef"><span class="std std-ref">MoleQueueManager::queueListUpdated()</span></a> signal. </p>
+<p>An instance of this class is obtained by calling <a class="reference internal" href="class_avogadro_1_1_mole_queue_1_1_mole_queue_manager.html#class_avogadro_1_1_mole_queue_1_1_mole_queue_manager_1a1d9a2a4646715a95f5f4c0cd4dd4865b"><span class="std std-ref">MoleQueueManager::instance()</span></a>.queueListModel(), and can be updated by calling <a class="reference internal" href="class_avogadro_1_1_mole_queue_1_1_mole_queue_manager.html#class_avogadro_1_1_mole_queue_1_1_mole_queue_manager_1a1d9a2a4646715a95f5f4c0cd4dd4865b"><span class="std std-ref">MoleQueueManager::instance()</span></a>.requestQueueList() and waiting for the <a class="reference internal" href="class_avogadro_1_1_mole_queue_1_1_mole_queue_manager.html#class_avogadro_1_1_mole_queue_1_1_mole_queue_manager_1ac02271730c6f96562e7a26df96f743ef"><span class="std std-ref">MoleQueueManager::queueListUpdated()</span></a> signal. </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
@@ -638,13 +638,13 @@ document.write(`
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-types">Protected Types</p>
 <dl class="cpp enum">
-<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9MoleQueue23MoleQueueQueueListModelUt2_10E">
-<span id="_CPPv3N8Avogadro9MoleQueue23MoleQueueQueueListModelUt2_10E"></span><span class="target" id="class_avogadro_1_1_mole_queue_1_1_mole_queue_queue_list_model_1a385c44f6fb256e5716a2302a5b940388"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">[anonymous]</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9MoleQueue23MoleQueueQueueListModelUt2_10E" title="Link to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp">
+<span class="target" id="class_avogadro_1_1_mole_queue_1_1_mole_queue_queue_list_model_1a385c44f6fb256e5716a2302a5b940388"></span><span class="sig-name descname"></span></dt>
 <dd><p>Used to retrieve a QStringList with [queueName, programName] from data() given a program model index. </p>
 <p><em>Values:</em></p>
 <dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9MoleQueue23MoleQueueQueueListModelUt2_1016QueueProgramRoleE">
-<span id="_CPPv3N8Avogadro9MoleQueue23MoleQueueQueueListModelUt2_1016QueueProgramRoleE"></span><span class="target" id="class_avogadro_1_1_mole_queue_1_1_mole_queue_queue_list_model_1a385c44f6fb256e5716a2302a5b940388a04813a8996bcb22985905bea12752c14"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">QueueProgramRole</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9MoleQueue23MoleQueueQueueListModelUt2_1016QueueProgramRoleE" title="Link to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9MoleQueue23MoleQueueQueueListModel19PhonyNameDueToError16QueueProgramRoleE">
+<span id="_CPPv3N8Avogadro9MoleQueue23MoleQueueQueueListModel19PhonyNameDueToError16QueueProgramRoleE"></span><span id="_CPPv2N8Avogadro9MoleQueue23MoleQueueQueueListModel19PhonyNameDueToError16QueueProgramRoleE"></span><span class="target" id="class_avogadro_1_1_mole_queue_1_1_mole_queue_queue_list_model_1a385c44f6fb256e5716a2302a5b940388a04813a8996bcb22985905bea12752c14"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">QueueProgramRole</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9MoleQueue23MoleQueueQueueListModel19PhonyNameDueToError16QueueProgramRoleE" title="Link to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -742,10 +742,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro9MoleQueue23MoleQueueQueueListModel6parentERK11QModelIndex"><code class="docutils literal notranslate"><span class="pre">MoleQueueQueueListModel::parent()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro9MoleQueue23MoleQueueQueueListModel8rowCountERK11QModelIndex"><code class="docutils literal notranslate"><span class="pre">MoleQueueQueueListModel::rowCount()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro9MoleQueue23MoleQueueQueueListModel11columnCountERK11QModelIndex"><code class="docutils literal notranslate"><span class="pre">MoleQueueQueueListModel::columnCount()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9MoleQueue23MoleQueueQueueListModelUt2_10E"><code class="docutils literal notranslate"><span class="pre">MoleQueueQueueListModel::@10</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9MoleQueue23MoleQueueQueueListModelUt2_1016QueueProgramRoleE"><code class="docutils literal notranslate"><span class="pre">MoleQueueQueueListModel::@10::QueueProgramRole</span></code></a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9MoleQueue23MoleQueueQueueListModel19PhonyNameDueToError16QueueProgramRoleE"><code class="docutils literal notranslate"><span class="pre">MoleQueueQueueListModel::PhonyNameDueToError::QueueProgramRole</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9MoleQueue23MoleQueueQueueListModel23MoleQueueQueueListModelEP7QObject"><code class="docutils literal notranslate"><span class="pre">MoleQueueQueueListModel::MoleQueueQueueListModel()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9MoleQueue23MoleQueueQueueListModel12setQueueListE5QListI7QStringE5QListI11QStringListE"><code class="docutils literal notranslate"><span class="pre">MoleQueueQueueListModel::setQueueList()</span></code></a></li>
 </ul>
@@ -791,7 +788,7 @@ document.write(`
     <div class="footer-items__start">
       
         <div class="footer-item">          <p>
-            ©2024 The OpenChemistry / Avogadro Teams 
+            ©2025 The OpenChemistry / Avogadro Teams 
           </p>
           <p>Covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
           </p></div>

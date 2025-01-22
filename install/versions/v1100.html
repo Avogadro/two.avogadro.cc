@@ -1,0 +1,804 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Avogadro 1.100.0 &#8212; Avogadro 1.100.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=ee427ece" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=d87f2dab"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'install/versions/v1100';</script>
+    <link rel="canonical" href="https://two.avogadro.cc/install/versions/v1100.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Avogadro 1.99.0" href="v199.html" />
+    <link rel="prev" title="Avogadro v2" href="avogadro2.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/avogadro2.png" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="../../_static/avogadro2.png" class="logo__image only-dark" alt=""/>`);</script>
+  
+  
+    <p class="title logo__title">Avogadro</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Install
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../docs/index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../develop/index.html">
+    Develop
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../contrib/index.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../teach/index.html">
+    Teach
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+    Discuss
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/avogadro.cc" title="Bluesky" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-bluesky fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Install
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../docs/index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../develop/index.html">
+    Develop
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../contrib/index.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../teach/index.html">
+    Teach
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+    Discuss
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/avogadro.cc" title="Bluesky" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-bluesky fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Installation</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flatpak.html">Flatpak</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Version History</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="avogadro2.html">Avogadro v2</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Avogadro 1.100.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="v199.html">Avogadro 1.99.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="v1981.html">Avogadro 1.98.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="v198.html">Avogadro 1.98.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="v197.html">Avogadro 1.97.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="v196.html">Avogadro 1.96.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="v1951.html">Avogadro 1.95.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="v195.html">Avogadro 1.95.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="v194.html">Avogadro 1.94.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="v193.html">Avogadro 1.93.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="v192.html">Avogadro 1.92.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="v191.html">Avogadro 1.91.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="v190.html">Avogadro 1.90.0</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="avogadro1.html">Avogadro 1</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Install</a></li>
+    
+    
+    <li class="breadcrumb-item"><i class="fa-solid fa-ellipsis"></i></li>
+    
+    
+    <li class="breadcrumb-item"><a href="avogadro2.html" class="nav-link">Avogadro v2</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Avogadro 1.100.0</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="avogadro-1-100-0">
+<span id="v1100"></span><h1>Avogadro 1.100.0<a class="headerlink" href="#avogadro-1-100-0" title="Link to this heading">#</a></h1>
+<p>21 January 2025</p>
+<section id="highlights-tldr">
+<h2>🌟 Highlights (tldr)<a class="headerlink" href="#highlights-tldr" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>New rendering options, including depth-of-field blur and fog from &#64;perminder-17</p></li>
+<li><p>Faster surface mesh generation using the flying edges algorithm &#64;perminder-17</p></li>
+<li><p>Brought back the “molecular orbitals” panel &#64;ghutchis</p></li>
+<li><p>Support for translucent balls-and-sticks, van der Waals spheres, and licorice rendering  including per-layer customization &#64;ghutchis</p></li>
+<li><p>New, improved Flatpak package from &#64;matterhorn103 including support for ARM</p></li>
+<li><p>New conformer properties window &#64;ghutchis</p></li>
+<li><p>New improved molecular properties window, including charge and spin multiplicity, HOMO and LUMO energies, total energies and other properties (depending on file format) &#64;ghutchis</p></li>
+<li><p>Many more properties parsed from ORCA output files including Hirshfeld, MBIS, and CHELPG charges &#64;ghutchis</p></li>
+<li><p>Code signing on Windows to minimize Defender warnings &#64;ghutchis thanks to SignPath</p></li>
+<li><p>Support for latest Qt6 on Linux &#64;matterhorn103</p></li>
+</ul>
+</section>
+<section id="features">
+<h2>✨ Features<a class="headerlink" href="#features" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Improved spectra plots, including NMR, UV and CD spectra  (#1874)</p></li>
+<li><p>Add support for reading and rendering DNA / RNA backbones  (#1831)</p></li>
+<li><p>Improve python selection dialog  (#1844)</p></li>
+<li><p>Calculate and render dipole moments</p></li>
+<li><p>Edit molecule name, charge, and spin in properties  (#1810)</p></li>
+<li><p>Improve manipulate dialog - rotate around origin, molecule center, selection center  (#1774)</p></li>
+<li><p>Update the template tool to place ligands or functional groups  (#1777)</p></li>
+<li><p>Support for additional secondary structures (3-10 and pi helix) &#64;TactfulDeity (#1746)</p></li>
+<li><p>Implement g orbitals  (#1826)</p></li>
+<li><p>cp2kinput improvements &#64;e-kwsm (#1702)</p></li>
+<li><p>Add support to render atomic partial charge labels  (#1726)</p></li>
+<li><p>Add support to render bond lengths  (#1871)</p></li>
+<li><p>Add HOMO and LUMO energies to molecular properties  (#1803)</p></li>
+<li><p>Add Shortcut Keys to navigate/modify tools (Issue #1794) &#64;Milziade (#1807)</p></li>
+<li><p>Add “change elements” dialog  (#1863)</p></li>
+<li><p>Editing molecular charge / spin =&gt; input generators and plugins</p></li>
+</ul>
+<section id="file-format-improvements">
+<h3>📄 File Format Improvements:<a class="headerlink" href="#file-format-improvements" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Parse inputParameters if present in cjson  (#1849)</p></li>
+<li><p>Read radicals from SDF / Molfile  (#1848)</p></li>
+<li><p>Parse more MOPAC aux properties including coordinates  (#1843)</p></li>
+<li><p>Parse CHELPG charges from ORCA output too  (#1829)</p></li>
+<li><p>Export to XYZ format with 10 decimal precision as per forum debate  (#1824)</p></li>
+<li><p>Read MBIS charges from ORCA output  (#1823)</p></li>
+<li><p>Read multiple ORCA coordinate sets  (#1808)</p></li>
+<li><p>Parse NMR spectra from ORCA  (#1799)</p></li>
+<li><p>Parse ORCA electronic spectra  (#1797)</p></li>
+<li><p>Add basic support for v3000 molfiles, including for large molecules  (#1765)</p></li>
+<li><p>Small patch to parsing XYZ trajectories to handle ORCA 6 separators  (#1705)</p></li>
+<li><p>Add support for reading and writing atom force vectors  (#1674)</p></li>
+<li><p>Support reading files in UTF-16 format</p></li>
+</ul>
+</section>
+</section>
+<section id="bug-fixes">
+<h2>🐛 Bug Fixes<a class="headerlink" href="#bug-fixes" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Allow surface generation to be cancelled  (#1894)</p></li>
+<li><p>Add progress bar for optimizations, including cancel  (#1893)</p></li>
+<li><p>Switch text rendering to use interpolation (#1917)</p></li>
+<li><p>Fix code for haptic ligands. Pick the furthest dummy to attach (#1916)</p></li>
+<li><p>Only enable the PQR search command if the site is reachable (#1892)</p></li>
+<li><p>Tweak the centroid and center-of-mass commands  (#1891)</p></li>
+<li><p>Fix manipulate and label tools to rotate by default  (#1861)</p></li>
+<li><p>Fix right-click to delete a hydrogen and adjusting after deleting a bond (#1896)</p></li>
+<li><p>Copy bonds and bond orders when generating super cells (#1898)</p></li>
+<li><p>Fix parsing molecular orbital coefficients in some ORCA output files (#1899)</p></li>
+<li><p>Handle upper-case <code class="docutils literal notranslate"><span class="pre">[ATOMS]</span></code> line in Molden files from Cfour  (#1785)</p></li>
+<li><p>Fix plugin downloader &#64;matterhorn103 (#1767)</p></li>
+<li><p>Prevent a possible unhandled exception from parsing JSON  (#1742)</p></li>
+<li><p>Fix crash when creating ligands from the clipboard – off-by-one bug  (#1739)</p></li>
+<li><p>Ensure BABEL_LIBDIR and BABEL_DATADIR are set properly on Mac  (#1736)</p></li>
+<li><p>Fix XYZ trajectories - prevent final frame with 0,0,0 coords  (#1720)</p></li>
+<li><p>Make sure the measure tool has a good contrast with background color  (#1718)</p></li>
+<li><p>Switch import format for Open Babel to CJSON if supported  (#1707)</p></li>
+<li><p>Fix perception of amide nitrogens - should be sp2-like  (#1652)</p></li>
+<li><p>Default tool wasn’t set properly, so rotations, etc. ignored  (#1647)</p></li>
+<li><p>Add more error checking for Fetch PDB  (#1646)</p></li>
+<li><p>Fix bug reported in #1637 with mis-parsing selenium atoms in PDB  (#1643)</p></li>
+<li><p>Ask before re-perceiving a space group  (#1639)</p></li>
+<li><p>Switch back to importing from PDB using PDB instead of MMTF format  (#1642)</p></li>
+<li><p>Fix crash with short TER record  (#1640)</p></li>
+<li><p>Fix crash when reading cjson with invalid layer data  (#1636)</p></li>
+<li><p>Fixed Select bugs reported on forum  (#1625)</p></li>
+<li><p>Fix crash from centroids with empty molecule  (#1624)</p></li>
+<li><p>Fix crash at startup when opening a file from command-line  (#1621)</p></li>
+<li><p>Fix drag-to-install for scripts, esp. energy calculators</p></li>
+<li><p>App crashes when clicking “Optimize Geometry” without any atom &#64;perminder-17 (#1661)</p></li>
+<li><p>Clarify line width / size in spectra dialog  (#1678)</p></li>
+<li><p>Add double-check for addEdge to prevent potential crash  (#1704)</p></li>
+<li><p>Ensure “split” buttons don’t create a transparent background</p></li>
+<li><p>Use QDesktopServices on Linux too with Qt 6, which fixes opening URLs &#64;matterhorn103</p></li>
+<li><p>Update desktop file name in QApplication code &#64;matterhorn103</p></li>
+<li><p>Update the newer compilation guide &#64;nbehrnd</p></li>
+<li><p>Export icons according to XDG icon spec on unix &#64;matterhorn103</p></li>
+<li><p>Use name according to the XDG standard, harmonize metadata with flatpak &#64;matterhorn103</p></li>
+<li><p>Make sure to create directories for drag-and-drop install of Python scripts</p></li>
+<li><p>Tweak the text and tooltips in the rendering dialog</p></li>
+<li><p>Fix crash when no selection is made when saving files</p></li>
+</ul>
+</section>
+<section id="performance-improvements">
+<h2>🚀 Performance Improvements<a class="headerlink" href="#performance-improvements" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Use flying edges for mesh generation &#64;perminder-17 (#1741)</p></li>
+<li><p>When possible, load Python script names from cache  (#1830)</p></li>
+<li><p>Turn off default depth blur, shadows, edge for speed  (#1728)</p></li>
+</ul>
+</section>
+<section id="maintenance-build-improvements">
+<h2>🧰 Maintenance &amp; Build Improvements<a class="headerlink" href="#maintenance-build-improvements" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Updated tests to Qt6 &#64;peach280 (#1941)</p></li>
+<li><p>Explicitly use signed char in meshgenerator to avoid narrowing error on ARM &#64;matterhorn103 (#1842)</p></li>
+<li><p>Fix residue not initializing id in default constructor  (#1786)</p></li>
+<li><p>ENH/BUG: Code Clean Up, Optimization, Documentation &#64;TactfulDeity (#1779)</p></li>
+<li><p>Add flatpak workflow for GitHub Actions &#64;matterhorn103 (#1772)</p></li>
+<li><p>Update to latest Qt patch version and install-qt-action &#64;matterhorn103 (#1841)</p></li>
+<li><p>Set a project-wide variable for molecule data dir AvogadroLibs_SOURCE…  (#1851)</p></li>
+<li><p>Unbundle all charge and forcefield scripts  (#1832)</p></li>
+<li><p>Update comment headers to new format (missed some in prev effort)  (#1828)</p></li>
+<li><p>Use release certificate signing on Windows  (#1821)</p></li>
+<li><p>Bumping to Qt 6.8 (latest LTS) for Mac and Windows builds  (#1751)</p></li>
+<li><p>Switch AppImage build to use the new linuxdeploy tool  (#1775)</p></li>
+<li><p>Further fixes for Qt6 &#64;matterhorn103 (#1713)</p></li>
+<li><p>Fix building Qt Plugins without spglib (USE_SPGLIB=OFF) &#64;MehdiChinoune (#1671)</p></li>
+<li><p>Cmake: Remove custom <code class="docutils literal notranslate"><span class="pre">Find&lt;Package&gt;.cmake</span></code> modules &#64;LecrisUT (#1585)</p></li>
+<li><p>Fix wrong variable name &#64;antonio-rojas (#1612)</p></li>
+<li><p>Fix windows debug log</p></li>
+</ul>
+</section>
+<section id="translations">
+<h2>📚 Translations<a class="headerlink" href="#translations" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Remove many incorrect “fuzzy” translations &#64;e-kwsm</p></li>
+<li><p>Fix a few ellipsis inconsistencies &#64;matterhorn103 (#1771)</p></li>
+<li><p>chore: put space after period &#64;e-kwsm (#1697)</p></li>
+<li><p>Automated translation updates &#64;github-actions</p></li>
+<li><p>Translations update from Hosted Weblate &#64;weblate</p></li>
+</ul>
+</section>
+<section id="credits">
+<h2>Credits<a class="headerlink" href="#credits" title="Link to this heading">#</a></h2>
+<p>Thanks to many contributors, including: &#64;Cartrigger, &#64;LecrisUT, &#64;MehdiChinoune, &#64;Milziade, &#64;NorwayFun, &#64;RickyLam11, &#64;SantosSi, &#64;TactfulDeity, &#64;TamilNeram, &#64;ZhangHMDS, &#64;alexrsoares, &#64;andibing, &#64;antonio-rojas, &#64;dependabot, &#64;e-kwsm, &#64;ghutchis, &#64;github-actions, &#64;matterhorn103, &#64;milotype, &#64;nbehrnd, &#64;ostriz2, &#64;ovari, &#64;peach280, &#64;perminder-17, &#64;rezaalmanda, &#64;secretkontributer, &#64;simmon-nplob, &#64;snowcliffx, &#64;tacitcoast, &#64;weblate, &#64;ykertytsky, &#64;zhangtengshuo, Eisuke Kawashima, KeysBits, LibreTranslate, Remus-Gabriel Chelu, Weblate Translation Memory, fox and gallegonovato</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="avogadro2.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Avogadro v2</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="v199.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Avogadro 1.99.0</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#highlights-tldr">🌟 Highlights (tldr)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#features">✨ Features</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file-format-improvements">📄 File Format Improvements:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bug-fixes">🐛 Bug Fixes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-improvements">🚀 Performance Improvements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maintenance-build-improvements">🧰 Maintenance &amp; Build Improvements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#translations">📚 Translations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#credits">Credits</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/avogadro/two.avogadro.cc/edit/main/source/install/versions/v1100.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">          <p>
+            ©2025 The OpenChemistry / Avogadro Teams 
+          </p>
+          <p>Covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
+          </p></div>
+      
+        <div class="footer-item">        <p>
+          <a href="/contrib/index.html">Contribute</a>
+        </p></div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.0.2.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.4.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
