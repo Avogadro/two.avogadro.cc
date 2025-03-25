@@ -167,7 +167,7 @@ Check your distro's repositories
 :text-align: center
 :shadow: none
 
-:::{button-link} https://nightly.link/OpenChemistry/avogadrolibs/workflows/build_cmake/master/Avogadro2.AppImage.zip
+:::{button-link} https://nightly.link/OpenChemistry/avogadrolibs/workflows/build_linux/master/Avogadro2-x86_64.AppImage.zip
 :color: secondary
 :outline:
 Nightly AppImage
