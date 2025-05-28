@@ -6,7 +6,7 @@ A variety of activities and resources using Avogadro have been published in jour
 
 ## Understanding Organic Chemistry Through Computation
 
-There is a free LibreText (*Understanding Organic Chemistry Through Computation*)[https://chem.libretexts.org/Bookshelves/Organic_Chemistry/Understanding_Organic_Chemistry_Through_Computation_(Boaz_and_Pearce)] written by Nicholas Boaz and Orion Pearce.
+There is a free LibreText [*Understanding Organic Chemistry Through Computation*](https://chem.libretexts.org/Bookshelves/Organic_Chemistry/Understanding_Organic_Chemistry_Through_Computation_(Boaz_and_Pearce)) written by Nicholas Boaz and Orion Pearce.
 
 > This online textbook works to clarify challenging concepts in introductory organic chemistry by applying tools from computational chemistry to validate fundamental principles. […] Throughout this work, exercises are shown with step-by-step illustrated instructions and are designed to be completed using a standard desktop computer
 
