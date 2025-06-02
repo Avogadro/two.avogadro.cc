@@ -54,6 +54,7 @@ A dialog box will open when "Setup Force Field..." is selected. This dialog box 
 
 "Fix Selected Atoms" also allows you to set a certain part of a molecule to fix during optimization.
 
+(extensions-plugins-menu)=
 ## Avogadro Extensions--Plugins
 
 Avogadro provides you with the ability to interface your molecules with other dialog based plugins. These extensions interact with a molecule to provide further molecular information, and additional computation abilities. These plugins include but aren't limited to GAMESS, Abinit, Dalton, GAMESS-UK, Gaussian, MOLPRO, MOPAC, NWChem, PSI4, Q-Chem, and LAMMPS.
