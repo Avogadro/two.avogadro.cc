@@ -105,11 +105,14 @@ Windows
 :text-align: center
 :shadow: none
 
-:::{button-link} https://github.com/OpenChemistry/avogadrolibs/releases/latest/download/Avogadro2-1.100.0-win64.exe
+:::{button-link} 
 :color: primary
 :outline:
-Download Installer
+~~Download Installer~~
 :::
+
+There is a known bug with 1.100. Please use the nightly build.
+
 ::::
 
 
