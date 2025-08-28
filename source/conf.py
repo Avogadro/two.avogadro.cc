@@ -135,7 +135,9 @@ html_theme_options = {
     "header_links_before_dropdown": 6,
     'collapse_navigation': True,
     "logo": {
-        "text": "Avogadro",
+        "alt_text": "Avogadro Documentation- Home",
+        "image_light": "_static/avogadro2.png",
+        "image_dark": "_static/avogadro2-dark.png",
     },
     "icon_links": [
         {
