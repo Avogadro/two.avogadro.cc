@@ -136,6 +136,10 @@ html_theme_options = {
     'collapse_navigation': True,
     "logo": {
         "text": "Avogadro",
+        "image_light": "_static/avogadro2.png",
+        "image_dark": "_static/avogadro2-dark.png",
+   }
+
     },
     "icon_links": [
         {
