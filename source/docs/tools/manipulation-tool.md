@@ -32,7 +32,7 @@ On a single atom this will have no visible effect.
 Rotation with click and drag will always be about the geometric center of the selection.
 ```
 
-The Manipulation Tool is automatically selected after [inserting a fragment](menus-build-menu-insert) via `Build`⇒`Insert`, to enable quick and easy positioning of the new fragment.
+The Manipulation Tool is automatically selected after [inserting a fragment](menus-build-menu-insert) via **Build ⇒ Insert**, to enable quick and easy positioning of the new fragment.
 
 ## Pane options
 

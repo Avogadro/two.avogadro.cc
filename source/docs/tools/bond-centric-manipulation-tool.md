@@ -6,37 +6,54 @@
 
 Keyboard shortcut: <kbd>Ctrl</kbd>+<kbd>7</kbd>
 
-The Bond-Centric Manipulation Tool is a powerful tool that allows you to focus on a specific bond and change its length and the surrounding angles, while keeping the rest of the molecule the same.
+The **Bond-Centric Manipulation Tool** is a powerful tool that allows you to change the length of a bond and the surrounding bond angles in a highly intuitive way that preserves the internal geometry of any substituents.
+
+This allows you to move entire parts of a molecule at once relative to one another much more straightforwardly than would be possible with the [Manipulation Tool](tools-manipulation-tool).
 
 ```{tip}
 The Bond-Centric Manipulation Tool provides mouse-based manual adjustment of bond lengths and angles.
 If you wish to set these quantities to specific, exact values, it may be more convenient to do this in the relevant [Properties pane](panes-properties).
 ```
 
-![](../../_static/bb1e744d-c5be-45b9-a6ce-b3de75ae47e2.png)
+## Basic usage
 
-## Starting with the basics:
+**Left-click** on a bond to **select** it. A blue **Bond Manipulation Plane** will appear incident to the bond and the angles between the bond and the neighboring bonds will be depicted.
 
-* To begin using the bond centric manipulate tool, click on a bond within your molecule.
-* Clicking on a bond and dragging your cursor allows you to adjust the plane.
-* If the "Show Angles" box is checked, the angles from the selected bond to all adjacent bonds are displayed.
+![](../../_static/bond-centric-butane.png){width=500px align=center}
 
-![](../../_static/7da24017-25dd-4b64-83d6-5b9b5feb082c.png)
+### Moving the bonding atoms
 
-* If the "Snap-to Bonds" box is checked you'll notice that the plane changes from yellow to blue as it's rotated. A yellow plane indicates that an adjacent bond _is_ in line with the plane. If the plane depicted is blue, the plane _is not_ in line with any adjacent bonds.
-* "Snap-to Threshold" determines how many degrees away a plane has to be to _snap_ to an adjacent bond plane. 
-  * For example, the "Snap-to Threshold" shown below is 10 degrees. Therefore if the plane being rotated comes within 10 degrees of an adjacent bond, it will snap to the adjacent bond's plane. 
-  * Changing the Snap-to Threshold to 90 degrees is a quick trick for the rotating plane to only snap to adjacent bond planes.
+With a bond selected, **click and drag** the atoms of the bonding pair to change the length or orientation of the bond.
 
-![](../../_static/7e6e3aa4-02e3-4476-8fc9-a8f298e6ee30.png)
+When you move the bonding atoms, the surrounding bond angles are kept constant, and substituents attached to the bonding atoms move with the bonding atom they are attached to.
+Each end of the bond maintains its internal geometry, but the two parts of the molecule are moved relative to one another.
 
-## Adjusting Bonds and Torsion Angles
+**Left-click and drag** one of the **bonding atoms** to rotate the bonding partner relative to the other one.
+The atom being dragged will move within the blue Bond Manipulation Plane.
 
-Once a plane is selected the atoms on either end of the plane can be manipulated, by left-clicking on the atom and dragging. The displayed angles will automatically adjust, and the selected bond will _not_ change in length.
+**Left-click and drag** starting **from the bond** to **rotate the Bond Manipulation Plane** around the bonding axis.
 
-![](../../_static/fbd1fea3-fd8c-42fe-9ea7-f5e6a41b5ceb.png)
+The rotation responds to the mouse movement in the same way as rotation of molecules: for example, moving the mouse upwards pushes the top part of the plane to move backwards while the bottom part moves forwards.
+It is not necessary to change the direction of mouse movement as the crest of the rotation.
 
-Left-clicking on a substituent, or in this case a hydrogen bonded to one of the selected carbon atoms will allow you to adjust the torsion angle.
+**Right-click and drag** one of the **bonding atoms** to change the length of the bond.
 
-![](../../_static/298f626b-051e-4c3f-b53c-693a36201bf9.png)
+### Moving the substituents on the bond
 
+With a bond selected, **click and drag** one of the **substituents** to **change the torsion angle**.
+Pulling on a substituent **rotates** the respective bonding atom and all its substituents around the bonding axis; meanwhile, the other end of bond remains fixed.
+
+This only works when the clicked atom is directly covalently bonded to one of the bonding atoms.
+
+Drag the mouse cursor clockwise or counterclockwise around the bonding atom, and the  clicked substituent will follow the mouse.
+
+Note that the angle displayed visually during this movement is _not_ a [torsion angle](https://goldbook.iupac.org/terms/view/T06406.html) but rather the [dihedral angle](https://goldbook.iupac.org/terms/view/D01730) between the substituent being dragged and the Bond Manipulation Plane (see image below).
+
+Unlike the dihedral angles reported by the [Measure Tool](tools-measure-tool) or the angles listed in the **Torsion Properties** dialog, this angle is unsigned.
+
+![](../../_static/bond-centric-dihedral.png){width=500px align=center}
+
+:::{note}
+In Avogadro 1, it was possible to set a specific increment, in degrees, that the dihedral angle should snap to, but this has yet to be implemented in Avogadro 2.
+To set a specific torsion angle across a bond, first rotate one end of the bond to align with the Bond Manipulation Plane, then rotate the other end until the desired angle is achieved.
+:::
