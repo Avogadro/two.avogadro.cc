@@ -9,7 +9,7 @@ Keyboard shortcut: <kbd>Ctrl</kbd>+<kbd>5</kbd>
 The **Selection Tool** is used to **select atoms** with the mouse, either by individually picking them out or using a marquee selection box.
 
 :::{tip}
-Further useful selection functionality is available in the [`Select` menu](menus-select-menu).
+Further useful selection functionality is available in the [Select menu](menus-select-menu).
 :::
 
 ## Basic usage
@@ -28,7 +28,7 @@ Further useful selection functionality is available in the [`Select` menu](menus
 ![An entire molecule selected after clicking on one of its constituent atoms.](../../_static/tutorial-select-all.png){height=300px align=center}
 
 :::{tip}
-Use `Select`⇒`Enlarge Selection` to increase the selection from an atom to only its immediate neighbors rather than the whole molecule.
+Use **Select ⇒ Enlarge Selection** to increase the selection from an atom to only its immediate neighbors rather than the whole molecule.
 :::
 
 Holding <kbd>Shift</kbd> or <kbd>Ctrl</kbd> while doing the above actions modifies their behaviour.
@@ -43,7 +43,7 @@ The effects of the modifier keys are best summarized in the table below:
 | **double-click**        | Whole molecule is selected.         | Whole molecule is added to selection.           | Unselected atoms within the molecule are selected, but selected atoms are deselected. |
 | *effect on other atoms* | Other atoms are deselected.         | All previously selected atoms remain selected.  | Other atoms remain as they were.                                                      |
 
-Note that while <kbd>Ctrl</kbd> and **double-left-click** inverts the selection, this only affects **connected atoms**, whereas when `Select`⇒`Invert Selection` is used, the inversion applies to all atoms.
+Note that while <kbd>Ctrl</kbd> and **double-left-click** inverts the selection, this only affects **connected atoms**, whereas when **Select ⇒ Invert Selection** is used, the inversion applies to all atoms.
 
 **Select all atoms** using the keyboard shortcut <kbd>Ctrl</kbd>+<kbd>A</kbd>.
 

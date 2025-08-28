@@ -22,13 +22,13 @@ Ligands and functional groups must be added to an existing atom (a "center"), wh
 Elements in the third period and below can often exhibit multiple different coordination geometries, which are not easily created using the [Draw Tool](tools-draw-tool).
 To achieve these, use the **"Centers"** templates.
 
-A center of any element and with any common coordination geometry can be selected from the `Center` tab of the Template pane.
+A center of any element and with any common coordination geometry can be selected from the **Center** tab of the **Template** pane.
 **Left-click** on an **empty space** in the view pane to **create a center** with attached hydrogens at each coordination site.
 
 ![Image of octahedral iron atom with six white hydrogen atoms.](../../_static/OctIron.png){height=300px align=center}
 
 Once at least one center is present, ligands or functional groups can be added.
-The desired ligand or group can be selected from the respective tabs of the Template pane.
+The desired ligand or group can be selected from the respective tabs of the **Template** pane.
 **Left-click any hydrogen atom** in the view pane to replace it with the ligand or functional group, with the attachment point as shown in the preview image.
 
 :::{tip}
@@ -41,7 +41,7 @@ For example, the Template Tool could be used to rapidly add acyl groups to sugar
 The Template Tool is designed for quickly appending ligands and functional groups to an existing molecule.
 Discrete small organic molecules can not be created with the Template Tool by clicking on an empty space.
 
-To create organic molecules with a single click, use [`Build`⇒`Insert`⇒`Molecule…`](menus-build-menu-insert) instead.
+To create organic molecules with a single click, use [**Build ⇒ Insert ⇒ Molecule…**](menus-build-menu-insert) instead.
 :::
 
 ## Pane options
@@ -53,7 +53,7 @@ Switching tabs chooses between the creation of centers, ligands, and functional 
 Element
 : Select the element of new centers.
 
-  The currently selected element can be changed by selecting from the `Element` drop-down menu.
+  The currently selected element can be changed by selecting from the **Element** drop-down menu.
   Various common elements are shown for easy access, but any element can be selected from the periodic table by choosing **Other…**.
 
   ![Menu of elements, including carbon, phosphorus, sulfur, and transition metals](../../_static/Template-Element.png){height=300px align=center}
@@ -68,7 +68,7 @@ Formal Charge
 Coordination
 : Select the coordination geometry of new centers.
 
-  The `Coordination` drop-down allows the specification of the valency and geometry of the atom, including common arrangements of one to eight ligands.
+  The **Coordination** drop-down allows the specification of the valency and geometry of the atom, including common arrangements of one to eight ligands.
   This includes linear, trigonal planar, tetrahedral, square planar, trigonal bipyramidal, octahedral, as well as less common geometries such as square pyramidal, trigonal prism, pentagonal bipyramidal, and square antiprism.
 
   A preview of the selected coordination geometry is shown below the drop-down.
@@ -89,7 +89,7 @@ Ligand
 : Choose a specific ligand to be created.
 
   The drop-down is used to choose a specific ligand.
-  Its contents will update based on the choice of `Type`.
+  Its contents will update based on the choice of **Type**.
   Various common ligands are shown for easy access, but more can be selected from the library by choosing **Other…**.
 
   A preview of the selected ligand and its attachment point is shown below the drop-down.
@@ -113,7 +113,7 @@ However, the focus is on covalently bonded organic moieties.
 Group
 : Choose a functional group to be created.
 
-  The currently selected functional group can be changed by selecting from the  drop-down menu.
+  The currently selected functional group can be changed by selecting from the drop-down menu.
   Various common groups are shown for easy access, but more can be selected from the library by choosing **Other…**.
   The library contains over 100 functional groups organized by element including sulfonates, acid anhydrides, boronic acids, and many more.
 
@@ -135,7 +135,7 @@ After creating your ligand molecule, select the atoms which will be the attachme
 
 ![salen molecule with four selected atoms: two oxygen and two nitrogen](../../_static/Ligand-SelectAtoms.png){height=300px align=center}
 
-The `Build`⇒`Add Centroid` command will add a dummy atom at the center of the selected atoms:
+The **Build ⇒ Add Centroid** command will add a dummy atom at the center of the selected atoms:
 
 ![menu indicating "Add Centroid" command](../../_static/Ligand-CentroidMenu.png){height=300px align=center}
 
@@ -152,7 +152,7 @@ The ligand can either be copied to the clipboard to allow insertion via the **Fr
 Haptic ligands indicate bonding between a metal center and a delocalized pi system, such as an aromatic ligand.
 
 As an example, we will build up an η{sup}`4`-cyclooctatetraene ligand.
-Either draw the molecule or use `File`⇒`Import`⇒`Download by Name…` to insert the basic molecule.
+Either draw the molecule or use **File ⇒ Import ⇒ Download by Name…** to insert the basic molecule.
 
 ![cyclooctatetraene molecule](../../_static/Template-COD.png){height=300px align=center}
 
@@ -160,13 +160,13 @@ Now select the four atoms to use for the haptic ligand:
 
 ![cyclooctatetraene molecule indicating four selected carbon atoms](../../_static/Template-COD2.png){height=300px align=center}
 
-Now use the `Build`⇒`Add Centroid` command to add a dummy atom at the centroid of the selected atoms.
+Now use the **Build ⇒ Add Centroid** command to add a dummy atom at the centroid of the selected atoms.
 This is useful to create distinct hapticity (e.g. η{sup}`3`-cyclopentadienyl after selecting three carbon atoms instead of five):
 
 ![cyclooctatetraene molecule indicating four selected carbon atoms and dummy attachment point](../../_static/Template-COD3.png){height=300px align=center}
 
 For a haptic ligand, we need one more dummy atom, perpendicular to the pi system.
-We can add an additional dummy atom **perpendicular** to the centroid using the `Build`⇒`Add Perpendicular` command:
+We can add an additional dummy atom **perpendicular** to the centroid using the **Build ⇒ Add Perpendicular** command:
 
 ![Menu indicating "Add Perpendicular" item for haptic attachment points](../../_static/Template-LigandPerpendicular.png){height=300px align=center}
 
