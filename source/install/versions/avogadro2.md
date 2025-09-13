@@ -10,6 +10,7 @@ Major concerns in Avogadro 1.0 focused on stability (i.e., crashes) and speed, p
 ---
 maxdepth: 1
 ---
+v1101
 v1100
 v199
 v1981
