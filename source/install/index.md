@@ -74,13 +74,13 @@ Download DMG (Intel)
 :text-align: center
 :shadow: none
 
-:::{button-link} https://nightly.link/OpenChemistry/avogadrolibs/workflows/build_m1/master/macOS-arm64.dmg.zip
+:::{button-link} https://nightly.link/OpenChemistry/avogadrolibs/workflows/build_mac/master/macOS-arm64.zip
 :color: secondary
 :outline:
 Download Nightly Build (Apple Silicon)
 :::
 
-:::{button-link} https://nightly.link/OpenChemistry/avogadrolibs/workflows/build_cmake/master/macOS.dmg.zip
+:::{button-link} https://nightly.link/OpenChemistry/avogadrolibs/workflows/build_mac/master/macOS-intel.zip
 :color: secondary
 :outline:
 Download Nightly Build (Intel)
@@ -118,7 +118,7 @@ Download Installer
 :text-align: center
 :shadow: none
 
-:::{button-link} https://nightly.link/OpenChemistry/avogadrolibs/workflows/build_cmake/master/Win64.exe.zip
+:::{button-link} https://nightly.link/OpenChemistry/avogadrolibs/workflows/build_windows/master/Win64.exe.zip
 :color: secondary
 :outline:
 Download Nightly Build
