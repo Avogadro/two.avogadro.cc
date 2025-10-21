@@ -1,9 +1,9 @@
 name: Build Sphinx
 
-on: 
+on:
   workflow_dispatch:
   push:
-    branches:    
+    branches:
       - 'main'
 
 jobs:
@@ -36,7 +36,7 @@ jobs:
     - name: Install packages
       run: |
         sudo apt-get -qq update
-        sudo apt-get -qq install doxygen ninja-build libeigen3-dev libglew-dev libxml2-dev qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools libqt5x11extras5-dev libqt5svg5-dev
+        sudo apt-get -qq install doxygen ninja-build libeigen3-dev libglew-dev libxml2-dev qt6-base qt6-tools qt6-base-dev qt6-svg-dev
 
     - name: Install uv
       uses: astral-sh/setup-uv@v2
@@ -57,7 +57,7 @@ jobs:
         mv openchemistry ${{ runner.workspace }}
         if [ ! -d "${{ runner.workspace }}/build" ]; then mkdir "${{ runner.workspace }}/build"; fi
         cd "${{ runner.workspace }}/build"
-        cmake ${{ runner.workspace }}/openchemistry -G "Ninja" -DBUILD_DOCUMENTATION=ON -DUSE_SYSTEM_LIBXML2=ON -DUSE_SYSTEM_ZLIB=ON
+        cmake ${{ runner.workspace }}/openchemistry -G "Ninja" -DBUILD_DOCUMENTATION=ON -DUSE_SYSTEM_LIBXML2=ON -DUSE_SYSTEM_ZLIB=ON -DBUILD_GPL_PLUGINS=ON -DBUILD_MOLEQUEUE=OFF -DWITH_COORDGEN=OFF -DQT_VERSION=6 -DUSE_YAEHMOP=ON
       shell: bash
 
     - name: Build doxygen
