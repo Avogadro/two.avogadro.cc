@@ -6,16 +6,18 @@ On Linux, Avogadro 2 is not only available from [the repositories of many distro
 
 The Flatpak provides the best and most reliable Avogadro user experience on Linux, and the Avogadro team recommends using it.
 
+As well as the usual benefits of Flatpaks (e.g. stability, sandboxing), by using the Avogadro Flatpak you can easily keep it up-to-date with the latest versions via updates.
+
 At the same time, the Flatpak does have a couple of limitations (see below) in comparison to other formats, and there are no plans to discontinue any of the other distribution methods, which may suit certain use-cases better.
 
+Avogadro is distributed through [Flathub](https://flathub.org/apps/org.openchemistry.Avogadro2) on two branches: a [`stable`](install-flatpak-stable) branch, which contains the most recent release, and a [`beta`](install-flatpak-beta) branch, which is similar to the "nightly" versions on other platforms and has the latest features and bug fixes.
+
+:::{info}
 [Flatpak](https://flatpak.org/) is an app packaging solution for Linux that solves the issue of differences between distributions and allows a single app to run on all Linux desktops.
 This means not just different distros but also both older and newer distros -- especially useful if your distro only provides an old version of Avogadro.
 
-As well as the usual benefits of Flatpaks (e.g. stability, sandboxing), by using the Avogadro Flatpak you can easily keep it up-to-date with the latest versions via updates.
-
 If you've never used Flatpak before, the first step is to make sure you have the `flatpak` package, but you likely already do -- it is installed by default on most modern distros.
-
-Avogadro is distributed through [Flathub](https://flathub.org/apps/org.openchemistry.Avogadro2) on two branches: a [`stable`](install-flatpak-stable) branch, which contains the most recent release, and a [`beta`](install-flatpak-beta) branch, which is similar to the "nightly" versions on other platforms and has the latest features and bug fixes.
+:::
 
 
 (install-flatpak-stable)=
@@ -134,7 +136,7 @@ Support for the drag-and-drop Desktop Portal is expected in Qt in the near futur
 Plugins for Avogadro are mostly written in Python and are run behind-the-scenes using a Python interpreter.
 In other versions of Avogadro, it is possible to ask Avogadro to use a specific Python interpreter, and therefore also to use the associated virtual environment, allowing users to reuse already-installed versions of large Python packages if they wish.
 
-The way filesystems are handled means that this does not work in the Flatpak version of Avogadro.
+The way filesystems are handled means that this does not work in the Flatpak version of Avogadro, with no known workaround.
 
 Note that Python plugins work with the Flatpak without any problems!
 The Avogadro Flatpak includes a Python interpreter, as well as Pixi, which Avogadro uses to maintain its own Python environments and run plugins within the sandbox.
