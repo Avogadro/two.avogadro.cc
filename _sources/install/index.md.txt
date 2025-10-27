@@ -54,14 +54,14 @@ macOS
 :text-align: center
 :shadow: none
 
-:::{button-link} https://github.com/OpenChemistry/avogadrolibs/releases/latest/download/Avogadro2-1.102.0-Darwin-arm64.dmg
+:::{button-link} https://github.com/OpenChemistry/avogadrolibs/releases/latest/download/Avogadro2-1.102.1-Darwin-arm64.dmg
 :ref-type: myst
 :color: primary
 :outline:
 Download DMG (Apple Silicon)
 :::
 
-:::{button-link} https://github.com/OpenChemistry/avogadrolibs/releases/latest/download/Avogadro2-1.102.0-Darwin.dmg
+:::{button-link} https://github.com/OpenChemistry/avogadrolibs/releases/latest/download/Avogadro2-1.102.1-Darwin.dmg
 :color: primary
 :outline:
 Download DMG (Intel)
@@ -105,7 +105,7 @@ Windows
 :text-align: center
 :shadow: none
 
-:::{button-link} https://github.com/OpenChemistry/avogadrolibs/releases/latest/download/Avogadro2-1.102.0-win64.exe
+:::{button-link} https://github.com/OpenChemistry/avogadrolibs/releases/latest/download/Avogadro2-1.102.1-win64.exe
 :color: primary
 :outline:
 Download Installer
