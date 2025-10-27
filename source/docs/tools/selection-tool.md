@@ -4,7 +4,7 @@
 
 ![The icon of the Selection Tool in light mode.](../../_static/icon_select.svg)
 
-Keyboard shortcut: <kbd>Ctrl</kbd>+<kbd>5</kbd>
+Keyboard shortcut: <kbd>Ctrl</kbd>+<kbd>4</kbd>
 
 The **Selection Tool** is used to **select atoms** with the mouse, either by individually picking them out or using a marquee selection box.
 
@@ -39,7 +39,7 @@ The effects of the modifier keys are best summarized in the table below:
 | ---                     | ---                                 | ---                                             | ---                                                                                   |
 | *general effect*        | *select*                            | *add*                                           | *toggle/invert*                                                                       |
 | **click**               | Atom is selected.                   | Atom is added to selection.                     | Atom is toggled between selected and unselected.                                      |
-| **click and drag**      | All atoms within box are selected.  | All atoms within box are added to selection.    | Unselected atoms within box are selected, but selected atoms are deselected.          | 
+| **click and drag**      | All atoms within box are selected.  | All atoms within box are added to selection.    | Unselected atoms within box are selected, but selected atoms are deselected.          |
 | **double-click**        | Whole molecule is selected.         | Whole molecule is added to selection.           | Unselected atoms within the molecule are selected, but selected atoms are deselected. |
 | *effect on other atoms* | Other atoms are deselected.         | All previously selected atoms remain selected.  | Other atoms remain as they were.                                                      |
 
@@ -69,5 +69,5 @@ Change Layer
 : Move the selected atoms to a different layer.
 
   Putting parts of a molecule, or members of an ensemble, into different layers allows different visual settings to be applied to different elements within the same ["Molecule"](panes-molecules) (what Avogadro calls a file).
-  
+
   See [Layers](panes-layers) for more information on how to use them.
