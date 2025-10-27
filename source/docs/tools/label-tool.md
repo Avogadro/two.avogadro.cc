@@ -4,7 +4,6 @@
 
 ![The icon of the Label Tool in light mode.](../../_static/icon_label.svg)
 
-Keyboard shortcut: <kbd>Ctrl</kbd>+<kbd>3</kbd>
 
 The **Label Tool** is used to **add custom text** to atoms.
 
