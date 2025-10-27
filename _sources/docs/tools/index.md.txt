@@ -25,11 +25,12 @@ maxdepth: 1
 navigation-tool
 draw-tool
 template-tool
-label-tool
 selection-tool
 manipulation-tool
 bond-centric-manipulation-tool
+autoopt-tool
 measure-tool
 animation-tool
 align-tool
+label-tool
 ```

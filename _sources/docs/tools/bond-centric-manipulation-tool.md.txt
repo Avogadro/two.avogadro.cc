@@ -4,7 +4,7 @@
 
 ![The icon of the Bond-Centric Manipulation Tool in light mode.](../../_static/icon_bond-centric.svg)
 
-Keyboard shortcut: <kbd>Ctrl</kbd>+<kbd>7</kbd>
+Keyboard shortcut: <kbd>Ctrl</kbd>+<kbd>6</kbd>
 
 The **Bond-Centric Manipulation Tool** is a powerful tool that allows you to change the length of a bond and the surrounding bond angles in a highly intuitive way that preserves the internal geometry of any substituents.
 

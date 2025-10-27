@@ -4,7 +4,7 @@
 
 ![The icon of the Manipulation Tool in light mode.](../../_static/icon_manipulate.svg)
 
-Keyboard shortcut: <kbd>Ctrl</kbd>+<kbd>6</kbd>
+Keyboard shortcut: <kbd>Ctrl</kbd>+<kbd>5</kbd>
 
 The **Manipulation Tool** allows you to **move** atoms, molecules, and fragments.
 
