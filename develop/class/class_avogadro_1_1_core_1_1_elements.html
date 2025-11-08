@@ -567,7 +567,7 @@ document.write(`
 <dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core8ElementsE">
 <span id="_CPPv3N8Avogadro4Core8ElementsE"></span><span id="_CPPv2N8Avogadro4Core8ElementsE"></span><span id="Avogadro::Core::Elements"></span><span class="target" id="class_avogadro_1_1_core_1_1_elements"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Elements</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core8ElementsE" title="Link to this definition">#</a><br /></dt>
 <dd><p>The <a class="reference internal" href="#class_avogadro_1_1_core_1_1_elements"><span class="std std-ref">Elements</span></a> class stores basic data about chemical elements. </p>
-<p>The elements class gives a simple interface to basic data about chemical elements. The data is automatically generated from the Blue Obelisk data repository.</p>
+<p>The elements class gives a simple interface to basic data about chemical elements.</p>
 <p>The atomic numbers between the symbolic constants CustomElementMin and CustomElementMax are used to represent non-elemental entities, such as particles or structures units from MD simulations. Custom elements names and symbols are returned as name=”CustomElement_aa” and symbol=”Xaa”, where ‘aa’ is some combination of lowercase letters that is unique to the particular custom element atomic number. For all custom elements, the radii will match Carbon, the color is random (but consistent), and the mass is zero. </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
@@ -703,6 +703,22 @@ document.write(`
 </dl>
 </dd></dl>
 
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core8Elements11isotopeMassEht">
+<span id="_CPPv3N8Avogadro4Core8Elements11isotopeMassEht"></span><span id="_CPPv2N8Avogadro4Core8Elements11isotopeMassEht"></span><span id="Avogadro::Core::Elements::isotopeMass__unsigned-c.unsigned-short"></span><span class="target" id="class_avogadro_1_1_core_1_1_elements_1a8784da17dcc04e5db7cd8972750d812b"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isotopeMass</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">atomicNumber</span></span>, <span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">short</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">isotopeNumber</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core8Elements11isotopeMassEht" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>atomicNumber</strong> – The atomic number of the element. </p></li>
+<li><p><strong>isotopeNumber</strong> – The isotope number of the element. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the mass of the element with the supplied <code class="docutils literal notranslate"><span class="pre">atomicNumber</span></code> and isotope <code class="docutils literal notranslate"><span class="pre">isotopeNumber</span></code>. </p>
+</dd>
+</dl>
+</dd></dl>
+
 </div>
 </dd></dl>
 
@@ -768,6 +784,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core8Elements14radiusCovalentEh"><code class="docutils literal notranslate"><span class="pre">Elements::radiusCovalent()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core8Elements5colorEh"><code class="docutils literal notranslate"><span class="pre">Elements::color()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core8Elements16valenceElectronsEh"><code class="docutils literal notranslate"><span class="pre">Elements::valenceElectrons()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core8Elements11isotopeMassEht"><code class="docutils literal notranslate"><span class="pre">Elements::isotopeMass()</span></code></a></li>
 </ul>
 </li>
 </ul>

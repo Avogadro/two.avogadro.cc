@@ -41,15 +41,19 @@ The default bond order is "Automatic," which means the order will adjust appropr
 
 ### Creating carbon dioxide
 
-Begin drawing the "O-C-O" structure. After the structure is drawn, all you need to do is left-click on the bonds. Left-clicking on the bonds will create a double bond, as shown below.
+Begin drawing the "O-C-O" structure. After the structure is drawn, all you need to do is left-click in the middle of the bonds. Left-clicking on the bonds will create a double bond, as shown below. (Clicking on a bond changes the bond order from single ⇒ double ⇒ triple ⇒ single, etc.)
 
 ![](../../_static/tutorial-co2-step1.png)
 ![](../../_static/tutorial-co2-step2.png)
 ![](../../_static/tutorial-co2-step3.png)
 
+```{tip} **New in 2.0**
+When clicking on an atom to change the element or clicking on a bond to change the bond order, Avogadro will attempt to adjust the bond length if one end of the bond is "free" (e.g., only connected to hydrogen atoms).
+```
+
 The molecule you have drawn will probably not look very tidy or realistic. Once you've created your molecule, you can quickly optimize its geometry using an Extension. Selecting the `Extensions` menu, and clicking `Optimize Geometry` will provide your molecule with proper bond lengths and angles.
 
-![](../../_static/ada26872-ede7-4601-bd4e-d790c10ad614.png)
+![](../../_static/optimize-co2.png)
 
 See [here](calculations-optimization) for more information on optimizing geometries.
 
