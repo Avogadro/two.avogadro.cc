@@ -2,7 +2,12 @@
 
 # Install
 
-Most users will want to use the current official release ({{release}}).
+Most users will want to use the current official release:
+
+<div class="sd-col sd-d-flex-column docutils">
+<span class="sd-d-grid"><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary sd-shadow-sm" id="download-button" href="#">Detecting OS…</a></span>
+<p id="download-info" style="text-align: center; font-weight: bold;"></p>
+</div>
 
 If you have problems using the current release or want to use the latest features, try out one of the **"nightly" builds** created every night from the current source code, which contains all improvements and bug fixes since the last release.
 
@@ -43,6 +48,7 @@ Nightly Build
 :text-align: center
 :shadow: none
 :class-card: sd-font-weight-bold sd-bg-light sd-text-dark
+:class-row: sd-d-flex-column
 {fab}`apple;fa-2x`
 
 macOS
@@ -77,13 +83,13 @@ Download DMG (Intel)
 :::{button-link} https://nightly.link/OpenChemistry/avogadrolibs/workflows/build_mac/master/macOS-arm64.zip
 :color: secondary
 :outline:
-Download Nightly Build (Apple Silicon)
+Download Nightly (Apple Silicon)
 :::
 
 :::{button-link} https://nightly.link/OpenChemistry/avogadrolibs/workflows/build_mac/master/macOS-intel.zip
 :color: secondary
 :outline:
-Download Nightly Build (Intel)
+Download Nightly (Intel)
 :::
 ::::
 
@@ -94,6 +100,7 @@ Download Nightly Build (Intel)
 :text-align: center
 :shadow: none
 :class-card: sd-font-weight-bold sd-bg-light sd-text-dark
+:class-row: sd-d-flex-column
 {fab}`windows;fa-2x`
 
 Windows
@@ -132,6 +139,7 @@ Download Nightly Build
 :text-align: center
 :shadow: none
 :class-card: sd-font-weight-bold sd-bg-light sd-text-dark
+:class-row: sd-d-flex-column
 {fab}`linux;fa-2x`
 
 Linux
@@ -253,6 +261,125 @@ Avogadro on GitHub {fab}`github;fa-1x`
 ::::
 
 ::::::
+
+<!-- JSON inserted here by Python script -->
+<script id='avogadro-release' type='application/json' src="releases.json">
+{
+  "version": "1.102.1",
+  "published": "2025-10-27T18:50:33Z",
+  "assets": [
+    {
+      "platform": "macOS-arm64",
+      "name": "Avogadro2-1.102.1-Darwin-arm64.dmg",
+      "url": "https://github.com/OpenChemistry/avogadrolibs/releases/download/1.102.1/Avogadro2-1.102.1-Darwin-arm64.dmg",
+      "size": "80.9 MB"
+    },
+    {
+      "platform": "macOS-x64",
+      "name": "Avogadro2-1.102.1-Darwin.dmg",
+      "url": "https://github.com/OpenChemistry/avogadrolibs/releases/download/1.102.1/Avogadro2-1.102.1-Darwin.dmg",
+      "size": "85.5 MB"
+    },
+    {
+      "platform": "windows-x64",
+      "name": "Avogadro2-1.102.1-win64.exe",
+      "url": "https://github.com/OpenChemistry/avogadrolibs/releases/download/1.102.1/Avogadro2-1.102.1-win64.exe",
+      "size": "106.6 MB"
+    },
+    {
+      "platform": "linux-arm64",
+      "name": "Avogadro2-aarch64.AppImage",
+      "url": "https://github.com/OpenChemistry/avogadrolibs/releases/download/1.102.1/Avogadro2-aarch64.AppImage",
+      "size": "105.0 MB"
+    },
+    {
+      "platform": "linux-x64",
+      "name": "Avogadro2-x86_64.AppImage",
+      "url": "https://github.com/OpenChemistry/avogadrolibs/releases/download/1.102.1/Avogadro2-x86_64.AppImage",
+      "size": "103.8 MB"
+    }
+  ]
+}
+</script>
+
+<script>
+function getMacOSArchitecture() {
+  const canvas = document.createElement('canvas');
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+
+  if (gl) {
+    const debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
+    if (debugInfo) {
+      const renderer = gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL);
+
+      if (/Apple (M\d|GPU)/.test(renderer)) {
+        return 'arm64';
+      } else if (/Intel/.test(renderer)) {
+        return 'x86_64';
+      }
+    }
+  }
+
+  return 'unknown';
+}
+
+function detectPlatform() {
+  const ua = navigator.userAgent.toLowerCase();
+  const isARM = /arm|aarch64|apple silicon/.test(ua);
+  if (ua.includes("win")) return isARM ? "windows-arm64" : "windows-x64";
+  if (ua.includes("mac")) {
+    const arch = getMacOSArchitecture();
+    if (arch === 'arm64') return 'macOS-arm64';
+    if (arch === 'x86_64') return 'macOS-x64';
+  }
+  if (ua.includes("linux")) return isARM ? "linux-arm64" : "linux-x64";
+  return "unknown";
+}
+
+// Get icon for platform
+function getIcon(iconName) {
+    const icons = {
+        'windows': '<i class="fab fa-windows"></i>',
+        'macOS': '<i class="fab fa-apple"></i>',
+        'linux': '<i class="fas fa-code"></i>'
+    };
+    return icons[iconName] || '📦';
+}
+
+// Get label for platform
+function platLabel(platform) {
+    const label = {
+      "windows-x64":"Windows (x64)",
+      "windows-arm64":"Windows (ARM64)",
+      "macOS-x64":"macOS (Intel)",
+      "macOS-arm64":"macOS (Apple Silicon)",
+      "linux-x64":"Linux (x64 AppImage)",
+      "linux-arm64":"Linux (ARM AppImage)",
+      "linux-flatpak":"Linux (Flatpak)",
+      "source":"Source Code"
+    };
+    return label[platform] || platform;
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const data = JSON.parse(document.getElementById("avogadro-release").textContent);
+  const platform = detectPlatform();
+  const btn = document.getElementById("download-button");
+  const info = document.getElementById("download-info");
+
+  const asset = data.assets.find(a => a.platform === platform);
+  const label = platLabel(platform);
+
+  if (asset) {
+    btn.href = asset.url;
+    btn.textContent = `Download Avogadro ${data.version}`;
+    info.textContent = `${label} • ${data.version} • ${asset.size} • ${new Date(data.published).toLocaleDateString()}`;
+  } else {
+    btn.textContent = "See All Downloads";
+    btn.href = "#fallback-table";
+  }
+});
+</script>
 
 
 ```{toctree}
