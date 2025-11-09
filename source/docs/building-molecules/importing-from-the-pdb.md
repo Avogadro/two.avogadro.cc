@@ -1,3 +1,5 @@
+(building-molecules-pdb)=
+
 # Importing from the Protein Data Bank \(PDB\)
 
 You can read PDB files that you download yourself from [http://www.rcsb.org/](http://www.rcsb.org/) or access the PDB code yourself.
