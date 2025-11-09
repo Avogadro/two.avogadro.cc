@@ -16,7 +16,7 @@ To help rapidly build your structure you can also use the new [Template Tool](to
 The default bond order setting is now **Automatic** -- it will adjust intelligently with the length of the bond.
 :::
 
-## Basic usage
+## Basic Usage
 
 Atoms and bonds are drawn using the mouse.
 
@@ -41,7 +41,7 @@ Left-clicking on a triple bond turns it back into a single bond.
 
 **Delete** atoms and bonds by **right-clicking** on them.
 
-## Pane options
+## Options
 
 Element
 : Choose the element of new atoms.
@@ -62,7 +62,7 @@ Bond Order
   :::{tip}
   Single bonds are created when the bond length exceeds the sum of the atoms' covalent radii.
   Double bonds are created when the bond length is between 91% and 100% of the sum of the covalent radii, and anything shorter than 91% becomes a triple bond.
-  
+
   For a carbon-carbon bond, the lower cut-offs are thus approx. 1.52 Å for a single bond and 1.38 Å for a double.
   :::
 
@@ -71,18 +71,18 @@ Adjust Hydrogens
 
   If this box is checked (default), extra hydrogen atoms will be automatically added to new atoms to satisfy their valency.
   When a bond is created or the order of a bond is changed, the number of hydrogen atoms on the atoms at each end of the bond will also be adjusted.
-  
+
   For main-group elements, the default valency is always that predicted by the octet rule, while metal atoms are always created alone, without bonded atoms.
   To create metal centers or hypervalent main-group centers, it is often better to use the [Template Tool](tools-template-tool).
-  
+
   :::{warning}
   It may not be possible to deliberately add or remove hydrogen atoms (for example, to create a radical or an ion) while this setting is checked.
-  
+
   If this is desired, turn off the setting while manually adjusting the hydrogens.
   Turning the setting back on will not cause the number of hydrogen atoms to be readjusted.
   :::
 
-## Adjusting the structure
+## Adjusting the Geometry
 
 It is challenging to draw structures in 3D on a 2D screen.
 Using the Draw Tool alone will probably not give you a molecule that looks sensible and is representative of the real geometry.
@@ -91,6 +91,8 @@ For manual adjustment, the position of the atoms can be fine-tuned by using the 
 
 To quickly get a sensible geometry, make use of the [`Optimize Geometry`](calculations-optimization) extension.
 This can be conveniently activated using the shortcut <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>O</kbd>.
+
+You can also switch to the [AutoOptimization Tool](tools-autoopt-tool) to interactively optimize the molecule. This can be activated using <kbd>Ctrl</kbd>+<kbd>7</kbd>
 
 ## Tutorial
 

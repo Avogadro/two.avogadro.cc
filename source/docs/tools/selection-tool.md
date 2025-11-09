@@ -12,7 +12,7 @@ The **Selection Tool** is used to **select atoms** with the mouse, either by ind
 Further useful selection functionality is available in the [Select menu](menus-select-menu).
 :::
 
-## Basic usage
+## Basic Usage
 
 **Left-click** on an individual atom to **select** it.
 
@@ -57,7 +57,7 @@ The keyboard shortcuts for select/deselect all are always available, not only wh
 A known bug means that right-clicking to clear the selection does not work on some systems. A triple-left-click on empty space or a left-click on any currently selected atom should do the trick instead.
 :::
 
-## Pane options
+## Options
 
 Apply Color
 : Pick a color and apply it to the currently selected atoms.

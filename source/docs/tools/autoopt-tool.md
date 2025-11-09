@@ -8,7 +8,7 @@ Keyboard shortcut: <kbd>Ctrl</kbd>+<kbd>7</kbd>
 
 The **AutoOpt Tool** is used to optimize the geometry of a molecule interactively, including editing or moving atoms.
 
-## Basic usage
+## Basic Usage
 
 ![][1]
 

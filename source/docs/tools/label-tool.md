@@ -7,7 +7,7 @@
 
 The **Label Tool** is used to **add custom text** to atoms.
 
-## Basic usage
+## Basic Usage
 
 **Left-click** on an atom to **create a new label**.
 A cursor will appear.
@@ -27,7 +27,7 @@ Then, to show the custom labels, in the **Atom Label** drop-down of the **Displa
 Edit an existing label by left-clicking on it.
 Its position will raise slightly to indicate that it is being edited.
 
-## Pane options
+## Options
 
 There are currently no options for this tool in the **Edit Labels** pane.
 
