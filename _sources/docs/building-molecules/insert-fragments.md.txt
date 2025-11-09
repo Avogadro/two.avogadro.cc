@@ -1,20 +1,23 @@
+(building-molecules-fragments)=
+
 # Insert Molecular Fragments
 
-Avogadro includes over 300 common molecules and molecular fragments to make building larger structures easy.
+Avogadro includes over 400 common molecules and molecular fragments to make building larger structures easy. These molecules are always available even if you don't have a network connection or cannot [import by name](building-molecules-byname).
 
-Under the "Build" menu, hold your cursor over "Insert", and then select "Fragment...".
+Under the "Build" menu, hold your cursor over "Insert", and then select "Fragment…".
 
-![](../../_static/6810692f-69b6-46fe-a023-2137f5ac4a9a.png)
+![](../../_static/insert-molecule.png)
 
-A database of fragments will then pop up \(shown below\). You can filter the selection if need be.
+A database of fragments will then pop up \(shown below\). You can filter the selection if need be. When you click on a particular fragment, a preview will appear:
 
-![](../../_static/3a752e8b-7c31-4dce-8e2a-95589bf6e99c.png)
+![](../../_static/molecule-list.png)
 
 After you've made your fragment selection, click "Insert".
 
-![](../../_static/d28afc88-e025-47d8-be33-7d0d94e85e68.png)
+The fragment will be inserted and the [Manipulate](tools-manipulate-tool) tool will be selected so you can move the new fragment around the window.
 
-The fragment will be inserted and the Manipulate tool will be selected so you can move the new fragment around the window.
+![](../../_static/manipulate-fragment.png)
 
-![](../../_static/5d494d9e-12df-4977-b482-6f2665cf2dcc.png)
-
+:::{tip}
+Many of these fragments are also available through the [Template](tools-template-tool) tool to attach to hydrogen atoms.
+:::

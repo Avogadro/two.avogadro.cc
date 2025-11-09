@@ -48,7 +48,7 @@ This book would not be possible without the help and effort of many people, incl
 Initial funding for the Avogadro manual was provided by the [University of Pittsburgh Department of Chemistry](http://www.chem.pitt.edu/).
 
 * Version 1 - Summer 2015 - Taylor Cornell and Geoffrey Hutchison
-* Version 2 - 2022-2024 - Geoffrey Hutchison and Matt Milner
+* Version 2 - 2022-2025 - Geoffrey Hutchison and Matt Milner
 
 :::{toctree}
 ---
@@ -60,11 +60,11 @@ Introduction <self>
 whats-new-in-avogadro-2/index
 getting-started/index
 tools/index
-menus/index
 building-molecules/index
+display-types/index
+menus/index
 building-materials/index
 optimizing-geometry/index
-display-types/index
 extensions/index
 tutorials/index
 :::
