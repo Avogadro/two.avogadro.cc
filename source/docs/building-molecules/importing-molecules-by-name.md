@@ -1,3 +1,5 @@
+(building-molecules-byname)=
+
 # Importing Molecules by Name
 
 Select the "File" menu.

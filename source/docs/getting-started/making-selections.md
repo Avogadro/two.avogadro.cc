@@ -1,3 +1,5 @@
+(getting-started-selecting)=
+
 # Making Selections
 
 The [Selection Tool](tools-selection-tool) is also a useful feature to master when beginning to learn Avogadro. Generally, the Selection Tool allows for the individual selection of atoms, bonds, or fragments.
