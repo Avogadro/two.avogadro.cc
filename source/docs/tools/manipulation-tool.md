@@ -8,7 +8,7 @@ Keyboard shortcut: <kbd>Ctrl</kbd>+<kbd>5</kbd>
 
 The **Manipulation Tool** allows you to **move** atoms, molecules, and fragments.
 
-## Basic usage
+## Basic Usage
 
 **Click and drag** an atom to **manipulate** it.
 
@@ -34,7 +34,7 @@ Rotation with click and drag will always be about the geometric center of the se
 
 The Manipulation Tool is automatically selected after [inserting a fragment](menus-build-menu-insert) via **Build ⇒ Insert**, to enable quick and easy positioning of the new fragment.
 
-## Pane options
+## Options
 
 The options in the Manipulate Pane allow you to apply transformations mathematically to the currently selected atoms.
 

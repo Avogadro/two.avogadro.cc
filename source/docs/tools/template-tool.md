@@ -15,7 +15,7 @@ The Template Tool also enables rapid addition of functional groups to an organic
 :::{versionadded} 2.0
 :::
 
-## Basic usage
+## Basic Usage
 
 Ligands and functional groups must be added to an existing atom (a "center"), whether this be an atom within an organic framework or a metal center.
 
@@ -44,11 +44,11 @@ Discrete small organic molecules can not be created with the Template Tool by cl
 To create organic molecules with a single click, use [**Build ⇒ Insert ⇒ Molecule…**](menus-build-menu-insert) instead.
 :::
 
-## Pane options
+## Options
 
 Switching tabs chooses between the creation of centers, ligands, and functional groups, and presents different options in the pane.
 
-### Centers tab
+### Centers Tab
 
 Element
 : Select the element of new centers.
@@ -75,7 +75,7 @@ Coordination
 
   ![Menu of coordination geometries including linear, trigonal planar, tetrahedral, square planar, trigonal bipyramidal, and octahedral](../../_static/Template-Coordination.png){height=300px align=center}
 
-### Ligands tab
+### Ligands Tab
 
 Type
 : Specify the denticity or hapticity of the ligand.
@@ -104,7 +104,7 @@ Ligand
 
   ![Iron bipyridine molecule](../../_static/FeBipy.png){height=300px align=center}
 
-### Groups tab
+### Groups Tab
 
 Functional groups are similar to monodentate ligands in that they attach to a molecule through one new bond, and there is some overlap in the available fragments.
 
@@ -121,7 +121,7 @@ Group
 
   A preview of the selected functional group and its attachment point is shown below the drop-down.
 
-## Creating new ligands
+## Creating New Ligands
 
 While the ligand library includes many common ligands, you may wish to create your own or tweak a ligand before attachment.
 
@@ -147,7 +147,7 @@ Draw bonds as desired between the dummy atom and the attachment sites.
 
 The ligand can either be copied to the clipboard to allow insertion via the **From Clipboard** ligand type, or saved as CJSON to contribute to the [fragment repository](https://github.com/openchemistry/fragments).
 
-## Creating new haptic ligands
+## Creating New Haptic Ligands
 
 Haptic ligands indicate bonding between a metal center and a delocalized pi system, such as an aromatic ligand.
 

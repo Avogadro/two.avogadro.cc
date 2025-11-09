@@ -6,7 +6,7 @@
 
 The **Align Tool** is used to rotate and translate a molecule(s) so that it aligns with one of the Cartesian axes.
 
-## Basic usage
+## Basic Usage
 
 First, an alignment axis is chosen from the **Axis** drop-down menu in the **Align** pane.
 The <kbd>x</kbd>, <kbd>y</kbd>, and <kbd>z</kbd> keys on the keyboard are shortcuts for changing the alignment axis.
@@ -24,7 +24,7 @@ If two atoms were selected, the first will be placed at the origin, and the seco
 The red axis is designated as the X axis, green is designated as the Y axis, and blue is designated as the Z axis.
 ```
 
-## Pane options
+## Options
 
 ![](../../_static/e3143779-956e-4d83-ac28-dc2f79bf2194.png)
 
@@ -38,4 +38,3 @@ By choosing the **Molecule** option in the **Align** drop-down menu in the **Ali
 ![](../../_static/c1839173-f147-444d-b9c9-9ebb2e0a28f4.png)
 
 ![](../../_static/ca04487a-6f68-45ca-a5bf-92a2daf99194.png)
-
