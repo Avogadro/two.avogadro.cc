@@ -15,13 +15,13 @@ The Bond-Centric Manipulation Tool provides mouse-based manual adjustment of bon
 If you wish to set these quantities to specific, exact values, it may be more convenient to do this in the relevant [Properties pane](panes-properties).
 ```
 
-## Basic usage
+## Basic Usage
 
 **Left-click** on a bond to **select** it. A blue **Bond Manipulation Plane** will appear incident to the bond and the angles between the bond and the neighboring bonds will be depicted.
 
 ![](../../_static/bond-centric-butane.png){width=500px align=center}
 
-### Moving the bonding atoms
+### Moving Bonded Atoms
 
 With a bond selected, **click and drag** the atoms of the bonding pair to change the length or orientation of the bond.
 
@@ -38,7 +38,7 @@ It is not necessary to change the direction of mouse movement as the crest of th
 
 **Right-click and drag** one of the **bonding atoms** to change the length of the bond.
 
-### Moving the substituents on the bond
+### Twisting a Bond Dihedral
 
 With a bond selected, **click and drag** one of the **substituents** to **change the torsion angle**.
 Pulling on a substituent **rotates** the respective bonding atom and all its substituents around the bonding axis; meanwhile, the other end of bond remains fixed.

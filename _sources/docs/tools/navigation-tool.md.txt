@@ -18,9 +18,9 @@ This means that many of the below actions will also work from some other tools.
 For example, left-click and drag will also rotate the view while the [Animation Tool](tools-animation-tool) is selected.
 :::
 
-## Basic usage
+## Basic Usage
 
-### With the mouse
+### With the Mouse
 
 **Rotate** the view by clicking and dragging anywhere on the view pane with the **left mouse button**.
 
@@ -41,7 +41,7 @@ Again, when panning, the molecule will move in the direction the mouse is moved 
 
 Panning along the z-axis, i.e. changing the **zoom level** can be done using the **mouse scroll wheel** or by clicking and dragging with the **middle mouse button**.
 
-### With the keyboard
+### With the Keyboard
 
 All the above view transformations can also be done using only the keyboard.
 This can be done using any of three different sets of directional keys: the arrow keys, WASD, or HJKL.
@@ -65,9 +65,13 @@ In future, keyboard control of the Navigation Tool will not use <kbd>Ctrl</kbd> 
 
 **Pan** the view along the **z-axis**, i.e. **zoom**, by holding <kbd>Shift</kbd> while using <kbd>up</kbd> and <kbd>down</kbd>.
 
-## Pane options
+## Options
 
 Reverse Direction of Zoom on Scroll
 : Toggle the direction that is zoomed when scrolled.
 
   Note that the default behavior is determined by your operating system's settings.
+
+:::{note}
+The icon for the Navigation Tool is a design by [Dekin Dorcas](https://thenounproject.com/creator/ddorcas/), a contributor to the Noun Project.
+:::
