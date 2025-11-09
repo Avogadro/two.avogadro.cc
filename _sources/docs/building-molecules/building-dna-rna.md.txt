@@ -1,8 +1,8 @@
 # Building DNA or RNA
 
-Avogadro now has a builder for nucleic acid sequences and this walk-through will show you how to use it.
+Avogadro has a builder for nucleic acid sequences and this walk-through will show you how to use it.
 
-![](../../_static/media_1340331911582.png)
+![](../../_static/build-dna.png)
 
 The DNA/RNA builder is under the "Build" menu and "Insert" submenu.
 
@@ -18,11 +18,10 @@ You can also control the number of bases per turn as shown \(with defaults for A
 
 You can enter the sequence either by clicking the buttons, or by typing the one-letter codes directly. For DNA sequences \(as shown here\), you can insert either single-stranded or double-stranded DNA.
 
-![](../../_static/media_1340331979486.png)
+![](../../_static/view-center.png)
 
-You may wish to re-center the view or align the view to axes to see the whole molecule.
+You may wish to re-center the view or align the view to axes to see the whole molecule. If needed, switch to the [Navigate Tool](tools-navigation-tool)
 
-![](../../_static/media_1340331996253.png)
+![](../../_static/dna.png)
 
 There we go -- the well-known DNA double-helix!
-
