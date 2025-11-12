@@ -6,10 +6,10 @@ Most users will want to use the current official release:
 
 <div class="sd-col sd-d-flex-column docutils">
 <span class="sd-d-grid"><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary sd-shadow-sm" id="download-button" href="#">Detecting OS…</a></span>
-<p id="download-info" style="text-align: center; font-weight: bold;"></p>
+<p id="download-info" class="sd-bg-light sd-text-dark sd-text-center sd-font-weight-bold"></p>
 </div>
 
-If you have problems using the current release or want to use the latest features, try out one of the **"nightly" builds** created every night from the current source code, which contains all improvements and bug fixes since the last release.
+If you have problems using the current release or want to use the latest features, try out one of the **"nightly" builds** continually created from the current source code, which contains all improvements and bug fixes since the last release.
 
 We're open-source, so if you would like to compile Avogadro yourself from the code, you can -- see [Building Source Code](develop-build) for more on how.
 
@@ -80,13 +80,13 @@ Download DMG (Intel)
 :text-align: center
 :shadow: none
 
-:::{button-link} https://nightly.link/OpenChemistry/avogadrolibs/workflows/build_mac/master/macOS-arm64.zip
+:::{button-link} https://github.com/OpenChemistry/avogadrolibs/releases/download/continuous/Avogadro2-continuous-arm64.dmg
 :color: secondary
 :outline:
 Download Nightly (Apple Silicon)
 :::
 
-:::{button-link} https://nightly.link/OpenChemistry/avogadrolibs/workflows/build_mac/master/macOS-intel.zip
+:::{button-link} https://github.com/OpenChemistry/avogadrolibs/releases/download/continuous/Avogadro2-continuous.dmg
 :color: secondary
 :outline:
 Download Nightly (Intel)
@@ -125,7 +125,7 @@ Download Installer
 :text-align: center
 :shadow: none
 
-:::{button-link} https://nightly.link/OpenChemistry/avogadrolibs/workflows/build_windows/master/Win64.exe.zip
+:::{button-link} https://github.com/OpenChemistry/avogadrolibs/releases/download/continuous/Avogadro2-continuous-win64.exe
 :color: secondary
 :outline:
 Download Nightly Build
@@ -175,7 +175,7 @@ Check your distro's repositories
 :text-align: center
 :shadow: none
 
-:::{button-link} https://nightly.link/OpenChemistry/avogadrolibs/workflows/build_linux/master/Avogadro2-x86_64.AppImage.zip
+:::{button-link} https://github.com/OpenChemistry/avogadrolibs/releases/download/continuous/Avogadro2-x86_64.AppImage
 :color: secondary
 :outline:
 Nightly AppImage
