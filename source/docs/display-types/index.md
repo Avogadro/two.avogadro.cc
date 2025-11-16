@@ -61,11 +61,11 @@ The label plugin numbers and labels all atoms present in a molecule.
 
 QTAIM displays the implicit bonding that is theorized to take place between the hydrogens of organic crystals (the implicit bonding is conveyed through dots). This display type is utilized by importing a .wfn file from the "QTAIM", "Molecular Graph" selection under the "Extensions" menu. More information can be found on this process in the Tutorial section of this manual.
 
-![](../../_static/qtaim--quantum-theory-of-atoms-in-molecules-.png)
+![](../../_static/phenol-qtaim.png)
 
 ## Licorice
 
-Licorice is another molecular visual display type, that renders a stick representation of a molecule.
+Licorice or "sticks" minimizes spheres for the atoms, instead drawing the covalent bond skeleton of the molecule.
 
 ![](../../_static/stick.png)
 
