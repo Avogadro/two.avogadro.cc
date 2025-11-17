@@ -11,11 +11,6 @@ Clicking on the ⋯ icon located on the right of some display types will allow v
 
 ![](../../_static/vdw-opacity.png)
 
-## Axes
-
-Clicking on the Axes plugin will provide the cartesian axes of the molecule from the origin. Note that the red, green, and blue arrows represent the x, y, and z axes respectively.
-
-![](../../_static/axes.png)
 
 ## Ball and Stick
 
@@ -29,7 +24,16 @@ The cartoon feature only applies to secondary biological structures (e.g. α hel
 
 ![](../../_static/cartoon.png)
 
-## Dipole
+## Close Contact
+
+:::{versionadded} 2.0
+The Close-Contact style indicates atoms near each other even if not directly bonded, including salt bridges and repulsive interactions in biomolecules.
+:::
+
+![](../../_static/close-contact.png)
+
+
+## Dipole Moment
 
 The Dipole plugin will display an overall net dipole if one is present.
 
@@ -41,6 +45,18 @@ The Force plugin displays green arrows on atoms (as shown below), to qualitative
 
 ![](../../_static/force.png)
 
+## Label
+
+The label plugin numbers and labels atoms, bonds, or residues in a molecule.
+
+![](../../_static/label.png)
+
+## Licorice
+
+Licorice or "sticks" minimizes spheres for the atoms, instead drawing the covalent bond skeleton of the molecule.
+
+![](../../_static/stick.png)
+
 ## Non-Covalent
 
 The Non-Covalent style demonstrates implicit non-covalent interactions between atoms.
@@ -51,11 +67,6 @@ In Avogadro 2, in addition to display of hydrogen bonds, the Non-Covalent style 
 
 ![](../../_static/hydrogen-bond.png)
 
-## Label
-
-The label plugin numbers and labels all atoms present in a molecule.
-
-![](../../_static/label.png)
 
 ## QTAIM (Quantum Theory of Atoms in Molecules)
 
@@ -63,17 +74,28 @@ QTAIM displays the implicit bonding that is theorized to take place between the 
 
 ![](../../_static/phenol-qtaim.png)
 
-## Licorice
+## Reference Axes
 
-Licorice or "sticks" minimizes spheres for the atoms, instead drawing the covalent bond skeleton of the molecule.
+Clicking on the Axes plugin will provide the Cartesian axes in the bottom left corner of the view. Note that the red, green, and blue arrows represent the x, y, and z axes respectively.
 
-![](../../_static/stick.png)
+![](../../_static/reference-axes.png)
+
 
 ## Surfaces
 
 Once a surface has been created (Extensions Menu -> Create Surfaces...), the Surface display type can be used. This display type allows adjustments to the orbital, opacity, rendering, style, and color.
 
 ![](../../_static/surfaces.png)
+
+
+## Symmetry Elements
+
+:::{versionadded} 2.0
+The new symmetry perception feature includes rendering rotation axes, mirror planes, and other symmetry elements in molecules.
+:::
+
+![](../../_static/C180.png)
+
 
 ## Van der Waals Spheres
 
