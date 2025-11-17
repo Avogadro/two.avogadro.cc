@@ -509,11 +509,6 @@ and offer high-quality publication-ready graphics.</p>
 <p><img alt="" src="../../_images/locating-display-types.png" /></p>
 <p>Clicking on the ⋯ icon located on the right of some display types will allow various adjustments to be made to the display. For example, you can edit the opacity of the Van der Waals Spheres so that you can still view the ball and stick model underneath.</p>
 <p><img alt="" src="../../_images/vdw-opacity.png" /></p>
-<section id="axes">
-<h2>Axes<a class="headerlink" href="#axes" title="Link to this heading">#</a></h2>
-<p>Clicking on the Axes plugin will provide the cartesian axes of the molecule from the origin. Note that the red, green, and blue arrows represent the x, y, and z axes respectively.</p>
-<p><img alt="" src="../../_images/axes.png" /></p>
-</section>
 <section id="ball-and-stick">
 <h2>Ball and Stick<a class="headerlink" href="#ball-and-stick" title="Link to this heading">#</a></h2>
 <p>Ball and Stick is the default display style when Avogadro is opened. This  provides the standard ball and stick representation of a molecule.</p>
@@ -524,8 +519,15 @@ and offer high-quality publication-ready graphics.</p>
 <p>The cartoon feature only applies to secondary biological structures (e.g. α helix and β sheet). Below is the cartoon for hemoglobin.</p>
 <p><img alt="" src="../../_images/cartoon.png" /></p>
 </section>
-<section id="dipole">
-<h2>Dipole<a class="headerlink" href="#dipole" title="Link to this heading">#</a></h2>
+<section id="close-contact">
+<h2>Close Contact<a class="headerlink" href="#close-contact" title="Link to this heading">#</a></h2>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 2.0: </span>The Close-Contact style indicates atoms near each other even if not directly bonded, including salt bridges and repulsive interactions in biomolecules.</p>
+</div>
+<p><img alt="" src="../../_images/close-contact.png" /></p>
+</section>
+<section id="dipole-moment">
+<h2>Dipole Moment<a class="headerlink" href="#dipole-moment" title="Link to this heading">#</a></h2>
 <p>The Dipole plugin will display an overall net dipole if one is present.</p>
 <p><img alt="" src="../../_images/dipole.png" /></p>
 </section>
@@ -533,6 +535,16 @@ and offer high-quality publication-ready graphics.</p>
 <h2>Force<a class="headerlink" href="#force" title="Link to this heading">#</a></h2>
 <p>The Force plugin displays green arrows on atoms (as shown below), to qualitatively demonstrate the forces being applied to the atoms.</p>
 <p><img alt="" src="../../_images/force.png" /></p>
+</section>
+<section id="label">
+<h2>Label<a class="headerlink" href="#label" title="Link to this heading">#</a></h2>
+<p>The label plugin numbers and labels atoms, bonds, or residues in a molecule.</p>
+<p><img alt="" src="../../_images/label.png" /></p>
+</section>
+<section id="licorice">
+<h2>Licorice<a class="headerlink" href="#licorice" title="Link to this heading">#</a></h2>
+<p>Licorice or “sticks” minimizes spheres for the atoms, instead drawing the covalent bond skeleton of the molecule.</p>
+<p><img alt="" src="../../_images/stick.png" /></p>
 </section>
 <section id="non-covalent">
 <h2>Non-Covalent<a class="headerlink" href="#non-covalent" title="Link to this heading">#</a></h2>
@@ -542,25 +554,27 @@ and offer high-quality publication-ready graphics.</p>
 </div>
 <p><img alt="" src="../../_images/hydrogen-bond.png" /></p>
 </section>
-<section id="label">
-<h2>Label<a class="headerlink" href="#label" title="Link to this heading">#</a></h2>
-<p>The label plugin numbers and labels all atoms present in a molecule.</p>
-<p><img alt="" src="../../_images/label.png" /></p>
-</section>
 <section id="qtaim-quantum-theory-of-atoms-in-molecules">
 <h2>QTAIM (Quantum Theory of Atoms in Molecules)<a class="headerlink" href="#qtaim-quantum-theory-of-atoms-in-molecules" title="Link to this heading">#</a></h2>
 <p>QTAIM displays the implicit bonding that is theorized to take place between the hydrogens of organic crystals (the implicit bonding is conveyed through dots). This display type is utilized by importing a .wfn file from the “QTAIM”, “Molecular Graph” selection under the “Extensions” menu. More information can be found on this process in the Tutorial section of this manual.</p>
 <p><img alt="" src="../../_images/phenol-qtaim.png" /></p>
 </section>
-<section id="licorice">
-<h2>Licorice<a class="headerlink" href="#licorice" title="Link to this heading">#</a></h2>
-<p>Licorice or “sticks” minimizes spheres for the atoms, instead drawing the covalent bond skeleton of the molecule.</p>
-<p><img alt="" src="../../_images/stick.png" /></p>
+<section id="reference-axes">
+<h2>Reference Axes<a class="headerlink" href="#reference-axes" title="Link to this heading">#</a></h2>
+<p>Clicking on the Axes plugin will provide the Cartesian axes in the bottom left corner of the view. Note that the red, green, and blue arrows represent the x, y, and z axes respectively.</p>
+<p><img alt="" src="../../_images/reference-axes.png" /></p>
 </section>
 <section id="surfaces">
 <h2>Surfaces<a class="headerlink" href="#surfaces" title="Link to this heading">#</a></h2>
 <p>Once a surface has been created (Extensions Menu -&gt; Create Surfaces…), the Surface display type can be used. This display type allows adjustments to the orbital, opacity, rendering, style, and color.</p>
 <p><img alt="" src="../../_images/surfaces.png" /></p>
+</section>
+<section id="symmetry-elements">
+<h2>Symmetry Elements<a class="headerlink" href="#symmetry-elements" title="Link to this heading">#</a></h2>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 2.0: </span>The new symmetry perception feature includes rendering rotation axes, mirror planes, and other symmetry elements in molecules.</p>
+</div>
+<p><img alt="" src="../../_images/C180.png" /></p>
 </section>
 <section id="van-der-waals-spheres">
 <h2>Van der Waals Spheres<a class="headerlink" href="#van-der-waals-spheres" title="Link to this heading">#</a></h2>
@@ -626,16 +640,18 @@ and offer high-quality publication-ready graphics.</p>
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#axes">Axes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ball-and-stick">Ball and Stick</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cartoons">Cartoons</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dipole">Dipole</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#close-contact">Close Contact</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dipole-moment">Dipole Moment</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#force">Force</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#non-covalent">Non-Covalent</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#label">Label</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qtaim-quantum-theory-of-atoms-in-molecules">QTAIM (Quantum Theory of Atoms in Molecules)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#licorice">Licorice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#non-covalent">Non-Covalent</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qtaim-quantum-theory-of-atoms-in-molecules">QTAIM (Quantum Theory of Atoms in Molecules)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reference-axes">Reference Axes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#surfaces">Surfaces</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#symmetry-elements">Symmetry Elements</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#van-der-waals-spheres">Van der Waals Spheres</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wireframe">Wireframe</a></li>
 </ul>
