@@ -1667,10 +1667,10 @@ document.write(`
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core8Molecule13setBondLabelsERKN4Core5ArrayINSt6stringEEE">
 <span id="_CPPv3N8Avogadro4Core8Molecule13setBondLabelsERKN4Core5ArrayINSt6stringEEE"></span><span id="_CPPv2N8Avogadro4Core8Molecule13setBondLabelsERKN4Core5ArrayINSt6stringEEE"></span><span id="Avogadro::Core::Molecule::setBondLabels__Core::Array:ss:CR"></span><span class="target" id="class_avogadro_1_1_core_1_1_molecule_1ad178c09428431a8aa031c5013c70b94a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setBondLabels</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#_CPPv4I0EN8Avogadro4Core5ArrayE" title="Avogadro::Core::Array"><span class="n"><span class="pre">Array</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">label</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core8Molecule13setBondLabelsERKN4Core5ArrayINSt6stringEEE" title="Link to this definition">#</a><br /></dt>
-<dd><p>Set all the atom labels in the molecule. </p>
+<dd><p>Set all the bond labels in the molecule. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>label</strong> – The new label array. Must be of length <a class="reference internal" href="#class_avogadro_1_1_core_1_1_molecule_1a7ab455d3fe2cb865b08606f19877c3bd"><span class="std std-ref">atomCount()</span></a>. </p>
+<dd class="field-odd"><p><strong>label</strong> – The new label array. Must be of length <a class="reference internal" href="#class_avogadro_1_1_core_1_1_molecule_1a5d163b3a19101bba63c870ab48edfba9"><span class="std std-ref">bondCount()</span></a>. </p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>True on success, false otherwise. </p>
@@ -2072,6 +2072,55 @@ document.write(`
 </dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core8Molecule12residueLabelE5Index">
+<span id="_CPPv3NK8Avogadro4Core8Molecule12residueLabelE5Index"></span><span id="_CPPv2NK8Avogadro4Core8Molecule12residueLabelE5Index"></span><span id="Avogadro::Core::Molecule::residueLabel__IndexC"></span><span class="target" id="class_avogadro_1_1_core_1_1_molecule_1a131e071907a056b37846d44b89a8cf3a"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">residueLabel</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Index</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">residueIndex</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core8Molecule12residueLabelE5Index" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>residueIndex</strong> – The index of the residue. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Any custom label for the requested residue. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core8Molecule15setResidueLabelE5IndexRKNSt6stringE">
+<span id="_CPPv3N8Avogadro4Core8Molecule15setResidueLabelE5IndexRKNSt6stringE"></span><span id="_CPPv2N8Avogadro4Core8Molecule15setResidueLabelE5IndexRKNSt6stringE"></span><span id="Avogadro::Core::Molecule::setResidueLabel__Index.ssCR"></span><span class="target" id="class_avogadro_1_1_core_1_1_molecule_1a7f1d0a6e15b925f0c55be72e53fbaedd"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setResidueLabel</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Index</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">residueIndex</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">label</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core8Molecule15setResidueLabelE5IndexRKNSt6stringE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the custom label of a single residue. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>residueIndex</strong> – The index of the residue to modify. </p></li>
+<li><p><strong>label</strong> – The new label of the residue. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True on success, false otherwise. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core8Molecule13residueLabelsEv">
+<span id="_CPPv3NK8Avogadro4Core8Molecule13residueLabelsEv"></span><span id="_CPPv2NK8Avogadro4Core8Molecule13residueLabelsEv"></span><span id="Avogadro::Core::Molecule::residueLabelsC"></span><span class="target" id="class_avogadro_1_1_core_1_1_molecule_1ab3b7d2f1cba673bf699433d9fd6fee52"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#_CPPv4I0EN8Avogadro4Core5ArrayE" title="Avogadro::Core::Array"><span class="n"><span class="pre">Array</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">residueLabels</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core8Molecule13residueLabelsEv" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core8Molecule16setResidueLabelsERKN4Core5ArrayINSt6stringEEE">
+<span id="_CPPv3N8Avogadro4Core8Molecule16setResidueLabelsERKN4Core5ArrayINSt6stringEEE"></span><span id="_CPPv2N8Avogadro4Core8Molecule16setResidueLabelsERKN4Core5ArrayINSt6stringEEE"></span><span id="Avogadro::Core::Molecule::setResidueLabels__Core::Array:ss:CR"></span><span class="target" id="class_avogadro_1_1_core_1_1_molecule_1aa122e108336df75d50983d438b859547"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setResidueLabels</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#_CPPv4I0EN8Avogadro4Core5ArrayE" title="Avogadro::Core::Array"><span class="n"><span class="pre">Array</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">label</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core8Molecule16setResidueLabelsERKN4Core5ArrayINSt6stringEEE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set all the residue labels in the molecule. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>label</strong> – The new label array. Must be of length <a class="reference internal" href="#class_avogadro_1_1_core_1_1_molecule_1aae88f9c4daa0b5720058f6e2eff7d238"><span class="std std-ref">residueCount()</span></a>. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True on success, false otherwise. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core8Molecule9atomCountEv">
 <span id="_CPPv3NK8Avogadro4Core8Molecule9atomCountEv"></span><span id="_CPPv2NK8Avogadro4Core8Molecule9atomCountEv"></span><span id="Avogadro::Core::Molecule::atomCountC"></span><span class="target" id="class_avogadro_1_1_core_1_1_molecule_1a7ab455d3fe2cb865b08606f19877c3bd"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">Index</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">atomCount</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core8Molecule9atomCountEv" title="Link to this definition">#</a><br /></dt>
 <dd><dl class="field-list simple">
@@ -2457,6 +2506,11 @@ document.write(`
 <dd></dd></dl>
 
 <dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core8Molecule15m_residueLabelsE">
+<span id="_CPPv3N8Avogadro4Core8Molecule15m_residueLabelsE"></span><span id="_CPPv2N8Avogadro4Core8Molecule15m_residueLabelsE"></span><span id="Avogadro::Core::Molecule::m_residueLabels__Array:ss:"></span><span class="target" id="class_avogadro_1_1_core_1_1_molecule_1af9470f2d0dada2371726f09a76e9ebf5"></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#_CPPv4I0EN8Avogadro4Core5ArrayE" title="Avogadro::Core::Array"><span class="n"><span class="pre">Array</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_residueLabels</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core8Molecule15m_residueLabelsE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core8Molecule15m_coordinates3dE">
 <span id="_CPPv3N8Avogadro4Core8Molecule15m_coordinates3dE"></span><span id="_CPPv2N8Avogadro4Core8Molecule15m_coordinates3dE"></span><span id="Avogadro::Core::Molecule::m_coordinates3d__Array:Array:Vector3::"></span><span class="target" id="class_avogadro_1_1_core_1_1_molecule_1a3a413c573e9496c9f39939142bd43bb0"></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#_CPPv4I0EN8Avogadro4Core5ArrayE" title="Avogadro::Core::Array"><span class="n"><span class="pre">Array</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#_CPPv4I0EN8Avogadro4Core5ArrayE" title="Avogadro::Core::Array"><span class="n"><span class="pre">Array</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Vector3</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_coordinates3d</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core8Molecule15m_coordinates3dE" title="Link to this definition">#</a><br /></dt>
 <dd><p>Store conformers/trajectories. </p>
@@ -2770,6 +2824,10 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core8Molecule8residuesEv"><code class="docutils literal notranslate"><span class="pre">Molecule::residues()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core8Molecule8residuesEv"><code class="docutils literal notranslate"><span class="pre">Molecule::residues()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core8Molecule12residueCountEv"><code class="docutils literal notranslate"><span class="pre">Molecule::residueCount()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core8Molecule12residueLabelE5Index"><code class="docutils literal notranslate"><span class="pre">Molecule::residueLabel()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core8Molecule15setResidueLabelE5IndexRKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">Molecule::setResidueLabel()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core8Molecule13residueLabelsEv"><code class="docutils literal notranslate"><span class="pre">Molecule::residueLabels()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core8Molecule16setResidueLabelsERKN4Core5ArrayINSt6stringEEE"><code class="docutils literal notranslate"><span class="pre">Molecule::setResidueLabels()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core8Molecule9atomCountEv"><code class="docutils literal notranslate"><span class="pre">Molecule::atomCount()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core8Molecule9atomCountEh"><code class="docutils literal notranslate"><span class="pre">Molecule::atomCount()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core8Molecule9bondCountEv"><code class="docutils literal notranslate"><span class="pre">Molecule::bondCount()</span></code></a></li>
@@ -2809,6 +2867,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core8Molecule13m_positions3dE"><code class="docutils literal notranslate"><span class="pre">Molecule::m_positions3d</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core8Molecule12m_atomLabelsE"><code class="docutils literal notranslate"><span class="pre">Molecule::m_atomLabels</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core8Molecule12m_bondLabelsE"><code class="docutils literal notranslate"><span class="pre">Molecule::m_bondLabels</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core8Molecule15m_residueLabelsE"><code class="docutils literal notranslate"><span class="pre">Molecule::m_residueLabels</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core8Molecule15m_coordinates3dE"><code class="docutils literal notranslate"><span class="pre">Molecule::m_coordinates3d</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core8Molecule11m_timestepsE"><code class="docutils literal notranslate"><span class="pre">Molecule::m_timesteps</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core8Molecule16m_hybridizationsE"><code class="docutils literal notranslate"><span class="pre">Molecule::m_hybridizations</span></code></a></li>
