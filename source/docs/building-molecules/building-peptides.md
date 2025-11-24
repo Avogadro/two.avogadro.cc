@@ -1,29 +1,31 @@
-(building-molecules-dna)=
+(building-molecules-peptides)=
 
-# Building DNA or RNA
+# Building Peptides
 
-Avogadro has a builder for nucleic acid sequences and this walk-through will show you how to use it.
+Avogadro has a builder for amino acid sequences and this walk-through will show you how to use it.
 
-![](../../_static/build-dna.png)
+![](../../_static/build-peptides.png)
 
-The DNA/RNA builder is under the "Build" menu and "Insert" submenu.
+The Peptide builder is under the "Build" menu and "Insert" submenu.
 
-![](../../_static/media_1340331923310.png)
+![](../../_static/insert-peptide1.png)
 
-Select either DNA or RNA \(1\) and the rest of the window will update accordingly.
+You can tune the secondary structure, including:
+- straight chain
+- alpha helix
+- beta sheet
+- other conformations
 
-![](../../_static/media_1340331942795.png)
+![](../../_static/insert-peptide2.png)
 
-You can also control the number of bases per turn as shown \(with defaults for A-DNA, B-DNA, Z-DNA, or RNA\).
+You can enter the sequence either by clicking the buttons, or by typing the three-letter amino acid codes directly.
 
-![](../../_static/media_1340331963717.png)
-
-You can enter the sequence either by clicking the buttons, or by typing the one-letter codes directly. For DNA sequences \(as shown here\), you can insert either single-stranded or double-stranded DNA.
+As you click on particular amino acids, they will be added to the sequence on the right. The peptide will build up as a sequence, starting from the N terminus. Of course you can also type the residues directly or paste from an online database.
 
 ![](../../_static/view-center.png)
 
+Click to insert the sequence into the main window. The new oligopeptide will be selected automatically, and the manipulate tool will allow you to translate and rotate the chain into the position you want.
+
+![](../../_static/peptide.png)
+
 You may wish to re-center the view or align the view to axes to see the whole molecule. If needed, switch to the [Navigate Tool](tools-navigation-tool)
-
-![](../../_static/dna.png)
-
-There we go -- the well-known DNA double-helix!
