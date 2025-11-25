@@ -1,22 +1,17 @@
+(tutorials-viewing-molecular-orbitals)=
+
 # Viewing Molecular Orbitals
 
-This feature requires a "checkpoint" or "formatted checkpoint" from quantum chemistry codes
+This feature requires a "formatted checkpoint" from quantum chemistry codes or output files that include molecular orbital information.
 
-When the output file is opened, if a matching checkpoint file is found, it automatically opens the Orbitals toolbar.
+When the output file is opened, Avogadro automatically opens the Orbitals window.
 
-![](../../_static/1ce3be41-3845-4d82-aa16-6b849bd3a5a0.png)
+![](../../_static/orbital-window.png)
 
-All potential molecular orbitals will have full status bars \(you may need to scroll down considerably to find the potential orbitals\). Clicking in the row of an orbital, with a full status bar, will create a quick low quality rendition of the orbital.
+Avogadro will pre-calculate five unoccupied orbitals (i.e., LUMO, LUMO+1) and five occupied orbitals (i.e., HOMO, HOMO-1) in the background. Click on an entry in the table to render the orbital.
 
-![](../../_static/bb63aa7d-f9f4-47cc-86af-7b3308b1df7b.png)
+![](../../_static/quality-settings-mo.png)
 
-A higher orbital quality can be selected and applied if desired. This is done by selecting a new image quality from the drop down menu, and clicking "render". These renditions can take a moment to load.
+A higher orbital quality can be selected and applied if desired. This is done by selecting a new image quality from the drop down menu, and clicking "Render". These renditions can take a moment to load.
 
-![](../../_static/a729e912-3e76-4e30-85c4-d9a4ffdd452b.png)
-
-## Configure
-
-Selecting "Configure" allows you to adjust the default parameters for the orbital toolbar. Once the parameters have been adjusted, click "Recalculate All" before closing the dialog box. "Recalculate All" reevaluates, and updates all of the parameters.
-
-![](../../_static/configure.png)
-
+![](../../_static/higher-quality-mo.png)

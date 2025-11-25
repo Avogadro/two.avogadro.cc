@@ -51,6 +51,8 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/tutorials/using-qtaim-and-wfn';</script>
     <link rel="canonical" href="https://two.avogadro.cc/docs/tutorials/using-qtaim-and-wfn.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -445,6 +447,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="drawing-simple-molecules.html">Drawing Simple Molecules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="naming-a-molecule.html">Naming a Molecule</a></li>
 <li class="toctree-l2"><a class="reference internal" href="viewing-molecular-orbitals.html">Viewing Molecular Orbitals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="viewing-electrostatic-potential.html">Viewing Electrostatic Potential Maps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="viewing-vibrations.html">Viewing Vibrations</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Using QTAIM (Atoms in Molecules) Analysis</a></li>
 </ul>
@@ -510,22 +513,28 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="using-qtaim-atoms-in-molecules-analysis">
-<h1>Using QTAIM (Atoms in Molecules) Analysis<a class="headerlink" href="#using-qtaim-atoms-in-molecules-analysis" title="Link to this heading">#</a></h1>
+<span id="qtaim"></span><h1>Using QTAIM (Atoms in Molecules) Analysis<a class="headerlink" href="#using-qtaim-atoms-in-molecules-analysis" title="Link to this heading">#</a></h1>
 <p>Avogadro includes support for the QTAIM analysis developed by Prof. Richard Bader and his group. This technique allows Avogadro to determine bond connections and bond orders directly from the quantum mechanical electron density.</p>
 <section id="start-with-a-wfn-file">
 <h2>Start with a WFN File<a class="headerlink" href="#start-with-a-wfn-file" title="Link to this heading">#</a></h2>
-<p><img alt="" src="../../_images/start-with-a-wfn-file.png" /></p>
-<p>Most quantum chemistry software allows creating a WFN format file from the output of a calculation. We can read this file in through the QTAIM Extension for visualization and analysis. In the future, other formats will also be supported, including deriving the data directly from checkpoint files.</p>
-<p><img alt="" src="../../_images/media_1340250901000.png" /></p>
-<p>Here we’ve picked a WFN file of interest (HCO2) using the Molecular Graph + Lone Pairs command.</p>
-<p><img alt="" src="../../_images/media_1340250954094.png" /></p>
+<p><img alt="" src="../../_images/qtaim-menu.png" /></p>
+<p>Most quantum chemistry software allows creating a WFN format file from the output of a calculation. We can read this file in through the QTAIM menu items for visualization and analysis. In the future, other formats will also be supported, including deriving the data directly from other formats.</p>
+<p><img alt="" src="../../_images/wfn-file.png" /></p>
+<p>Here we’ve picked a WFN file of interest (<code class="docutils literal notranslate"><span class="pre">b2h6.wfn</span></code>) using the Molecular Graph + Lone Pairs command.</p>
+<p><img alt="" src="../../_images/qtaim-progress.png" /></p>
 <p>Avogadro’s QTAIM support will read in the atoms, determine bonds and bond orders using AIM analysis and then continue with further analysis.</p>
-<p><img alt="" src="../../_images/media_1340251076292.png" /></p>
+<p><img alt="" src="../../_images/b2h6.png" /></p>
 <p>Initially, you may not see anything different. QTAIM includes a separate Display Type for viewing the results of the AIM analysis.</p>
-<p><img alt="" src="../../_images/media_1340251126011.png" /></p>
+<p><img alt="" src="../../_images/qtaim-display.png" /></p>
 <p>Here, we’ve enabled the QTAIM display, which will show lone pairs, bond critical points, etc. You may also want to turn off the Ball and Stick model to see all AIM annotations.</p>
-<p><img alt="" src="../../_images/media_1340251283231.png" /></p>
-<p>Here, we’ve also turned off the classical ball and stick display type to leave only the QTAIM view of HCO2.</p>
+<p><img alt="" src="../../_images/qtaim-interpret.png" /></p>
+<p>Here, we’ve also turned off the classical ball and stick display type to leave only the QTAIM view of <span class="math notranslate nohighlight">\(\ce{HCO2}\)</span>.</p>
+<ul class="simple">
+<li><p><strong>magenta</strong> - atom critical points</p></li>
+<li><p><strong>yellow</strong> - bond critical points</p></li>
+<li><p><strong>dashed lines</strong> - weak interaction paths</p></li>
+<li><p><strong>solid lines</strong> - covalent interaction paths</p></li>
+</ul>
 </section>
 </section>
 

@@ -55,7 +55,7 @@
     <link rel="canonical" href="https://two.avogadro.cc/docs/tutorials/viewing-molecular-orbitals.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Viewing Vibrations" href="viewing-vibrations.html" />
+    <link rel="next" title="Viewing Electrostatic Potential Maps" href="viewing-electrostatic-potential.html" />
     <link rel="prev" title="Naming a Molecule" href="naming-a-molecule.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -445,6 +445,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="drawing-simple-molecules.html">Drawing Simple Molecules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="naming-a-molecule.html">Naming a Molecule</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Viewing Molecular Orbitals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="viewing-electrostatic-potential.html">Viewing Electrostatic Potential Maps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="viewing-vibrations.html">Viewing Vibrations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="using-qtaim-and-wfn.html">Using QTAIM (Atoms in Molecules) Analysis</a></li>
 </ul>
@@ -510,19 +511,14 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="viewing-molecular-orbitals">
-<h1>Viewing Molecular Orbitals<a class="headerlink" href="#viewing-molecular-orbitals" title="Link to this heading">#</a></h1>
-<p>This feature requires a “checkpoint” or “formatted checkpoint” from quantum chemistry codes</p>
-<p>When the output file is opened, if a matching checkpoint file is found, it automatically opens the Orbitals toolbar.</p>
-<p><img alt="" src="../../_images/1ce3be41-3845-4d82-aa16-6b849bd3a5a0.png" /></p>
-<p>All potential molecular orbitals will have full status bars (you may need to scroll down considerably to find the potential orbitals). Clicking in the row of an orbital, with a full status bar, will create a quick low quality rendition of the orbital.</p>
-<p><img alt="" src="../../_images/bb63aa7d-f9f4-47cc-86af-7b3308b1df7b.png" /></p>
-<p>A higher orbital quality can be selected and applied if desired. This is done by selecting a new image quality from the drop down menu, and clicking “render”. These renditions can take a moment to load.</p>
-<p><img alt="" src="../../_images/a729e912-3e76-4e30-85c4-d9a4ffdd452b.png" /></p>
-<section id="configure">
-<h2>Configure<a class="headerlink" href="#configure" title="Link to this heading">#</a></h2>
-<p>Selecting “Configure” allows you to adjust the default parameters for the orbital toolbar. Once the parameters have been adjusted, click “Recalculate All” before closing the dialog box. “Recalculate All” reevaluates, and updates all of the parameters.</p>
-<p><img alt="" src="../../_images/configure.png" /></p>
-</section>
+<span id="tutorials-viewing-molecular-orbitals"></span><h1>Viewing Molecular Orbitals<a class="headerlink" href="#viewing-molecular-orbitals" title="Link to this heading">#</a></h1>
+<p>This feature requires a “formatted checkpoint” from quantum chemistry codes or output files that include molecular orbital information.</p>
+<p>When the output file is opened, Avogadro automatically opens the Orbitals window.</p>
+<p><img alt="" src="../../_images/orbital-window.png" /></p>
+<p>Avogadro will pre-calculate five unoccupied orbitals (i.e., LUMO, LUMO+1) and five occupied orbitals (i.e., HOMO, HOMO-1) in the background. Click on an entry in the table to render the orbital.</p>
+<p><img alt="" src="../../_images/quality-settings-mo.png" /></p>
+<p>A higher orbital quality can be selected and applied if desired. This is done by selecting a new image quality from the drop down menu, and clicking “Render”. These renditions can take a moment to load.</p>
+<p><img alt="" src="../../_images/higher-quality-mo.png" /></p>
 </section>
 
 
@@ -545,11 +541,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="viewing-vibrations.html"
+       href="viewing-electrostatic-potential.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Viewing Vibrations</p>
+        <p class="prev-next-title">Viewing Electrostatic Potential Maps</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -562,18 +558,6 @@ document.write(`
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
-
-  <div class="sidebar-secondary-item">
-<div
-    id="pst-page-navigation-heading-2"
-    class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> On this page
-  </div>
-  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configure">Configure</a></li>
-</ul>
-  </nav></div>
 
   <div class="sidebar-secondary-item">
 
