@@ -59,8 +59,8 @@ caption: User Documentation
 Introduction <self>
 whats-new-in-avogadro-2/index
 getting-started/index
-tools/index
 building-molecules/index
+tools/index
 display-types/index
 optimizing-geometry/index
 tutorials/index
