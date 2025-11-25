@@ -52,4 +52,8 @@ Left-clicking on the bonds will create a double bond (shown below).
 Once you've created your molecule, you can optimize its geometry through the `Extensions` menu.
 Selecting the `Extensions` menu, and clicking `Optimize Geometry` will provide your molecule with proper bond lengths and angles.
 
-![](../../_static/ada26872-ede7-4601-bd4e-d790c10ad614.png)
+Your `Extensions` menu may look different depending on which plugins you have installed.
+
+![](../../_static/optimize-command.png)
+
+You can also use the [AutoOptimize](tools-autoopt-tool) tool to interactively optimize your molecule.
