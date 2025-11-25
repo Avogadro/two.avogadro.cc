@@ -6,7 +6,7 @@ Avogadro includes a number of settings to customize your experience.
 
 ```{toctree}
 ---
-caption: Tools
+caption: Settings
 maxdepth: 1
 ---
 language
