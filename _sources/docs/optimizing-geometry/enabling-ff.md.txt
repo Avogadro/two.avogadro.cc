@@ -1,3 +1,5 @@
+(optimize-enable-ff)=
+
 # Enabling additional force fields
 
 Avogadro2 comes equipped with a Lennard-Jones (LJ) force field, but you may wish to use a [different force field](force-fields) that is more suitable for your chemical system. These force fields are only enabled through interfaces to other programs. This includes:
@@ -23,7 +25,7 @@ Additional packages may need to be added to your conda environment in order for 
 
 ## Setting the Python path
 
-It is also necessary to set the Python path correctly for Avogadro to be able to interface with the Python modules. To do this, go to the "Extensions" menu and select "Set Python Path...". 
+It is also necessary to set the Python path correctly for Avogadro to be able to interface with the Python modules. To do this, go to the "Extensions" menu and select "Set Python Path...".
 
 ![](../../_static/python-path.png)
 
@@ -34,4 +36,3 @@ In the dialogue box, browse to (or copy and paste) the Python executable from th
 You must now restart Avogadro for changes to take effect. If you now go to the "Extensions" menu, and under "Calculate", select "Setup Force Field..." you should be able to select the additional force fields.
 
 ![](../../_static/ff-selector.png)
-

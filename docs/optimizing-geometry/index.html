@@ -55,8 +55,8 @@
     <link rel="canonical" href="https://two.avogadro.cc/docs/optimizing-geometry/index.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Enabling additional force fields" href="enabling-ff.html" />
-    <link rel="prev" title="Building a Supercell" href="../building-materials/supercell.html" />
+    <link rel="next" title="Introduction to Force Fields" href="force-fields.html" />
+    <link rel="prev" title="Display Types" href="../display-types/index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -437,16 +437,15 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="../tools/index.html">Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../building-molecules/index.html">Building Molecules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../display-types/index.html">Display Types</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../menus/index.html">Menus</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../building-materials/index.html">Building Materials</a></li>
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Optimizing Geometry</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="enabling-ff.html">Enabling additional force fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="force-fields.html">Introduction to Force Fields</a></li>
 <li class="toctree-l2"><a class="reference internal" href="constraints.html">Geometry Constraints</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conformers.html">Finding Conformers of Molecules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enabling-ff.html">Enabling additional force fields</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="../extensions/index.html">Extensions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../settings/index.html">Settings</a></li>
 </ul>
 </div>
 </nav></div>
@@ -506,14 +505,16 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="optimizing-geometry">
 <span id="optimize"></span><h1>Optimizing Geometry<a class="headerlink" href="#optimizing-geometry" title="Link to this heading">#</a></h1>
-<p>Avogadro offers several methods to optimize the geometry of your system before further calculations, including menu commands and the interactive <a class="reference internal" href="../tools/autoopt-tool.html#tools-autoopt-tool"><span class="std std-ref">AutoOptimize</span></a> tool.</p>
-<p>This section discusses more details on the methods used for optimization, use of geometry constraints to control optimization, and generation and use of conformers.</p>
+<p>Avogadro offers several methods to optimize the geometry of your system before further calculations, including the command <code class="docutils literal notranslate"><span class="pre">Extensions</span></code> ⇒ <code class="docutils literal notranslate"><span class="pre">Optimize</span> <span class="pre">Geometry</span></code> and the interactive <a class="reference internal" href="../tools/autoopt-tool.html#tools-autoopt-tool"><span class="std std-ref">AutoOptimize</span></a> tool.</p>
+<p>This section discusses in more detail on the methods used for optimization, use of geometry constraints to control optimization, and generation and use of conformers.</p>
 <div class="toctree-wrapper compound">
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Optimization</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="enabling-ff.html">Enabling additional force fields</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="enabling-ff.html#creating-an-avogadro-conda-environment">Creating an avogadro conda environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="enabling-ff.html#setting-the-python-path">Setting the Python path</a></li>
+<li class="toctree-l1"><a class="reference internal" href="force-fields.html">Introduction to Force Fields</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="force-fields.html#lennard-jones-lj">Lennard-Jones (LJ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="force-fields.html#uff">UFF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="force-fields.html#mmff94-s">MMFF94(s)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="force-fields.html#gaff">GAFF</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="constraints.html">Geometry Constraints</a><ul>
@@ -530,10 +531,15 @@ document.write(`
 </li>
 <li class="toctree-l1"><a class="reference internal" href="conformers.html">Finding Conformers of Molecules</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="conformers.html#start-with-your-molecule-of-interest">Start with your molecule of interest</a></li>
-<li class="toctree-l2"><a class="reference internal" href="conformers.html#optimize-the-geometry">Optimize the geometry</a></li>
-<li class="toctree-l2"><a class="reference internal" href="conformers.html#change-the-force-field-options">Change the force field options</a></li>
-<li class="toctree-l2"><a class="reference internal" href="conformers.html#set-the-conformer-search-options">Set the conformer search options</a></li>
-<li class="toctree-l2"><a class="reference internal" href="conformers.html#pick-a-search-method-and-start-the-search">Pick a search method and start the search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conformers.html#optimize-geometry">Optimize Geometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conformers.html#configure-open-babel-force-fields">Configure Open Babel Force Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conformers.html#set-the-conformer-search-options">Set the Conformer Search Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conformers.html#analyze-results">Analyze Results</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="enabling-ff.html">Enabling additional force fields</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enabling-ff.html#creating-an-avogadro-conda-environment">Creating an avogadro conda environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enabling-ff.html#setting-the-python-path">Setting the Python path</a></li>
 </ul>
 </li>
 </ul>
@@ -551,20 +557,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../building-materials/supercell.html"
+       href="../display-types/index.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Building a Supercell</p>
+        <p class="prev-next-title">Display Types</p>
       </div>
     </a>
     <a class="right-next"
-       href="enabling-ff.html"
+       href="force-fields.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Enabling additional force fields</p>
+        <p class="prev-next-title">Introduction to Force Fields</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
