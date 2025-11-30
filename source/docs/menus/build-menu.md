@@ -2,7 +2,7 @@
 
 # Build Menu
 
-The build menu contains commands useful for creating and modifying molecular geometries.
+The Build menu contains commands useful for creating and modifying molecular geometries.
 
 Atomic Coordinate Editor
 : Open the [Atomic Coordinate Editor](coordinate-editor).
@@ -42,10 +42,10 @@ Format
 : Specify a custom format for the coordinates (the Help menu on the right includes more information)
 
 Distance Unit
-: Select between Angstroms (Å) and Bohrs/Atomic Units (AU).
+: Select between Angstroms (Å) and Bohrs/Atomic Units (a.u.).
 
 :::{note}
-1 Å = 1.88972613 Bohrs
+1 Å    = 1.88972613 Bohrs
 
 1 Bohr = 0.52917721 Å
 :::
@@ -81,7 +81,7 @@ SMILES
 (hydrogens-dropdown)=
 #### Hydrogens
 
-Adjust Hydrogens
+Adjust Hydrogens {kbd}`Ctrl+Alt+H`
 : Add any missing hydrogen atoms, and remove any extra hydrogen atoms on any atoms that violate the octet rule.
 
 Add Hydrogens
@@ -96,7 +96,7 @@ Remove All Hydrogens
 (bond-dropdown)=
 #### Bond
 
-Bond Atoms
+Bond Atoms {kbd}`Ctrl+B`
 : Bond all atoms in the molecule.
 
 :::{warning}
@@ -109,8 +109,8 @@ Bond Selected Atoms
 Perceive Bond Orders
 : Check all atoms that have unsatisfied octets and add enough double or triple bonds to satisfy the octet.
 
-Remove Bonds
-: Remove all bonds in the molecule.
+Remove Bonds {kbd}`Ctrl+Shift+B`
+: Remove bonds containing selected atom, or remove all bonds in document if there are no selected atoms.
 
 Configure Bonding
 : TODO
