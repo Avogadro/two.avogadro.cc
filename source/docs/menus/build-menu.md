@@ -2,78 +2,115 @@
 
 # Build Menu
 
-The build menu helps to ease the process of constructing molecules.
+The Build menu contains commands useful for creating and modifying molecular geometries.
 
-![](../../_static/94aeecab-a6e9-48e8-9ad5-73900d9e549a.png)
+Atomic Coordinate Editor
+: Open the [Atomic Coordinate Editor](coordinate-editor).
 
-## Cartesian Editor...
+Insert
+: See [Insert](insert-dropdown).
 
-"Cartesian Editor..." when selected provides you with the capability to manually adjust bond lengths. The dialog box for the cartesian editor is displayed below.
+Hydrogens
+: See [Hydrogens](hydrogens-dropdown).
 
-![](../../_static/cartesian-editor.png)
+Bond
+: See [Bond](bond-dropdown).
 
-### 1. Sort by...
+Change Elements
+: Change the selected atoms to a chosen element.
 
-The sort by drop down menu will rearrange the data in the dialog box for your convenience. Sort by can arrange the data by element, or by location of the atom. All of the data for sorting by X, Y, and Z coordinates will start reading at the atom to the furthest left in the molecule, and continue until it reaches the atom at the right most point.
+Add Centroid
+: Add a dummy atom at the geometric center of the molecule.
 
-![](../../_static/1-sort-by.png)
+Add Center of Mass
+: Add a dummy atom at the center of mass of the molecule.
 
-### 2. Unit of Measure
+Add Perpendicular
+: TODO
 
-Avogadro provides three units of measure to adjust bond lengths, Angstroms, Bohrs, and Fractional coordinates. A unit cell must be defined to use fractional coordinates.
+(coordinate-editor)=
+#### Atomic Coordinate Editor
 
-![](../../_static/2-unit-of-measure.png)
+The Atomic Coordinate Editor is an extremely useful environment for modifying the existing molecular structure, formatting a set of coordinates, and reordering atomic indices.
 
-### 3. Editing & Modifying Data
+The window has several useful features:
 
-Editing the data is as simple as clicking on the number you wish to edit, and typing in a new coordinate. After clicking "Apply" and returning back to the Avogadro display screen, you should notice that the atom has changed position.
+Preset
+: Select a preset format for the coordinates and update any existing coordinates.
 
-The displayed data can also be modified according to your personal preference, or for the use of additional plugins.
+Format
+: Specify a custom format for the coordinates (the Help menu on the right includes more information)
 
-![](../../_static/3-editing--amp--modifying-data.png)
+Distance Unit
+: Select between Angstroms (Å) and Bohrs/Atomic Units (a.u.).
 
-## Change H to Methyl
+:::{note}
+1 Å    = 1.88972613 Bohrs
 
-"Change H to Methyl" will replace any Hydrogens present in the display window with methyl groups. Depicted below is acetone with all of its hydrogens replaced by methyl groups.
+1 Bohr = 0.52917721 Å
+:::
 
-![](../../_static/change-h-to-methyl.png)
+Revert
+: Reverts any edits.
 
-## Add Hydrogens
+Clear
+: Clears all coordinates.
 
-"Add Hydrogens" will satisfy the valency of the atoms present with hydrogens.
+Apply
+: Applies any edits.
 
-![](../../_static/add-hydrogens.png)
+:::{note}
+The text in the coordinate box will appear green when it has been edited, and black after being applied.
+:::
 
-## Add Hydrogens for pH...
+(insert-dropdown)=
+#### Insert
 
-"Add Hydrogens for pH..." will create a dialog box \(displayed below\) that allows you to adjust the pH of the molelcular environment. This feature will add \(or subtract\) acidic hydrogens to ionizable groups in peptides, according to the desired pH.
+Molecule
+: Insert a **molecule fragment** from the [Molecules Plugin](extensions-plugins-menu).
 
-![](../../_static/add-hydrogens-for-ph.png)
+DNA/RNA
+: Insert **DNA/RNA** fragments using the [Nucleic Acid Builder](nucleic-acid-builder).
 
-## Remove Hydrogens
+InChI
+: Insert a molecule using an International Chemical Identifier ([InChI](https://www.inchi-trust.org/)).
 
-"Remove Hyrogens" will delete all hydrogens in the display screen.
+SMILES
+: Insert a molecule using a [SMILES](https://www.daylight.com/dayhtml/doc/theory/theory.smiles.html) string.
 
-![](../../_static/remove-hydrogens.png)
+(hydrogens-dropdown)=
+#### Hydrogens
 
-## Insert
-(menus-build-menu-insert)=
+Adjust Hydrogens {kbd}`Ctrl+Alt+H`
+: Add any missing hydrogen atoms, and remove any extra hydrogen atoms on any atoms that violate the octet rule.
 
-"Insert" provides a faster, simpler way of building molecules. A depicted below, you can insert DNA/RNA, a Fragment, a Peptide, and can also insert a molecule based on SMILES text.
+Add Hydrogens
+: Add any missing hydrogen atoms on atoms that have incomplete octets.
 
-![](../../_static/insert.png)
+Remove Extra Hydrogens
+: Remove any extra hydrogen atoms on atoms with overfull octets.
 
-## Invert Chirality
+Remove All Hydrogens
+: Remove all hydrogen atoms in the molecule.
 
-"Invert Chirality" will reverse \(invert\) the initial chirality to the opposite R/S configuration.
+(bond-dropdown)=
+#### Bond
 
-![](../../_static/invert-chirality.png)
+Bond Atoms {kbd}`Ctrl+B`
+: Bond all atoms in the molecule.
 
-## Super Cell Builder...
+:::{warning}
+This will change all existing bonds to single bonds!
+:::
 
-Information on the Super Cell Builder can be found in "Building and Editing Crystals and Materials" section.
+Bond Selected Atoms
+: Bond all selected atoms.
 
-## Nanotube Builder...
+Perceive Bond Orders
+: Check all atoms that have unsatisfied octets and add enough double or triple bonds to satisfy the octet.
 
-Information on building Carbon Nanotubes in Avogadro can be found in the "Building Molecules" section.
+Remove Bonds {kbd}`Ctrl+Shift+B`
+: Remove bonds containing selected atom, or remove all bonds in document if there are no selected atoms.
 
+Configure Bonding
+: TODO

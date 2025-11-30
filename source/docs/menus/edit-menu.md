@@ -2,47 +2,36 @@
 
 # Edit Menu
 
-The edit menu administers basic file revisions.
+The Edit menu contains commands useful for typical manipulation of the file at hand.
 
-![](../../_static/ab0abbfc-1551-4c45-b76b-02573e62ed4c.png)
+Undo
+: Undo the last made change to the document.
 
-## Undo
+Redo
+: Redo the last undo operation on the document.
 
-"Undo" will negate the last change to the document.
+Cut
+: Cut any selected atoms/molecules, removing them from the document and placing them in the clipboard.
 
-## Redo
+Copy
+: Copy any selected atoms/molecules, keeping them in the document and placing them in the clipboard.
 
-"Redo" will recover the last change to the document.
+Copy As
+: Copy the selected atoms/molecules as a text representation in either SMILES or InChI format.
 
-## Cut
+Copy Graphics
+: Copy the current viewing window as an image.
 
-"Cut" will remove and copy a selection.
+:::{note}
+The Copy Graphics function copies the image in the `.png` format with the same resolution as the viewing window. This means a smaller viewing window will produce a lower resolution image.
+:::
 
-## Copy
+Paste
+: Paste the last object in the clipboard.
 
-"Copy" will create a duplicate of the entire molecule or a selection, and place it on a clipboard.
+:::{note}
+The Paste function only works if the object on the clipboard is in CJSON format.
+:::
 
-## Copy As
-
-"Copy As" provides text representations of the molecules present in the viewing screen. For example, selecting "Copy As" and "SMILES", renders "C\(=O\)\(C\)C.O.O" as the output for the viewing screen below. This selection can then be pasted in a text document for external projects.
-
-![](../../_static/copy-as.png)
-
-## Paste
-
-"Paste" recalls the last data copied onto the clipboard.
-
-## Clear
-
-"Clear" removes all chemical structures from the viewing window.
-
-## Select All
-
-"Select All" highlights everything in the screen \(this feature can also be found under the "Select" menu\).
-
-![](../../_static/select-all.png)
-
-## Select None
-
-"Select None" will dismiss everything in the display \(this feature is also found under the "Select" menu\).
-
+Delete
+: Delete any selected atoms/molecules from the document.

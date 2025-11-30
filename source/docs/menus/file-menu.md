@@ -2,47 +2,33 @@
 
 # File Menu
 
-The file menu provides the standard abilities of creating a new file, opening & closing documents, as well as saving documents. It also yields the capability to import files from various databases.
+The File menu contains commands useful for opening, importing, and exporting molecules.
 
-![](../../_static/b4a5b5bf-c747-4793-bcbb-caaca343b124.png)
+New
+: Create a new molecule document.
 
-## New
+Open
+: Open a file containing molecule information from a file browser.
 
-The "New" selection will open a new file in Avogadro.
+Open Recent
+: Display a list of the 10 most recent files opened.
 
-## Open
+Close
+: Close the current window.
 
-After selecting "Open", a file that has previously been saved is accessible through the pop up browser.
+Save
+: Save the current molecule.
 
-## Open Recent
+Save As...
+: Save the current molecule as a CJSON (`.cjson`) or CML (`.cml`) file.
 
-"Open Recent" displays a list of documents recently launched.
+Import
+: See [Import](import_menu)
 
-## Close
+Export
+: See [Export](export_menu)
 
-"Close" dismisses the window currently open.
+(import_menu)=
+#### Import Menu
 
-## Save
-
-"Save" will maintain your progress.
-
-## Save As...
-
-"Save As..." allows you to save progress without overwriting the original file.
-
-## Revert to Saved
-
-"Revert to Saved" will revert any changes made to the previously saved file.
-
-## Import
-
-![](../../_static/import.png)
-
-"Import" will open chemical files stored in a database.
-
-## Export
-
-![](../../_static/export.png)
-
-"Export" will make files created in Avogadro suitable for other programs.
-
+The Import menu contains commands useful for importing molecules to the current document, such as 
