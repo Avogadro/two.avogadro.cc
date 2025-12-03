@@ -17,18 +17,18 @@ jobs:
       cancel-in-progress: true
 
     steps:
-    - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 #v5
+    - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 #v5
 
     # build the doxygen XML for breathe
     - name: Checkout openchemistry
-      uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 #v5
+      uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 #v5
       with:
         repository: openchemistry/openchemistry
         submodules: recursive
         path: openchemistry
 
     - name: Checkout openchemistry and avogadrolibs
-      uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 #v5
+      uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 #v5
       with:
         repository: openchemistry/avogadrolibs
         path: openchemistry/avogadrolibs
