@@ -4,29 +4,23 @@
 
 Keyboard shortcut: <kbd>Ctrl</kbd>+<kbd>8</kbd>
 
-The measure tool determines bond lengths, angles, and dihedrals.
-
-![](../../_static/0b676e91-6deb-4eaa-8b5f-46774243643b.png)
-
-The measure tool allows you to select and assess up to four atoms.
-
-![](../../_static/f0834455-f16b-4392-8ff4-5bf434c1dd63.png)
+The measure tool determines bond lengths, angles, and dihedrals. It allows you to select and assess up to four atoms.
 
 As you click on atoms Avogadro will automatically calculate the distances between atoms in a respective order.
-For example, the distance between atom 1 and 2 is 1.376 Å \(displayed below\).
 
-![](../../_static/6adb2241-2518-4a8e-a015-cbb087d4b0f1.png)
+For example, the distance between atom 1 and 2 is 1.090 Å \(displayed below\).
 
-Avogadro will also determine the angle between atoms, if at least three atoms have been selected.
-The second atom is used as the vertex.
+![](../../_static/measure-12.png)
 
-![](../../_static/6adb2241-2518-4a8e-a015-cbb087d4b0f1-1.png)
+Avogadro will also determine the angle between atoms, if at least three atoms have been selected, as well as indicating the distance between atoms 2 and 3.
 
-If four atoms are selected, a dihedral angle is determined.
+The second atom is used as the vertex (e.g., atoms 1-2-3 = 109.476°)
 
-![](../../_static/6adb2241-2518-4a8e-a015-cbb087d4b0f1-2.png)
+![](../../_static/measure-123.png)
 
-Right clicking the display will reset the atoms previously selected.
+If four atoms are selected, a dihedral angle is determined (e.g. 149.981° for atoms 1-2-3-4), as well as the 2-3-4 angle, and the 3-4 distance.
 
-![](../../_static/79085e4b-2688-40b5-a07c-57b0f58f87a6.png)
+![](../../_static/measure-1234.png)
+
+Clicking on an atom will remove it from the list, or double clicking the display will reset the atoms previously selected.
 

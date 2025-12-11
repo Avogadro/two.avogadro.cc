@@ -4,7 +4,7 @@
 
 ![The icon of the Align Tool in light mode.](../../_static/icon_align.svg)
 
-The **Align Tool** is used to rotate and translate a molecule(s) so that it aligns with one of the Cartesian axes.
+The **Align Tool** is used to rotate and translate the current molecule so that it aligns with one of the Cartesian axes.
 
 ## Basic Usage
 
@@ -20,21 +20,15 @@ If only one atom was selected, the molecule will simply be translated so that it
 
 If two atoms were selected, the first will be placed at the origin, and the second will be placed along the chosen axis.
 
+![](../../_static/align-atoms.png)
+
 ```{tip}
 The red axis is designated as the X axis, green is designated as the Y axis, and blue is designated as the Z axis.
 ```
 
 ## Options
 
-![](../../_static/e3143779-956e-4d83-ac28-dc2f79bf2194.png)
-
 The **Axis** drop-down menu allows you to choose which Cartesian axis the molecule will be aligned to.
 
-![](../../_static/ec6c967d-5df0-41b8-b692-93123f8a0462.png)
+![](../../_static/align-axis.png)
 
-By default, the relative positions of everything in the view pane will remain the same and the same transformation will be applied to all objects.
-By choosing the **Molecule** option in the **Align** drop-down menu in the **Align** pane, only the molecule containing the selected atoms will be affected by the change.
-
-![](../../_static/c1839173-f147-444d-b9c9-9ebb2e0a28f4.png)
-
-![](../../_static/ca04487a-6f68-45ca-a5bf-92a2daf99194.png)
