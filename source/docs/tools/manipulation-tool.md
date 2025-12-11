@@ -41,7 +41,7 @@ The options in the Manipulate Pane allow you to apply transformations mathematic
 Translate by:
 : Specify the distances, in angstrom, to shift the selection along the X-, Y-, and Z-axes.
 
-![Applying a mathematical translation.](../../_static/0f89679e-9bee-4005-8793-fc96682ecd34.png){height=300px align=center}
+![Applying a mathematical translation.](../../_static/manipulate-translate.png){height=300px align=center}
 
 Rotate around:
 : Specify the angles, in degrees, to rotate the selection around the X-, Y-, and Z-axes, as well as the centre of the rotation.
@@ -49,7 +49,7 @@ Rotate around:
   The rotation can be carried out around the center of the current geometry or the origin, selected from the drop-down menu.
   The X-, Y-, and Z-axes used for the rotation will be considered to intersect at this point.
 
-![Applying a mathematical rotation.](../../_static/14c1bee4-7288-4fa7-8660-d9fc58578631.png){height=300px align=center}
+![Applying a mathematical rotation.](../../_static/manipulate-rotate.png){height=300px align=center}
 
 Apply
 : Apply the specified transformations to the current selection.
@@ -60,8 +60,6 @@ Reset
 : Reset all values in the translation and rotation boxes to 0.
 
   This does not reset the molecule or reverse any transformations; if you want to undo your adjustments, go to the `Edit` menu in the top bar and select `Undo Manipulate Atom`.
-
-![Undoing transformations.](../../_static/e711ffa1-6a52-4748-af42-e734581bf36b.png){height=600px align=center}
 
 :::{note}
 The icon for the Manipulation Tool is adapted from a design by [Ryan Dell](https://thenounproject.com/ryandeel/), a contributor to the Noun Project.
