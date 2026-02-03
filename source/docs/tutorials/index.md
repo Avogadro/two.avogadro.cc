@@ -2,12 +2,13 @@
 
 # Tutorials
 
+Step-by-step tutorials covering common workflows in Avogadro, from drawing organic molecules and metal complexes to visualizing molecular orbitals, electrostatic potentials, and vibrational modes.
+
 ```{toctree}
 ---
 caption: Tutorials
 ---
 
-drawing-simple-molecules
 building-organic-molecules
 building-metal-complexes
 naming-a-molecule

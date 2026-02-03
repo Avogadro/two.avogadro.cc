@@ -129,7 +129,7 @@ Group
 (template-tool-shortcuts)=
 ## Keyboard Shortcuts
 
-The Template Tool supports extensive keyboard shortcuts for rapid selection of elements, coordination geometries, ligands, and functional groups.
+The Template Tool supports extensive keyboard shortcuts for rapid selection of elements, coordination geometries, ligands, and functional groups. We welcome ideas for other shortcuts on [our forum](https://discuss.avogadro.cc)
 
 (template-shortcuts-navigation)=
 ### General Navigation
