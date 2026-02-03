@@ -21,6 +21,8 @@ In the **{ref}`Centers tab<template-tool-centers-tab>`**, you can either use the
 
 Click in empty space to place the cobalt center. Six hydrogen atoms will appear at the coordination sites.
 
+![cobalt complex](../../_static/cobalt-complex.png){height=300px align=center}
+
 **Add ammine ligands**
 
 Switch to the **{ref}`Ligands tab<template-tool-ligands-tab>`** by pressing <kbd>→</kbd> or <kbd>]</kbd> or clicking the tab:
@@ -28,11 +30,9 @@ Switch to the **{ref}`Ligands tab<template-tool-ligands-tab>`** by pressing <kbd
 
 Click on each of the six hydrogens. Each click replaces a hydrogen with an ammine ligand.
 
+![hexaamminecobalt complex](../../_static/cobalt-hexaammine.png){height=300px align=center}
+
 Other ligands can also be selected by {ref}`keyboard shortcuts<template-shortcuts-ligands>`.
-
-**Optimize the structure**
-
-Press <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>O</kbd> or use **Extensions → Optimize Geometry** to refine bond lengths and angles. You can also use the [Auto Optimize](tools-autoopt-tool) tool.
 
 You now have a complete hexaamminecobalt(III) complex with idealized octahedral geometry.
 
@@ -57,17 +57,20 @@ In the **Centers** tab:
 
 Click to place the center.
 
+![Ni square planar complex](../../_static/ni-square-planar.png){height=300px align=center}
+
+
 **Add ethylenediamine**
 
 In the **Ligands** tab, type `en` to select ethylenediamine. Click on two **adjacent** hydrogen atoms (cis positions). The bidentate ligand bridges both sites, forming a five-membered chelate ring.
+
+![Ni square planar complex](../../_static/ni-square-planar2.png){height=300px align=center}
 
 **Add two ammine ligands**
 
 Type `n` for ammine, then click on each of the two remaining hydrogens.
 
-**Optimize**
-
-Run geometry optimization. Note the planar arrangement around nickel.
+![Ni square planar complex](../../_static/ni-square-planar3.png){height=300px align=center}
 
 ### Building the Tetrahedral Isomer
 
@@ -76,7 +79,7 @@ Start fresh (**File → New**) and repeat with one change:
 
 Add the same ligands: ethylenediamine (`en`) to two adjacent hydrogens, then ammine (`n`) to the remaining two.
 
-After optimization, compare the two structures. The tetrahedral isomer has a distinctly different 3D shape compared to the flat square planar arrangement.
+![Ni tetrahedral complex](../../_static/ni-tetrahedral.png){height=300px align=center}
 
 :::{note}
 Square planar and tetrahedral geometries are both common for d⁸ metals like Ni(II), Pd(II), and Pt(II). The preferred geometry depends on ligand field strength and steric factors. You can run quantum chemical calculations to compare the relative energies of the isomers.
@@ -97,21 +100,25 @@ We need a 4-coordinate geometry, treating each Cp as occupying one site:
 
 Place the center.
 
+![Zr tetrahedral complex](../../_static/zr-tetrahedral.png){height=300px align=center}
+
 **Add the cyclopentadienyl rings**
 
 In the **Ligands** tab, type `cp` (or `e5`) to select η⁵-cyclopentadienyl.
 
 Click on one hydrogen. The entire Cp ring attaches, with all five carbons oriented toward the metal. Click on an adjacent hydrogen to add the second Cp ring.
 
+![(Cp)2 Zr complex](../../_static/cp2-zr.png){height=300px align=center}
+
 **Add the chloride ligands**
 
 The [Template Tool](tools-template-tool)'s ligand library focuses on organic ligands. For chlorides, switch to the [Draw Tool](tools-draw-tool) (<kbd>Ctrl</kbd>+<kbd>2</kbd>), select chlorine from the element selector, and click on each remaining hydrogen to replace it with Cl.
 
+![(Cp)2 ZrCl2 complex](../../_static/cp2-zr-cl2.png){height=300px align=center}
+
 You could also type `e2` to select η²-ethylene to insert in one site.
 
-**Optimize the structure**
-
-Run geometry optimization. The structure should adopt the characteristic bent metallocene geometry with the two Cp rings tilted toward each other.
+![Ziegler-Natta complex](../../_static/cp2-zr-ethylene.png){height=300px align=center}
 
 :::{tip}
 Try building related catalysts:
@@ -120,7 +127,7 @@ Try building related catalysts:
 - **η⁶-arene complexes**: Use `e6` for benzene coordination
 :::
 
-The ligand library also has other haptic coordination modes, such as η³-cyclopentadienyl for fluxional behavior.
+The ligand library also has other haptic coordination modes, such as a distorted η³-cyclopentadienyl for fluxional behavior.
 
 ## Summary
 

@@ -7,6 +7,7 @@ Step-by-step tutorials covering common workflows in Avogadro, from drawing organ
 ```{toctree}
 ---
 caption: Tutorials
+maxdepth: 1
 ---
 
 building-organic-molecules
