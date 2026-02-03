@@ -15,6 +15,7 @@ The Template Tool also enables rapid addition of functional groups to an organic
 :::{versionadded} 2.0
 :::
 
+(template-tool-basic-usage)=
 ## Basic Usage
 
 Ligands and functional groups must be added to an existing atom (a "center"), whether this be an atom within an organic framework or a metal center.
@@ -44,10 +45,12 @@ Discrete small organic molecules can not be created with the Template Tool by cl
 To create organic molecules with a single click, use [**Build ⇒ Insert ⇒ Molecule…**](menus-build-menu-insert) instead.
 :::
 
+(template-tool-options)=
 ## Options
 
 Switching tabs chooses between the creation of centers, ligands, and functional groups, and presents different options in the pane.
 
+(template-tool-centers-tab)=
 ### Centers Tab
 
 Element
@@ -75,6 +78,7 @@ Coordination
 
   ![Menu of coordination geometries including linear, trigonal planar, tetrahedral, square planar, trigonal bipyramidal, and octahedral](../../_static/Template-Coordination.png){height=300px align=center}
 
+(template-tool-ligands-tab)=
 ### Ligands Tab
 
 Type
@@ -104,6 +108,7 @@ Ligand
 
   ![Iron bipyridine molecule](../../_static/FeBipy.png){height=300px align=center}
 
+(template-tool-groups-tab)=
 ### Groups Tab
 
 Functional groups are similar to monodentate ligands in that they attach to a molecule through one new bond, and there is some overlap in the available fragments.
@@ -121,6 +126,163 @@ Group
 
   A preview of the selected functional group and its attachment point is shown below the drop-down.
 
+(template-tool-shortcuts)=
+## Keyboard Shortcuts
+
+The Template Tool supports extensive keyboard shortcuts for rapid selection of elements, coordination geometries, ligands, and functional groups.
+
+(template-shortcuts-navigation)=
+### General Navigation
+
+| Key | Action |
+|-----|--------|
+| <kbd>←</kbd> or <kbd>[</kbd> | Switch to previous tab |
+| <kbd>→</kbd> or <kbd>]</kbd> | Switch to next tab |
+
+(template-shortcuts-centers)=
+### Centers Tab
+
+**Element Selection:** Type any element symbol (e.g., `Fe`, `Cu`, `Ni`) to select that element.
+
+**Formal Charge:**
+
+| Key | Action |
+|-----|--------|
+| <kbd>+</kbd> | Increase formal charge |
+| <kbd>-</kbd> | Decrease formal charge |
+
+**Coordination Geometry:**
+
+| Key | Coordination | Geometry |
+|-----|--------------|----------|
+| <kbd>1</kbd> | 1 | Linear (terminal) |
+| <kbd>2</kbd> | 2 | Linear |
+| <kbd>3</kbd> | 3 | Trigonal planar |
+| <kbd>4</kbd> | 4 | Tetrahedral |
+| <kbd>4</kbd><kbd>4</kbd> | 4 | Square planar |
+| <kbd>5</kbd> | 5 | Trigonal bipyramidal |
+| <kbd>5</kbd><kbd>5</kbd> | 5 | Square pyramidal |
+| <kbd>6</kbd> | 6 | Octahedral |
+| <kbd>6</kbd><kbd>6</kbd> | 6 | Trigonal prismatic |
+| <kbd>7</kbd> | 7 | Pentagonal bipyramidal |
+| <kbd>8</kbd> | 8 | Square antiprismatic |
+
+(template-shortcuts-ligands)=
+### Ligands Tab
+
+**Monodentate Ligands:**
+
+| Key | Ligand |
+|-----|--------|
+| <kbd>a</kbd> or <kbd>o</kbd> | Aqua (H₂O) |
+| <kbd>co</kbd> | Carbonyl (CO) |
+| <kbd>cn</kbd> | Cyano (CN⁻) |
+| <kbd>n</kbd> | Ammine (NH₃) |
+| <kbd>p</kbd> | Phosphine (PH₃) |
+| <kbd>pyr</kbd> | Pyridyl |
+| <kbd>s</kbd> | Thiol (SH⁻) |
+
+**Bidentate Ligands:**
+
+| Key | Ligand |
+|-----|--------|
+| <kbd>acac</kbd> | Acetylacetonate |
+| <kbd>bpy</kbd> | Bipyridine |
+| <kbd>dmg</kbd> | Dimethylglyoxime |
+| <kbd>dmpe</kbd> | 1,2-bis(dimethylphosphino)ethane |
+| <kbd>dppe</kbd> | 1,2-bis(diphenylphosphino)ethane |
+| <kbd>en</kbd> | Ethylenediamine |
+| <kbd>ox</kbd> | Oxalate |
+| <kbd>phen</kbd> | Phenanthroline |
+
+**Tridentate and Higher:**
+
+| Key | Ligand |
+|-----|--------|
+| <kbd>tpy</kbd> | Terpyridine (tridentate) |
+| <kbd>pc</kbd> | Phthalocyanine (tetradentate) |
+| <kbd>por</kbd> | Porphin (tetradentate) |
+| <kbd>sal</kbd> | Salen (tetradentate) |
+| <kbd>edta</kbd> | EDTA (hexadentate) |
+
+**Haptic Ligands:**
+
+| Key | Ligand |
+|-----|--------|
+| <kbd>e</kbd><kbd>2</kbd> | η²-Ethylene |
+| <kbd>e</kbd><kbd>3</kbd> | η³-Allyl |
+| <kbd>e</kbd><kbd>4</kbd> | η⁴-Cyclooctadiene |
+| <kbd>e</kbd><kbd>5</kbd> or <kbd>c</kbd><kbd>p</kbd>| η⁵-Cyclopentadienyl |
+| <kbd>e</kbd><kbd>6</kbd> | η⁶-Benzene |
+
+(template-shortcuts-groups)=
+### Groups Tab
+
+**Alkyl Chains:**
+
+| Key | Group |
+|-----|-------|
+| <kbd>c</kbd> or <kbd>c1</kbd> | Methyl |
+| <kbd>c2</kbd> | Ethyl |
+| <kbd>c3</kbd> | Propyl |
+| <kbd>c4</kbd> | Butyl |
+| <kbd>c5</kbd> – <kbd>c9</kbd> | Pentyl – Nonyl |
+| <kbd>c0</kbd> | Decyl |
+
+**Cycloalkyl** (uppercase C):
+
+| Key | Group |
+|-----|-------|
+| <kbd>C3</kbd> | Cyclopropane |
+| <kbd>C4</kbd> | Cyclobutane |
+| <kbd>C5</kbd> | Cyclopentane |
+| <kbd>C6</kbd> | Cyclohexane |
+| <kbd>C7</kbd> - <kbd>C9</kbd> | Cycloheptane – Cyclononane |
+| <kbd>C</kbd><kbd>0</kbd> | Cyclodecane |
+
+**Branched Alkyl:**
+
+| Key | Group |
+|-----|-------|
+| <kbd>I</kbd> | Iso-propyl |
+| <kbd>K</kbd> or <kbd>c</kbd><kbd>m</kbd> | tert-Butyl |
+
+**Common Functional Groups:**
+
+| Key | Group |
+|-----|-------|
+| <kbd>a</kbd> | Phenyl |
+| <kbd>C</kbd> or <kbd>co2</kbd> | Carboxylate |
+| <kbd>cn</kbd> | Nitrile |
+| <kbd>co</kbd> | Aldehyde |
+| <kbd>E</kbd> | Ester |
+| <kbd>F</kbd> | Trifluoromethyl |
+| <kbd>N</kbd> or <kbd>no2</kbd> | Nitro |
+| <kbd>om</kbd> | Methoxy |
+| <kbd>P</kbd> or <kbd>po3</kbd> | Phosphate |
+| <kbd>S</kbd> or <kbd>so3</kbd> | Sulfonate |
+
+**Protecting Groups:**
+
+| Key | Group |
+|-----|-------|
+| <kbd>boc</kbd> | BOC (tert-butyloxycarbonyl) |
+| <kbd>cbz</kbd> | CBZ (benzyloxycarbonyl) |
+| <kbd>fmoc</kbd> | FMOC (fluorenylmethoxycarbonyl) |
+| <kbd>ms</kbd> | Mesyl |
+| <kbd>tos</kbd> or <kbd>ts</kbd> | Tosyl |
+| <kbd>tr</kbd> | Trityl |
+| <kbd>troc</kbd> | TROC (2,2,2-trichloroethoxycarbonyl) |
+
+:::{tip}
+Shortcuts are case-sensitive. For example, <kbd>c</kbd><kbd>6</kbd> selects hexyl while <kbd>C</kbd><kbd>6</kbd> selects cyclohexane.
+:::
+
+:::{note}
+Multi-character shortcuts have a 2-second timeout. The buffer clears automatically after 5 characters if no match is found.
+:::
+
+(template-tool-creating-ligands)=
 ## Creating New Ligands
 
 While the ligand library includes many common ligands, you may wish to create your own or tweak a ligand before attachment.
@@ -147,6 +309,7 @@ Draw bonds as desired between the dummy atom and the attachment sites.
 
 The ligand can either be copied to the clipboard to allow insertion via the **From Clipboard** ligand type, or saved as CJSON to contribute to the [fragment repository](https://github.com/openchemistry/fragments).
 
+(template-tool-creating-haptic-ligands)=
 ## Creating New Haptic Ligands
 
 Haptic ligands indicate bonding between a metal center and a delocalized pi system, such as an aromatic ligand.
@@ -175,3 +338,8 @@ After adding the perpendicular attachment, draw a bond between the centroid and 
 ![](../../_static/Template-COD4.png){height=300px align=center}
 
 As before, you can either save this file as CJSON to contribute to the repository, or copy the ligand to the clipboard to insert into a new molecule.
+
+## See Also
+
+- {ref}`tutorials-building-metal-complexes` – Build coordination compounds and organometallic complexes step by step
+- {ref}`tutorials-building-organic-molecules` – Rapidly construct organic molecules using functional groups

@@ -1,3 +1,5 @@
+(tools-measure-tool)=
+
 # Measure Tool
 
 ![The icon of the Measure Tool in light mode.](../../_static/icon_measure.svg)
@@ -23,4 +25,11 @@ If four atoms are selected, a dihedral angle is determined (e.g. 149.981° for a
 ![](../../_static/measure-1234.png)
 
 Clicking on an atom will remove it from the list, or double clicking the display will reset the atoms previously selected.
+
+## See Also
+
+- {ref}`tools-bond-centric-manipulation-tool` – Adjust bond lengths and angles interactively
+- {ref}`panes-properties-bond` – View and edit bond properties
+- {ref}`panes-properties-angle` – View and edit angle properties
+- {ref}`panes-properties-torsion` – View and edit dihedral/torsion properties
 

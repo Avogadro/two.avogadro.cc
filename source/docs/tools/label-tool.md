@@ -34,3 +34,8 @@ There are currently no options for this tool in the **Edit Labels** pane.
 The Label Tool is a work in progress and the ability to customize individual labels will likely come in future releases.
 
 Display settings for *all* labels, such as text color and placement, can be changed in the [**Display Type Configuration** pane](panes-display-types-labels) for the **Labels** display type.
+
+## See Also
+
+- {ref}`panes-display-types` – Configure label appearance and other display settings
+- {ref}`tools-selection-tool` – Select atoms to label

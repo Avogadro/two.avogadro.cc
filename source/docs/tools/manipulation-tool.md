@@ -64,3 +64,9 @@ Reset
 :::{note}
 The icon for the Manipulation Tool is adapted from a design by [Ryan Dell](https://thenounproject.com/ryandeel/), a contributor to the Noun Project.
 :::
+
+## See Also
+
+- {ref}`tools-selection-tool` – Select atoms before manipulating them
+- {ref}`tools-navigation-tool` – Rotate and pan the view (not the atoms)
+- {ref}`tools-bond-centric-manipulation-tool` – Adjust bond lengths and angles while preserving geometry

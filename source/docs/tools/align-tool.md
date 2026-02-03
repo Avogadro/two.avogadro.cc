@@ -32,3 +32,8 @@ The **Axis** drop-down menu allows you to choose which Cartesian axis the molecu
 
 ![](../../_static/align-axis.png)
 
+## See Also
+
+- {ref}`tools-manipulation-tool` – Manually translate and rotate molecules
+- {ref}`tools-navigation-tool` – Rotate and pan the view
+

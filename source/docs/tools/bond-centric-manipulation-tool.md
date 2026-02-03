@@ -57,3 +57,10 @@ Unlike the dihedral angles reported by the [Measure Tool](tools-measure-tool) or
 In Avogadro 1, it was possible to set a specific increment, in degrees, that the dihedral angle should snap to, but this has yet to be implemented in Avogadro 2.
 To set a specific torsion angle across a bond, first rotate one end of the bond to align with the Bond Manipulation Plane, then rotate the other end until the desired angle is achieved.
 :::
+
+## See Also
+
+- {ref}`tools-manipulation-tool` – Move atoms and fragments freely in 3D space
+- {ref}`tools-measure-tool` – Measure bond lengths, angles, and dihedrals
+- {ref}`panes-properties-bond` – Set exact bond lengths numerically
+- {ref}`optimize-constraints` – Freeze bonds, angles, or dihedrals during optimization

@@ -75,3 +75,7 @@ Reverse Direction of Zoom on Scroll
 :::{note}
 The icon for the Navigation Tool is a design by [Dekin Dorcas](https://thenounproject.com/creator/ddorcas/), a contributor to the Noun Project.
 :::
+
+## See Also
+
+- {ref}`tools-manipulation-tool` – Move atoms in 3D space (not just the view)
