@@ -29,3 +29,10 @@ Click to insert the sequence into the main window. The new oligopeptide will be 
 ![](../../_static/peptide.png)
 
 You may wish to re-center the view or align the view to axes to see the whole molecule. If needed, switch to the [Navigate Tool](tools-navigation-tool)
+
+## See Also
+
+- {ref}`building-molecules-dna` – Build DNA and RNA structures
+- {ref}`building-molecules-pdb` – Import protein structures from the Protein Data Bank
+- {ref}`tools-manipulation-tool` – Move and position peptide chains
+- {ref}`tools-navigation-tool` – Rotate and pan the view

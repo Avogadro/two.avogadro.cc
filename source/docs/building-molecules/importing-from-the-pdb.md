@@ -31,3 +31,9 @@ If the unit cell is unwanted, you can remove the unit cell under the "Crystal" m
 ![](../../_static/crystal-remove-unitcell.png)
 
 ![](../../_static/1crn-no-cell.png)
+
+## See Also
+
+- {ref}`building-molecules-peptides` – Build custom peptide sequences
+- {ref}`building-molecules-dna` – Build DNA and RNA structures
+- {ref}`building-molecules-byname` – Import molecules by chemical name

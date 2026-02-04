@@ -21,3 +21,10 @@ The fragment will be inserted and the [Manipulate](tools-manipulate-tool) tool w
 :::{tip}
 Many of these fragments are also available through the [Template](tools-template-tool) tool to attach to hydrogen atoms.
 :::
+
+## See Also
+
+- {ref}`tools-template-tool` – Attach functional groups and build metal complexes
+- {ref}`building-molecules-smiles` – Build molecules from SMILES strings
+- {ref}`building-molecules-byname` – Import molecules by chemical name
+- {ref}`tools-manipulation-tool` – Move and position inserted fragments

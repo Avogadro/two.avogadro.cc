@@ -46,13 +46,13 @@ The displayed data can also be modified according to your personal preference, o
 
 ## Add Hydrogens for pH...
 
-"Add Hydrogens for pH..." will create a dialog box \(displayed below\) that allows you to adjust the pH of the molelcular environment. This feature will add \(or subtract\) acidic hydrogens to ionizable groups in peptides, according to the desired pH.
+"Add Hydrogens for pH..." will create a dialog box \(displayed below\) that allows you to adjust the pH of the molecular environment. This feature will add \(or subtract\) acidic hydrogens to ionizable groups in peptides, according to the desired pH.
 
 ![](../../_static/add-hydrogens-for-ph.png)
 
 ## Remove Hydrogens
 
-"Remove Hyrogens" will delete all hydrogens in the display screen.
+"Remove Hydrogens" will delete all hydrogens in the display screen.
 
 ![](../../_static/remove-hydrogens.png)
 

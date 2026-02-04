@@ -341,5 +341,6 @@ As before, you can either save this file as CJSON to contribute to the repositor
 
 ## See Also
 
+- [Building Molecules with Templates Video](https://youtu.be/RC4NZp6nnD8)
 - {ref}`tutorials-building-metal-complexes` – Build coordination compounds and organometallic complexes step by step
 - {ref}`tutorials-building-organic-molecules` – Rapidly construct organic molecules using functional groups
