@@ -29,7 +29,4 @@ Clicking on an atom will remove it from the list, or double clicking the display
 ## See Also
 
 - {ref}`tools-bond-centric-manipulation-tool` – Adjust bond lengths and angles interactively
-- {ref}`panes-properties-bond` – View and edit bond properties
-- {ref}`panes-properties-angle` – View and edit angle properties
-- {ref}`panes-properties-torsion` – View and edit dihedral/torsion properties
 

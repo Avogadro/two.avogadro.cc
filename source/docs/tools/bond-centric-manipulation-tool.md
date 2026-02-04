@@ -62,5 +62,4 @@ To set a specific torsion angle across a bond, first rotate one end of the bond 
 
 - {ref}`tools-manipulation-tool` – Move atoms and fragments freely in 3D space
 - {ref}`tools-measure-tool` – Measure bond lengths, angles, and dihedrals
-- {ref}`panes-properties-bond` – Set exact bond lengths numerically
 - {ref}`optimize-constraints` – Freeze bonds, angles, or dihedrals during optimization

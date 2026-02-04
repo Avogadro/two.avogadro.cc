@@ -94,13 +94,8 @@ This can be conveniently activated using the shortcut <kbd>Ctrl</kbd>+<kbd>Alt</
 
 You can also switch to the [AutoOptimization Tool](tools-autoopt-tool) to interactively optimize the molecule. This can be activated using <kbd>Ctrl</kbd>+<kbd>7</kbd>
 
-## Tutorial
-
-A step-by-step tutorial for some simple molecules can be found [here](tutorials-drawing-simple-molecules).
-
 ## See Also
 
-- {ref}`tutorials-drawing-simple-molecules` – Step-by-step guide to drawing molecules
 - {ref}`tools-template-tool` – Quickly attach functional groups or build metal complexes
 - {ref}`tools-autoopt-tool` – Interactively optimize geometry while editing
 - {ref}`tools-manipulation-tool` – Move atoms and fragments in 3D space

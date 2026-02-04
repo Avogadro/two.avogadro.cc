@@ -76,4 +76,3 @@ Change Layer
 
 - {ref}`menus-select-menu` – Additional selection methods (by element, residue, etc.)
 - {ref}`tools-manipulation-tool` – Move selected atoms and fragments
-- {ref}`panes-layers` – Organize atoms into visual layers
