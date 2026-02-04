@@ -37,5 +37,4 @@ Display settings for *all* labels, such as text color and placement, can be chan
 
 ## See Also
 
-- {ref}`panes-display-types` – Configure label appearance and other display settings
 - {ref}`tools-selection-tool` – Select atoms to label
