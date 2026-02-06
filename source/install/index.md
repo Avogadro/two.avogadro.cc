@@ -266,7 +266,7 @@ Avogadro on GitHub {fab}`github;fa-1x`
 <script id='avogadro-release' type='application/json' src="releases.json">
 {
   "version": "1.103.0",
-  "published": "2026-02-06T02:01:13Z",
+  "published": "2026-02-06T12:01:13Z",
   "assets": [
     {
       "platform": "macOS-arm64",

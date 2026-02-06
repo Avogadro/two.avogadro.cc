@@ -94,6 +94,20 @@ This can be conveniently activated using the shortcut <kbd>Ctrl</kbd>+<kbd>Alt</
 
 You can also switch to the [AutoOptimization Tool](tools-autoopt-tool) to interactively optimize the molecule. This can be activated using <kbd>Ctrl</kbd>+<kbd>7</kbd>
 
+## Moving the View
+
+Sometimes when editing, you want to adjust the view (e.g., some part of the molecule is hidden or hard to access). You can either switch to the [Navigation Tool](tools-navigation-tool) or use <kbd>Ctrl</kbd> + <kbd>1</kbd>. You can also use modifier keys or other buttons to change the view.
+
+| Action | Effect |
+|--------|--------|
+| Scroll wheel | Zoom |
+| Middle double-click | Reset camera |
+|--------|--------|
+| <kbd>Alt / Option</kb> Left-click + drag | Rotate (x/y axes) |
+| <kbd>Shift</kbd> + left-click + drag | Rotate (z-axis) |
+| <kbd>Ctrl</kbd> + left-click + drag | Pan (x/y) |
+
+
 ## See Also
 
 - {ref}`tools-template-tool` – Quickly attach functional groups or build metal complexes
