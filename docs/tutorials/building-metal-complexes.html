@@ -1,0 +1,779 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Building Metal Complexes &#8212; Avogadro 1.103.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=ee427ece" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=4a00f340"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/tutorials/building-metal-complexes';</script>
+    <link rel="canonical" href="https://two.avogadro.cc/docs/tutorials/building-metal-complexes.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Naming a Molecule" href="naming-a-molecule.html" />
+    <link rel="prev" title="Building Organic Molecules with Functional Groups" href="building-organic-molecules.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/avogadro2.png" class="logo__image only-light" alt="Avogadro Documentation- Home"/>
+    <script>document.write(`<img src="../../_static/avogadro2-dark.png" class="logo__image only-dark" alt="Avogadro Documentation- Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../install/index.html">
+    Install
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../develop/index.html">
+    Develop
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../contrib/index.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../teach/index.html">
+    Teach
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+    Discuss
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/avogadro.cc" title="Bluesky" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-bluesky fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../install/index.html">
+    Install
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../develop/index.html">
+    Develop
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../contrib/index.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../teach/index.html">
+    Teach
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+    Discuss
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/avogadro.cc" title="Bluesky" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-bluesky fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">User Documentation</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whats-new-in-avogadro-2/index.html">What’s New in Avogadro 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../building-molecules/index.html">Building Molecules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../display-types/index.html">Display Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../optimizing-geometry/index.html">Optimizing Geometry</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Tutorials</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="building-organic-molecules.html">Building Organic Molecules with Functional Groups</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Building Metal Complexes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="naming-a-molecule.html">Naming a Molecule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="viewing-molecular-orbitals.html">Viewing Molecular Orbitals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="viewing-electrostatic-potential.html">Viewing Electrostatic Potential Maps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="viewing-vibrations.html">Viewing Vibrations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using-qtaim-and-wfn.html">Using QTAIM (Atoms in Molecules) Analysis</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../settings/index.html">Settings</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Guide</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Tutorials</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Building...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="building-metal-complexes">
+<span id="tutorials-building-metal-complexes"></span><h1>Building Metal Complexes<a class="headerlink" href="#building-metal-complexes" title="Link to this heading">#</a></h1>
+<p>This tutorial demonstrates how to efficiently build coordination compounds and organometallic complexes using the <a class="reference internal" href="../tools/template-tool.html#tools-template-tool"><span class="std std-ref">Template Tool</span></a>. We’ll progress from a simple complex to more sophisticated structures.</p>
+<p>The <a class="reference internal" href="../tools/template-tool.html#tools-template-tool"><span class="std std-ref">Template Tool</span></a> streamlines construction of metal complexes by providing pre-defined coordination geometries (octahedral, tetrahedral, square planar, etc.), a library of common ligands, and keyboard shortcuts for rapid building.</p>
+<p>Activate the <a class="reference internal" href="../tools/template-tool.html#tools-template-tool"><span class="std std-ref">Template Tool</span></a> with <kbd>Ctrl</kbd>+<kbd>3</kbd> or by clicking its icon in the toolbar.</p>
+<section id="part-1-a-simple-octahedral-complex">
+<h2>Part 1: A Simple Octahedral Complex<a class="headerlink" href="#part-1-a-simple-octahedral-complex" title="Link to this heading">#</a></h2>
+<p>We’ll start by building [Co(NH₃)₆]³⁺, a classic Werner complex.</p>
+<p><strong>Set up the metal center</strong></p>
+<p>In the <strong><a class="reference internal" href="../tools/template-tool.html#template-tool-centers-tab"><span class="std std-ref">Centers tab</span></a></strong>, you can either use the options panel or some <a class="reference internal" href="../tools/template-tool.html#template-shortcuts-centers"><span class="std std-ref">keyboard shortcuts</span></a>:</p>
+<ul class="simple">
+<li><p>Type <code class="docutils literal notranslate"><span class="pre">Co</span></code> to select cobalt, or pick it from the popup menu</p></li>
+<li><p>Press <kbd>+</kbd> three times to set the formal charge to +3</p></li>
+<li><p>Press <kbd>6</kbd> to select octahedral geometry</p></li>
+</ul>
+<p>Click in empty space to place the cobalt center. Six hydrogen atoms will appear at the coordination sites.</p>
+<p><a class="reference internal" href="../../_images/cobalt-complex.png"><img alt="cobalt complex" class="align-center" src="../../_images/cobalt-complex.png" style="height: 300px;" /></a></p>
+<p><strong>Add ammine ligands</strong></p>
+<p>Switch to the <strong><a class="reference internal" href="../tools/template-tool.html#template-tool-ligands-tab"><span class="std std-ref">Ligands tab</span></a></strong> by pressing <kbd>→</kbd> or <kbd>]</kbd> or clicking the tab:</p>
+<ul class="simple">
+<li><p>Type <code class="docutils literal notranslate"><span class="pre">n</span></code> to select ammine (NH₃)</p></li>
+</ul>
+<p>Click on each of the six hydrogens. Each click replaces a hydrogen with an ammine ligand.</p>
+<p><a class="reference internal" href="../../_images/cobalt-hexaammine.png"><img alt="hexaamminecobalt complex" class="align-center" src="../../_images/cobalt-hexaammine.png" style="height: 300px;" /></a></p>
+<p>Other ligands can also be selected by <a class="reference internal" href="../tools/template-tool.html#template-shortcuts-ligands"><span class="std std-ref">keyboard shortcuts</span></a>.</p>
+<p>You now have a complete hexaamminecobalt(III) complex with idealized octahedral geometry.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>For other simple complexes, change the element and ligand:</p>
+<ul class="simple">
+<li><p><strong>[Fe(CN)₆]⁴⁻</strong>: Use <code class="docutils literal notranslate"><span class="pre">Fe</span></code> and type <code class="docutils literal notranslate"><span class="pre">cn</span></code> for cyano</p></li>
+<li><p><strong>[Ni(CO)₄]</strong>: Use <code class="docutils literal notranslate"><span class="pre">Ni</span></code>, tetrahedral (<kbd>4</kbd>), and type <code class="docutils literal notranslate"><span class="pre">co</span></code> for carbonyl</p></li>
+</ul>
+</div>
+</section>
+<section id="part-2-mixed-ligand-complex-with-different-geometries">
+<h2>Part 2: Mixed-Ligand Complex with Different Geometries<a class="headerlink" href="#part-2-mixed-ligand-complex-with-different-geometries" title="Link to this heading">#</a></h2>
+<p>Now we’ll build [Ni(en)(NH₃)₂]²⁺, which combines a bidentate ethylenediamine with two monodentate ammine ligands. We’ll also explore how the same ligand set can adopt different geometries.</p>
+<section id="building-the-square-planar-isomer">
+<h3>Building the Square Planar Isomer<a class="headerlink" href="#building-the-square-planar-isomer" title="Link to this heading">#</a></h3>
+<p><strong>Create a square planar nickel center</strong></p>
+<p>In the <strong>Centers</strong> tab:</p>
+<ul class="simple">
+<li><p>Type <code class="docutils literal notranslate"><span class="pre">Ni</span></code> to select nickel</p></li>
+<li><p>Press <kbd>+</kbd><kbd>+</kbd> for +2 charge</p></li>
+<li><p>Press <kbd>4</kbd><kbd>4</kbd> for square planar geometry</p></li>
+</ul>
+<p>Click to place the center.</p>
+<p><a class="reference internal" href="../../_images/ni-square-planar.png"><img alt="Ni square planar complex" class="align-center" src="../../_images/ni-square-planar.png" style="height: 300px;" /></a></p>
+<p><strong>Add ethylenediamine</strong></p>
+<p>In the <strong>Ligands</strong> tab, type <code class="docutils literal notranslate"><span class="pre">en</span></code> to select ethylenediamine. Click on two <strong>adjacent</strong> hydrogen atoms (cis positions). The bidentate ligand bridges both sites, forming a five-membered chelate ring.</p>
+<p><a class="reference internal" href="../../_images/ni-square-planar2.png"><img alt="Ni square planar complex" class="align-center" src="../../_images/ni-square-planar2.png" style="height: 300px;" /></a></p>
+<p><strong>Add two ammine ligands</strong></p>
+<p>Type <code class="docutils literal notranslate"><span class="pre">n</span></code> for ammine, then click on each of the two remaining hydrogens.</p>
+<p><a class="reference internal" href="../../_images/ni-square-planar3.png"><img alt="Ni square planar complex" class="align-center" src="../../_images/ni-square-planar3.png" style="height: 300px;" /></a></p>
+</section>
+<section id="building-the-tetrahedral-isomer">
+<h3>Building the Tetrahedral Isomer<a class="headerlink" href="#building-the-tetrahedral-isomer" title="Link to this heading">#</a></h3>
+<p>Start fresh (<strong>File → New</strong>) and repeat with one change:</p>
+<ul class="simple">
+<li><p>Press <kbd>4</kbd> (not <kbd>4</kbd><kbd>4</kbd>) for tetrahedral geometry</p></li>
+</ul>
+<p>Add the same ligands: ethylenediamine (<code class="docutils literal notranslate"><span class="pre">en</span></code>) to two adjacent hydrogens, then ammine (<code class="docutils literal notranslate"><span class="pre">n</span></code>) to the remaining two.</p>
+<p><a class="reference internal" href="../../_images/ni-tetrahedral.png"><img alt="Ni tetrahedral complex" class="align-center" src="../../_images/ni-tetrahedral.png" style="height: 300px;" /></a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Square planar and tetrahedral geometries are both common for d⁸ metals like Ni(II), Pd(II), and Pt(II). The preferred geometry depends on ligand field strength and steric factors. You can run quantum chemical calculations to compare the relative energies of the isomers.</p>
+</div>
+</section>
+</section>
+<section id="part-3-organometallic-catalysts-with-haptic-ligands">
+<h2>Part 3: Organometallic Catalysts with Haptic Ligands<a class="headerlink" href="#part-3-organometallic-catalysts-with-haptic-ligands" title="Link to this heading">#</a></h2>
+<p>Finally, we’ll build a Ziegler-Natta type catalyst precursor: zirconocene dichloride (Cp₂ZrCl₂). This demonstrates haptic ligand attachment and mixed ligand types.</p>
+<p>Zirconocene dichloride has a zirconium(IV) center with two η⁵-cyclopentadienyl (Cp) rings and two chloride ligands. The Cp rings bond through all five carbon atoms (haptic bonding), creating a bent metallocene structure.</p>
+<p><strong>Create the zirconium center</strong></p>
+<p>We need a 4-coordinate geometry, treating each Cp as occupying one site:</p>
+<ul class="simple">
+<li><p>Type <code class="docutils literal notranslate"><span class="pre">Zr</span></code> to select zirconium</p></li>
+<li><p>Press <kbd>+</kbd> four times for +4 formal charge</p></li>
+<li><p>Press <kbd>4</kbd> for tetrahedral geometry</p></li>
+</ul>
+<p>Place the center.</p>
+<p><a class="reference internal" href="../../_images/zr-tetrahedral.png"><img alt="Zr tetrahedral complex" class="align-center" src="../../_images/zr-tetrahedral.png" style="height: 300px;" /></a></p>
+<p><strong>Add the cyclopentadienyl rings</strong></p>
+<p>In the <strong>Ligands</strong> tab, type <code class="docutils literal notranslate"><span class="pre">cp</span></code> (or <code class="docutils literal notranslate"><span class="pre">e5</span></code>) to select η⁵-cyclopentadienyl.</p>
+<p>Click on one hydrogen. The entire Cp ring attaches, with all five carbons oriented toward the metal. Click on an adjacent hydrogen to add the second Cp ring.</p>
+<p><a class="reference internal" href="../../_images/cp2-zr.png"><img alt="(Cp)2 Zr complex" class="align-center" src="../../_images/cp2-zr.png" style="height: 300px;" /></a></p>
+<p><strong>Add the chloride ligands</strong></p>
+<p>The <a class="reference internal" href="../tools/template-tool.html#tools-template-tool"><span class="std std-ref">Template Tool</span></a>’s ligand library focuses on organic ligands. For chlorides, switch to the <a class="reference internal" href="../tools/draw-tool.html#tools-draw-tool"><span class="std std-ref">Draw Tool</span></a> (<kbd>Ctrl</kbd>+<kbd>2</kbd>), select chlorine from the element selector, and click on each remaining hydrogen to replace it with Cl.</p>
+<p><a class="reference internal" href="../../_images/cp2-zr-cl2.png"><img alt="(Cp)2 ZrCl2 complex" class="align-center" src="../../_images/cp2-zr-cl2.png" style="height: 300px;" /></a></p>
+<p>You could also type <code class="docutils literal notranslate"><span class="pre">e2</span></code> to select η²-ethylene to insert in one site.</p>
+<p><a class="reference internal" href="../../_images/cp2-zr-ethylene.png"><img alt="Ziegler-Natta complex" class="align-center" src="../../_images/cp2-zr-ethylene.png" style="height: 300px;" /></a></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Try building related catalysts:</p>
+<ul class="simple">
+<li><p><strong>Titanocene dichloride</strong>: Use <code class="docutils literal notranslate"><span class="pre">Ti</span></code> instead of <code class="docutils literal notranslate"><span class="pre">Zr</span></code></p></li>
+<li><p><strong>Half-sandwich complexes</strong>: Use only one Cp ring with other ligands</p></li>
+<li><p><strong>η⁶-arene complexes</strong>: Use <code class="docutils literal notranslate"><span class="pre">e6</span></code> for benzene coordination</p></li>
+</ul>
+</div>
+<p>The ligand library also has other haptic coordination modes, such as a distorted η³-cyclopentadienyl for fluxional behavior.</p>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Complex Type</p></th>
+<th class="head"><p>Key Steps</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Simple octahedral</p></td>
+<td><p>Element → charge → <kbd>6</kbd> → place → add 6 monodentate ligands</p></td>
+</tr>
+<tr class="row-odd"><td><p>Mixed-ligand</p></td>
+<td><p>Element → charge → geometry → bidentate first → fill remaining sites</p></td>
+</tr>
+<tr class="row-even"><td><p>Geometry comparison</p></td>
+<td><p><kbd>4</kbd> for tetrahedral, <kbd>44</kbd> for square planar</p></td>
+</tr>
+<tr class="row-odd"><td><p>Haptic complexes</p></td>
+<td><p>Use <code class="docutils literal notranslate"><span class="pre">cp</span></code>, <code class="docutils literal notranslate"><span class="pre">e5</span></code>, <code class="docutils literal notranslate"><span class="pre">e6</span></code> → each haptic ligand counts as one site</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../tools/template-tool.html#tools-template-tool"><span class="std std-ref">Template Tool Reference</span></a> for the complete list of keyboard shortcuts and options</p></li>
+<li><p><a class="reference internal" href="../tools/template-tool.html#tools-template-tool"><span class="std std-ref">Template Tool: Creating New Ligands</span></a> for building custom ligands</p></li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="building-organic-molecules.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Building Organic Molecules with Functional Groups</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="naming-a-molecule.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Naming a Molecule</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-a-simple-octahedral-complex">Part 1: A Simple Octahedral Complex</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-mixed-ligand-complex-with-different-geometries">Part 2: Mixed-Ligand Complex with Different Geometries</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-square-planar-isomer">Building the Square Planar Isomer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-tetrahedral-isomer">Building the Tetrahedral Isomer</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-3-organometallic-catalysts-with-haptic-ligands">Part 3: Organometallic Catalysts with Haptic Ligands</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#see-also">See Also</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/avogadro/two.avogadro.cc/edit/main/source/docs/tutorials/building-metal-complexes.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">          <p>
+            ©2026 The OpenChemistry / Avogadro Teams 
+          </p>
+          <p>Covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
+          </p></div>
+      
+        <div class="footer-item">        <p>
+          <a href="/contrib/index.html">Contribute</a>
+        </p></div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.0.2.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.4.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

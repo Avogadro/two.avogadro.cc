@@ -1,0 +1,937 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Building Organic Molecules with Functional Groups &#8212; Avogadro 1.103.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=ee427ece" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=4a00f340"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/tutorials/building-organic-molecules';</script>
+    <link rel="canonical" href="https://two.avogadro.cc/docs/tutorials/building-organic-molecules.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Building Metal Complexes" href="building-metal-complexes.html" />
+    <link rel="prev" title="Tutorials" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/avogadro2.png" class="logo__image only-light" alt="Avogadro Documentation- Home"/>
+    <script>document.write(`<img src="../../_static/avogadro2-dark.png" class="logo__image only-dark" alt="Avogadro Documentation- Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../install/index.html">
+    Install
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../develop/index.html">
+    Develop
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../contrib/index.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../teach/index.html">
+    Teach
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+    Discuss
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/avogadro.cc" title="Bluesky" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-bluesky fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../install/index.html">
+    Install
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../develop/index.html">
+    Develop
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../contrib/index.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../teach/index.html">
+    Teach
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+    Discuss
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/avogadro.cc" title="Bluesky" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-bluesky fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">User Documentation</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whats-new-in-avogadro-2/index.html">What’s New in Avogadro 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../building-molecules/index.html">Building Molecules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../display-types/index.html">Display Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../optimizing-geometry/index.html">Optimizing Geometry</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Tutorials</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Building Organic Molecules with Functional Groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="building-metal-complexes.html">Building Metal Complexes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="naming-a-molecule.html">Naming a Molecule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="viewing-molecular-orbitals.html">Viewing Molecular Orbitals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="viewing-electrostatic-potential.html">Viewing Electrostatic Potential Maps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="viewing-vibrations.html">Viewing Vibrations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using-qtaim-and-wfn.html">Using QTAIM (Atoms in Molecules) Analysis</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../settings/index.html">Settings</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Guide</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Tutorials</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Building...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="building-organic-molecules-with-functional-groups">
+<span id="tutorials-building-organic-molecules"></span><h1>Building Organic Molecules with Functional Groups<a class="headerlink" href="#building-organic-molecules-with-functional-groups" title="Link to this heading">#</a></h1>
+<p>This tutorial demonstrates how to rapidly build organic molecules using the <a class="reference internal" href="../tools/template-tool.html#tools-template-tool"><span class="std std-ref">Template Tool</span></a>’s functional group library and keyboard shortcuts. Rather than drawing every atom, you can attach complete functional groups to a molecular scaffold with a few keystrokes.</p>
+<p>Activate the <a class="reference internal" href="../tools/template-tool.html#tools-template-tool"><span class="std std-ref">Template Tool</span></a> with <kbd>Ctrl</kbd>+<kbd>3</kbd> or by clicking its icon in the toolbar, then select the <strong>Groups</strong> tab.</p>
+<section id="part-1-building-a-substituted-aromatic">
+<h2>Part 1: Building a Substituted Aromatic<a class="headerlink" href="#part-1-building-a-substituted-aromatic" title="Link to this heading">#</a></h2>
+<p>Let’s build <a class="reference external" href="https://en.wikipedia.org/wiki/4-Nitrotoluene">4-nitrotoluene</a> by starting with <a class="reference external" href="https://en.wikipedia.org/wiki/Benzene">benzene</a> and adding functional groups.</p>
+<p><strong>Start with benzene</strong></p>
+<p>Use <strong>Build → Insert → Molecule…</strong> and search for “benzene”, or draw a benzene ring with the <a class="reference internal" href="../tools/draw-tool.html#tools-draw-tool"><span class="std std-ref">Draw Tool</span></a>.</p>
+<p><a class="reference internal" href="../../_images/benzene.png"><img alt="benzene molecule" class="align-center" src="../../_images/benzene.png" style="height: 300px;" /></a></p>
+<p><strong>Switch to the <a class="reference internal" href="../tools/template-tool.html#tools-template-tool"><span class="std std-ref">Template Tool</span></a></strong></p>
+<p>Press <kbd>Ctrl</kbd>+<kbd>3</kbd> and navigate to the <strong>Groups</strong> tab (press <kbd>→</kbd> twice or click the tab).</p>
+<p><strong>Add a methyl group</strong></p>
+<p>Type <code class="docutils literal notranslate"><span class="pre">c</span></code> to select methyl. Click on any hydrogen on the benzene ring to replace it with -CH₃.</p>
+<p><a class="reference internal" href="../../_images/toluene.png"><img alt="toluene molecule" class="align-center" src="../../_images/toluene.png" style="height: 300px;" /></a></p>
+<p><strong>Add a nitro group</strong></p>
+<p>Type <code class="docutils literal notranslate"><span class="pre">N</span></code> (uppercase) to select nitro. Click on the hydrogen <strong>para</strong> to the methyl group (directly opposite) to create 4-nitrotoluene.</p>
+<p><a class="reference internal" href="../../_images/nitrotoluene.png"><img alt="4-nitrotoluene molecule" class="align-center" src="../../_images/nitrotoluene.png" style="height: 300px;" /></a></p>
+<p><strong>Optimize</strong></p>
+<p>Press <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>O</kbd> to clean up the geometry. You can also switch to the <a class="reference internal" href="../tools/autoopt-tool.html#tools-autoopt-tool"><span class="std std-ref">Auto Optimize</span></a> tool.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Common aromatic substitution shortcuts:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">c</span></code> — Methyl</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">N</span></code> — Nitro</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">om</span></code> — Methoxy</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">F</span></code> — Trifluoromethyl</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span></code> — Phenyl (for <a class="reference external" href="https://en.wikipedia.org/wiki/Biphenyl">biphenyl</a> systems)</p></li>
+</ul>
+</div>
+<p>You can find other <a class="reference internal" href="../tools/template-tool.html#template-shortcuts-groups"><span class="std std-ref">keyboard shortcuts for functional groups</span></a>.</p>
+</section>
+<section id="part-2-building-alkyl-chains-quickly">
+<h2>Part 2: Building Alkyl Chains Quickly<a class="headerlink" href="#part-2-building-alkyl-chains-quickly" title="Link to this heading">#</a></h2>
+<p>The <a class="reference internal" href="../tools/template-tool.html#tools-template-tool"><span class="std std-ref">Template Tool</span></a> provides shortcuts for building alkyl chains without drawing each carbon. Let’s build a simple fatty acid: <a class="reference external" href="https://en.wikipedia.org/wiki/Decanoic_acid">decanoic acid</a>.</p>
+<p><strong>Start with a carboxylic acid</strong></p>
+<p>Draw a single carbon with the <a class="reference internal" href="../tools/draw-tool.html#tools-draw-tool"><span class="std std-ref">Draw Tool</span></a>, or start with <a class="reference external" href="https://en.wikipedia.org/wiki/Methane">methane</a> from <strong>Build → Insert → Molecule…</strong></p>
+<p><a class="reference internal" href="../../_images/methane.png"><img alt="methane molecule" class="align-center" src="../../_images/methane.png" style="height: 300px;" /></a></p>
+<p><strong>Add the carboxylic acid</strong></p>
+<p>In the <a class="reference internal" href="../tools/template-tool.html#tools-template-tool"><span class="std std-ref">Template Tool</span></a> <strong><a class="reference internal" href="../tools/template-tool.html#template-tool-groups-tab"><span class="std std-ref">Groups tab</span></a></strong>, type <code class="docutils literal notranslate"><span class="pre">C</span></code> (uppercase) or <code class="docutils literal notranslate"><span class="pre">co2</span></code> to select carboxylate. Click on a hydrogen to add the -COOH group. We now have <a class="reference external" href="https://en.wikipedia.org/wiki/Acetic_acid">acetic acid</a>.</p>
+<p><a class="reference internal" href="../../_images/acetic-acid.png"><img alt="acetic acid molecule" class="align-center" src="../../_images/acetic-acid.png" style="height: 300px;" /></a></p>
+<p><strong>Build the alkyl chain</strong></p>
+<p>Now we’ll extend the chain. The shortcuts for n-alkyl groups are:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Shortcut</p></th>
+<th class="head"><p>Chain Length</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">c</span></code> or <code class="docutils literal notranslate"><span class="pre">c1</span></code></p></td>
+<td><p>Methyl (1 carbon)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">c2</span></code></p></td>
+<td><p>Ethyl (2 carbons)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">c3</span></code></p></td>
+<td><p>Propyl (3 carbons)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">c4</span></code></p></td>
+<td><p>Butyl (4 carbons)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">c5</span></code></p></td>
+<td><p>Pentyl (5 carbons)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">c6</span></code></p></td>
+<td><p>Hexyl (6 carbons)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">c7</span></code></p></td>
+<td><p>Heptyl (7 carbons)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">c8</span></code></p></td>
+<td><p>Octyl (8 carbons)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">c9</span></code></p></td>
+<td><p>Nonyl (9 carbons)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">c0</span></code></p></td>
+<td><p>Decyl (10 carbons)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>For decanoic acid (10 carbons total including the carboxyl), type <code class="docutils literal notranslate"><span class="pre">c8</span></code> to select octyl. Click on the hydrogen at the end of the carboxylic acid’s carbon to add an 8-carbon chain, giving you a 10-carbon fatty acid.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you can’t see the entire molecule, you can go to View ⇒ Center to re-center the view.</p>
+</div>
+<p><a class="reference internal" href="../../_images/decanoic-acid2.png"><img alt="decanoic acid molecule" class="align-center" src="../../_images/decanoic-acid2.png" style="height: 300px;" /></a></p>
+<p><strong>Optimize</strong></p>
+<p>Run geometry optimization or use the <a class="reference internal" href="../tools/autoopt-tool.html#tools-autoopt-tool"><span class="std std-ref">Auto Optimize</span></a> tool to get a reasonable chain conformation.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Shortcuts are case-sensitive! Lowercase <code class="docutils literal notranslate"><span class="pre">c</span></code> followed by a number gives you n-alkyl chains, while uppercase <code class="docutils literal notranslate"><span class="pre">C</span></code> followed by a number gives you <strong>cycloalkyl</strong> groups.</p>
+</div>
+</section>
+<section id="part-3-branched-and-cyclic-groups">
+<h2>Part 3: Branched and Cyclic Groups<a class="headerlink" href="#part-3-branched-and-cyclic-groups" title="Link to this heading">#</a></h2>
+<p>Organic molecules often have branched or cyclic substituents. Here’s how to add them efficiently.</p>
+<section id="branched-alkyl-groups">
+<h3>Branched Alkyl Groups<a class="headerlink" href="#branched-alkyl-groups" title="Link to this heading">#</a></h3>
+<p>Build <a class="reference external" href="https://en.wikipedia.org/wiki/cumene">isopropylbenzene</a> also known as “cumene” (a simple branched aromatic):</p>
+<ol class="arabic simple">
+<li><p>Start with benzene</p></li>
+<li><p>Type <code class="docutils literal notranslate"><span class="pre">I</span></code> (uppercase) to select iso-propyl</p></li>
+<li><p>Click on a hydrogen on the benzene ring</p></li>
+</ol>
+<p><a class="reference internal" href="../../_images/cumene.png"><img alt="isopropylbenzene molecule" class="align-center" src="../../_images/cumene.png" style="height: 300px;" /></a></p>
+<p>For tert-butyl groups, type <code class="docutils literal notranslate"><span class="pre">K</span></code>.</p>
+</section>
+<section id="cycloalkyl-groups">
+<h3>Cycloalkyl Groups<a class="headerlink" href="#cycloalkyl-groups" title="Link to this heading">#</a></h3>
+<p>Build <a class="reference external" href="https://en.wikipedia.org/wiki/Cyclohexylmethanol">cyclohexylmethanol</a>:</p>
+<ol class="arabic simple">
+<li><p>Start with <a class="reference external" href="https://en.wikipedia.org/wiki/Methanol">methanol</a> (draw or insert)</p></li>
+<li><p>Type <code class="docutils literal notranslate"><span class="pre">C6</span></code> (uppercase C) to select cyclohexane</p></li>
+<li><p>Click on a hydrogen on the methyl group</p></li>
+</ol>
+<p><a class="reference internal" href="../../_images/cyclohexylmethanol.png"><img alt="cyclohexylmethanol molecule" class="align-center" src="../../_images/cyclohexylmethanol.png" style="height: 300px;" /></a></p>
+<p>The <a class="reference internal" href="../tools/template-tool.html#template-shortcuts-groups"><span class="std std-ref">cycloalkyl shortcuts</span></a> use uppercase <code class="docutils literal notranslate"><span class="pre">C</span></code>:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Shortcut</p></th>
+<th class="head"><p>Ring Size</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">C3</span></code></p></td>
+<td><p><a class="reference external" href="https://en.wikipedia.org/wiki/Cyclopropane">Cyclopropane</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">C4</span></code></p></td>
+<td><p><a class="reference external" href="https://en.wikipedia.org/wiki/Cyclobutane">Cyclobutane</a></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">C5</span></code></p></td>
+<td><p><a class="reference external" href="https://en.wikipedia.org/wiki/Cyclopentane">Cyclopentane</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">C6</span></code></p></td>
+<td><p><a class="reference external" href="https://en.wikipedia.org/wiki/Cyclohexane">Cyclohexane</a></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">C7</span></code></p></td>
+<td><p><a class="reference external" href="https://en.wikipedia.org/wiki/Cycloheptane">Cycloheptane</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">C8</span></code></p></td>
+<td><p><a class="reference external" href="https://en.wikipedia.org/wiki/Cyclooctane">Cyclooctane</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="part-4-building-a-drug-like-molecule">
+<h2>Part 4: Building a Drug-like Molecule<a class="headerlink" href="#part-4-building-a-drug-like-molecule" title="Link to this heading">#</a></h2>
+<p>Let’s combine these techniques to build a more complex structure: a para-substituted benzoic acid derivative with multiple functional groups.</p>
+<p><strong>Target:</strong> 4-methoxy-3-nitrobenzoic acid</p>
+<p><strong>Build the scaffold</strong></p>
+<ol class="arabic simple">
+<li><p>Insert benzene</p></li>
+<li><p>Add carboxylic acid: Type <code class="docutils literal notranslate"><span class="pre">C</span></code> and click on a ring hydrogen (position 1)</p></li>
+<li><p>Add nitro group: Type <code class="docutils literal notranslate"><span class="pre">N</span></code> and click on an adjacent hydrogen (position 3, ortho to CO₂H)</p></li>
+<li><p>Add methoxy group: Type <code class="docutils literal notranslate"><span class="pre">om</span></code> and click on the para hydrogen (position 4, opposite CO₂H)</p></li>
+</ol>
+<p><a class="reference internal" href="../../_images/methoxynitrobenzoic-acid.png"><img alt="4-methoxy-3-nitrobenzoic acid molecule" class="align-center" src="../../_images/methoxynitrobenzoic-acid.png" style="height: 300px;" /></a></p>
+<p><strong>Optimize and verify</strong></p>
+<p>After optimization, verify you have the correct substitution pattern. The nitro and methoxy groups should be on adjacent carbons, with the carboxylic acid opposite the methoxy.</p>
+</section>
+<section id="part-5-protecting-groups-for-synthesis">
+<h2>Part 5: Protecting Groups for Synthesis<a class="headerlink" href="#part-5-protecting-groups-for-synthesis" title="Link to this heading">#</a></h2>
+<p>The <a class="reference internal" href="../tools/template-tool.html#tools-template-tool"><span class="std std-ref">Template Tool</span></a> includes common protecting groups used in organic synthesis.</p>
+<section id="example-building-a-protected-amino-acid">
+<h3>Example: Building a Protected Amino Acid<a class="headerlink" href="#example-building-a-protected-amino-acid" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Insert <a class="reference external" href="https://en.wikipedia.org/wiki/Glycine">glycine</a> using <strong>Build → Insert → Molecule…</strong></p></li>
+<li><p>Switch to the <a class="reference internal" href="../tools/template-tool.html#tools-template-tool"><span class="std std-ref">Template Tool</span></a> <strong>Groups</strong> tab</p></li>
+<li><p>Type <code class="docutils literal notranslate"><span class="pre">fmoc</span></code> to select the Fmoc protecting group</p></li>
+<li><p>Click on one of the amine hydrogens</p></li>
+</ol>
+<p><a class="reference internal" href="../../_images/fmoc-glycine.png"><img alt="fmoc-protected amino acid" class="align-center" src="../../_images/fmoc-glycine.png" style="height: 300px;" /></a></p>
+<p>Available <a class="reference internal" href="../tools/template-tool.html#template-shortcuts-groups"><span class="std std-ref">protecting group shortcuts</span></a>:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Shortcut</p></th>
+<th class="head"><p>Protecting Group</p></th>
+<th class="head"><p>Common Use</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">boc</span></code></p></td>
+<td><p>BOC (tert-butyloxycarbonyl)</p></td>
+<td><p>Amine protection</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">cbz</span></code></p></td>
+<td><p>Cbz (benzyloxycarbonyl)</p></td>
+<td><p>Amine protection</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">fmoc</span></code></p></td>
+<td><p>Fmoc (fluorenylmethoxycarbonyl)</p></td>
+<td><p>Solid-phase peptide synthesis</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">tos</span></code> or <code class="docutils literal notranslate"><span class="pre">ts</span></code></p></td>
+<td><p>Tosyl</p></td>
+<td><p>Amine/alcohol activation</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ms</span></code></p></td>
+<td><p>Mesyl</p></td>
+<td><p>Alcohol activation</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">tr</span></code></p></td>
+<td><p>Trityl</p></td>
+<td><p>Thiol/amine protection</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">troc</span></code></p></td>
+<td><p>Troc</p></td>
+<td><p>Amine protection</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="summary-functional-group-shortcuts">
+<h2>Summary: Functional Group Shortcuts<a class="headerlink" href="#summary-functional-group-shortcuts" title="Link to this heading">#</a></h2>
+<section id="quick-reference">
+<h3>Quick Reference<a class="headerlink" href="#quick-reference" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Category</p></th>
+<th class="head"><p>Examples</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Alkyl chains</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">c</span></code>, <code class="docutils literal notranslate"><span class="pre">c2</span></code>–<code class="docutils literal notranslate"><span class="pre">c9</span></code>, <code class="docutils literal notranslate"><span class="pre">c0</span></code> (decyl)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Cycloalkyl</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">C3</span></code>–<code class="docutils literal notranslate"><span class="pre">C9</span></code>, <code class="docutils literal notranslate"><span class="pre">C0</span></code> (cyclodecane)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Branched</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">I</span></code> (iso-propyl), <code class="docutils literal notranslate"><span class="pre">K</span></code> (tert-butyl)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Carbonyl</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">co</span></code> (aldehyde), <code class="docutils literal notranslate"><span class="pre">C</span></code> (carboxyl), <code class="docutils literal notranslate"><span class="pre">E</span></code> (ester)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Nitrogen</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">N</span></code> (nitro), <code class="docutils literal notranslate"><span class="pre">cn</span></code> (nitrile), <code class="docutils literal notranslate"><span class="pre">n3</span></code> (azide)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Oxygen</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">om</span></code> (methoxy), <code class="docutils literal notranslate"><span class="pre">O</span></code> (peroxide)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Sulfur</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">S</span></code> (sulfonate), <code class="docutils literal notranslate"><span class="pre">ms</span></code> (mesyl), <code class="docutils literal notranslate"><span class="pre">ts</span></code> (tosyl)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Halogenated</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">F</span></code> (CF₃), <code class="docutils literal notranslate"><span class="pre">L</span></code> (CCl₃), <code class="docutils literal notranslate"><span class="pre">R</span></code> (CBr₃)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Aromatic</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">a</span></code> (phenyl), <code class="docutils literal notranslate"><span class="pre">mes</span></code> (mesityl)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="workflow-pattern">
+<h3>Workflow Pattern<a class="headerlink" href="#workflow-pattern" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Draw or insert base structure</p></li>
+<li><p>Activate <a class="reference internal" href="../tools/template-tool.html#tools-template-tool"><span class="std std-ref">Template Tool</span></a> (<kbd>Ctrl</kbd>+<kbd>3</kbd>)</p></li>
+<li><p>Go to <strong>Groups</strong> tab (<kbd>→</kbd> twice)</p></li>
+<li><p>Type shortcut for desired group</p></li>
+<li><p>Click hydrogen to replace</p></li>
+<li><p>Repeat for additional groups</p></li>
+<li><p>Optimize geometry</p></li>
+</ol>
+</section>
+</section>
+<section id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../tools/template-tool.html#tools-template-tool"><span class="std std-ref">Template Tool Reference</span></a> for the complete shortcut list</p></li>
+<li><p><a class="reference internal" href="../building-molecules/building-with-smiles.html#building-molecules-smiles"><span class="std std-ref">Building with SMILES</span></a> for an alternative rapid-building method</p></li>
+<li><p><a class="reference internal" href="../building-molecules/importing-molecules-by-name.html#building-molecules-byname"><span class="std std-ref">Import by Name</span></a> to import molecules by name over the network from PubChem</p></li>
+<li><p><a class="reference internal" href="../building-molecules/insert-fragments.html#building-molecules-fragments"><span class="std std-ref">Insert Fragments</span></a> for inserting complete molecular fragments</p></li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Tutorials</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="building-metal-complexes.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Building Metal Complexes</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-building-a-substituted-aromatic">Part 1: Building a Substituted Aromatic</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-building-alkyl-chains-quickly">Part 2: Building Alkyl Chains Quickly</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-3-branched-and-cyclic-groups">Part 3: Branched and Cyclic Groups</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#branched-alkyl-groups">Branched Alkyl Groups</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cycloalkyl-groups">Cycloalkyl Groups</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-4-building-a-drug-like-molecule">Part 4: Building a Drug-like Molecule</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-5-protecting-groups-for-synthesis">Part 5: Protecting Groups for Synthesis</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-building-a-protected-amino-acid">Example: Building a Protected Amino Acid</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-functional-group-shortcuts">Summary: Functional Group Shortcuts</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-reference">Quick Reference</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow-pattern">Workflow Pattern</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#see-also">See Also</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/avogadro/two.avogadro.cc/edit/main/source/docs/tutorials/building-organic-molecules.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">          <p>
+            ©2026 The OpenChemistry / Avogadro Teams 
+          </p>
+          <p>Covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
+          </p></div>
+      
+        <div class="footer-item">        <p>
+          <a href="/contrib/index.html">Contribute</a>
+        </p></div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.0.2.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.4.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

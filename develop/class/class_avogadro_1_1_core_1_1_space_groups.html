@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Avogadro::Core::SpaceGroups &#8212; Avogadro 1.102.1 documentation</title>
+    <title>Avogadro::Core::SpaceGroups &#8212; Avogadro 1.103.0 documentation</title>
   
   
   
@@ -39,7 +39,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../_static/documentation_options.js?v=9fad3d00"></script>
+    <script src="../../_static/documentation_options.js?v=4a00f340"></script>
     <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -705,6 +705,23 @@ document.write(`
 <dd><p>Reduce a cell to its asymmetric unit. Nothing will be done if the molecule does not have a unit cell. The cartesian tolerance is used to check if an atom is present at a location within the tolerance distance. If an atom is present, the atom gets removed. </p>
 </dd></dl>
 
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core11SpaceGroups24translationalUniqueAtomsERK8Moleculed">
+<span id="_CPPv3N8Avogadro4Core11SpaceGroups24translationalUniqueAtomsERK8Moleculed"></span><span id="_CPPv2N8Avogadro4Core11SpaceGroups24translationalUniqueAtomsERK8Moleculed"></span><span id="Avogadro::Core::SpaceGroups::translationalUniqueAtoms__MoleculeCR.double"></span><span class="target" id="class_avogadro_1_1_core_1_1_space_groups_1a965cffbcf34bade91700e96e33111a34"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#_CPPv4I0EN8Avogadro4Core5ArrayE" title="Avogadro::Core::Array"><span class="n"><span class="pre">Array</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Index</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">translationalUniqueAtoms</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">mol</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">tolerance</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0.001</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core11SpaceGroups24translationalUniqueAtomsERK8Moleculed" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get indices of translationally unique atoms, filtering out duplicates. Atoms with fractional coordinates near 1.0 that duplicate atoms near 0.0 (due to periodic boundary conditions) are excluded. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mol</strong> – The molecule with a unit cell </p></li>
+<li><p><strong>tolerance</strong> – Fractional coordinate tolerance for duplicate detection </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#class_avogadro_1_1_core_1_1_array"><span class="std std-ref">Array</span></a> of atom indices to include (empty if no unit cell) </p>
+</dd>
+</dl>
+</dd></dl>
+
 </div>
 </dd></dl>
 
@@ -772,6 +789,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core11SpaceGroups13getTransformsEtRK7Vector3"><code class="docutils literal notranslate"><span class="pre">SpaceGroups::getTransforms()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core11SpaceGroups12fillUnitCellER8Moleculetdbb"><code class="docutils literal notranslate"><span class="pre">SpaceGroups::fillUnitCell()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core11SpaceGroups22reduceToAsymmetricUnitER8Moleculetd"><code class="docutils literal notranslate"><span class="pre">SpaceGroups::reduceToAsymmetricUnit()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core11SpaceGroups24translationalUniqueAtomsERK8Moleculed"><code class="docutils literal notranslate"><span class="pre">SpaceGroups::translationalUniqueAtoms()</span></code></a></li>
 </ul>
 </li>
 </ul>

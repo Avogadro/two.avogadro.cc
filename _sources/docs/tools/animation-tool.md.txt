@@ -33,3 +33,9 @@ Finally, to speed up or slow down the animation, you can control the Frame rate 
 :::{tip}
 You can record the entire animation as a GIF or AVI file in Avogadro or save a set of PNG images to convert to an MP4 movie with the [ffmpeg](https://www.ffmpeg.org/) package. The resolution will be identical to the current window.
 :::
+
+## See Also
+
+- {ref}`tutorials-viewing-vibrations` – Visualize vibrational modes from calculations
+- {ref}`optimize-conformers` – Generate and explore molecular conformers
+- {ref}`tools-navigation-tool` – Rotate and zoom the view during playback

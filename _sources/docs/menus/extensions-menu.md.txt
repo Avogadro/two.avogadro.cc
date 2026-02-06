@@ -60,7 +60,7 @@ Avogadro provides you with the ability to interface your molecules with other di
 
 ### General "How To" for Plugins
 
-Avogadro \(as you will see below\) can be used to display molecular orbitals, QTAIM, spectra, as well as create surfaces. However, many of these features can not be used to their full potential without first running one of the plugins listed in the section above. Gaussian is one of the most common plugins used, due to it's wide range of basis sets/functions.
+Avogadro \(as you will see below\) can be used to display molecular orbitals, QTAIM, spectra, as well as create surfaces. However, many of these features can not be used to their full potential without first running one of the plugins listed in the section above. Gaussian is one of the most common plugins used, due to its wide range of basis sets/functions.
 
 ### Running Gaussian
 
