@@ -17,3 +17,9 @@ Enter your SMILES fragment, and select "OK".
 There it is..
 
 ![](../../_static/caffeine-window.png)
+
+## See Also
+
+- {ref}`building-molecules-byname` – Import molecules by chemical name from online databases
+- {ref}`building-molecules-fragments` – Insert common molecular fragments from the built-in library
+- {ref}`tools-template-tool` – Attach functional groups to existing molecules

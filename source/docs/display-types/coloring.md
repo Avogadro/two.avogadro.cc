@@ -1,6 +1,6 @@
 (display-types-coloring)=
 
-# Coloring Part of a Molecules
+# Coloring Part of a Molecule
 
 Coloring various parts of a molecule can provide a more visually stimulating way to display qualitative information.
 
@@ -20,7 +20,7 @@ After typing in the residue name \(this feature is case sensitive\), and clickin
 
 ![](../../_static/85a07743-2325-4e4e-b630-4052fb0d5ce7.png)
 
-After making a selection, click the wrench next to the display type you're choosing to edit \(in this instance the Ball and Stick display\). When the dialog box pops up select "Objects", and then click the blue table button in the bottom right hand corner. This feature adjusts what was initally considered an object \(Hemoglobin\), and edits the selection so that the display type will only encompass the heme residues.
+After making a selection, click the wrench next to the display type you're choosing to edit \(in this instance the Ball and Stick display\). When the dialog box pops up, select "Objects", and then click the blue table button in the bottom right hand corner. This feature adjusts what was initially considered an object \(Hemoglobin\), and edits the selection so that the display type will only encompass the heme residues.
 
 ![](../../_static/69708a1d-3112-441d-af97-27e63dc570e0.png)
 

@@ -21,3 +21,9 @@ Avogadro will import the molecule into the viewing screen after you click "OK".
 It may take a few seconds or even a minute to download the molecule online. Avogadro uses the NIH "Chemical Resolver" [http://cactus.nci.nih.gov/chemical/structure](http://cactus.nci.nih.gov/chemical/structure) to convert the name into a 3D molecular structure.
 
 ![](../../_static/download-caffeine.png)
+
+## See Also
+
+- {ref}`building-molecules-smiles` – Build molecules from SMILES strings
+- {ref}`building-molecules-fragments` – Insert common molecular fragments from the built-in library
+- {ref}`building-molecules-pdb` – Import protein structures from the Protein Data Bank

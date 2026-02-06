@@ -55,6 +55,12 @@ The molecule you have drawn will probably not look very tidy or realistic. Once 
 
 ![](../../_static/optimize-co2.png)
 
-See [here](calculations-optimization) for more information on optimizing geometries.
-
 You now know the basics of drawing a molecule in Avogadro!
+
+## See Also
+
+- [Building Small Molecules Video](https://youtu.be/DRWzQanz8Cc)
+- {ref}`tools-draw-tool` – Full documentation for the Draw Tool
+- {ref}`tools-template-tool` – Attach functional groups or build metal complexes
+- {ref}`tools-autoopt-tool` – Interactively optimize geometry while editing
+- {ref}`optimize` – Overview of geometry optimization methods in Avogadro

@@ -14,7 +14,7 @@ While on Linux with the KDE desktop environment, the interface may look more lik
 
 ![Screenshot of main Avogadro window on Linux with KDE indicating tools, display options, and drawing area](../../_static/getting_started_linux_cropped.png)
 
-## Opening a file
+## Opening a File
 
 The first thing you will probably want to do is open a file and navigate around the molecule. To do this click on the `File` menu and select `Open…`
 
@@ -22,7 +22,7 @@ The first thing you will probably want to do is open a file and navigate around 
 
 You can then look through the files on your disk and find an appropriate chemical file. Thanks to [Open Babel](https://openbabel.org/), a large number of file types are supported including CML, XYZ, SDF, Mol2, PDB etc.
 
-## Importing by name
+## Importing by Name
 
 Avogadro also offers support to download molecules from online sources. One of the most useful functions is found under `Import` then `Download by Name…`, which uses the [NIH Chemical Resolver](https://cactus.nci.nih.gov/chemical/structure).
 

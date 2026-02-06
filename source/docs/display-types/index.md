@@ -70,7 +70,7 @@ In Avogadro 2, in addition to display of hydrogen bonds, the Non-Covalent style 
 
 ## QTAIM (Quantum Theory of Atoms in Molecules)
 
-QTAIM displays the implicit bonding that is theorized to take place between the hydrogens of organic crystals (the implicit bonding is conveyed through dots). This display type is utilized by importing a .wfn file from the "QTAIM", "Molecular Graph" selection under the "Extensions" menu. More information can be found on this process in the Tutorial section of this manual.
+QTAIM displays the implicit bonding that is theorized to take place between the hydrogens of organic crystals (the implicit bonding is conveyed through dots). This display type is utilized by importing a .wfn file from the "QTAIM", "Molecular Graph" selection under the "Extensions" menu. More information can be found on this process in the {ref}`QTAIM Tutorial<qtaim>`.
 
 ![](../../_static/phenol-qtaim.png)
 
