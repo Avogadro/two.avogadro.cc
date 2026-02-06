@@ -26,7 +26,7 @@ For example, left-click and drag will also rotate the view while the [Animation 
 
 This rotates the view around the x- and y-axes (from your perspective, not the coordinate axes).
 
-To rotate the view around the z-axis (the axis you are looking down), hold the **middle mouse button** and drag, or hold <kbd>Shift</kbd> while clicking and dragging with the left mouse button.
+To rotate the view around the z-axis (the axis you are looking down), hold <kbd>Shift</kbd> while clicking and dragging with the left mouse button, or click and drag with the **middle mouse button**.
 
 Moving the mouse in a particular direction will rotate the view such that the part of the molecule nearest to you moves in the same direction.
 For example, clicking and dragging to the left will cause the molecule to rotate clockwise (as considered looking from the top down).
@@ -39,7 +39,11 @@ Rotation with click and drag will always be about the geometric center of the mo
 
 Again, when panning, the molecule will move in the direction the mouse is moved in.
 
-Panning along the z-axis, i.e. changing the **zoom level** can be done using the **mouse scroll wheel** or by clicking and dragging with the **middle mouse button**.
+Panning along the z-axis, i.e. changing the **zoom level**, can be done using the **mouse scroll wheel**.
+
+:::{tip}
+**Double-clicking** the **middle mouse button** resets the camera to its default position and zoom level.
+:::
 
 ### With the Keyboard
 
@@ -64,6 +68,10 @@ In future, keyboard control of the Navigation Tool will not use <kbd>Ctrl</kbd> 
 :::
 
 **Pan** the view along the **z-axis**, i.e. **zoom**, by holding <kbd>Shift</kbd> while using <kbd>up</kbd> and <kbd>down</kbd>.
+
+:::{tip}
+Hold <kbd>Alt</kbd> together with any keyboard navigation action to increase the step size.
+:::
 
 ## Options
 

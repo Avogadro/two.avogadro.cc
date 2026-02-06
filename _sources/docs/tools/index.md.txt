@@ -8,7 +8,7 @@ Each tool in Avogadro has an associated icon in the toolbar:
 
 Within Avogadro, hovering over a tool icon with the mouse gives a brief description of how to use it.
 
-Tools can be selected either by left-clicking the icon, or using the keyboard by pressing <kbd>Ctrl</kbd> and the corresponding number key (1 through 9 and 0, left to right).
+Tools can be selected either by left-clicking the icon, or using the keyboard by pressing <kbd>Ctrl</kbd> and the corresponding number key (1 through 9 and 0, left to right). See the {ref}`Keyboard Shortcuts <tools-keyboard-shortcuts>` page for a complete reference.
 
 After selecting a tool, the name of the tool and any options available for the tool are displayed to the left in the [Tool pane](panes-tool-pane).
 
@@ -33,4 +33,5 @@ measure-tool
 animation-tool
 align-tool
 label-tool
+keyboard-shortcuts
 ```
