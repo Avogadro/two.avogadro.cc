@@ -25,7 +25,7 @@ try:
     response = requests.get("https://api.github.com/repos/openchemistry/avogadrolibs/releases/latest")
     release = response.json()['tag_name']
 except requests.exceptions.ConnectionError:
-    release = "1.102.1"
+    release = "1.103.0"
 version = release
 
 year = date.today().year
