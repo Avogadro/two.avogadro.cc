@@ -88,5 +88,4 @@ structure
 build
 scripts/index
 rpc
-classlist
 :::

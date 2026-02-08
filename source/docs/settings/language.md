@@ -8,4 +8,4 @@ Avogadro is available in many languages. Languages with significant coverage as 
 
 Translation is an ongoing community effort so there are likely to be many errors or inconsistencies. If you find something wrong or missing, please suggest improvements!
 
-If you would like to fix a mistranslation, add support for a language you speak, or contribute to a partially translated one, we'd love it – see [here](contrib-translate) for information on contributing.
+If you would like to fix a mistranslation, add support for a language you speak, or contribute to a partially translated one, we'd love it – see [here](translate) for information on contributing.
