@@ -1,0 +1,797 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Avogadro::Core::LayerManager &#8212; Avogadro 1.103.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=ee427ece" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mermaid-theme.css?v=7f85688a" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=4a00f340"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'develop/class/class_avogadro_1_1_core_1_1_layer_manager';</script>
+    <link rel="canonical" href="https://two.avogadro.cc/develop/class/class_avogadro_1_1_core_1_1_layer_manager.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Avogadro::Core::Mesh" href="class_avogadro_1_1_core_1_1_mesh.html" />
+    <link rel="prev" title="Avogadro::Core::Layer" href="class_avogadro_1_1_core_1_1_layer.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/avogadro2.png" class="logo__image only-light" alt="Avogadro Documentation- Home"/>
+    <script>document.write(`<img src="../../_static/avogadro2-dark.png" class="logo__image only-dark" alt="Avogadro Documentation- Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../install/index.html">
+    Install
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../docs/index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Develop
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../contrib/index.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../teach/index.html">
+    Teach
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+    Discuss
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/avogadro.cc" title="Bluesky" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-bluesky fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../install/index.html">
+    Install
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../docs/index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Develop
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../contrib/index.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../teach/index.html">
+    Teach
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+    Discuss
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/avogadro.cc" title="Bluesky" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-bluesky fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Develop</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../structure.html">Project Structure and C++ API</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../avogadroapp.html">Avogadro App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calc.html">Avogadro::Calc</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../core.html">Avogadro::Core</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_angle_iterator.html">Avogadro::Core::AngleIterator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html">Avogadro::Core::Array</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_array_set.html">Avogadro::Core::ArraySet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_array_set_1_1_holder.html">Avogadro::Core::ArraySet::Holder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_array_set_1_1_place_holder.html">Avogadro::Core::ArraySet::PlaceHolder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_atom.html">Avogadro::Core::Atom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_atom_template.html">Avogadro::Core::AtomTemplate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_atom_typer.html">Avogadro::Core::AtomTyper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_atom_utilities.html">Avogadro::Core::AtomUtilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_avo_spglib.html">Avogadro::Core::AvoSpglib</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_basis_set.html">Avogadro::Core::BasisSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_bond.html">Avogadro::Core::Bond</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_bond_template.html">Avogadro::Core::BondTemplate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_color3f.html">Avogadro::Core::Color3f</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_constraint.html">Avogadro::Core::Constraint</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_coordinate_block_generator.html">Avogadro::Core::CoordinateBlockGenerator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_coordinate_set.html">Avogadro::Core::CoordinateSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_crystal_tools.html">Avogadro::Core::CrystalTools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_cube.html">Avogadro::Core::Cube</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_dihedral_iterator.html">Avogadro::Core::DihedralIterator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_elements.html">Avogadro::Core::Elements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_gaussian_set.html">Avogadro::Core::GaussianSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_gaussian_set_tools.html">Avogadro::Core::GaussianSetTools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_graph.html">Avogadro::Core::Graph</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_layer.html">Avogadro::Core::Layer</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Avogadro::Core::LayerManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_mesh.html">Avogadro::Core::Mesh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html">Avogadro::Core::Molecule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule_deserializer.html">Avogadro::Core::MoleculeDeserializer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule_serializer.html">Avogadro::Core::MoleculeSerializer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_mutex.html">Avogadro::Core::Mutex</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_name_atom_typer.html">Avogadro::Core::NameAtomTyper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_neighbor_perceiver.html">Avogadro::Core::NeighborPerceiver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_residue.html">Avogadro::Core::Residue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_residue_data.html">Avogadro::Core::ResidueData</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_ring_perceiver.html">Avogadro::Core::RingPerceiver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_secondary_structure_assigner.html">Avogadro::Core::SecondaryStructureAssigner</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_shared_mutex.html">Avogadro::Core::SharedMutex</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_slater_set.html">Avogadro::Core::SlaterSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_slater_set_tools.html">Avogadro::Core::SlaterSetTools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_space_groups.html">Avogadro::Core::SpaceGroups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_symbol_atom_typer.html">Avogadro::Core::SymbolAtomTyper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_unit_cell.html">Avogadro::Core::UnitCell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_variant.html">Avogadro::Core::Variant</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_variant_map.html">Avogadro::Core::VariantMap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1internal_1_1_array_ref_container.html">Avogadro::Core::internal::ArrayRefContainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_type_traits.html">Avogadro::TypeTraits</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_type_traits_3_01char_01_4.html">Avogadro::TypeTraits&lt; char &gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_type_traits_3_01double_01_4.html">Avogadro::TypeTraits&lt; double &gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_type_traits_3_01float_01_4.html">Avogadro::TypeTraits&lt; float &gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_type_traits_3_01int_01_4.html">Avogadro::TypeTraits&lt; int &gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_type_traits_3_01short_01_4.html">Avogadro::TypeTraits&lt; short &gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_type_traits_3_01unsigned_01char_01_4.html">Avogadro::TypeTraits&lt; unsigned char &gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_type_traits_3_01unsigned_01int_01_4.html">Avogadro::TypeTraits&lt; unsigned int &gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_type_traits_3_01unsigned_01short_01_4.html">Avogadro::TypeTraits&lt; unsigned short &gt;</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../io.html">Avogadro::IO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../molequeue.html">Avogadro::MoleQueue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qtgui.html">Avogadro::QtGui</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qtplugins.html">Avogadro::QtPlugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rendering.html">Avogadro::Rendering</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../build.html">Building Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">Script Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rpc.html">Avogadro Remote Procedure Call (RPC)</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Develop</a></li>
+    
+    
+    <li class="breadcrumb-item"><i class="fa-solid fa-ellipsis"></i></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../core.html" class="nav-link">Avogadro::Core</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Avogadro::Co...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="avogadro-core-layermanager">
+<h1>Avogadro::Core::LayerManager<a class="headerlink" href="#avogadro-core-layermanager" title="Link to this heading">#</a></h1>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core12LayerManagerE">
+<span id="_CPPv3N8Avogadro4Core12LayerManagerE"></span><span id="_CPPv2N8Avogadro4Core12LayerManagerE"></span><span id="Avogadro::Core::LayerManager"></span><span class="target" id="class_avogadro_1_1_core_1_1_layer_manager"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LayerManager</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core12LayerManagerE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Subclassed by <a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_plugin_layer_manager.html#class_avogadro_1_1_qt_gui_1_1_plugin_layer_manager"><span class="std std-ref">PluginLayerManager</span></a>, <a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_r_w_layer_manager.html#class_avogadro_1_1_qt_gui_1_1_r_w_layer_manager"><span class="std std-ref">RWLayerManager</span></a></p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-functions">Public Static Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core12LayerManager16getMoleculeLayerEv">
+<span id="_CPPv3N8Avogadro4Core12LayerManager16getMoleculeLayerEv"></span><span id="_CPPv2N8Avogadro4Core12LayerManager16getMoleculeLayerEv"></span><span id="Avogadro::Core::LayerManager::getMoleculeLayer"></span><span class="target" id="class_avogadro_1_1_core_1_1_layer_manager_1a6f7a34239f1946f60cdf1e6a23bb9edf"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_core_1_1_layer.html#_CPPv4N8Avogadro4Core5LayerE" title="Avogadro::Core::Layer"><span class="n"><span class="pre">Layer</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getMoleculeLayer</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core12LayerManager16getMoleculeLayerEv" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>active molecule <a class="reference internal" href="class_avogadro_1_1_core_1_1_layer.html#class_avogadro_1_1_core_1_1_layer"><span class="std std-ref">Layer</span></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core12LayerManager16getMoleculeLayerEPK8Molecule">
+<span id="_CPPv3N8Avogadro4Core12LayerManager16getMoleculeLayerEPK8Molecule"></span><span id="_CPPv2N8Avogadro4Core12LayerManager16getMoleculeLayerEPK8Molecule"></span><span id="Avogadro::Core::LayerManager::getMoleculeLayer__MoleculeCP"></span><span class="target" id="class_avogadro_1_1_core_1_1_layer_manager_1aa62bd70a347d8df517d1daf4de6773e4"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_core_1_1_layer.html#_CPPv4N8Avogadro4Core5LayerE" title="Avogadro::Core::Layer"><span class="n"><span class="pre">Layer</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getMoleculeLayer</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">mol</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core12LayerManager16getMoleculeLayerEPK8Molecule" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="class_avogadro_1_1_core_1_1_layer.html#class_avogadro_1_1_core_1_1_layer"><span class="std std-ref">Layer</span></a> from <code class="docutils literal notranslate"><span class="pre">mol</span></code> and creates MoleculeInfo if not exists </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core12LayerManager16getMoleculeLayerEPK8MoleculePK8Molecule">
+<span id="_CPPv3N8Avogadro4Core12LayerManager16getMoleculeLayerEPK8MoleculePK8Molecule"></span><span id="_CPPv2N8Avogadro4Core12LayerManager16getMoleculeLayerEPK8MoleculePK8Molecule"></span><span id="Avogadro::Core::LayerManager::getMoleculeLayer__MoleculeCP.MoleculeCP"></span><span class="target" id="class_avogadro_1_1_core_1_1_layer_manager_1a98c8d6b97f9d6dcb0b1702693aae76b9"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_core_1_1_layer.html#_CPPv4N8Avogadro4Core5LayerE" title="Avogadro::Core::Layer"><span class="n"><span class="pre">Layer</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getMoleculeLayer</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">original</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">copy</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core12LayerManager16getMoleculeLayerEPK8MoleculePK8Molecule" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="class_avogadro_1_1_core_1_1_layer.html#class_avogadro_1_1_core_1_1_layer"><span class="std std-ref">Layer</span></a> from <code class="docutils literal notranslate"><span class="pre">original</span></code> and links <code class="docutils literal notranslate"><span class="pre">original</span></code> MoleculeInfo to <code class="docutils literal notranslate"><span class="pre">copy</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core12LayerManager15getMoleculeInfoEv">
+<span id="_CPPv3N8Avogadro4Core12LayerManager15getMoleculeInfoEv"></span><span id="_CPPv2N8Avogadro4Core12LayerManager15getMoleculeInfoEv"></span><span id="Avogadro::Core::LayerManager::getMoleculeInfo"></span><span class="target" id="class_avogadro_1_1_core_1_1_layer_manager_1a6bf555aa2dc4b5588b53186a7372c7f9"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">MoleculeInfo</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getMoleculeInfo</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core12LayerManager15getMoleculeInfoEv" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the MoleculeInfo from active molecule </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core12LayerManager15getMoleculeInfoEPK8Molecule">
+<span id="_CPPv3N8Avogadro4Core12LayerManager15getMoleculeInfoEPK8Molecule"></span><span id="_CPPv2N8Avogadro4Core12LayerManager15getMoleculeInfoEPK8Molecule"></span><span id="Avogadro::Core::LayerManager::getMoleculeInfo__MoleculeCP"></span><span class="target" id="class_avogadro_1_1_core_1_1_layer_manager_1a5ef28f0fcc450783d5573e661c549510"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">MoleculeInfo</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getMoleculeInfo</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">mol</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core12LayerManager15getMoleculeInfoEPK8Molecule" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the MoleculeInfo from <code class="docutils literal notranslate"><span class="pre">mol</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core12LayerManager14deleteMoleculeEPK8Molecule">
+<span id="_CPPv3N8Avogadro4Core12LayerManager14deleteMoleculeEPK8Molecule"></span><span id="_CPPv2N8Avogadro4Core12LayerManager14deleteMoleculeEPK8Molecule"></span><span id="Avogadro::Core::LayerManager::deleteMolecule__MoleculeCP"></span><span class="target" id="class_avogadro_1_1_core_1_1_layer_manager_1a733f73c3a8591f12678097d65ed6858c"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">deleteMolecule</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">mol</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core12LayerManager14deleteMoleculeEPK8Molecule" title="Link to this definition">#</a><br /></dt>
+<dd><p>remove all data related to <code class="docutils literal notranslate"><span class="pre">mol</span></code></p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core12LayerManager10layerCountEv">
+<span id="_CPPv3N8Avogadro4Core12LayerManager10layerCountEv"></span><span id="_CPPv2N8Avogadro4Core12LayerManager10layerCountEv"></span><span id="Avogadro::Core::LayerManager::layerCount"></span><span class="target" id="class_avogadro_1_1_core_1_1_layer_manager_1a668d17021b319b870f4538c25e7dc322"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">layerCount</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core12LayerManager10layerCountEv" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the layer quantity from activeMolecule </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-static-attributes">Protected Static Attributes</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core12LayerManager16m_activeMoleculeE">
+<span id="_CPPv3N8Avogadro4Core12LayerManager16m_activeMoleculeE"></span><span id="_CPPv2N8Avogadro4Core12LayerManager16m_activeMoleculeE"></span><span id="Avogadro::Core::LayerManager::m_activeMolecule__MoleculeCP"></span><span class="target" id="class_avogadro_1_1_core_1_1_layer_manager_1aa5782b35454cf600eb2d90b1f17267fc"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">m_activeMolecule</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core12LayerManager16m_activeMoleculeE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core12LayerManager11m_molToInfoE">
+<span id="_CPPv3N8Avogadro4Core12LayerManager11m_molToInfoE"></span><span id="_CPPv2N8Avogadro4Core12LayerManager11m_molToInfoE"></span><span id="Avogadro::Core::LayerManager::m_molToInfo__std::map:MoleculeCP.std::shared_ptr:MoleculeInfo::"></span><span class="target" id="class_avogadro_1_1_core_1_1_layer_manager_1ac1b8241ae93a3ce739069db7a89be47c"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">map</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">MoleculeInfo</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_molToInfo</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core12LayerManager11m_molToInfoE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="class_avogadro_1_1_core_1_1_layer.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Avogadro::Core::Layer</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="class_avogadro_1_1_core_1_1_mesh.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Avogadro::Core::Mesh</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core12LayerManagerE"><code class="docutils literal notranslate"><span class="pre">LayerManager</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core12LayerManager16getMoleculeLayerEv"><code class="docutils literal notranslate"><span class="pre">LayerManager::getMoleculeLayer()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core12LayerManager16getMoleculeLayerEPK8Molecule"><code class="docutils literal notranslate"><span class="pre">LayerManager::getMoleculeLayer()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core12LayerManager16getMoleculeLayerEPK8MoleculePK8Molecule"><code class="docutils literal notranslate"><span class="pre">LayerManager::getMoleculeLayer()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core12LayerManager15getMoleculeInfoEv"><code class="docutils literal notranslate"><span class="pre">LayerManager::getMoleculeInfo()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core12LayerManager15getMoleculeInfoEPK8Molecule"><code class="docutils literal notranslate"><span class="pre">LayerManager::getMoleculeInfo()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core12LayerManager14deleteMoleculeEPK8Molecule"><code class="docutils literal notranslate"><span class="pre">LayerManager::deleteMolecule()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core12LayerManager10layerCountEv"><code class="docutils literal notranslate"><span class="pre">LayerManager::layerCount()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core12LayerManager16m_activeMoleculeE"><code class="docutils literal notranslate"><span class="pre">LayerManager::m_activeMolecule</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core12LayerManager11m_molToInfoE"><code class="docutils literal notranslate"><span class="pre">LayerManager::m_molToInfo</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/avogadro/two.avogadro.cc/edit/main/source/develop/class/class_avogadro_1_1_core_1_1_layer_manager.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">          <p>
+            ©2026 The OpenChemistry / Avogadro Teams 
+          </p>
+          <p>Covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
+          </p></div>
+      
+        <div class="footer-item">        <p>
+          <a href="/contrib/index.html">Contribute</a>
+        </p></div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.0.2.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.4.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,906 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Avogadro::Rendering::SolidPipeline &#8212; Avogadro 1.103.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=ee427ece" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mermaid-theme.css?v=7f85688a" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=4a00f340"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'develop/class/class_avogadro_1_1_rendering_1_1_solid_pipeline';</script>
+    <link rel="canonical" href="https://two.avogadro.cc/develop/class/class_avogadro_1_1_rendering_1_1_solid_pipeline.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Avogadro::Rendering::Sphere" href="class_avogadro_1_1_rendering_1_1_sphere.html" />
+    <link rel="prev" title="Avogadro::Rendering::ShaderProgram" href="class_avogadro_1_1_rendering_1_1_shader_program.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/avogadro2.png" class="logo__image only-light" alt="Avogadro Documentation- Home"/>
+    <script>document.write(`<img src="../../_static/avogadro2-dark.png" class="logo__image only-dark" alt="Avogadro Documentation- Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../install/index.html">
+    Install
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../docs/index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Develop
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../contrib/index.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../teach/index.html">
+    Teach
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+    Discuss
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/avogadro.cc" title="Bluesky" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-bluesky fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../install/index.html">
+    Install
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../docs/index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Develop
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../contrib/index.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../teach/index.html">
+    Teach
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+    Discuss
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/avogadro.cc" title="Bluesky" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-bluesky fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Develop</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../structure.html">Project Structure and C++ API</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../avogadroapp.html">Avogadro App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calc.html">Avogadro::Calc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../core.html">Avogadro::Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../io.html">Avogadro::IO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../molequeue.html">Avogadro::MoleQueue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qtgui.html">Avogadro::QtGui</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qtplugins.html">Avogadro::QtPlugins</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../rendering.html">Avogadro::Rendering</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_ambient_occlusion_sphere_geometry.html">Avogadro::Rendering::AmbientOcclusionSphereGeometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_arc_sector.html">Avogadro::Rendering::ArcSector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_arc_strip.html">Avogadro::Rendering::ArcStrip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_arrow_geometry.html">Avogadro::Rendering::ArrowGeometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_b_spline_geometry.html">Avogadro::Rendering::BSplineGeometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_bezier_geometry.html">Avogadro::Rendering::BezierGeometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_buffer_object.html">Avogadro::Rendering::BufferObject</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_camera.html">Avogadro::Rendering::Camera</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_cartoon.html">Avogadro::Rendering::Cartoon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_curve_geometry.html">Avogadro::Rendering::CurveGeometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_cylinder.html">Avogadro::Rendering::Cylinder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_cylinder_geometry.html">Avogadro::Rendering::CylinderGeometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_dashed_line_geometry.html">Avogadro::Rendering::DashedLineGeometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_drawable.html">Avogadro::Rendering::Drawable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_g_l_render_visitor.html">Avogadro::Rendering::GLRenderVisitor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_g_l_renderer.html">Avogadro::Rendering::GLRenderer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_geometry_node.html">Avogadro::Rendering::GeometryNode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_geometry_visitor.html">Avogadro::Rendering::GeometryVisitor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_group_node.html">Avogadro::Rendering::GroupNode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_line_strip_geometry.html">Avogadro::Rendering::LineStripGeometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_mesh_geometry.html">Avogadro::Rendering::MeshGeometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_node.html">Avogadro::Rendering::Node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_p_l_y_visitor.html">Avogadro::Rendering::PLYVisitor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_p_o_v_ray_visitor.html">Avogadro::Rendering::POVRayVisitor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_primitive.html">Avogadro::Rendering::Primitive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_quad.html">Avogadro::Rendering::Quad</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_quad_outline.html">Avogadro::Rendering::QuadOutline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_scene.html">Avogadro::Rendering::Scene</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_shader.html">Avogadro::Rendering::Shader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_shader_program.html">Avogadro::Rendering::ShaderProgram</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Avogadro::Rendering::SolidPipeline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_sphere.html">Avogadro::Rendering::Sphere</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_sphere_geometry.html">Avogadro::Rendering::SphereGeometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_text_label2_d.html">Avogadro::Rendering::TextLabel2D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_text_label3_d.html">Avogadro::Rendering::TextLabel3D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_text_label_base.html">Avogadro::Rendering::TextLabelBase</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_text_properties.html">Avogadro::Rendering::TextProperties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_text_render_strategy.html">Avogadro::Rendering::TextRenderStrategy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_texture2_d.html">Avogadro::Rendering::Texture2D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_transform_node.html">Avogadro::Rendering::TransformNode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_v_r_m_l_visitor.html">Avogadro::Rendering::VRMLVisitor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_vertex_array_object.html">Avogadro::Rendering::VertexArrayObject</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_visitor.html">Avogadro::Rendering::Visitor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_volume_geometry.html">Avogadro::Rendering::VolumeGeometry</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../build.html">Building Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">Script Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rpc.html">Avogadro Remote Procedure Call (RPC)</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Develop</a></li>
+    
+    
+    <li class="breadcrumb-item"><i class="fa-solid fa-ellipsis"></i></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../rendering.html" class="nav-link">Avogadro::Rendering</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Avogadro::Re...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="avogadro-rendering-solidpipeline">
+<h1>Avogadro::Rendering::SolidPipeline<a class="headerlink" href="#avogadro-rendering-solidpipeline" title="Link to this heading">#</a></h1>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13SolidPipelineE">
+<span id="_CPPv3N8Avogadro9Rendering13SolidPipelineE"></span><span id="_CPPv2N8Avogadro9Rendering13SolidPipelineE"></span><span id="Avogadro::Rendering::SolidPipeline"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_solid_pipeline"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SolidPipeline</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13SolidPipelineE" title="Link to this definition">#</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13SolidPipeline13SolidPipelineEv">
+<span id="_CPPv3N8Avogadro9Rendering13SolidPipeline13SolidPipelineEv"></span><span id="_CPPv2N8Avogadro9Rendering13SolidPipeline13SolidPipelineEv"></span><span id="Avogadro::Rendering::SolidPipeline::SolidPipeline"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_solid_pipeline_1a4e1940febc89f8e9b464ce8876b76cd5"></span><span class="sig-name descname"><span class="n"><span class="pre">SolidPipeline</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline13SolidPipelineEv" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13SolidPipelineD0Ev">
+<span id="_CPPv3N8Avogadro9Rendering13SolidPipelineD0Ev"></span><span id="_CPPv2N8Avogadro9Rendering13SolidPipelineD0Ev"></span><span id="Avogadro::Rendering::SolidPipeline::~SolidPipeline"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_solid_pipeline_1a820a8687313e1db5d11dc56e670c5bb2"></span><span class="sig-name descname"><span class="n"><span class="pre">~SolidPipeline</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13SolidPipelineD0Ev" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13SolidPipeline13SolidPipelineERK13SolidPipeline">
+<span id="_CPPv3N8Avogadro9Rendering13SolidPipeline13SolidPipelineERK13SolidPipeline"></span><span id="_CPPv2N8Avogadro9Rendering13SolidPipeline13SolidPipelineERK13SolidPipeline"></span><span id="Avogadro::Rendering::SolidPipeline::SolidPipeline__SolidPipelineCR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_solid_pipeline_1a6df1f0cdd2ae3b0156ab7791dd4cc956"></span><span class="sig-name descname"><span class="n"><span class="pre">SolidPipeline</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline13SolidPipelineERK13SolidPipeline" title="Avogadro::Rendering::SolidPipeline::SolidPipeline"><span class="n"><span class="pre">SolidPipeline</span></span></a><span class="p"><span class="pre">&amp;</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">delete</span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline13SolidPipelineERK13SolidPipeline" title="Link to this definition">#</a><br /></dt>
+<dd><p>Probably don’t want to support copy/assignment. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13SolidPipelineaSERK13SolidPipeline">
+<span id="_CPPv3N8Avogadro9Rendering13SolidPipelineaSERK13SolidPipeline"></span><span id="_CPPv2N8Avogadro9Rendering13SolidPipelineaSERK13SolidPipeline"></span><span id="Avogadro::Rendering::SolidPipeline::assign-operator__SolidPipelineCR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_solid_pipeline_1ab522c86cf1a8c359928bcc4010ad127d"></span><a class="reference internal" href="#_CPPv4N8Avogadro9Rendering13SolidPipelineE" title="Avogadro::Rendering::SolidPipeline"><span class="n"><span class="pre">SolidPipeline</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro9Rendering13SolidPipelineE" title="Avogadro::Rendering::SolidPipeline"><span class="n"><span class="pre">SolidPipeline</span></span></a><span class="p"><span class="pre">&amp;</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">delete</span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13SolidPipelineaSERK13SolidPipeline" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13SolidPipeline10initializeEv">
+<span id="_CPPv3N8Avogadro9Rendering13SolidPipeline10initializeEv"></span><span id="_CPPv2N8Avogadro9Rendering13SolidPipeline10initializeEv"></span><span id="Avogadro::Rendering::SolidPipeline::initialize"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_solid_pipeline_1a25a40b6614565f755233080a384c35f1"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">initialize</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline10initializeEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Initialize OpenGL objects. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13SolidPipeline5beginEv">
+<span id="_CPPv3N8Avogadro9Rendering13SolidPipeline5beginEv"></span><span id="_CPPv2N8Avogadro9Rendering13SolidPipeline5beginEv"></span><span id="Avogadro::Rendering::SolidPipeline::begin"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_solid_pipeline_1ab0bdf5cca484fb2ba637c39384b27fb2"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">begin</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline5beginEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Begin solid geometry rendering. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13SolidPipeline12adjustOffsetERK6Camera">
+<span id="_CPPv3N8Avogadro9Rendering13SolidPipeline12adjustOffsetERK6Camera"></span><span id="_CPPv2N8Avogadro9Rendering13SolidPipeline12adjustOffsetERK6Camera"></span><span id="Avogadro::Rendering::SolidPipeline::adjustOffset__CameraCR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_solid_pipeline_1a16729ba7190054216d79de987167a695"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">adjustOffset</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_camera.html#_CPPv4N8Avogadro9Rendering6CameraE" title="Avogadro::Rendering::Camera"><span class="n"><span class="pre">Camera</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">camera</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline12adjustOffsetERK6Camera" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13SolidPipeline3endEv">
+<span id="_CPPv3N8Avogadro9Rendering13SolidPipeline3endEv"></span><span id="_CPPv2N8Avogadro9Rendering13SolidPipeline3endEv"></span><span id="Avogadro::Rendering::SolidPipeline::end"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_solid_pipeline_1aaf81d3fdaf258088d7692fa70cece087"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">end</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline3endEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>End solid geometry rendering and apply screen-space shaders. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13SolidPipeline6resizeEii">
+<span id="_CPPv3N8Avogadro9Rendering13SolidPipeline6resizeEii"></span><span id="_CPPv2N8Avogadro9Rendering13SolidPipeline6resizeEii"></span><span id="Avogadro::Rendering::SolidPipeline::resize__i.i"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_solid_pipeline_1a56bfa8fae91947eb5802d2e208405904"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">resize</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">width</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">height</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline6resizeEii" title="Link to this definition">#</a><br /></dt>
+<dd><p>Resize buffers for width x height viewport. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13SolidPipeline13setPixelRatioEf">
+<span id="_CPPv3N8Avogadro9Rendering13SolidPipeline13setPixelRatioEf"></span><span id="_CPPv2N8Avogadro9Rendering13SolidPipeline13setPixelRatioEf"></span><span id="Avogadro::Rendering::SolidPipeline::setPixelRatio__float"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_solid_pipeline_1a020e9dc572c722bc95d8558dca7041b4"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setPixelRatio</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">ratio</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline13setPixelRatioEf" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set pixel ratio (1.0 on standard displays, 2.0 on Retina, etc.). </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13SolidPipeline12getAoEnabledEv">
+<span id="_CPPv3N8Avogadro9Rendering13SolidPipeline12getAoEnabledEv"></span><span id="_CPPv2N8Avogadro9Rendering13SolidPipeline12getAoEnabledEv"></span><span id="Avogadro::Rendering::SolidPipeline::getAoEnabled"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_solid_pipeline_1a86661450085a79357b948e33fa57798f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getAoEnabled</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline12getAoEnabledEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get or set whether Ambient Occlusion is enabled. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13SolidPipeline12setAoEnabledEb">
+<span id="_CPPv3N8Avogadro9Rendering13SolidPipeline12setAoEnabledEb"></span><span id="_CPPv2N8Avogadro9Rendering13SolidPipeline12setAoEnabledEb"></span><span id="Avogadro::Rendering::SolidPipeline::setAoEnabled__b"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_solid_pipeline_1ad6c13a62f738cfd7a16a817c3fd650ec"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setAoEnabled</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">enabled</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline12setAoEnabledEb" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13SolidPipeline13getDofEnabledEv">
+<span id="_CPPv3N8Avogadro9Rendering13SolidPipeline13getDofEnabledEv"></span><span id="_CPPv2N8Avogadro9Rendering13SolidPipeline13getDofEnabledEv"></span><span id="Avogadro::Rendering::SolidPipeline::getDofEnabled"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_solid_pipeline_1a52db94590860e72bd9ff8dff0084e1db"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getDofEnabled</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline13getDofEnabledEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get or set whether Depth-of-feild is enabled. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13SolidPipeline13setDofEnabledEb">
+<span id="_CPPv3N8Avogadro9Rendering13SolidPipeline13setDofEnabledEb"></span><span id="_CPPv2N8Avogadro9Rendering13SolidPipeline13setDofEnabledEb"></span><span id="Avogadro::Rendering::SolidPipeline::setDofEnabled__b"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_solid_pipeline_1acf633da80290f49bb101a734fcb5b2e2"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setDofEnabled</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">enabled</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline13setDofEnabledEb" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13SolidPipeline13getFogEnabledEv">
+<span id="_CPPv3N8Avogadro9Rendering13SolidPipeline13getFogEnabledEv"></span><span id="_CPPv2N8Avogadro9Rendering13SolidPipeline13getFogEnabledEv"></span><span id="Avogadro::Rendering::SolidPipeline::getFogEnabled"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_solid_pipeline_1a61c011985c88f94de8d9ef47444fa4aa"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getFogEnabled</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline13getFogEnabledEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get or set whether Fog is enabled. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13SolidPipeline13setFogEnabledEb">
+<span id="_CPPv3N8Avogadro9Rendering13SolidPipeline13setFogEnabledEb"></span><span id="_CPPv2N8Avogadro9Rendering13SolidPipeline13setFogEnabledEb"></span><span id="Avogadro::Rendering::SolidPipeline::setFogEnabled__b"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_solid_pipeline_1ab142e85d5bb09593becfe0365493d1c4"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setFogEnabled</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">enabled</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline13setFogEnabledEb" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering13SolidPipeline15backgroundColorEv">
+<span id="_CPPv3NK8Avogadro9Rendering13SolidPipeline15backgroundColorEv"></span><span id="_CPPv2NK8Avogadro9Rendering13SolidPipeline15backgroundColorEv"></span><span id="Avogadro::Rendering::SolidPipeline::backgroundColorC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_solid_pipeline_1a768bd405efd14e98a1eaf8e0654fa502"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">Vector4ub</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">backgroundColor</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering13SolidPipeline15backgroundColorEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set Background Color to it’s current value. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13SolidPipeline18setBackgroundColorERK9Vector4ub">
+<span id="_CPPv3N8Avogadro9Rendering13SolidPipeline18setBackgroundColorERK9Vector4ub"></span><span id="_CPPv2N8Avogadro9Rendering13SolidPipeline18setBackgroundColorERK9Vector4ub"></span><span id="Avogadro::Rendering::SolidPipeline::setBackgroundColor__Vector4ubCR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_solid_pipeline_1ac04061261e65d520da5ee8bd80fef62a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setBackgroundColor</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Vector4ub</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">c</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline18setBackgroundColorERK9Vector4ub" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13SolidPipeline13getAoStrengthEv">
+<span id="_CPPv3N8Avogadro9Rendering13SolidPipeline13getAoStrengthEv"></span><span id="_CPPv2N8Avogadro9Rendering13SolidPipeline13getAoStrengthEv"></span><span id="Avogadro::Rendering::SolidPipeline::getAoStrength"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_solid_pipeline_1a3826557562717bee8e3f3dcbd1310fdb"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getAoStrength</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline13getAoStrengthEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get or set shadow strength for Ambient Occlusion. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13SolidPipeline13setAoStrengthEf">
+<span id="_CPPv3N8Avogadro9Rendering13SolidPipeline13setAoStrengthEf"></span><span id="_CPPv2N8Avogadro9Rendering13SolidPipeline13setAoStrengthEf"></span><span id="Avogadro::Rendering::SolidPipeline::setAoStrength__float"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_solid_pipeline_1a381d5342f810e1811834dc1622e317b2"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setAoStrength</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">strength</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline13setAoStrengthEf" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13SolidPipeline14getFogStrengthEv">
+<span id="_CPPv3N8Avogadro9Rendering13SolidPipeline14getFogStrengthEv"></span><span id="_CPPv2N8Avogadro9Rendering13SolidPipeline14getFogStrengthEv"></span><span id="Avogadro::Rendering::SolidPipeline::getFogStrength"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_solid_pipeline_1ad1caee163383b4bc498846f71eaa36f4"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getFogStrength</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline14getFogStrengthEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get or set fog strength. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13SolidPipeline14setFogStrengthEf">
+<span id="_CPPv3N8Avogadro9Rendering13SolidPipeline14setFogStrengthEf"></span><span id="_CPPv2N8Avogadro9Rendering13SolidPipeline14setFogStrengthEf"></span><span id="Avogadro::Rendering::SolidPipeline::setFogStrength__float"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_solid_pipeline_1a579c53114a53cd3d5b73e476d5e9407d"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setFogStrength</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">strength</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline14setFogStrengthEf" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13SolidPipeline14getFogPositionEv">
+<span id="_CPPv3N8Avogadro9Rendering13SolidPipeline14getFogPositionEv"></span><span id="_CPPv2N8Avogadro9Rendering13SolidPipeline14getFogPositionEv"></span><span id="Avogadro::Rendering::SolidPipeline::getFogPosition"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_solid_pipeline_1a481c2aff9c10ac0f04ee7a81156cea0f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getFogPosition</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline14getFogPositionEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get or set fog position. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13SolidPipeline14setFogPositionEf">
+<span id="_CPPv3N8Avogadro9Rendering13SolidPipeline14setFogPositionEf"></span><span id="_CPPv2N8Avogadro9Rendering13SolidPipeline14setFogPositionEf"></span><span id="Avogadro::Rendering::SolidPipeline::setFogPosition__float"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_solid_pipeline_1a05ee7374730763f743b0e32cc9fbbc5f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setFogPosition</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">position</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline14setFogPositionEf" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13SolidPipeline12getEdEnabledEv">
+<span id="_CPPv3N8Avogadro9Rendering13SolidPipeline12getEdEnabledEv"></span><span id="_CPPv2N8Avogadro9Rendering13SolidPipeline12getEdEnabledEv"></span><span id="Avogadro::Rendering::SolidPipeline::getEdEnabled"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_solid_pipeline_1aaa735de696eaa944196808db64a31870"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getEdEnabled</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline12getEdEnabledEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get or set whether Edge Detection is enabled. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13SolidPipeline12setEdEnabledEb">
+<span id="_CPPv3N8Avogadro9Rendering13SolidPipeline12setEdEnabledEb"></span><span id="_CPPv2N8Avogadro9Rendering13SolidPipeline12setEdEnabledEb"></span><span id="Avogadro::Rendering::SolidPipeline::setEdEnabled__b"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_solid_pipeline_1a137cd4bc7123cbec9d861232cfd2b9d9"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setEdEnabled</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">enabled</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline12setEdEnabledEb" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13SolidPipeline14getDofStrengthEv">
+<span id="_CPPv3N8Avogadro9Rendering13SolidPipeline14getDofStrengthEv"></span><span id="_CPPv2N8Avogadro9Rendering13SolidPipeline14getDofStrengthEv"></span><span id="Avogadro::Rendering::SolidPipeline::getDofStrength"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_solid_pipeline_1acdcedeee5e619ef28fa0d139bbeb4e2e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getDofStrength</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline14getDofStrengthEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get or set dof strength. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13SolidPipeline14setDofStrengthEf">
+<span id="_CPPv3N8Avogadro9Rendering13SolidPipeline14setDofStrengthEf"></span><span id="_CPPv2N8Avogadro9Rendering13SolidPipeline14setDofStrengthEf"></span><span id="Avogadro::Rendering::SolidPipeline::setDofStrength__float"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_solid_pipeline_1acba84501467d38943e4f2f7fbfa76eb8"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setDofStrength</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">strength</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline14setDofStrengthEf" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13SolidPipeline14getDofPositionEv">
+<span id="_CPPv3N8Avogadro9Rendering13SolidPipeline14getDofPositionEv"></span><span id="_CPPv2N8Avogadro9Rendering13SolidPipeline14getDofPositionEv"></span><span id="Avogadro::Rendering::SolidPipeline::getDofPosition"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_solid_pipeline_1a0720eda5f6c201562a3b46eb9add02df"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getDofPosition</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline14getDofPositionEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set positon of dof. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13SolidPipeline14setDofPositionEf">
+<span id="_CPPv3N8Avogadro9Rendering13SolidPipeline14setDofPositionEf"></span><span id="_CPPv2N8Avogadro9Rendering13SolidPipeline14setDofPositionEf"></span><span id="Avogadro::Rendering::SolidPipeline::setDofPosition__float"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_solid_pipeline_1a7aa5c34637bc2d15fee6f1040ffae71c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setDofPosition</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">position</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline14setDofPositionEf" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13SolidPipeline13getEdStrengthEv">
+<span id="_CPPv3N8Avogadro9Rendering13SolidPipeline13getEdStrengthEv"></span><span id="_CPPv2N8Avogadro9Rendering13SolidPipeline13getEdStrengthEv"></span><span id="Avogadro::Rendering::SolidPipeline::getEdStrength"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_solid_pipeline_1abad4ac7852014fe36ba2417f6037369f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getEdStrength</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline13getEdStrengthEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get or set the strength of the edge effect. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13SolidPipeline13setEdStrengthEf">
+<span id="_CPPv3N8Avogadro9Rendering13SolidPipeline13setEdStrengthEf"></span><span id="_CPPv2N8Avogadro9Rendering13SolidPipeline13setEdStrengthEf"></span><span id="Avogadro::Rendering::SolidPipeline::setEdStrength__float"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_solid_pipeline_1af5a349975bd399803985ef96bc56df18"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setEdStrength</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">strength</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline13setEdStrengthEf" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="class_avogadro_1_1_rendering_1_1_shader_program.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Avogadro::Rendering::ShaderProgram</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="class_avogadro_1_1_rendering_1_1_sphere.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Avogadro::Rendering::Sphere</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13SolidPipelineE"><code class="docutils literal notranslate"><span class="pre">SolidPipeline</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline13SolidPipelineEv"><code class="docutils literal notranslate"><span class="pre">SolidPipeline::SolidPipeline()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13SolidPipelineD0Ev"><code class="docutils literal notranslate"><span class="pre">SolidPipeline::~SolidPipeline()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline13SolidPipelineERK13SolidPipeline"><code class="docutils literal notranslate"><span class="pre">SolidPipeline::SolidPipeline()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13SolidPipelineaSERK13SolidPipeline"><code class="docutils literal notranslate"><span class="pre">SolidPipeline::operator=()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline10initializeEv"><code class="docutils literal notranslate"><span class="pre">SolidPipeline::initialize()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline5beginEv"><code class="docutils literal notranslate"><span class="pre">SolidPipeline::begin()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline12adjustOffsetERK6Camera"><code class="docutils literal notranslate"><span class="pre">SolidPipeline::adjustOffset()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline3endEv"><code class="docutils literal notranslate"><span class="pre">SolidPipeline::end()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline6resizeEii"><code class="docutils literal notranslate"><span class="pre">SolidPipeline::resize()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline13setPixelRatioEf"><code class="docutils literal notranslate"><span class="pre">SolidPipeline::setPixelRatio()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline12getAoEnabledEv"><code class="docutils literal notranslate"><span class="pre">SolidPipeline::getAoEnabled()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline12setAoEnabledEb"><code class="docutils literal notranslate"><span class="pre">SolidPipeline::setAoEnabled()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline13getDofEnabledEv"><code class="docutils literal notranslate"><span class="pre">SolidPipeline::getDofEnabled()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline13setDofEnabledEb"><code class="docutils literal notranslate"><span class="pre">SolidPipeline::setDofEnabled()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline13getFogEnabledEv"><code class="docutils literal notranslate"><span class="pre">SolidPipeline::getFogEnabled()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline13setFogEnabledEb"><code class="docutils literal notranslate"><span class="pre">SolidPipeline::setFogEnabled()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro9Rendering13SolidPipeline15backgroundColorEv"><code class="docutils literal notranslate"><span class="pre">SolidPipeline::backgroundColor()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline18setBackgroundColorERK9Vector4ub"><code class="docutils literal notranslate"><span class="pre">SolidPipeline::setBackgroundColor()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline13getAoStrengthEv"><code class="docutils literal notranslate"><span class="pre">SolidPipeline::getAoStrength()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline13setAoStrengthEf"><code class="docutils literal notranslate"><span class="pre">SolidPipeline::setAoStrength()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline14getFogStrengthEv"><code class="docutils literal notranslate"><span class="pre">SolidPipeline::getFogStrength()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline14setFogStrengthEf"><code class="docutils literal notranslate"><span class="pre">SolidPipeline::setFogStrength()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline14getFogPositionEv"><code class="docutils literal notranslate"><span class="pre">SolidPipeline::getFogPosition()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline14setFogPositionEf"><code class="docutils literal notranslate"><span class="pre">SolidPipeline::setFogPosition()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline12getEdEnabledEv"><code class="docutils literal notranslate"><span class="pre">SolidPipeline::getEdEnabled()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline12setEdEnabledEb"><code class="docutils literal notranslate"><span class="pre">SolidPipeline::setEdEnabled()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline14getDofStrengthEv"><code class="docutils literal notranslate"><span class="pre">SolidPipeline::getDofStrength()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline14setDofStrengthEf"><code class="docutils literal notranslate"><span class="pre">SolidPipeline::setDofStrength()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline14getDofPositionEv"><code class="docutils literal notranslate"><span class="pre">SolidPipeline::getDofPosition()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline14setDofPositionEf"><code class="docutils literal notranslate"><span class="pre">SolidPipeline::setDofPosition()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline13getEdStrengthEv"><code class="docutils literal notranslate"><span class="pre">SolidPipeline::getEdStrength()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline13setEdStrengthEf"><code class="docutils literal notranslate"><span class="pre">SolidPipeline::setEdStrength()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/avogadro/two.avogadro.cc/edit/main/source/develop/class/class_avogadro_1_1_rendering_1_1_solid_pipeline.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">          <p>
+            ©2026 The OpenChemistry / Avogadro Teams 
+          </p>
+          <p>Covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
+          </p></div>
+      
+        <div class="footer-item">        <p>
+          <a href="/contrib/index.html">Contribute</a>
+        </p></div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.0.2.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.4.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

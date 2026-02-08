@@ -33,6 +33,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=ee427ece" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mermaid-theme.css?v=7f85688a" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -56,7 +57,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Avogadro::Rendering::VolumeGeometry" href="class_avogadro_1_1_rendering_1_1_volume_geometry.html" />
-    <link rel="prev" title="Avogadro::Rendering::VRMLVisitor" href="class_avogadro_1_1_rendering_1_1_v_r_m_l_visitor.html" />
+    <link rel="prev" title="Avogadro::Rendering::VertexArrayObject" href="class_avogadro_1_1_rendering_1_1_vertex_array_object.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -432,12 +433,9 @@ document.write(`
   <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Develop</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../structure.html">Project Structure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../build.html">Building Source Code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">Script Plugins</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../rpc.html">Avogadro Remote Procedure Call (RPC)</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../classlist.html">API Documentation</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../structure.html">Project Structure and C++ API</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../avogadroapp.html">Avogadro App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calc.html">Avogadro::Calc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../core.html">Avogadro::Core</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../io.html">Avogadro::IO</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../molequeue.html">Avogadro::MoleQueue</a></li>
@@ -445,11 +443,18 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../qtplugins.html">Avogadro::QtPlugins</a></li>
 <li class="toctree-l2 current active has-children"><a class="reference internal" href="../rendering.html">Avogadro::Rendering</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_ambient_occlusion_sphere_geometry.html">Avogadro::Rendering::AmbientOcclusionSphereGeometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_arc_sector.html">Avogadro::Rendering::ArcSector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_arc_strip.html">Avogadro::Rendering::ArcStrip</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_arrow_geometry.html">Avogadro::Rendering::ArrowGeometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_b_spline_geometry.html">Avogadro::Rendering::BSplineGeometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_bezier_geometry.html">Avogadro::Rendering::BezierGeometry</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_buffer_object.html">Avogadro::Rendering::BufferObject</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_camera.html">Avogadro::Rendering::Camera</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_cartoon.html">Avogadro::Rendering::Cartoon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_curve_geometry.html">Avogadro::Rendering::CurveGeometry</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_cylinder.html">Avogadro::Rendering::Cylinder</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_cylinder_geometry.html">Avogadro::Rendering::CylinderGeometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_dashed_line_geometry.html">Avogadro::Rendering::DashedLineGeometry</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_drawable.html">Avogadro::Rendering::Drawable</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_g_l_render_visitor.html">Avogadro::Rendering::GLRenderVisitor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_g_l_renderer.html">Avogadro::Rendering::GLRenderer</a></li>
@@ -459,11 +464,15 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_line_strip_geometry.html">Avogadro::Rendering::LineStripGeometry</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_mesh_geometry.html">Avogadro::Rendering::MeshGeometry</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_node.html">Avogadro::Rendering::Node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_p_l_y_visitor.html">Avogadro::Rendering::PLYVisitor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_p_o_v_ray_visitor.html">Avogadro::Rendering::POVRayVisitor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_primitive.html">Avogadro::Rendering::Primitive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_quad.html">Avogadro::Rendering::Quad</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_quad_outline.html">Avogadro::Rendering::QuadOutline</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_scene.html">Avogadro::Rendering::Scene</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_shader.html">Avogadro::Rendering::Shader</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_shader_program.html">Avogadro::Rendering::ShaderProgram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_solid_pipeline.html">Avogadro::Rendering::SolidPipeline</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_sphere.html">Avogadro::Rendering::Sphere</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_sphere_geometry.html">Avogadro::Rendering::SphereGeometry</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_text_label2_d.html">Avogadro::Rendering::TextLabel2D</a></li>
@@ -474,13 +483,16 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_texture2_d.html">Avogadro::Rendering::Texture2D</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_transform_node.html">Avogadro::Rendering::TransformNode</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_v_r_m_l_visitor.html">Avogadro::Rendering::VRMLVisitor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_vertex_array_object.html">Avogadro::Rendering::VertexArrayObject</a></li>
 <li class="toctree-l3 current active"><a class="current reference internal" href="#">Avogadro::Rendering::Visitor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_volume_geometry.html">Avogadro::Rendering::VolumeGeometry</a></li>
 </ul>
 </details></li>
-<li class="toctree-l2"><a class="reference internal" href="../vtk.html">Avogadro::VTK</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1"><a class="reference internal" href="../build.html">Building Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">Script Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rpc.html">Avogadro Remote Procedure Call (RPC)</a></li>
 </ul>
 </div>
 </nav></div>
@@ -558,7 +570,7 @@ The <a class="reference internal" href="#class_avogadro_1_1_rendering_1_1_visito
 </dd>
 </dl>
 </p>
-<p>Subclassed by <a class="reference internal" href="class_avogadro_1_1_rendering_1_1_g_l_render_visitor.html#class_avogadro_1_1_rendering_1_1_g_l_render_visitor"><span class="std std-ref">GLRenderVisitor</span></a>, <a class="reference internal" href="class_avogadro_1_1_rendering_1_1_geometry_visitor.html#class_avogadro_1_1_rendering_1_1_geometry_visitor"><span class="std std-ref">GeometryVisitor</span></a>, PLYVisitor, <a class="reference internal" href="class_avogadro_1_1_rendering_1_1_p_o_v_ray_visitor.html#class_avogadro_1_1_rendering_1_1_p_o_v_ray_visitor"><span class="std std-ref">POVRayVisitor</span></a>, <a class="reference internal" href="class_avogadro_1_1_rendering_1_1_v_r_m_l_visitor.html#class_avogadro_1_1_rendering_1_1_v_r_m_l_visitor"><span class="std std-ref">VRMLVisitor</span></a></p>
+<p>Subclassed by <a class="reference internal" href="class_avogadro_1_1_rendering_1_1_g_l_render_visitor.html#class_avogadro_1_1_rendering_1_1_g_l_render_visitor"><span class="std std-ref">GLRenderVisitor</span></a>, <a class="reference internal" href="class_avogadro_1_1_rendering_1_1_geometry_visitor.html#class_avogadro_1_1_rendering_1_1_geometry_visitor"><span class="std std-ref">GeometryVisitor</span></a>, <a class="reference internal" href="class_avogadro_1_1_rendering_1_1_p_l_y_visitor.html#class_avogadro_1_1_rendering_1_1_p_l_y_visitor"><span class="std std-ref">PLYVisitor</span></a>, <a class="reference internal" href="class_avogadro_1_1_rendering_1_1_p_o_v_ray_visitor.html#class_avogadro_1_1_rendering_1_1_p_o_v_ray_visitor"><span class="std std-ref">POVRayVisitor</span></a>, <a class="reference internal" href="class_avogadro_1_1_rendering_1_1_v_r_m_l_visitor.html#class_avogadro_1_1_rendering_1_1_v_r_m_l_visitor"><span class="std std-ref">VRMLVisitor</span></a></p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
@@ -604,7 +616,7 @@ The <a class="reference internal" href="#class_avogadro_1_1_rendering_1_1_visito
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering7Visitor5visitER13CurveGeometry">
-<span id="_CPPv3N8Avogadro9Rendering7Visitor5visitER13CurveGeometry"></span><span id="_CPPv2N8Avogadro9Rendering7Visitor5visitER13CurveGeometry"></span><span id="Avogadro::Rendering::Visitor::visit__CurveGeometryR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_visitor_1a07133b04f7421e73e87404fe4dd4d04c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">visit</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">CurveGeometry</span></span><span class="p"><span class="pre">&amp;</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering7Visitor5visitER13CurveGeometry" title="Link to this definition">#</a><br /></dt>
+<span id="_CPPv3N8Avogadro9Rendering7Visitor5visitER13CurveGeometry"></span><span id="_CPPv2N8Avogadro9Rendering7Visitor5visitER13CurveGeometry"></span><span id="Avogadro::Rendering::Visitor::visit__CurveGeometryR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_visitor_1a07133b04f7421e73e87404fe4dd4d04c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">visit</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_curve_geometry.html#_CPPv4N8Avogadro9Rendering13CurveGeometryE" title="Avogadro::Rendering::CurveGeometry"><span class="n"><span class="pre">CurveGeometry</span></span></a><span class="p"><span class="pre">&amp;</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering7Visitor5visitER13CurveGeometry" title="Link to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
@@ -648,12 +660,12 @@ The <a class="reference internal" href="#class_avogadro_1_1_rendering_1_1_visito
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="class_avogadro_1_1_rendering_1_1_v_r_m_l_visitor.html"
+       href="class_avogadro_1_1_rendering_1_1_vertex_array_object.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Avogadro::Rendering::VRMLVisitor</p>
+        <p class="prev-next-title">Avogadro::Rendering::VertexArrayObject</p>
       </div>
     </a>
     <a class="right-next"

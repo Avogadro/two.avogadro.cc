@@ -33,6 +33,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=ee427ece" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mermaid-theme.css?v=7f85688a" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -55,7 +56,7 @@
     <link rel="canonical" href="https://two.avogadro.cc/develop/class/class_avogadro_1_1_quantum_i_o_1_1_gaussian_fchk.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Avogadro::QuantumIO::MoldenFile" href="class_avogadro_1_1_quantum_i_o_1_1_molden_file.html" />
+    <link rel="next" title="Avogadro::QuantumIO::GenericJson" href="class_avogadro_1_1_quantum_i_o_1_1_generic_json.html" />
     <link rel="prev" title="Avogadro::QuantumIO::GaussianCube" href="class_avogadro_1_1_quantum_i_o_1_1_gaussian_cube.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -432,12 +433,9 @@ document.write(`
   <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Develop</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../structure.html">Project Structure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../build.html">Building Source Code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">Script Plugins</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../rpc.html">Avogadro Remote Procedure Call (RPC)</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../classlist.html">API Documentation</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../structure.html">Project Structure and C++ API</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../avogadroapp.html">Avogadro App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calc.html">Avogadro::Calc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../core.html">Avogadro::Core</a></li>
 <li class="toctree-l2 current active has-children"><a class="reference internal" href="../io.html">Avogadro::IO</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_io_1_1_cjson_format.html">Avogadro::Io::CjsonFormat</a></li>
@@ -455,25 +453,32 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_io_1_1_pdb_format.html">Avogadro::Io::PdbFormat</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_io_1_1_poscar_format.html">Avogadro::Io::PoscarFormat</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_io_1_1_trr_format.html">Avogadro::Io::TrrFormat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_io_1_1_turbomole_format.html">Avogadro::Io::TurbomoleFormat</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_io_1_1_xyz_format.html">Avogadro::Io::XyzFormat</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_quantum_i_o_1_1_g_a_m_e_s_s_u_s_output.html">Avogadro::QuantumIO::GAMESSUSOutput</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_quantum_i_o_1_1_g_u_k_basis_set.html">Avogadro::QuantumIO::GUKBasisSet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_quantum_i_o_1_1_gamessuk_out.html">Avogadro::QuantumIO::GamessukOut</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_quantum_i_o_1_1_gaussian_cube.html">Avogadro::QuantumIO::GaussianCube</a></li>
 <li class="toctree-l3 current active"><a class="current reference internal" href="#">Avogadro::QuantumIO::GaussianFchk</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_quantum_i_o_1_1_generic_json.html">Avogadro::QuantumIO::GenericJson</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_quantum_i_o_1_1_generic_output.html">Avogadro::QuantumIO::GenericOutput</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_quantum_i_o_1_1_molden_file.html">Avogadro::QuantumIO::MoldenFile</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_quantum_i_o_1_1_mopac_aux.html">Avogadro::QuantumIO::MopacAux</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_quantum_i_o_1_1_n_w_chem_json.html">Avogadro::QuantumIO::NWChemJson</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_quantum_i_o_1_1_n_w_chem_log.html">Avogadro::QuantumIO::NWChemLog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_quantum_i_o_1_1_o_r_c_a_output.html">Avogadro::QuantumIO::ORCAOutput</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_quantum_i_o_1_1_q_c_schema.html">Avogadro::QuantumIO::QCSchema</a></li>
 </ul>
 </details></li>
 <li class="toctree-l2"><a class="reference internal" href="../molequeue.html">Avogadro::MoleQueue</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../qtgui.html">Avogadro::QtGui</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../qtplugins.html">Avogadro::QtPlugins</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rendering.html">Avogadro::Rendering</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../vtk.html">Avogadro::VTK</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1"><a class="reference internal" href="../build.html">Building Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">Script Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rpc.html">Avogadro Remote Procedure Call (RPC)</a></li>
 </ul>
 </div>
 </nav></div>
@@ -682,11 +687,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="class_avogadro_1_1_quantum_i_o_1_1_molden_file.html"
+       href="class_avogadro_1_1_quantum_i_o_1_1_generic_json.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Avogadro::QuantumIO::MoldenFile</p>
+        <p class="prev-next-title">Avogadro::QuantumIO::GenericJson</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

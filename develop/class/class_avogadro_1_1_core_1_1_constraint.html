@@ -1,0 +1,942 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Avogadro::Core::Constraint &#8212; Avogadro 1.103.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=ee427ece" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mermaid-theme.css?v=7f85688a" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=4a00f340"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'develop/class/class_avogadro_1_1_core_1_1_constraint';</script>
+    <link rel="canonical" href="https://two.avogadro.cc/develop/class/class_avogadro_1_1_core_1_1_constraint.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Avogadro::Core::CoordinateBlockGenerator" href="class_avogadro_1_1_core_1_1_coordinate_block_generator.html" />
+    <link rel="prev" title="Avogadro::Core::Color3f" href="class_avogadro_1_1_core_1_1_color3f.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/avogadro2.png" class="logo__image only-light" alt="Avogadro Documentation- Home"/>
+    <script>document.write(`<img src="../../_static/avogadro2-dark.png" class="logo__image only-dark" alt="Avogadro Documentation- Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../install/index.html">
+    Install
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../docs/index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Develop
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../contrib/index.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../teach/index.html">
+    Teach
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+    Discuss
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/avogadro.cc" title="Bluesky" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-bluesky fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../install/index.html">
+    Install
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../docs/index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Develop
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../contrib/index.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../teach/index.html">
+    Teach
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+    Discuss
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/avogadro.cc" title="Bluesky" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-bluesky fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Develop</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../structure.html">Project Structure and C++ API</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../avogadroapp.html">Avogadro App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calc.html">Avogadro::Calc</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../core.html">Avogadro::Core</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_angle_iterator.html">Avogadro::Core::AngleIterator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html">Avogadro::Core::Array</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_array_set.html">Avogadro::Core::ArraySet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_array_set_1_1_holder.html">Avogadro::Core::ArraySet::Holder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_array_set_1_1_place_holder.html">Avogadro::Core::ArraySet::PlaceHolder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_atom.html">Avogadro::Core::Atom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_atom_template.html">Avogadro::Core::AtomTemplate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_atom_typer.html">Avogadro::Core::AtomTyper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_atom_utilities.html">Avogadro::Core::AtomUtilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_avo_spglib.html">Avogadro::Core::AvoSpglib</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_basis_set.html">Avogadro::Core::BasisSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_bond.html">Avogadro::Core::Bond</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_bond_template.html">Avogadro::Core::BondTemplate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_color3f.html">Avogadro::Core::Color3f</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Avogadro::Core::Constraint</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_coordinate_block_generator.html">Avogadro::Core::CoordinateBlockGenerator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_coordinate_set.html">Avogadro::Core::CoordinateSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_crystal_tools.html">Avogadro::Core::CrystalTools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_cube.html">Avogadro::Core::Cube</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_dihedral_iterator.html">Avogadro::Core::DihedralIterator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_elements.html">Avogadro::Core::Elements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_gaussian_set.html">Avogadro::Core::GaussianSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_gaussian_set_tools.html">Avogadro::Core::GaussianSetTools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_graph.html">Avogadro::Core::Graph</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_layer.html">Avogadro::Core::Layer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_layer_manager.html">Avogadro::Core::LayerManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_mesh.html">Avogadro::Core::Mesh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html">Avogadro::Core::Molecule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule_deserializer.html">Avogadro::Core::MoleculeDeserializer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule_serializer.html">Avogadro::Core::MoleculeSerializer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_mutex.html">Avogadro::Core::Mutex</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_name_atom_typer.html">Avogadro::Core::NameAtomTyper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_neighbor_perceiver.html">Avogadro::Core::NeighborPerceiver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_residue.html">Avogadro::Core::Residue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_residue_data.html">Avogadro::Core::ResidueData</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_ring_perceiver.html">Avogadro::Core::RingPerceiver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_secondary_structure_assigner.html">Avogadro::Core::SecondaryStructureAssigner</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_shared_mutex.html">Avogadro::Core::SharedMutex</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_slater_set.html">Avogadro::Core::SlaterSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_slater_set_tools.html">Avogadro::Core::SlaterSetTools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_space_groups.html">Avogadro::Core::SpaceGroups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_symbol_atom_typer.html">Avogadro::Core::SymbolAtomTyper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_unit_cell.html">Avogadro::Core::UnitCell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_variant.html">Avogadro::Core::Variant</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_variant_map.html">Avogadro::Core::VariantMap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1internal_1_1_array_ref_container.html">Avogadro::Core::internal::ArrayRefContainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_type_traits.html">Avogadro::TypeTraits</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_type_traits_3_01char_01_4.html">Avogadro::TypeTraits&lt; char &gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_type_traits_3_01double_01_4.html">Avogadro::TypeTraits&lt; double &gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_type_traits_3_01float_01_4.html">Avogadro::TypeTraits&lt; float &gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_type_traits_3_01int_01_4.html">Avogadro::TypeTraits&lt; int &gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_type_traits_3_01short_01_4.html">Avogadro::TypeTraits&lt; short &gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_type_traits_3_01unsigned_01char_01_4.html">Avogadro::TypeTraits&lt; unsigned char &gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_type_traits_3_01unsigned_01int_01_4.html">Avogadro::TypeTraits&lt; unsigned int &gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_type_traits_3_01unsigned_01short_01_4.html">Avogadro::TypeTraits&lt; unsigned short &gt;</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../io.html">Avogadro::IO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../molequeue.html">Avogadro::MoleQueue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qtgui.html">Avogadro::QtGui</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qtplugins.html">Avogadro::QtPlugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rendering.html">Avogadro::Rendering</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../build.html">Building Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">Script Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rpc.html">Avogadro Remote Procedure Call (RPC)</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Develop</a></li>
+    
+    
+    <li class="breadcrumb-item"><i class="fa-solid fa-ellipsis"></i></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../core.html" class="nav-link">Avogadro::Core</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Avogadro::Co...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="avogadro-core-constraint">
+<h1>Avogadro::Core::Constraint<a class="headerlink" href="#avogadro-core-constraint" title="Link to this heading">#</a></h1>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core10ConstraintE">
+<span id="_CPPv3N8Avogadro4Core10ConstraintE"></span><span id="_CPPv2N8Avogadro4Core10ConstraintE"></span><span id="Avogadro::Core::Constraint"></span><span class="target" id="class_avogadro_1_1_core_1_1_constraint"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Constraint</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core10ConstraintE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Constraints for optimization / dynamics. </p>
+<p>
+This class represents a distance, angle, or torsional constraint / restraint during optimization or dynamics. More technically, these are implemented as stiff harmonic oscillators restraining a particular atom set towards the value. <dl class="simple">
+<dt><strong>Author</strong></dt><dd><p>Geoffrey R. Hutchison</p>
+</dd>
+</dl>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-types">Public Types</p>
+<dl class="cpp enum">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core10Constraint4TypeE">
+<span id="_CPPv3N8Avogadro4Core10Constraint4TypeE"></span><span id="_CPPv2N8Avogadro4Core10Constraint4TypeE"></span><span class="target" id="class_avogadro_1_1_core_1_1_constraint_1a1d1cfd8ffb84e947f82999c682b666a7"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Type</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core10Constraint4TypeE" title="Link to this definition">#</a><br /></dt>
+<dd><p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core10Constraint4Type4NoneE">
+<span id="_CPPv3N8Avogadro4Core10Constraint4Type4NoneE"></span><span id="_CPPv2N8Avogadro4Core10Constraint4Type4NoneE"></span><span class="target" id="class_avogadro_1_1_core_1_1_constraint_1a1d1cfd8ffb84e947f82999c682b666a7ac9d3e887722f2bc482bcca9d41c512af"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">None</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core10Constraint4Type4NoneE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core10Constraint4Type18DistanceConstraintE">
+<span id="_CPPv3N8Avogadro4Core10Constraint4Type18DistanceConstraintE"></span><span id="_CPPv2N8Avogadro4Core10Constraint4Type18DistanceConstraintE"></span><span class="target" id="class_avogadro_1_1_core_1_1_constraint_1a1d1cfd8ffb84e947f82999c682b666a7a09d80ffc725a6f6189c1f08d3ee3ef42"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">DistanceConstraint</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core10Constraint4Type18DistanceConstraintE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core10Constraint4Type15AngleConstraintE">
+<span id="_CPPv3N8Avogadro4Core10Constraint4Type15AngleConstraintE"></span><span id="_CPPv2N8Avogadro4Core10Constraint4Type15AngleConstraintE"></span><span class="target" id="class_avogadro_1_1_core_1_1_constraint_1a1d1cfd8ffb84e947f82999c682b666a7acccf121440fc8c80fa17ddfad900dd53"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AngleConstraint</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core10Constraint4Type15AngleConstraintE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core10Constraint4Type17TorsionConstraintE">
+<span id="_CPPv3N8Avogadro4Core10Constraint4Type17TorsionConstraintE"></span><span id="_CPPv2N8Avogadro4Core10Constraint4Type17TorsionConstraintE"></span><span class="target" id="class_avogadro_1_1_core_1_1_constraint_1a1d1cfd8ffb84e947f82999c682b666a7a25ecaa494c4094e4c7087567b4a5f0e6"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TorsionConstraint</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core10Constraint4Type17TorsionConstraintE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core10Constraint4Type20OutOfPlaneConstraintE">
+<span id="_CPPv3N8Avogadro4Core10Constraint4Type20OutOfPlaneConstraintE"></span><span id="_CPPv2N8Avogadro4Core10Constraint4Type20OutOfPlaneConstraintE"></span><span class="target" id="class_avogadro_1_1_core_1_1_constraint_1a1d1cfd8ffb84e947f82999c682b666a7a8b7ca3803728250191a5de811a1f2d32"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">OutOfPlaneConstraint</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core10Constraint4Type20OutOfPlaneConstraintE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core10Constraint4Type17UnknownConstraintE">
+<span id="_CPPv3N8Avogadro4Core10Constraint4Type17UnknownConstraintE"></span><span id="_CPPv2N8Avogadro4Core10Constraint4Type17UnknownConstraintE"></span><span class="target" id="class_avogadro_1_1_core_1_1_constraint_1a1d1cfd8ffb84e947f82999c682b666a7acc065a2a9eb39ad89e22e1571a1f741b"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">UnknownConstraint</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core10Constraint4Type17UnknownConstraintE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core10Constraint10ConstraintE5Index5Index5Index5Index4Real">
+<span id="_CPPv3N8Avogadro4Core10Constraint10ConstraintE5Index5Index5Index5Index4Real"></span><span id="_CPPv2N8Avogadro4Core10Constraint10ConstraintE5Index5Index5Index5Index4Real"></span><span id="Avogadro::Core::Constraint::Constraint__Index.Index.Index.Index.Real"></span><span class="target" id="class_avogadro_1_1_core_1_1_constraint_1ad4d6d3523a1a8e95fd94e714c0f789a2"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Constraint</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Index</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">a</span></span>, <span class="n"><span class="pre">Index</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">b</span></span>, <span class="n"><span class="pre">Index</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">c</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">MaxIndex</span></span>, <span class="n"><span class="pre">Index</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">d</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">MaxIndex</span></span>, <span class="n"><span class="pre">Real</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">value</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0.0</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core10Constraint10ConstraintE5Index5Index5Index5Index4Real" title="Link to this definition">#</a><br /></dt>
+<dd><p>Constructor, results in a zero distance constraint </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> – <a class="reference internal" href="class_avogadro_1_1_core_1_1_atom.html#class_avogadro_1_1_core_1_1_atom"><span class="std std-ref">Atom</span></a> index of the first atom of the constraint </p></li>
+<li><p><strong>b</strong> – <a class="reference internal" href="class_avogadro_1_1_core_1_1_atom.html#class_avogadro_1_1_core_1_1_atom"><span class="std std-ref">Atom</span></a> index of the second atom of the constraint </p></li>
+<li><p><strong>c</strong> – <a class="reference internal" href="class_avogadro_1_1_core_1_1_atom.html#class_avogadro_1_1_core_1_1_atom"><span class="std std-ref">Atom</span></a> index of the third atom (for angles or torsions) or MaxIndex </p></li>
+<li><p><strong>d</strong> – <a class="reference internal" href="class_avogadro_1_1_core_1_1_atom.html#class_avogadro_1_1_core_1_1_atom"><span class="std std-ref">Atom</span></a> index of the fourth atom (for torsion constraints) or MaxIndex </p></li>
+<li><p><strong>value</strong> – The value of the constraint, either Angstrom for distance or radians) </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core10Constraint3setE5Index5Index5Index5Index4Real">
+<span id="_CPPv3N8Avogadro4Core10Constraint3setE5Index5Index5Index5Index4Real"></span><span id="_CPPv2N8Avogadro4Core10Constraint3setE5Index5Index5Index5Index4Real"></span><span id="Avogadro::Core::Constraint::set__Index.Index.Index.Index.Real"></span><span class="target" id="class_avogadro_1_1_core_1_1_constraint_1ae3662b1fad341fa3b6b73940452b1dc0"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Index</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">a</span></span>, <span class="n"><span class="pre">Index</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">b</span></span>, <span class="n"><span class="pre">Index</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">c</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">MaxIndex</span></span>, <span class="n"><span class="pre">Index</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">d</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">MaxIndex</span></span>, <span class="n"><span class="pre">Real</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">value</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0.0</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core10Constraint3setE5Index5Index5Index5Index4Real" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the constraint </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> – <a class="reference internal" href="class_avogadro_1_1_core_1_1_atom.html#class_avogadro_1_1_core_1_1_atom"><span class="std std-ref">Atom</span></a> index of the first atom of the constraint </p></li>
+<li><p><strong>b</strong> – <a class="reference internal" href="class_avogadro_1_1_core_1_1_atom.html#class_avogadro_1_1_core_1_1_atom"><span class="std std-ref">Atom</span></a> index of the second atom of the constraint </p></li>
+<li><p><strong>c</strong> – <a class="reference internal" href="class_avogadro_1_1_core_1_1_atom.html#class_avogadro_1_1_core_1_1_atom"><span class="std std-ref">Atom</span></a> index of the third atom (for angles or torsions) or MaxIndex </p></li>
+<li><p><strong>d</strong> – <a class="reference internal" href="class_avogadro_1_1_core_1_1_atom.html#class_avogadro_1_1_core_1_1_atom"><span class="std std-ref">Atom</span></a> index of the fourth atom (for torsion constraints) or MaxIndex </p></li>
+<li><p><strong>value</strong> – The value of the constraint, either Angstrom for distance or radians) </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core10Constraint8setValueE4Real">
+<span id="_CPPv3N8Avogadro4Core10Constraint8setValueE4Real"></span><span id="_CPPv2N8Avogadro4Core10Constraint8setValueE4Real"></span><span id="Avogadro::Core::Constraint::setValue__Real"></span><span class="target" id="class_avogadro_1_1_core_1_1_constraint_1ac5cce2baccc1371fff068970c73614b3"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setValue</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Real</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core10Constraint8setValueE4Real" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the constraint value (distance, angle, dihedral) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – The value of the constraint, either Angstrom for distance or radians) </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core10Constraint5valueEv">
+<span id="_CPPv3NK8Avogadro4Core10Constraint5valueEv"></span><span id="_CPPv2NK8Avogadro4Core10Constraint5valueEv"></span><span id="Avogadro::Core::Constraint::valueC"></span><span class="target" id="class_avogadro_1_1_core_1_1_constraint_1a72887400b9a4d1ba185b887b84876cdc"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">Real</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">value</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core10Constraint5valueEv" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the constraint value </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core10Constraint5atomsEv">
+<span id="_CPPv3NK8Avogadro4Core10Constraint5atomsEv"></span><span id="_CPPv2NK8Avogadro4Core10Constraint5atomsEv"></span><span id="Avogadro::Core::Constraint::atomsC"></span><span class="target" id="class_avogadro_1_1_core_1_1_constraint_1a20dd8b07f985e1f613e49dab98bb15fd"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">tuple</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Index</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">Index</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">Index</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">Index</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">atoms</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core10Constraint5atomsEv" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the atoms in the constraint as a tuple </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core10Constraint6aIndexEv">
+<span id="_CPPv3NK8Avogadro4Core10Constraint6aIndexEv"></span><span id="_CPPv2NK8Avogadro4Core10Constraint6aIndexEv"></span><span id="Avogadro::Core::Constraint::aIndexC"></span><span class="target" id="class_avogadro_1_1_core_1_1_constraint_1aa3524a80072ac4f14d792ef656b689d5"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">Index</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">aIndex</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core10Constraint6aIndexEv" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the atom index from the constraint or MaxIndex </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core10Constraint6bIndexEv">
+<span id="_CPPv3NK8Avogadro4Core10Constraint6bIndexEv"></span><span id="_CPPv2NK8Avogadro4Core10Constraint6bIndexEv"></span><span id="Avogadro::Core::Constraint::bIndexC"></span><span class="target" id="class_avogadro_1_1_core_1_1_constraint_1a3ccce8bd35a817704156c2d9dc03256c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">Index</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">bIndex</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core10Constraint6bIndexEv" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core10Constraint6cIndexEv">
+<span id="_CPPv3NK8Avogadro4Core10Constraint6cIndexEv"></span><span id="_CPPv2NK8Avogadro4Core10Constraint6cIndexEv"></span><span id="Avogadro::Core::Constraint::cIndexC"></span><span class="target" id="class_avogadro_1_1_core_1_1_constraint_1aacb2c730c57cd045bda75db4c2b64f57"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">Index</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cIndex</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core10Constraint6cIndexEv" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core10Constraint6dIndexEv">
+<span id="_CPPv3NK8Avogadro4Core10Constraint6dIndexEv"></span><span id="_CPPv2NK8Avogadro4Core10Constraint6dIndexEv"></span><span id="Avogadro::Core::Constraint::dIndexC"></span><span class="target" id="class_avogadro_1_1_core_1_1_constraint_1aa37cad12377e4117a6a93ccbb7dc9641"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">Index</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dIndex</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core10Constraint6dIndexEv" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core10Constraint1kEv">
+<span id="_CPPv3NK8Avogadro4Core10Constraint1kEv"></span><span id="_CPPv2NK8Avogadro4Core10Constraint1kEv"></span><span id="Avogadro::Core::Constraint::kC"></span><span class="target" id="class_avogadro_1_1_core_1_1_constraint_1a8acb7edfaba81c3c90d003645a1bb486"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">Real</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">k</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core10Constraint1kEv" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core10Constraint4setKE4Real">
+<span id="_CPPv3N8Avogadro4Core10Constraint4setKE4Real"></span><span id="_CPPv2N8Avogadro4Core10Constraint4setKE4Real"></span><span id="Avogadro::Core::Constraint::setK__Real"></span><span class="target" id="class_avogadro_1_1_core_1_1_constraint_1aeb19257831b23ad9160ecce2049c0b0d"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setK</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Real</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">k</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core10Constraint4setKE4Real" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core10Constraint4typeEv">
+<span id="_CPPv3NK8Avogadro4Core10Constraint4typeEv"></span><span id="_CPPv2NK8Avogadro4Core10Constraint4typeEv"></span><span id="Avogadro::Core::Constraint::typeC"></span><span class="target" id="class_avogadro_1_1_core_1_1_constraint_1abf33cf80c76f9c7ccbb5598d14611a21"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro4Core10ConstraintE" title="Avogadro::Core::Constraint"><span class="n"><span class="pre">Constraint</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N8Avogadro4Core10Constraint4TypeE" title="Avogadro::Core::Constraint::Type"><span class="n"><span class="pre">Type</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">type</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core10Constraint4typeEv" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the type of constraint </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core10Constraint7setTypeEN10Constraint4TypeE">
+<span id="_CPPv3NK8Avogadro4Core10Constraint7setTypeEN10Constraint4TypeE"></span><span id="_CPPv2NK8Avogadro4Core10Constraint7setTypeEN10Constraint4TypeE"></span><span id="Avogadro::Core::Constraint::setType__Constraint::TypeC"></span><span class="target" id="class_avogadro_1_1_core_1_1_constraint_1aa7094d3158b95ec60a32dcbfe6a578cc"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setType</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N8Avogadro4Core10ConstraintE" title="Avogadro::Core::Constraint"><span class="n"><span class="pre">Constraint</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N8Avogadro4Core10Constraint4TypeE" title="Avogadro::Core::Constraint::Type"><span class="n"><span class="pre">Type</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">type</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core10Constraint7setTypeEN10Constraint4TypeE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the type of constraint </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>type</strong> – The type of constraint </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-attributes">Protected Attributes</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core10Constraint8m_aIndexE">
+<span id="_CPPv3N8Avogadro4Core10Constraint8m_aIndexE"></span><span id="_CPPv2N8Avogadro4Core10Constraint8m_aIndexE"></span><span id="Avogadro::Core::Constraint::m_aIndex__Index"></span><span class="target" id="class_avogadro_1_1_core_1_1_constraint_1a0f99a6e9b313cff2babb81dc297f08af"></span><span class="n"><span class="pre">Index</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_aIndex</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">MaxIndex</span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core10Constraint8m_aIndexE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core10Constraint8m_bIndexE">
+<span id="_CPPv3N8Avogadro4Core10Constraint8m_bIndexE"></span><span id="_CPPv2N8Avogadro4Core10Constraint8m_bIndexE"></span><span id="Avogadro::Core::Constraint::m_bIndex__Index"></span><span class="target" id="class_avogadro_1_1_core_1_1_constraint_1ab1b2bb058e09961c29ce2c0d25dd4173"></span><span class="n"><span class="pre">Index</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_bIndex</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">MaxIndex</span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core10Constraint8m_bIndexE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core10Constraint8m_cIndexE">
+<span id="_CPPv3N8Avogadro4Core10Constraint8m_cIndexE"></span><span id="_CPPv2N8Avogadro4Core10Constraint8m_cIndexE"></span><span id="Avogadro::Core::Constraint::m_cIndex__Index"></span><span class="target" id="class_avogadro_1_1_core_1_1_constraint_1a84407b1bcb1820c4661cff76617c6615"></span><span class="n"><span class="pre">Index</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_cIndex</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">MaxIndex</span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core10Constraint8m_cIndexE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core10Constraint8m_dIndexE">
+<span id="_CPPv3N8Avogadro4Core10Constraint8m_dIndexE"></span><span id="_CPPv2N8Avogadro4Core10Constraint8m_dIndexE"></span><span id="Avogadro::Core::Constraint::m_dIndex__Index"></span><span class="target" id="class_avogadro_1_1_core_1_1_constraint_1ad98a4424167f8b0557fd76ab5d13c50a"></span><span class="n"><span class="pre">Index</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_dIndex</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">MaxIndex</span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core10Constraint8m_dIndexE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core10Constraint7m_valueE">
+<span id="_CPPv3N8Avogadro4Core10Constraint7m_valueE"></span><span id="_CPPv2N8Avogadro4Core10Constraint7m_valueE"></span><span id="Avogadro::Core::Constraint::m_value__Real"></span><span class="target" id="class_avogadro_1_1_core_1_1_constraint_1a4bbcbfad025351b4c7f94ff5ed35b7c3"></span><span class="n"><span class="pre">Real</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_value</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0.0</span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core10Constraint7m_valueE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core10Constraint3m_kE">
+<span id="_CPPv3N8Avogadro4Core10Constraint3m_kE"></span><span id="_CPPv2N8Avogadro4Core10Constraint3m_kE"></span><span id="Avogadro::Core::Constraint::m_k__Real"></span><span class="target" id="class_avogadro_1_1_core_1_1_constraint_1a1f5a12dcf6509da70b7475c9d091298f"></span><span class="n"><span class="pre">Real</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_k</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1000.0</span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core10Constraint3m_kE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core10Constraint6m_typeE">
+<span id="_CPPv3N8Avogadro4Core10Constraint6m_typeE"></span><span id="_CPPv2N8Avogadro4Core10Constraint6m_typeE"></span><span id="Avogadro::Core::Constraint::m_type__Constraint::Type"></span><span class="target" id="class_avogadro_1_1_core_1_1_constraint_1afe6b9ad3056ef38d9b28c80b5fcea114"></span><span class="k"><span class="pre">mutable</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro4Core10ConstraintE" title="Avogadro::Core::Constraint"><span class="n"><span class="pre">Constraint</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N8Avogadro4Core10Constraint4TypeE" title="Avogadro::Core::Constraint::Type"><span class="n"><span class="pre">Type</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_type</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro4Core10Constraint4Type4NoneE" title="Avogadro::Core::Constraint::None"><span class="n"><span class="pre">None</span></span></a><a class="headerlink" href="#_CPPv4N8Avogadro4Core10Constraint6m_typeE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="class_avogadro_1_1_core_1_1_color3f.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Avogadro::Core::Color3f</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="class_avogadro_1_1_core_1_1_coordinate_block_generator.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Avogadro::Core::CoordinateBlockGenerator</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core10ConstraintE"><code class="docutils literal notranslate"><span class="pre">Constraint</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core10Constraint4TypeE"><code class="docutils literal notranslate"><span class="pre">Constraint::Type</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core10Constraint4Type4NoneE"><code class="docutils literal notranslate"><span class="pre">Constraint::Type::None</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core10Constraint4Type18DistanceConstraintE"><code class="docutils literal notranslate"><span class="pre">Constraint::Type::DistanceConstraint</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core10Constraint4Type15AngleConstraintE"><code class="docutils literal notranslate"><span class="pre">Constraint::Type::AngleConstraint</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core10Constraint4Type17TorsionConstraintE"><code class="docutils literal notranslate"><span class="pre">Constraint::Type::TorsionConstraint</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core10Constraint4Type20OutOfPlaneConstraintE"><code class="docutils literal notranslate"><span class="pre">Constraint::Type::OutOfPlaneConstraint</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core10Constraint4Type17UnknownConstraintE"><code class="docutils literal notranslate"><span class="pre">Constraint::Type::UnknownConstraint</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core10Constraint10ConstraintE5Index5Index5Index5Index4Real"><code class="docutils literal notranslate"><span class="pre">Constraint::Constraint()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core10Constraint3setE5Index5Index5Index5Index4Real"><code class="docutils literal notranslate"><span class="pre">Constraint::set()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core10Constraint8setValueE4Real"><code class="docutils literal notranslate"><span class="pre">Constraint::setValue()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core10Constraint5valueEv"><code class="docutils literal notranslate"><span class="pre">Constraint::value()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core10Constraint5atomsEv"><code class="docutils literal notranslate"><span class="pre">Constraint::atoms()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core10Constraint6aIndexEv"><code class="docutils literal notranslate"><span class="pre">Constraint::aIndex()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core10Constraint6bIndexEv"><code class="docutils literal notranslate"><span class="pre">Constraint::bIndex()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core10Constraint6cIndexEv"><code class="docutils literal notranslate"><span class="pre">Constraint::cIndex()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core10Constraint6dIndexEv"><code class="docutils literal notranslate"><span class="pre">Constraint::dIndex()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core10Constraint1kEv"><code class="docutils literal notranslate"><span class="pre">Constraint::k()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core10Constraint4setKE4Real"><code class="docutils literal notranslate"><span class="pre">Constraint::setK()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core10Constraint4typeEv"><code class="docutils literal notranslate"><span class="pre">Constraint::type()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core10Constraint7setTypeEN10Constraint4TypeE"><code class="docutils literal notranslate"><span class="pre">Constraint::setType()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core10Constraint8m_aIndexE"><code class="docutils literal notranslate"><span class="pre">Constraint::m_aIndex</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core10Constraint8m_bIndexE"><code class="docutils literal notranslate"><span class="pre">Constraint::m_bIndex</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core10Constraint8m_cIndexE"><code class="docutils literal notranslate"><span class="pre">Constraint::m_cIndex</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core10Constraint8m_dIndexE"><code class="docutils literal notranslate"><span class="pre">Constraint::m_dIndex</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core10Constraint7m_valueE"><code class="docutils literal notranslate"><span class="pre">Constraint::m_value</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core10Constraint3m_kE"><code class="docutils literal notranslate"><span class="pre">Constraint::m_k</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core10Constraint6m_typeE"><code class="docutils literal notranslate"><span class="pre">Constraint::m_type</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/avogadro/two.avogadro.cc/edit/main/source/develop/class/class_avogadro_1_1_core_1_1_constraint.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">          <p>
+            ©2026 The OpenChemistry / Avogadro Teams 
+          </p>
+          <p>Covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
+          </p></div>
+      
+        <div class="footer-item">        <p>
+          <a href="/contrib/index.html">Contribute</a>
+        </p></div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.0.2.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.4.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

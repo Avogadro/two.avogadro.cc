@@ -1,0 +1,1112 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Avogadro::QtGui::ChartWidget &#8212; Avogadro 1.103.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=ee427ece" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mermaid-theme.css?v=7f85688a" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=4a00f340"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'develop/class/class_avogadro_1_1_qt_gui_1_1_chart_widget';</script>
+    <link rel="canonical" href="https://two.avogadro.cc/develop/class/class_avogadro_1_1_qt_gui_1_1_chart_widget.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Avogadro::QtGui::ColorButton" href="class_avogadro_1_1_qt_gui_1_1_color_button.html" />
+    <link rel="prev" title="Avogadro::QtGui::ChartDialog" href="class_avogadro_1_1_qt_gui_1_1_chart_dialog.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/avogadro2.png" class="logo__image only-light" alt="Avogadro Documentation- Home"/>
+    <script>document.write(`<img src="../../_static/avogadro2-dark.png" class="logo__image only-dark" alt="Avogadro Documentation- Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../install/index.html">
+    Install
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../docs/index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Develop
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../contrib/index.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../teach/index.html">
+    Teach
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+    Discuss
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/avogadro.cc" title="Bluesky" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-bluesky fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../install/index.html">
+    Install
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../docs/index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Develop
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../contrib/index.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../teach/index.html">
+    Teach
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+    Discuss
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/avogadro.cc" title="Bluesky" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-bluesky fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Develop</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../structure.html">Project Structure and C++ API</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../avogadroapp.html">Avogadro App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calc.html">Avogadro::Calc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../core.html">Avogadro::Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../io.html">Avogadro::IO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../molequeue.html">Avogadro::MoleQueue</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../qtgui.html">Avogadro::QtGui</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_background_file_format.html">Avogadro::QtGui::BackgroundFileFormat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_chart_dialog.html">Avogadro::QtGui::ChartDialog</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Avogadro::QtGui::ChartWidget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_color_button.html">Avogadro::QtGui::ColorButton</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_container_widget.html">Avogadro::QtGui::ContainerWidget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_custom_element_dialog.html">Avogadro::QtGui::CustomElementDialog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_element_detail.html">Avogadro::QtGui::ElementDetail</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_element_item.html">Avogadro::QtGui::ElementItem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_element_translator.html">Avogadro::QtGui::ElementTranslator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_extension_plugin.html">Avogadro::QtGui::ExtensionPlugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_extension_plugin_factory.html">Avogadro::QtGui::ExtensionPluginFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_file_browse_widget.html">Avogadro::QtGui::FileBrowseWidget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_file_format_dialog.html">Avogadro::QtGui::FileFormatDialog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_gaussian_set_concurrent.html">Avogadro::QtGui::GaussianSetConcurrent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_generic_highlighter.html">Avogadro::QtGui::GenericHighlighter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_generic_highlighter_1_1_rule.html">Avogadro::QtGui::GenericHighlighter::Rule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_hydrogen_tools.html">Avogadro::QtGui::HydrogenTools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_insert_fragment_dialog.html">Avogadro::QtGui::InsertFragmentDialog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_interface_script.html">Avogadro::QtGui::InterfaceScript</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_interface_widget.html">Avogadro::QtGui::InterfaceWidget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_json_widget.html">Avogadro::QtGui::JsonWidget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_layer_model.html">Avogadro::QtGui::LayerModel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_mesh_generator.html">Avogadro::QtGui::MeshGenerator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_molecule.html">Avogadro::QtGui::Molecule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_molecule_model.html">Avogadro::QtGui::MoleculeModel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_multi_view_widget.html">Avogadro::QtGui::MultiViewWidget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_periodic_table_scene.html">Avogadro::QtGui::PeriodicTableScene</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_periodic_table_view.html">Avogadro::QtGui::PeriodicTableView</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_persistent_atom.html">Avogadro::QtGui::PersistentAtom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_persistent_bond.html">Avogadro::QtGui::PersistentBond</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_plugin_layer_manager.html">Avogadro::QtGui::PluginLayerManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_python_script.html">Avogadro::QtGui::PythonScript</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_r_w_atom.html">Avogadro::QtGui::RWAtom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_r_w_bond.html">Avogadro::QtGui::RWBond</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_r_w_layer_manager.html">Avogadro::QtGui::RWLayerManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_r_w_molecule.html">Avogadro::QtGui::RWMolecule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_rich_text_delegate.html">Avogadro::QtGui::RichTextDelegate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_scene_plugin.html">Avogadro::QtGui::ScenePlugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_scene_plugin_factory.html">Avogadro::QtGui::ScenePluginFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_scene_plugin_model.html">Avogadro::QtGui::ScenePluginModel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_script_loader.html">Avogadro::QtGui::ScriptLoader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_slater_set_concurrent.html">Avogadro::QtGui::SlaterSetConcurrent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_sort_filter_tree_proxy_model.html">Avogadro::QtGui::SortFilterTreeProxyModel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_timed_progress_dialog.html">Avogadro::QtGui::TimedProgressDialog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_tool_plugin.html">Avogadro::QtGui::ToolPlugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_tool_plugin_factory.html">Avogadro::QtGui::ToolPluginFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_view_factory.html">Avogadro::QtGui::ViewFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_open_g_l_1_1_active_objects.html">Avogadro::QtOpenGL::ActiveObjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_open_g_l_1_1_g_l_widget.html">Avogadro::QtOpenGL::GLWidget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_open_g_l_1_1_qt_text_render_strategy.html">Avogadro::QtOpenGL::QtTextRenderStrategy</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../qtplugins.html">Avogadro::QtPlugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rendering.html">Avogadro::Rendering</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../build.html">Building Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">Script Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rpc.html">Avogadro Remote Procedure Call (RPC)</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Develop</a></li>
+    
+    
+    <li class="breadcrumb-item"><i class="fa-solid fa-ellipsis"></i></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../qtgui.html" class="nav-link">Avogadro::QtGui</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Avogadro::Qt...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="avogadro-qtgui-chartwidget">
+<h1>Avogadro::QtGui::ChartWidget<a class="headerlink" href="#avogadro-qtgui-chartwidget" title="Link to this heading">#</a></h1>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui11ChartWidgetE">
+<span id="_CPPv3N8Avogadro5QtGui11ChartWidgetE"></span><span id="_CPPv2N8Avogadro5QtGui11ChartWidgetE"></span><span id="Avogadro::QtGui::ChartWidget"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_chart_widget"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ChartWidget</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">QWidget</span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui11ChartWidgetE" title="Link to this definition">#</a><br /></dt>
+<dd><p>A Qt widget for displaying charts via JKQtPlotter. </p>
+<p>A wrapper around the JKQtPlotter library, providing a widget for displaying line charts, with multiple series, configurable axes, and a legend, etc. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-types">Public Types</p>
+<dl class="cpp enum-class">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui11ChartWidget4AxisE">
+<span id="_CPPv3N8Avogadro5QtGui11ChartWidget4AxisE"></span><span id="_CPPv2N8Avogadro5QtGui11ChartWidget4AxisE"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_chart_widget_1ae3996976d8ffb3e58d88f58227473f8e"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Axis</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui11ChartWidget4AxisE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Axis enumeration. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui11ChartWidget4Axis1xE">
+<span id="_CPPv3N8Avogadro5QtGui11ChartWidget4Axis1xE"></span><span id="_CPPv2N8Avogadro5QtGui11ChartWidget4Axis1xE"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_chart_widget_1ae3996976d8ffb3e58d88f58227473f8ea9dd4e461268c8034f5c8564e155c67a6"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">x</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui11ChartWidget4Axis1xE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui11ChartWidget4Axis1yE">
+<span id="_CPPv3N8Avogadro5QtGui11ChartWidget4Axis1yE"></span><span id="_CPPv2N8Avogadro5QtGui11ChartWidget4Axis1yE"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_chart_widget_1ae3996976d8ffb3e58d88f58227473f8ea415290769594460e2e485922904f345d"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">y</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui11ChartWidget4Axis1yE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum-class">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui11ChartWidget14LegendLocationE">
+<span id="_CPPv3N8Avogadro5QtGui11ChartWidget14LegendLocationE"></span><span id="_CPPv2N8Avogadro5QtGui11ChartWidget14LegendLocationE"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_chart_widget_1a26c05a819b5f4010f8bc7814edb4daff"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LegendLocation</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui11ChartWidget14LegendLocationE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Legend location enumeration, relative to the plot. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui11ChartWidget14LegendLocation4NoneE">
+<span id="_CPPv3N8Avogadro5QtGui11ChartWidget14LegendLocation4NoneE"></span><span id="_CPPv2N8Avogadro5QtGui11ChartWidget14LegendLocation4NoneE"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_chart_widget_1a26c05a819b5f4010f8bc7814edb4daffa6adf97f83acf6453d4a6a4b1070f3754"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">None</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui11ChartWidget14LegendLocation4NoneE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui11ChartWidget14LegendLocation7TopLeftE">
+<span id="_CPPv3N8Avogadro5QtGui11ChartWidget14LegendLocation7TopLeftE"></span><span id="_CPPv2N8Avogadro5QtGui11ChartWidget14LegendLocation7TopLeftE"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_chart_widget_1a26c05a819b5f4010f8bc7814edb4daffab32beb056fbfe36afbabc6c88c81ab36"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TopLeft</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui11ChartWidget14LegendLocation7TopLeftE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui11ChartWidget14LegendLocation8TopRightE">
+<span id="_CPPv3N8Avogadro5QtGui11ChartWidget14LegendLocation8TopRightE"></span><span id="_CPPv2N8Avogadro5QtGui11ChartWidget14LegendLocation8TopRightE"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_chart_widget_1a26c05a819b5f4010f8bc7814edb4daffa1d85a557894c340c318493f33bfa8efb"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TopRight</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui11ChartWidget14LegendLocation8TopRightE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui11ChartWidget14LegendLocation10BottomLeftE">
+<span id="_CPPv3N8Avogadro5QtGui11ChartWidget14LegendLocation10BottomLeftE"></span><span id="_CPPv2N8Avogadro5QtGui11ChartWidget14LegendLocation10BottomLeftE"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_chart_widget_1a26c05a819b5f4010f8bc7814edb4daffa98e5a1c44509157ebcaf46c515c78875"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">BottomLeft</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui11ChartWidget14LegendLocation10BottomLeftE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui11ChartWidget14LegendLocation11BottomRightE">
+<span id="_CPPv3N8Avogadro5QtGui11ChartWidget14LegendLocation11BottomRightE"></span><span id="_CPPv2N8Avogadro5QtGui11ChartWidget14LegendLocation11BottomRightE"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_chart_widget_1a26c05a819b5f4010f8bc7814edb4daffa9146bfc669fddc88db2c4d89297d0e9a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">BottomRight</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui11ChartWidget14LegendLocation11BottomRightE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui11ChartWidget11ChartWidgetEP7QWidget">
+<span id="_CPPv3N8Avogadro5QtGui11ChartWidget11ChartWidgetEP7QWidget"></span><span id="_CPPv2N8Avogadro5QtGui11ChartWidget11ChartWidgetEP7QWidget"></span><span id="Avogadro::QtGui::ChartWidget::ChartWidget__QWidgetP"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_chart_widget_1aca5309331b24393724e77577e1c83762"></span><span class="k"><span class="pre">explicit</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ChartWidget</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">QWidget</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">p</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">nullptr</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui11ChartWidget11ChartWidgetEP7QWidget" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui11ChartWidgetD0Ev">
+<span id="_CPPv3N8Avogadro5QtGui11ChartWidgetD0Ev"></span><span id="_CPPv2N8Avogadro5QtGui11ChartWidgetD0Ev"></span><span id="Avogadro::QtGui::ChartWidget::~ChartWidget"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_chart_widget_1ab573b83ee1829c231f9f32a7a778f814"></span><span class="sig-name descname"><span class="n"><span class="pre">~ChartWidget</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui11ChartWidgetD0Ev" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui11ChartWidget7addPlotERKNSt6vectorIfEERKNSt6vectorIfEERK8color4ubRK7QStringRK7QString">
+<span id="_CPPv3N8Avogadro5QtGui11ChartWidget7addPlotERKNSt6vectorIfEERKNSt6vectorIfEERK8color4ubRK7QStringRK7QString"></span><span id="_CPPv2N8Avogadro5QtGui11ChartWidget7addPlotERKNSt6vectorIfEERKNSt6vectorIfEERK8color4ubRK7QStringRK7QString"></span><span id="Avogadro::QtGui::ChartWidget::addPlot__std::vector:float:CR.std::vector:float:CR.color4ubCR.QStringCR.QStringCR"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_chart_widget_1afa727eb040c4ce1c1281dc111c9a7b03"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addPlot</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">float</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">x</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">float</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">y</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">color4ub</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">color</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">color4ub</span></span><span class="p"><span class="pre">{</span></span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">255</span></span><span class="p"><span class="pre">}</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">xName</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;x&quot;</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">yName</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;y&quot;</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui11ChartWidget7addPlotERKNSt6vectorIfEERKNSt6vectorIfEERK8color4ubRK7QStringRK7QString" title="Link to this definition">#</a><br /></dt>
+<dd><p>Add a plot to the chart. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – The x values </p></li>
+<li><p><strong>y</strong> – The y values </p></li>
+<li><p><strong>color</strong> – The color of the line </p></li>
+<li><p><strong>xName</strong> – The name of the x axis </p></li>
+<li><p><strong>yName</strong> – The name of the y axis </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if successful </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui11ChartWidget9addSeriesERKNSt6vectorIfEERK8color4ubRK7QString">
+<span id="_CPPv3N8Avogadro5QtGui11ChartWidget9addSeriesERKNSt6vectorIfEERK8color4ubRK7QString"></span><span id="_CPPv2N8Avogadro5QtGui11ChartWidget9addSeriesERKNSt6vectorIfEERK8color4ubRK7QString"></span><span id="Avogadro::QtGui::ChartWidget::addSeries__std::vector:float:CR.color4ubCR.QStringCR"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_chart_widget_1aed01a4c16ad652e107cc29cb96331fc2"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addSeries</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">float</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">y</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">color4ub</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">color</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">color4ub</span></span><span class="p"><span class="pre">{</span></span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">255</span></span><span class="p"><span class="pre">}</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;&quot;</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui11ChartWidget9addSeriesERKNSt6vectorIfEERK8color4ubRK7QString" title="Link to this definition">#</a><br /></dt>
+<dd><p>Add a series to an existing chart. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>y</strong> – The y values </p></li>
+<li><p><strong>color</strong> – The color of the line </p></li>
+<li><p><strong>name</strong> – The name of the series </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if successful </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui11ChartWidget8addPlotsERKNSt6vectorINSt6vectorIfEEEERK8color4ubRK11QStringList">
+<span id="_CPPv3N8Avogadro5QtGui11ChartWidget8addPlotsERKNSt6vectorINSt6vectorIfEEEERK8color4ubRK11QStringList"></span><span id="_CPPv2N8Avogadro5QtGui11ChartWidget8addPlotsERKNSt6vectorINSt6vectorIfEEEERK8color4ubRK11QStringList"></span><span id="Avogadro::QtGui::ChartWidget::addPlots__std::vector:std::vector:float::CR.color4ubCR.QStringListCR"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_chart_widget_1aa79e9f1cec6ddd2aa292bc1fd6ebd888"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addPlots</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">float</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">plotData</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">color4ub</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">color</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">color4ub</span></span><span class="p"><span class="pre">{</span></span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">255</span></span><span class="p"><span class="pre">}</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QStringList</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">names</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui11ChartWidget8addPlotsERKNSt6vectorINSt6vectorIfEEEERK8color4ubRK11QStringList" title="Link to this definition">#</a><br /></dt>
+<dd><p>Add multiple lines to the chart. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>plotData</strong> – The data for the plots, column[0] is x, rest are y </p></li>
+<li><p><strong>color</strong> – The color of the lines </p></li>
+<li><p><strong>names</strong> – The names of the lines (including for the x axis) </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if successful </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui11ChartWidget10clearPlotsEv">
+<span id="_CPPv3N8Avogadro5QtGui11ChartWidget10clearPlotsEv"></span><span id="_CPPv2N8Avogadro5QtGui11ChartWidget10clearPlotsEv"></span><span id="Avogadro::QtGui::ChartWidget::clearPlots"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_chart_widget_1a610a39c2bcb25fb14143d7bf705c3c92"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">clearPlots</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui11ChartWidget10clearPlotsEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Clear all plots and data. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui11ChartWidget13setXAxisTitleERK7QString">
+<span id="_CPPv3N8Avogadro5QtGui11ChartWidget13setXAxisTitleERK7QString"></span><span id="_CPPv2N8Avogadro5QtGui11ChartWidget13setXAxisTitleERK7QString"></span><span id="Avogadro::QtGui::ChartWidget::setXAxisTitle__QStringCR"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_chart_widget_1ae8c74afd32d2077db208b7712df0fc7a"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setXAxisTitle</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">title</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui11ChartWidget13setXAxisTitleERK7QString" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the title of the x axis. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>title</strong> – The title </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui11ChartWidget13setYAxisTitleERK7QString">
+<span id="_CPPv3N8Avogadro5QtGui11ChartWidget13setYAxisTitleERK7QString"></span><span id="_CPPv2N8Avogadro5QtGui11ChartWidget13setYAxisTitleERK7QString"></span><span id="Avogadro::QtGui::ChartWidget::setYAxisTitle__QStringCR"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_chart_widget_1ac53c57580825b98f9ba86fe443af0d68"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setYAxisTitle</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">title</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui11ChartWidget13setYAxisTitleERK7QString" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the title of the y axis. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>title</strong> – The title </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui11ChartWidget13setTickLabelsE4AxisRKNSt6vectorIfEERK11QStringList">
+<span id="_CPPv3N8Avogadro5QtGui11ChartWidget13setTickLabelsE4AxisRKNSt6vectorIfEERK11QStringList"></span><span id="_CPPv2N8Avogadro5QtGui11ChartWidget13setTickLabelsE4AxisRKNSt6vectorIfEERK11QStringList"></span><span id="Avogadro::QtGui::ChartWidget::setTickLabels__Axis.std::vector:float:CR.QStringListCR"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_chart_widget_1a106df1aecfaa18dca36f51b334a12e9b"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setTickLabels</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N8Avogadro5QtGui11ChartWidget4AxisE" title="Avogadro::QtGui::ChartWidget::Axis"><span class="n"><span class="pre">Axis</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">a</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">float</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">tickPositions</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QStringList</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">tickLabels</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui11ChartWidget13setTickLabelsE4AxisRKNSt6vectorIfEERK11QStringList" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the custom tick positions and labels for an axis. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> – The axis </p></li>
+<li><p><strong>tickPositions</strong> – The tick positions </p></li>
+<li><p><strong>tickLabels</strong> – The tick labels </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if successful </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui11ChartWidget13setAxisLimitsE4Axisff">
+<span id="_CPPv3N8Avogadro5QtGui11ChartWidget13setAxisLimitsE4Axisff"></span><span id="_CPPv2N8Avogadro5QtGui11ChartWidget13setAxisLimitsE4Axisff"></span><span id="Avogadro::QtGui::ChartWidget::setAxisLimits__Axis.float.float"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_chart_widget_1a26068b76c8170433e12362575f2c4460"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setAxisLimits</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N8Avogadro5QtGui11ChartWidget4AxisE" title="Avogadro::QtGui::ChartWidget::Axis"><span class="n"><span class="pre">Axis</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">a</span></span>, <span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">min</span></span>, <span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">max</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui11ChartWidget13setAxisLimitsE4Axisff" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the default axis limits. </p>
+<p>
+If minimum is bigger than maximum, the axis will be reversed </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> – The axis </p></li>
+<li><p><strong>min</strong> – The minimum value </p></li>
+<li><p><strong>max</strong> – The maximum value </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if successful</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui11ChartWidget14setXAxisLimitsEff">
+<span id="_CPPv3N8Avogadro5QtGui11ChartWidget14setXAxisLimitsEff"></span><span id="_CPPv2N8Avogadro5QtGui11ChartWidget14setXAxisLimitsEff"></span><span id="Avogadro::QtGui::ChartWidget::setXAxisLimits__float.float"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_chart_widget_1a6f3036aa08697cead0244e98ac39ffa8"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setXAxisLimits</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">min</span></span>, <span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">max</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui11ChartWidget14setXAxisLimitsEff" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the default x-axis limits. </p>
+<p>
+If minimum is bigger than maximum, the axis will be reversed </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min</strong> – The minimum value </p></li>
+<li><p><strong>max</strong> – The maximum value </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if successful</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui11ChartWidget14setYAxisLimitsEff">
+<span id="_CPPv3N8Avogadro5QtGui11ChartWidget14setYAxisLimitsEff"></span><span id="_CPPv2N8Avogadro5QtGui11ChartWidget14setYAxisLimitsEff"></span><span id="Avogadro::QtGui::ChartWidget::setYAxisLimits__float.float"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_chart_widget_1ae485efb211d4e250790cd073226cfef0"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setYAxisLimits</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">min</span></span>, <span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">max</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui11ChartWidget14setYAxisLimitsEff" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the default y-axis limits. </p>
+<p>
+If minimum is bigger than maximum, the axis will be reversed </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min</strong> – The minimum value </p></li>
+<li><p><strong>max</strong> – The maximum value </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if successful</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui11ChartWidget11setFontSizeEi">
+<span id="_CPPv3N8Avogadro5QtGui11ChartWidget11setFontSizeEi"></span><span id="_CPPv2N8Avogadro5QtGui11ChartWidget11setFontSizeEi"></span><span id="Avogadro::QtGui::ChartWidget::setFontSize__i"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_chart_widget_1a932e9ba7e0ef8541febe2f56f075c362"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setFontSize</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">size</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">14</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui11ChartWidget11setFontSizeEi" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the font size for the ticks and axis titles. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>size</strong> – The font size </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if successful </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui11ChartWidget12setLineWidthEf">
+<span id="_CPPv3N8Avogadro5QtGui11ChartWidget12setLineWidthEf"></span><span id="_CPPv2N8Avogadro5QtGui11ChartWidget12setLineWidthEf"></span><span id="Avogadro::QtGui::ChartWidget::setLineWidth__float"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_chart_widget_1a6587cc9ed29ba265c5461f58425ab190"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setLineWidth</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">width</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1.0</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui11ChartWidget12setLineWidthEf" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the line width of the graph lines (in pt) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>width</strong> – The line width </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if successful </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui11ChartWidget15setAxisLogScaleE4Axisb">
+<span id="_CPPv3N8Avogadro5QtGui11ChartWidget15setAxisLogScaleE4Axisb"></span><span id="_CPPv2N8Avogadro5QtGui11ChartWidget15setAxisLogScaleE4Axisb"></span><span id="Avogadro::QtGui::ChartWidget::setAxisLogScale__Axis.b"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_chart_widget_1a1c4d210fb7319ed94567e0076d53faae"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setAxisLogScale</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N8Avogadro5QtGui11ChartWidget4AxisE" title="Avogadro::QtGui::ChartWidget::Axis"><span class="n"><span class="pre">Axis</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">a</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">logScale</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui11ChartWidget15setAxisLogScaleE4Axisb" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set to logarithmic scale. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> – The axis </p></li>
+<li><p><strong>logScale</strong> – True for log scale, false for linear </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if successful </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui11ChartWidget13setAxisDigitsE4Axisi">
+<span id="_CPPv3N8Avogadro5QtGui11ChartWidget13setAxisDigitsE4Axisi"></span><span id="_CPPv2N8Avogadro5QtGui11ChartWidget13setAxisDigitsE4Axisi"></span><span id="Avogadro::QtGui::ChartWidget::setAxisDigits__Axis.i"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_chart_widget_1a4a02cc2638f0b1b059fc30f8934c4917"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setAxisDigits</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N8Avogadro5QtGui11ChartWidget4AxisE" title="Avogadro::QtGui::ChartWidget::Axis"><span class="n"><span class="pre">Axis</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">a</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">digits</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">2</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui11ChartWidget13setAxisDigitsE4Axisi" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the number of digits to display in tick labels. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> – The axis </p></li>
+<li><p><strong>digits</strong> – The number of digits </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if successful </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui11ChartWidget10labelPeaksEifi">
+<span id="_CPPv3N8Avogadro5QtGui11ChartWidget10labelPeaksEifi"></span><span id="_CPPv2N8Avogadro5QtGui11ChartWidget10labelPeaksEifi"></span><span id="Avogadro::QtGui::ChartWidget::labelPeaks__i.float.i"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_chart_widget_1ad7f70526e80953427288125002b46013"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">labelPeaks</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">yColumn</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span>, <span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">threshold</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1.0</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">windowSize</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">5</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui11ChartWidget10labelPeaksEifi" title="Link to this definition">#</a><br /></dt>
+<dd><p>Label peaks in the plot. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>yColumn</strong> – The column of the y values </p></li>
+<li><p><strong>threshold</strong> – The threshold for peak detection </p></li>
+<li><p><strong>windowSize</strong> – The window size for peak detection (in samples along the x-axis) </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui11ChartWidget12setAxisColorE4AxisRK8color4ub">
+<span id="_CPPv3N8Avogadro5QtGui11ChartWidget12setAxisColorE4AxisRK8color4ub"></span><span id="_CPPv2N8Avogadro5QtGui11ChartWidget12setAxisColorE4AxisRK8color4ub"></span><span id="Avogadro::QtGui::ChartWidget::setAxisColor__Axis.color4ubCR"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_chart_widget_1a6c385f856fd6ab874d7f07d2b4b8f57b"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setAxisColor</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N8Avogadro5QtGui11ChartWidget4AxisE" title="Avogadro::QtGui::ChartWidget::Axis"><span class="n"><span class="pre">Axis</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">a</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">color4ub</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">color</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui11ChartWidget12setAxisColorE4AxisRK8color4ub" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the color of an axis. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> – The axis </p></li>
+<li><p><strong>color</strong> – The color </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui11ChartWidget18setBackgroundColorERK8color4ub">
+<span id="_CPPv3N8Avogadro5QtGui11ChartWidget18setBackgroundColorERK8color4ub"></span><span id="_CPPv2N8Avogadro5QtGui11ChartWidget18setBackgroundColorERK8color4ub"></span><span id="Avogadro::QtGui::ChartWidget::setBackgroundColor__color4ubCR"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_chart_widget_1ac9733ac383a9826beb4b01686f5e231c"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setBackgroundColor</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">color4ub</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">color</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui11ChartWidget18setBackgroundColorERK8color4ub" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the color of the plot area. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>color</strong> – The color </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui11ChartWidget17setLegendLocationE14LegendLocation">
+<span id="_CPPv3N8Avogadro5QtGui11ChartWidget17setLegendLocationE14LegendLocation"></span><span id="_CPPv2N8Avogadro5QtGui11ChartWidget17setLegendLocationE14LegendLocation"></span><span id="Avogadro::QtGui::ChartWidget::setLegendLocation__LegendLocation"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_chart_widget_1ad211b0fc7be4e497822179c9d569f7ae"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setLegendLocation</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N8Avogadro5QtGui11ChartWidget14LegendLocationE" title="Avogadro::QtGui::ChartWidget::LegendLocation"><span class="n"><span class="pre">LegendLocation</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">location</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui11ChartWidget17setLegendLocationE14LegendLocation" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the location of the legend. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>location</strong> – The location </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui11ChartWidget13setShowPointsEb">
+<span id="_CPPv3N8Avogadro5QtGui11ChartWidget13setShowPointsEb"></span><span id="_CPPv2N8Avogadro5QtGui11ChartWidget13setShowPointsEb"></span><span id="Avogadro::QtGui::ChartWidget::setShowPoints__b"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_chart_widget_1a107100d62a2ae0aedb64996f1ab509c0"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setShowPoints</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">visible</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui11ChartWidget13setShowPointsEb" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the visibility of data points. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>visible</strong> – True to show data points, false to hide them </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-slots">Public Slots</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui11ChartWidget11plotClickedEddN2Qt17KeyboardModifiersEN2Qt11MouseButtonE">
+<span id="_CPPv3N8Avogadro5QtGui11ChartWidget11plotClickedEddN2Qt17KeyboardModifiersEN2Qt11MouseButtonE"></span><span id="_CPPv2N8Avogadro5QtGui11ChartWidget11plotClickedEddN2Qt17KeyboardModifiersEN2Qt11MouseButtonE"></span><span id="Avogadro::QtGui::ChartWidget::plotClicked__double.double.Qt::KeyboardModifiers.Qt::MouseButton"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_chart_widget_1ae73f33afff743a17f44da6cb538c3164"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">plotClicked</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">x</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">y</span></span>, <span class="n"><span class="pre">Qt</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">KeyboardModifiers</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">modifiers</span></span>, <span class="n"><span class="pre">Qt</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MouseButton</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">button</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui11ChartWidget11plotClickedEddN2Qt17KeyboardModifiersEN2Qt11MouseButtonE" title="Link to this definition">#</a><br /></dt>
+<dd><p>register a callback for when the user clicks on the chart </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui11ChartWidget9resetZoomEv">
+<span id="_CPPv3N8Avogadro5QtGui11ChartWidget9resetZoomEv"></span><span id="_CPPv2N8Avogadro5QtGui11ChartWidget9resetZoomEv"></span><span id="Avogadro::QtGui::ChartWidget::resetZoom"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_chart_widget_1aef3fe1657d765ebb8005ededdbd3aca5"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">resetZoom</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui11ChartWidget9resetZoomEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Reset the zoom level of the plot (auto-scale to data) </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-signals">Signals</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui11ChartWidget7clickedEffN2Qt17KeyboardModifiersE">
+<span id="_CPPv3N8Avogadro5QtGui11ChartWidget7clickedEffN2Qt17KeyboardModifiersE"></span><span id="_CPPv2N8Avogadro5QtGui11ChartWidget7clickedEffN2Qt17KeyboardModifiersE"></span><span id="Avogadro::QtGui::ChartWidget::clicked__float.float.Qt::KeyboardModifiers"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_chart_widget_1aae0ddf69382c6e422ba87fe517be23f7"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">clicked</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">x</span></span>, <span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">y</span></span>, <span class="n"><span class="pre">Qt</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">KeyboardModifiers</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">modifiers</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui11ChartWidget7clickedEffN2Qt17KeyboardModifiersE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Emitted when the user single-clicks on the chart. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="class_avogadro_1_1_qt_gui_1_1_chart_dialog.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Avogadro::QtGui::ChartDialog</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="class_avogadro_1_1_qt_gui_1_1_color_button.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Avogadro::QtGui::ColorButton</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui11ChartWidgetE"><code class="docutils literal notranslate"><span class="pre">ChartWidget</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui11ChartWidget4AxisE"><code class="docutils literal notranslate"><span class="pre">ChartWidget::Axis</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui11ChartWidget4Axis1xE"><code class="docutils literal notranslate"><span class="pre">ChartWidget::Axis::x</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui11ChartWidget4Axis1yE"><code class="docutils literal notranslate"><span class="pre">ChartWidget::Axis::y</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui11ChartWidget14LegendLocationE"><code class="docutils literal notranslate"><span class="pre">ChartWidget::LegendLocation</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui11ChartWidget14LegendLocation4NoneE"><code class="docutils literal notranslate"><span class="pre">ChartWidget::LegendLocation::None</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui11ChartWidget14LegendLocation7TopLeftE"><code class="docutils literal notranslate"><span class="pre">ChartWidget::LegendLocation::TopLeft</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui11ChartWidget14LegendLocation8TopRightE"><code class="docutils literal notranslate"><span class="pre">ChartWidget::LegendLocation::TopRight</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui11ChartWidget14LegendLocation10BottomLeftE"><code class="docutils literal notranslate"><span class="pre">ChartWidget::LegendLocation::BottomLeft</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui11ChartWidget14LegendLocation11BottomRightE"><code class="docutils literal notranslate"><span class="pre">ChartWidget::LegendLocation::BottomRight</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui11ChartWidget11ChartWidgetEP7QWidget"><code class="docutils literal notranslate"><span class="pre">ChartWidget::ChartWidget()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui11ChartWidgetD0Ev"><code class="docutils literal notranslate"><span class="pre">ChartWidget::~ChartWidget()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui11ChartWidget7addPlotERKNSt6vectorIfEERKNSt6vectorIfEERK8color4ubRK7QStringRK7QString"><code class="docutils literal notranslate"><span class="pre">ChartWidget::addPlot()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui11ChartWidget9addSeriesERKNSt6vectorIfEERK8color4ubRK7QString"><code class="docutils literal notranslate"><span class="pre">ChartWidget::addSeries()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui11ChartWidget8addPlotsERKNSt6vectorINSt6vectorIfEEEERK8color4ubRK11QStringList"><code class="docutils literal notranslate"><span class="pre">ChartWidget::addPlots()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui11ChartWidget10clearPlotsEv"><code class="docutils literal notranslate"><span class="pre">ChartWidget::clearPlots()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui11ChartWidget13setXAxisTitleERK7QString"><code class="docutils literal notranslate"><span class="pre">ChartWidget::setXAxisTitle()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui11ChartWidget13setYAxisTitleERK7QString"><code class="docutils literal notranslate"><span class="pre">ChartWidget::setYAxisTitle()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui11ChartWidget13setTickLabelsE4AxisRKNSt6vectorIfEERK11QStringList"><code class="docutils literal notranslate"><span class="pre">ChartWidget::setTickLabels()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui11ChartWidget13setAxisLimitsE4Axisff"><code class="docutils literal notranslate"><span class="pre">ChartWidget::setAxisLimits()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui11ChartWidget14setXAxisLimitsEff"><code class="docutils literal notranslate"><span class="pre">ChartWidget::setXAxisLimits()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui11ChartWidget14setYAxisLimitsEff"><code class="docutils literal notranslate"><span class="pre">ChartWidget::setYAxisLimits()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui11ChartWidget11setFontSizeEi"><code class="docutils literal notranslate"><span class="pre">ChartWidget::setFontSize()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui11ChartWidget12setLineWidthEf"><code class="docutils literal notranslate"><span class="pre">ChartWidget::setLineWidth()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui11ChartWidget15setAxisLogScaleE4Axisb"><code class="docutils literal notranslate"><span class="pre">ChartWidget::setAxisLogScale()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui11ChartWidget13setAxisDigitsE4Axisi"><code class="docutils literal notranslate"><span class="pre">ChartWidget::setAxisDigits()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui11ChartWidget10labelPeaksEifi"><code class="docutils literal notranslate"><span class="pre">ChartWidget::labelPeaks()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui11ChartWidget12setAxisColorE4AxisRK8color4ub"><code class="docutils literal notranslate"><span class="pre">ChartWidget::setAxisColor()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui11ChartWidget18setBackgroundColorERK8color4ub"><code class="docutils literal notranslate"><span class="pre">ChartWidget::setBackgroundColor()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui11ChartWidget17setLegendLocationE14LegendLocation"><code class="docutils literal notranslate"><span class="pre">ChartWidget::setLegendLocation()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui11ChartWidget13setShowPointsEb"><code class="docutils literal notranslate"><span class="pre">ChartWidget::setShowPoints()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui11ChartWidget11plotClickedEddN2Qt17KeyboardModifiersEN2Qt11MouseButtonE"><code class="docutils literal notranslate"><span class="pre">ChartWidget::plotClicked()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui11ChartWidget9resetZoomEv"><code class="docutils literal notranslate"><span class="pre">ChartWidget::resetZoom()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui11ChartWidget7clickedEffN2Qt17KeyboardModifiersE"><code class="docutils literal notranslate"><span class="pre">ChartWidget::clicked()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/avogadro/two.avogadro.cc/edit/main/source/develop/class/class_avogadro_1_1_qt_gui_1_1_chart_widget.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">          <p>
+            ©2026 The OpenChemistry / Avogadro Teams 
+          </p>
+          <p>Covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
+          </p></div>
+      
+        <div class="footer-item">        <p>
+          <a href="/contrib/index.html">Contribute</a>
+        </p></div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.0.2.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.4.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

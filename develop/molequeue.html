@@ -33,6 +33,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=ee427ece" />
+    <link rel="stylesheet" type="text/css" href="../_static/mermaid-theme.css?v=7f85688a" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -56,7 +57,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Avogadro::MoleQueue::BatchJob" href="class/class_avogadro_1_1_mole_queue_1_1_batch_job.html" />
-    <link rel="prev" title="Avogadro::QuantumIO::NWChemLog" href="class/class_avogadro_1_1_quantum_i_o_1_1_n_w_chem_log.html" />
+    <link rel="prev" title="Avogadro::QuantumIO::QCSchema" href="class/class_avogadro_1_1_quantum_i_o_1_1_q_c_schema.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -432,12 +433,9 @@ document.write(`
   <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Develop</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="index.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="structure.html">Project Structure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="build.html">Building Source Code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="scripts/index.html">Script Plugins</a></li>
-<li class="toctree-l1"><a class="reference internal" href="rpc.html">Avogadro Remote Procedure Call (RPC)</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="classlist.html">API Documentation</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="structure.html">Project Structure and C++ API</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="avogadroapp.html">Avogadro App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="calc.html">Avogadro::Calc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core.html">Avogadro::Core</a></li>
 <li class="toctree-l2"><a class="reference internal" href="io.html">Avogadro::IO</a></li>
 <li class="toctree-l2 current active has-children"><a class="current reference internal" href="#">Avogadro::MoleQueue</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -454,9 +452,11 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="qtgui.html">Avogadro::QtGui</a></li>
 <li class="toctree-l2"><a class="reference internal" href="qtplugins.html">Avogadro::QtPlugins</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rendering.html">Avogadro::Rendering</a></li>
-<li class="toctree-l2"><a class="reference internal" href="vtk.html">Avogadro::VTK</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1"><a class="reference internal" href="build.html">Building Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripts/index.html">Script Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rpc.html">Avogadro Remote Procedure Call (RPC)</a></li>
 </ul>
 </div>
 </nav></div>
@@ -498,7 +498,7 @@ document.write(`
     <li class="breadcrumb-item"><a href="index.html" class="nav-link">Develop</a></li>
     
     
-    <li class="breadcrumb-item"><a href="classlist.html" class="nav-link">API Documentation</a></li>
+    <li class="breadcrumb-item"><a href="structure.html" class="nav-link">Project Structure and C++ API</a></li>
     
     <li class="breadcrumb-item active" aria-current="page">Avogadro::MoleQueue</li>
   </ul>
@@ -529,16 +529,6 @@ are still handled by this code, including <a class="reference internal" href="rp
 scripting <code class="docutils literal notranslate"><span class="pre">avogadroapp</span></code> and handling scripts for input generator dialogs.</p>
 </div>
 <div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="class/class_avogadro_1_1_mole_queue_1_1_batch_job.html">Avogadro::MoleQueue::BatchJob</a></li>
-<li class="toctree-l1"><a class="reference internal" href="class/class_avogadro_1_1_mole_queue_1_1_input_generator.html">Avogadro::MoleQueue::InputGenerator</a></li>
-<li class="toctree-l1"><a class="reference internal" href="class/class_avogadro_1_1_mole_queue_1_1_input_generator_dialog.html">Avogadro::MoleQueue::InputGeneratorDialog</a></li>
-<li class="toctree-l1"><a class="reference internal" href="class/class_avogadro_1_1_mole_queue_1_1_input_generator_widget.html">Avogadro::MoleQueue::InputGeneratorWidget</a></li>
-<li class="toctree-l1"><a class="reference internal" href="class/class_avogadro_1_1_mole_queue_1_1_mole_queue_dialog.html">Avogadro::MoleQueue::MoleQueueDialog</a></li>
-<li class="toctree-l1"><a class="reference internal" href="class/class_avogadro_1_1_mole_queue_1_1_mole_queue_manager.html">Avogadro::MoleQueue::MoleQueueManager</a></li>
-<li class="toctree-l1"><a class="reference internal" href="class/class_avogadro_1_1_mole_queue_1_1_mole_queue_queue_list_model.html">Avogadro::MoleQueue::MoleQueueQueueListModel</a></li>
-<li class="toctree-l1"><a class="reference internal" href="class/class_avogadro_1_1_mole_queue_1_1_mole_queue_widget.html">Avogadro::MoleQueue::MoleQueueWidget</a></li>
-</ul>
 </div>
 </section>
 
@@ -553,12 +543,12 @@ scripting <code class="docutils literal notranslate"><span class="pre">avogadroa
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="class/class_avogadro_1_1_quantum_i_o_1_1_n_w_chem_log.html"
+       href="class/class_avogadro_1_1_quantum_i_o_1_1_q_c_schema.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Avogadro::QuantumIO::NWChemLog</p>
+        <p class="prev-next-title">Avogadro::QuantumIO::QCSchema</p>
       </div>
     </a>
     <a class="right-next"

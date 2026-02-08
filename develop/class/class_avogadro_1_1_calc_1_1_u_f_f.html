@@ -1,0 +1,860 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Avogadro::Calc::UFF &#8212; Avogadro 1.103.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=ee427ece" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mermaid-theme.css?v=7f85688a" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=4a00f340"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'develop/class/class_avogadro_1_1_calc_1_1_u_f_f';</script>
+    <link rel="canonical" href="https://two.avogadro.cc/develop/class/class_avogadro_1_1_calc_1_1_u_f_f.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Avogadro::Core" href="../core.html" />
+    <link rel="prev" title="Avogadro::Calc::LennardJones" href="class_avogadro_1_1_calc_1_1_lennard_jones.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/avogadro2.png" class="logo__image only-light" alt="Avogadro Documentation- Home"/>
+    <script>document.write(`<img src="../../_static/avogadro2-dark.png" class="logo__image only-dark" alt="Avogadro Documentation- Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../install/index.html">
+    Install
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../docs/index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Develop
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../contrib/index.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../teach/index.html">
+    Teach
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+    Discuss
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/avogadro.cc" title="Bluesky" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-bluesky fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../install/index.html">
+    Install
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../docs/index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Develop
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../contrib/index.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../teach/index.html">
+    Teach
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+    Discuss
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/avogadro.cc" title="Bluesky" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-bluesky fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Develop</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../structure.html">Project Structure and C++ API</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../avogadroapp.html">Avogadro App</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../calc.html">Avogadro::Calc</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_calc_1_1_charge_manager.html">Avogadro::Calc::ChargeManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_calc_1_1_charge_model.html">Avogadro::Calc::ChargeModel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_calc_1_1_default_model.html">Avogadro::Calc::DefaultModel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_calc_1_1_energy_calculator.html">Avogadro::Calc::EnergyCalculator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_calc_1_1_energy_manager.html">Avogadro::Calc::EnergyManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_calc_1_1_lennard_jones.html">Avogadro::Calc::LennardJones</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Avogadro::Calc::UFF</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../core.html">Avogadro::Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../io.html">Avogadro::IO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../molequeue.html">Avogadro::MoleQueue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qtgui.html">Avogadro::QtGui</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qtplugins.html">Avogadro::QtPlugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rendering.html">Avogadro::Rendering</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../build.html">Building Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">Script Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rpc.html">Avogadro Remote Procedure Call (RPC)</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Develop</a></li>
+    
+    
+    <li class="breadcrumb-item"><i class="fa-solid fa-ellipsis"></i></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../calc.html" class="nav-link">Avogadro::Calc</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Avogadro::Calc::UFF</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="avogadro-calc-uff">
+<h1>Avogadro::Calc::UFF<a class="headerlink" href="#avogadro-calc-uff" title="Link to this heading">#</a></h1>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Calc3UFFE">
+<span id="_CPPv3N8Avogadro4Calc3UFFE"></span><span id="_CPPv2N8Avogadro4Calc3UFFE"></span><span id="Avogadro::Calc::UFF"></span><span class="target" id="class_avogadro_1_1_calc_1_1_u_f_f"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">UFF</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_calc_1_1_energy_calculator.html#_CPPv4N8Avogadro4Calc16EnergyCalculatorE" title="Avogadro::Calc::EnergyCalculator"><span class="n"><span class="pre">EnergyCalculator</span></span></a><a class="headerlink" href="#_CPPv4N8Avogadro4Calc3UFFE" title="Link to this definition">#</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Calc3UFF3UFFEv">
+<span id="_CPPv3N8Avogadro4Calc3UFF3UFFEv"></span><span id="_CPPv2N8Avogadro4Calc3UFF3UFFEv"></span><span id="Avogadro::Calc::UFF::UFF"></span><span class="target" id="class_avogadro_1_1_calc_1_1_u_f_f_1a338d598de23104e95f8704b04aeed58f"></span><span class="sig-name descname"><span class="n"><span class="pre">UFF</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Calc3UFF3UFFEv" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Calc3UFFD0Ev">
+<span id="_CPPv3N8Avogadro4Calc3UFFD0Ev"></span><span id="_CPPv2N8Avogadro4Calc3UFFD0Ev"></span><span id="Avogadro::Calc::UFF::~UFF"></span><span class="target" id="class_avogadro_1_1_calc_1_1_u_f_f_1a365c5058d72784fd3486f24a0342fdd5"></span><span class="sig-name descname"><span class="n"><span class="pre">~UFF</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Calc3UFFD0Ev" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Calc3UFF11newInstanceEv">
+<span id="_CPPv3NK8Avogadro4Calc3UFF11newInstanceEv"></span><span id="_CPPv2NK8Avogadro4Calc3UFF11newInstanceEv"></span><span id="Avogadro::Calc::UFF::newInstanceC"></span><span class="target" id="class_avogadro_1_1_calc_1_1_u_f_f_1a11c3914ab322ac14cb6e7089ffccaefd"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro4Calc3UFFE" title="Avogadro::Calc::UFF"><span class="n"><span class="pre">UFF</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">newInstance</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Calc3UFF11newInstanceEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Create a new instance of the model. Ownership passes to the caller. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Calc3UFF10identifierEv">
+<span id="_CPPv3NK8Avogadro4Calc3UFF10identifierEv"></span><span id="_CPPv2NK8Avogadro4Calc3UFF10identifierEv"></span><span id="Avogadro::Calc::UFF::identifierC"></span><span class="target" id="class_avogadro_1_1_calc_1_1_u_f_f_1a3eaad8a6fe9989a1d32fe9898b3cb834"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">identifier</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Calc3UFF10identifierEv" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>a unique identifier for this calculator. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Calc3UFF4nameEv">
+<span id="_CPPv3NK8Avogadro4Calc3UFF4nameEv"></span><span id="_CPPv2NK8Avogadro4Calc3UFF4nameEv"></span><span id="Avogadro::Calc::UFF::nameC"></span><span class="target" id="class_avogadro_1_1_calc_1_1_u_f_f_1aa4f4ba750a08765e64da2d0bd473944a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">name</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Calc3UFF4nameEv" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A short translatable name for this method (e.g., MMFF94, <a class="reference internal" href="#class_avogadro_1_1_calc_1_1_u_f_f"><span class="std std-ref">UFF</span></a>, etc.) </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Calc3UFF11descriptionEv">
+<span id="_CPPv3NK8Avogadro4Calc3UFF11descriptionEv"></span><span id="_CPPv2NK8Avogadro4Calc3UFF11descriptionEv"></span><span id="Avogadro::Calc::UFF::descriptionC"></span><span class="target" id="class_avogadro_1_1_calc_1_1_u_f_f_1a4afd83de1a474668783156572e06247b"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">description</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Calc3UFF11descriptionEv" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>a description of the method </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Calc3UFF8elementsEv">
+<span id="_CPPv3NK8Avogadro4Calc3UFF8elementsEv"></span><span id="_CPPv2NK8Avogadro4Calc3UFF8elementsEv"></span><span id="Avogadro::Calc::UFF::elementsC"></span><span class="target" id="class_avogadro_1_1_calc_1_1_u_f_f_1a1b6a0a43ba128eba4da22c29aee05840"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8Molecule11ElementMaskE" title="Avogadro::Core::Molecule::ElementMask"><span class="n"><span class="pre">ElementMask</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">elements</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Calc3UFF8elementsEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Indicate if your method only treats a subset of elements. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>an element mask corresponding to the defined subset </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Calc3UFF5valueERKN5Eigen8VectorXdE">
+<span id="_CPPv3N8Avogadro4Calc3UFF5valueERKN5Eigen8VectorXdE"></span><span id="_CPPv2N8Avogadro4Calc3UFF5valueERKN5Eigen8VectorXdE"></span><span id="Avogadro::Calc::UFF::value__Eigen::VectorXdCR"></span><span class="target" id="class_avogadro_1_1_calc_1_1_u_f_f_1a5f0611c13e16a71e9c3c7ee34052933c"></span><span class="n"><span class="pre">Real</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">value</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">VectorXd</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">x</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Calc3UFF5valueERKN5Eigen8VectorXdE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Calc3UFF8gradientERKN5Eigen8VectorXdERN5Eigen8VectorXdE">
+<span id="_CPPv3N8Avogadro4Calc3UFF8gradientERKN5Eigen8VectorXdERN5Eigen8VectorXdE"></span><span id="_CPPv2N8Avogadro4Calc3UFF8gradientERKN5Eigen8VectorXdERN5Eigen8VectorXdE"></span><span id="Avogadro::Calc::UFF::gradient__Eigen::VectorXdCR.Eigen::VectorXdR"></span><span class="target" id="class_avogadro_1_1_calc_1_1_u_f_f_1a9daa7dbb0c4361b5b7c79862f96d6fb5"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">gradient</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">VectorXd</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">x</span></span>, <span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">VectorXd</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">grad</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Calc3UFF8gradientERKN5Eigen8VectorXdERN5Eigen8VectorXdE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Calc3UFF11acceptsIonsEv">
+<span id="_CPPv3NK8Avogadro4Calc3UFF11acceptsIonsEv"></span><span id="_CPPv2NK8Avogadro4Calc3UFF11acceptsIonsEv"></span><span id="Avogadro::Calc::UFF::acceptsIonsC"></span><span class="target" id="class_avogadro_1_1_calc_1_1_u_f_f_1a04da415b112b5931025390cdd336bdff"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">acceptsIons</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Calc3UFF11acceptsIonsEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Indicate if your method can handle ions Many methods only treat neutral systems, either a neutral molecule or a neutral unit cell. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>true if ions are supported </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Calc3UFF15acceptsRadicalsEv">
+<span id="_CPPv3NK8Avogadro4Calc3UFF15acceptsRadicalsEv"></span><span id="_CPPv2NK8Avogadro4Calc3UFF15acceptsRadicalsEv"></span><span id="Avogadro::Calc::UFF::acceptsRadicalsC"></span><span class="target" id="class_avogadro_1_1_calc_1_1_u_f_f_1a54a660e926b02fbbc470fecd1b21aa46"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">acceptsRadicals</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Calc3UFF15acceptsRadicalsEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Indicate if your method can handle radicals Most methods only treat closed-shell molecules. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>true if radicals are supported </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Calc3UFF15acceptsUnitCellEv">
+<span id="_CPPv3NK8Avogadro4Calc3UFF15acceptsUnitCellEv"></span><span id="_CPPv2NK8Avogadro4Calc3UFF15acceptsUnitCellEv"></span><span id="Avogadro::Calc::UFF::acceptsUnitCellC"></span><span class="target" id="class_avogadro_1_1_calc_1_1_u_f_f_1a05d8d01539dbf900ac6e26ca205a3e71"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">acceptsUnitCell</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Calc3UFF15acceptsUnitCellEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Indicate if your method can handle unit cells. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>true if unit cells are supported </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Calc3UFF10bondEnergyERKN5Eigen8VectorXdE">
+<span id="_CPPv3N8Avogadro4Calc3UFF10bondEnergyERKN5Eigen8VectorXdE"></span><span id="_CPPv2N8Avogadro4Calc3UFF10bondEnergyERKN5Eigen8VectorXdE"></span><span id="Avogadro::Calc::UFF::bondEnergy__Eigen::VectorXdCR"></span><span class="target" id="class_avogadro_1_1_calc_1_1_u_f_f_1a169dce6b47c64bd2313df2b63e80203a"></span><span class="n"><span class="pre">Real</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">bondEnergy</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">VectorXd</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">x</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Calc3UFF10bondEnergyERKN5Eigen8VectorXdE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Calc3UFF11angleEnergyERKN5Eigen8VectorXdE">
+<span id="_CPPv3N8Avogadro4Calc3UFF11angleEnergyERKN5Eigen8VectorXdE"></span><span id="_CPPv2N8Avogadro4Calc3UFF11angleEnergyERKN5Eigen8VectorXdE"></span><span id="Avogadro::Calc::UFF::angleEnergy__Eigen::VectorXdCR"></span><span class="target" id="class_avogadro_1_1_calc_1_1_u_f_f_1a27db31773b887200f02a04e48e396c46"></span><span class="n"><span class="pre">Real</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">angleEnergy</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">VectorXd</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">x</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Calc3UFF11angleEnergyERKN5Eigen8VectorXdE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Calc3UFF9oopEnergyERKN5Eigen8VectorXdE">
+<span id="_CPPv3N8Avogadro4Calc3UFF9oopEnergyERKN5Eigen8VectorXdE"></span><span id="_CPPv2N8Avogadro4Calc3UFF9oopEnergyERKN5Eigen8VectorXdE"></span><span id="Avogadro::Calc::UFF::oopEnergy__Eigen::VectorXdCR"></span><span class="target" id="class_avogadro_1_1_calc_1_1_u_f_f_1a9d74611cc24140440dbb3f3951d64232"></span><span class="n"><span class="pre">Real</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oopEnergy</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">VectorXd</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">x</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Calc3UFF9oopEnergyERKN5Eigen8VectorXdE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Calc3UFF13torsionEnergyERKN5Eigen8VectorXdE">
+<span id="_CPPv3N8Avogadro4Calc3UFF13torsionEnergyERKN5Eigen8VectorXdE"></span><span id="_CPPv2N8Avogadro4Calc3UFF13torsionEnergyERKN5Eigen8VectorXdE"></span><span id="Avogadro::Calc::UFF::torsionEnergy__Eigen::VectorXdCR"></span><span class="target" id="class_avogadro_1_1_calc_1_1_u_f_f_1ae3e8c6f43f99cd372e750c9676adbb3a"></span><span class="n"><span class="pre">Real</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">torsionEnergy</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">VectorXd</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">x</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Calc3UFF13torsionEnergyERKN5Eigen8VectorXdE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Calc3UFF9vdwEnergyERKN5Eigen8VectorXdE">
+<span id="_CPPv3N8Avogadro4Calc3UFF9vdwEnergyERKN5Eigen8VectorXdE"></span><span id="_CPPv2N8Avogadro4Calc3UFF9vdwEnergyERKN5Eigen8VectorXdE"></span><span id="Avogadro::Calc::UFF::vdwEnergy__Eigen::VectorXdCR"></span><span class="target" id="class_avogadro_1_1_calc_1_1_u_f_f_1a76020ab8a51d21e1883e03883b9d6e38"></span><span class="n"><span class="pre">Real</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">vdwEnergy</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">VectorXd</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">x</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Calc3UFF9vdwEnergyERKN5Eigen8VectorXdE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Calc3UFF12bondGradientERKN5Eigen8VectorXdERN5Eigen8VectorXdE">
+<span id="_CPPv3N8Avogadro4Calc3UFF12bondGradientERKN5Eigen8VectorXdERN5Eigen8VectorXdE"></span><span id="_CPPv2N8Avogadro4Calc3UFF12bondGradientERKN5Eigen8VectorXdERN5Eigen8VectorXdE"></span><span id="Avogadro::Calc::UFF::bondGradient__Eigen::VectorXdCR.Eigen::VectorXdR"></span><span class="target" id="class_avogadro_1_1_calc_1_1_u_f_f_1ade00f670260278adba400ae4dde5b621"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">bondGradient</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">VectorXd</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">x</span></span>, <span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">VectorXd</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">grad</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Calc3UFF12bondGradientERKN5Eigen8VectorXdERN5Eigen8VectorXdE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Calc3UFF13angleGradientERKN5Eigen8VectorXdERN5Eigen8VectorXdE">
+<span id="_CPPv3N8Avogadro4Calc3UFF13angleGradientERKN5Eigen8VectorXdERN5Eigen8VectorXdE"></span><span id="_CPPv2N8Avogadro4Calc3UFF13angleGradientERKN5Eigen8VectorXdERN5Eigen8VectorXdE"></span><span id="Avogadro::Calc::UFF::angleGradient__Eigen::VectorXdCR.Eigen::VectorXdR"></span><span class="target" id="class_avogadro_1_1_calc_1_1_u_f_f_1a7e5cd0bcb46527d0ff75cd444e45952f"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">angleGradient</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">VectorXd</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">x</span></span>, <span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">VectorXd</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">grad</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Calc3UFF13angleGradientERKN5Eigen8VectorXdERN5Eigen8VectorXdE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Calc3UFF11oopGradientERKN5Eigen8VectorXdERN5Eigen8VectorXdE">
+<span id="_CPPv3N8Avogadro4Calc3UFF11oopGradientERKN5Eigen8VectorXdERN5Eigen8VectorXdE"></span><span id="_CPPv2N8Avogadro4Calc3UFF11oopGradientERKN5Eigen8VectorXdERN5Eigen8VectorXdE"></span><span id="Avogadro::Calc::UFF::oopGradient__Eigen::VectorXdCR.Eigen::VectorXdR"></span><span class="target" id="class_avogadro_1_1_calc_1_1_u_f_f_1a4e3c56d553a64141858107956a4fec24"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oopGradient</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">VectorXd</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">x</span></span>, <span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">VectorXd</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">grad</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Calc3UFF11oopGradientERKN5Eigen8VectorXdERN5Eigen8VectorXdE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Calc3UFF15torsionGradientERKN5Eigen8VectorXdERN5Eigen8VectorXdE">
+<span id="_CPPv3N8Avogadro4Calc3UFF15torsionGradientERKN5Eigen8VectorXdERN5Eigen8VectorXdE"></span><span id="_CPPv2N8Avogadro4Calc3UFF15torsionGradientERKN5Eigen8VectorXdERN5Eigen8VectorXdE"></span><span id="Avogadro::Calc::UFF::torsionGradient__Eigen::VectorXdCR.Eigen::VectorXdR"></span><span class="target" id="class_avogadro_1_1_calc_1_1_u_f_f_1a02e78710a19d15b9df4e33d2c732f463"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">torsionGradient</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">VectorXd</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">x</span></span>, <span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">VectorXd</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">grad</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Calc3UFF15torsionGradientERKN5Eigen8VectorXdERN5Eigen8VectorXdE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Calc3UFF11vdwGradientERKN5Eigen8VectorXdERN5Eigen8VectorXdE">
+<span id="_CPPv3N8Avogadro4Calc3UFF11vdwGradientERKN5Eigen8VectorXdERN5Eigen8VectorXdE"></span><span id="_CPPv2N8Avogadro4Calc3UFF11vdwGradientERKN5Eigen8VectorXdERN5Eigen8VectorXdE"></span><span id="Avogadro::Calc::UFF::vdwGradient__Eigen::VectorXdCR.Eigen::VectorXdR"></span><span class="target" id="class_avogadro_1_1_calc_1_1_u_f_f_1a2108115287169b84f65cf56a83e1f442"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">vdwGradient</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">VectorXd</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">x</span></span>, <span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">VectorXd</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">grad</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Calc3UFF11vdwGradientERKN5Eigen8VectorXdERN5Eigen8VectorXdE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Calc3UFF11setMoleculeEPN4Core8MoleculeE">
+<span id="_CPPv3N8Avogadro4Calc3UFF11setMoleculeEPN4Core8MoleculeE"></span><span id="_CPPv2N8Avogadro4Calc3UFF11setMoleculeEPN4Core8MoleculeE"></span><span id="Avogadro::Calc::UFF::setMolecule__Core::MoleculeP"></span><span class="target" id="class_avogadro_1_1_calc_1_1_u_f_f_1ac02a3065278b742c8835afba69adde78"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setMolecule</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">mol</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Calc3UFF11setMoleculeEPN4Core8MoleculeE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Called when the current molecule changes. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-attributes">Protected Attributes</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Calc3UFF10m_moleculeE">
+<span id="_CPPv3N8Avogadro4Calc3UFF10m_moleculeE"></span><span id="_CPPv2N8Avogadro4Calc3UFF10m_moleculeE"></span><span id="Avogadro::Calc::UFF::m_molecule__Core::MoleculeP"></span><span class="target" id="class_avogadro_1_1_calc_1_1_u_f_f_1a686ef9433508b6bfef3b2f9a15559fcc"></span><span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">m_molecule</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Calc3UFF10m_moleculeE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Calc3UFF10m_elementsE">
+<span id="_CPPv3N8Avogadro4Calc3UFF10m_elementsE"></span><span id="_CPPv2N8Avogadro4Calc3UFF10m_elementsE"></span><span id="Avogadro::Calc::UFF::m_elements__Core::Molecule::ElementMask"></span><span class="target" id="class_avogadro_1_1_calc_1_1_u_f_f_1a4c154bd070f8fe68e184102443022d4d"></span><span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8Molecule11ElementMaskE" title="Avogadro::Core::Molecule::ElementMask"><span class="n"><span class="pre">ElementMask</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_elements</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Calc3UFF10m_elementsE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Calc3UFF1dE">
+<span id="_CPPv3N8Avogadro4Calc3UFF1dE"></span><span id="_CPPv2N8Avogadro4Calc3UFF1dE"></span><span id="Avogadro::Calc::UFF::d__UFFPrivateP"></span><span class="target" id="class_avogadro_1_1_calc_1_1_u_f_f_1a5cb5e5eb6c3dd3142f0134cf9de4c36a"></span><span class="n"><span class="pre">UFFPrivate</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">d</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">nullptr</span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Calc3UFF1dE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="class_avogadro_1_1_calc_1_1_lennard_jones.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Avogadro::Calc::LennardJones</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../core.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Avogadro::Core</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Calc3UFFE"><code class="docutils literal notranslate"><span class="pre">UFF</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Calc3UFF3UFFEv"><code class="docutils literal notranslate"><span class="pre">UFF::UFF()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Calc3UFFD0Ev"><code class="docutils literal notranslate"><span class="pre">UFF::~UFF()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Calc3UFF11newInstanceEv"><code class="docutils literal notranslate"><span class="pre">UFF::newInstance()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Calc3UFF10identifierEv"><code class="docutils literal notranslate"><span class="pre">UFF::identifier()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Calc3UFF4nameEv"><code class="docutils literal notranslate"><span class="pre">UFF::name()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Calc3UFF11descriptionEv"><code class="docutils literal notranslate"><span class="pre">UFF::description()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Calc3UFF8elementsEv"><code class="docutils literal notranslate"><span class="pre">UFF::elements()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Calc3UFF5valueERKN5Eigen8VectorXdE"><code class="docutils literal notranslate"><span class="pre">UFF::value()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Calc3UFF8gradientERKN5Eigen8VectorXdERN5Eigen8VectorXdE"><code class="docutils literal notranslate"><span class="pre">UFF::gradient()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Calc3UFF11acceptsIonsEv"><code class="docutils literal notranslate"><span class="pre">UFF::acceptsIons()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Calc3UFF15acceptsRadicalsEv"><code class="docutils literal notranslate"><span class="pre">UFF::acceptsRadicals()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Calc3UFF15acceptsUnitCellEv"><code class="docutils literal notranslate"><span class="pre">UFF::acceptsUnitCell()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Calc3UFF10bondEnergyERKN5Eigen8VectorXdE"><code class="docutils literal notranslate"><span class="pre">UFF::bondEnergy()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Calc3UFF11angleEnergyERKN5Eigen8VectorXdE"><code class="docutils literal notranslate"><span class="pre">UFF::angleEnergy()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Calc3UFF9oopEnergyERKN5Eigen8VectorXdE"><code class="docutils literal notranslate"><span class="pre">UFF::oopEnergy()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Calc3UFF13torsionEnergyERKN5Eigen8VectorXdE"><code class="docutils literal notranslate"><span class="pre">UFF::torsionEnergy()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Calc3UFF9vdwEnergyERKN5Eigen8VectorXdE"><code class="docutils literal notranslate"><span class="pre">UFF::vdwEnergy()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Calc3UFF12bondGradientERKN5Eigen8VectorXdERN5Eigen8VectorXdE"><code class="docutils literal notranslate"><span class="pre">UFF::bondGradient()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Calc3UFF13angleGradientERKN5Eigen8VectorXdERN5Eigen8VectorXdE"><code class="docutils literal notranslate"><span class="pre">UFF::angleGradient()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Calc3UFF11oopGradientERKN5Eigen8VectorXdERN5Eigen8VectorXdE"><code class="docutils literal notranslate"><span class="pre">UFF::oopGradient()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Calc3UFF15torsionGradientERKN5Eigen8VectorXdERN5Eigen8VectorXdE"><code class="docutils literal notranslate"><span class="pre">UFF::torsionGradient()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Calc3UFF11vdwGradientERKN5Eigen8VectorXdERN5Eigen8VectorXdE"><code class="docutils literal notranslate"><span class="pre">UFF::vdwGradient()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Calc3UFF11setMoleculeEPN4Core8MoleculeE"><code class="docutils literal notranslate"><span class="pre">UFF::setMolecule()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Calc3UFF10m_moleculeE"><code class="docutils literal notranslate"><span class="pre">UFF::m_molecule</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Calc3UFF10m_elementsE"><code class="docutils literal notranslate"><span class="pre">UFF::m_elements</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Calc3UFF1dE"><code class="docutils literal notranslate"><span class="pre">UFF::d</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/avogadro/two.avogadro.cc/edit/main/source/develop/class/class_avogadro_1_1_calc_1_1_u_f_f.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">          <p>
+            ©2026 The OpenChemistry / Avogadro Teams 
+          </p>
+          <p>Covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
+          </p></div>
+      
+        <div class="footer-item">        <p>
+          <a href="/contrib/index.html">Contribute</a>
+        </p></div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.0.2.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.4.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

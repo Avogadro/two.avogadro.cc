@@ -33,6 +33,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=ee427ece" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mermaid-theme.css?v=7f85688a" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -56,7 +57,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Avogadro::QtGui::RWAtom" href="class_avogadro_1_1_qt_gui_1_1_r_w_atom.html" />
-    <link rel="prev" title="Avogadro::QtGui::PersistentBond" href="class_avogadro_1_1_qt_gui_1_1_persistent_bond.html" />
+    <link rel="prev" title="Avogadro::QtGui::PluginLayerManager" href="class_avogadro_1_1_qt_gui_1_1_plugin_layer_manager.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -432,17 +433,17 @@ document.write(`
   <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Develop</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../structure.html">Project Structure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../build.html">Building Source Code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">Script Plugins</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../rpc.html">Avogadro Remote Procedure Call (RPC)</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../classlist.html">API Documentation</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../structure.html">Project Structure and C++ API</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../avogadroapp.html">Avogadro App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calc.html">Avogadro::Calc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../core.html">Avogadro::Core</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../io.html">Avogadro::IO</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../molequeue.html">Avogadro::MoleQueue</a></li>
 <li class="toctree-l2 current active has-children"><a class="reference internal" href="../qtgui.html">Avogadro::QtGui</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_background_file_format.html">Avogadro::QtGui::BackgroundFileFormat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_chart_dialog.html">Avogadro::QtGui::ChartDialog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_chart_widget.html">Avogadro::QtGui::ChartWidget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_color_button.html">Avogadro::QtGui::ColorButton</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_container_widget.html">Avogadro::QtGui::ContainerWidget</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_custom_element_dialog.html">Avogadro::QtGui::CustomElementDialog</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_element_detail.html">Avogadro::QtGui::ElementDetail</a></li>
@@ -452,11 +453,15 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_extension_plugin_factory.html">Avogadro::QtGui::ExtensionPluginFactory</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_file_browse_widget.html">Avogadro::QtGui::FileBrowseWidget</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_file_format_dialog.html">Avogadro::QtGui::FileFormatDialog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_gaussian_set_concurrent.html">Avogadro::QtGui::GaussianSetConcurrent</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_generic_highlighter.html">Avogadro::QtGui::GenericHighlighter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_generic_highlighter_1_1_rule.html">Avogadro::QtGui::GenericHighlighter::Rule</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_hydrogen_tools.html">Avogadro::QtGui::HydrogenTools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_insert_fragment_dialog.html">Avogadro::QtGui::InsertFragmentDialog</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_interface_script.html">Avogadro::QtGui::InterfaceScript</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_interface_widget.html">Avogadro::QtGui::InterfaceWidget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_json_widget.html">Avogadro::QtGui::JsonWidget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_layer_model.html">Avogadro::QtGui::LayerModel</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_mesh_generator.html">Avogadro::QtGui::MeshGenerator</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_molecule.html">Avogadro::QtGui::Molecule</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_molecule_model.html">Avogadro::QtGui::MoleculeModel</a></li>
@@ -465,14 +470,20 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_periodic_table_view.html">Avogadro::QtGui::PeriodicTableView</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_persistent_atom.html">Avogadro::QtGui::PersistentAtom</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_persistent_bond.html">Avogadro::QtGui::PersistentBond</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_plugin_layer_manager.html">Avogadro::QtGui::PluginLayerManager</a></li>
 <li class="toctree-l3 current active"><a class="current reference internal" href="#">Avogadro::QtGui::PythonScript</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_r_w_atom.html">Avogadro::QtGui::RWAtom</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_r_w_bond.html">Avogadro::QtGui::RWBond</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_r_w_layer_manager.html">Avogadro::QtGui::RWLayerManager</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_r_w_molecule.html">Avogadro::QtGui::RWMolecule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_rich_text_delegate.html">Avogadro::QtGui::RichTextDelegate</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_scene_plugin.html">Avogadro::QtGui::ScenePlugin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_scene_plugin_factory.html">Avogadro::QtGui::ScenePluginFactory</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_scene_plugin_model.html">Avogadro::QtGui::ScenePluginModel</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_script_loader.html">Avogadro::QtGui::ScriptLoader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_slater_set_concurrent.html">Avogadro::QtGui::SlaterSetConcurrent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_sort_filter_tree_proxy_model.html">Avogadro::QtGui::SortFilterTreeProxyModel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_timed_progress_dialog.html">Avogadro::QtGui::TimedProgressDialog</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_tool_plugin.html">Avogadro::QtGui::ToolPlugin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_tool_plugin_factory.html">Avogadro::QtGui::ToolPluginFactory</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_view_factory.html">Avogadro::QtGui::ViewFactory</a></li>
@@ -483,9 +494,11 @@ document.write(`
 </details></li>
 <li class="toctree-l2"><a class="reference internal" href="../qtplugins.html">Avogadro::QtPlugins</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rendering.html">Avogadro::Rendering</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../vtk.html">Avogadro::VTK</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1"><a class="reference internal" href="../build.html">Building Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">Script Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rpc.html">Avogadro Remote Procedure Call (RPC)</a></li>
 </ul>
 </div>
 </nav></div>
@@ -764,12 +777,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="class_avogadro_1_1_qt_gui_1_1_persistent_bond.html"
+       href="class_avogadro_1_1_qt_gui_1_1_plugin_layer_manager.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Avogadro::QtGui::PersistentBond</p>
+        <p class="prev-next-title">Avogadro::QtGui::PluginLayerManager</p>
       </div>
     </a>
     <a class="right-next"

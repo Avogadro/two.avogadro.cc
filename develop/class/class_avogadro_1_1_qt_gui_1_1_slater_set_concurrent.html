@@ -1,0 +1,761 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Avogadro::QtGui::SlaterSetConcurrent &#8212; Avogadro 1.103.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=ee427ece" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mermaid-theme.css?v=7f85688a" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=4a00f340"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'develop/class/class_avogadro_1_1_qt_gui_1_1_slater_set_concurrent';</script>
+    <link rel="canonical" href="https://two.avogadro.cc/develop/class/class_avogadro_1_1_qt_gui_1_1_slater_set_concurrent.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Avogadro::QtGui::SortFilterTreeProxyModel" href="class_avogadro_1_1_qt_gui_1_1_sort_filter_tree_proxy_model.html" />
+    <link rel="prev" title="Avogadro::QtGui::ScriptLoader" href="class_avogadro_1_1_qt_gui_1_1_script_loader.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/avogadro2.png" class="logo__image only-light" alt="Avogadro Documentation- Home"/>
+    <script>document.write(`<img src="../../_static/avogadro2-dark.png" class="logo__image only-dark" alt="Avogadro Documentation- Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../install/index.html">
+    Install
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../docs/index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Develop
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../contrib/index.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../teach/index.html">
+    Teach
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+    Discuss
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/avogadro.cc" title="Bluesky" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-bluesky fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../install/index.html">
+    Install
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../docs/index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Develop
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../contrib/index.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../teach/index.html">
+    Teach
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+    Discuss
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/avogadro.cc" title="Bluesky" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-bluesky fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Develop</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../structure.html">Project Structure and C++ API</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../avogadroapp.html">Avogadro App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calc.html">Avogadro::Calc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../core.html">Avogadro::Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../io.html">Avogadro::IO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../molequeue.html">Avogadro::MoleQueue</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../qtgui.html">Avogadro::QtGui</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_background_file_format.html">Avogadro::QtGui::BackgroundFileFormat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_chart_dialog.html">Avogadro::QtGui::ChartDialog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_chart_widget.html">Avogadro::QtGui::ChartWidget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_color_button.html">Avogadro::QtGui::ColorButton</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_container_widget.html">Avogadro::QtGui::ContainerWidget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_custom_element_dialog.html">Avogadro::QtGui::CustomElementDialog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_element_detail.html">Avogadro::QtGui::ElementDetail</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_element_item.html">Avogadro::QtGui::ElementItem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_element_translator.html">Avogadro::QtGui::ElementTranslator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_extension_plugin.html">Avogadro::QtGui::ExtensionPlugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_extension_plugin_factory.html">Avogadro::QtGui::ExtensionPluginFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_file_browse_widget.html">Avogadro::QtGui::FileBrowseWidget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_file_format_dialog.html">Avogadro::QtGui::FileFormatDialog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_gaussian_set_concurrent.html">Avogadro::QtGui::GaussianSetConcurrent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_generic_highlighter.html">Avogadro::QtGui::GenericHighlighter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_generic_highlighter_1_1_rule.html">Avogadro::QtGui::GenericHighlighter::Rule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_hydrogen_tools.html">Avogadro::QtGui::HydrogenTools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_insert_fragment_dialog.html">Avogadro::QtGui::InsertFragmentDialog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_interface_script.html">Avogadro::QtGui::InterfaceScript</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_interface_widget.html">Avogadro::QtGui::InterfaceWidget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_json_widget.html">Avogadro::QtGui::JsonWidget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_layer_model.html">Avogadro::QtGui::LayerModel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_mesh_generator.html">Avogadro::QtGui::MeshGenerator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_molecule.html">Avogadro::QtGui::Molecule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_molecule_model.html">Avogadro::QtGui::MoleculeModel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_multi_view_widget.html">Avogadro::QtGui::MultiViewWidget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_periodic_table_scene.html">Avogadro::QtGui::PeriodicTableScene</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_periodic_table_view.html">Avogadro::QtGui::PeriodicTableView</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_persistent_atom.html">Avogadro::QtGui::PersistentAtom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_persistent_bond.html">Avogadro::QtGui::PersistentBond</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_plugin_layer_manager.html">Avogadro::QtGui::PluginLayerManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_python_script.html">Avogadro::QtGui::PythonScript</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_r_w_atom.html">Avogadro::QtGui::RWAtom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_r_w_bond.html">Avogadro::QtGui::RWBond</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_r_w_layer_manager.html">Avogadro::QtGui::RWLayerManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_r_w_molecule.html">Avogadro::QtGui::RWMolecule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_rich_text_delegate.html">Avogadro::QtGui::RichTextDelegate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_scene_plugin.html">Avogadro::QtGui::ScenePlugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_scene_plugin_factory.html">Avogadro::QtGui::ScenePluginFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_scene_plugin_model.html">Avogadro::QtGui::ScenePluginModel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_script_loader.html">Avogadro::QtGui::ScriptLoader</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Avogadro::QtGui::SlaterSetConcurrent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_sort_filter_tree_proxy_model.html">Avogadro::QtGui::SortFilterTreeProxyModel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_timed_progress_dialog.html">Avogadro::QtGui::TimedProgressDialog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_tool_plugin.html">Avogadro::QtGui::ToolPlugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_tool_plugin_factory.html">Avogadro::QtGui::ToolPluginFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_view_factory.html">Avogadro::QtGui::ViewFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_open_g_l_1_1_active_objects.html">Avogadro::QtOpenGL::ActiveObjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_open_g_l_1_1_g_l_widget.html">Avogadro::QtOpenGL::GLWidget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_open_g_l_1_1_qt_text_render_strategy.html">Avogadro::QtOpenGL::QtTextRenderStrategy</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../qtplugins.html">Avogadro::QtPlugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rendering.html">Avogadro::Rendering</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../build.html">Building Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">Script Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rpc.html">Avogadro Remote Procedure Call (RPC)</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Develop</a></li>
+    
+    
+    <li class="breadcrumb-item"><i class="fa-solid fa-ellipsis"></i></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../qtgui.html" class="nav-link">Avogadro::QtGui</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Avogadro::Qt...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="avogadro-qtgui-slatersetconcurrent">
+<h1>Avogadro::QtGui::SlaterSetConcurrent<a class="headerlink" href="#avogadro-qtgui-slatersetconcurrent" title="Link to this heading">#</a></h1>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui19SlaterSetConcurrentE">
+<span id="_CPPv3N8Avogadro5QtGui19SlaterSetConcurrentE"></span><span id="_CPPv2N8Avogadro5QtGui19SlaterSetConcurrentE"></span><span id="Avogadro::QtGui::SlaterSetConcurrent"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_slater_set_concurrent"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SlaterSetConcurrent</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">QObject</span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui19SlaterSetConcurrentE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The <a class="reference internal" href="#class_avogadro_1_1_qt_gui_1_1_slater_set_concurrent"><span class="std std-ref">SlaterSetConcurrent</span></a> class uses SlaterSetTools to calculate values of electronic structure properties from quantum output read in. </p>
+<p><dl class="simple">
+<dt><strong>Author</strong></dt><dd><p>Marcus D. Hanwell </p>
+</dd>
+</dl>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui19SlaterSetConcurrent19SlaterSetConcurrentEP7QObject">
+<span id="_CPPv3N8Avogadro5QtGui19SlaterSetConcurrent19SlaterSetConcurrentEP7QObject"></span><span id="_CPPv2N8Avogadro5QtGui19SlaterSetConcurrent19SlaterSetConcurrentEP7QObject"></span><span id="Avogadro::QtGui::SlaterSetConcurrent::SlaterSetConcurrent__QObjectP"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_slater_set_concurrent_1ad7f2d70d3a65c5f12244789d6e67813a"></span><span class="k"><span class="pre">explicit</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SlaterSetConcurrent</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">QObject</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">p</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">nullptr</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui19SlaterSetConcurrent19SlaterSetConcurrentEP7QObject" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui19SlaterSetConcurrentD0Ev">
+<span id="_CPPv3N8Avogadro5QtGui19SlaterSetConcurrentD0Ev"></span><span id="_CPPv2N8Avogadro5QtGui19SlaterSetConcurrentD0Ev"></span><span id="Avogadro::QtGui::SlaterSetConcurrent::~SlaterSetConcurrent"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_slater_set_concurrent_1af0db1a1f650b544f9a09eea744f77269"></span><span class="sig-name descname"><span class="n"><span class="pre">~SlaterSetConcurrent</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui19SlaterSetConcurrentD0Ev" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui19SlaterSetConcurrent11setMoleculeEPN4Core8MoleculeE">
+<span id="_CPPv3N8Avogadro5QtGui19SlaterSetConcurrent11setMoleculeEPN4Core8MoleculeE"></span><span id="_CPPv2N8Avogadro5QtGui19SlaterSetConcurrent11setMoleculeEPN4Core8MoleculeE"></span><span id="Avogadro::QtGui::SlaterSetConcurrent::setMolecule__Core::MoleculeP"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_slater_set_concurrent_1a62d3bdcf381e06c4d313c2c5ffda845e"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setMolecule</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">mol</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui19SlaterSetConcurrent11setMoleculeEPN4Core8MoleculeE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui19SlaterSetConcurrent25calculateMolecularOrbitalEPN4Core4CubeEj">
+<span id="_CPPv3N8Avogadro5QtGui19SlaterSetConcurrent25calculateMolecularOrbitalEPN4Core4CubeEj"></span><span id="_CPPv2N8Avogadro5QtGui19SlaterSetConcurrent25calculateMolecularOrbitalEPN4Core4CubeEj"></span><span id="Avogadro::QtGui::SlaterSetConcurrent::calculateMolecularOrbital__Core::CubeP.unsigned-i"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_slater_set_concurrent_1a32a5f6f80301270a9cbfcf22ecd82242"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">calculateMolecularOrbital</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_cube.html#_CPPv4N8Avogadro4Core4CubeE" title="Avogadro::Core::Cube"><span class="n"><span class="pre">Cube</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">cube</span></span>, <span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">state</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui19SlaterSetConcurrent25calculateMolecularOrbitalEPN4Core4CubeEj" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui19SlaterSetConcurrent24calculateElectronDensityEPN4Core4CubeE">
+<span id="_CPPv3N8Avogadro5QtGui19SlaterSetConcurrent24calculateElectronDensityEPN4Core4CubeE"></span><span id="_CPPv2N8Avogadro5QtGui19SlaterSetConcurrent24calculateElectronDensityEPN4Core4CubeE"></span><span id="Avogadro::QtGui::SlaterSetConcurrent::calculateElectronDensity__Core::CubeP"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_slater_set_concurrent_1a3745c94ea51e4cea083d9db16005a646"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">calculateElectronDensity</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_cube.html#_CPPv4N8Avogadro4Core4CubeE" title="Avogadro::Core::Cube"><span class="n"><span class="pre">Cube</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">cube</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui19SlaterSetConcurrent24calculateElectronDensityEPN4Core4CubeE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui19SlaterSetConcurrent20calculateSpinDensityEPN4Core4CubeE">
+<span id="_CPPv3N8Avogadro5QtGui19SlaterSetConcurrent20calculateSpinDensityEPN4Core4CubeE"></span><span id="_CPPv2N8Avogadro5QtGui19SlaterSetConcurrent20calculateSpinDensityEPN4Core4CubeE"></span><span id="Avogadro::QtGui::SlaterSetConcurrent::calculateSpinDensity__Core::CubeP"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_slater_set_concurrent_1ae9cc5a31b94b589fa622b2dbb63521d4"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">calculateSpinDensity</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_cube.html#_CPPv4N8Avogadro4Core4CubeE" title="Avogadro::Core::Cube"><span class="n"><span class="pre">Cube</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">cube</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui19SlaterSetConcurrent20calculateSpinDensityEPN4Core4CubeE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui19SlaterSetConcurrent7watcherEv">
+<span id="_CPPv3N8Avogadro5QtGui19SlaterSetConcurrent7watcherEv"></span><span id="_CPPv2N8Avogadro5QtGui19SlaterSetConcurrent7watcherEv"></span><span id="Avogadro::QtGui::SlaterSetConcurrent::watcher"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_slater_set_concurrent_1a7300700e038327e017cc7b63c1415226"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">QFutureWatcher</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">void</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">watcher</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui19SlaterSetConcurrent7watcherEv" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-signals">Signals</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui19SlaterSetConcurrent8finishedEv">
+<span id="_CPPv3N8Avogadro5QtGui19SlaterSetConcurrent8finishedEv"></span><span id="_CPPv2N8Avogadro5QtGui19SlaterSetConcurrent8finishedEv"></span><span id="Avogadro::QtGui::SlaterSetConcurrent::finished"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_slater_set_concurrent_1af7b21038ab82868484b3a459947b0dbf"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">finished</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui19SlaterSetConcurrent8finishedEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Emitted when the calculation is complete. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="class_avogadro_1_1_qt_gui_1_1_script_loader.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Avogadro::QtGui::ScriptLoader</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="class_avogadro_1_1_qt_gui_1_1_sort_filter_tree_proxy_model.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Avogadro::QtGui::SortFilterTreeProxyModel</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui19SlaterSetConcurrentE"><code class="docutils literal notranslate"><span class="pre">SlaterSetConcurrent</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui19SlaterSetConcurrent19SlaterSetConcurrentEP7QObject"><code class="docutils literal notranslate"><span class="pre">SlaterSetConcurrent::SlaterSetConcurrent()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui19SlaterSetConcurrentD0Ev"><code class="docutils literal notranslate"><span class="pre">SlaterSetConcurrent::~SlaterSetConcurrent()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui19SlaterSetConcurrent11setMoleculeEPN4Core8MoleculeE"><code class="docutils literal notranslate"><span class="pre">SlaterSetConcurrent::setMolecule()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui19SlaterSetConcurrent25calculateMolecularOrbitalEPN4Core4CubeEj"><code class="docutils literal notranslate"><span class="pre">SlaterSetConcurrent::calculateMolecularOrbital()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui19SlaterSetConcurrent24calculateElectronDensityEPN4Core4CubeE"><code class="docutils literal notranslate"><span class="pre">SlaterSetConcurrent::calculateElectronDensity()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui19SlaterSetConcurrent20calculateSpinDensityEPN4Core4CubeE"><code class="docutils literal notranslate"><span class="pre">SlaterSetConcurrent::calculateSpinDensity()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui19SlaterSetConcurrent7watcherEv"><code class="docutils literal notranslate"><span class="pre">SlaterSetConcurrent::watcher()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui19SlaterSetConcurrent8finishedEv"><code class="docutils literal notranslate"><span class="pre">SlaterSetConcurrent::finished()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/avogadro/two.avogadro.cc/edit/main/source/develop/class/class_avogadro_1_1_qt_gui_1_1_slater_set_concurrent.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">          <p>
+            ©2026 The OpenChemistry / Avogadro Teams 
+          </p>
+          <p>Covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
+          </p></div>
+      
+        <div class="footer-item">        <p>
+          <a href="/contrib/index.html">Contribute</a>
+        </p></div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.0.2.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.4.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

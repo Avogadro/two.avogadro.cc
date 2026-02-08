@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Project Structure &#8212; Avogadro 1.103.0 documentation</title>
+    <title>Project Structure and C++ API &#8212; Avogadro 1.103.0 documentation</title>
   
   
   
@@ -33,6 +33,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=ee427ece" />
+    <link rel="stylesheet" type="text/css" href="../_static/mermaid-theme.css?v=7f85688a" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -55,7 +56,7 @@
     <link rel="canonical" href="https://two.avogadro.cc/develop/structure.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Building Source Code" href="build.html" />
+    <link rel="next" title="Avogadro App" href="avogadroapp.html" />
     <link rel="prev" title="Develop" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -432,11 +433,20 @@ document.write(`
   <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Develop</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="index.html">Introduction</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Project Structure</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Project Structure and C++ API</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="avogadroapp.html">Avogadro App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="calc.html">Avogadro::Calc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core.html">Avogadro::Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html">Avogadro::IO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="molequeue.html">Avogadro::MoleQueue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qtgui.html">Avogadro::QtGui</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qtplugins.html">Avogadro::QtPlugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rendering.html">Avogadro::Rendering</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="build.html">Building Source Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scripts/index.html">Script Plugins</a></li>
 <li class="toctree-l1"><a class="reference internal" href="rpc.html">Avogadro Remote Procedure Call (RPC)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="classlist.html">API Documentation</a></li>
 </ul>
 </div>
 </nav></div>
@@ -477,7 +487,7 @@ document.write(`
     
     <li class="breadcrumb-item"><a href="index.html" class="nav-link">Develop</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Project Structure</li>
+    <li class="breadcrumb-item active" aria-current="page">Project...</li>
   </ul>
 </nav>
 </div>
@@ -494,14 +504,22 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="project-structure">
-<span id="develop-structure"></span><h1>Project Structure<a class="headerlink" href="#project-structure" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="project-structure-and-c-api">
+<span id="develop-structure"></span><h1>Project Structure and C++ API<a class="headerlink" href="#project-structure-and-c-api" title="Link to this heading">#</a></h1>
 <section id="what-is-open-chemistry">
 <h2>What is Open Chemistry?<a class="headerlink" href="#what-is-open-chemistry" title="Link to this heading">#</a></h2>
 <p><a class="reference external" href="https://www.openchemistry.org/">Open Chemistry</a> is an umbrella for the development of several open-source chemical tools.
 Avogadro is its primary subproject, but it also oversees the <a class="reference external" href="https://github.com/OpenChemistry/chemicaljson">Chemical JSON</a> file format as well as <a class="reference external" href="https://github.com/orgs/OpenChemistry/repositories">a bunch of other cool stuff</a>.</p>
-<p>The Avogadro desktop application is made up primarily of the <code class="docutils literal notranslate"><span class="pre">avogadrolibs</span></code> module, which does all the behind-the-scenes work, and the <code class="docutils literal notranslate"><span class="pre">avogadroapp</span></code> which provides a GUI on top. This split allows functions from <code class="docutils literal notranslate"><span class="pre">avogadrolibs</span></code> to be available in Python modules, for example to read chemistry files, generate molecular orbital surfaces.</p>
-<p>In practice, most functionality and features are provided by <code class="docutils literal notranslate"><span class="pre">[avogadrolibs](https://github.com/OpenChemistry/avogadrolibs)</span></code> and particularly by various plugin classes.</p>
+<p>The Avogadro desktop application is made up primarily of the <code class="docutils literal notranslate"><span class="pre">avogadrolibs</span></code> module, which does all the behind-the-scenes work, and the <code class="docutils literal notranslate"><span class="pre">avogadroapp</span></code> which provides a GUI on top. This split allows functions from <code class="docutils literal notranslate"><span class="pre">avogadrolibs</span></code> to be available in Python modules, for example to read chemistry files, generate molecular orbital surfaces, etc.</p>
+<p>In practice, most functionality and features are provided by <a class="reference external" href="https://github.com/OpenChemistry/avogadrolibs">avogadrolibs</a> and particularly by various plugin classes. More information can be found in the API summaries, for example:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="calc.html#develop-calc"><span class="std std-ref">calc</span></a></p></li>
+<li><p><a class="reference internal" href="core.html#develop-core"><span class="std std-ref">core</span></a></p></li>
+<li><p><a class="reference internal" href="io.html#develop-io"><span class="std std-ref">io</span></a></p></li>
+<li><p><a class="reference internal" href="qtgui.html#develop-qtgui"><span class="std std-ref">qtgui</span></a></p></li>
+<li><p><a class="reference internal" href="qtplugins.html#develop-qtplugins"><span class="std std-ref">qtplugins</span></a></p></li>
+<li><p><a class="reference internal" href="rendering.html#develop-rendering"><span class="std std-ref">rendering</span></a></p></li>
+</ul>
 <p>The main project uses various other Open Chemistry modules to function.</p>
 <dl class="simple myst">
 <dt><a class="reference external" href="https://github.com/OpenChemistry/avogadroapp">avogadroapp</a></dt><dd><p>Code to handle <a class="reference internal" href="avogadroapp.html#develop-avogadroapp"><span class="std std-ref">the desktop app events and interface</span></a></p>
@@ -517,6 +535,8 @@ Avogadro is its primary subproject, but it also oversees the <a class="reference
 <dt><a class="reference external" href="https://github.com/OpenChemistry/molecules">molecules</a></dt><dd><p>Common molecules provided through Build ⇒ Insert ⇒ Molecule</p>
 </dd>
 </dl>
+<div class="toctree-wrapper compound">
+</div>
 </section>
 </section>
 
@@ -540,11 +560,11 @@ Avogadro is its primary subproject, but it also oversees the <a class="reference
       </div>
     </a>
     <a class="right-next"
-       href="build.html"
+       href="avogadroapp.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Building Source Code</p>
+        <p class="prev-next-title">Avogadro App</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

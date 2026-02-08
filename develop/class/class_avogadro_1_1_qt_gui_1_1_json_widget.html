@@ -1,0 +1,1022 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Avogadro::QtGui::JsonWidget &#8212; Avogadro 1.103.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=ee427ece" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mermaid-theme.css?v=7f85688a" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=4a00f340"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'develop/class/class_avogadro_1_1_qt_gui_1_1_json_widget';</script>
+    <link rel="canonical" href="https://two.avogadro.cc/develop/class/class_avogadro_1_1_qt_gui_1_1_json_widget.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Avogadro::QtGui::LayerModel" href="class_avogadro_1_1_qt_gui_1_1_layer_model.html" />
+    <link rel="prev" title="Avogadro::QtGui::InterfaceWidget" href="class_avogadro_1_1_qt_gui_1_1_interface_widget.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/avogadro2.png" class="logo__image only-light" alt="Avogadro Documentation- Home"/>
+    <script>document.write(`<img src="../../_static/avogadro2-dark.png" class="logo__image only-dark" alt="Avogadro Documentation- Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../install/index.html">
+    Install
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../docs/index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Develop
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../contrib/index.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../teach/index.html">
+    Teach
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+    Discuss
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/avogadro.cc" title="Bluesky" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-bluesky fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../install/index.html">
+    Install
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../docs/index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Develop
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../contrib/index.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../teach/index.html">
+    Teach
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+    Discuss
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/avogadro.cc" title="Bluesky" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-bluesky fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Develop</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../structure.html">Project Structure and C++ API</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../avogadroapp.html">Avogadro App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calc.html">Avogadro::Calc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../core.html">Avogadro::Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../io.html">Avogadro::IO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../molequeue.html">Avogadro::MoleQueue</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../qtgui.html">Avogadro::QtGui</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_background_file_format.html">Avogadro::QtGui::BackgroundFileFormat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_chart_dialog.html">Avogadro::QtGui::ChartDialog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_chart_widget.html">Avogadro::QtGui::ChartWidget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_color_button.html">Avogadro::QtGui::ColorButton</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_container_widget.html">Avogadro::QtGui::ContainerWidget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_custom_element_dialog.html">Avogadro::QtGui::CustomElementDialog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_element_detail.html">Avogadro::QtGui::ElementDetail</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_element_item.html">Avogadro::QtGui::ElementItem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_element_translator.html">Avogadro::QtGui::ElementTranslator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_extension_plugin.html">Avogadro::QtGui::ExtensionPlugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_extension_plugin_factory.html">Avogadro::QtGui::ExtensionPluginFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_file_browse_widget.html">Avogadro::QtGui::FileBrowseWidget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_file_format_dialog.html">Avogadro::QtGui::FileFormatDialog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_gaussian_set_concurrent.html">Avogadro::QtGui::GaussianSetConcurrent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_generic_highlighter.html">Avogadro::QtGui::GenericHighlighter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_generic_highlighter_1_1_rule.html">Avogadro::QtGui::GenericHighlighter::Rule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_hydrogen_tools.html">Avogadro::QtGui::HydrogenTools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_insert_fragment_dialog.html">Avogadro::QtGui::InsertFragmentDialog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_interface_script.html">Avogadro::QtGui::InterfaceScript</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_interface_widget.html">Avogadro::QtGui::InterfaceWidget</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Avogadro::QtGui::JsonWidget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_layer_model.html">Avogadro::QtGui::LayerModel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_mesh_generator.html">Avogadro::QtGui::MeshGenerator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_molecule.html">Avogadro::QtGui::Molecule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_molecule_model.html">Avogadro::QtGui::MoleculeModel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_multi_view_widget.html">Avogadro::QtGui::MultiViewWidget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_periodic_table_scene.html">Avogadro::QtGui::PeriodicTableScene</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_periodic_table_view.html">Avogadro::QtGui::PeriodicTableView</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_persistent_atom.html">Avogadro::QtGui::PersistentAtom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_persistent_bond.html">Avogadro::QtGui::PersistentBond</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_plugin_layer_manager.html">Avogadro::QtGui::PluginLayerManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_python_script.html">Avogadro::QtGui::PythonScript</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_r_w_atom.html">Avogadro::QtGui::RWAtom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_r_w_bond.html">Avogadro::QtGui::RWBond</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_r_w_layer_manager.html">Avogadro::QtGui::RWLayerManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_r_w_molecule.html">Avogadro::QtGui::RWMolecule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_rich_text_delegate.html">Avogadro::QtGui::RichTextDelegate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_scene_plugin.html">Avogadro::QtGui::ScenePlugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_scene_plugin_factory.html">Avogadro::QtGui::ScenePluginFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_scene_plugin_model.html">Avogadro::QtGui::ScenePluginModel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_script_loader.html">Avogadro::QtGui::ScriptLoader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_slater_set_concurrent.html">Avogadro::QtGui::SlaterSetConcurrent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_sort_filter_tree_proxy_model.html">Avogadro::QtGui::SortFilterTreeProxyModel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_timed_progress_dialog.html">Avogadro::QtGui::TimedProgressDialog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_tool_plugin.html">Avogadro::QtGui::ToolPlugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_tool_plugin_factory.html">Avogadro::QtGui::ToolPluginFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_view_factory.html">Avogadro::QtGui::ViewFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_open_g_l_1_1_active_objects.html">Avogadro::QtOpenGL::ActiveObjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_open_g_l_1_1_g_l_widget.html">Avogadro::QtOpenGL::GLWidget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_open_g_l_1_1_qt_text_render_strategy.html">Avogadro::QtOpenGL::QtTextRenderStrategy</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../qtplugins.html">Avogadro::QtPlugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rendering.html">Avogadro::Rendering</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../build.html">Building Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">Script Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rpc.html">Avogadro Remote Procedure Call (RPC)</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Develop</a></li>
+    
+    
+    <li class="breadcrumb-item"><i class="fa-solid fa-ellipsis"></i></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../qtgui.html" class="nav-link">Avogadro::QtGui</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Avogadro::Qt...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="avogadro-qtgui-jsonwidget">
+<h1>Avogadro::QtGui::JsonWidget<a class="headerlink" href="#avogadro-qtgui-jsonwidget" title="Link to this heading">#</a></h1>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10JsonWidgetE">
+<span id="_CPPv3N8Avogadro5QtGui10JsonWidgetE"></span><span id="_CPPv2N8Avogadro5QtGui10JsonWidgetE"></span><span id="Avogadro::QtGui::JsonWidget"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_json_widget"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">JsonWidget</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">QWidget</span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10JsonWidgetE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The <a class="reference internal" href="#class_avogadro_1_1_qt_gui_1_1_json_widget"><span class="std std-ref">JsonWidget</span></a> class provides a user interface for running external scripts. </p>
+<p><p>&lt;avogadro/qtgui/jsonwidget.h&gt;</p>
+<p>The</p>
+<a class="reference internal" href="#class_avogadro_1_1_qt_gui_1_1_json_widget"><span class="std std-ref">JsonWidget</span></a> creates a GUI to represent the options given by an script, turning JSON from the script into a form and passing the results back to the script via command-line.<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_interface_widget.html#class_avogadro_1_1_qt_gui_1_1_interface_widget"><span class="std std-ref">InterfaceWidget</span></a></p>
+</div>
+</p>
+<p>It’s used by a range of different scripts, including:<ul class="simple">
+<li><p>Commands</p></li>
+<li><p>InterfaceGenerators </p></li>
+</ul>
+</p>
+<p>Subclassed by <a class="reference internal" href="class_avogadro_1_1_mole_queue_1_1_input_generator_widget.html#class_avogadro_1_1_mole_queue_1_1_input_generator_widget"><span class="std std-ref">InputGeneratorWidget</span></a>, <a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_interface_widget.html#class_avogadro_1_1_qt_gui_1_1_interface_widget"><span class="std std-ref">InterfaceWidget</span></a></p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-unnamed-group">Unnamed Group</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10JsonWidget13updateOptionsEv">
+<span id="_CPPv3N8Avogadro5QtGui10JsonWidget13updateOptionsEv"></span><span id="_CPPv2N8Avogadro5QtGui10JsonWidget13updateOptionsEv"></span><span id="Avogadro::QtGui::JsonWidget::updateOptions"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_json_widget_1a3415277a29d413e9fad3886f7d80a110"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">updateOptions</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10JsonWidget13updateOptionsEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Used to construct the script-specific GUI. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10JsonWidget14buildOptionGuiEv">
+<span id="_CPPv3N8Avogadro5QtGui10JsonWidget14buildOptionGuiEv"></span><span id="_CPPv2N8Avogadro5QtGui10JsonWidget14buildOptionGuiEv"></span><span id="Avogadro::QtGui::JsonWidget::buildOptionGui"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_json_widget_1aa1842e46e88e605caf602947dd9a2524"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">buildOptionGui</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10JsonWidget14buildOptionGuiEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Used to construct the script-specific GUI. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10JsonWidget17combinedOptionRowERK7QStringRK7QStringRK7QStringRK7QStringR11QJsonObjectb">
+<span id="_CPPv3N8Avogadro5QtGui10JsonWidget17combinedOptionRowERK7QStringRK7QStringRK7QStringRK7QStringR11QJsonObjectb"></span><span id="_CPPv2N8Avogadro5QtGui10JsonWidget17combinedOptionRowERK7QStringRK7QStringRK7QStringRK7QStringR11QJsonObjectb"></span><span id="Avogadro::QtGui::JsonWidget::combinedOptionRow__QStringCR.QStringCR.QStringCR.QStringCR.QJsonObjectR.b"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_json_widget_1a6ac8a4275b96d575175200f38265bda9"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">combinedOptionRow</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">label1</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">label2</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">tr1</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">tr2</span></span>, <span class="n"><span class="pre">QJsonObject</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">options</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">bothLabels</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10JsonWidget17combinedOptionRowERK7QStringRK7QStringRK7QStringRK7QStringR11QJsonObjectb" title="Link to this definition">#</a><br /></dt>
+<dd><p>Used to construct the script-specific GUI. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10JsonWidget12addOptionRowERK7QStringRK7QStringRK10QJsonValue">
+<span id="_CPPv3N8Avogadro5QtGui10JsonWidget12addOptionRowERK7QStringRK7QStringRK10QJsonValue"></span><span id="_CPPv2N8Avogadro5QtGui10JsonWidget12addOptionRowERK7QStringRK7QStringRK10QJsonValue"></span><span id="Avogadro::QtGui::JsonWidget::addOptionRow__QStringCR.QStringCR.QJsonValueCR"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_json_widget_1a80af176208eff4d9655c162c0269660c"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addOptionRow</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">key</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">label</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QJsonValue</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">option</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10JsonWidget12addOptionRowERK7QStringRK7QStringRK10QJsonValue" title="Link to this definition">#</a><br /></dt>
+<dd><p>Used to construct the script-specific GUI. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10JsonWidget18createOptionWidgetERK10QJsonValue">
+<span id="_CPPv3N8Avogadro5QtGui10JsonWidget18createOptionWidgetERK10QJsonValue"></span><span id="_CPPv2N8Avogadro5QtGui10JsonWidget18createOptionWidgetERK10QJsonValue"></span><span id="Avogadro::QtGui::JsonWidget::createOptionWidget__QJsonValueCR"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_json_widget_1ae0650515809e10b4ca71fc09d073c200"></span><span class="n"><span class="pre">QWidget</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">createOptionWidget</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QJsonValue</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">option</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10JsonWidget18createOptionWidgetERK10QJsonValue" title="Link to this definition">#</a><br /></dt>
+<dd><p>Used to construct the script-specific GUI. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10JsonWidget22createStringListWidgetERK11QJsonObject">
+<span id="_CPPv3N8Avogadro5QtGui10JsonWidget22createStringListWidgetERK11QJsonObject"></span><span id="_CPPv2N8Avogadro5QtGui10JsonWidget22createStringListWidgetERK11QJsonObject"></span><span id="Avogadro::QtGui::JsonWidget::createStringListWidget__QJsonObjectCR"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_json_widget_1a703e19f3234f566152d60db577efea18"></span><span class="n"><span class="pre">QWidget</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">createStringListWidget</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QJsonObject</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">obj</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10JsonWidget22createStringListWidgetERK11QJsonObject" title="Link to this definition">#</a><br /></dt>
+<dd><p>Used to construct the script-specific GUI. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10JsonWidget18createStringWidgetERK11QJsonObject">
+<span id="_CPPv3N8Avogadro5QtGui10JsonWidget18createStringWidgetERK11QJsonObject"></span><span id="_CPPv2N8Avogadro5QtGui10JsonWidget18createStringWidgetERK11QJsonObject"></span><span id="Avogadro::QtGui::JsonWidget::createStringWidget__QJsonObjectCR"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_json_widget_1a657be3419df1cfcc9fcf999ddc9d3c0c"></span><span class="n"><span class="pre">QWidget</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">createStringWidget</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QJsonObject</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">obj</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10JsonWidget18createStringWidgetERK11QJsonObject" title="Link to this definition">#</a><br /></dt>
+<dd><p>Used to construct the script-specific GUI. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10JsonWidget20createFilePathWidgetERK11QJsonObject">
+<span id="_CPPv3N8Avogadro5QtGui10JsonWidget20createFilePathWidgetERK11QJsonObject"></span><span id="_CPPv2N8Avogadro5QtGui10JsonWidget20createFilePathWidgetERK11QJsonObject"></span><span id="Avogadro::QtGui::JsonWidget::createFilePathWidget__QJsonObjectCR"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_json_widget_1a64f6ffe7023ad359104313f34afbd9c1"></span><span class="n"><span class="pre">QWidget</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">createFilePathWidget</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QJsonObject</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">obj</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10JsonWidget20createFilePathWidgetERK11QJsonObject" title="Link to this definition">#</a><br /></dt>
+<dd><p>Used to construct the script-specific GUI. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10JsonWidget19createIntegerWidgetERK11QJsonObject">
+<span id="_CPPv3N8Avogadro5QtGui10JsonWidget19createIntegerWidgetERK11QJsonObject"></span><span id="_CPPv2N8Avogadro5QtGui10JsonWidget19createIntegerWidgetERK11QJsonObject"></span><span id="Avogadro::QtGui::JsonWidget::createIntegerWidget__QJsonObjectCR"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_json_widget_1a2e908ad6b56c746b9112c133a6e723b3"></span><span class="n"><span class="pre">QWidget</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">createIntegerWidget</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QJsonObject</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">obj</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10JsonWidget19createIntegerWidgetERK11QJsonObject" title="Link to this definition">#</a><br /></dt>
+<dd><p>Used to construct the script-specific GUI. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10JsonWidget17createFloatWidgetERK11QJsonObject">
+<span id="_CPPv3N8Avogadro5QtGui10JsonWidget17createFloatWidgetERK11QJsonObject"></span><span id="_CPPv2N8Avogadro5QtGui10JsonWidget17createFloatWidgetERK11QJsonObject"></span><span id="Avogadro::QtGui::JsonWidget::createFloatWidget__QJsonObjectCR"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_json_widget_1a834a94887e561510285e42b9a67e36cd"></span><span class="n"><span class="pre">QWidget</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">createFloatWidget</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QJsonObject</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">obj</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10JsonWidget17createFloatWidgetERK11QJsonObject" title="Link to this definition">#</a><br /></dt>
+<dd><p>Used to construct the script-specific GUI. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10JsonWidget19createBooleanWidgetERK11QJsonObject">
+<span id="_CPPv3N8Avogadro5QtGui10JsonWidget19createBooleanWidgetERK11QJsonObject"></span><span id="_CPPv2N8Avogadro5QtGui10JsonWidget19createBooleanWidgetERK11QJsonObject"></span><span id="Avogadro::QtGui::JsonWidget::createBooleanWidget__QJsonObjectCR"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_json_widget_1a0f52e7adbdf317f23ef2108519b6aa4a"></span><span class="n"><span class="pre">QWidget</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">createBooleanWidget</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QJsonObject</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">obj</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10JsonWidget19createBooleanWidgetERK11QJsonObject" title="Link to this definition">#</a><br /></dt>
+<dd><p>Used to construct the script-specific GUI. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10JsonWidget16createTextWidgetERK11QJsonObject">
+<span id="_CPPv3N8Avogadro5QtGui10JsonWidget16createTextWidgetERK11QJsonObject"></span><span id="_CPPv2N8Avogadro5QtGui10JsonWidget16createTextWidgetERK11QJsonObject"></span><span id="Avogadro::QtGui::JsonWidget::createTextWidget__QJsonObjectCR"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_json_widget_1a32f15b7acd095d141fb9aa8f20ac815d"></span><span class="n"><span class="pre">QWidget</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">createTextWidget</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QJsonObject</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">obj</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10JsonWidget16createTextWidgetERK11QJsonObject" title="Link to this definition">#</a><br /></dt>
+<dd><p>Used to construct the script-specific GUI. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10JsonWidget17createTableWidgetERK11QJsonObject">
+<span id="_CPPv3N8Avogadro5QtGui10JsonWidget17createTableWidgetERK11QJsonObject"></span><span id="_CPPv2N8Avogadro5QtGui10JsonWidget17createTableWidgetERK11QJsonObject"></span><span id="Avogadro::QtGui::JsonWidget::createTableWidget__QJsonObjectCR"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_json_widget_1a47cc77b7bade10dd2471135fb8f5774a"></span><span class="n"><span class="pre">QWidget</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">createTableWidget</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QJsonObject</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">obj</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10JsonWidget17createTableWidgetERK11QJsonObject" title="Link to this definition">#</a><br /></dt>
+<dd><p>Used to construct the script-specific GUI. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-unnamed-group">Unnamed Group</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10JsonWidget17setOptionDefaultsEv">
+<span id="_CPPv3N8Avogadro5QtGui10JsonWidget17setOptionDefaultsEv"></span><span id="_CPPv2N8Avogadro5QtGui10JsonWidget17setOptionDefaultsEv"></span><span id="Avogadro::QtGui::JsonWidget::setOptionDefaults"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_json_widget_1aa71a8ad4dadd4d730171debff5f10a11"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setOptionDefaults</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10JsonWidget17setOptionDefaultsEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the simulation settings to their default values. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10JsonWidget9setOptionERK7QStringRK10QJsonValue">
+<span id="_CPPv3N8Avogadro5QtGui10JsonWidget9setOptionERK7QStringRK10QJsonValue"></span><span id="_CPPv2N8Avogadro5QtGui10JsonWidget9setOptionERK7QStringRK10QJsonValue"></span><span id="Avogadro::QtGui::JsonWidget::setOption__QStringCR.QJsonValueCR"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_json_widget_1a671a606c637a3407592d27586dbfad3a"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setOption</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QJsonValue</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">defaultValue</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10JsonWidget9setOptionERK7QStringRK10QJsonValue" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the simulation settings to their default values. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10JsonWidget19setStringListOptionERK7QStringRK10QJsonValue">
+<span id="_CPPv3N8Avogadro5QtGui10JsonWidget19setStringListOptionERK7QStringRK10QJsonValue"></span><span id="_CPPv2N8Avogadro5QtGui10JsonWidget19setStringListOptionERK7QStringRK10QJsonValue"></span><span id="Avogadro::QtGui::JsonWidget::setStringListOption__QStringCR.QJsonValueCR"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_json_widget_1a99edc09a9505e42c024e5dc9dfa2d852"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setStringListOption</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QJsonValue</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10JsonWidget19setStringListOptionERK7QStringRK10QJsonValue" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the simulation settings to their default values. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10JsonWidget15setStringOptionERK7QStringRK10QJsonValue">
+<span id="_CPPv3N8Avogadro5QtGui10JsonWidget15setStringOptionERK7QStringRK10QJsonValue"></span><span id="_CPPv2N8Avogadro5QtGui10JsonWidget15setStringOptionERK7QStringRK10QJsonValue"></span><span id="Avogadro::QtGui::JsonWidget::setStringOption__QStringCR.QJsonValueCR"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_json_widget_1a1036575721676ef88a4c7e3bcb079f80"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setStringOption</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QJsonValue</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10JsonWidget15setStringOptionERK7QStringRK10QJsonValue" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the simulation settings to their default values. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10JsonWidget17setFilePathOptionERK7QStringRK10QJsonValue">
+<span id="_CPPv3N8Avogadro5QtGui10JsonWidget17setFilePathOptionERK7QStringRK10QJsonValue"></span><span id="_CPPv2N8Avogadro5QtGui10JsonWidget17setFilePathOptionERK7QStringRK10QJsonValue"></span><span id="Avogadro::QtGui::JsonWidget::setFilePathOption__QStringCR.QJsonValueCR"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_json_widget_1adcbdef3410e32bdf5f10f283b4e44e78"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setFilePathOption</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QJsonValue</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10JsonWidget17setFilePathOptionERK7QStringRK10QJsonValue" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the simulation settings to their default values. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10JsonWidget16setIntegerOptionERK7QStringRK10QJsonValue">
+<span id="_CPPv3N8Avogadro5QtGui10JsonWidget16setIntegerOptionERK7QStringRK10QJsonValue"></span><span id="_CPPv2N8Avogadro5QtGui10JsonWidget16setIntegerOptionERK7QStringRK10QJsonValue"></span><span id="Avogadro::QtGui::JsonWidget::setIntegerOption__QStringCR.QJsonValueCR"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_json_widget_1a8cb16f5c04077e9c6af8eede7b3f88df"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setIntegerOption</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QJsonValue</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10JsonWidget16setIntegerOptionERK7QStringRK10QJsonValue" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the simulation settings to their default values. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10JsonWidget14setFloatOptionERK7QStringRK10QJsonValue">
+<span id="_CPPv3N8Avogadro5QtGui10JsonWidget14setFloatOptionERK7QStringRK10QJsonValue"></span><span id="_CPPv2N8Avogadro5QtGui10JsonWidget14setFloatOptionERK7QStringRK10QJsonValue"></span><span id="Avogadro::QtGui::JsonWidget::setFloatOption__QStringCR.QJsonValueCR"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_json_widget_1ac5841d0785b295a1d112c250f07fafeb"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setFloatOption</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QJsonValue</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10JsonWidget14setFloatOptionERK7QStringRK10QJsonValue" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the simulation settings to their default values. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10JsonWidget16setBooleanOptionERK7QStringRK10QJsonValue">
+<span id="_CPPv3N8Avogadro5QtGui10JsonWidget16setBooleanOptionERK7QStringRK10QJsonValue"></span><span id="_CPPv2N8Avogadro5QtGui10JsonWidget16setBooleanOptionERK7QStringRK10QJsonValue"></span><span id="Avogadro::QtGui::JsonWidget::setBooleanOption__QStringCR.QJsonValueCR"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_json_widget_1af02ce882c3b089a54a01ff31e6c00967"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setBooleanOption</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QJsonValue</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10JsonWidget16setBooleanOptionERK7QStringRK10QJsonValue" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the simulation settings to their default values. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10JsonWidget13setTextOptionERK7QStringRK10QJsonValue">
+<span id="_CPPv3N8Avogadro5QtGui10JsonWidget13setTextOptionERK7QStringRK10QJsonValue"></span><span id="_CPPv2N8Avogadro5QtGui10JsonWidget13setTextOptionERK7QStringRK10QJsonValue"></span><span id="Avogadro::QtGui::JsonWidget::setTextOption__QStringCR.QJsonValueCR"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_json_widget_1a82fbf14e888a4403acc1d2611f53d296"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setTextOption</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QJsonValue</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10JsonWidget13setTextOptionERK7QStringRK10QJsonValue" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the simulation settings to their default values. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10JsonWidget14setTableOptionERK7QStringRK10QJsonValue">
+<span id="_CPPv3N8Avogadro5QtGui10JsonWidget14setTableOptionERK7QStringRK10QJsonValue"></span><span id="_CPPv2N8Avogadro5QtGui10JsonWidget14setTableOptionERK7QStringRK10QJsonValue"></span><span id="Avogadro::QtGui::JsonWidget::setTableOption__QStringCR.QJsonValueCR"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_json_widget_1adfb7af47c779ad0db5136e828677d261"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setTableOption</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QJsonValue</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10JsonWidget14setTableOptionERK7QStringRK10QJsonValue" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the simulation settings to their default values. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10JsonWidget10JsonWidgetEP7QWidget">
+<span id="_CPPv3N8Avogadro5QtGui10JsonWidget10JsonWidgetEP7QWidget"></span><span id="_CPPv2N8Avogadro5QtGui10JsonWidget10JsonWidgetEP7QWidget"></span><span id="Avogadro::QtGui::JsonWidget::JsonWidget__QWidgetP"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_json_widget_1a9e9ffd3ecb5d0cfcc28364be3bdecf0e"></span><span class="k"><span class="pre">explicit</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">JsonWidget</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">QWidget</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">parent_</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">nullptr</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10JsonWidget10JsonWidgetEP7QWidget" title="Link to this definition">#</a><br /></dt>
+<dd><p>Construct a widget that dynamically generates a GUI </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10JsonWidgetD0Ev">
+<span id="_CPPv3N8Avogadro5QtGui10JsonWidgetD0Ev"></span><span id="_CPPv2N8Avogadro5QtGui10JsonWidgetD0Ev"></span><span id="Avogadro::QtGui::JsonWidget::~JsonWidget"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_json_widget_1a1fab092b2e156bf71d45ac7e4da20a8b"></span><span class="sig-name descname"><span class="n"><span class="pre">~JsonWidget</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10JsonWidgetD0Ev" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10JsonWidget11setMoleculeEPN5QtGui8MoleculeE">
+<span id="_CPPv3N8Avogadro5QtGui10JsonWidget11setMoleculeEPN5QtGui8MoleculeE"></span><span id="_CPPv2N8Avogadro5QtGui10JsonWidget11setMoleculeEPN5QtGui8MoleculeE"></span><span id="Avogadro::QtGui::JsonWidget::setMolecule__QtGui::MoleculeP"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_json_widget_1a8225685c32933ecec66b0106f4348bd9"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setMolecule</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">QtGui</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_molecule.html#_CPPv4N8Avogadro5QtGui8MoleculeE" title="Avogadro::QtGui::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">mol</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10JsonWidget11setMoleculeEPN5QtGui8MoleculeE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the molecule used in the simulation. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro5QtGui10JsonWidget14collectOptionsEv">
+<span id="_CPPv3NK8Avogadro5QtGui10JsonWidget14collectOptionsEv"></span><span id="_CPPv2NK8Avogadro5QtGui10JsonWidget14collectOptionsEv"></span><span id="Avogadro::QtGui::JsonWidget::collectOptionsC"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_json_widget_1abc5ee80ca5b72fec063f266e2c24aedc"></span><span class="n"><span class="pre">QJsonObject</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">collectOptions</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro5QtGui10JsonWidget14collectOptionsEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Collect all of the user-specified options into a JSON object, to be sent to the generator script. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10JsonWidget12applyOptionsERK11QJsonObject">
+<span id="_CPPv3N8Avogadro5QtGui10JsonWidget12applyOptionsERK11QJsonObject"></span><span id="_CPPv2N8Avogadro5QtGui10JsonWidget12applyOptionsERK11QJsonObject"></span><span id="Avogadro::QtGui::JsonWidget::applyOptions__QJsonObjectCR"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_json_widget_1a17043f5f7f56385ecb7ec78652f580ac"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">applyOptions</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QJsonObject</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">opts</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10JsonWidget12applyOptionsERK11QJsonObject" title="Link to this definition">#</a><br /></dt>
+<dd><p>Apply the options in the passed QJsonObject to the GUI. Any widgets changed by this method will have their signals blocked while modifying their values. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro5QtGui10JsonWidget7isEmptyEv">
+<span id="_CPPv3NK8Avogadro5QtGui10JsonWidget7isEmptyEv"></span><span id="_CPPv2NK8Avogadro5QtGui10JsonWidget7isEmptyEv"></span><span id="Avogadro::QtGui::JsonWidget::isEmptyC"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_json_widget_1acf82f9b2937375c7b1cf3dccb3df3312"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isEmpty</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro5QtGui10JsonWidget7isEmptyEv" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-functions">Protected Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro5QtGui10JsonWidget16lookupOptionTypeERK7QString">
+<span id="_CPPv3NK8Avogadro5QtGui10JsonWidget16lookupOptionTypeERK7QString"></span><span id="_CPPv2NK8Avogadro5QtGui10JsonWidget16lookupOptionTypeERK7QString"></span><span id="Avogadro::QtGui::JsonWidget::lookupOptionType__QStringCRC"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_json_widget_1ae78b4483362d489cc5a7ae31aa9ac26f"></span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lookupOptionType</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro5QtGui10JsonWidget16lookupOptionTypeERK7QString" title="Link to this definition">#</a><br /></dt>
+<dd><p>Given the name of a user-option in m_options, return the type string. If an error occurs, an empty string will be returned. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro5QtGui10JsonWidget12optionStringERK7QStringR7QString">
+<span id="_CPPv3NK8Avogadro5QtGui10JsonWidget12optionStringERK7QStringR7QString"></span><span id="_CPPv2NK8Avogadro5QtGui10JsonWidget12optionStringERK7QStringR7QString"></span><span id="Avogadro::QtGui::JsonWidget::optionString__QStringCR.QStringRC"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_json_widget_1a1a09b7fc56eaf6d89db7788b41f23884"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">optionString</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">option</span></span>, <span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">value</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro5QtGui10JsonWidget12optionStringERK7QStringR7QString" title="Link to this definition">#</a><br /></dt>
+<dd><p>Search for an option named <em>option</em> and convert its value to a string. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>option</strong> – The name of the option. </p></li>
+<li><p><strong>value</strong> – String to overwrite with option value. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if value is overwritten, false if the option is not found or cannot be converted to a string. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro5QtGui10JsonWidget16generateJobTitleEv">
+<span id="_CPPv3NK8Avogadro5QtGui10JsonWidget16generateJobTitleEv"></span><span id="_CPPv2NK8Avogadro5QtGui10JsonWidget16generateJobTitleEv"></span><span id="Avogadro::QtGui::JsonWidget::generateJobTitleC"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_json_widget_1a5690c34727c1e65118bf7c383594c9b0"></span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">generateJobTitle</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro5QtGui10JsonWidget16generateJobTitleEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Update the autogenerated job title in the GUI. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-attributes">Protected Attributes</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10JsonWidget10m_moleculeE">
+<span id="_CPPv3N8Avogadro5QtGui10JsonWidget10m_moleculeE"></span><span id="_CPPv2N8Avogadro5QtGui10JsonWidget10m_moleculeE"></span><span id="Avogadro::QtGui::JsonWidget::m_molecule__QtGui::MoleculeP"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_json_widget_1a54b32731c9b7bd6a7ca6859e19dd5b0c"></span><span class="n"><span class="pre">QtGui</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_molecule.html#_CPPv4N8Avogadro5QtGui8MoleculeE" title="Avogadro::QtGui::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">m_molecule</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10JsonWidget10m_moleculeE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10JsonWidget9m_optionsE">
+<span id="_CPPv3N8Avogadro5QtGui10JsonWidget9m_optionsE"></span><span id="_CPPv2N8Avogadro5QtGui10JsonWidget9m_optionsE"></span><span id="Avogadro::QtGui::JsonWidget::m_options__QJsonObject"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_json_widget_1a18050f4391e1b65944ee95488981cce9"></span><span class="n"><span class="pre">QJsonObject</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_options</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10JsonWidget9m_optionsE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10JsonWidget13m_optionCacheE">
+<span id="_CPPv3N8Avogadro5QtGui10JsonWidget13m_optionCacheE"></span><span id="_CPPv2N8Avogadro5QtGui10JsonWidget13m_optionCacheE"></span><span id="Avogadro::QtGui::JsonWidget::m_optionCache__QJsonObject"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_json_widget_1a439f8cfb4341b2afe5c70c4f087a298d"></span><span class="n"><span class="pre">QJsonObject</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_optionCache</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10JsonWidget13m_optionCacheE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10JsonWidget16m_dirtyTextEditsE">
+<span id="_CPPv3N8Avogadro5QtGui10JsonWidget16m_dirtyTextEditsE"></span><span id="_CPPv2N8Avogadro5QtGui10JsonWidget16m_dirtyTextEditsE"></span><span id="Avogadro::QtGui::JsonWidget::m_dirtyTextEdits__QList:QTextEditP:"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_json_widget_1a7b220afc87be0034d411d3f0467b00a4"></span><span class="n"><span class="pre">QList</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">QTextEdit</span></span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_dirtyTextEdits</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10JsonWidget16m_dirtyTextEditsE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10JsonWidget7m_emptyE">
+<span id="_CPPv3N8Avogadro5QtGui10JsonWidget7m_emptyE"></span><span id="_CPPv2N8Avogadro5QtGui10JsonWidget7m_emptyE"></span><span id="Avogadro::QtGui::JsonWidget::m_empty__b"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_json_widget_1ac21f18624d637a3e48f64730fb79c479"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_empty</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10JsonWidget7m_emptyE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10JsonWidget11m_batchModeE">
+<span id="_CPPv3N8Avogadro5QtGui10JsonWidget11m_batchModeE"></span><span id="_CPPv2N8Avogadro5QtGui10JsonWidget11m_batchModeE"></span><span id="Avogadro::QtGui::JsonWidget::m_batchMode__b"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_json_widget_1a6fdb0e93fcb2096fbcee4994ecaa2134"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_batchMode</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10JsonWidget11m_batchModeE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10JsonWidget15m_currentLayoutE">
+<span id="_CPPv3N8Avogadro5QtGui10JsonWidget15m_currentLayoutE"></span><span id="_CPPv2N8Avogadro5QtGui10JsonWidget15m_currentLayoutE"></span><span id="Avogadro::QtGui::JsonWidget::m_currentLayout__QFormLayoutP"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_json_widget_1a7bc2034ff56e95ee0f5bf10cf7228f44"></span><span class="n"><span class="pre">QFormLayout</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">m_currentLayout</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10JsonWidget15m_currentLayoutE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10JsonWidget15m_centralWidgetE">
+<span id="_CPPv3N8Avogadro5QtGui10JsonWidget15m_centralWidgetE"></span><span id="_CPPv2N8Avogadro5QtGui10JsonWidget15m_centralWidgetE"></span><span id="Avogadro::QtGui::JsonWidget::m_centralWidget__QWidgetP"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_json_widget_1acc1d79938b3a044a855ef1ec535cea0e"></span><span class="n"><span class="pre">QWidget</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">m_centralWidget</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10JsonWidget15m_centralWidgetE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10JsonWidget9m_widgetsE">
+<span id="_CPPv3N8Avogadro5QtGui10JsonWidget9m_widgetsE"></span><span id="_CPPv2N8Avogadro5QtGui10JsonWidget9m_widgetsE"></span><span id="Avogadro::QtGui::JsonWidget::m_widgets__QMap:QString.QWidgetP:"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_json_widget_1ae0e2e1b09335ec5f4c1fd039d41bf712"></span><span class="n"><span class="pre">QMap</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">QString</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">QWidget</span></span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_widgets</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10JsonWidget9m_widgetsE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10JsonWidget11m_textEditsE">
+<span id="_CPPv3N8Avogadro5QtGui10JsonWidget11m_textEditsE"></span><span id="_CPPv2N8Avogadro5QtGui10JsonWidget11m_textEditsE"></span><span id="Avogadro::QtGui::JsonWidget::m_textEdits__QMap:QString.QTextEditP:"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_json_widget_1ac1b57c8d91bc836dcf32bd0ffe52f565"></span><span class="n"><span class="pre">QMap</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">QString</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">QTextEdit</span></span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_textEdits</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10JsonWidget11m_textEditsE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="class_avogadro_1_1_qt_gui_1_1_interface_widget.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Avogadro::QtGui::InterfaceWidget</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="class_avogadro_1_1_qt_gui_1_1_layer_model.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Avogadro::QtGui::LayerModel</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10JsonWidgetE"><code class="docutils literal notranslate"><span class="pre">JsonWidget</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10JsonWidget13updateOptionsEv"><code class="docutils literal notranslate"><span class="pre">JsonWidget::updateOptions()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10JsonWidget14buildOptionGuiEv"><code class="docutils literal notranslate"><span class="pre">JsonWidget::buildOptionGui()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10JsonWidget17combinedOptionRowERK7QStringRK7QStringRK7QStringRK7QStringR11QJsonObjectb"><code class="docutils literal notranslate"><span class="pre">JsonWidget::combinedOptionRow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10JsonWidget12addOptionRowERK7QStringRK7QStringRK10QJsonValue"><code class="docutils literal notranslate"><span class="pre">JsonWidget::addOptionRow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10JsonWidget18createOptionWidgetERK10QJsonValue"><code class="docutils literal notranslate"><span class="pre">JsonWidget::createOptionWidget()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10JsonWidget22createStringListWidgetERK11QJsonObject"><code class="docutils literal notranslate"><span class="pre">JsonWidget::createStringListWidget()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10JsonWidget18createStringWidgetERK11QJsonObject"><code class="docutils literal notranslate"><span class="pre">JsonWidget::createStringWidget()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10JsonWidget20createFilePathWidgetERK11QJsonObject"><code class="docutils literal notranslate"><span class="pre">JsonWidget::createFilePathWidget()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10JsonWidget19createIntegerWidgetERK11QJsonObject"><code class="docutils literal notranslate"><span class="pre">JsonWidget::createIntegerWidget()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10JsonWidget17createFloatWidgetERK11QJsonObject"><code class="docutils literal notranslate"><span class="pre">JsonWidget::createFloatWidget()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10JsonWidget19createBooleanWidgetERK11QJsonObject"><code class="docutils literal notranslate"><span class="pre">JsonWidget::createBooleanWidget()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10JsonWidget16createTextWidgetERK11QJsonObject"><code class="docutils literal notranslate"><span class="pre">JsonWidget::createTextWidget()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10JsonWidget17createTableWidgetERK11QJsonObject"><code class="docutils literal notranslate"><span class="pre">JsonWidget::createTableWidget()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10JsonWidget17setOptionDefaultsEv"><code class="docutils literal notranslate"><span class="pre">JsonWidget::setOptionDefaults()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10JsonWidget9setOptionERK7QStringRK10QJsonValue"><code class="docutils literal notranslate"><span class="pre">JsonWidget::setOption()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10JsonWidget19setStringListOptionERK7QStringRK10QJsonValue"><code class="docutils literal notranslate"><span class="pre">JsonWidget::setStringListOption()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10JsonWidget15setStringOptionERK7QStringRK10QJsonValue"><code class="docutils literal notranslate"><span class="pre">JsonWidget::setStringOption()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10JsonWidget17setFilePathOptionERK7QStringRK10QJsonValue"><code class="docutils literal notranslate"><span class="pre">JsonWidget::setFilePathOption()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10JsonWidget16setIntegerOptionERK7QStringRK10QJsonValue"><code class="docutils literal notranslate"><span class="pre">JsonWidget::setIntegerOption()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10JsonWidget14setFloatOptionERK7QStringRK10QJsonValue"><code class="docutils literal notranslate"><span class="pre">JsonWidget::setFloatOption()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10JsonWidget16setBooleanOptionERK7QStringRK10QJsonValue"><code class="docutils literal notranslate"><span class="pre">JsonWidget::setBooleanOption()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10JsonWidget13setTextOptionERK7QStringRK10QJsonValue"><code class="docutils literal notranslate"><span class="pre">JsonWidget::setTextOption()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10JsonWidget14setTableOptionERK7QStringRK10QJsonValue"><code class="docutils literal notranslate"><span class="pre">JsonWidget::setTableOption()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10JsonWidget10JsonWidgetEP7QWidget"><code class="docutils literal notranslate"><span class="pre">JsonWidget::JsonWidget()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10JsonWidgetD0Ev"><code class="docutils literal notranslate"><span class="pre">JsonWidget::~JsonWidget()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10JsonWidget11setMoleculeEPN5QtGui8MoleculeE"><code class="docutils literal notranslate"><span class="pre">JsonWidget::setMolecule()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui10JsonWidget14collectOptionsEv"><code class="docutils literal notranslate"><span class="pre">JsonWidget::collectOptions()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10JsonWidget12applyOptionsERK11QJsonObject"><code class="docutils literal notranslate"><span class="pre">JsonWidget::applyOptions()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui10JsonWidget7isEmptyEv"><code class="docutils literal notranslate"><span class="pre">JsonWidget::isEmpty()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui10JsonWidget16lookupOptionTypeERK7QString"><code class="docutils literal notranslate"><span class="pre">JsonWidget::lookupOptionType()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui10JsonWidget12optionStringERK7QStringR7QString"><code class="docutils literal notranslate"><span class="pre">JsonWidget::optionString()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui10JsonWidget16generateJobTitleEv"><code class="docutils literal notranslate"><span class="pre">JsonWidget::generateJobTitle()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10JsonWidget10m_moleculeE"><code class="docutils literal notranslate"><span class="pre">JsonWidget::m_molecule</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10JsonWidget9m_optionsE"><code class="docutils literal notranslate"><span class="pre">JsonWidget::m_options</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10JsonWidget13m_optionCacheE"><code class="docutils literal notranslate"><span class="pre">JsonWidget::m_optionCache</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10JsonWidget16m_dirtyTextEditsE"><code class="docutils literal notranslate"><span class="pre">JsonWidget::m_dirtyTextEdits</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10JsonWidget7m_emptyE"><code class="docutils literal notranslate"><span class="pre">JsonWidget::m_empty</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10JsonWidget11m_batchModeE"><code class="docutils literal notranslate"><span class="pre">JsonWidget::m_batchMode</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10JsonWidget15m_currentLayoutE"><code class="docutils literal notranslate"><span class="pre">JsonWidget::m_currentLayout</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10JsonWidget15m_centralWidgetE"><code class="docutils literal notranslate"><span class="pre">JsonWidget::m_centralWidget</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10JsonWidget9m_widgetsE"><code class="docutils literal notranslate"><span class="pre">JsonWidget::m_widgets</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10JsonWidget11m_textEditsE"><code class="docutils literal notranslate"><span class="pre">JsonWidget::m_textEdits</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/avogadro/two.avogadro.cc/edit/main/source/develop/class/class_avogadro_1_1_qt_gui_1_1_json_widget.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">          <p>
+            ©2026 The OpenChemistry / Avogadro Teams 
+          </p>
+          <p>Covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
+          </p></div>
+      
+        <div class="footer-item">        <p>
+          <a href="/contrib/index.html">Contribute</a>
+        </p></div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.0.2.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.4.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

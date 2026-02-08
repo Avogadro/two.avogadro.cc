@@ -33,6 +33,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=ee427ece" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mermaid-theme.css?v=7f85688a" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -56,7 +57,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Avogadro::Core::ResidueData" href="class_avogadro_1_1_core_1_1_residue_data.html" />
-    <link rel="prev" title="Avogadro::Core::NameAtomTyper" href="class_avogadro_1_1_core_1_1_name_atom_typer.html" />
+    <link rel="prev" title="Avogadro::Core::NeighborPerceiver" href="class_avogadro_1_1_core_1_1_neighbor_perceiver.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -432,13 +433,11 @@ document.write(`
   <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Develop</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../structure.html">Project Structure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../build.html">Building Source Code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">Script Plugins</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../rpc.html">Avogadro Remote Procedure Call (RPC)</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../classlist.html">API Documentation</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../structure.html">Project Structure and C++ API</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../avogadroapp.html">Avogadro App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calc.html">Avogadro::Calc</a></li>
 <li class="toctree-l2 current active has-children"><a class="reference internal" href="../core.html">Avogadro::Core</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_angle_iterator.html">Avogadro::Core::AngleIterator</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html">Avogadro::Core::Array</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_array_set.html">Avogadro::Core::ArraySet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_array_set_1_1_holder.html">Avogadro::Core::ArraySet::Holder</a></li>
@@ -446,28 +445,35 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_atom.html">Avogadro::Core::Atom</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_atom_template.html">Avogadro::Core::AtomTemplate</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_atom_typer.html">Avogadro::Core::AtomTyper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_atom_utilities.html">Avogadro::Core::AtomUtilities</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_avo_spglib.html">Avogadro::Core::AvoSpglib</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_basis_set.html">Avogadro::Core::BasisSet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_bond.html">Avogadro::Core::Bond</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_bond_template.html">Avogadro::Core::BondTemplate</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_color3f.html">Avogadro::Core::Color3f</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_constraint.html">Avogadro::Core::Constraint</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_coordinate_block_generator.html">Avogadro::Core::CoordinateBlockGenerator</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_coordinate_set.html">Avogadro::Core::CoordinateSet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_crystal_tools.html">Avogadro::Core::CrystalTools</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_cube.html">Avogadro::Core::Cube</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_dihedral_iterator.html">Avogadro::Core::DihedralIterator</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_elements.html">Avogadro::Core::Elements</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_gaussian_set.html">Avogadro::Core::GaussianSet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_gaussian_set_tools.html">Avogadro::Core::GaussianSetTools</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_graph.html">Avogadro::Core::Graph</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_layer.html">Avogadro::Core::Layer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_layer_manager.html">Avogadro::Core::LayerManager</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_mesh.html">Avogadro::Core::Mesh</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html">Avogadro::Core::Molecule</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule_deserializer.html">Avogadro::Core::MoleculeDeserializer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule_serializer.html">Avogadro::Core::MoleculeSerializer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_mutex.html">Avogadro::Core::Mutex</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_name_atom_typer.html">Avogadro::Core::NameAtomTyper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_neighbor_perceiver.html">Avogadro::Core::NeighborPerceiver</a></li>
 <li class="toctree-l3 current active"><a class="current reference internal" href="#">Avogadro::Core::Residue</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_residue_data.html">Avogadro::Core::ResidueData</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_ring_perceiver.html">Avogadro::Core::RingPerceiver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_secondary_structure_assigner.html">Avogadro::Core::SecondaryStructureAssigner</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_shared_mutex.html">Avogadro::Core::SharedMutex</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_slater_set.html">Avogadro::Core::SlaterSet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_slater_set_tools.html">Avogadro::Core::SlaterSetTools</a></li>
@@ -493,9 +499,11 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../qtgui.html">Avogadro::QtGui</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../qtplugins.html">Avogadro::QtPlugins</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rendering.html">Avogadro::Rendering</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../vtk.html">Avogadro::VTK</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1"><a class="reference internal" href="../build.html">Building Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">Script Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rpc.html">Avogadro Remote Procedure Call (RPC)</a></li>
 </ul>
 </div>
 </nav></div>
@@ -878,12 +886,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="class_avogadro_1_1_core_1_1_name_atom_typer.html"
+       href="class_avogadro_1_1_core_1_1_neighbor_perceiver.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Avogadro::Core::NameAtomTyper</p>
+        <p class="prev-next-title">Avogadro::Core::NeighborPerceiver</p>
       </div>
     </a>
     <a class="right-next"

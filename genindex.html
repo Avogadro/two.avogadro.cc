@@ -32,6 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css?v=ee427ece" />
+    <link rel="stylesheet" type="text/css" href="_static/mermaid-theme.css?v=7f85688a" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -50,6 +51,441 @@
     <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+    <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.esm.min.mjs";
+
+
+
+
+
+const initStyles = () => {
+    const defaultStyle = document.createElement('style');
+    defaultStyle.textContent = `pre.mermaid {
+    /* Same as .mermaid-container > pre */
+    display: block;
+    width: 100%;
+}
+
+pre.mermaid > svg {
+    /* Same as .mermaid-container > pre > svg */
+    height: 500px;
+    width: 100%;
+    max-width: 100% !important;
+}`;
+    document.head.appendChild(defaultStyle);
+
+    const fullscreenStyle = document.createElement('style');
+    fullscreenStyle.textContent = `.mermaid-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.mermaid-container > pre {
+    display: block;
+    width: 100%;
+}
+
+.mermaid-container > pre > svg {
+    height: 500px;
+    width: 100%;
+    max-width: 100% !important;
+}
+
+.mermaid-fullscreen-btn {
+    width: 28px;
+    height: 28px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    line-height: 1;
+    padding: 0;
+    color: #333;
+}
+
+.mermaid-fullscreen-btn:hover {
+    opacity: 100% !important;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+}
+
+.mermaid-fullscreen-btn.dark-theme {
+    background: rgba(50, 50, 50, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #e0e0e0;
+}
+
+.mermaid-fullscreen-btn.dark-theme:hover {
+    background: rgba(60, 60, 60, 1);
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.2);
+}
+
+.mermaid-fullscreen-modal {
+    display: none;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 95vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.98);
+    z-index: 9999;
+    padding: 20px;
+    overflow: auto;
+}
+
+.mermaid-fullscreen-modal.dark-theme {
+    background: rgba(0, 0, 0, 0.98);
+}
+
+.mermaid-fullscreen-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen {
+    position: relative;
+    width: 95vw;
+    height: 90vh;
+    max-width: 95vw;
+    max-height: 90vh;
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen.dark-theme {
+    background: #1a1a1a;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+}
+
+.mermaid-container-fullscreen pre.mermaid {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen .mermaid svg {
+    height: 100% !important;
+    width: 100% !important;
+    cursor: grab;
+}
+
+.mermaid-fullscreen-close {
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s;
+    font-size: 24px;
+    line-height: 1;
+    color: #333;
+}
+
+.mermaid-fullscreen-close:hover {
+    background: white;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    transform: scale(1.1);
+}
+
+.mermaid-fullscreen-close.dark-theme {
+    background: rgba(50, 50, 50, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #e0e0e0;
+}
+
+.mermaid-fullscreen-close.dark-theme:hover {
+    background: rgba(60, 60, 60, 1);
+    box-shadow: 0 6px 16px rgba(255, 255, 255, 0.2);
+}
+
+.mermaid-fullscreen-modal .mermaid-fullscreen-btn {
+    display: none !important;
+}`;
+    document.head.appendChild(fullscreenStyle);
+}
+
+// Detect if page has dark background
+const isDarkTheme = () => {
+    // We use a set of heuristics:
+    // 1. Check for common dark mode classes or attributes
+    // 2. Check computed background color brightness
+    if (document.documentElement.classList.contains('dark') ||
+        document.documentElement.getAttribute('data-theme') === 'dark' ||
+        document.body.classList.contains('dark') ||
+        document.body.getAttribute('data-theme') === 'dark') {
+        // console.log("Dark theme detected via class/attribute");
+        return true;
+    }
+    if (document.documentElement.classList.contains('light') ||
+        document.documentElement.getAttribute('data-theme') === 'light' ||
+        document.body.classList.contains('light') ||
+        document.body.getAttribute('data-theme') === 'light') {
+        // console.log("Light theme detected via class/attribute");
+        return false;
+    }
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        // console.log("Dark theme detected via prefers-color-scheme");
+        return true;
+    }
+    const bgColor = window.getComputedStyle(document.body).backgroundColor;
+    const match = bgColor.match(/rgb\((\d+),\s*(\d+),\s*(\d+)/);
+    if (match) {
+        const r = parseInt(match[1]);
+        const g = parseInt(match[2]);
+        const b = parseInt(match[3]);
+        const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+        // console.log("Background color brightness:", brightness);
+        return brightness < 128;
+    }
+    // console.log("No dark or light theme detected, defaulting to light theme");
+    return false;
+};
+
+let darkTheme = isDarkTheme();
+let modal = null;
+let modalContent = null;
+let previousScrollOffset = [window.scrollX, window.scrollY];
+
+const runMermaid = async (rerun) => {
+    console.log("Running mermaid diagrams, rerun =", rerun);
+    // clear all existing mermaid charts
+    let all_mermaids = document.querySelectorAll(".mermaid");
+
+    if (rerun) {
+        all_mermaids.forEach((el) => {
+            if(!el.hasAttribute("data-original-code")) {
+                // store original code
+                // console.log(`Storing original code for first run: `, el.innerHTML);
+                el.setAttribute('data-original-code', el.innerHTML);
+            }
+            if(el.getAttribute("data-processed") === "true") {
+                // remove and restore original
+                el.removeAttribute("data-processed");
+                // console.log(`Restoring original code for re-run: `, el.getAttribute('data-original-code'));
+                el.innerHTML = el.getAttribute('data-original-code');
+            } else {
+                // store original code
+                // console.log(`Storing original code for re-run: `, el.innerHTML);
+                el.setAttribute('data-original-code', el.innerHTML);
+            }
+        });
+        await mermaid.run();
+    }
+
+    all_mermaids = document.querySelectorAll(".mermaid");
+    const mermaids_processed = document.querySelectorAll(".mermaid[data-processed='true']");
+
+    if ("False" === "True") {
+        const mermaids_to_add_zoom = -1 === -1 ? all_mermaids.length : -1;
+        if(mermaids_to_add_zoom > 0) {
+            var svgs = d3.selectAll("");
+            if(all_mermaids.length !== mermaids_processed.length) {
+                setTimeout(() => runMermaid(false), 200);
+                return;
+            } else if(svgs.size() !== mermaids_to_add_zoom) {
+                setTimeout(() => runMermaid(false), 200);
+                return;
+            } else {
+                svgs.each(function() {
+                    var svg = d3.select(this);
+                    svg.html("<g class='wrapper'>" + svg.html() + "</g>");
+                    var inner = svg.select("g");
+                    var zoom = d3.zoom().on("zoom", function(event) {
+                        inner.attr("transform", event.transform);
+                    });
+                    svg.call(zoom);
+                });
+            }
+        }
+    } else if(all_mermaids.length !== mermaids_processed.length) {
+        // Wait for mermaid to process all diagrams
+        setTimeout(() => runMermaid(false), 200);
+        return;
+    }
+
+    // Stop here if not adding fullscreen capability
+    if ("True" !== "True") return;
+
+    if (modal !== null ) {
+        // Destroy existing modal
+        modal.remove();
+        modal = null;
+        modalContent = null;
+    }
+
+    modal = document.createElement('div');
+    modal.className = 'mermaid-fullscreen-modal' + (darkTheme ? ' dark-theme' : '');
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-label', 'Fullscreen diagram viewer');
+    modal.innerHTML = `
+        <button class="mermaid-fullscreen-close${darkTheme ? ' dark-theme' : ''}" aria-label="Close fullscreen">✕</button>
+        <div class="mermaid-container-fullscreen${darkTheme ? ' dark-theme' : ''}"></div>
+    `;
+    document.body.appendChild(modal);
+
+    modalContent = modal.querySelector('.mermaid-container-fullscreen');
+    const closeBtn = modal.querySelector('.mermaid-fullscreen-close');
+
+    const closeModal = () => {
+        modal.classList.remove('active');
+        modalContent.innerHTML = '';
+        document.body.style.overflow = ''
+        window.scrollTo({left: previousScrollOffset[0], top: previousScrollOffset[1], behavior: 'instant'});
+    };
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+
+    document.querySelectorAll('.mermaid').forEach((mermaidDiv) => {
+        if (mermaidDiv.parentNode.classList.contains('mermaid-container') ||
+            mermaidDiv.closest('.mermaid-fullscreen-modal')) {
+            // Already processed, adjust button class if needed
+            const existingBtn = mermaidDiv.parentNode.querySelector('.mermaid-fullscreen-btn');
+            if (existingBtn) {
+                existingBtn.className = 'mermaid-fullscreen-btn' + (darkTheme ? ' dark-theme' : '');
+            }
+            return;
+        }
+
+        const container = document.createElement('div');
+        container.className = 'mermaid-container';
+        mermaidDiv.parentNode.insertBefore(container, mermaidDiv);
+        container.appendChild(mermaidDiv);
+
+        const fullscreenBtn = document.createElement('button');
+        fullscreenBtn.className = 'mermaid-fullscreen-btn' + (darkTheme ? ' dark-theme' : '');
+        fullscreenBtn.setAttribute('aria-label', 'View diagram in fullscreen');
+        fullscreenBtn.textContent = '⛶';
+        fullscreenBtn.style.opacity = '50%';
+
+        // Calculate dynamic position based on diagram's margin and padding
+        const diagramStyle = window.getComputedStyle(mermaidDiv);
+        const marginTop = parseFloat(diagramStyle.marginTop) || 0;
+        const marginRight = parseFloat(diagramStyle.marginRight) || 0;
+        const paddingTop = parseFloat(diagramStyle.paddingTop) || 0;
+        const paddingRight = parseFloat(diagramStyle.paddingRight) || 0;
+        fullscreenBtn.style.top = `${marginTop + paddingTop + 4}px`;
+        fullscreenBtn.style.right = `${marginRight + paddingRight + 4}px`;
+
+        fullscreenBtn.addEventListener('click', () => {
+            previousScrollOffset = [window.scroll, window.scrollY];
+            const clone = mermaidDiv.cloneNode(true);
+            modalContent.innerHTML = '';
+            modalContent.appendChild(clone);
+
+            const svg = clone.querySelector('svg');
+            if (svg) {
+                svg.removeAttribute('width');
+                svg.removeAttribute('height');
+                svg.style.width = '100%';
+                svg.style.height = 'auto';
+                svg.style.maxWidth = '100%';
+                svg.style.sdisplay = 'block';
+
+                if ("False" === "True") {
+                    setTimeout(() => {
+                        const g = svg.querySelector('g');
+                        if (g) {
+                            var svgD3 = d3.select(svg);
+                            svgD3.html("<g class='wrapper'>" + svgD3.html() + "</g>");
+                            var inner = svgD3.select("g");
+                            var zoom = d3.zoom().on("zoom", function(event) {
+                                inner.attr("transform", event.transform);
+                            });
+                            svgD3.call(zoom);
+                        }
+                    }, 100);
+                }
+            }
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        container.appendChild(fullscreenBtn);
+    });
+};
+
+const load = async () => {
+    initStyles();
+
+    await runMermaid(true);
+
+    const reRunIfThemeChanges = async () => {
+        const newDarkTheme = isDarkTheme();
+        if (newDarkTheme !== darkTheme) {
+            darkTheme = newDarkTheme;
+            console.log("Theme change detected, re-running mermaid with", darkTheme ? "dark" : "default", "theme");
+            await mermaid.initialize(
+                {...JSON.parse(
+                    `{"startOnLoad": false}`
+                ),
+                ...{ darkMode: darkTheme, theme: darkTheme ? 'dark' : 'default' },
+                }
+            );
+            await runMermaid(true);
+        }
+    };
+
+    // Update theme classes when theme changes
+    const themeObserver = new MutationObserver(reRunIfThemeChanges);
+    themeObserver.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['class', 'style', 'data-theme']
+    });
+    themeObserver.observe(document.body, {
+        attributes: true,
+        attributeFilter: ['class', 'style', 'data-theme']
+    });
+};
+
+
+
+
+
+console.log("Initializing mermaid with", darkTheme ? "dark" : "default", "theme");
+mermaid.initialize(
+    {...JSON.parse(
+        `{"startOnLoad": false}`
+    ),
+    ...{ darkMode: darkTheme, theme: darkTheme ? 'dark' : 'default' },
+    }
+);
+
+window.addEventListener("load", load);</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'genindex';</script>
     <link rel="canonical" href="https://two.avogadro.cc/genindex.html" />
     <link rel="index" title="Index" href="#" />
@@ -447,12 +883,281 @@ document.write(`
 
 <div class="genindex-jumpbox">
  <a href="#A"><strong>A</strong></a>
- | <a href="#V"><strong>V</strong></a>
  
 </div>
 <h2 id="A">A</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_charge_manager.html#_CPPv4N8Avogadro4Calc13ChargeManagerE">Avogadro::Calc::ChargeManager (C++ class)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_charge_manager.html#_CPPv4N8Avogadro4Calc13ChargeManager8addModelEP11ChargeModel">Avogadro::Calc::ChargeManager::addModel (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_charge_manager.html#_CPPv4NK8Avogadro4Calc13ChargeManager12dipoleMomentERKNSt6stringERKN4Core8MoleculeE">Avogadro::Calc::ChargeManager::dipoleMoment (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_charge_manager.html#_CPPv4NK8Avogadro4Calc13ChargeManager5errorEv">Avogadro::Calc::ChargeManager::error (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_charge_manager.html#_CPPv4NK8Avogadro4Calc13ChargeManager11identifiersEv">Avogadro::Calc::ChargeManager::identifiers (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_charge_manager.html#_CPPv4NK8Avogadro4Calc13ChargeManager22identifiersForMoleculeERKN4Core8MoleculeE">Avogadro::Calc::ChargeManager::identifiersForMolecule (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_charge_manager.html#_CPPv4N8Avogadro4Calc13ChargeManager8instanceEv">Avogadro::Calc::ChargeManager::instance (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_charge_manager.html#_CPPv4NK8Avogadro4Calc13ChargeManager12nameForModelERKNSt6stringE">Avogadro::Calc::ChargeManager::nameForModel (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_charge_manager.html#_CPPv4NK8Avogadro4Calc13ChargeManager14partialChargesERKNSt6stringERKN4Core8MoleculeE">Avogadro::Calc::ChargeManager::partialCharges (C++ function)</a>, <a href="develop/class/class_avogadro_1_1_calc_1_1_charge_manager.html#_CPPv4NK8Avogadro4Calc13ChargeManager14partialChargesERKNSt6stringERN4Core8MoleculeE">[1]</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_charge_manager.html#_CPPv4NK8Avogadro4Calc13ChargeManager9potentialERKNSt6stringERN4Core8MoleculeERK7Vector3">Avogadro::Calc::ChargeManager::potential (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_charge_manager.html#_CPPv4NK8Avogadro4Calc13ChargeManager10potentialsERKNSt6stringERN4Core8MoleculeERKN4Core5ArrayI7Vector3EE">Avogadro::Calc::ChargeManager::potentials (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_charge_manager.html#_CPPv4NK8Avogadro4Calc13ChargeManager16recommendedModelERKN4Core8MoleculeE">Avogadro::Calc::ChargeManager::recommendedModel (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_charge_manager.html#_CPPv4N8Avogadro4Calc13ChargeManager13registerModelEP11ChargeModel">Avogadro::Calc::ChargeManager::registerModel (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_charge_manager.html#_CPPv4N8Avogadro4Calc13ChargeManager11removeModelERKNSt6stringE">Avogadro::Calc::ChargeManager::removeModel (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_charge_manager.html#_CPPv4N8Avogadro4Calc13ChargeManager15unregisterModelERKNSt6stringE">Avogadro::Calc::ChargeManager::unregisterModel (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_charge_model.html#_CPPv4N8Avogadro4Calc11ChargeModelE">Avogadro::Calc::ChargeModel (C++ class)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_charge_model.html#_CPPv4NK8Avogadro4Calc11ChargeModel11appendErrorERKNSt6stringEb">Avogadro::Calc::ChargeModel::appendError (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_charge_model.html#_CPPv4N8Avogadro4Calc11ChargeModel11ChargeModelEv">Avogadro::Calc::ChargeModel::ChargeModel (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_charge_model.html#_CPPv4NK8Avogadro4Calc11ChargeModel10dielectricEv">Avogadro::Calc::ChargeModel::dielectric (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_charge_model.html#_CPPv4NK8Avogadro4Calc11ChargeModel12dipoleMomentERKN4Core8MoleculeE">Avogadro::Calc::ChargeModel::dipoleMoment (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_charge_model.html#_CPPv4NK8Avogadro4Calc11ChargeModel8elementsEv">Avogadro::Calc::ChargeModel::elements (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_charge_model.html#_CPPv4NK8Avogadro4Calc11ChargeModel10identifierEv">Avogadro::Calc::ChargeModel::identifier (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_charge_model.html#_CPPv4NK8Avogadro4Calc11ChargeModel4nameEv">Avogadro::Calc::ChargeModel::name (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_charge_model.html#_CPPv4NK8Avogadro4Calc11ChargeModel11newInstanceEv">Avogadro::Calc::ChargeModel::newInstance (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_charge_model.html#_CPPv4NK8Avogadro4Calc11ChargeModel14partialChargesERKN4Core8MoleculeE">Avogadro::Calc::ChargeModel::partialCharges (C++ function)</a>, <a href="develop/class/class_avogadro_1_1_calc_1_1_charge_model.html#_CPPv4NK8Avogadro4Calc11ChargeModel14partialChargesERN4Core8MoleculeE">[1]</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_charge_model.html#_CPPv4NK8Avogadro4Calc11ChargeModel9potentialERN4Core8MoleculeERK7Vector3">Avogadro::Calc::ChargeModel::potential (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_charge_model.html#_CPPv4NK8Avogadro4Calc11ChargeModel10potentialsERN4Core8MoleculeERKN4Core5ArrayI7Vector3EE">Avogadro::Calc::ChargeModel::potentials (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_charge_model.html#_CPPv4N8Avogadro4Calc11ChargeModel13setDielectricEf">Avogadro::Calc::ChargeModel::setDielectric (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_charge_model.html#_CPPv4N8Avogadro4Calc11ChargeModelD0Ev">Avogadro::Calc::ChargeModel::~ChargeModel (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_default_model.html#_CPPv4N8Avogadro4Calc12DefaultModelE">Avogadro::Calc::DefaultModel (C++ class)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_default_model.html#_CPPv4N8Avogadro4Calc12DefaultModel12DefaultModelERKNSt6stringE">Avogadro::Calc::DefaultModel::DefaultModel (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_default_model.html#_CPPv4NK8Avogadro4Calc12DefaultModel8elementsEv">Avogadro::Calc::DefaultModel::elements (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_default_model.html#_CPPv4NK8Avogadro4Calc12DefaultModel10identifierEv">Avogadro::Calc::DefaultModel::identifier (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_default_model.html#_CPPv4N8Avogadro4Calc12DefaultModel10m_elementsE">Avogadro::Calc::DefaultModel::m_elements (C++ member)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_default_model.html#_CPPv4N8Avogadro4Calc12DefaultModel12m_identifierE">Avogadro::Calc::DefaultModel::m_identifier (C++ member)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_default_model.html#_CPPv4NK8Avogadro4Calc12DefaultModel4nameEv">Avogadro::Calc::DefaultModel::name (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_default_model.html#_CPPv4NK8Avogadro4Calc12DefaultModel11newInstanceEv">Avogadro::Calc::DefaultModel::newInstance (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_default_model.html#_CPPv4NK8Avogadro4Calc12DefaultModel14partialChargesERKN4Core8MoleculeE">Avogadro::Calc::DefaultModel::partialCharges (C++ function)</a>, <a href="develop/class/class_avogadro_1_1_calc_1_1_default_model.html#_CPPv4NK8Avogadro4Calc12DefaultModel14partialChargesERN4Core8MoleculeE">[1]</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_default_model.html#_CPPv4N8Avogadro4Calc12DefaultModel13setIdentifierERKNSt6stringE">Avogadro::Calc::DefaultModel::setIdentifier (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_default_model.html#_CPPv4N8Avogadro4Calc12DefaultModelD0Ev">Avogadro::Calc::DefaultModel::~DefaultModel (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_energy_calculator.html#_CPPv4N8Avogadro4Calc16EnergyCalculatorE">Avogadro::Calc::EnergyCalculator (C++ class)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_energy_calculator.html#_CPPv4NK8Avogadro4Calc16EnergyCalculator11acceptsIonsEv">Avogadro::Calc::EnergyCalculator::acceptsIons (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_energy_calculator.html#_CPPv4NK8Avogadro4Calc16EnergyCalculator15acceptsRadicalsEv">Avogadro::Calc::EnergyCalculator::acceptsRadicals (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_energy_calculator.html#_CPPv4NK8Avogadro4Calc16EnergyCalculator15acceptsUnitCellEv">Avogadro::Calc::EnergyCalculator::acceptsUnitCell (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_energy_calculator.html#_CPPv4NK8Avogadro4Calc16EnergyCalculator11appendErrorERKNSt6stringEb">Avogadro::Calc::EnergyCalculator::appendError (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_energy_calculator.html#_CPPv4N8Avogadro4Calc16EnergyCalculator14cleanGradientsER7TVector">Avogadro::Calc::EnergyCalculator::cleanGradients (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_energy_calculator.html#_CPPv4N8Avogadro4Calc16EnergyCalculator18constraintEnergiesERK7TVector">Avogadro::Calc::EnergyCalculator::constraintEnergies (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_energy_calculator.html#_CPPv4N8Avogadro4Calc16EnergyCalculator19constraintGradientsERK7TVectorR7TVector">Avogadro::Calc::EnergyCalculator::constraintGradients (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_energy_calculator.html#_CPPv4NK8Avogadro4Calc16EnergyCalculator11constraintsEv">Avogadro::Calc::EnergyCalculator::constraints (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_energy_calculator.html#_CPPv4NK8Avogadro4Calc16EnergyCalculator11descriptionEv">Avogadro::Calc::EnergyCalculator::description (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_energy_calculator.html#_CPPv4NK8Avogadro4Calc16EnergyCalculator8elementsEv">Avogadro::Calc::EnergyCalculator::elements (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_energy_calculator.html#_CPPv4N8Avogadro4Calc16EnergyCalculator16EnergyCalculatorEv">Avogadro::Calc::EnergyCalculator::EnergyCalculator (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_energy_calculator.html#_CPPv4N8Avogadro4Calc16EnergyCalculator8gradientERK7TVectorR7TVector">Avogadro::Calc::EnergyCalculator::gradient (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_energy_calculator.html#_CPPv4NK8Avogadro4Calc16EnergyCalculator10identifierEv">Avogadro::Calc::EnergyCalculator::identifier (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_energy_calculator.html#_CPPv4N8Avogadro4Calc16EnergyCalculator18m_angleConstraintsE">Avogadro::Calc::EnergyCalculator::m_angleConstraints (C++ member)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_energy_calculator.html#_CPPv4N8Avogadro4Calc16EnergyCalculator21m_distanceConstraintsE">Avogadro::Calc::EnergyCalculator::m_distanceConstraints (C++ member)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_energy_calculator.html#_CPPv4N8Avogadro4Calc16EnergyCalculator6m_maskE">Avogadro::Calc::EnergyCalculator::m_mask (C++ member)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_energy_calculator.html#_CPPv4N8Avogadro4Calc16EnergyCalculator23m_outOfPlaneConstraintsE">Avogadro::Calc::EnergyCalculator::m_outOfPlaneConstraints (C++ member)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_energy_calculator.html#_CPPv4N8Avogadro4Calc16EnergyCalculator20m_torsionConstraintsE">Avogadro::Calc::EnergyCalculator::m_torsionConstraints (C++ member)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_energy_calculator.html#_CPPv4NK8Avogadro4Calc16EnergyCalculator4maskEv">Avogadro::Calc::EnergyCalculator::mask (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_energy_calculator.html#_CPPv4NK8Avogadro4Calc16EnergyCalculator4nameEv">Avogadro::Calc::EnergyCalculator::name (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_energy_calculator.html#_CPPv4NK8Avogadro4Calc16EnergyCalculator11newInstanceEv">Avogadro::Calc::EnergyCalculator::newInstance (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_energy_calculator.html#_CPPv4N8Avogadro4Calc16EnergyCalculator16setConfigurationERN4Core10VariantMapE">Avogadro::Calc::EnergyCalculator::setConfiguration (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_energy_calculator.html#_CPPv4N8Avogadro4Calc16EnergyCalculator14setConstraintsERKNSt6vectorIN4Core10ConstraintEEE">Avogadro::Calc::EnergyCalculator::setConstraints (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_energy_calculator.html#_CPPv4N8Avogadro4Calc16EnergyCalculator7setMaskE7TVector">Avogadro::Calc::EnergyCalculator::setMask (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_energy_calculator.html#_CPPv4N8Avogadro4Calc16EnergyCalculator11setMoleculeEPN4Core8MoleculeE">Avogadro::Calc::EnergyCalculator::setMolecule (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_energy_calculator.html#_CPPv4N8Avogadro4Calc16EnergyCalculatorD0Ev">Avogadro::Calc::EnergyCalculator::~EnergyCalculator (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_energy_manager.html#_CPPv4N8Avogadro4Calc13EnergyManagerE">Avogadro::Calc::EnergyManager (C++ class)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_energy_manager.html#_CPPv4N8Avogadro4Calc13EnergyManager8addModelEP16EnergyCalculator">Avogadro::Calc::EnergyManager::addModel (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_energy_manager.html#_CPPv4NK8Avogadro4Calc13EnergyManager5errorEv">Avogadro::Calc::EnergyManager::error (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_energy_manager.html#_CPPv4NK8Avogadro4Calc13EnergyManager11identifiersEv">Avogadro::Calc::EnergyManager::identifiers (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_energy_manager.html#_CPPv4NK8Avogadro4Calc13EnergyManager22identifiersForMoleculeERKN4Core8MoleculeE">Avogadro::Calc::EnergyManager::identifiersForMolecule (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_energy_manager.html#_CPPv4N8Avogadro4Calc13EnergyManager8instanceEv">Avogadro::Calc::EnergyManager::instance (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_energy_manager.html#_CPPv4NK8Avogadro4Calc13EnergyManager5modelERKNSt6stringE">Avogadro::Calc::EnergyManager::model (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_energy_manager.html#_CPPv4NK8Avogadro4Calc13EnergyManager12nameForModelERKNSt6stringE">Avogadro::Calc::EnergyManager::nameForModel (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_energy_manager.html#_CPPv4NK8Avogadro4Calc13EnergyManager16recommendedModelERKN4Core8MoleculeE">Avogadro::Calc::EnergyManager::recommendedModel (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_energy_manager.html#_CPPv4N8Avogadro4Calc13EnergyManager13registerModelEP16EnergyCalculator">Avogadro::Calc::EnergyManager::registerModel (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_energy_manager.html#_CPPv4N8Avogadro4Calc13EnergyManager11removeModelERKNSt6stringE">Avogadro::Calc::EnergyManager::removeModel (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_energy_manager.html#_CPPv4N8Avogadro4Calc13EnergyManager15unregisterModelERKNSt6stringE">Avogadro::Calc::EnergyManager::unregisterModel (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_lennard_jones.html#_CPPv4N8Avogadro4Calc12LennardJonesE">Avogadro::Calc::LennardJones (C++ class)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_lennard_jones.html#_CPPv4NK8Avogadro4Calc12LennardJones11acceptsIonsEv">Avogadro::Calc::LennardJones::acceptsIons (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_lennard_jones.html#_CPPv4NK8Avogadro4Calc12LennardJones15acceptsRadicalsEv">Avogadro::Calc::LennardJones::acceptsRadicals (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_lennard_jones.html#_CPPv4NK8Avogadro4Calc12LennardJones15acceptsUnitCellEv">Avogadro::Calc::LennardJones::acceptsUnitCell (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_lennard_jones.html#_CPPv4NK8Avogadro4Calc12LennardJones11descriptionEv">Avogadro::Calc::LennardJones::description (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_lennard_jones.html#_CPPv4NK8Avogadro4Calc12LennardJones8elementsEv">Avogadro::Calc::LennardJones::elements (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_lennard_jones.html#_CPPv4N8Avogadro4Calc12LennardJones8gradientERKN5Eigen8VectorXdERN5Eigen8VectorXdE">Avogadro::Calc::LennardJones::gradient (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_lennard_jones.html#_CPPv4NK8Avogadro4Calc12LennardJones10identifierEv">Avogadro::Calc::LennardJones::identifier (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_lennard_jones.html#_CPPv4N8Avogadro4Calc12LennardJones12LennardJonesEv">Avogadro::Calc::LennardJones::LennardJones (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_lennard_jones.html#_CPPv4N8Avogadro4Calc12LennardJones6m_cellE">Avogadro::Calc::LennardJones::m_cell (C++ member)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_lennard_jones.html#_CPPv4N8Avogadro4Calc12LennardJones7m_depthE">Avogadro::Calc::LennardJones::m_depth (C++ member)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_lennard_jones.html#_CPPv4N8Avogadro4Calc12LennardJones10m_elementsE">Avogadro::Calc::LennardJones::m_elements (C++ member)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_lennard_jones.html#_CPPv4N8Avogadro4Calc12LennardJones10m_exponentE">Avogadro::Calc::LennardJones::m_exponent (C++ member)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_lennard_jones.html#_CPPv4N8Avogadro4Calc12LennardJones10m_moleculeE">Avogadro::Calc::LennardJones::m_molecule (C++ member)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_lennard_jones.html#_CPPv4N8Avogadro4Calc12LennardJones7m_radiiE">Avogadro::Calc::LennardJones::m_radii (C++ member)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_lennard_jones.html#_CPPv4N8Avogadro4Calc12LennardJones5m_vdwE">Avogadro::Calc::LennardJones::m_vdw (C++ member)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_lennard_jones.html#_CPPv4NK8Avogadro4Calc12LennardJones4nameEv">Avogadro::Calc::LennardJones::name (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_lennard_jones.html#_CPPv4NK8Avogadro4Calc12LennardJones11newInstanceEv">Avogadro::Calc::LennardJones::newInstance (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_lennard_jones.html#_CPPv4N8Avogadro4Calc12LennardJones11setMoleculeEPN4Core8MoleculeE">Avogadro::Calc::LennardJones::setMolecule (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_lennard_jones.html#_CPPv4N8Avogadro4Calc12LennardJones5valueERKN5Eigen8VectorXdE">Avogadro::Calc::LennardJones::value (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_lennard_jones.html#_CPPv4N8Avogadro4Calc12LennardJonesD0Ev">Avogadro::Calc::LennardJones::~LennardJones (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_u_f_f.html#_CPPv4N8Avogadro4Calc3UFFE">Avogadro::Calc::UFF (C++ class)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_u_f_f.html#_CPPv4NK8Avogadro4Calc3UFF11acceptsIonsEv">Avogadro::Calc::UFF::acceptsIons (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_u_f_f.html#_CPPv4NK8Avogadro4Calc3UFF15acceptsRadicalsEv">Avogadro::Calc::UFF::acceptsRadicals (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_u_f_f.html#_CPPv4NK8Avogadro4Calc3UFF15acceptsUnitCellEv">Avogadro::Calc::UFF::acceptsUnitCell (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_u_f_f.html#_CPPv4N8Avogadro4Calc3UFF11angleEnergyERKN5Eigen8VectorXdE">Avogadro::Calc::UFF::angleEnergy (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_u_f_f.html#_CPPv4N8Avogadro4Calc3UFF13angleGradientERKN5Eigen8VectorXdERN5Eigen8VectorXdE">Avogadro::Calc::UFF::angleGradient (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_u_f_f.html#_CPPv4N8Avogadro4Calc3UFF10bondEnergyERKN5Eigen8VectorXdE">Avogadro::Calc::UFF::bondEnergy (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_u_f_f.html#_CPPv4N8Avogadro4Calc3UFF12bondGradientERKN5Eigen8VectorXdERN5Eigen8VectorXdE">Avogadro::Calc::UFF::bondGradient (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_u_f_f.html#_CPPv4N8Avogadro4Calc3UFF1dE">Avogadro::Calc::UFF::d (C++ member)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_u_f_f.html#_CPPv4NK8Avogadro4Calc3UFF11descriptionEv">Avogadro::Calc::UFF::description (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_u_f_f.html#_CPPv4NK8Avogadro4Calc3UFF8elementsEv">Avogadro::Calc::UFF::elements (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_u_f_f.html#_CPPv4N8Avogadro4Calc3UFF8gradientERKN5Eigen8VectorXdERN5Eigen8VectorXdE">Avogadro::Calc::UFF::gradient (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_u_f_f.html#_CPPv4NK8Avogadro4Calc3UFF10identifierEv">Avogadro::Calc::UFF::identifier (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_u_f_f.html#_CPPv4N8Avogadro4Calc3UFF10m_elementsE">Avogadro::Calc::UFF::m_elements (C++ member)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_u_f_f.html#_CPPv4N8Avogadro4Calc3UFF10m_moleculeE">Avogadro::Calc::UFF::m_molecule (C++ member)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_u_f_f.html#_CPPv4NK8Avogadro4Calc3UFF4nameEv">Avogadro::Calc::UFF::name (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_u_f_f.html#_CPPv4NK8Avogadro4Calc3UFF11newInstanceEv">Avogadro::Calc::UFF::newInstance (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_u_f_f.html#_CPPv4N8Avogadro4Calc3UFF9oopEnergyERKN5Eigen8VectorXdE">Avogadro::Calc::UFF::oopEnergy (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_u_f_f.html#_CPPv4N8Avogadro4Calc3UFF11oopGradientERKN5Eigen8VectorXdERN5Eigen8VectorXdE">Avogadro::Calc::UFF::oopGradient (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_u_f_f.html#_CPPv4N8Avogadro4Calc3UFF11setMoleculeEPN4Core8MoleculeE">Avogadro::Calc::UFF::setMolecule (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_u_f_f.html#_CPPv4N8Avogadro4Calc3UFF13torsionEnergyERKN5Eigen8VectorXdE">Avogadro::Calc::UFF::torsionEnergy (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_u_f_f.html#_CPPv4N8Avogadro4Calc3UFF15torsionGradientERKN5Eigen8VectorXdERN5Eigen8VectorXdE">Avogadro::Calc::UFF::torsionGradient (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_u_f_f.html#_CPPv4N8Avogadro4Calc3UFF3UFFEv">Avogadro::Calc::UFF::UFF (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_u_f_f.html#_CPPv4N8Avogadro4Calc3UFF5valueERKN5Eigen8VectorXdE">Avogadro::Calc::UFF::value (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_u_f_f.html#_CPPv4N8Avogadro4Calc3UFF9vdwEnergyERKN5Eigen8VectorXdE">Avogadro::Calc::UFF::vdwEnergy (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_u_f_f.html#_CPPv4N8Avogadro4Calc3UFF11vdwGradientERKN5Eigen8VectorXdERN5Eigen8VectorXdE">Avogadro::Calc::UFF::vdwGradient (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_calc_1_1_u_f_f.html#_CPPv4N8Avogadro4Calc3UFFD0Ev">Avogadro::Calc::UFF::~UFF (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_angle_iterator.html#_CPPv4N8Avogadro4Core13AngleIteratorE">Avogadro::Core::AngleIterator (C++ class)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_angle_iterator.html#_CPPv4N8Avogadro4Core13AngleIterator13AngleIteratorEPK8Molecule">Avogadro::Core::AngleIterator::AngleIterator (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_angle_iterator.html#_CPPv4N8Avogadro4Core13AngleIterator5beginEv">Avogadro::Core::AngleIterator::begin (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_angle_iterator.html#_CPPv4NK8Avogadro4Core13AngleIterator3endEv">Avogadro::Core::AngleIterator::end (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_angle_iterator.html#_CPPv4N8Avogadro4Core13AngleIteratorneERK13AngleIterator">Avogadro::Core::AngleIterator::operator!= (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_angle_iterator.html#_CPPv4N8Avogadro4Core13AngleIteratormlEv">Avogadro::Core::AngleIterator::operator* (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_angle_iterator.html#_CPPv4N8Avogadro4Core13AngleIteratorppEv">Avogadro::Core::AngleIterator::operator++ (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_angle_iterator.html#_CPPv4N8Avogadro4Core13AngleIteratorD0Ev">Avogadro::Core::AngleIterator::~AngleIterator (C++ function)</a>
+</li>
       <li><a href="develop/class/class_avogadro_1_1_core_1_1_array.html#_CPPv4I0EN8Avogadro4Core5ArrayE">Avogadro::Core::Array (C++ class)</a>
 </li>
       <li><a href="develop/class/class_avogadro_1_1_core_1_1_array.html#_CPPv4N8Avogadro4Core5Array14allocator_typeE">Avogadro::Core::Array::allocator_type (C++ type)</a>
@@ -669,6 +1374,12 @@ document.write(`
 </li>
       <li><a href="develop/class/class_avogadro_1_1_core_1_1_atom_typer.html#_CPPv4N8Avogadro4Core9AtomTyperD0Ev">Avogadro::Core::AtomTyper::~AtomTyper (C++ function)</a>
 </li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_atom_utilities.html#_CPPv4N8Avogadro4Core13AtomUtilitiesE">Avogadro::Core::AtomUtilities (C++ class)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_atom_utilities.html#_CPPv4N8Avogadro4Core13AtomUtilities21generateNewBondVectorERK4AtomRKNSt6vectorI7Vector3EE17AtomHybridization">Avogadro::Core::AtomUtilities::generateNewBondVector (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_atom_utilities.html#_CPPv4N8Avogadro4Core13AtomUtilities21perceiveHybridizationERK4Atom">Avogadro::Core::AtomUtilities::perceiveHybridization (C++ function)</a>
+</li>
       <li><a href="develop/class/class_avogadro_1_1_core_1_1_avo_spglib.html#_CPPv4N8Avogadro4Core9AvoSpglibE">Avogadro::Core::AvoSpglib (C++ class)</a>
 </li>
       <li><a href="develop/class/class_avogadro_1_1_core_1_1_avo_spglib.html#_CPPv4N8Avogadro4Core9AvoSpglib9AvoSpglibEv">Avogadro::Core::AvoSpglib::AvoSpglib (C++ function)</a>
@@ -804,6 +1515,62 @@ document.write(`
       <li><a href="develop/class/class_avogadro_1_1_core_1_1_color3f.html#_CPPv4NK8Avogadro4Core7Color3f3redEv">Avogadro::Core::Color3f::red (C++ function)</a>
 </li>
       <li><a href="develop/class/class_avogadro_1_1_core_1_1_color3f.html#_CPPv4N8Avogadro4Core7Color3f3setEfff">Avogadro::Core::Color3f::set (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_constraint.html#_CPPv4N8Avogadro4Core10ConstraintE">Avogadro::Core::Constraint (C++ class)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_constraint.html#_CPPv4NK8Avogadro4Core10Constraint6aIndexEv">Avogadro::Core::Constraint::aIndex (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_constraint.html#_CPPv4NK8Avogadro4Core10Constraint5atomsEv">Avogadro::Core::Constraint::atoms (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_constraint.html#_CPPv4NK8Avogadro4Core10Constraint6bIndexEv">Avogadro::Core::Constraint::bIndex (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_constraint.html#_CPPv4NK8Avogadro4Core10Constraint6cIndexEv">Avogadro::Core::Constraint::cIndex (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_constraint.html#_CPPv4N8Avogadro4Core10Constraint10ConstraintE5Index5Index5Index5Index4Real">Avogadro::Core::Constraint::Constraint (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_constraint.html#_CPPv4NK8Avogadro4Core10Constraint6dIndexEv">Avogadro::Core::Constraint::dIndex (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_constraint.html#_CPPv4NK8Avogadro4Core10Constraint1kEv">Avogadro::Core::Constraint::k (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_constraint.html#_CPPv4N8Avogadro4Core10Constraint8m_aIndexE">Avogadro::Core::Constraint::m_aIndex (C++ member)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_constraint.html#_CPPv4N8Avogadro4Core10Constraint8m_bIndexE">Avogadro::Core::Constraint::m_bIndex (C++ member)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_constraint.html#_CPPv4N8Avogadro4Core10Constraint8m_cIndexE">Avogadro::Core::Constraint::m_cIndex (C++ member)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_constraint.html#_CPPv4N8Avogadro4Core10Constraint8m_dIndexE">Avogadro::Core::Constraint::m_dIndex (C++ member)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_constraint.html#_CPPv4N8Avogadro4Core10Constraint3m_kE">Avogadro::Core::Constraint::m_k (C++ member)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_constraint.html#_CPPv4N8Avogadro4Core10Constraint6m_typeE">Avogadro::Core::Constraint::m_type (C++ member)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_constraint.html#_CPPv4N8Avogadro4Core10Constraint7m_valueE">Avogadro::Core::Constraint::m_value (C++ member)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_constraint.html#_CPPv4N8Avogadro4Core10Constraint3setE5Index5Index5Index5Index4Real">Avogadro::Core::Constraint::set (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_constraint.html#_CPPv4N8Avogadro4Core10Constraint4setKE4Real">Avogadro::Core::Constraint::setK (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_constraint.html#_CPPv4NK8Avogadro4Core10Constraint7setTypeEN10Constraint4TypeE">Avogadro::Core::Constraint::setType (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_constraint.html#_CPPv4N8Avogadro4Core10Constraint8setValueE4Real">Avogadro::Core::Constraint::setValue (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_constraint.html#_CPPv4N8Avogadro4Core10Constraint4TypeE">Avogadro::Core::Constraint::Type (C++ enum)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_constraint.html#_CPPv4NK8Avogadro4Core10Constraint4typeEv">Avogadro::Core::Constraint::type (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_constraint.html#_CPPv4N8Avogadro4Core10Constraint4Type15AngleConstraintE">Avogadro::Core::Constraint::Type::AngleConstraint (C++ enumerator)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_constraint.html#_CPPv4N8Avogadro4Core10Constraint4Type18DistanceConstraintE">Avogadro::Core::Constraint::Type::DistanceConstraint (C++ enumerator)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_constraint.html#_CPPv4N8Avogadro4Core10Constraint4Type4NoneE">Avogadro::Core::Constraint::Type::None (C++ enumerator)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_constraint.html#_CPPv4N8Avogadro4Core10Constraint4Type20OutOfPlaneConstraintE">Avogadro::Core::Constraint::Type::OutOfPlaneConstraint (C++ enumerator)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_constraint.html#_CPPv4N8Avogadro4Core10Constraint4Type17TorsionConstraintE">Avogadro::Core::Constraint::Type::TorsionConstraint (C++ enumerator)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_constraint.html#_CPPv4N8Avogadro4Core10Constraint4Type17UnknownConstraintE">Avogadro::Core::Constraint::Type::UnknownConstraint (C++ enumerator)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_constraint.html#_CPPv4NK8Avogadro4Core10Constraint5valueEv">Avogadro::Core::Constraint::value (C++ function)</a>
 </li>
       <li><a href="develop/class/class_avogadro_1_1_core_1_1_coordinate_block_generator.html#_CPPv4N8Avogadro4Core24CoordinateBlockGeneratorE">Avogadro::Core::CoordinateBlockGenerator (C++ class)</a>
 </li>
@@ -986,6 +1753,22 @@ document.write(`
       <li><a href="develop/class/class_avogadro_1_1_core_1_1_cube.html#_CPPv4NK8Avogadro4Core4Cube6valuefERK8Vector3f">Avogadro::Core::Cube::valuef (C++ function)</a>
 </li>
       <li><a href="develop/class/class_avogadro_1_1_core_1_1_cube.html#_CPPv4N8Avogadro4Core4CubeD0Ev">Avogadro::Core::Cube::~Cube (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_dihedral_iterator.html#_CPPv4N8Avogadro4Core16DihedralIteratorE">Avogadro::Core::DihedralIterator (C++ class)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_dihedral_iterator.html#_CPPv4N8Avogadro4Core16DihedralIterator5beginEv">Avogadro::Core::DihedralIterator::begin (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_dihedral_iterator.html#_CPPv4N8Avogadro4Core16DihedralIterator16DihedralIteratorEPK8Molecule">Avogadro::Core::DihedralIterator::DihedralIterator (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_dihedral_iterator.html#_CPPv4NK8Avogadro4Core16DihedralIterator3endEv">Avogadro::Core::DihedralIterator::end (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_dihedral_iterator.html#_CPPv4N8Avogadro4Core16DihedralIteratorneERK16DihedralIterator">Avogadro::Core::DihedralIterator::operator!= (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_dihedral_iterator.html#_CPPv4N8Avogadro4Core16DihedralIteratormlEv">Avogadro::Core::DihedralIterator::operator* (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_dihedral_iterator.html#_CPPv4N8Avogadro4Core16DihedralIteratorppEv">Avogadro::Core::DihedralIterator::operator++ (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_dihedral_iterator.html#_CPPv4N8Avogadro4Core16DihedralIteratorD0Ev">Avogadro::Core::DihedralIterator::~DihedralIterator (C++ function)</a>
 </li>
       <li><a href="develop/class/class_avogadro_1_1_core_1_1_elements.html#_CPPv4N8Avogadro4Core8ElementsE">Avogadro::Core::Elements (C++ class)</a>
 </li>
@@ -1230,6 +2013,54 @@ document.write(`
       <li><a href="develop/class/class_avogadro_1_1_core_1_1internal_1_1_array_ref_container.html#_CPPv4N8Avogadro4Core8internal17ArrayRefContainer10value_typeE">Avogadro::Core::internal::ArrayRefContainer::value_type (C++ type)</a>
 </li>
       <li><a href="develop/class/class_avogadro_1_1_core_1_1internal_1_1_array_ref_container.html#_CPPv4N8Avogadro4Core8internal17ArrayRefContainer9ValueTypeE">Avogadro::Core::internal::ArrayRefContainer::ValueType (C++ type)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_layer.html#_CPPv4N8Avogadro4Core5LayerE">Avogadro::Core::Layer (C++ class)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_layer.html#_CPPv4NK8Avogadro4Core5Layer11activeLayerEv">Avogadro::Core::Layer::activeLayer (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_layer.html#_CPPv4N8Avogadro4Core5Layer7addAtomE6size_t">Avogadro::Core::Layer::addAtom (C++ function)</a>, <a href="develop/class/class_avogadro_1_1_core_1_1_layer.html#_CPPv4N8Avogadro4Core5Layer7addAtomE6size_t5Index">[1]</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_layer.html#_CPPv4N8Avogadro4Core5Layer20addAtomToActiveLayerE5Index">Avogadro::Core::Layer::addAtomToActiveLayer (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_layer.html#_CPPv4N8Avogadro4Core5Layer8addLayerE6size_t">Avogadro::Core::Layer::addLayer (C++ function)</a>, <a href="develop/class/class_avogadro_1_1_core_1_1_layer.html#_CPPv4N8Avogadro4Core5Layer8addLayerEv">[1]</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_layer.html#_CPPv4NK8Avogadro4Core5Layer9atomCountEv">Avogadro::Core::Layer::atomCount (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_layer.html#_CPPv4N8Avogadro4Core5Layer5clearEv">Avogadro::Core::Layer::clear (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_layer.html#_CPPv4NK8Avogadro4Core5Layer10getLayerIDE5Index">Avogadro::Core::Layer::getLayerID (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_layer.html#_CPPv4N8Avogadro4Core5Layer5LayerEv">Avogadro::Core::Layer::Layer (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_layer.html#_CPPv4NK8Avogadro4Core5Layer10layerCountEv">Avogadro::Core::Layer::layerCount (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_layer.html#_CPPv4NK8Avogadro4Core5Layer8maxLayerEv">Avogadro::Core::Layer::maxLayer (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_layer.html#_CPPv4N8Avogadro4Core5Layer10removeAtomE5Index">Avogadro::Core::Layer::removeAtom (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_layer.html#_CPPv4N8Avogadro4Core5Layer11removeLayerE6size_t">Avogadro::Core::Layer::removeLayer (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_layer.html#_CPPv4N8Avogadro4Core5Layer6resizeE6size_t">Avogadro::Core::Layer::resize (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_layer.html#_CPPv4N8Avogadro4Core5Layer14setActiveLayerE6size_t">Avogadro::Core::Layer::setActiveLayer (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_layer.html#_CPPv4N8Avogadro4Core5Layer9swapLayerE5Index5Index">Avogadro::Core::Layer::swapLayer (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_layer.html#_CPPv4N8Avogadro4Core5LayerD0Ev">Avogadro::Core::Layer::~Layer (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_layer_manager.html#_CPPv4N8Avogadro4Core12LayerManagerE">Avogadro::Core::LayerManager (C++ class)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_layer_manager.html#_CPPv4N8Avogadro4Core12LayerManager14deleteMoleculeEPK8Molecule">Avogadro::Core::LayerManager::deleteMolecule (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_layer_manager.html#_CPPv4N8Avogadro4Core12LayerManager15getMoleculeInfoEPK8Molecule">Avogadro::Core::LayerManager::getMoleculeInfo (C++ function)</a>, <a href="develop/class/class_avogadro_1_1_core_1_1_layer_manager.html#_CPPv4N8Avogadro4Core12LayerManager15getMoleculeInfoEv">[1]</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_layer_manager.html#_CPPv4N8Avogadro4Core12LayerManager16getMoleculeLayerEPK8Molecule">Avogadro::Core::LayerManager::getMoleculeLayer (C++ function)</a>, <a href="develop/class/class_avogadro_1_1_core_1_1_layer_manager.html#_CPPv4N8Avogadro4Core12LayerManager16getMoleculeLayerEPK8MoleculePK8Molecule">[1]</a>, <a href="develop/class/class_avogadro_1_1_core_1_1_layer_manager.html#_CPPv4N8Avogadro4Core12LayerManager16getMoleculeLayerEv">[2]</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_layer_manager.html#_CPPv4N8Avogadro4Core12LayerManager10layerCountEv">Avogadro::Core::LayerManager::layerCount (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_layer_manager.html#_CPPv4N8Avogadro4Core12LayerManager16m_activeMoleculeE">Avogadro::Core::LayerManager::m_activeMolecule (C++ member)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_layer_manager.html#_CPPv4N8Avogadro4Core12LayerManager11m_molToInfoE">Avogadro::Core::LayerManager::m_molToInfo (C++ member)</a>
 </li>
       <li><a href="develop/class/class_avogadro_1_1_core_1_1_mesh.html#_CPPv4N8Avogadro4Core4MeshE">Avogadro::Core::Mesh (C++ class)</a>
 </li>
@@ -1709,6 +2540,28 @@ document.write(`
 </li>
       <li><a href="develop/class/class_avogadro_1_1_core_1_1_name_atom_typer.html#_CPPv4N8Avogadro4Core13NameAtomTyperD0Ev">Avogadro::Core::NameAtomTyper::~NameAtomTyper (C++ function)</a>
 </li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_neighbor_perceiver.html#_CPPv4N8Avogadro4Core17NeighborPerceiverE">Avogadro::Core::NeighborPerceiver (C++ class)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_neighbor_perceiver.html#_CPPv4NK8Avogadro4Core17NeighborPerceiver21getNeighborsInclusiveERK7Vector3">Avogadro::Core::NeighborPerceiver::getNeighborsInclusive (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_neighbor_perceiver.html#_CPPv4NK8Avogadro4Core17NeighborPerceiver28getNeighborsInclusiveInPlaceER5ArrayI5IndexERK7Vector3">Avogadro::Core::NeighborPerceiver::getNeighborsInclusiveInPlace (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_neighbor_perceiver.html#_CPPv4N8Avogadro4Core17NeighborPerceiver10m_binCountE">Avogadro::Core::NeighborPerceiver::m_binCount (C++ member)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_neighbor_perceiver.html#_CPPv4N8Avogadro4Core17NeighborPerceiver6m_binsE">Avogadro::Core::NeighborPerceiver::m_bins (C++ member)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_neighbor_perceiver.html#_CPPv4N8Avogadro4Core17NeighborPerceiver13m_cachedArrayE">Avogadro::Core::NeighborPerceiver::m_cachedArray (C++ member)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_neighbor_perceiver.html#_CPPv4N8Avogadro4Core17NeighborPerceiver13m_cachedIndexE">Avogadro::Core::NeighborPerceiver::m_cachedIndex (C++ member)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_neighbor_perceiver.html#_CPPv4N8Avogadro4Core17NeighborPerceiver13m_maxDistanceE">Avogadro::Core::NeighborPerceiver::m_maxDistance (C++ member)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_neighbor_perceiver.html#_CPPv4N8Avogadro4Core17NeighborPerceiver8m_maxPosE">Avogadro::Core::NeighborPerceiver::m_maxPos (C++ member)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_neighbor_perceiver.html#_CPPv4N8Avogadro4Core17NeighborPerceiver8m_minPosE">Avogadro::Core::NeighborPerceiver::m_minPos (C++ member)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_neighbor_perceiver.html#_CPPv4N8Avogadro4Core17NeighborPerceiver17NeighborPerceiverEK5ArrayI7Vector3Ef">Avogadro::Core::NeighborPerceiver::NeighborPerceiver (C++ function)</a>
+</li>
       <li><a href="develop/class/class_avogadro_1_1_core_1_1_residue.html#_CPPv4N8Avogadro4Core7ResidueE">Avogadro::Core::Residue (C++ class)</a>
 </li>
       <li><a href="develop/class/class_avogadro_1_1_core_1_1_residue.html#_CPPv4N8Avogadro4Core7Residue14addResidueAtomERKNSt6stringERK4Atom">Avogadro::Core::Residue::addResidueAtom (C++ function)</a>
@@ -1820,6 +2673,14 @@ document.write(`
       <li><a href="develop/class/class_avogadro_1_1_core_1_1_ring_perceiver.html#_CPPv4N8Avogadro4Core13RingPerceiver11setMoleculeEPK8Molecule">Avogadro::Core::RingPerceiver::setMolecule (C++ function)</a>
 </li>
       <li><a href="develop/class/class_avogadro_1_1_core_1_1_ring_perceiver.html#_CPPv4N8Avogadro4Core13RingPerceiverD0Ev">Avogadro::Core::RingPerceiver::~RingPerceiver (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_secondary_structure_assigner.html#_CPPv4N8Avogadro4Core26SecondaryStructureAssignerE">Avogadro::Core::SecondaryStructureAssigner (C++ class)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_secondary_structure_assigner.html#_CPPv4N8Avogadro4Core26SecondaryStructureAssigner6assignEP8Molecule">Avogadro::Core::SecondaryStructureAssigner::assign (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_secondary_structure_assigner.html#_CPPv4N8Avogadro4Core26SecondaryStructureAssigner26SecondaryStructureAssignerEP8Molecule">Avogadro::Core::SecondaryStructureAssigner::SecondaryStructureAssigner (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_core_1_1_secondary_structure_assigner.html#_CPPv4N8Avogadro4Core26SecondaryStructureAssignerD0Ev">Avogadro::Core::SecondaryStructureAssigner::~SecondaryStructureAssigner (C++ function)</a>
 </li>
       <li><a href="develop/class/class_avogadro_1_1_core_1_1_shared_mutex.html#_CPPv4N8Avogadro4Core11SharedMutexE">Avogadro::Core::SharedMutex (C++ class)</a>
 </li>
@@ -2641,6 +3502,32 @@ document.write(`
 </li>
       <li><a href="develop/class/class_avogadro_1_1_io_1_1_trr_format.html#_CPPv4N8Avogadro2Io9TrrFormatD0Ev">Avogadro::Io::TrrFormat::~TrrFormat (C++ function)</a>
 </li>
+      <li><a href="develop/class/class_avogadro_1_1_io_1_1_turbomole_format.html#_CPPv4N8Avogadro2Io15TurbomoleFormatE">Avogadro::Io::TurbomoleFormat (C++ class)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_io_1_1_turbomole_format.html#_CPPv4NK8Avogadro2Io15TurbomoleFormat11descriptionEv">Avogadro::Io::TurbomoleFormat::description (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_io_1_1_turbomole_format.html#_CPPv4NK8Avogadro2Io15TurbomoleFormat14fileExtensionsEv">Avogadro::Io::TurbomoleFormat::fileExtensions (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_io_1_1_turbomole_format.html#_CPPv4NK8Avogadro2Io15TurbomoleFormat10identifierEv">Avogadro::Io::TurbomoleFormat::identifier (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_io_1_1_turbomole_format.html#_CPPv4NK8Avogadro2Io15TurbomoleFormat9mimeTypesEv">Avogadro::Io::TurbomoleFormat::mimeTypes (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_io_1_1_turbomole_format.html#_CPPv4NK8Avogadro2Io15TurbomoleFormat4nameEv">Avogadro::Io::TurbomoleFormat::name (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_io_1_1_turbomole_format.html#_CPPv4NK8Avogadro2Io15TurbomoleFormat11newInstanceEv">Avogadro::Io::TurbomoleFormat::newInstance (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_io_1_1_turbomole_format.html#_CPPv4N8Avogadro2Io15TurbomoleFormat4readERNSt7istreamERN4Core8MoleculeE">Avogadro::Io::TurbomoleFormat::read (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_io_1_1_turbomole_format.html#_CPPv4NK8Avogadro2Io15TurbomoleFormat16specificationUrlEv">Avogadro::Io::TurbomoleFormat::specificationUrl (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_io_1_1_turbomole_format.html#_CPPv4NK8Avogadro2Io15TurbomoleFormat19supportedOperationsEv">Avogadro::Io::TurbomoleFormat::supportedOperations (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_io_1_1_turbomole_format.html#_CPPv4N8Avogadro2Io15TurbomoleFormat15TurbomoleFormatEv">Avogadro::Io::TurbomoleFormat::TurbomoleFormat (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_io_1_1_turbomole_format.html#_CPPv4N8Avogadro2Io15TurbomoleFormat5writeERNSt7ostreamERKN4Core8MoleculeE">Avogadro::Io::TurbomoleFormat::write (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_io_1_1_turbomole_format.html#_CPPv4N8Avogadro2Io15TurbomoleFormatD0Ev">Avogadro::Io::TurbomoleFormat::~TurbomoleFormat (C++ function)</a>
+</li>
       <li><a href="develop/class/class_avogadro_1_1_io_1_1_xyz_format.html#_CPPv4N8Avogadro2Io9XyzFormatE">Avogadro::Io::XyzFormat (C++ class)</a>
 </li>
       <li><a href="develop/class/class_avogadro_1_1_io_1_1_xyz_format.html#_CPPv4NK8Avogadro2Io9XyzFormat11descriptionEv">Avogadro::Io::XyzFormat::description (C++ function)</a>
@@ -2989,16 +3876,118 @@ document.write(`
 </li>
       <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_background_file_format.html#_CPPv4NK8Avogadro5QtGui20BackgroundFileFormat7successEv">Avogadro::QtGui::BackgroundFileFormat::success (C++ function)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_background_file_format.html#_CPPv4N8Avogadro5QtGui20BackgroundFileFormat5writeEv">Avogadro::QtGui::BackgroundFileFormat::write (C++ function)</a>
 </li>
       <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_background_file_format.html#_CPPv4N8Avogadro5QtGui20BackgroundFileFormatD0Ev">Avogadro::QtGui::BackgroundFileFormat::~BackgroundFileFormat (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_chart_dialog.html#_CPPv4N8Avogadro5QtGui11ChartDialogE">Avogadro::QtGui::ChartDialog (C++ class)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_chart_dialog.html#_CPPv4N8Avogadro5QtGui11ChartDialog11ChartDialogEP7QWidget">Avogadro::QtGui::ChartDialog::ChartDialog (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_chart_dialog.html#_CPPv4N8Avogadro5QtGui11ChartDialog11chartWidgetEv">Avogadro::QtGui::ChartDialog::chartWidget (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_chart_dialog.html#_CPPv4NK8Avogadro5QtGui11ChartDialog15minimumSizeHintEv">Avogadro::QtGui::ChartDialog::minimumSizeHint (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_chart_dialog.html#_CPPv4NK8Avogadro5QtGui11ChartDialog8sizeHintEv">Avogadro::QtGui::ChartDialog::sizeHint (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_chart_dialog.html#_CPPv4N8Avogadro5QtGui11ChartDialogD0Ev">Avogadro::QtGui::ChartDialog::~ChartDialog (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_chart_widget.html#_CPPv4N8Avogadro5QtGui11ChartWidgetE">Avogadro::QtGui::ChartWidget (C++ class)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_chart_widget.html#_CPPv4N8Avogadro5QtGui11ChartWidget7addPlotERKNSt6vectorIfEERKNSt6vectorIfEERK8color4ubRK7QStringRK7QString">Avogadro::QtGui::ChartWidget::addPlot (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_chart_widget.html#_CPPv4N8Avogadro5QtGui11ChartWidget8addPlotsERKNSt6vectorINSt6vectorIfEEEERK8color4ubRK11QStringList">Avogadro::QtGui::ChartWidget::addPlots (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_chart_widget.html#_CPPv4N8Avogadro5QtGui11ChartWidget9addSeriesERKNSt6vectorIfEERK8color4ubRK7QString">Avogadro::QtGui::ChartWidget::addSeries (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_chart_widget.html#_CPPv4N8Avogadro5QtGui11ChartWidget4AxisE">Avogadro::QtGui::ChartWidget::Axis (C++ enum)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_chart_widget.html#_CPPv4N8Avogadro5QtGui11ChartWidget4Axis1xE">Avogadro::QtGui::ChartWidget::Axis::x (C++ enumerator)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_chart_widget.html#_CPPv4N8Avogadro5QtGui11ChartWidget4Axis1yE">Avogadro::QtGui::ChartWidget::Axis::y (C++ enumerator)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_chart_widget.html#_CPPv4N8Avogadro5QtGui11ChartWidget11ChartWidgetEP7QWidget">Avogadro::QtGui::ChartWidget::ChartWidget (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_chart_widget.html#_CPPv4N8Avogadro5QtGui11ChartWidget10clearPlotsEv">Avogadro::QtGui::ChartWidget::clearPlots (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_chart_widget.html#_CPPv4N8Avogadro5QtGui11ChartWidget7clickedEffN2Qt17KeyboardModifiersE">Avogadro::QtGui::ChartWidget::clicked (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_chart_widget.html#_CPPv4N8Avogadro5QtGui11ChartWidget10labelPeaksEifi">Avogadro::QtGui::ChartWidget::labelPeaks (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_chart_widget.html#_CPPv4N8Avogadro5QtGui11ChartWidget14LegendLocationE">Avogadro::QtGui::ChartWidget::LegendLocation (C++ enum)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_chart_widget.html#_CPPv4N8Avogadro5QtGui11ChartWidget14LegendLocation10BottomLeftE">Avogadro::QtGui::ChartWidget::LegendLocation::BottomLeft (C++ enumerator)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_chart_widget.html#_CPPv4N8Avogadro5QtGui11ChartWidget14LegendLocation11BottomRightE">Avogadro::QtGui::ChartWidget::LegendLocation::BottomRight (C++ enumerator)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_chart_widget.html#_CPPv4N8Avogadro5QtGui11ChartWidget14LegendLocation4NoneE">Avogadro::QtGui::ChartWidget::LegendLocation::None (C++ enumerator)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_chart_widget.html#_CPPv4N8Avogadro5QtGui11ChartWidget14LegendLocation7TopLeftE">Avogadro::QtGui::ChartWidget::LegendLocation::TopLeft (C++ enumerator)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_chart_widget.html#_CPPv4N8Avogadro5QtGui11ChartWidget14LegendLocation8TopRightE">Avogadro::QtGui::ChartWidget::LegendLocation::TopRight (C++ enumerator)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_chart_widget.html#_CPPv4N8Avogadro5QtGui11ChartWidget11plotClickedEddN2Qt17KeyboardModifiersEN2Qt11MouseButtonE">Avogadro::QtGui::ChartWidget::plotClicked (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_chart_widget.html#_CPPv4N8Avogadro5QtGui11ChartWidget9resetZoomEv">Avogadro::QtGui::ChartWidget::resetZoom (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_chart_widget.html#_CPPv4N8Avogadro5QtGui11ChartWidget12setAxisColorE4AxisRK8color4ub">Avogadro::QtGui::ChartWidget::setAxisColor (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_chart_widget.html#_CPPv4N8Avogadro5QtGui11ChartWidget13setAxisDigitsE4Axisi">Avogadro::QtGui::ChartWidget::setAxisDigits (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_chart_widget.html#_CPPv4N8Avogadro5QtGui11ChartWidget13setAxisLimitsE4Axisff">Avogadro::QtGui::ChartWidget::setAxisLimits (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_chart_widget.html#_CPPv4N8Avogadro5QtGui11ChartWidget15setAxisLogScaleE4Axisb">Avogadro::QtGui::ChartWidget::setAxisLogScale (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_chart_widget.html#_CPPv4N8Avogadro5QtGui11ChartWidget18setBackgroundColorERK8color4ub">Avogadro::QtGui::ChartWidget::setBackgroundColor (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_chart_widget.html#_CPPv4N8Avogadro5QtGui11ChartWidget11setFontSizeEi">Avogadro::QtGui::ChartWidget::setFontSize (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_chart_widget.html#_CPPv4N8Avogadro5QtGui11ChartWidget17setLegendLocationE14LegendLocation">Avogadro::QtGui::ChartWidget::setLegendLocation (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_chart_widget.html#_CPPv4N8Avogadro5QtGui11ChartWidget12setLineWidthEf">Avogadro::QtGui::ChartWidget::setLineWidth (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_chart_widget.html#_CPPv4N8Avogadro5QtGui11ChartWidget13setShowPointsEb">Avogadro::QtGui::ChartWidget::setShowPoints (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_chart_widget.html#_CPPv4N8Avogadro5QtGui11ChartWidget13setTickLabelsE4AxisRKNSt6vectorIfEERK11QStringList">Avogadro::QtGui::ChartWidget::setTickLabels (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_chart_widget.html#_CPPv4N8Avogadro5QtGui11ChartWidget14setXAxisLimitsEff">Avogadro::QtGui::ChartWidget::setXAxisLimits (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_chart_widget.html#_CPPv4N8Avogadro5QtGui11ChartWidget13setXAxisTitleERK7QString">Avogadro::QtGui::ChartWidget::setXAxisTitle (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_chart_widget.html#_CPPv4N8Avogadro5QtGui11ChartWidget14setYAxisLimitsEff">Avogadro::QtGui::ChartWidget::setYAxisLimits (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_chart_widget.html#_CPPv4N8Avogadro5QtGui11ChartWidget13setYAxisTitleERK7QString">Avogadro::QtGui::ChartWidget::setYAxisTitle (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_chart_widget.html#_CPPv4N8Avogadro5QtGui11ChartWidgetD0Ev">Avogadro::QtGui::ChartWidget::~ChartWidget (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_color_button.html#_CPPv4N8Avogadro5QtGui11ColorButtonE">Avogadro::QtGui::ColorButton (C++ class)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_color_button.html#_CPPv4N8Avogadro5QtGui11ColorButton11changeColorEv">Avogadro::QtGui::ColorButton::changeColor (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_color_button.html#_CPPv4NK8Avogadro5QtGui11ColorButton5colorEv">Avogadro::QtGui::ColorButton::color (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_color_button.html#_CPPv4N8Avogadro5QtGui11ColorButton11ColorButtonEP7QWidget">Avogadro::QtGui::ColorButton::ColorButton (C++ function)</a>, <a href="develop/class/class_avogadro_1_1_qt_gui_1_1_color_button.html#_CPPv4N8Avogadro5QtGui11ColorButton11ColorButtonERK6QColorP7QWidget">[1]</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_color_button.html#_CPPv4N8Avogadro5QtGui11ColorButton12colorChangedERK6QColor">Avogadro::QtGui::ColorButton::colorChanged (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_color_button.html#_CPPv4N8Avogadro5QtGui11ColorButton5eventEP6QEvent">Avogadro::QtGui::ColorButton::event (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_color_button.html#_CPPv4N8Avogadro5QtGui11ColorButton7m_colorE">Avogadro::QtGui::ColorButton::m_color (C++ member)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_color_button.html#_CPPv4N8Avogadro5QtGui11ColorButton7m_titleE">Avogadro::QtGui::ColorButton::m_title (C++ member)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_color_button.html#_CPPv4N8Avogadro5QtGui11ColorButton10paintEventEP11QPaintEvent">Avogadro::QtGui::ColorButton::paintEvent (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_color_button.html#_CPPv4N8Avogadro5QtGui11ColorButton8setColorERK6QColor">Avogadro::QtGui::ColorButton::setColor (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_color_button.html#_CPPv4N8Avogadro5QtGui11ColorButton14setDialogTitleEK7QString">Avogadro::QtGui::ColorButton::setDialogTitle (C++ function)</a>
 </li>
       <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_container_widget.html#_CPPv4N8Avogadro5QtGui15ContainerWidgetE">Avogadro::QtGui::ContainerWidget (C++ class)</a>
 </li>
       <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_container_widget.html#_CPPv4N8Avogadro5QtGui15ContainerWidget9closeViewEv">Avogadro::QtGui::ContainerWidget::closeView (C++ function)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_container_widget.html#_CPPv4N8Avogadro5QtGui15ContainerWidget15ContainerWidgetEP7QWidgetN2Qt11WindowFlagsE">Avogadro::QtGui::ContainerWidget::ContainerWidget (C++ function)</a>
 </li>
       <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_container_widget.html#_CPPv4NK8Avogadro5QtGui15ContainerWidget8isActiveEv">Avogadro::QtGui::ContainerWidget::isActive (C++ function)</a>
@@ -3155,6 +4144,24 @@ document.write(`
 </li>
       <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_file_format_dialog.html#_CPPv4N8Avogadro5QtGui16FileFormatDialog14FormatFilePairE">Avogadro::QtGui::FileFormatDialog::FormatFilePair (C++ type)</a>
 </li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_gaussian_set_concurrent.html#_CPPv4N8Avogadro5QtGui21GaussianSetConcurrentE">Avogadro::QtGui::GaussianSetConcurrent (C++ class)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_gaussian_set_concurrent.html#_CPPv4N8Avogadro5QtGui21GaussianSetConcurrent24calculateElectronDensityEPN4Core4CubeE">Avogadro::QtGui::GaussianSetConcurrent::calculateElectronDensity (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_gaussian_set_concurrent.html#_CPPv4N8Avogadro5QtGui21GaussianSetConcurrent25calculateMolecularOrbitalEPN4Core4CubeEjb">Avogadro::QtGui::GaussianSetConcurrent::calculateMolecularOrbital (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_gaussian_set_concurrent.html#_CPPv4N8Avogadro5QtGui21GaussianSetConcurrent20calculateSpinDensityEPN4Core4CubeE">Avogadro::QtGui::GaussianSetConcurrent::calculateSpinDensity (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_gaussian_set_concurrent.html#_CPPv4N8Avogadro5QtGui21GaussianSetConcurrent8finishedEv">Avogadro::QtGui::GaussianSetConcurrent::finished (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_gaussian_set_concurrent.html#_CPPv4N8Avogadro5QtGui21GaussianSetConcurrent21GaussianSetConcurrentEP7QObject">Avogadro::QtGui::GaussianSetConcurrent::GaussianSetConcurrent (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_gaussian_set_concurrent.html#_CPPv4N8Avogadro5QtGui21GaussianSetConcurrent11setMoleculeEPN4Core8MoleculeE">Avogadro::QtGui::GaussianSetConcurrent::setMolecule (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_gaussian_set_concurrent.html#_CPPv4N8Avogadro5QtGui21GaussianSetConcurrent7watcherEv">Avogadro::QtGui::GaussianSetConcurrent::watcher (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_gaussian_set_concurrent.html#_CPPv4N8Avogadro5QtGui21GaussianSetConcurrentD0Ev">Avogadro::QtGui::GaussianSetConcurrent::~GaussianSetConcurrent (C++ function)</a>
+</li>
       <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_generic_highlighter.html#_CPPv4N8Avogadro5QtGui18GenericHighlighterE">Avogadro::QtGui::GenericHighlighter (C++ class)</a>
 </li>
       <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_generic_highlighter.html#_CPPv4N8Avogadro5QtGui18GenericHighlighter7addRuleEv">Avogadro::QtGui::GenericHighlighter::addRule (C++ function)</a>
@@ -3208,6 +4215,24 @@ document.write(`
       <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_hydrogen_tools.html#_CPPv4N8Avogadro5QtGui13HydrogenTools18removeAllHydrogensER10RWMolecule">Avogadro::QtGui::HydrogenTools::removeAllHydrogens (C++ function)</a>
 </li>
       <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_hydrogen_tools.html#_CPPv4N8Avogadro5QtGui13HydrogenTools17valencyAdjustmentERK6RWAtom">Avogadro::QtGui::HydrogenTools::valencyAdjustment (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_insert_fragment_dialog.html#_CPPv4N8Avogadro5QtGui20InsertFragmentDialogE">Avogadro::QtGui::InsertFragmentDialog (C++ class)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_insert_fragment_dialog.html#_CPPv4N8Avogadro5QtGui20InsertFragmentDialog9activatedEv">Avogadro::QtGui::InsertFragmentDialog::activated (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_insert_fragment_dialog.html#_CPPv4N8Avogadro5QtGui20InsertFragmentDialog14currentChangedERK11QModelIndexRK11QModelIndex">Avogadro::QtGui::InsertFragmentDialog::currentChanged (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_insert_fragment_dialog.html#_CPPv4N8Avogadro5QtGui20InsertFragmentDialog8fileNameEv">Avogadro::QtGui::InsertFragmentDialog::fileName (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_insert_fragment_dialog.html#_CPPv4N8Avogadro5QtGui20InsertFragmentDialog17filterTextChangedERK7QString">Avogadro::QtGui::InsertFragmentDialog::filterTextChanged (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_insert_fragment_dialog.html#_CPPv4N8Avogadro5QtGui20InsertFragmentDialog20InsertFragmentDialogEP7QWidget7QString">Avogadro::QtGui::InsertFragmentDialog::InsertFragmentDialog (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_insert_fragment_dialog.html#_CPPv4N8Avogadro5QtGui20InsertFragmentDialog13performInsertERK7QStringb">Avogadro::QtGui::InsertFragmentDialog::performInsert (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_insert_fragment_dialog.html#_CPPv4N8Avogadro5QtGui20InsertFragmentDialog7refreshEv">Avogadro::QtGui::InsertFragmentDialog::refresh (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_insert_fragment_dialog.html#_CPPv4N8Avogadro5QtGui20InsertFragmentDialogD0Ev">Avogadro::QtGui::InsertFragmentDialog::~InsertFragmentDialog (C++ function)</a>
 </li>
       <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_interface_script.html#_CPPv4N8Avogadro5QtGui15InterfaceScriptE">Avogadro::QtGui::InterfaceScript (C++ class)</a>
 </li>
@@ -3270,6 +4295,144 @@ document.write(`
       <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_interface_widget.html#_CPPv4N8Avogadro5QtGui15InterfaceWidget18setInterfaceScriptERK7QString">Avogadro::QtGui::InterfaceWidget::setInterfaceScript (C++ function)</a>
 </li>
       <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_interface_widget.html#_CPPv4N8Avogadro5QtGui15InterfaceWidgetD0Ev">Avogadro::QtGui::InterfaceWidget::~InterfaceWidget (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_json_widget.html#_CPPv4N8Avogadro5QtGui10JsonWidgetE">Avogadro::QtGui::JsonWidget (C++ class)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_json_widget.html#_CPPv4N8Avogadro5QtGui10JsonWidget12addOptionRowERK7QStringRK7QStringRK10QJsonValue">Avogadro::QtGui::JsonWidget::addOptionRow (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_json_widget.html#_CPPv4N8Avogadro5QtGui10JsonWidget12applyOptionsERK11QJsonObject">Avogadro::QtGui::JsonWidget::applyOptions (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_json_widget.html#_CPPv4N8Avogadro5QtGui10JsonWidget14buildOptionGuiEv">Avogadro::QtGui::JsonWidget::buildOptionGui (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_json_widget.html#_CPPv4NK8Avogadro5QtGui10JsonWidget14collectOptionsEv">Avogadro::QtGui::JsonWidget::collectOptions (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_json_widget.html#_CPPv4N8Avogadro5QtGui10JsonWidget17combinedOptionRowERK7QStringRK7QStringRK7QStringRK7QStringR11QJsonObjectb">Avogadro::QtGui::JsonWidget::combinedOptionRow (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_json_widget.html#_CPPv4N8Avogadro5QtGui10JsonWidget19createBooleanWidgetERK11QJsonObject">Avogadro::QtGui::JsonWidget::createBooleanWidget (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_json_widget.html#_CPPv4N8Avogadro5QtGui10JsonWidget20createFilePathWidgetERK11QJsonObject">Avogadro::QtGui::JsonWidget::createFilePathWidget (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_json_widget.html#_CPPv4N8Avogadro5QtGui10JsonWidget17createFloatWidgetERK11QJsonObject">Avogadro::QtGui::JsonWidget::createFloatWidget (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_json_widget.html#_CPPv4N8Avogadro5QtGui10JsonWidget19createIntegerWidgetERK11QJsonObject">Avogadro::QtGui::JsonWidget::createIntegerWidget (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_json_widget.html#_CPPv4N8Avogadro5QtGui10JsonWidget18createOptionWidgetERK10QJsonValue">Avogadro::QtGui::JsonWidget::createOptionWidget (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_json_widget.html#_CPPv4N8Avogadro5QtGui10JsonWidget22createStringListWidgetERK11QJsonObject">Avogadro::QtGui::JsonWidget::createStringListWidget (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_json_widget.html#_CPPv4N8Avogadro5QtGui10JsonWidget18createStringWidgetERK11QJsonObject">Avogadro::QtGui::JsonWidget::createStringWidget (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_json_widget.html#_CPPv4N8Avogadro5QtGui10JsonWidget17createTableWidgetERK11QJsonObject">Avogadro::QtGui::JsonWidget::createTableWidget (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_json_widget.html#_CPPv4N8Avogadro5QtGui10JsonWidget16createTextWidgetERK11QJsonObject">Avogadro::QtGui::JsonWidget::createTextWidget (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_json_widget.html#_CPPv4NK8Avogadro5QtGui10JsonWidget16generateJobTitleEv">Avogadro::QtGui::JsonWidget::generateJobTitle (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_json_widget.html#_CPPv4NK8Avogadro5QtGui10JsonWidget7isEmptyEv">Avogadro::QtGui::JsonWidget::isEmpty (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_json_widget.html#_CPPv4N8Avogadro5QtGui10JsonWidget10JsonWidgetEP7QWidget">Avogadro::QtGui::JsonWidget::JsonWidget (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_json_widget.html#_CPPv4NK8Avogadro5QtGui10JsonWidget16lookupOptionTypeERK7QString">Avogadro::QtGui::JsonWidget::lookupOptionType (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_json_widget.html#_CPPv4N8Avogadro5QtGui10JsonWidget11m_batchModeE">Avogadro::QtGui::JsonWidget::m_batchMode (C++ member)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_json_widget.html#_CPPv4N8Avogadro5QtGui10JsonWidget15m_centralWidgetE">Avogadro::QtGui::JsonWidget::m_centralWidget (C++ member)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_json_widget.html#_CPPv4N8Avogadro5QtGui10JsonWidget15m_currentLayoutE">Avogadro::QtGui::JsonWidget::m_currentLayout (C++ member)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_json_widget.html#_CPPv4N8Avogadro5QtGui10JsonWidget16m_dirtyTextEditsE">Avogadro::QtGui::JsonWidget::m_dirtyTextEdits (C++ member)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_json_widget.html#_CPPv4N8Avogadro5QtGui10JsonWidget7m_emptyE">Avogadro::QtGui::JsonWidget::m_empty (C++ member)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_json_widget.html#_CPPv4N8Avogadro5QtGui10JsonWidget10m_moleculeE">Avogadro::QtGui::JsonWidget::m_molecule (C++ member)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_json_widget.html#_CPPv4N8Avogadro5QtGui10JsonWidget13m_optionCacheE">Avogadro::QtGui::JsonWidget::m_optionCache (C++ member)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_json_widget.html#_CPPv4N8Avogadro5QtGui10JsonWidget9m_optionsE">Avogadro::QtGui::JsonWidget::m_options (C++ member)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_json_widget.html#_CPPv4N8Avogadro5QtGui10JsonWidget11m_textEditsE">Avogadro::QtGui::JsonWidget::m_textEdits (C++ member)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_json_widget.html#_CPPv4N8Avogadro5QtGui10JsonWidget9m_widgetsE">Avogadro::QtGui::JsonWidget::m_widgets (C++ member)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_json_widget.html#_CPPv4NK8Avogadro5QtGui10JsonWidget12optionStringERK7QStringR7QString">Avogadro::QtGui::JsonWidget::optionString (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_json_widget.html#_CPPv4N8Avogadro5QtGui10JsonWidget16setBooleanOptionERK7QStringRK10QJsonValue">Avogadro::QtGui::JsonWidget::setBooleanOption (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_json_widget.html#_CPPv4N8Avogadro5QtGui10JsonWidget17setFilePathOptionERK7QStringRK10QJsonValue">Avogadro::QtGui::JsonWidget::setFilePathOption (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_json_widget.html#_CPPv4N8Avogadro5QtGui10JsonWidget14setFloatOptionERK7QStringRK10QJsonValue">Avogadro::QtGui::JsonWidget::setFloatOption (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_json_widget.html#_CPPv4N8Avogadro5QtGui10JsonWidget16setIntegerOptionERK7QStringRK10QJsonValue">Avogadro::QtGui::JsonWidget::setIntegerOption (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_json_widget.html#_CPPv4N8Avogadro5QtGui10JsonWidget11setMoleculeEPN5QtGui8MoleculeE">Avogadro::QtGui::JsonWidget::setMolecule (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_json_widget.html#_CPPv4N8Avogadro5QtGui10JsonWidget9setOptionERK7QStringRK10QJsonValue">Avogadro::QtGui::JsonWidget::setOption (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_json_widget.html#_CPPv4N8Avogadro5QtGui10JsonWidget17setOptionDefaultsEv">Avogadro::QtGui::JsonWidget::setOptionDefaults (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_json_widget.html#_CPPv4N8Avogadro5QtGui10JsonWidget19setStringListOptionERK7QStringRK10QJsonValue">Avogadro::QtGui::JsonWidget::setStringListOption (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_json_widget.html#_CPPv4N8Avogadro5QtGui10JsonWidget15setStringOptionERK7QStringRK10QJsonValue">Avogadro::QtGui::JsonWidget::setStringOption (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_json_widget.html#_CPPv4N8Avogadro5QtGui10JsonWidget14setTableOptionERK7QStringRK10QJsonValue">Avogadro::QtGui::JsonWidget::setTableOption (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_json_widget.html#_CPPv4N8Avogadro5QtGui10JsonWidget13setTextOptionERK7QStringRK10QJsonValue">Avogadro::QtGui::JsonWidget::setTextOption (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_json_widget.html#_CPPv4N8Avogadro5QtGui10JsonWidget13updateOptionsEv">Avogadro::QtGui::JsonWidget::updateOptions (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_json_widget.html#_CPPv4N8Avogadro5QtGui10JsonWidgetD0Ev">Avogadro::QtGui::JsonWidget::~JsonWidget (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_layer_model.html#_CPPv4N8Avogadro5QtGui10LayerModelE">Avogadro::QtGui::LayerModel (C++ class)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_layer_model.html#_CPPv4N8Avogadro5QtGui10LayerModel7addItemEv">Avogadro::QtGui::LayerModel::addItem (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_layer_model.html#_CPPv4N8Avogadro5QtGui10LayerModel8addLayerEP10RWMolecule">Avogadro::QtGui::LayerModel::addLayer (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_layer_model.html#_CPPv4N8Avogadro5QtGui10LayerModel11addMoleculeEPK8Molecule">Avogadro::QtGui::LayerModel::addMolecule (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_layer_model.html#_CPPv4NK8Avogadro5QtGui10LayerModel11columnCountERK11QModelIndex">Avogadro::QtGui::LayerModel::columnCount (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_layer_model.html#_CPPv4N8Avogadro5QtGui10LayerModel10ColumnTypeE">Avogadro::QtGui::LayerModel::ColumnType (C++ enum)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_layer_model.html#_CPPv4N8Avogadro5QtGui10LayerModel10ColumnType4LockE">Avogadro::QtGui::LayerModel::ColumnType::Lock (C++ enumerator)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_layer_model.html#_CPPv4N8Avogadro5QtGui10LayerModel10ColumnType4MenuE">Avogadro::QtGui::LayerModel::ColumnType::Menu (C++ enumerator)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_layer_model.html#_CPPv4N8Avogadro5QtGui10LayerModel10ColumnType4NameE">Avogadro::QtGui::LayerModel::ColumnType::Name (C++ enumerator)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_layer_model.html#_CPPv4N8Avogadro5QtGui10LayerModel10ColumnType6RemoveE">Avogadro::QtGui::LayerModel::ColumnType::Remove (C++ enumerator)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_layer_model.html#_CPPv4N8Avogadro5QtGui10LayerModel10ColumnType7VisibleE">Avogadro::QtGui::LayerModel::ColumnType::Visible (C++ enumerator)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_layer_model.html#_CPPv4NK8Avogadro5QtGui10LayerModel4dataERK11QModelIndexi">Avogadro::QtGui::LayerModel::data (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_layer_model.html#_CPPv4NK8Avogadro5QtGui10LayerModel5flagsERK11QModelIndex">Avogadro::QtGui::LayerModel::flags (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_layer_model.html#_CPPv4N8Avogadro5QtGui10LayerModel10flipLockedE6size_t">Avogadro::QtGui::LayerModel::flipLocked (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_layer_model.html#_CPPv4N8Avogadro5QtGui10LayerModel11flipVisibleE6size_t">Avogadro::QtGui::LayerModel::flipVisible (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_layer_model.html#_CPPv4NK8Avogadro5QtGui10LayerModel5indexEiiRK11QModelIndex">Avogadro::QtGui::LayerModel::index (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_layer_model.html#_CPPv4NK8Avogadro5QtGui10LayerModel5itemsEv">Avogadro::QtGui::LayerModel::items (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_layer_model.html#_CPPv4NK8Avogadro5QtGui10LayerModel10layerCountEv">Avogadro::QtGui::LayerModel::layerCount (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_layer_model.html#_CPPv4N8Avogadro5QtGui10LayerModel10LayerModelEP7QObject">Avogadro::QtGui::LayerModel::LayerModel (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_layer_model.html#_CPPv4N8Avogadro5QtGui10LayerModel9loadIconsEb">Avogadro::QtGui::LayerModel::loadIcons (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_layer_model.html#_CPPv4NK8Avogadro5QtGui10LayerModel6parentERK11QModelIndex">Avogadro::QtGui::LayerModel::parent (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_layer_model.html#_CPPv4N8Avogadro5QtGui10LayerModel10removeItemEiP10RWMolecule">Avogadro::QtGui::LayerModel::removeItem (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_layer_model.html#_CPPv4NK8Avogadro5QtGui10LayerModel8rowCountERK11QModelIndex">Avogadro::QtGui::LayerModel::rowCount (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_layer_model.html#_CPPv4N8Avogadro5QtGui10LayerModel14setActiveLayerEiP10RWMolecule">Avogadro::QtGui::LayerModel::setActiveLayer (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_layer_model.html#_CPPv4N8Avogadro5QtGui10LayerModel7setDataERK11QModelIndexRK8QVarianti">Avogadro::QtGui::LayerModel::setData (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_layer_model.html#_CPPv4N8Avogadro5QtGui10LayerModel10updateRowsEv">Avogadro::QtGui::LayerModel::updateRows (C++ function)</a>
 </li>
       <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_mesh_generator.html#_CPPv4N8Avogadro5QtGui13MeshGeneratorE">Avogadro::QtGui::MeshGenerator (C++ class)</a>
 </li>
@@ -3593,6 +4756,34 @@ document.write(`
 </li>
       <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_persistent_bond.html#_CPPv4NK8Avogadro5QtGui14PersistentBond16uniqueIdentifierEv">Avogadro::QtGui::PersistentBond::uniqueIdentifier (C++ function)</a>
 </li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_plugin_layer_manager.html#_CPPv4N8Avogadro5QtGui18PluginLayerManagerE">Avogadro::QtGui::PluginLayerManager (C++ class)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_plugin_layer_manager.html#_CPPv4NK8Avogadro5QtGui18PluginLayerManager17activeLayerLockedEv">Avogadro::QtGui::PluginLayerManager::activeLayerLocked (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_plugin_layer_manager.html#_CPPv4NK8Avogadro5QtGui18PluginLayerManager11atomEnabledE5Index">Avogadro::QtGui::PluginLayerManager::atomEnabled (C++ function)</a>, <a href="develop/class/class_avogadro_1_1_qt_gui_1_1_plugin_layer_manager.html#_CPPv4NK8Avogadro5QtGui18PluginLayerManager11atomEnabledE6size_t5Index">[1]</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_plugin_layer_manager.html#_CPPv4NK8Avogadro5QtGui18PluginLayerManager10atomLockedE6size_t">Avogadro::QtGui::PluginLayerManager::atomLocked (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_plugin_layer_manager.html#_CPPv4NK8Avogadro5QtGui18PluginLayerManager11bondEnabledE5Index5Index">Avogadro::QtGui::PluginLayerManager::bondEnabled (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_plugin_layer_manager.html#_CPPv4NK8Avogadro5QtGui18PluginLayerManager10getLayerIDE5Index">Avogadro::QtGui::PluginLayerManager::getLayerID (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_plugin_layer_manager.html#_CPPv4I0EN8Avogadro5QtGui18PluginLayerManager10getSettingEP1T6size_t">Avogadro::QtGui::PluginLayerManager::getSetting (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_plugin_layer_manager.html#_CPPv4NK8Avogadro5QtGui18PluginLayerManager20isActiveLayerEnabledEv">Avogadro::QtGui::PluginLayerManager::isActiveLayerEnabled (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_plugin_layer_manager.html#_CPPv4NK8Avogadro5QtGui18PluginLayerManager9isEnabledEv">Avogadro::QtGui::PluginLayerManager::isEnabled (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_plugin_layer_manager.html#_CPPv4NK8Avogadro5QtGui18PluginLayerManager10layerCountEv">Avogadro::QtGui::PluginLayerManager::layerCount (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_plugin_layer_manager.html#_CPPv4I0EN8Avogadro5QtGui18PluginLayerManager4loadEvv">Avogadro::QtGui::PluginLayerManager::load (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_plugin_layer_manager.html#_CPPv4N8Avogadro5QtGui18PluginLayerManager18PluginLayerManagerERKNSt6stringE">Avogadro::QtGui::PluginLayerManager::PluginLayerManager (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_plugin_layer_manager.html#_CPPv4N8Avogadro5QtGui18PluginLayerManager10setEnabledEb">Avogadro::QtGui::PluginLayerManager::setEnabled (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_plugin_layer_manager.html#_CPPv4N8Avogadro5QtGui18PluginLayerManagerD0Ev">Avogadro::QtGui::PluginLayerManager::~PluginLayerManager (C++ function)</a>
+</li>
       <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_python_script.html#_CPPv4N8Avogadro5QtGui12PythonScriptE">Avogadro::QtGui::PythonScript (C++ class)</a>
 </li>
       <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_python_script.html#_CPPv4N8Avogadro5QtGui12PythonScript12asyncExecuteERK11QStringListRK10QByteArray">Avogadro::QtGui::PythonScript::asyncExecute (C++ function)</a>
@@ -3641,6 +4832,16 @@ document.write(`
 </li>
       <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_python_script.html#_CPPv4N8Avogadro5QtGui12PythonScriptD0Ev">Avogadro::QtGui::PythonScript::~PythonScript (C++ function)</a>
 </li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_rich_text_delegate.html#_CPPv4N8Avogadro5QtGui16RichTextDelegateE">Avogadro::QtGui::RichTextDelegate (C++ class)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_rich_text_delegate.html#_CPPv4NK8Avogadro5QtGui16RichTextDelegate5paintEP8QPainterRK20QStyleOptionViewItemRK11QModelIndex">Avogadro::QtGui::RichTextDelegate::paint (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_rich_text_delegate.html#_CPPv4N8Avogadro5QtGui16RichTextDelegate16RichTextDelegateEP7QObject">Avogadro::QtGui::RichTextDelegate::RichTextDelegate (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_rich_text_delegate.html#_CPPv4NK8Avogadro5QtGui16RichTextDelegate8sizeHintERK20QStyleOptionViewItemRK11QModelIndex">Avogadro::QtGui::RichTextDelegate::sizeHint (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_rich_text_delegate.html#_CPPv4N8Avogadro5QtGui16RichTextDelegateD0Ev">Avogadro::QtGui::RichTextDelegate::~RichTextDelegate (C++ function)</a>
+</li>
       <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_r_w_atom.html#_CPPv4N8Avogadro5QtGui6RWAtomE">Avogadro::QtGui::RWAtom (C++ class)</a>
 </li>
       <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_r_w_atom.html#_CPPv4N8Avogadro5QtGui6RWAtom6RWAtomEP10RWMolecule5Index">Avogadro::QtGui::RWAtom::RWAtom (C++ function)</a>, <a href="develop/class/class_avogadro_1_1_qt_gui_1_1_r_w_atom.html#_CPPv4N8Avogadro5QtGui6RWAtom6RWAtomEv">[1]</a>
@@ -3648,6 +4849,26 @@ document.write(`
       <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_r_w_bond.html#_CPPv4N8Avogadro5QtGui6RWBondE">Avogadro::QtGui::RWBond (C++ class)</a>
 </li>
       <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_r_w_bond.html#_CPPv4N8Avogadro5QtGui6RWBond6RWBondEP10RWMolecule5Index">Avogadro::QtGui::RWBond::RWBond (C++ function)</a>, <a href="develop/class/class_avogadro_1_1_qt_gui_1_1_r_w_bond.html#_CPPv4N8Avogadro5QtGui6RWBond6RWBondEv">[1]</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_r_w_layer_manager.html#_CPPv4N8Avogadro5QtGui14RWLayerManagerE">Avogadro::QtGui::RWLayerManager (C++ class)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_r_w_layer_manager.html#_CPPv4NK8Avogadro5QtGui14RWLayerManager19activeMoleculeNamesEv">Avogadro::QtGui::RWLayerManager::activeMoleculeNames (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_r_w_layer_manager.html#_CPPv4N8Avogadro5QtGui14RWLayerManager8addLayerEP10RWMolecule">Avogadro::QtGui::RWLayerManager::addLayer (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_r_w_layer_manager.html#_CPPv4N8Avogadro5QtGui14RWLayerManager11addMoleculeEPKN4Core8MoleculeE">Avogadro::QtGui::RWLayerManager::addMolecule (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_r_w_layer_manager.html#_CPPv4N8Avogadro5QtGui14RWLayerManager10flipLockedE6size_t">Avogadro::QtGui::RWLayerManager::flipLocked (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_r_w_layer_manager.html#_CPPv4N8Avogadro5QtGui14RWLayerManager11flipVisibleE6size_t">Avogadro::QtGui::RWLayerManager::flipVisible (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_r_w_layer_manager.html#_CPPv4NK8Avogadro5QtGui14RWLayerManager6lockedE6size_t">Avogadro::QtGui::RWLayerManager::locked (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_r_w_layer_manager.html#_CPPv4N8Avogadro5QtGui14RWLayerManager11removeLayerE6size_tP10RWMolecule">Avogadro::QtGui::RWLayerManager::removeLayer (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_r_w_layer_manager.html#_CPPv4N8Avogadro5QtGui14RWLayerManager14setActiveLayerE6size_tP10RWMolecule">Avogadro::QtGui::RWLayerManager::setActiveLayer (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_r_w_layer_manager.html#_CPPv4NK8Avogadro5QtGui14RWLayerManager7visibleE6size_t">Avogadro::QtGui::RWLayerManager::visible (C++ function)</a>
 </li>
       <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_r_w_molecule.html#_CPPv4N8Avogadro5QtGui10RWMoleculeE">Avogadro::QtGui::RWMolecule (C++ class)</a>
 </li>
@@ -3931,6 +5152,42 @@ document.write(`
 </li>
       <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_script_loader.html#_CPPv4N8Avogadro5QtGui12ScriptLoaderD0Ev">Avogadro::QtGui::ScriptLoader::~ScriptLoader (C++ function)</a>
 </li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_slater_set_concurrent.html#_CPPv4N8Avogadro5QtGui19SlaterSetConcurrentE">Avogadro::QtGui::SlaterSetConcurrent (C++ class)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_slater_set_concurrent.html#_CPPv4N8Avogadro5QtGui19SlaterSetConcurrent24calculateElectronDensityEPN4Core4CubeE">Avogadro::QtGui::SlaterSetConcurrent::calculateElectronDensity (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_slater_set_concurrent.html#_CPPv4N8Avogadro5QtGui19SlaterSetConcurrent25calculateMolecularOrbitalEPN4Core4CubeEj">Avogadro::QtGui::SlaterSetConcurrent::calculateMolecularOrbital (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_slater_set_concurrent.html#_CPPv4N8Avogadro5QtGui19SlaterSetConcurrent20calculateSpinDensityEPN4Core4CubeE">Avogadro::QtGui::SlaterSetConcurrent::calculateSpinDensity (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_slater_set_concurrent.html#_CPPv4N8Avogadro5QtGui19SlaterSetConcurrent8finishedEv">Avogadro::QtGui::SlaterSetConcurrent::finished (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_slater_set_concurrent.html#_CPPv4N8Avogadro5QtGui19SlaterSetConcurrent11setMoleculeEPN4Core8MoleculeE">Avogadro::QtGui::SlaterSetConcurrent::setMolecule (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_slater_set_concurrent.html#_CPPv4N8Avogadro5QtGui19SlaterSetConcurrent19SlaterSetConcurrentEP7QObject">Avogadro::QtGui::SlaterSetConcurrent::SlaterSetConcurrent (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_slater_set_concurrent.html#_CPPv4N8Avogadro5QtGui19SlaterSetConcurrent7watcherEv">Avogadro::QtGui::SlaterSetConcurrent::watcher (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_slater_set_concurrent.html#_CPPv4N8Avogadro5QtGui19SlaterSetConcurrentD0Ev">Avogadro::QtGui::SlaterSetConcurrent::~SlaterSetConcurrent (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_sort_filter_tree_proxy_model.html#_CPPv4N8Avogadro5QtGui24SortFilterTreeProxyModelE">Avogadro::QtGui::SortFilterTreeProxyModel (C++ class)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_sort_filter_tree_proxy_model.html#_CPPv4NK8Avogadro5QtGui24SortFilterTreeProxyModel16filterAcceptsRowEiRK11QModelIndex">Avogadro::QtGui::SortFilterTreeProxyModel::filterAcceptsRow (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_sort_filter_tree_proxy_model.html#_CPPv4N8Avogadro5QtGui24SortFilterTreeProxyModel13setSourceRootERK11QModelIndex">Avogadro::QtGui::SortFilterTreeProxyModel::setSourceRoot (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_sort_filter_tree_proxy_model.html#_CPPv4N8Avogadro5QtGui24SortFilterTreeProxyModel24SortFilterTreeProxyModelEP7QObject">Avogadro::QtGui::SortFilterTreeProxyModel::SortFilterTreeProxyModel (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_timed_progress_dialog.html#_CPPv4N8Avogadro5QtGui19TimedProgressDialogE">Avogadro::QtGui::TimedProgressDialog (C++ class)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_timed_progress_dialog.html#_CPPv4N8Avogadro5QtGui19TimedProgressDialog12setLabelTextERK7QString">Avogadro::QtGui::TimedProgressDialog::setLabelText (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_timed_progress_dialog.html#_CPPv4N8Avogadro5QtGui19TimedProgressDialog8setValueEi">Avogadro::QtGui::TimedProgressDialog::setValue (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_timed_progress_dialog.html#_CPPv4N8Avogadro5QtGui19TimedProgressDialog4showEv">Avogadro::QtGui::TimedProgressDialog::show (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_timed_progress_dialog.html#_CPPv4N8Avogadro5QtGui19TimedProgressDialog19TimedProgressDialogEP7QWidget">Avogadro::QtGui::TimedProgressDialog::TimedProgressDialog (C++ function)</a>, <a href="develop/class/class_avogadro_1_1_qt_gui_1_1_timed_progress_dialog.html#_CPPv4N8Avogadro5QtGui19TimedProgressDialog19TimedProgressDialogERK7QStringRK7QStringiiP7QWidget">[1]</a>
+</li>
       <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_tool_plugin.html#_CPPv4N8Avogadro5QtGui10ToolPluginE">Avogadro::QtGui::ToolPlugin (C++ class)</a>
 </li>
       <li><a href="develop/class/class_avogadro_1_1_qt_gui_1_1_tool_plugin.html#_CPPv4NK8Avogadro5QtGui10ToolPlugin14activateActionEv">Avogadro::QtGui::ToolPlugin::activateAction (C++ function)</a>
@@ -4205,6 +5462,58 @@ document.write(`
 </li>
       <li><a href="develop/class/class_avogadro_1_1_quantum_i_o_1_1_gaussian_fchk.html#_CPPv4N8Avogadro9QuantumIO12GaussianFchkD0Ev">Avogadro::QuantumIO::GaussianFchk::~GaussianFchk (C++ function)</a>
 </li>
+      <li><a href="develop/class/class_avogadro_1_1_quantum_i_o_1_1_generic_json.html#_CPPv4N8Avogadro9QuantumIO11GenericJsonE">Avogadro::QuantumIO::GenericJson (C++ class)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_quantum_i_o_1_1_generic_json.html#_CPPv4NK8Avogadro9QuantumIO11GenericJson11descriptionEv">Avogadro::QuantumIO::GenericJson::description (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_quantum_i_o_1_1_generic_json.html#_CPPv4NK8Avogadro9QuantumIO11GenericJson14fileExtensionsEv">Avogadro::QuantumIO::GenericJson::fileExtensions (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_quantum_i_o_1_1_generic_json.html#_CPPv4N8Avogadro9QuantumIO11GenericJson11GenericJsonEv">Avogadro::QuantumIO::GenericJson::GenericJson (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_quantum_i_o_1_1_generic_json.html#_CPPv4NK8Avogadro9QuantumIO11GenericJson10identifierEv">Avogadro::QuantumIO::GenericJson::identifier (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_quantum_i_o_1_1_generic_json.html#_CPPv4NK8Avogadro9QuantumIO11GenericJson9mimeTypesEv">Avogadro::QuantumIO::GenericJson::mimeTypes (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_quantum_i_o_1_1_generic_json.html#_CPPv4NK8Avogadro9QuantumIO11GenericJson4nameEv">Avogadro::QuantumIO::GenericJson::name (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_quantum_i_o_1_1_generic_json.html#_CPPv4NK8Avogadro9QuantumIO11GenericJson11newInstanceEv">Avogadro::QuantumIO::GenericJson::newInstance (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_quantum_i_o_1_1_generic_json.html#_CPPv4N8Avogadro9QuantumIO11GenericJson4readERNSt7istreamERN4Core8MoleculeE">Avogadro::QuantumIO::GenericJson::read (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_quantum_i_o_1_1_generic_json.html#_CPPv4NK8Avogadro9QuantumIO11GenericJson16specificationUrlEv">Avogadro::QuantumIO::GenericJson::specificationUrl (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_quantum_i_o_1_1_generic_json.html#_CPPv4NK8Avogadro9QuantumIO11GenericJson19supportedOperationsEv">Avogadro::QuantumIO::GenericJson::supportedOperations (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_quantum_i_o_1_1_generic_json.html#_CPPv4N8Avogadro9QuantumIO11GenericJson5writeERNSt7ostreamERKN4Core8MoleculeE">Avogadro::QuantumIO::GenericJson::write (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_quantum_i_o_1_1_generic_json.html#_CPPv4N8Avogadro9QuantumIO11GenericJsonD0Ev">Avogadro::QuantumIO::GenericJson::~GenericJson (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_quantum_i_o_1_1_generic_output.html#_CPPv4N8Avogadro9QuantumIO13GenericOutputE">Avogadro::QuantumIO::GenericOutput (C++ class)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_quantum_i_o_1_1_generic_output.html#_CPPv4NK8Avogadro9QuantumIO13GenericOutput11descriptionEv">Avogadro::QuantumIO::GenericOutput::description (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_quantum_i_o_1_1_generic_output.html#_CPPv4NK8Avogadro9QuantumIO13GenericOutput14fileExtensionsEv">Avogadro::QuantumIO::GenericOutput::fileExtensions (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_quantum_i_o_1_1_generic_output.html#_CPPv4N8Avogadro9QuantumIO13GenericOutput13GenericOutputEv">Avogadro::QuantumIO::GenericOutput::GenericOutput (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_quantum_i_o_1_1_generic_output.html#_CPPv4NK8Avogadro9QuantumIO13GenericOutput10identifierEv">Avogadro::QuantumIO::GenericOutput::identifier (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_quantum_i_o_1_1_generic_output.html#_CPPv4NK8Avogadro9QuantumIO13GenericOutput9mimeTypesEv">Avogadro::QuantumIO::GenericOutput::mimeTypes (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_quantum_i_o_1_1_generic_output.html#_CPPv4NK8Avogadro9QuantumIO13GenericOutput4nameEv">Avogadro::QuantumIO::GenericOutput::name (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_quantum_i_o_1_1_generic_output.html#_CPPv4NK8Avogadro9QuantumIO13GenericOutput11newInstanceEv">Avogadro::QuantumIO::GenericOutput::newInstance (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_quantum_i_o_1_1_generic_output.html#_CPPv4N8Avogadro9QuantumIO13GenericOutput4readERNSt7istreamERN4Core8MoleculeE">Avogadro::QuantumIO::GenericOutput::read (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_quantum_i_o_1_1_generic_output.html#_CPPv4NK8Avogadro9QuantumIO13GenericOutput16specificationUrlEv">Avogadro::QuantumIO::GenericOutput::specificationUrl (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_quantum_i_o_1_1_generic_output.html#_CPPv4NK8Avogadro9QuantumIO13GenericOutput19supportedOperationsEv">Avogadro::QuantumIO::GenericOutput::supportedOperations (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_quantum_i_o_1_1_generic_output.html#_CPPv4N8Avogadro9QuantumIO13GenericOutput5writeERNSt7ostreamERKN4Core8MoleculeE">Avogadro::QuantumIO::GenericOutput::write (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_quantum_i_o_1_1_generic_output.html#_CPPv4N8Avogadro9QuantumIO13GenericOutputD0Ev">Avogadro::QuantumIO::GenericOutput::~GenericOutput (C++ function)</a>
+</li>
       <li><a href="develop/class/class_avogadro_1_1_quantum_i_o_1_1_g_u_k_basis_set.html#_CPPv4N8Avogadro9QuantumIO11GUKBasisSetE">Avogadro::QuantumIO::GUKBasisSet (C++ class)</a>
 </li>
       <li><a href="develop/class/class_avogadro_1_1_quantum_i_o_1_1_g_u_k_basis_set.html#_CPPv4N8Avogadro9QuantumIO11GUKBasisSet10atomLabelsE">Avogadro::QuantumIO::GUKBasisSet::atomLabels (C++ member)</a>
@@ -4351,6 +5660,58 @@ document.write(`
 </li>
       <li><a href="develop/class/class_avogadro_1_1_quantum_i_o_1_1_n_w_chem_log.html#_CPPv4N8Avogadro9QuantumIO9NWChemLogD0Ev">Avogadro::QuantumIO::NWChemLog::~NWChemLog (C++ function)</a>
 </li>
+      <li><a href="develop/class/class_avogadro_1_1_quantum_i_o_1_1_o_r_c_a_output.html#_CPPv4N8Avogadro9QuantumIO10ORCAOutputE">Avogadro::QuantumIO::ORCAOutput (C++ class)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_quantum_i_o_1_1_o_r_c_a_output.html#_CPPv4NK8Avogadro9QuantumIO10ORCAOutput11descriptionEv">Avogadro::QuantumIO::ORCAOutput::description (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_quantum_i_o_1_1_o_r_c_a_output.html#_CPPv4NK8Avogadro9QuantumIO10ORCAOutput14fileExtensionsEv">Avogadro::QuantumIO::ORCAOutput::fileExtensions (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_quantum_i_o_1_1_o_r_c_a_output.html#_CPPv4NK8Avogadro9QuantumIO10ORCAOutput10identifierEv">Avogadro::QuantumIO::ORCAOutput::identifier (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_quantum_i_o_1_1_o_r_c_a_output.html#_CPPv4NK8Avogadro9QuantumIO10ORCAOutput9mimeTypesEv">Avogadro::QuantumIO::ORCAOutput::mimeTypes (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_quantum_i_o_1_1_o_r_c_a_output.html#_CPPv4NK8Avogadro9QuantumIO10ORCAOutput4nameEv">Avogadro::QuantumIO::ORCAOutput::name (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_quantum_i_o_1_1_o_r_c_a_output.html#_CPPv4NK8Avogadro9QuantumIO10ORCAOutput11newInstanceEv">Avogadro::QuantumIO::ORCAOutput::newInstance (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_quantum_i_o_1_1_o_r_c_a_output.html#_CPPv4N8Avogadro9QuantumIO10ORCAOutput10ORCAOutputEv">Avogadro::QuantumIO::ORCAOutput::ORCAOutput (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_quantum_i_o_1_1_o_r_c_a_output.html#_CPPv4N8Avogadro9QuantumIO10ORCAOutput4readERNSt7istreamERN4Core8MoleculeE">Avogadro::QuantumIO::ORCAOutput::read (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_quantum_i_o_1_1_o_r_c_a_output.html#_CPPv4NK8Avogadro9QuantumIO10ORCAOutput16specificationUrlEv">Avogadro::QuantumIO::ORCAOutput::specificationUrl (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_quantum_i_o_1_1_o_r_c_a_output.html#_CPPv4NK8Avogadro9QuantumIO10ORCAOutput19supportedOperationsEv">Avogadro::QuantumIO::ORCAOutput::supportedOperations (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_quantum_i_o_1_1_o_r_c_a_output.html#_CPPv4N8Avogadro9QuantumIO10ORCAOutput5writeERNSt7ostreamERKN4Core8MoleculeE">Avogadro::QuantumIO::ORCAOutput::write (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_quantum_i_o_1_1_o_r_c_a_output.html#_CPPv4N8Avogadro9QuantumIO10ORCAOutputD0Ev">Avogadro::QuantumIO::ORCAOutput::~ORCAOutput (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_quantum_i_o_1_1_q_c_schema.html#_CPPv4N8Avogadro9QuantumIO8QCSchemaE">Avogadro::QuantumIO::QCSchema (C++ class)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_quantum_i_o_1_1_q_c_schema.html#_CPPv4NK8Avogadro9QuantumIO8QCSchema11descriptionEv">Avogadro::QuantumIO::QCSchema::description (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_quantum_i_o_1_1_q_c_schema.html#_CPPv4NK8Avogadro9QuantumIO8QCSchema14fileExtensionsEv">Avogadro::QuantumIO::QCSchema::fileExtensions (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_quantum_i_o_1_1_q_c_schema.html#_CPPv4NK8Avogadro9QuantumIO8QCSchema10identifierEv">Avogadro::QuantumIO::QCSchema::identifier (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_quantum_i_o_1_1_q_c_schema.html#_CPPv4NK8Avogadro9QuantumIO8QCSchema9mimeTypesEv">Avogadro::QuantumIO::QCSchema::mimeTypes (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_quantum_i_o_1_1_q_c_schema.html#_CPPv4NK8Avogadro9QuantumIO8QCSchema4nameEv">Avogadro::QuantumIO::QCSchema::name (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_quantum_i_o_1_1_q_c_schema.html#_CPPv4NK8Avogadro9QuantumIO8QCSchema11newInstanceEv">Avogadro::QuantumIO::QCSchema::newInstance (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_quantum_i_o_1_1_q_c_schema.html#_CPPv4N8Avogadro9QuantumIO8QCSchema8QCSchemaEv">Avogadro::QuantumIO::QCSchema::QCSchema (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_quantum_i_o_1_1_q_c_schema.html#_CPPv4N8Avogadro9QuantumIO8QCSchema4readERNSt7istreamERN4Core8MoleculeE">Avogadro::QuantumIO::QCSchema::read (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_quantum_i_o_1_1_q_c_schema.html#_CPPv4NK8Avogadro9QuantumIO8QCSchema16specificationUrlEv">Avogadro::QuantumIO::QCSchema::specificationUrl (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_quantum_i_o_1_1_q_c_schema.html#_CPPv4NK8Avogadro9QuantumIO8QCSchema19supportedOperationsEv">Avogadro::QuantumIO::QCSchema::supportedOperations (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_quantum_i_o_1_1_q_c_schema.html#_CPPv4N8Avogadro9QuantumIO8QCSchema5writeERNSt7ostreamERKN4Core8MoleculeE">Avogadro::QuantumIO::QCSchema::write (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_quantum_i_o_1_1_q_c_schema.html#_CPPv4N8Avogadro9QuantumIO8QCSchemaD0Ev">Avogadro::QuantumIO::QCSchema::~QCSchema (C++ function)</a>
+</li>
       <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_ambient_occlusion_sphere_geometry.html#_CPPv4N8Avogadro9Rendering30AmbientOcclusionSphereGeometryE">Avogadro::Rendering::AmbientOcclusionSphereGeometry (C++ class)</a>
 </li>
       <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_ambient_occlusion_sphere_geometry.html#_CPPv4N8Avogadro9Rendering30AmbientOcclusionSphereGeometry6acceptER7Visitor">Avogadro::Rendering::AmbientOcclusionSphereGeometry::accept (C++ function)</a>
@@ -4376,6 +5737,22 @@ document.write(`
       <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_ambient_occlusion_sphere_geometry.html#_CPPv4N8Avogadro9Rendering30AmbientOcclusionSphereGeometry6updateEv">Avogadro::Rendering::AmbientOcclusionSphereGeometry::update (C++ function)</a>
 </li>
       <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_ambient_occlusion_sphere_geometry.html#_CPPv4N8Avogadro9Rendering30AmbientOcclusionSphereGeometryD0Ev">Avogadro::Rendering::AmbientOcclusionSphereGeometry::~AmbientOcclusionSphereGeometry (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_arc_sector.html#_CPPv4N8Avogadro9Rendering9ArcSectorE">Avogadro::Rendering::ArcSector (C++ class)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_arc_sector.html#_CPPv4N8Avogadro9Rendering9ArcSector9ArcSectorEv">Avogadro::Rendering::ArcSector::ArcSector (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_arc_sector.html#_CPPv4N8Avogadro9Rendering9ArcSector12setArcSectorERK8Vector3fRK8Vector3fRK8Vector3fff">Avogadro::Rendering::ArcSector::setArcSector (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_arc_sector.html#_CPPv4N8Avogadro9Rendering9ArcSectorD0Ev">Avogadro::Rendering::ArcSector::~ArcSector (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_arc_strip.html#_CPPv4N8Avogadro9Rendering8ArcStripE">Avogadro::Rendering::ArcStrip (C++ class)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_arc_strip.html#_CPPv4N8Avogadro9Rendering8ArcStrip8ArcStripEv">Avogadro::Rendering::ArcStrip::ArcStrip (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_arc_strip.html#_CPPv4N8Avogadro9Rendering8ArcStrip6setArcERK8Vector3fRK8Vector3fRK8Vector3ffff">Avogadro::Rendering::ArcStrip::setArc (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_arc_strip.html#_CPPv4N8Avogadro9Rendering8ArcStripD0Ev">Avogadro::Rendering::ArcStrip::~ArcStrip (C++ function)</a>
 </li>
       <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_arrow_geometry.html#_CPPv4N8Avogadro9Rendering13ArrowGeometryE">Avogadro::Rendering::ArrowGeometry (C++ class)</a>
 </li>
@@ -4414,6 +5791,18 @@ document.write(`
       <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_arrow_geometry.html#_CPPv4N8Avogadro9Rendering13ArrowGeometry4swapER13ArrowGeometryR13ArrowGeometry">Avogadro::Rendering::ArrowGeometry::swap (C++ function)</a>
 </li>
       <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_arrow_geometry.html#_CPPv4N8Avogadro9Rendering13ArrowGeometryD0Ev">Avogadro::Rendering::ArrowGeometry::~ArrowGeometry (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_bezier_geometry.html#_CPPv4N8Avogadro9Rendering14BezierGeometryE">Avogadro::Rendering::BezierGeometry (C++ class)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_bezier_geometry.html#_CPPv4N8Avogadro9Rendering14BezierGeometry14BezierGeometryEv">Avogadro::Rendering::BezierGeometry::BezierGeometry (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_bezier_geometry.html#_CPPv4NK8Avogadro9Rendering14BezierGeometry17computeCurvePointEfRKNSt4listIP5PointEE">Avogadro::Rendering::BezierGeometry::computeCurvePoint (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_b_spline_geometry.html#_CPPv4N8Avogadro9Rendering15BSplineGeometryE">Avogadro::Rendering::BSplineGeometry (C++ class)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_b_spline_geometry.html#_CPPv4N8Avogadro9Rendering15BSplineGeometry15BSplineGeometryEb">Avogadro::Rendering::BSplineGeometry::BSplineGeometry (C++ function)</a>, <a href="develop/class/class_avogadro_1_1_rendering_1_1_b_spline_geometry.html#_CPPv4N8Avogadro9Rendering15BSplineGeometry15BSplineGeometryEv">[1]</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_b_spline_geometry.html#_CPPv4NK8Avogadro9Rendering15BSplineGeometry17computeCurvePointEfRKNSt4listIP5PointEE">Avogadro::Rendering::BSplineGeometry::computeCurvePoint (C++ function)</a>
 </li>
       <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_buffer_object.html#_CPPv4N8Avogadro9Rendering12BufferObjectE">Avogadro::Rendering::BufferObject (C++ class)</a>
 </li>
@@ -4499,6 +5888,62 @@ document.write(`
 </li>
       <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_camera.html#_CPPv4N8Avogadro9Rendering6CameraD0Ev">Avogadro::Rendering::Camera::~Camera (C++ function)</a>
 </li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_cartoon.html#_CPPv4N8Avogadro9Rendering7CartoonE">Avogadro::Rendering::Cartoon (C++ class)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_cartoon.html#_CPPv4N8Avogadro9Rendering7Cartoon8addPointERK8Vector3fRK9Vector3ub6size_t6size_tN4Core7Residue18SecondaryStructureE">Avogadro::Rendering::Cartoon::addPoint (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_cartoon.html#_CPPv4N8Avogadro9Rendering7Cartoon7CartoonEff">Avogadro::Rendering::Cartoon::Cartoon (C++ function)</a>, <a href="develop/class/class_avogadro_1_1_rendering_1_1_cartoon.html#_CPPv4N8Avogadro9Rendering7Cartoon7CartoonEv">[1]</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_cartoon.html#_CPPv4NK8Avogadro9Rendering7Cartoon19computeCirclePointsERKN5Eigen8Affine3fERKN5Eigen8Affine3fEb">Avogadro::Rendering::Cartoon::computeCirclePoints (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_cartoon.html#_CPPv4NK8Avogadro9Rendering7Cartoon12computeScaleE6size_tff">Avogadro::Rendering::Cartoon::computeScale (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_cartoon.html#_CPPv4N8Avogadro9Rendering7Cartoon12ELIPSE_RATIOE">Avogadro::Rendering::Cartoon::ELIPSE_RATIO (C++ member)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_cartoon.html#_CPPv4N8Avogadro9Rendering7Cartoon11m_maxRadiusE">Avogadro::Rendering::Cartoon::m_maxRadius (C++ member)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_cartoon.html#_CPPv4N8Avogadro9Rendering7Cartoon11m_minRadiusE">Avogadro::Rendering::Cartoon::m_minRadius (C++ member)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_cartoon.html#_CPPv4N8Avogadro9Rendering7Cartoon6m_typeE">Avogadro::Rendering::Cartoon::m_type (C++ member)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_curve_geometry.html#_CPPv4N8Avogadro9Rendering13CurveGeometryE">Avogadro::Rendering::CurveGeometry (C++ class)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_curve_geometry.html#_CPPv4N8Avogadro9Rendering13CurveGeometry6acceptER7Visitor">Avogadro::Rendering::CurveGeometry::accept (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_curve_geometry.html#_CPPv4N8Avogadro9Rendering13CurveGeometry8addPointERK8Vector3fRK9Vector3ubf6size_t6size_t">Avogadro::Rendering::CurveGeometry::addPoint (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_curve_geometry.html#_CPPv4NK8Avogadro9Rendering13CurveGeometry8areaHitsERK8Frustrum">Avogadro::Rendering::CurveGeometry::areaHits (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_curve_geometry.html#_CPPv4NK8Avogadro9Rendering13CurveGeometry19computeCirclePointsERKN5Eigen8Affine3fERKN5Eigen8Affine3fEb">Avogadro::Rendering::CurveGeometry::computeCirclePoints (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_curve_geometry.html#_CPPv4NK8Avogadro9Rendering13CurveGeometry17computeCurvePointEfRKNSt4listIP5PointEE">Avogadro::Rendering::CurveGeometry::computeCurvePoint (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_curve_geometry.html#_CPPv4NK8Avogadro9Rendering13CurveGeometry12computeScaleE6size_tff">Avogadro::Rendering::CurveGeometry::computeScale (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_curve_geometry.html#_CPPv4N8Avogadro9Rendering13CurveGeometry13CurveGeometryEb">Avogadro::Rendering::CurveGeometry::CurveGeometry (C++ function)</a>, <a href="develop/class/class_avogadro_1_1_rendering_1_1_curve_geometry.html#_CPPv4N8Avogadro9Rendering13CurveGeometry13CurveGeometryEv">[1]</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_curve_geometry.html#_CPPv4NK8Avogadro9Rendering13CurveGeometry5linesEv">Avogadro::Rendering::CurveGeometry::lines (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_curve_geometry.html#_CPPv4N8Avogadro9Rendering13CurveGeometry11m_canBeFlatE">Avogadro::Rendering::CurveGeometry::m_canBeFlat (C++ member)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_curve_geometry.html#_CPPv4N8Avogadro9Rendering13CurveGeometry7m_dirtyE">Avogadro::Rendering::CurveGeometry::m_dirty (C++ member)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_curve_geometry.html#_CPPv4N8Avogadro9Rendering13CurveGeometry10m_indexMapE">Avogadro::Rendering::CurveGeometry::m_indexMap (C++ member)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_curve_geometry.html#_CPPv4N8Avogadro9Rendering13CurveGeometry7m_linesE">Avogadro::Rendering::CurveGeometry::m_lines (C++ member)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_curve_geometry.html#_CPPv4N8Avogadro9Rendering13CurveGeometry12m_shaderInfoE">Avogadro::Rendering::CurveGeometry::m_shaderInfo (C++ member)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_curve_geometry.html#_CPPv4N8Avogadro9Rendering13CurveGeometry18processShaderErrorEb">Avogadro::Rendering::CurveGeometry::processShaderError (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_curve_geometry.html#_CPPv4N8Avogadro9Rendering13CurveGeometry6renderERK6Camera">Avogadro::Rendering::CurveGeometry::render (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_curve_geometry.html#_CPPv4N8Avogadro9Rendering13CurveGeometry7SKIPPEDE">Avogadro::Rendering::CurveGeometry::SKIPPED (C++ member)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_curve_geometry.html#_CPPv4N8Avogadro9Rendering13CurveGeometry6updateEi">Avogadro::Rendering::CurveGeometry::update (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_curve_geometry.html#_CPPv4N8Avogadro9Rendering13CurveGeometryD0Ev">Avogadro::Rendering::CurveGeometry::~CurveGeometry (C++ function)</a>
+</li>
       <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_cylinder.html#_CPPv4N8Avogadro9Rendering8CylinderE">Avogadro::Rendering::Cylinder (C++ class)</a>
 </li>
       <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_cylinder.html#_CPPv4N8Avogadro9Rendering8Cylinder8CylinderERK8Vector3fRK8Vector3fffN9Primitive10IdentifierERK9Vector3ub">Avogadro::Rendering::Cylinder::Cylinder (C++ function)</a>
@@ -4546,6 +5991,48 @@ document.write(`
       <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_cylinder_geometry.html#_CPPv4N8Avogadro9Rendering16CylinderGeometry6updateEv">Avogadro::Rendering::CylinderGeometry::update (C++ function)</a>
 </li>
       <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_cylinder_geometry.html#_CPPv4N8Avogadro9Rendering16CylinderGeometryD0Ev">Avogadro::Rendering::CylinderGeometry::~CylinderGeometry (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_dashed_line_geometry.html#_CPPv4N8Avogadro9Rendering18DashedLineGeometryE">Avogadro::Rendering::DashedLineGeometry (C++ class)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_dashed_line_geometry.html#_CPPv4N8Avogadro9Rendering18DashedLineGeometry6acceptER7Visitor">Avogadro::Rendering::DashedLineGeometry::accept (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_dashed_line_geometry.html#_CPPv4N8Avogadro9Rendering18DashedLineGeometry13addDashedLineERK8Vector3fRK8Vector3fRK9Vector3ubi">Avogadro::Rendering::DashedLineGeometry::addDashedLine (C++ function)</a>, <a href="develop/class/class_avogadro_1_1_rendering_1_1_dashed_line_geometry.html#_CPPv4N8Avogadro9Rendering18DashedLineGeometry13addDashedLineERK8Vector3fRK8Vector3fRK9Vector4ubi">[1]</a>, <a href="develop/class/class_avogadro_1_1_rendering_1_1_dashed_line_geometry.html#_CPPv4N8Avogadro9Rendering18DashedLineGeometry13addDashedLineERK8Vector3fRK8Vector3fi">[2]</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_dashed_line_geometry.html#_CPPv4N8Avogadro9Rendering18DashedLineGeometry5clearEv">Avogadro::Rendering::DashedLineGeometry::clear (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_dashed_line_geometry.html#_CPPv4NK8Avogadro9Rendering18DashedLineGeometry5colorEv">Avogadro::Rendering::DashedLineGeometry::color (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_dashed_line_geometry.html#_CPPv4N8Avogadro9Rendering18DashedLineGeometry18DashedLineGeometryERK18DashedLineGeometry">Avogadro::Rendering::DashedLineGeometry::DashedLineGeometry (C++ function)</a>, <a href="develop/class/class_avogadro_1_1_rendering_1_1_dashed_line_geometry.html#_CPPv4N8Avogadro9Rendering18DashedLineGeometry18DashedLineGeometryEv">[1]</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_dashed_line_geometry.html#_CPPv4NK8Avogadro9Rendering18DashedLineGeometry9lineWidthEv">Avogadro::Rendering::DashedLineGeometry::lineWidth (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_dashed_line_geometry.html#_CPPv4NK8Avogadro9Rendering18DashedLineGeometry7opacityEv">Avogadro::Rendering::DashedLineGeometry::opacity (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_dashed_line_geometry.html#_CPPv4N8Avogadro9Rendering18DashedLineGeometryaSE18DashedLineGeometry">Avogadro::Rendering::DashedLineGeometry::operator= (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_dashed_line_geometry.html#_CPPv4N8Avogadro9Rendering18DashedLineGeometry12PackedVertexE">Avogadro::Rendering::DashedLineGeometry::PackedVertex (C++ struct)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_dashed_line_geometry.html#_CPPv4N8Avogadro9Rendering18DashedLineGeometry12PackedVertex5colorE">Avogadro::Rendering::DashedLineGeometry::PackedVertex::color (C++ member)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_dashed_line_geometry.html#_CPPv4N8Avogadro9Rendering18DashedLineGeometry12PackedVertex11colorOffsetEv">Avogadro::Rendering::DashedLineGeometry::PackedVertex::colorOffset (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_dashed_line_geometry.html#_CPPv4N8Avogadro9Rendering18DashedLineGeometry12PackedVertex12PackedVertexERK8Vector3fRK9Vector4ub">Avogadro::Rendering::DashedLineGeometry::PackedVertex::PackedVertex (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_dashed_line_geometry.html#_CPPv4N8Avogadro9Rendering18DashedLineGeometry12PackedVertex6vertexE">Avogadro::Rendering::DashedLineGeometry::PackedVertex::vertex (C++ member)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_dashed_line_geometry.html#_CPPv4N8Avogadro9Rendering18DashedLineGeometry12PackedVertex12vertexOffsetEv">Avogadro::Rendering::DashedLineGeometry::PackedVertex::vertexOffset (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_dashed_line_geometry.html#_CPPv4N8Avogadro9Rendering18DashedLineGeometry6renderERK6Camera">Avogadro::Rendering::DashedLineGeometry::render (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_dashed_line_geometry.html#_CPPv4N8Avogadro9Rendering18DashedLineGeometry8setColorERK9Vector3ub">Avogadro::Rendering::DashedLineGeometry::setColor (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_dashed_line_geometry.html#_CPPv4N8Avogadro9Rendering18DashedLineGeometry12setLineWidthEh">Avogadro::Rendering::DashedLineGeometry::setLineWidth (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_dashed_line_geometry.html#_CPPv4N8Avogadro9Rendering18DashedLineGeometry10setOpacityEh">Avogadro::Rendering::DashedLineGeometry::setOpacity (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_dashed_line_geometry.html#_CPPv4N8Avogadro9Rendering18DashedLineGeometry4swapER18DashedLineGeometryR18DashedLineGeometry">Avogadro::Rendering::DashedLineGeometry::swap (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_dashed_line_geometry.html#_CPPv4N8Avogadro9Rendering18DashedLineGeometryD0Ev">Avogadro::Rendering::DashedLineGeometry::~DashedLineGeometry (C++ function)</a>
 </li>
       <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_drawable.html#_CPPv4N8Avogadro9Rendering8DrawableE">Avogadro::Rendering::Drawable (C++ class)</a>
 </li>
@@ -4845,6 +6332,28 @@ document.write(`
 </li>
       <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_node.html#_CPPv4N8Avogadro9Rendering4NodeD0Ev">Avogadro::Rendering::Node::~Node (C++ function)</a>
 </li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_p_l_y_visitor.html#_CPPv4N8Avogadro9Rendering10PLYVisitorE">Avogadro::Rendering::PLYVisitor (C++ class)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_p_l_y_visitor.html#_CPPv4N8Avogadro9Rendering10PLYVisitor5beginEv">Avogadro::Rendering::PLYVisitor::begin (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_p_l_y_visitor.html#_CPPv4NK8Avogadro9Rendering10PLYVisitor6cameraEv">Avogadro::Rendering::PLYVisitor::camera (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_p_l_y_visitor.html#_CPPv4N8Avogadro9Rendering10PLYVisitor3endEv">Avogadro::Rendering::PLYVisitor::end (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_p_l_y_visitor.html#_CPPv4N8Avogadro9Rendering10PLYVisitor10PLYVisitorERK6Camera">Avogadro::Rendering::PLYVisitor::PLYVisitor (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_p_l_y_visitor.html#_CPPv4N8Avogadro9Rendering10PLYVisitor15setAmbientColorERK9Vector3ub">Avogadro::Rendering::PLYVisitor::setAmbientColor (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_p_l_y_visitor.html#_CPPv4N8Avogadro9Rendering10PLYVisitor14setAspectRatioEf">Avogadro::Rendering::PLYVisitor::setAspectRatio (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_p_l_y_visitor.html#_CPPv4N8Avogadro9Rendering10PLYVisitor18setBackgroundColorERK9Vector3ub">Avogadro::Rendering::PLYVisitor::setBackgroundColor (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_p_l_y_visitor.html#_CPPv4N8Avogadro9Rendering10PLYVisitor9setCameraERK6Camera">Avogadro::Rendering::PLYVisitor::setCamera (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_p_l_y_visitor.html#_CPPv4N8Avogadro9Rendering10PLYVisitor5visitER11TextLabel2D">Avogadro::Rendering::PLYVisitor::visit (C++ function)</a>, <a href="develop/class/class_avogadro_1_1_rendering_1_1_p_l_y_visitor.html#_CPPv4N8Avogadro9Rendering10PLYVisitor5visitER11TextLabel3D">[1]</a>, <a href="develop/class/class_avogadro_1_1_rendering_1_1_p_l_y_visitor.html#_CPPv4N8Avogadro9Rendering10PLYVisitor5visitER12GeometryNode">[2]</a>, <a href="develop/class/class_avogadro_1_1_rendering_1_1_p_l_y_visitor.html#_CPPv4N8Avogadro9Rendering10PLYVisitor5visitER12MeshGeometry">[3]</a>, <a href="develop/class/class_avogadro_1_1_rendering_1_1_p_l_y_visitor.html#_CPPv4N8Avogadro9Rendering10PLYVisitor5visitER13CurveGeometry">[4]</a>, <a href="develop/class/class_avogadro_1_1_rendering_1_1_p_l_y_visitor.html#_CPPv4N8Avogadro9Rendering10PLYVisitor5visitER14SphereGeometry">[5]</a>, <a href="develop/class/class_avogadro_1_1_rendering_1_1_p_l_y_visitor.html#_CPPv4N8Avogadro9Rendering10PLYVisitor5visitER16CylinderGeometry">[6]</a>, <a href="develop/class/class_avogadro_1_1_rendering_1_1_p_l_y_visitor.html#_CPPv4N8Avogadro9Rendering10PLYVisitor5visitER17LineStripGeometry">[7]</a>, <a href="develop/class/class_avogadro_1_1_rendering_1_1_p_l_y_visitor.html#_CPPv4N8Avogadro9Rendering10PLYVisitor5visitER30AmbientOcclusionSphereGeometry">[8]</a>, <a href="develop/class/class_avogadro_1_1_rendering_1_1_p_l_y_visitor.html#_CPPv4N8Avogadro9Rendering10PLYVisitor5visitER4Node">[9]</a>, <a href="develop/class/class_avogadro_1_1_rendering_1_1_p_l_y_visitor.html#_CPPv4N8Avogadro9Rendering10PLYVisitor5visitER8Drawable">[10]</a>, <a href="develop/class/class_avogadro_1_1_rendering_1_1_p_l_y_visitor.html#_CPPv4N8Avogadro9Rendering10PLYVisitor5visitER9GroupNode">[11]</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_p_l_y_visitor.html#_CPPv4N8Avogadro9Rendering10PLYVisitorD0Ev">Avogadro::Rendering::PLYVisitor::~PLYVisitor (C++ function)</a>
+</li>
       <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_p_o_v_ray_visitor.html#_CPPv4N8Avogadro9Rendering13POVRayVisitorE">Avogadro::Rendering::POVRayVisitor (C++ class)</a>
 </li>
       <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_p_o_v_ray_visitor.html#_CPPv4N8Avogadro9Rendering13POVRayVisitor5beginEv">Avogadro::Rendering::POVRayVisitor::begin (C++ function)</a>
@@ -4902,6 +6411,22 @@ document.write(`
       <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_primitive.html#_CPPv4N8Avogadro9Rendering9Primitive4Type4BondE">Avogadro::Rendering::Primitive::Type::Bond (C++ enumerator)</a>
 </li>
       <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_primitive.html#_CPPv4N8Avogadro9Rendering9Primitive4Type7InvalidE">Avogadro::Rendering::Primitive::Type::Invalid (C++ enumerator)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_quad.html#_CPPv4N8Avogadro9Rendering4QuadE">Avogadro::Rendering::Quad (C++ class)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_quad.html#_CPPv4N8Avogadro9Rendering4Quad4QuadEv">Avogadro::Rendering::Quad::Quad (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_quad.html#_CPPv4N8Avogadro9Rendering4Quad7setQuadERK8Vector3fRK8Vector3fRK8Vector3fRK8Vector3f">Avogadro::Rendering::Quad::setQuad (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_quad.html#_CPPv4N8Avogadro9Rendering4QuadD0Ev">Avogadro::Rendering::Quad::~Quad (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_quad_outline.html#_CPPv4N8Avogadro9Rendering11QuadOutlineE">Avogadro::Rendering::QuadOutline (C++ class)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_quad_outline.html#_CPPv4N8Avogadro9Rendering11QuadOutline11QuadOutlineEv">Avogadro::Rendering::QuadOutline::QuadOutline (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_quad_outline.html#_CPPv4N8Avogadro9Rendering11QuadOutline7setQuadERK8Vector3fRK8Vector3fRK8Vector3fRK8Vector3ff">Avogadro::Rendering::QuadOutline::setQuad (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_quad_outline.html#_CPPv4N8Avogadro9Rendering11QuadOutlineD0Ev">Avogadro::Rendering::QuadOutline::~QuadOutline (C++ function)</a>
 </li>
       <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_scene.html#_CPPv4N8Avogadro9Rendering5SceneE">Avogadro::Rendering::Scene (C++ class)</a>
 </li>
@@ -5018,6 +6543,70 @@ document.write(`
       <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_shader_program.html#_CPPv4N8Avogadro9Rendering13ShaderProgram17useAttributeArrayERKNSt6stringEi6size_tN8Avogadro4TypeEi15NormalizeOption">Avogadro::Rendering::ShaderProgram::useAttributeArray (C++ function)</a>
 </li>
       <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_shader_program.html#_CPPv4N8Avogadro9Rendering13ShaderProgramD0Ev">Avogadro::Rendering::ShaderProgram::~ShaderProgram (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_solid_pipeline.html#_CPPv4N8Avogadro9Rendering13SolidPipelineE">Avogadro::Rendering::SolidPipeline (C++ class)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_solid_pipeline.html#_CPPv4N8Avogadro9Rendering13SolidPipeline12adjustOffsetERK6Camera">Avogadro::Rendering::SolidPipeline::adjustOffset (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_solid_pipeline.html#_CPPv4NK8Avogadro9Rendering13SolidPipeline15backgroundColorEv">Avogadro::Rendering::SolidPipeline::backgroundColor (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_solid_pipeline.html#_CPPv4N8Avogadro9Rendering13SolidPipeline5beginEv">Avogadro::Rendering::SolidPipeline::begin (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_solid_pipeline.html#_CPPv4N8Avogadro9Rendering13SolidPipeline3endEv">Avogadro::Rendering::SolidPipeline::end (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_solid_pipeline.html#_CPPv4N8Avogadro9Rendering13SolidPipeline12getAoEnabledEv">Avogadro::Rendering::SolidPipeline::getAoEnabled (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_solid_pipeline.html#_CPPv4N8Avogadro9Rendering13SolidPipeline13getAoStrengthEv">Avogadro::Rendering::SolidPipeline::getAoStrength (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_solid_pipeline.html#_CPPv4N8Avogadro9Rendering13SolidPipeline13getDofEnabledEv">Avogadro::Rendering::SolidPipeline::getDofEnabled (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_solid_pipeline.html#_CPPv4N8Avogadro9Rendering13SolidPipeline14getDofPositionEv">Avogadro::Rendering::SolidPipeline::getDofPosition (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_solid_pipeline.html#_CPPv4N8Avogadro9Rendering13SolidPipeline14getDofStrengthEv">Avogadro::Rendering::SolidPipeline::getDofStrength (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_solid_pipeline.html#_CPPv4N8Avogadro9Rendering13SolidPipeline12getEdEnabledEv">Avogadro::Rendering::SolidPipeline::getEdEnabled (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_solid_pipeline.html#_CPPv4N8Avogadro9Rendering13SolidPipeline13getEdStrengthEv">Avogadro::Rendering::SolidPipeline::getEdStrength (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_solid_pipeline.html#_CPPv4N8Avogadro9Rendering13SolidPipeline13getFogEnabledEv">Avogadro::Rendering::SolidPipeline::getFogEnabled (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_solid_pipeline.html#_CPPv4N8Avogadro9Rendering13SolidPipeline14getFogPositionEv">Avogadro::Rendering::SolidPipeline::getFogPosition (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_solid_pipeline.html#_CPPv4N8Avogadro9Rendering13SolidPipeline14getFogStrengthEv">Avogadro::Rendering::SolidPipeline::getFogStrength (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_solid_pipeline.html#_CPPv4N8Avogadro9Rendering13SolidPipeline10initializeEv">Avogadro::Rendering::SolidPipeline::initialize (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_solid_pipeline.html#_CPPv4N8Avogadro9Rendering13SolidPipelineaSERK13SolidPipeline">Avogadro::Rendering::SolidPipeline::operator= (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_solid_pipeline.html#_CPPv4N8Avogadro9Rendering13SolidPipeline6resizeEii">Avogadro::Rendering::SolidPipeline::resize (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_solid_pipeline.html#_CPPv4N8Avogadro9Rendering13SolidPipeline12setAoEnabledEb">Avogadro::Rendering::SolidPipeline::setAoEnabled (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_solid_pipeline.html#_CPPv4N8Avogadro9Rendering13SolidPipeline13setAoStrengthEf">Avogadro::Rendering::SolidPipeline::setAoStrength (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_solid_pipeline.html#_CPPv4N8Avogadro9Rendering13SolidPipeline18setBackgroundColorERK9Vector4ub">Avogadro::Rendering::SolidPipeline::setBackgroundColor (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_solid_pipeline.html#_CPPv4N8Avogadro9Rendering13SolidPipeline13setDofEnabledEb">Avogadro::Rendering::SolidPipeline::setDofEnabled (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_solid_pipeline.html#_CPPv4N8Avogadro9Rendering13SolidPipeline14setDofPositionEf">Avogadro::Rendering::SolidPipeline::setDofPosition (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_solid_pipeline.html#_CPPv4N8Avogadro9Rendering13SolidPipeline14setDofStrengthEf">Avogadro::Rendering::SolidPipeline::setDofStrength (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_solid_pipeline.html#_CPPv4N8Avogadro9Rendering13SolidPipeline12setEdEnabledEb">Avogadro::Rendering::SolidPipeline::setEdEnabled (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_solid_pipeline.html#_CPPv4N8Avogadro9Rendering13SolidPipeline13setEdStrengthEf">Avogadro::Rendering::SolidPipeline::setEdStrength (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_solid_pipeline.html#_CPPv4N8Avogadro9Rendering13SolidPipeline13setFogEnabledEb">Avogadro::Rendering::SolidPipeline::setFogEnabled (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_solid_pipeline.html#_CPPv4N8Avogadro9Rendering13SolidPipeline14setFogPositionEf">Avogadro::Rendering::SolidPipeline::setFogPosition (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_solid_pipeline.html#_CPPv4N8Avogadro9Rendering13SolidPipeline14setFogStrengthEf">Avogadro::Rendering::SolidPipeline::setFogStrength (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_solid_pipeline.html#_CPPv4N8Avogadro9Rendering13SolidPipeline13setPixelRatioEf">Avogadro::Rendering::SolidPipeline::setPixelRatio (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_solid_pipeline.html#_CPPv4N8Avogadro9Rendering13SolidPipeline13SolidPipelineERK13SolidPipeline">Avogadro::Rendering::SolidPipeline::SolidPipeline (C++ function)</a>, <a href="develop/class/class_avogadro_1_1_rendering_1_1_solid_pipeline.html#_CPPv4N8Avogadro9Rendering13SolidPipeline13SolidPipelineEv">[1]</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_solid_pipeline.html#_CPPv4N8Avogadro9Rendering13SolidPipelineD0Ev">Avogadro::Rendering::SolidPipeline::~SolidPipeline (C++ function)</a>
 </li>
       <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_sphere.html#_CPPv4N8Avogadro9Rendering6SphereE">Avogadro::Rendering::Sphere (C++ class)</a>
 </li>
@@ -5349,6 +6938,20 @@ document.write(`
 </li>
       <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_transform_node.html#_CPPv4N8Avogadro9Rendering13TransformNodeD0Ev">Avogadro::Rendering::TransformNode::~TransformNode (C++ function)</a>
 </li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_vertex_array_object.html#_CPPv4N8Avogadro9Rendering17VertexArrayObjectE">Avogadro::Rendering::VertexArrayObject (C++ class)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_vertex_array_object.html#_CPPv4N8Avogadro9Rendering17VertexArrayObject4bindEv">Avogadro::Rendering::VertexArrayObject::bind (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_vertex_array_object.html#_CPPv4NK8Avogadro9Rendering17VertexArrayObject6handleEv">Avogadro::Rendering::VertexArrayObject::handle (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_vertex_array_object.html#_CPPv4N8Avogadro9Rendering17VertexArrayObjectaSERK17VertexArrayObject">Avogadro::Rendering::VertexArrayObject::operator= (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_vertex_array_object.html#_CPPv4N8Avogadro9Rendering17VertexArrayObject7releaseEv">Avogadro::Rendering::VertexArrayObject::release (C++ function)</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_vertex_array_object.html#_CPPv4N8Avogadro9Rendering17VertexArrayObject17VertexArrayObjectERK17VertexArrayObject">Avogadro::Rendering::VertexArrayObject::VertexArrayObject (C++ function)</a>, <a href="develop/class/class_avogadro_1_1_rendering_1_1_vertex_array_object.html#_CPPv4N8Avogadro9Rendering17VertexArrayObject17VertexArrayObjectEv">[1]</a>
+</li>
+      <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_vertex_array_object.html#_CPPv4N8Avogadro9Rendering17VertexArrayObjectD0Ev">Avogadro::Rendering::VertexArrayObject::~VertexArrayObject (C++ function)</a>
+</li>
       <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_visitor.html#_CPPv4N8Avogadro9Rendering7VisitorE">Avogadro::Rendering::Visitor (C++ class)</a>
 </li>
       <li><a href="develop/class/class_avogadro_1_1_rendering_1_1_visitor.html#_CPPv4N8Avogadro9Rendering7Visitor5visitER11TextLabel2D">Avogadro::Rendering::Visitor::visit (C++ function)</a>, <a href="develop/class/class_avogadro_1_1_rendering_1_1_visitor.html#_CPPv4N8Avogadro9Rendering7Visitor5visitER11TextLabel3D">[1]</a>, <a href="develop/class/class_avogadro_1_1_rendering_1_1_visitor.html#_CPPv4N8Avogadro9Rendering7Visitor5visitER12GeometryNode">[2]</a>, <a href="develop/class/class_avogadro_1_1_rendering_1_1_visitor.html#_CPPv4N8Avogadro9Rendering7Visitor5visitER12MeshGeometry">[3]</a>, <a href="develop/class/class_avogadro_1_1_rendering_1_1_visitor.html#_CPPv4N8Avogadro9Rendering7Visitor5visitER13CurveGeometry">[4]</a>, <a href="develop/class/class_avogadro_1_1_rendering_1_1_visitor.html#_CPPv4N8Avogadro9Rendering7Visitor5visitER14SphereGeometry">[5]</a>, <a href="develop/class/class_avogadro_1_1_rendering_1_1_visitor.html#_CPPv4N8Avogadro9Rendering7Visitor5visitER16CylinderGeometry">[6]</a>, <a href="develop/class/class_avogadro_1_1_rendering_1_1_visitor.html#_CPPv4N8Avogadro9Rendering7Visitor5visitER17LineStripGeometry">[7]</a>, <a href="develop/class/class_avogadro_1_1_rendering_1_1_visitor.html#_CPPv4N8Avogadro9Rendering7Visitor5visitER30AmbientOcclusionSphereGeometry">[8]</a>, <a href="develop/class/class_avogadro_1_1_rendering_1_1_visitor.html#_CPPv4N8Avogadro9Rendering7Visitor5visitER4Node">[9]</a>, <a href="develop/class/class_avogadro_1_1_rendering_1_1_visitor.html#_CPPv4N8Avogadro9Rendering7Visitor5visitER8Drawable">[10]</a>, <a href="develop/class/class_avogadro_1_1_rendering_1_1_visitor.html#_CPPv4N8Avogadro9Rendering7Visitor5visitER9GroupNode">[11]</a>
@@ -5482,84 +7085,6 @@ document.write(`
       <li><a href="develop/class/class_avogadro_1_1_type_traits_3_01unsigned_01short_01_4.html#_CPPv4N8Avogadro10TypeTraitsItE4nameEv">Avogadro::TypeTraits&lt;unsigned short&gt;::name (C++ function)</a>
 </li>
       <li><a href="develop/class/class_avogadro_1_1_type_traits_3_01unsigned_01short_01_4.html#_CPPv4N8Avogadro10TypeTraitsItE19PhonyNameDueToError9EnumValueE">Avogadro::TypeTraits&lt;unsigned short&gt;::PhonyNameDueToError::EnumValue (C++ enumerator)</a>
-</li>
-      <li><a href="develop/class/class_avogadro_1_1_v_t_k_1_1vtk_g_l_widget.html#_CPPv4N8Avogadro3VTK11vtkGLWidgetE">Avogadro::VTK::vtkGLWidget (C++ class)</a>
-</li>
-      <li><a href="develop/class/class_avogadro_1_1_v_t_k_1_1vtk_g_l_widget.html#_CPPv4N8Avogadro3VTK11vtkGLWidget10clearSceneEv">Avogadro::VTK::vtkGLWidget::clearScene (C++ function)</a>
-</li>
-      <li><a href="develop/class/class_avogadro_1_1_v_t_k_1_1vtk_g_l_widget.html#_CPPv4N8Avogadro3VTK11vtkGLWidget4cubeEv">Avogadro::VTK::vtkGLWidget::cube (C++ function)</a>
-</li>
-      <li><a href="develop/class/class_avogadro_1_1_v_t_k_1_1vtk_g_l_widget.html#_CPPv4N8Avogadro3VTK11vtkGLWidget10cubeVolumeEPN4Core4CubeE">Avogadro::VTK::vtkGLWidget::cubeVolume (C++ function)</a>
-</li>
-      <li><a href="develop/class/class_avogadro_1_1_v_t_k_1_1vtk_g_l_widget.html#_CPPv4NK8Avogadro3VTK11vtkGLWidget9imageDataEv">Avogadro::VTK::vtkGLWidget::imageData (C++ function)</a>
-</li>
-      <li><a href="develop/class/class_avogadro_1_1_v_t_k_1_1vtk_g_l_widget.html#_CPPv4N8Avogadro3VTK11vtkGLWidget16imageDataUpdatedEv">Avogadro::VTK::vtkGLWidget::imageDataUpdated (C++ function)</a>
-</li>
-      <li><a href="develop/class/class_avogadro_1_1_v_t_k_1_1vtk_g_l_widget.html#_CPPv4NK8Avogadro3VTK11vtkGLWidget3lutEv">Avogadro::VTK::vtkGLWidget::lut (C++ function)</a>
-</li>
-      <li><a href="develop/class/class_avogadro_1_1_v_t_k_1_1vtk_g_l_widget.html#_CPPv4N8Avogadro3VTK11vtkGLWidget8moleculeEv">Avogadro::VTK::vtkGLWidget::molecule (C++ function)</a>, <a href="develop/class/class_avogadro_1_1_v_t_k_1_1vtk_g_l_widget.html#_CPPv4NK8Avogadro3VTK11vtkGLWidget8moleculeEv">[1]</a>
-</li>
-      <li><a href="develop/class/class_avogadro_1_1_v_t_k_1_1vtk_g_l_widget.html#_CPPv4NK8Avogadro3VTK11vtkGLWidget15opacityFunctionEv">Avogadro::VTK::vtkGLWidget::opacityFunction (C++ function)</a>
-</li>
-      <li><a href="develop/class/class_avogadro_1_1_v_t_k_1_1vtk_g_l_widget.html#_CPPv4N8Avogadro3VTK11vtkGLWidget8rendererEv">Avogadro::VTK::vtkGLWidget::renderer (C++ function)</a>
-</li>
-      <li><a href="develop/class/class_avogadro_1_1_v_t_k_1_1vtk_g_l_widget.html#_CPPv4N8Avogadro3VTK11vtkGLWidget16renderIsosurfaceEb">Avogadro::VTK::vtkGLWidget::renderIsosurface (C++ function)</a>
-</li>
-      <li><a href="develop/class/class_avogadro_1_1_v_t_k_1_1vtk_g_l_widget.html#_CPPv4N8Avogadro3VTK11vtkGLWidget12renderVolumeEb">Avogadro::VTK::vtkGLWidget::renderVolume (C++ function)</a>
-</li>
-      <li><a href="develop/class/class_avogadro_1_1_v_t_k_1_1vtk_g_l_widget.html#_CPPv4N8Avogadro3VTK11vtkGLWidget11resetCameraEv">Avogadro::VTK::vtkGLWidget::resetCamera (C++ function)</a>
-</li>
-      <li><a href="develop/class/class_avogadro_1_1_v_t_k_1_1vtk_g_l_widget.html#_CPPv4N8Avogadro3VTK11vtkGLWidget13resetGeometryEv">Avogadro::VTK::vtkGLWidget::resetGeometry (C++ function)</a>
-</li>
-      <li><a href="develop/class/class_avogadro_1_1_v_t_k_1_1vtk_g_l_widget.html#_CPPv4N8Avogadro3VTK11vtkGLWidget10sceneModelEv">Avogadro::VTK::vtkGLWidget::sceneModel (C++ function)</a>, <a href="develop/class/class_avogadro_1_1_v_t_k_1_1vtk_g_l_widget.html#_CPPv4NK8Avogadro3VTK11vtkGLWidget10sceneModelEv">[1]</a>
-</li>
-      <li><a href="develop/class/class_avogadro_1_1_v_t_k_1_1vtk_g_l_widget.html#_CPPv4N8Avogadro3VTK11vtkGLWidget7setCubeEPN4Core4CubeE">Avogadro::VTK::vtkGLWidget::setCube (C++ function)</a>
-</li>
-      <li><a href="develop/class/class_avogadro_1_1_v_t_k_1_1vtk_g_l_widget.html#_CPPv4N8Avogadro3VTK11vtkGLWidget11setIsoValueEd">Avogadro::VTK::vtkGLWidget::setIsoValue (C++ function)</a>
-</li>
-      <li><a href="develop/class/class_avogadro_1_1_v_t_k_1_1vtk_g_l_widget.html#_CPPv4N8Avogadro3VTK11vtkGLWidget11setMoleculeEPN5QtGui8MoleculeE">Avogadro::VTK::vtkGLWidget::setMolecule (C++ function)</a>
-</li>
-      <li><a href="develop/class/class_avogadro_1_1_v_t_k_1_1vtk_g_l_widget.html#_CPPv4N8Avogadro3VTK11vtkGLWidget10setOpacityEd">Avogadro::VTK::vtkGLWidget::setOpacity (C++ function)</a>
-</li>
-      <li><a href="develop/class/class_avogadro_1_1_v_t_k_1_1vtk_g_l_widget.html#_CPPv4N8Avogadro3VTK11vtkGLWidget11updateSceneEv">Avogadro::VTK::vtkGLWidget::updateScene (C++ function)</a>
-</li>
-      <li><a href="develop/class/class_avogadro_1_1_v_t_k_1_1vtk_g_l_widget.html#_CPPv4N8Avogadro3VTK11vtkGLWidget11vtkGLWidgetEP7QWidgetN2Qt11WindowFlagsE">Avogadro::VTK::vtkGLWidget::vtkGLWidget (C++ function)</a>
-</li>
-      <li><a href="develop/class/class_avogadro_1_1_v_t_k_1_1vtk_g_l_widget.html#_CPPv4N8Avogadro3VTK11vtkGLWidgetD0Ev">Avogadro::VTK::vtkGLWidget::~vtkGLWidget (C++ function)</a>
-</li>
-  </ul></td>
-</tr></table>
-
-<h2 id="V">V</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="develop/class/classvtk_avogadro_actor.html#_CPPv416vtkAvogadroActor">vtkAvogadroActor (C++ class)</a>
-</li>
-      <li><a href="develop/class/classvtk_avogadro_actor.html#_CPPv4N16vtkAvogadroActor9GetBoundsEv">vtkAvogadroActor::GetBounds (C++ function)</a>
-</li>
-      <li><a href="develop/class/classvtk_avogadro_actor.html#_CPPv4N16vtkAvogadroActor8GetSceneEv">vtkAvogadroActor::GetScene (C++ function)</a>
-</li>
-      <li><a href="develop/class/classvtk_avogadro_actor.html#_CPPv4N16vtkAvogadroActor31HasTranslucentPolygonalGeometryEv">vtkAvogadroActor::HasTranslucentPolygonalGeometry (C++ function)</a>
-</li>
-      <li><a href="develop/class/classvtk_avogadro_actor.html#_CPPv4N16vtkAvogadroActor8m_boundsE">vtkAvogadroActor::m_bounds (C++ member)</a>
-</li>
-      <li><a href="develop/class/classvtk_avogadro_actor.html#_CPPv4N16vtkAvogadroActor13m_initializedE">vtkAvogadroActor::m_initialized (C++ member)</a>
-</li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="develop/class/classvtk_avogadro_actor.html#_CPPv4N16vtkAvogadroActor7m_sceneE">vtkAvogadroActor::m_scene (C++ member)</a>
-</li>
-      <li><a href="develop/class/classvtk_avogadro_actor.html#_CPPv4N16vtkAvogadroActor3NewEv">vtkAvogadroActor::New (C++ function)</a>
-</li>
-      <li><a href="develop/class/classvtk_avogadro_actor.html#_CPPv4N16vtkAvogadroActor20RenderOpaqueGeometryEP11vtkViewport">vtkAvogadroActor::RenderOpaqueGeometry (C++ function)</a>
-</li>
-      <li><a href="develop/class/classvtk_avogadro_actor.html#_CPPv4N16vtkAvogadroActor34RenderTranslucentPolygonalGeometryEP11vtkViewport">vtkAvogadroActor::RenderTranslucentPolygonalGeometry (C++ function)</a>
-</li>
-      <li><a href="develop/class/classvtk_avogadro_actor.html#_CPPv4N16vtkAvogadroActor8setSceneEPN8Avogadro9Rendering5SceneE">vtkAvogadroActor::setScene (C++ function)</a>
-</li>
-      <li><a href="develop/class/classvtk_avogadro_actor.html#_CPPv4N16vtkAvogadroActor16vtkAvogadroActorEv">vtkAvogadroActor::vtkAvogadroActor (C++ function)</a>
-</li>
-      <li><a href="develop/class/classvtk_avogadro_actor.html#_CPPv4N16vtkAvogadroActorD0Ev">vtkAvogadroActor::~vtkAvogadroActor (C++ function)</a>
 </li>
   </ul></td>
 </tr></table>

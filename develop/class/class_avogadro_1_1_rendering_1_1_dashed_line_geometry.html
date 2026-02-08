@@ -1,0 +1,928 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Avogadro::Rendering::DashedLineGeometry &#8212; Avogadro 1.103.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=ee427ece" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mermaid-theme.css?v=7f85688a" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=4a00f340"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'develop/class/class_avogadro_1_1_rendering_1_1_dashed_line_geometry';</script>
+    <link rel="canonical" href="https://two.avogadro.cc/develop/class/class_avogadro_1_1_rendering_1_1_dashed_line_geometry.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Avogadro::Rendering::Drawable" href="class_avogadro_1_1_rendering_1_1_drawable.html" />
+    <link rel="prev" title="Avogadro::Rendering::CylinderGeometry" href="class_avogadro_1_1_rendering_1_1_cylinder_geometry.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/avogadro2.png" class="logo__image only-light" alt="Avogadro Documentation- Home"/>
+    <script>document.write(`<img src="../../_static/avogadro2-dark.png" class="logo__image only-dark" alt="Avogadro Documentation- Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../install/index.html">
+    Install
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../docs/index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Develop
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../contrib/index.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../teach/index.html">
+    Teach
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+    Discuss
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/avogadro.cc" title="Bluesky" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-bluesky fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../install/index.html">
+    Install
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../docs/index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Develop
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../contrib/index.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../teach/index.html">
+    Teach
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+    Discuss
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/avogadro.cc" title="Bluesky" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-bluesky fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Develop</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../structure.html">Project Structure and C++ API</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../avogadroapp.html">Avogadro App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calc.html">Avogadro::Calc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../core.html">Avogadro::Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../io.html">Avogadro::IO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../molequeue.html">Avogadro::MoleQueue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qtgui.html">Avogadro::QtGui</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qtplugins.html">Avogadro::QtPlugins</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../rendering.html">Avogadro::Rendering</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_ambient_occlusion_sphere_geometry.html">Avogadro::Rendering::AmbientOcclusionSphereGeometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_arc_sector.html">Avogadro::Rendering::ArcSector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_arc_strip.html">Avogadro::Rendering::ArcStrip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_arrow_geometry.html">Avogadro::Rendering::ArrowGeometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_b_spline_geometry.html">Avogadro::Rendering::BSplineGeometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_bezier_geometry.html">Avogadro::Rendering::BezierGeometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_buffer_object.html">Avogadro::Rendering::BufferObject</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_camera.html">Avogadro::Rendering::Camera</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_cartoon.html">Avogadro::Rendering::Cartoon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_curve_geometry.html">Avogadro::Rendering::CurveGeometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_cylinder.html">Avogadro::Rendering::Cylinder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_cylinder_geometry.html">Avogadro::Rendering::CylinderGeometry</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Avogadro::Rendering::DashedLineGeometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_drawable.html">Avogadro::Rendering::Drawable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_g_l_render_visitor.html">Avogadro::Rendering::GLRenderVisitor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_g_l_renderer.html">Avogadro::Rendering::GLRenderer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_geometry_node.html">Avogadro::Rendering::GeometryNode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_geometry_visitor.html">Avogadro::Rendering::GeometryVisitor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_group_node.html">Avogadro::Rendering::GroupNode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_line_strip_geometry.html">Avogadro::Rendering::LineStripGeometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_mesh_geometry.html">Avogadro::Rendering::MeshGeometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_node.html">Avogadro::Rendering::Node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_p_l_y_visitor.html">Avogadro::Rendering::PLYVisitor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_p_o_v_ray_visitor.html">Avogadro::Rendering::POVRayVisitor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_primitive.html">Avogadro::Rendering::Primitive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_quad.html">Avogadro::Rendering::Quad</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_quad_outline.html">Avogadro::Rendering::QuadOutline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_scene.html">Avogadro::Rendering::Scene</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_shader.html">Avogadro::Rendering::Shader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_shader_program.html">Avogadro::Rendering::ShaderProgram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_solid_pipeline.html">Avogadro::Rendering::SolidPipeline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_sphere.html">Avogadro::Rendering::Sphere</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_sphere_geometry.html">Avogadro::Rendering::SphereGeometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_text_label2_d.html">Avogadro::Rendering::TextLabel2D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_text_label3_d.html">Avogadro::Rendering::TextLabel3D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_text_label_base.html">Avogadro::Rendering::TextLabelBase</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_text_properties.html">Avogadro::Rendering::TextProperties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_text_render_strategy.html">Avogadro::Rendering::TextRenderStrategy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_texture2_d.html">Avogadro::Rendering::Texture2D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_transform_node.html">Avogadro::Rendering::TransformNode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_v_r_m_l_visitor.html">Avogadro::Rendering::VRMLVisitor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_vertex_array_object.html">Avogadro::Rendering::VertexArrayObject</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_visitor.html">Avogadro::Rendering::Visitor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_volume_geometry.html">Avogadro::Rendering::VolumeGeometry</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../build.html">Building Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">Script Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rpc.html">Avogadro Remote Procedure Call (RPC)</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Develop</a></li>
+    
+    
+    <li class="breadcrumb-item"><i class="fa-solid fa-ellipsis"></i></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../rendering.html" class="nav-link">Avogadro::Rendering</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Avogadro::Re...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="avogadro-rendering-dashedlinegeometry">
+<h1>Avogadro::Rendering::DashedLineGeometry<a class="headerlink" href="#avogadro-rendering-dashedlinegeometry" title="Link to this heading">#</a></h1>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering18DashedLineGeometryE">
+<span id="_CPPv3N8Avogadro9Rendering18DashedLineGeometryE"></span><span id="_CPPv2N8Avogadro9Rendering18DashedLineGeometryE"></span><span id="Avogadro::Rendering::DashedLineGeometry"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_dashed_line_geometry"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">DashedLineGeometry</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_drawable.html#_CPPv4N8Avogadro9Rendering8DrawableE" title="Avogadro::Rendering::Drawable"><span class="n"><span class="pre">Drawable</span></span></a><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering18DashedLineGeometryE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The <a class="reference internal" href="#class_avogadro_1_1_rendering_1_1_dashed_line_geometry"><span class="std std-ref">DashedLineGeometry</span></a> class is used to store sets of dashed lines. </p>
+<p>&lt;avogadro/rendering/dashedlinegeometry.h&gt; </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-unnamed-group">Unnamed Group</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering18DashedLineGeometry13addDashedLineERK8Vector3fRK8Vector3fRK9Vector4ubi">
+<span id="_CPPv3N8Avogadro9Rendering18DashedLineGeometry13addDashedLineERK8Vector3fRK8Vector3fRK9Vector4ubi"></span><span id="_CPPv2N8Avogadro9Rendering18DashedLineGeometry13addDashedLineERK8Vector3fRK8Vector3fRK9Vector4ubi"></span><span id="Avogadro::Rendering::DashedLineGeometry::addDashedLine__Vector3fCR.Vector3fCR.Vector4ubCR.i"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_dashed_line_geometry_1a6ce614694bd15d3ba2ceb12bb5b48404"></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addDashedLine</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Vector3f</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">start</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Vector3f</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">end</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Vector4ub</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">color</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">dashCount</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering18DashedLineGeometry13addDashedLineERK8Vector3fRK8Vector3fRK9Vector4ubi" title="Link to this definition">#</a><br /></dt>
+<dd><p>Add a complete line strip to the object. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All arrays must be the same length, or this function call will fail, returning InvalidIndex. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vertices</strong> – The 3D vertices which will be connected to form the line strip. </p></li>
+<li><p><strong>color</strong> – Vertex color. If not specified, use the current <a class="reference internal" href="#class_avogadro_1_1_rendering_1_1_dashed_line_geometry_1a25ec5a2d1f9552c2859bebb5780de8f9"><span class="std std-ref">color()</span></a> and <a class="reference internal" href="#class_avogadro_1_1_rendering_1_1_dashed_line_geometry_1a0830406a5719666f2939f0d97138ca32"><span class="std std-ref">opacity()</span></a>. If the 3 component color is set, the current <a class="reference internal" href="#class_avogadro_1_1_rendering_1_1_dashed_line_geometry_1a0830406a5719666f2939f0d97138ca32"><span class="std std-ref">opacity()</span></a> is used. </p></li>
+<li><p><strong>lineWidth</strong> – The width of the line strip. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The index of the first vertex added by this call. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering18DashedLineGeometry13addDashedLineERK8Vector3fRK8Vector3fRK9Vector3ubi">
+<span id="_CPPv3N8Avogadro9Rendering18DashedLineGeometry13addDashedLineERK8Vector3fRK8Vector3fRK9Vector3ubi"></span><span id="_CPPv2N8Avogadro9Rendering18DashedLineGeometry13addDashedLineERK8Vector3fRK8Vector3fRK9Vector3ubi"></span><span id="Avogadro::Rendering::DashedLineGeometry::addDashedLine__Vector3fCR.Vector3fCR.Vector3ubCR.i"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_dashed_line_geometry_1a74b82429fdfb5cdf41bcafac6c7857a6"></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addDashedLine</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Vector3f</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">start</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Vector3f</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">end</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Vector3ub</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">color</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">dashCount</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering18DashedLineGeometry13addDashedLineERK8Vector3fRK8Vector3fRK9Vector3ubi" title="Link to this definition">#</a><br /></dt>
+<dd><p>Add a complete line strip to the object. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All arrays must be the same length, or this function call will fail, returning InvalidIndex. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vertices</strong> – The 3D vertices which will be connected to form the line strip. </p></li>
+<li><p><strong>color</strong> – Vertex color. If not specified, use the current <a class="reference internal" href="#class_avogadro_1_1_rendering_1_1_dashed_line_geometry_1a25ec5a2d1f9552c2859bebb5780de8f9"><span class="std std-ref">color()</span></a> and <a class="reference internal" href="#class_avogadro_1_1_rendering_1_1_dashed_line_geometry_1a0830406a5719666f2939f0d97138ca32"><span class="std std-ref">opacity()</span></a>. If the 3 component color is set, the current <a class="reference internal" href="#class_avogadro_1_1_rendering_1_1_dashed_line_geometry_1a0830406a5719666f2939f0d97138ca32"><span class="std std-ref">opacity()</span></a> is used. </p></li>
+<li><p><strong>lineWidth</strong> – The width of the line strip. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The index of the first vertex added by this call. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering18DashedLineGeometry13addDashedLineERK8Vector3fRK8Vector3fi">
+<span id="_CPPv3N8Avogadro9Rendering18DashedLineGeometry13addDashedLineERK8Vector3fRK8Vector3fi"></span><span id="_CPPv2N8Avogadro9Rendering18DashedLineGeometry13addDashedLineERK8Vector3fRK8Vector3fi"></span><span id="Avogadro::Rendering::DashedLineGeometry::addDashedLine__Vector3fCR.Vector3fCR.i"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_dashed_line_geometry_1a9bba128f381cf7239cfdf81046cfc9cf"></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addDashedLine</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Vector3f</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">start</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Vector3f</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">end</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">dashCount</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering18DashedLineGeometry13addDashedLineERK8Vector3fRK8Vector3fi" title="Link to this definition">#</a><br /></dt>
+<dd><p>Add a complete line strip to the object. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All arrays must be the same length, or this function call will fail, returning InvalidIndex. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vertices</strong> – The 3D vertices which will be connected to form the line strip. </p></li>
+<li><p><strong>color</strong> – Vertex color. If not specified, use the current <a class="reference internal" href="#class_avogadro_1_1_rendering_1_1_dashed_line_geometry_1a25ec5a2d1f9552c2859bebb5780de8f9"><span class="std std-ref">color()</span></a> and <a class="reference internal" href="#class_avogadro_1_1_rendering_1_1_dashed_line_geometry_1a0830406a5719666f2939f0d97138ca32"><span class="std std-ref">opacity()</span></a>. If the 3 component color is set, the current <a class="reference internal" href="#class_avogadro_1_1_rendering_1_1_dashed_line_geometry_1a0830406a5719666f2939f0d97138ca32"><span class="std std-ref">opacity()</span></a> is used. </p></li>
+<li><p><strong>lineWidth</strong> – The width of the line strip. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The index of the first vertex added by this call. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-unnamed-group">Unnamed Group</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering18DashedLineGeometry8setColorERK9Vector3ub">
+<span id="_CPPv3N8Avogadro9Rendering18DashedLineGeometry8setColorERK9Vector3ub"></span><span id="_CPPv2N8Avogadro9Rendering18DashedLineGeometry8setColorERK9Vector3ub"></span><span id="Avogadro::Rendering::DashedLineGeometry::setColor__Vector3ubCR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_dashed_line_geometry_1a383b0f329c9bbd8e0749a8d1a58b8f53"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setColor</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Vector3ub</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">c</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering18DashedLineGeometry8setColorERK9Vector3ub" title="Link to this definition">#</a><br /></dt>
+<dd><p>The default color of the lines. This is used to set the color of new vertices when no explicit vertex color is specified. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering18DashedLineGeometry5colorEv">
+<span id="_CPPv3NK8Avogadro9Rendering18DashedLineGeometry5colorEv"></span><span id="_CPPv2NK8Avogadro9Rendering18DashedLineGeometry5colorEv"></span><span id="Avogadro::Rendering::DashedLineGeometry::colorC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_dashed_line_geometry_1a25ec5a2d1f9552c2859bebb5780de8f9"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">Vector3ub</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">color</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering18DashedLineGeometry5colorEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>The default color of the lines. This is used to set the color of new vertices when no explicit vertex color is specified. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-unnamed-group">Unnamed Group</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering18DashedLineGeometry10setOpacityEh">
+<span id="_CPPv3N8Avogadro9Rendering18DashedLineGeometry10setOpacityEh"></span><span id="_CPPv2N8Avogadro9Rendering18DashedLineGeometry10setOpacityEh"></span><span id="Avogadro::Rendering::DashedLineGeometry::setOpacity__unsigned-c"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_dashed_line_geometry_1af6b7188aa1139175072a7ea43b2ccea9"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setOpacity</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">opacity_</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering18DashedLineGeometry10setOpacityEh" title="Link to this definition">#</a><br /></dt>
+<dd><p>The default opacity of the lines. This is used when either no explicit vertex color is specified, or a three component color is used. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering18DashedLineGeometry7opacityEv">
+<span id="_CPPv3NK8Avogadro9Rendering18DashedLineGeometry7opacityEv"></span><span id="_CPPv2NK8Avogadro9Rendering18DashedLineGeometry7opacityEv"></span><span id="Avogadro::Rendering::DashedLineGeometry::opacityC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_dashed_line_geometry_1a0830406a5719666f2939f0d97138ca32"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">opacity</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering18DashedLineGeometry7opacityEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>The default opacity of the lines. This is used when either no explicit vertex color is specified, or a three component color is used. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-unnamed-group">Unnamed Group</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering18DashedLineGeometry12setLineWidthEh">
+<span id="_CPPv3N8Avogadro9Rendering18DashedLineGeometry12setLineWidthEh"></span><span id="_CPPv2N8Avogadro9Rendering18DashedLineGeometry12setLineWidthEh"></span><span id="Avogadro::Rendering::DashedLineGeometry::setLineWidth__unsigned-c"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_dashed_line_geometry_1a840a1aa0eb48903f653fe1f38cfd0bed"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setLineWidth</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">lineWidth_</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering18DashedLineGeometry12setLineWidthEh" title="Link to this definition">#</a><br /></dt>
+<dd><p>The line width used for all of the lines. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering18DashedLineGeometry9lineWidthEv">
+<span id="_CPPv3NK8Avogadro9Rendering18DashedLineGeometry9lineWidthEv"></span><span id="_CPPv2NK8Avogadro9Rendering18DashedLineGeometry9lineWidthEv"></span><span id="Avogadro::Rendering::DashedLineGeometry::lineWidthC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_dashed_line_geometry_1a6cb46b5dda21ca69010cb47d9c1009ec"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lineWidth</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering18DashedLineGeometry9lineWidthEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>The line width used for all of the lines. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering18DashedLineGeometry18DashedLineGeometryEv">
+<span id="_CPPv3N8Avogadro9Rendering18DashedLineGeometry18DashedLineGeometryEv"></span><span id="_CPPv2N8Avogadro9Rendering18DashedLineGeometry18DashedLineGeometryEv"></span><span id="Avogadro::Rendering::DashedLineGeometry::DashedLineGeometry"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_dashed_line_geometry_1a6810d7846f08354d28e80858f722a9e8"></span><span class="sig-name descname"><span class="n"><span class="pre">DashedLineGeometry</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering18DashedLineGeometry18DashedLineGeometryEv" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering18DashedLineGeometry18DashedLineGeometryERK18DashedLineGeometry">
+<span id="_CPPv3N8Avogadro9Rendering18DashedLineGeometry18DashedLineGeometryERK18DashedLineGeometry"></span><span id="_CPPv2N8Avogadro9Rendering18DashedLineGeometry18DashedLineGeometryERK18DashedLineGeometry"></span><span id="Avogadro::Rendering::DashedLineGeometry::DashedLineGeometry__DashedLineGeometryCR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_dashed_line_geometry_1aeb5e323c0a80dc4cb2d70065a9ef8569"></span><span class="sig-name descname"><span class="n"><span class="pre">DashedLineGeometry</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro9Rendering18DashedLineGeometry18DashedLineGeometryERK18DashedLineGeometry" title="Avogadro::Rendering::DashedLineGeometry::DashedLineGeometry"><span class="n"><span class="pre">DashedLineGeometry</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering18DashedLineGeometry18DashedLineGeometryERK18DashedLineGeometry" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering18DashedLineGeometryD0Ev">
+<span id="_CPPv3N8Avogadro9Rendering18DashedLineGeometryD0Ev"></span><span id="_CPPv2N8Avogadro9Rendering18DashedLineGeometryD0Ev"></span><span id="Avogadro::Rendering::DashedLineGeometry::~DashedLineGeometry"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_dashed_line_geometry_1a7b456f441716771fbdc7d41c209cd095"></span><span class="sig-name descname"><span class="n"><span class="pre">~DashedLineGeometry</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering18DashedLineGeometryD0Ev" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering18DashedLineGeometryaSE18DashedLineGeometry">
+<span id="_CPPv3N8Avogadro9Rendering18DashedLineGeometryaSE18DashedLineGeometry"></span><span id="_CPPv2N8Avogadro9Rendering18DashedLineGeometryaSE18DashedLineGeometry"></span><span id="Avogadro::Rendering::DashedLineGeometry::assign-operator__DashedLineGeometry"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_dashed_line_geometry_1a87285d662c0f70055daa0f9bf63f0616"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro9Rendering18DashedLineGeometryE" title="Avogadro::Rendering::DashedLineGeometry"><span class="n"><span class="pre">DashedLineGeometry</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N8Avogadro9Rendering18DashedLineGeometryE" title="Avogadro::Rendering::DashedLineGeometry"><span class="n"><span class="pre">DashedLineGeometry</span></span></a><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering18DashedLineGeometryaSE18DashedLineGeometry" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering18DashedLineGeometry6acceptER7Visitor">
+<span id="_CPPv3N8Avogadro9Rendering18DashedLineGeometry6acceptER7Visitor"></span><span id="_CPPv2N8Avogadro9Rendering18DashedLineGeometry6acceptER7Visitor"></span><span id="Avogadro::Rendering::DashedLineGeometry::accept__VisitorR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_dashed_line_geometry_1ab160d67ce77b08eae309d0557e1117fe"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">accept</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_visitor.html#_CPPv4N8Avogadro9Rendering7VisitorE" title="Avogadro::Rendering::Visitor"><span class="n"><span class="pre">Visitor</span></span></a><span class="p"><span class="pre">&amp;</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering18DashedLineGeometry6acceptER7Visitor" title="Link to this definition">#</a><br /></dt>
+<dd><p>Accept a visit from our friendly visitor. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering18DashedLineGeometry6renderERK6Camera">
+<span id="_CPPv3N8Avogadro9Rendering18DashedLineGeometry6renderERK6Camera"></span><span id="_CPPv2N8Avogadro9Rendering18DashedLineGeometry6renderERK6Camera"></span><span id="Avogadro::Rendering::DashedLineGeometry::render__CameraCR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_dashed_line_geometry_1a77ab50866270d27fc00e1d656efcd951"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">render</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_camera.html#_CPPv4N8Avogadro9Rendering6CameraE" title="Avogadro::Rendering::Camera"><span class="n"><span class="pre">Camera</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">camera</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering18DashedLineGeometry6renderERK6Camera" title="Link to this definition">#</a><br /></dt>
+<dd><p>Render the line strips. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>camera</strong> – The current camera to be used for rendering. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering18DashedLineGeometry5clearEv">
+<span id="_CPPv3N8Avogadro9Rendering18DashedLineGeometry5clearEv"></span><span id="_CPPv2N8Avogadro9Rendering18DashedLineGeometry5clearEv"></span><span id="Avogadro::Rendering::DashedLineGeometry::clear"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_dashed_line_geometry_1aee7cb2065b88d21ac4ad05bc997ecf82"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">clear</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering18DashedLineGeometry5clearEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Clear the contents of the node. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-friends">Friends</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering18DashedLineGeometry4swapER18DashedLineGeometryR18DashedLineGeometry">
+<span id="_CPPv3N8Avogadro9Rendering18DashedLineGeometry4swapER18DashedLineGeometryR18DashedLineGeometry"></span><span id="_CPPv2N8Avogadro9Rendering18DashedLineGeometry4swapER18DashedLineGeometryR18DashedLineGeometry"></span><span id="Avogadro::Rendering::DashedLineGeometry::swap__DashedLineGeometryR.DashedLineGeometryR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_dashed_line_geometry_1a94bfe395f47bed22670249b78369809a"></span><span class="k"><span class="pre">friend</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">swap</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N8Avogadro9Rendering18DashedLineGeometryE" title="Avogadro::Rendering::DashedLineGeometry"><span class="n"><span class="pre">DashedLineGeometry</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">lhs</span></span>, <a class="reference internal" href="#_CPPv4N8Avogadro9Rendering18DashedLineGeometryE" title="Avogadro::Rendering::DashedLineGeometry"><span class="n"><span class="pre">DashedLineGeometry</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">rhs</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering18DashedLineGeometry4swapER18DashedLineGeometryR18DashedLineGeometry" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering18DashedLineGeometry12PackedVertexE">
+<span id="_CPPv3N8Avogadro9Rendering18DashedLineGeometry12PackedVertexE"></span><span id="_CPPv2N8Avogadro9Rendering18DashedLineGeometry12PackedVertexE"></span><span id="Avogadro::Rendering::DashedLineGeometry::PackedVertex"></span><span class="target" id="struct_avogadro_1_1_rendering_1_1_dashed_line_geometry_1_1_packed_vertex"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PackedVertex</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering18DashedLineGeometry12PackedVertexE" title="Link to this definition">#</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering18DashedLineGeometry12PackedVertex12PackedVertexERK8Vector3fRK9Vector4ub">
+<span id="_CPPv3N8Avogadro9Rendering18DashedLineGeometry12PackedVertex12PackedVertexERK8Vector3fRK9Vector4ub"></span><span id="_CPPv2N8Avogadro9Rendering18DashedLineGeometry12PackedVertex12PackedVertexERK8Vector3fRK9Vector4ub"></span><span id="Avogadro::Rendering::DashedLineGeometry::PackedVertex::PackedVertex__Vector3fCR.Vector4ubCR"></span><span class="target" id="struct_avogadro_1_1_rendering_1_1_dashed_line_geometry_1_1_packed_vertex_1a04653b05acd5cfa30cf52475f00599c1"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PackedVertex</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Vector3f</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">v</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Vector4ub</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">c</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering18DashedLineGeometry12PackedVertex12PackedVertexERK8Vector3fRK9Vector4ub" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering18DashedLineGeometry12PackedVertex6vertexE">
+<span id="_CPPv3N8Avogadro9Rendering18DashedLineGeometry12PackedVertex6vertexE"></span><span id="_CPPv2N8Avogadro9Rendering18DashedLineGeometry12PackedVertex6vertexE"></span><span id="Avogadro::Rendering::DashedLineGeometry::PackedVertex::vertex__Vector3f"></span><span class="target" id="struct_avogadro_1_1_rendering_1_1_dashed_line_geometry_1_1_packed_vertex_1aa2f0b68070c8c4d581b5ec2dcbe947f9"></span><span class="n"><span class="pre">Vector3f</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">vertex</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering18DashedLineGeometry12PackedVertex6vertexE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering18DashedLineGeometry12PackedVertex5colorE">
+<span id="_CPPv3N8Avogadro9Rendering18DashedLineGeometry12PackedVertex5colorE"></span><span id="_CPPv2N8Avogadro9Rendering18DashedLineGeometry12PackedVertex5colorE"></span><span id="Avogadro::Rendering::DashedLineGeometry::PackedVertex::color__Vector4ub"></span><span class="target" id="struct_avogadro_1_1_rendering_1_1_dashed_line_geometry_1_1_packed_vertex_1a2837ef87627cd56b45c72a522f4d9251"></span><span class="n"><span class="pre">Vector4ub</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">color</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering18DashedLineGeometry12PackedVertex5colorE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-functions">Public Static Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering18DashedLineGeometry12PackedVertex12vertexOffsetEv">
+<span id="_CPPv3N8Avogadro9Rendering18DashedLineGeometry12PackedVertex12vertexOffsetEv"></span><span id="_CPPv2N8Avogadro9Rendering18DashedLineGeometry12PackedVertex12vertexOffsetEv"></span><span id="Avogadro::Rendering::DashedLineGeometry::PackedVertex::vertexOffset"></span><span class="target" id="struct_avogadro_1_1_rendering_1_1_dashed_line_geometry_1_1_packed_vertex_1a3871c25f3279286bbcb38cb8ceaa8f5d"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">vertexOffset</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering18DashedLineGeometry12PackedVertex12vertexOffsetEv" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering18DashedLineGeometry12PackedVertex11colorOffsetEv">
+<span id="_CPPv3N8Avogadro9Rendering18DashedLineGeometry12PackedVertex11colorOffsetEv"></span><span id="_CPPv2N8Avogadro9Rendering18DashedLineGeometry12PackedVertex11colorOffsetEv"></span><span id="Avogadro::Rendering::DashedLineGeometry::PackedVertex::colorOffset"></span><span class="target" id="struct_avogadro_1_1_rendering_1_1_dashed_line_geometry_1_1_packed_vertex_1a11d8445df939ba36e07087284d2cfaf5"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">colorOffset</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering18DashedLineGeometry12PackedVertex11colorOffsetEv" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="class_avogadro_1_1_rendering_1_1_cylinder_geometry.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Avogadro::Rendering::CylinderGeometry</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="class_avogadro_1_1_rendering_1_1_drawable.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Avogadro::Rendering::Drawable</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering18DashedLineGeometryE"><code class="docutils literal notranslate"><span class="pre">DashedLineGeometry</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering18DashedLineGeometry13addDashedLineERK8Vector3fRK8Vector3fRK9Vector4ubi"><code class="docutils literal notranslate"><span class="pre">DashedLineGeometry::addDashedLine()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering18DashedLineGeometry13addDashedLineERK8Vector3fRK8Vector3fRK9Vector3ubi"><code class="docutils literal notranslate"><span class="pre">DashedLineGeometry::addDashedLine()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering18DashedLineGeometry13addDashedLineERK8Vector3fRK8Vector3fi"><code class="docutils literal notranslate"><span class="pre">DashedLineGeometry::addDashedLine()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering18DashedLineGeometry8setColorERK9Vector3ub"><code class="docutils literal notranslate"><span class="pre">DashedLineGeometry::setColor()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro9Rendering18DashedLineGeometry5colorEv"><code class="docutils literal notranslate"><span class="pre">DashedLineGeometry::color()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering18DashedLineGeometry10setOpacityEh"><code class="docutils literal notranslate"><span class="pre">DashedLineGeometry::setOpacity()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro9Rendering18DashedLineGeometry7opacityEv"><code class="docutils literal notranslate"><span class="pre">DashedLineGeometry::opacity()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering18DashedLineGeometry12setLineWidthEh"><code class="docutils literal notranslate"><span class="pre">DashedLineGeometry::setLineWidth()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro9Rendering18DashedLineGeometry9lineWidthEv"><code class="docutils literal notranslate"><span class="pre">DashedLineGeometry::lineWidth()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering18DashedLineGeometry18DashedLineGeometryEv"><code class="docutils literal notranslate"><span class="pre">DashedLineGeometry::DashedLineGeometry()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering18DashedLineGeometry18DashedLineGeometryERK18DashedLineGeometry"><code class="docutils literal notranslate"><span class="pre">DashedLineGeometry::DashedLineGeometry()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering18DashedLineGeometryD0Ev"><code class="docutils literal notranslate"><span class="pre">DashedLineGeometry::~DashedLineGeometry()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering18DashedLineGeometryaSE18DashedLineGeometry"><code class="docutils literal notranslate"><span class="pre">DashedLineGeometry::operator=()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering18DashedLineGeometry6acceptER7Visitor"><code class="docutils literal notranslate"><span class="pre">DashedLineGeometry::accept()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering18DashedLineGeometry6renderERK6Camera"><code class="docutils literal notranslate"><span class="pre">DashedLineGeometry::render()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering18DashedLineGeometry5clearEv"><code class="docutils literal notranslate"><span class="pre">DashedLineGeometry::clear()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering18DashedLineGeometry4swapER18DashedLineGeometryR18DashedLineGeometry"><code class="docutils literal notranslate"><span class="pre">DashedLineGeometry::swap()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering18DashedLineGeometry12PackedVertexE"><code class="docutils literal notranslate"><span class="pre">DashedLineGeometry::PackedVertex</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering18DashedLineGeometry12PackedVertex12PackedVertexERK8Vector3fRK9Vector4ub"><code class="docutils literal notranslate"><span class="pre">DashedLineGeometry::PackedVertex::PackedVertex()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering18DashedLineGeometry12PackedVertex6vertexE"><code class="docutils literal notranslate"><span class="pre">DashedLineGeometry::PackedVertex::vertex</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering18DashedLineGeometry12PackedVertex5colorE"><code class="docutils literal notranslate"><span class="pre">DashedLineGeometry::PackedVertex::color</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering18DashedLineGeometry12PackedVertex12vertexOffsetEv"><code class="docutils literal notranslate"><span class="pre">DashedLineGeometry::PackedVertex::vertexOffset()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering18DashedLineGeometry12PackedVertex11colorOffsetEv"><code class="docutils literal notranslate"><span class="pre">DashedLineGeometry::PackedVertex::colorOffset()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/avogadro/two.avogadro.cc/edit/main/source/develop/class/class_avogadro_1_1_rendering_1_1_dashed_line_geometry.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">          <p>
+            ©2026 The OpenChemistry / Avogadro Teams 
+          </p>
+          <p>Covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
+          </p></div>
+      
+        <div class="footer-item">        <p>
+          <a href="/contrib/index.html">Contribute</a>
+        </p></div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.0.2.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.4.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
