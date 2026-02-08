@@ -1,5 +1,0 @@
-vtkAvogadroActor
-======================
-
-.. doxygenclass:: vtkAvogadroActor
-   :members:

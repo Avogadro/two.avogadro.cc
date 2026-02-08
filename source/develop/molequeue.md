@@ -15,6 +15,7 @@ scripting `avogadroapp` and handling scripts for input generator dialogs.
 ```{toctree}
 :glob: true
 :maxdepth: 1
+:hidden: true
 
 class/class_avogadro_1_1_mole*
 ```

@@ -31,9 +31,9 @@ What follows is a list of core plugins and brief descriptions. A few plugins are
 - **label** - atom and other labels - also a tool
 - **licorice** - stick or licorice rendering
 - **noncovalent** - hydrogen, chalcogen bonds and other non-covalent interactions
-- **meshes** - surfaces, orbitals, etc.
 - **overlayaxes** - reference axes
 - **qtaim** - QTAIM rendering (critical points, etc.), also a command
+- **surfacerender** - surfaces, orbitals, volumetric etc.
 - **symmetry** - rendering of symmetry elements, also a command
 - **vanderwaals** - van der Waals spheres
 - **wireframe** - wireframe line rendering
@@ -103,7 +103,6 @@ What follows is a list of core plugins and brief descriptions. A few plugins are
 ## Miscellaneous
 
 - **centroid**
-- **coloropacitymap**
 - **customelements**
 - **resetview**
 - **yaehmop**
