@@ -66,5 +66,6 @@ display-types/index
 panes/index
 optimizing-geometry/index
 tutorials/index
+plugins/index
 settings/index
 :::
