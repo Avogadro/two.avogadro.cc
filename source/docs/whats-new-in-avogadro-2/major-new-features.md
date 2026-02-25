@@ -104,24 +104,29 @@ The framework allows installing additional Python scripts, which could assign at
 
 * Band structure diagrams with Yaehmop `eht_bind`
 
-### Python commands and extensions
+### Python commands and plugins
 
-With Avogadro 2, it's easier than ever to create a quick Python script and add it as an Avogadro command. These scripts could for example modify the molecule/atoms (e.g., add a solvent box), run analysis (e.g., assign R and S stereochemical labels with `rdkit`), optimize the geometry, create nanoparticles or nanotubes using installed Python modules (e.g., `pymatgen` or `ASE`), generate ice crystal structures, solvate molecules, and many more.
+With Avogadro 2, it's easier than ever to extend it with Python plugins.
 
-Current extension types include:
+Plugins can add a variety of functionality:
 
-* input file generators
-* file format translators
+* input file generators for computational chemistry programs
+* parsers for additional file formats
+* energy models for the [AutoOptimization Tool](tools-autoopt-tool)
+* electrostatic models to calculate partial charges or electrostatic potentials
 * additional menu commands
-* force fields
-* electrostatics models
-* data (e.g., molecule and crystal fragments)
 
-More information can be found in the section on [Extensions and Python](extensions).
-
-You can also share your extensions through GitHub and others can then download and install or update to new versions through the "Download Extensions" dialog:
+You can get new plugins that other users have created in the **Download Plugins…** dialog:
 
 <figure><img src="../../_static/Download.png" alt="" width="563"><figcaption><p>Download Python extension scripts for menu commands, input generators, file formats and more</p></figcaption></figure>
+
+More information on installing and using plugins can be found in the section on [Plugins and Python](plugins).
+
+Writing plugins of your own, whether it's a quick script or a full package, has also been made much easier.
+See [Writing Plugins](develop-plugins) for details.
+
+Menu commands in particular are very flexible and powerful -- you could write a script to modify the molecule/atoms (e.g., add a solvent box), run analysis (e.g., assign R and S stereochemical labels with `rdkit`), optimize the geometry, create nanoparticles or nanotubes using installed Python modules (e.g., `pymatgen` or `ASE`), generate ice crystal structures, solvate molecules…
+Whatever you come up with, we'd love you to share what you come up with through GitHub so that others can install and use it too!
 
 ### Python scripting and Jupyter integration
 
