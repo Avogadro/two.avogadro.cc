@@ -16,6 +16,7 @@ docs (which ultimately become part of this website).
 ---
 caption: Contributing Code
 ---
+ai-usage
 conventions
 coding-style
 documentation

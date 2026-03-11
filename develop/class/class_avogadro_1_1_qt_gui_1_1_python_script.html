@@ -499,6 +499,8 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="../build.html">Building Source Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">Script Plugins</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../rpc.html">Avogadro Remote Procedure Call (RPC)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contrib/code.html">Contributing Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contrib/ai-usage.html">AI Usage Policy</a></li>
 </ul>
 </div>
 </nav></div>
@@ -629,6 +631,52 @@ document.write(`
 </dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui12PythonScript14setPackageInfoERK7QStringRK7QStringRK7QString">
+<span id="_CPPv3N8Avogadro5QtGui12PythonScript14setPackageInfoERK7QStringRK7QStringRK7QString"></span><span id="_CPPv2N8Avogadro5QtGui12PythonScript14setPackageInfoERK7QStringRK7QStringRK7QString"></span><span id="Avogadro::QtGui::PythonScript::setPackageInfo__QStringCR.QStringCR.QStringCR"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1af8d493791d8e0c76b90a1cf0d915acd7"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setPackageInfo</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">packageDir</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">command</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">identifier</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui12PythonScript14setPackageInfoERK7QStringRK7QStringRK7QString" title="Link to this definition">#</a><br /></dt>
+<dd><p>Enable package mode. In this mode, <a class="reference internal" href="#class_avogadro_1_1_qt_gui_1_1_python_script_1ae2f834dbb73faf82ebdb9fa11392ebe1"><span class="std std-ref">execute()</span></a> runs “pixi run &lt;command&gt; &lt;identifier&gt; [args]” with packageDir as the working directory, instead of launching a script file via python. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro5QtGui12PythonScript13isPackageModeEv">
+<span id="_CPPv3NK8Avogadro5QtGui12PythonScript13isPackageModeEv"></span><span id="_CPPv2NK8Avogadro5QtGui12PythonScript13isPackageModeEv"></span><span id="Avogadro::QtGui::PythonScript::isPackageModeC"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1a490dcfa6067e3f7c46a9fa7416a2b3bb"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isPackageMode</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro5QtGui12PythonScript13isPackageModeEv" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if this script is in package mode. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro5QtGui12PythonScript10packageDirEv">
+<span id="_CPPv3NK8Avogadro5QtGui12PythonScript10packageDirEv"></span><span id="_CPPv2NK8Avogadro5QtGui12PythonScript10packageDirEv"></span><span id="Avogadro::QtGui::PythonScript::packageDirC"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1a67e994572b3bba04748e030869ea68d7"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">packageDir</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro5QtGui12PythonScript10packageDirEv" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The package directory (only meaningful in package mode). </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro5QtGui12PythonScript14packageCommandEv">
+<span id="_CPPv3NK8Avogadro5QtGui12PythonScript14packageCommandEv"></span><span id="_CPPv2NK8Avogadro5QtGui12PythonScript14packageCommandEv"></span><span id="Avogadro::QtGui::PythonScript::packageCommandC"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1aeedc24ad38f429bf2e82841bd7055879"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">packageCommand</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro5QtGui12PythonScript14packageCommandEv" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The package command (only meaningful in package mode). </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro5QtGui12PythonScript17packageIdentifierEv">
+<span id="_CPPv3NK8Avogadro5QtGui12PythonScript17packageIdentifierEv"></span><span id="_CPPv2NK8Avogadro5QtGui12PythonScript17packageIdentifierEv"></span><span id="Avogadro::QtGui::PythonScript::packageIdentifierC"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1af344858364d2acad4ee5514c424eea3f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">packageIdentifier</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro5QtGui12PythonScript17packageIdentifierEv" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The package identifier (only meaningful in package mode). </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro5QtGui12PythonScript9hasErrorsEv">
 <span id="_CPPv3NK8Avogadro5QtGui12PythonScript9hasErrorsEv"></span><span id="_CPPv2NK8Avogadro5QtGui12PythonScript9hasErrorsEv"></span><span id="Avogadro::QtGui::PythonScript::hasErrorsC"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1ab992cfc3a5b4e04ec9d8057d614a572c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">hasErrors</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro5QtGui12PythonScript9hasErrorsEv" title="Link to this definition">#</a><br /></dt>
 <dd><dl class="field-list simple">
@@ -672,9 +720,9 @@ document.write(`
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui12PythonScript12asyncExecuteERK11QStringListRK10QByteArray">
-<span id="_CPPv3N8Avogadro5QtGui12PythonScript12asyncExecuteERK11QStringListRK10QByteArray"></span><span id="_CPPv2N8Avogadro5QtGui12PythonScript12asyncExecuteERK11QStringListRK10QByteArray"></span><span id="Avogadro::QtGui::PythonScript::asyncExecute__QStringListCR.QByteArrayCR"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1aa8fd704ff7bb6bdac44651e13e981039"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">asyncExecute</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QStringList</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">args</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QByteArray</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">scriptStdin</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">QByteArray</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui12PythonScript12asyncExecuteERK11QStringListRK10QByteArray" title="Link to this definition">#</a><br /></dt>
-<dd><p>Start a new process to execute asynchronously “&lt;m_pythonInterpreter&gt; &lt;scriptFilePath()&gt; [args …]”, optionally passing scriptStdin to the processes standard input.</p>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui12PythonScript12asyncExecuteERK11QStringListRK10QByteArraybb">
+<span id="_CPPv3N8Avogadro5QtGui12PythonScript12asyncExecuteERK11QStringListRK10QByteArraybb"></span><span id="_CPPv2N8Avogadro5QtGui12PythonScript12asyncExecuteERK11QStringListRK10QByteArraybb"></span><span id="Avogadro::QtGui::PythonScript::asyncExecute__QStringListCR.QByteArrayCR.b.b"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1a556d6ce16414954f742129cc0041aa93"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">asyncExecute</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QStringList</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">args</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QByteArray</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">scriptStdin</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">QByteArray</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">mergedChannels</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">true</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">closeWriteChannel</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">true</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui12PythonScript12asyncExecuteERK11QStringListRK10QByteArraybb" title="Link to this definition">#</a><br /></dt>
+<dd><p>Start a new process to execute asynchronously “&lt;m_pythonInterpreter&gt; &lt;scriptFilePath()&gt; [args …]”, optionally passing scriptStdin to the processes standard input. If <code class="docutils literal notranslate"><span class="pre">closeWriteChannel</span></code> is false, stdin remains open for follow-up writes.</p>
 <p>Will send asyncFinished() signal when finished </p>
 </dd></dl>
 
@@ -690,6 +738,12 @@ document.write(`
 <dd class="field-even"><p>The standard output of the process </p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui12PythonScript24asyncWriteAndResponseRawERK10QByteArrayi">
+<span id="_CPPv3N8Avogadro5QtGui12PythonScript24asyncWriteAndResponseRawERK10QByteArrayi"></span><span id="_CPPv2N8Avogadro5QtGui12PythonScript24asyncWriteAndResponseRawERK10QByteArrayi"></span><span id="Avogadro::QtGui::PythonScript::asyncWriteAndResponseRaw__QByteArrayCR.i"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1a9b5c3cdf4484e40b9673f8e0282a85d3"></span><span class="n"><span class="pre">QByteArray</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">asyncWriteAndResponseRaw</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QByteArray</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">input</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">timeoutMs</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">5000</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui12PythonScript24asyncWriteAndResponseRawERK10QByteArrayi" title="Link to this definition">#</a><br /></dt>
+<dd><p>Write input to the asynchronous process’ standard input and return raw bytes from stdout. Unlike <a class="reference internal" href="#class_avogadro_1_1_qt_gui_1_1_python_script_1abb061623d338ceedeecc09ba722de791"><span class="std std-ref">asyncWriteAndResponse()</span></a>, this does not require line-oriented output and is suitable for framed binary protocols. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -737,6 +791,11 @@ document.write(`
 <dd></dd></dl>
 
 <dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui12PythonScript13m_packageModeE">
+<span id="_CPPv3N8Avogadro5QtGui12PythonScript13m_packageModeE"></span><span id="_CPPv2N8Avogadro5QtGui12PythonScript13m_packageModeE"></span><span id="Avogadro::QtGui::PythonScript::m_packageMode__b"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1af2c11cd99e53c7a136f470f80fb32dde"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_packageMode</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui12PythonScript13m_packageModeE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui12PythonScript19m_pythonInterpreterE">
 <span id="_CPPv3N8Avogadro5QtGui12PythonScript19m_pythonInterpreterE"></span><span id="_CPPv2N8Avogadro5QtGui12PythonScript19m_pythonInterpreterE"></span><span id="Avogadro::QtGui::PythonScript::m_pythonInterpreter__QString"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1a9ae7a7d88e4053fab8758e2c4dbaf404"></span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_pythonInterpreter</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui12PythonScript19m_pythonInterpreterE" title="Link to this definition">#</a><br /></dt>
 <dd></dd></dl>
@@ -749,6 +808,21 @@ document.write(`
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui12PythonScript16m_scriptFilePathE">
 <span id="_CPPv3N8Avogadro5QtGui12PythonScript16m_scriptFilePathE"></span><span id="_CPPv2N8Avogadro5QtGui12PythonScript16m_scriptFilePathE"></span><span id="Avogadro::QtGui::PythonScript::m_scriptFilePath__QString"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1a2037d447682228e6040b12f36dfe570d"></span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_scriptFilePath</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui12PythonScript16m_scriptFilePathE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui12PythonScript12m_packageDirE">
+<span id="_CPPv3N8Avogadro5QtGui12PythonScript12m_packageDirE"></span><span id="_CPPv2N8Avogadro5QtGui12PythonScript12m_packageDirE"></span><span id="Avogadro::QtGui::PythonScript::m_packageDir__QString"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1a3cdd07ad0c655753179a389c9ac5a1ed"></span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_packageDir</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui12PythonScript12m_packageDirE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui12PythonScript16m_packageCommandE">
+<span id="_CPPv3N8Avogadro5QtGui12PythonScript16m_packageCommandE"></span><span id="_CPPv2N8Avogadro5QtGui12PythonScript16m_packageCommandE"></span><span id="Avogadro::QtGui::PythonScript::m_packageCommand__QString"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1a4032b1cd9aa6f999abe367367e548f64"></span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_packageCommand</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui12PythonScript16m_packageCommandE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui12PythonScript19m_packageIdentifierE">
+<span id="_CPPv3N8Avogadro5QtGui12PythonScript19m_packageIdentifierE"></span><span id="_CPPv2N8Avogadro5QtGui12PythonScript19m_packageIdentifierE"></span><span id="Avogadro::QtGui::PythonScript::m_packageIdentifier__QString"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1a29a7d470496c533775edb3a279531752"></span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_packageIdentifier</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui12PythonScript19m_packageIdentifierE" title="Link to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp var">
@@ -819,22 +893,32 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui12PythonScript5debugEv"><code class="docutils literal notranslate"><span class="pre">PythonScript::debug()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui12PythonScript14scriptFilePathEv"><code class="docutils literal notranslate"><span class="pre">PythonScript::scriptFilePath()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui12PythonScript17setScriptFilePathERK7QString"><code class="docutils literal notranslate"><span class="pre">PythonScript::setScriptFilePath()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui12PythonScript14setPackageInfoERK7QStringRK7QStringRK7QString"><code class="docutils literal notranslate"><span class="pre">PythonScript::setPackageInfo()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui12PythonScript13isPackageModeEv"><code class="docutils literal notranslate"><span class="pre">PythonScript::isPackageMode()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui12PythonScript10packageDirEv"><code class="docutils literal notranslate"><span class="pre">PythonScript::packageDir()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui12PythonScript14packageCommandEv"><code class="docutils literal notranslate"><span class="pre">PythonScript::packageCommand()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui12PythonScript17packageIdentifierEv"><code class="docutils literal notranslate"><span class="pre">PythonScript::packageIdentifier()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui12PythonScript9hasErrorsEv"><code class="docutils literal notranslate"><span class="pre">PythonScript::hasErrors()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui12PythonScript11clearErrorsEv"><code class="docutils literal notranslate"><span class="pre">PythonScript::clearErrors()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui12PythonScript9errorListEv"><code class="docutils literal notranslate"><span class="pre">PythonScript::errorList()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui12PythonScript27setDefaultPythonInterpreterEv"><code class="docutils literal notranslate"><span class="pre">PythonScript::setDefaultPythonInterpreter()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui12PythonScript7executeERK11QStringListRK10QByteArray"><code class="docutils literal notranslate"><span class="pre">PythonScript::execute()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui12PythonScript12asyncExecuteERK11QStringListRK10QByteArray"><code class="docutils literal notranslate"><span class="pre">PythonScript::asyncExecute()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui12PythonScript12asyncExecuteERK11QStringListRK10QByteArraybb"><code class="docutils literal notranslate"><span class="pre">PythonScript::asyncExecute()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui12PythonScript21asyncWriteAndResponseE10QByteArray"><code class="docutils literal notranslate"><span class="pre">PythonScript::asyncWriteAndResponse()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui12PythonScript24asyncWriteAndResponseRawERK10QByteArrayi"><code class="docutils literal notranslate"><span class="pre">PythonScript::asyncWriteAndResponseRaw()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui12PythonScript14asyncTerminateEv"><code class="docutils literal notranslate"><span class="pre">PythonScript::asyncTerminate()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui12PythonScript13asyncResponseEv"><code class="docutils literal notranslate"><span class="pre">PythonScript::asyncResponse()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui12PythonScript8setDebugEb"><code class="docutils literal notranslate"><span class="pre">PythonScript::setDebug()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui12PythonScript15processFinishedEiN8QProcess10ExitStatusE"><code class="docutils literal notranslate"><span class="pre">PythonScript::processFinished()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui12PythonScript8finishedEv"><code class="docutils literal notranslate"><span class="pre">PythonScript::finished()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui12PythonScript7m_debugE"><code class="docutils literal notranslate"><span class="pre">PythonScript::m_debug</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui12PythonScript13m_packageModeE"><code class="docutils literal notranslate"><span class="pre">PythonScript::m_packageMode</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui12PythonScript19m_pythonInterpreterE"><code class="docutils literal notranslate"><span class="pre">PythonScript::m_pythonInterpreter</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui12PythonScript6m_pixiE"><code class="docutils literal notranslate"><span class="pre">PythonScript::m_pixi</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui12PythonScript16m_scriptFilePathE"><code class="docutils literal notranslate"><span class="pre">PythonScript::m_scriptFilePath</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui12PythonScript12m_packageDirE"><code class="docutils literal notranslate"><span class="pre">PythonScript::m_packageDir</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui12PythonScript16m_packageCommandE"><code class="docutils literal notranslate"><span class="pre">PythonScript::m_packageCommand</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui12PythonScript19m_packageIdentifierE"><code class="docutils literal notranslate"><span class="pre">PythonScript::m_packageIdentifier</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui12PythonScript8m_errorsE"><code class="docutils literal notranslate"><span class="pre">PythonScript::m_errors</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui12PythonScript9m_processE"><code class="docutils literal notranslate"><span class="pre">PythonScript::m_process</span></code></a></li>
 </ul>
