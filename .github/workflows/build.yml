@@ -1,9 +1,9 @@
 name: Build Sphinx
 
-on: 
+on:
   workflow_dispatch:
   push:
-    branches:    
+    branches:
       - 'main'
 
 jobs:
@@ -17,18 +17,18 @@ jobs:
       cancel-in-progress: true
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd #v5
 
     # build the doxygen XML for breathe
     - name: Checkout openchemistry
-      uses: actions/checkout@v4
+      uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd #v5
       with:
         repository: openchemistry/openchemistry
         submodules: recursive
         path: openchemistry
 
     - name: Checkout openchemistry and avogadrolibs
-      uses: actions/checkout@v4
+      uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd #v5
       with:
         repository: openchemistry/avogadrolibs
         path: openchemistry/avogadrolibs
@@ -36,33 +36,36 @@ jobs:
     - name: Install packages
       run: |
         sudo apt-get -qq update
-        sudo apt-get -qq install doxygen ninja-build libeigen3-dev libglew-dev libxml2-dev qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools libqt5x11extras5-dev libqt5svg5-dev
+        sudo apt-get -qq install doxygen graphviz ninja-build libeigen3-dev libglew-dev libxml2-dev
 
     - name: Install uv
-      uses: astral-sh/setup-uv@v2
+      uses: astral-sh/setup-uv@e06108dd0aef18192324c70427afc47652e63a82 # v7.5.0
       with:
         enable-cache: true
         cache-dependency-glob: "uv.lock"
 
-    - name: "Set up Python"
-      uses: actions/setup-python@v5
+    - name: Set up Python
+      uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6
       with:
         python-version-file: ".python-version"
 
     - name: Install Sphinx and requirements
       run: uv sync
 
+    - name: Install Qt
+      uses: jurplel/install-qt-action@d325aaf2a8baeeda41ad0b5d39f84a6af9bcf005 # v4.3.0
+
     - name: Configure
       run: |
         mv openchemistry ${{ runner.workspace }}
         if [ ! -d "${{ runner.workspace }}/build" ]; then mkdir "${{ runner.workspace }}/build"; fi
         cd "${{ runner.workspace }}/build"
-        cmake ${{ runner.workspace }}/openchemistry -G "Ninja" -DBUILD_DOCUMENTATION=ON -DUSE_SYSTEM_LIBXML2=ON -DUSE_SYSTEM_ZLIB=ON
+        cmake ${{ runner.workspace }}/openchemistry -G "Ninja" -DBUILD_DOCUMENTATION=ON -DUSE_SYSTEM_LIBXML2=ON -DUSE_SYSTEM_ZLIB=ON -DBUILD_GPL_PLUGINS=ON -DBUILD_MOLEQUEUE=OFF -DWITH_COORDGEN=OFF -DQT_VERSION=6 -DUSE_YAEHMOP=ON
       shell: bash
 
     - name: Build doxygen
       run: |
-        ninja
+        ninja || true # might fail with warnings
         cd avogadrolibs
         ninja documentation
       shell: bash
@@ -78,10 +81,11 @@ jobs:
 
     - name: Setup tmate session
       if: ${{ failure() }}
-      uses: mxschmitt/action-tmate@v3
+      uses: mxschmitt/action-tmate@c0afd6f790e3a5564914980036ebf83216678101 # v3.23
+      timeout-minutes: 30
 
     - name: Deploy to gh-pages
-      uses: peaceiris/actions-gh-pages@v3
+      uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e # v4
       # If you're changing the branch from main,
       # also change the `main` in `refs/heads/main`
       # below accordingly.

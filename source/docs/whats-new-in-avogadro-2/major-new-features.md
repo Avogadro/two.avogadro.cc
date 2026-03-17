@@ -1,6 +1,6 @@
 # Major New Features
 
-### Speed and stability
+## Speed and stability
 
 A major concern with Avogadro 1.x was speed when handling larger systems including biomolecules (protein, DNA/RNA) and materials. Even viewing and rotating large molecules would be slow, much less editing them or performing optimizations or dynamics calculations.
 
@@ -8,31 +8,41 @@ We also know that Avogadro 1.x crashed for multiple reasons – not least becaus
 
 Avogadro 2.0 has been rewritten from the ground up. **Avogadro v2 was designed for fast modern rendering and improved stability. It is a platform to make it easy to build the next generation of molecular and materials visualization and editing tools.**
 
-### Rendering
+## Rendering
 
 Avogadro's new rendering framework _**easily**_ handles tens and hundreds of thousands of atoms – not just because hardware has improved but by using new 3D graphics rendering methods which make better use of modern GPUs.
 
 <figure><img src="../../_static/6vxx-yes.png" alt="Example of real-time shadows and ambient occlusion on the COVID spike protein (6vxx)"><figcaption><p>Example of real-time shadows and depth effects on COVID spike protein (PDB: 6vxx) – around 25,000 atoms</p></figcaption></figure>
 
-#### New real-time shadows and depth effects
+### New real-time shadows and depth effects
 
 The new rendering system not only handles more atoms, but real-time shadows (also called ambient occlusion) provide depth effects which make even smaller molecules look more like physical models.
 
 <figure><img src="../../_static/Caffeine.png" alt="Ball and stick model of caffeine molecule illustrating real-time shading" width="222"><figcaption><p>Ball-and-stick model of a caffeine molecule showing real-time shading</p></figcaption></figure>
 
-#### New "close-contact" rendering
+### New volumetric orbitals and electron density
+
+A new option for surfaces includes volumetric rendering for orbitals and electron density.
+
+<figure><img src="../../_static/tpa-volume.png" alt="volumetric rendering of HOMO for a conjugated chain" width="222"><figcaption><p>Volumetric rendering of the HOMO of a conjugated oligomer</p></figcaption></figure>
+
+This provides a contrast with traditional isosurface views:
+
+<figure><img src="../../_static/tpa-surface.png" alt="surface rendering of HOMO for a conjugated chain" width="222"><figcaption><p>Standard surface rendering of the HOMO of a conjugated oligomer</p></figcaption></figure>
+
+### New "close-contact" rendering
 
 This new rendering type visualizes various types of non-bonded close-contact interactions, including salt bridge and repulsive electrostatic interactions.
 
 <figure><img src="../../_static/CloseContact.png" alt="Foldamer molecule highlighting non-bonded close contacts (at 2.2 A separation) in dashed grey lines" width="375"><figcaption><p>Close-contact interactions as grey dashed lines</p></figcaption></figure>
 
-#### New non-bonded rendering analysis, including hydrogen bonds, halogen bonds, and chalcogen bonds
+### New non-bonded rendering analysis
 
 Another new rendering type highlights hydrogen bonds, halogen and chalcogen non-bonded interactions.
 
 <figure><img src="../../_static/DNA-hbonds.png" alt="DNA bases highlighting hydrogen bonds" width="375"><figcaption><p>DNA bases highlighting hydrogen bonding interactions</p></figcaption></figure>
 
-#### New cartoon/ribbon styles for proteins
+### New cartoon/ribbon styles for proteins
 
 <figure><img src="../../_static/covid-spike.png" alt="Example of the new protein cartoon ribbons in the COVID spike protein 6vxx"><figcaption><p>Example ribbon/cartoon view of COVID spike protein (PDB: 6vxx)</p></figcaption></figure>
 

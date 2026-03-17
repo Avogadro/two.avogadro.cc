@@ -16,9 +16,11 @@ docs (which ultimately become part of this website).
 ---
 caption: Contributing Code
 ---
+ai-usage
 conventions
-style
-code-docs
+coding-style
+documentation
+/develop/structure
 ```
 
 [forking repositories]: https://guides.github.com/activities/forking/

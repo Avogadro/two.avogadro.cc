@@ -4,11 +4,11 @@
 
 ![The icon of the Manipulation Tool in light mode.](../../_static/icon_manipulate.svg)
 
-Keyboard shortcut: <kbd>Ctrl</kbd>+<kbd>6</kbd>
+Keyboard shortcut: <kbd>Ctrl</kbd>+<kbd>5</kbd>
 
 The **Manipulation Tool** allows you to **move** atoms, molecules, and fragments.
 
-## Basic usage
+## Basic Usage
 
 **Click and drag** an atom to **manipulate** it.
 
@@ -32,16 +32,16 @@ On a single atom this will have no visible effect.
 Rotation with click and drag will always be about the geometric center of the selection.
 ```
 
-The Manipulation Tool is automatically selected after [inserting a fragment](menus-build-menu-insert) via `Build`⇒`Insert`, to enable quick and easy positioning of the new fragment.
+The Manipulation Tool is automatically selected after [inserting a fragment](menus-build-menu-insert) via **Build ⇒ Insert**, to enable quick and easy positioning of the new fragment.
 
-## Pane options
+## Options
 
 The options in the Manipulate Pane allow you to apply transformations mathematically to the currently selected atoms.
 
 Translate by:
 : Specify the distances, in angstrom, to shift the selection along the X-, Y-, and Z-axes.
 
-![Applying a mathematical translation.](../../_static/0f89679e-9bee-4005-8793-fc96682ecd34.png){height=300px align=center}
+![Applying a mathematical translation.](../../_static/manipulate-translate.png){height=300px align=center}
 
 Rotate around:
 : Specify the angles, in degrees, to rotate the selection around the X-, Y-, and Z-axes, as well as the centre of the rotation.
@@ -49,7 +49,7 @@ Rotate around:
   The rotation can be carried out around the center of the current geometry or the origin, selected from the drop-down menu.
   The X-, Y-, and Z-axes used for the rotation will be considered to intersect at this point.
 
-![Applying a mathematical rotation.](../../_static/14c1bee4-7288-4fa7-8660-d9fc58578631.png){height=300px align=center}
+![Applying a mathematical rotation.](../../_static/manipulate-rotate.png){height=300px align=center}
 
 Apply
 : Apply the specified transformations to the current selection.
@@ -61,8 +61,12 @@ Reset
 
   This does not reset the molecule or reverse any transformations; if you want to undo your adjustments, go to the `Edit` menu in the top bar and select `Undo Manipulate Atom`.
 
-![Undoing transformations.](../../_static/e711ffa1-6a52-4748-af42-e734581bf36b.png){height=600px align=center}
-
 :::{note}
 The icon for the Manipulation Tool is adapted from a design by [Ryan Dell](https://thenounproject.com/ryandeel/), a contributor to the Noun Project.
 :::
+
+## See Also
+
+- {ref}`tools-selection-tool` – Select atoms before manipulating them
+- {ref}`tools-navigation-tool` – Rotate and pan the view (not the atoms)
+- {ref}`tools-bond-centric-manipulation-tool` – Adjust bond lengths and angles while preserving geometry

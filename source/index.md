@@ -378,11 +378,11 @@ Discuss
 :align: center
 Follow on Mastodon
 :::
-:::{button-link} https://x.com/AvogadroChem
+:::{button-link} https://bsky.app/profile/avogadro.cc
 :color: primary
 :outline:
 :align: center
-Follow on X
+Follow on Bluesky
 :::
 :::{button-link} https://github.com/openchemistry/avogadrolibs/issues
 :color: primary

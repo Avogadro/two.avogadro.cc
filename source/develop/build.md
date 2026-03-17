@@ -85,7 +85,7 @@ For those unfamiliar with compiling programs from source, or C++ ones in particu
 - a build-system generator, which creates configuration files for a build tool based on a set of instructions; this makes building complex projects on multiple platforms with potentially different build tools and compilers much easier
 :::
 
-Broadly, you will need a C/C++ compiler that supports C++17, a build tool such as [Ninja](https://ninja-build.org/), and [CMake](cmake.org).
+Broadly, you will need a C/C++ compiler that supports C++17, a build tool such as [Ninja](https://ninja-build.org/), and [CMake](https://cmake.org).
 
 :::{admonition} Windows {fab}`windows`
 :class: dropdown

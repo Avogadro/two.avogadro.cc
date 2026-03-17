@@ -13,9 +13,9 @@ molecular data for visualization).
 
 As part of JSON-RPC the basic syntax is like so:
 
-```
+```json
 {
-  "jsonrpc" : "2.0" },
+  "jsonrpc" : "2.0" ,
   "id" : *idNum*
 }
 ```
@@ -34,7 +34,7 @@ Current options for "method":
 
 If the method is "openFile", then "params" needs to be set like this:
 
-```
+```json
 {
  "jsonrpc" : "2.0",
  "id" : *idNum*,
@@ -52,7 +52,7 @@ here).
 If the method is "loadMolecule", then "params" needs to be set like
 this:
 
-```
+```json
 {
   "jsonrpc" : "2.0",
   "id" : idNum,

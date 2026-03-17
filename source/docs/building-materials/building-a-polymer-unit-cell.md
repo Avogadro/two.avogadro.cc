@@ -1,3 +1,5 @@
+(building-materials-polymer-unit-cell)=
+
 # Building a Polymer Unit Cell
 
 A walk-through on creating a unit cell \(of a polymer\) using Avogadro and the Align tool. This specific example uses Gaussian, but translation vectors for other programs can be performed similarly.
@@ -50,3 +52,8 @@ If you wish to submit the unit cell to Gaussian, pick the Gaussian input extensi
 
 Set options as you desire. Make sure to add a "TV 7.806 0.0 0.0" line at the bottom of the preview text. This will enable the unit cell calculation by setting the translation vector for the unit cell.
 
+## See Also
+
+- {ref}`tools-align-tool` – Align molecules to Cartesian axes
+- {ref}`building-materials-supercell` – Build supercells from unit cells
+- {ref}`tools-selection-tool` – Select atoms for deletion or manipulation

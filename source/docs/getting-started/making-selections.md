@@ -1,3 +1,5 @@
+(getting-started-selecting)=
+
 # Making Selections
 
 The [Selection Tool](tools-selection-tool) is also a useful feature to master when beginning to learn Avogadro. Generally, the Selection Tool allows for the individual selection of atoms, bonds, or fragments.
@@ -22,4 +24,7 @@ Left-clicking and dragging a marquee with the cursor is another way molecules, o
 
 ![](../../_static/tutorial-select-drag.png)
 
-More information on selections can be found in the ["Tools" section](tools-selection-tool) and the ["Select" menu](menus-select-menu).
+## See Also
+
+- Full documentation on the [selection tool](tools-selection-tool)
+- Commands for the selection are in the ["Select" menu](menus-select-menu).

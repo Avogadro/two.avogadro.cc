@@ -1,3 +1,5 @@
+(building-materials-crystal-slab)=
+
 # Making a Crystal Surface Slab
 
 Build up a crystal surface, e.g., Pt  for a defined Miller Plane.
@@ -28,3 +30,8 @@ Specify the indices of the Miller plane desired \(for hexagonal unit cells, all 
 
 After clicking "Build," Avogadro will generate a large supercell, align, rotate, and cleave the designated surface. This may take some time, depending on the size of the crystal cell. Here translucent van der Waals spheres are used to illustrate the corrugation of the Ag  surface. The resulting surface is a 2x2 supercell, with a large spacing \(40 Å\) in the z-axis.
 
+## See Also
+
+- {ref}`building-materials-supercell` – Build and replicate supercells
+- {ref}`building-materials-crystal-symmetry` – Perceive space groups from crystal coordinates
+- {ref}`building-materials-polymer-unit-cell` – Build polymer unit cells

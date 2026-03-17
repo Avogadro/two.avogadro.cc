@@ -1,6 +1,8 @@
+(getting-started-saving)=
+
 # Saving Files
 
-By default, Avogadro saves files to its "native" format [CJSON](https://github.com/OpenChemistry/chemicaljson) (Chemical JSON), which stores as much chemical information as possible and is the recommended format. 
+By default, Avogadro saves files to its "native" format [CJSON](https://github.com/OpenChemistry/chemicaljson) (Chemical JSON), which stores as much chemical information as possible and is the recommended format.
 
 ![Screenshot indicating File => Save and Save As menu items](../../_static/tutorial-save.png)
 

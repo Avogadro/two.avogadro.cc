@@ -1,3 +1,5 @@
+(building-materials-supercell)=
+
 # Building a Supercell
 
 Once a crystal surface has been built, the Super Cell Builder can expand atoms within a space group, replicate the unit cell, and perform simple bonding.
@@ -20,3 +22,8 @@ A surface can then be _modified_ by introducing impurities. Here, copper impurit
 
 ![](../../_static/86d36773-eb7f-4cce-9269-40feb6993009.png)
 
+## See Also
+
+- {ref}`building-materials-crystal-slab` – Create crystal surface slabs for specific Miller planes
+- {ref}`building-materials-crystal-symmetry` – Perceive space groups from crystal coordinates
+- {ref}`building-materials-polymer-unit-cell` – Build polymer unit cells for periodic calculations

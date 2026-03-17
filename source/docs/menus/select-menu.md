@@ -38,7 +38,7 @@ SMARTS **\(**SMiles ARbitrary Target Specification\) is a more general chemical 
 
 "Select by Residue..." generates a pop up screen that allows you to select residues with specified names. For example, typing in "ALA" \(this feature is case sensitive\) to select an alanine residue.
 
-This feauture only works with residues that were made using the peptide builder.
+This feature only works with residues that were made using the peptide builder.
 
 ![](../../_static/select-by-residue%20%281%29.png)
 

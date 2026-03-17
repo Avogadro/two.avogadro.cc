@@ -88,5 +88,6 @@ structure
 build
 scripts/index
 rpc
-classlist
+/contrib/code
+/contrib/ai-usage
 :::
