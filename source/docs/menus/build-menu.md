@@ -29,7 +29,7 @@ Add Perpendicular
 : Add a dummy atom perpendicular to the plane of the molecule
 
 :::{note}
-    If the molecule is not planar, the plane that this is perpendicular to is the plane that has the smallest average distance to every atom.
+If the molecule is not planar, the plane that this is perpendicular to is the plane that has the smallest average distance to every atom.
 :::
 
 (coordinate-editor)=
