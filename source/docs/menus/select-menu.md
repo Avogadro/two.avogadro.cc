@@ -2,51 +2,52 @@
 
 # Select Menu
 
-The select menu makes chemical alterations more efficient through various modes of selection.
+The Select menu contains commands that are useful for selecting atoms by various properties.
 
-![](../../_static/ee179776-5a24-4523-a668-a0012d4dbe6c.png)
+Select All {kbd}`Ctrl+A`
+: Select all atoms
 
-## Select All
+Select None {kbd}`Ctrl+Shift+A`
+: Deselect all atoms
 
-"Select All" highlights everything in the display \(this feature can also be found under the "Edit" menu\).
+Invert Selection
+: Select all atoms which are not currently selected, and deselect all currently selected atoms.
 
-## Select None
+Select by Element
+: Select all atoms of a certain element type.
 
-"Select None" will dismiss everything in the display \(this feature is also found under the "Edit" menu\).
+Select by Atom Index
+: Select atoms by a comma-separated list of indices. (does not deselect currently selected atoms)
 
-## Invert Selection
+:::{note}
+This selection is 0-indexed, meaning the first atom in the XYZ has index 0.
+:::
 
-"Invert Selection" reverses the selection made.
+Select by Residue
+: Select atoms in amino acids by their 3-letter identifiers
 
-The first image displayed below is the orginal selection, and the second image demonstrates the inverted selection.
+:::{note}
+Residues must be specified in all caps.
+:::
 
-![](../../_static/invert-selection.png)
+Select Backbone Atoms
+: Select all atoms that belong to amino acid backbones
 
-## Select SMARTS...
+Select Sidechain Atoms
+: Select all atoms that belong to amino acid sidechains
 
-SMARTS **\(**SMiles ARbitrary Target Specification\) is a more general chemical language extension of SMILES. "Select SMARTS..." allows you to use this chemical language to select various atoms, or groups of atoms within the molecule. For example, typing "a" into the dialog box and clicking ok will select all atoms with aromaticity. More information can be found at the [Daylight SMARTS webpage](http://www.daylight.com/dayhtml/doc/theory/theory.smarts.html).
+Select Water
+: Select all water molecules
 
-![](../../_static/select-smarts.png)
+Enlarge Selection
+: Select all atoms within 2 atoms of a selected atom. In other words, select all atoms next to a selected atom, and additionally all atoms that are next to those atoms.
 
-## Select by Element...
+Shrink Selection
+: Shrink selection.
 
-"Select by Element..." generates a periodic table pop up screen that allows you to select an element throughout the viewing display.
+:::{warning}
+One shrink is equivalent to **two** enlarges!
+:::
 
-![](../../_static/select-by-element%20%281%29.png)
-
-## Select by Residue...
-
-"Select by Residue..." generates a pop up screen that allows you to select residues with specified names. For example, typing in "ALA" \(this feature is case sensitive\) to select an alanine residue.
-
-This feature only works with residues that were made using the peptide builder.
-
-![](../../_static/select-by-residue%20%281%29.png)
-
-## Select Solvent
-
-This feature will select "HOH" residues in PDB \(protein data bank\) files.
-
-## Add Name Selection...
-
-"Add Name Selection..." allows you to add a new selection to the current data base, which you can then recall at your convenience.
-
+Create New Layer from Selection
+: Separate the selected atoms into a new layer.
