@@ -34,6 +34,7 @@ Color Atoms
 
 :::{dropdown} Show Available Colormaps
 :color: info
+:icon: image
 
 ![](../../_static/avogadro_charge_colors.svg)
 ![](../../_static/avogadro_colors.svg)
