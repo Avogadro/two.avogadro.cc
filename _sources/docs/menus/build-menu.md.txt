@@ -2,78 +2,119 @@
 
 # Build Menu
 
-The build menu helps to ease the process of constructing molecules.
+The Build menu contains commands useful for creating and modifying molecular geometries.
 
-![](../../_static/94aeecab-a6e9-48e8-9ad5-73900d9e549a.png)
+Atomic Coordinate Editor
+: Open the [Atomic Coordinate Editor](coordinate-editor).
 
-## Cartesian Editor...
+Insert
+: See [Insert](insert-dropdown).
 
-"Cartesian Editor..." when selected provides you with the capability to manually adjust bond lengths. The dialog box for the cartesian editor is displayed below.
+Hydrogens
+: See [Hydrogens](hydrogens-dropdown).
 
-![](../../_static/cartesian-editor.png)
+Bond
+: See [Bond](bond-dropdown).
 
-### 1. Sort by...
+Change Elements
+: Change the selected atoms to a chosen element.
 
-The sort by drop down menu will rearrange the data in the dialog box for your convenience. Sort by can arrange the data by element, or by location of the atom. All of the data for sorting by X, Y, and Z coordinates will start reading at the atom to the furthest left in the molecule, and continue until it reaches the atom at the right most point.
+Add Centroid
+: Add a dummy atom at the geometric center of the molecule or the selected atoms.
 
-![](../../_static/1-sort-by.png)
+Add Center of Mass
+: Add a dummy atom at the center of mass of the molecule or the selected atoms.
 
-### 2. Unit of Measure
+Add Perpendicular
+: Add a dummy atom perpendicular to the plane of the molecule or the selected atoms.
 
-Avogadro provides three units of measure to adjust bond lengths, Angstroms, Bohrs, and Fractional coordinates. A unit cell must be defined to use fractional coordinates.
+:::{note}
+If the molecule is not planar, the plane that this is perpendicular to is the plane that has the smallest average distance to every atom.
+:::
 
-![](../../_static/2-unit-of-measure.png)
+(coordinate-editor)=
+#### Atomic Coordinate Editor
 
-### 3. Editing & Modifying Data
+The Atomic Coordinate Editor is an extremely useful environment for modifying the existing molecular structure, formatting a set of coordinates, and reordering atomic indices.
 
-Editing the data is as simple as clicking on the number you wish to edit, and typing in a new coordinate. After clicking "Apply" and returning back to the Avogadro display screen, you should notice that the atom has changed position.
+The window has several useful features:
 
-The displayed data can also be modified according to your personal preference, or for the use of additional plugins.
+Preset
+: Select a preset format for the coordinates and update any existing coordinates.
 
-![](../../_static/3-editing--amp--modifying-data.png)
+Format
+: Specify a custom format for the coordinates (the Help menu on the right includes more information)
 
-## Change H to Methyl
+Distance Unit
+: Select between Angstroms (Å) and Bohrs/Atomic Units (a.u.).
 
-"Change H to Methyl" will replace any Hydrogens present in the display window with methyl groups. Depicted below is acetone with all of its hydrogens replaced by methyl groups.
+:::{note}
+1 Å    = 1.88972613 Bohrs
 
-![](../../_static/change-h-to-methyl.png)
+1 Bohr = 0.52917721 Å
+:::
 
-## Add Hydrogens
+Revert
+: Reverts any edits.
 
-"Add Hydrogens" will satisfy the valency of the atoms present with hydrogens.
+Clear
+: Clears all coordinates.
 
-![](../../_static/add-hydrogens.png)
+Apply
+: Applies any edits.
 
-## Add Hydrogens for pH...
+:::{note}
+The text in the coordinate box will appear green when it has been edited, and black after being applied.
+:::
 
-"Add Hydrogens for pH..." will create a dialog box \(displayed below\) that allows you to adjust the pH of the molecular environment. This feature will add \(or subtract\) acidic hydrogens to ionizable groups in peptides, according to the desired pH.
+(insert-dropdown)=
+#### Insert
 
-![](../../_static/add-hydrogens-for-ph.png)
+Molecule
+: Insert a **molecule fragment** from the [Molecules Plugin](extensions-plugins-menu).
 
-## Remove Hydrogens
+DNA/RNA
+: Insert **DNA/RNA** fragments using the [Nucleic Acid Builder](nucleic-acid-builder).
 
-"Remove Hydrogens" will delete all hydrogens in the display screen.
+InChI
+: Insert a molecule using an International Chemical Identifier ([InChI](https://www.inchi-trust.org/)).
 
-![](../../_static/remove-hydrogens.png)
+SMILES
+: Insert a molecule using a [SMILES](https://www.daylight.com/dayhtml/doc/theory/theory.smiles.html) string.
 
-## Insert
-(menus-build-menu-insert)=
+(hydrogens-dropdown)=
+#### Hydrogens
 
-"Insert" provides a faster, simpler way of building molecules. A depicted below, you can insert DNA/RNA, a Fragment, a Peptide, and can also insert a molecule based on SMILES text.
+Adjust Hydrogens {kbd}`Ctrl+Alt+H`
+: Add any missing hydrogen atoms, and remove any extra hydrogen atoms on any atoms that violate the octet rule.
 
-![](../../_static/insert.png)
+Add Hydrogens
+: Add any missing hydrogen atoms on atoms that have incomplete octets.
 
-## Invert Chirality
+Remove Extra Hydrogens
+: Remove any extra hydrogen atoms on atoms with overfull octets.
 
-"Invert Chirality" will reverse \(invert\) the initial chirality to the opposite R/S configuration.
+Remove All Hydrogens
+: Remove all hydrogen atoms in the molecule.
 
-![](../../_static/invert-chirality.png)
+(bond-dropdown)=
+#### Bond
 
-## Super Cell Builder...
+Bond Atoms {kbd}`Ctrl+B`
+: Bond all atoms in the molecule.
 
-Information on the Super Cell Builder can be found in "Building and Editing Crystals and Materials" section.
+:::{warning}
+This will change all existing bonds to single bonds!
+:::
 
-## Nanotube Builder...
+Bond Selected Atoms
+: Bond all selected atoms.
 
-Information on building Carbon Nanotubes in Avogadro can be found in the "Building Molecules" section.
+Perceive Bond Orders
+: Check all atoms that have unsatisfied octets and add enough double or triple bonds to satisfy the octet.
 
+Remove Bonds {kbd}`Ctrl+Shift+B`
+: Remove bonds containing selected atom, or remove all bonds in document if there are no selected atoms.
+
+Configure Bonding
+: Set a tolerance for automatic bond detection as well as a minimum interatomic distance for bonds.
