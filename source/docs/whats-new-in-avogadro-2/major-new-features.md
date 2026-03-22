@@ -54,7 +54,7 @@ A major new feature in Avogadro 2 is the layer system, similar to that found in 
 * to use multiple rendering options (e.g., display a protein with cartoon, but show a few key residues with ball-and-stick rendering)
 * to lock a layer to prevent editing (e.g., moving a molecule to bind with a locked surface or protein active site)
 
-A new section on the Layer dock and tutorials on using layers for common tasks is available in this manual.
+A new section on the {ref}`Layer pane <panes-layers-pane>` and tutorials on using layers for common tasks is available in this manual.
 
 Future development will enable the use layers for complex simulations (e.g., QM/MM with one layer defining the quantum chemical fragments).
 
