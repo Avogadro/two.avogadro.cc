@@ -61,6 +61,7 @@ whats-new-in-avogadro-2/index
 getting-started/index
 building-molecules/index
 tools/index
+menus/index
 display-types/index
 optimizing-geometry/index
 tutorials/index

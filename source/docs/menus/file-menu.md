@@ -2,47 +2,75 @@
 
 # File Menu
 
-The file menu provides the standard abilities of creating a new file, opening & closing documents, as well as saving documents. It also yields the capability to import files from various databases.
+The File menu contains commands useful for opening, importing, and exporting molecules.
 
-![](../../_static/b4a5b5bf-c747-4793-bcbb-caaca343b124.png)
+New {kbd}`Ctrl+N`
+: Create a new molecule document.
 
-## New
+Open {kbd}`Ctrl+O`
+: Open a file containing molecule information from a file browser.
 
-The "New" selection will open a new file in Avogadro.
+Open Recent
+: Display a list of the 10 most recent files opened.
 
-## Open
+Close {kbd}`Ctrl+W`
+: Close the current window.
 
-After selecting "Open", a file that has previously been saved is accessible through the pop up browser.
+Save {kbd}`Ctrl+S`
+: Save the current molecule.
 
-## Open Recent
+Save As... {kbd}`Ctrl+Shift+S`
+: Save the current molecule as a CJSON (`.cjson`) or CML (`.cml`) file.
 
-"Open Recent" displays a list of documents recently launched.
+Import
+: See [Import](import_menu)
 
-## Close
+Export
+: See [Export](export_menu)
 
-"Close" dismisses the window currently open.
+Quit {kbd}`Ctrl+Q`
+: Close Avogadro 2
 
-## Save
+(import_menu)=
+#### Import Menu
 
-"Save" will maintain your progress.
+The Import menu contains commands useful for importing molecules to the current document, such as downloading a molecule by name, fetching it from the Protein Data Bank (PDB), or importing a crystal structure.
 
-## Save As...
+Download by Name
+: Load a molecule by its common name.
 
-"Save As..." allows you to save progress without overwriting the original file.
+:::{note}
+This is most likely to work for common molecules such as caffeine, and is not guaranteed to work for every molecule name.
+:::
 
-## Revert to Saved
+Fetch from PDB
+: Download a PDB entry by its identifier.
 
-"Revert to Saved" will revert any changes made to the previously saved file.
+Crystal
+: Import a crystal structure from those provided by Avogadro.
 
-## Import
+(export_menu)=
+#### Export Menu
 
-![](../../_static/import.png)
+Export the current molecule as chemical file format or as a graphic.
 
-"Import" will open chemical files stored in a database.
+Molecule
+: Open a file dialog to select a format to save the current molecule to.
 
-## Export
+Graphics
+: Open a file dialog to save the current screen as a PNG.
 
-![](../../_static/export.png)
+3DMol HTML Snippet
+: Automatically generate HTML to render the molecule in a web browser.
 
-"Export" will make files created in Avogadro suitable for other programs.
+SVG
+: Export a **2D** rendering of the current molecule as a scalable vector graphic (SVG).
 
+PLY Render
+: Export a 3D render of the current molecule in a format readable by CAD software such as [Blender](https://www.blender.org/).
+
+POV-Ray Render
+: Export a 3D render of the current molecule in a format readable by [POV-Ray](https://www.povray.org/documentation/view/3.60/802/).
+
+VRML Render
+: Export a 3D render of the current molecule in a format readable by CAD software.

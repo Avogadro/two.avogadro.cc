@@ -7,6 +7,7 @@ Reference documentation for each menu in Avogadro, describing available commands
 ```{toctree}
 ---
 caption: Menus
+maxdepth: 1
 ---
 
 file-menu

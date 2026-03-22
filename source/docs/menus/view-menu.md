@@ -2,97 +2,47 @@
 
 # View Menu
 
-The view menu gives the user the ability to add, and adjust the display views currently in use.
+The View menu contains several features useful for rotating the camera, coloring atoms, and choosing rendering settings.
 
-![](../../_static/b1493a86-74ed-4651-a696-41c642b15aad.png)
+Center
+: Center the camera around the origin and align your view to the axes
 
-## New View
+Align View to Axes
+: Align your view to the axes, but do not move the camera.
 
-"New View" creates a new, blank viewing window.
+Focus Selection
+: Focus the camera on the selected atoms. This will cause any rotations to be centered around the focused atoms.
 
-## Duplicate View
+Unfocus
+: Undo the camera focusing.
 
-By selecting "Duplicate View" from the drop down bar, a duplicate of the current view will be created. Any changes made to the display window will automatically update in all of the views.
+Rendering
+: Open a dialog to select the rendering options.
 
-![](../../_static/duplicate-view.png)
+Set Background Color
+: Open a dialog to change the background color.
 
-## Detach View
+Projection
+: Select between perspective and orthographic projections.
 
-The "Detach View" selection will display the current view in a new window.
+:::{note}
+An orthographic projection means all atoms are the same size, while a perspective projection means that atoms that are closer to the camera will be larger.
+:::
 
-![](../../_static/detach-view.png)
+Color Atoms
+: Change the color of the atoms by a property with one of the available colormaps, or by a custom color. By default, this colors atoms by their element. There are two sets of available colormaps for atoms, one set for charge that works on a blue-red motif, and another for color-by-index and color-by-distance that has a larger range of colors.
 
-## Close View
+:::{dropdown} Show Available Colormaps
+:color: info
+:icon: image
 
-"Close View" deletes the display that's open. A view can also be closed by clicking the x on the left of the view tab.
+![](../../_static/avogadro_charge_colors.svg)
+![](../../_static/avogadro_colors.svg)
+:::
 
-![](../../_static/close-view.png)
+Color Residues
+: Color protein structures by various properties.
 
-## Center
-
-"Center" will align the molecule\(s\) to the middle of the viewing screen.
-
-## Align View to Axes
-
-"Align View to Axes" adjusts the display view to be in the x, y plane with the positive z-axis pointing toward you.
-
-![](../../_static/align-view-to-axes.png)
-
-## Full Screen
-
-"Full Screen" expands the window to fill the computer screen.
-
-## Reset Display Types
-
-"Reset Display Types" will deselect all display types checked, and revert back to the default "Ball and Stick" display type.
-
-![](../../_static/reset-display-types.png)
-
-## Set Background Color...
-
-The "Set Background Color..." feature will allow you to change the background color of the viewing window.
-
-![](../../_static/set-background-color.png)
-
-## Projection
-
-There are two types of projection features \(prospective, and orthographic projection\), the default projection is perspective projection. Perspective projection provides a more realistic \(3D\) view of a molecule in space. Orthographic projection provides, and adjusts the molecule into a planar \(2D\) view, where all like atoms are adjusted to stay the same size. The projection views are most evident when drawing molecules.
-
-## Display Axes
-
-"Display Axes" will render an axes display in the lower left hand corner.
-
-![](../../_static/display-axes.png)
-
-## Debug Information
-
-"Debug Information" provides additional information about the view, and what's currently taking place on your screen.
-
-![](../../_static/debug-information.png)
-
-## Use Quick Render
-
-Quick render adjusts the 3D molecular image in the viewing screen to achieve a faster image rendering on slow computers. **On most modern \(2012 or later\) computers, this is not necessary.**
-
-## All Molecules in File...
-
-"All Molecules in File..." allows you to look at all of the molecules that have previously been created and embedded into one file. From the dialog box that pops up, you can select and edit a molecule by clicking on the molecule's title.
-
-![](../../_static/all-molecules-in-file.png)
-
-## Crystal View Options...
-
-"Crystal View Options..." when selected will open the toolbar shown below. This toolbar allows you to edit the Miller indices, and the Unit Cell for any crystal structure.
-
-![](../../_static/crystal-view-options.png)
-
-## Properties
-
-The "Properties" selection will provides you with molecule, atom, bond, angle, torsion, and conformer properties. These settings display general compository information about the molecule and atoms present.
-
-![](../../_static/properties.png)
-
-For example, clicking on "Molecule Properties" will display general molecular information.
-
-![](../../_static/02fbd8fd-9d83-4089-ad33-5c4d419be83c.png)
-
+:::{note}
+To see these colors you must have the `Cartoons` display type enabled.
+:::
