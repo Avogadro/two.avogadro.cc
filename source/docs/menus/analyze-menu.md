@@ -1,0 +1,222 @@
+(menus-analyze-menu)=
+
+# Analyze Menu
+
+The Analyze menu contains a wide array of analysis tools for analyzing molecular properties, orbital surfaces, vibrational modes, conformer data, and plotting spectra, as well as tools for performing QTAIM analysis.
+
+Properties
+: See [Properties](properties-dropdown).
+
+Create Surfaces
+: See [Surfaces Dialog](surfaces-dialog).
+
+Molecule Orbitals
+: Open the molecular orbital window (requires orbitals from a quantum chemistry program).
+
+:::{dropdown} Molecular Orbital Window
+:color: info
+:icon: image
+
+```{image} ../../_static/molecular_orbital_dialog.png
+:alt: Example of the molecular orbital window
+:align: center
+:width: 250px
+```
+:::
+
+QTAIM
+: Run Quantum Theory of Atoms In Molecules (QTAIM) analyses (requires a `.wfn` file).
+
+Vibrational Modes
+: Open a window with vibrational modes from a quantum chemistry program.
+
+Plot Conformer Data
+: @ghutchis
+
+Plot Spectra
+: Plot electronic and vibrational spectra (IR, NMR, etc.)
+
+
+(properties-dropdown)=
+## Properties
+
+Molecular
+: Open a dialog containing basic molecular properties as well as any additional information from a quantum chemical output.
+
+:::{dropdown} Molecular Properties Dialog
+:color: info
+:icon: image
+:open:
+```{image} ../../_static/molecular_properties_dialog.png
+:alt: Example of the molecular properties dialog
+:align: center
+:width: 360px
+```
+:::
+
+Atom Properties
+: Open a dialog containing atomic coordinate information as well as any additional information from a quantum chemical output.
+
+:::{dropdown} Atom Properties Dialog
+:color: info
+:icon: image
+:open:
+
+```{image} ../../_static/atom_properties_dialog.png
+:alt: Example of the atom properties dialog
+:align: center
+```
+:::
+
+Bond Properties
+: Open a dialog containing bonding information.
+
+:::{dropdown} Bond Properties
+:color: info
+:icon: image
+:open:
+
+```{image} ../../_static/bond_properties_dialog.png
+:alt: Example of the Bond Properties Dialog
+:align: center
+```
+:::
+
+Angle Properties
+: Open a dialog containing information about the angles formed by atoms.
+
+:::{dropdown} Example Dialog
+:color: info
+:icon: image
+:open:
+
+```{image} ../../_static/angle_properties_dialog.png
+:alt: Example of the Angle Properties Dialog
+:align: center
+:width: 360px
+```
+:::
+
+Torsion Properties
+: Open a dialog containing information about the dihedrals formed by atoms.
+
+:::{dropdown} Torsion Properties
+:color: info
+:icon: image
+:open:
+
+```{image} ../../_static/torsion_properties_dialog.png
+:alt: Example of the Torsion Properties Dialog
+:align: center
+:width: 250px
+```
+:::
+
+Residue Properties
+: @ghutchis
+
+Conformer Properties
+: Open a dialog containing information about any conformers present in the document.
+
+:::{dropdown} Example Dialog
+:color: info
+:icon: image
+:open:
+
+```{image} ../../_static/conformer_properties_dialog.png
+:alt: Example of the Conformer Properties Dialog
+:align: center
+:width: 250px
+```
+:::
+
+Symmetry
+: Open the symmetry dialog, where you can access information about the molecule's point group, visualize symmetry operations, and identify symmetry-equivalent atoms.
+
+(surfaces-dialog)=
+## Surfaces Dialog
+
+The surfaces dialog has several useful tools for calculating and rendering various types of surfaces.
+
+:::{dropdown} Example Surfaces Dialog
+:color: info
+:icon: image
+:open:
+```{image} ../../_static/surfaces_dialog.png
+:alt: Example of the surfaces dialog
+:align: center
+:width: 420px
+```
+:::
+
+You can choose to render several surfaces from the first dropdown, including a Van der Waals surface, solvent accessible and solvent excluded surfaces, molecular orbitals, and electron density. The latter two require an output from a quantum calculation.
+
+For any surface other than a molecular orbital, you can choose to color the surface by the electrostatic potential, and select from several color maps.
+
+::::{dropdown} Electron Density colored by Electrostatic Potential
+:color: info
+:icon: image
+:open:
+
+```{image} ../../_static/example_electron_density.png
+:alt: Example of the electron density of coronene colored by the electrostatic potential
+:align: center
+```
+
+:::{dropdown} Available Color Maps
+:color: info
+:icon: image
+
+```{image} ../../_static/avogadro_charge_colors.svg
+:alt: The color maps available for coloring by electrostatic potential
+:align: center
+```
+:::
+::::
+
+The resolution option sets the spacing between volume elements in the rendered image.
+
+::::{tab-set}
+
+:::{tab-item} Very Low
+```{image} ../../_static/pyrazine_homo_verylow_res.png
+:alt: The HOMO of Pyrazine with the Very Low resolution setting.
+```
+:::
+
+:::{tab-item} Low
+```{image} ../../_static/pyrazine_homo_low_res.png
+:alt: The HOMO of Pyrazine with the Low resolution setting.
+:align: center
+```
+:::
+
+:::{tab-item} Medium
+:selected:
+```{image} ../../_static/pyrazine_homo_medium_res.png
+:alt: The HOMO of Pyrazine with the Medium resolution setting.
+:align: center
+```
+:::
+
+:::{tab-item} High
+```{image} ../../_static/pyrazine_homo_high_res.png
+:alt: The HOMO of Pyrazine with the High resolution setting.
+:align: center
+```
+:::
+
+:::{tab-item} Very High
+```{image} ../../_static/pyrazine_homo_veryhigh_res.png
+:alt: The HOMO of Pyrazine with the Very High resolution setting.
+:align: center
+```
+:::
+
+::::
+
+:::{hint}
+While a higher volume may be desirable, keep in mind that the time to compute the surface scales cubically!
+:::
+
+
