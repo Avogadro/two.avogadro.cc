@@ -20,13 +20,13 @@ Change Elements
 : Change the selected atoms to a chosen element.
 
 Add Centroid
-: Add a dummy atom at the geometric center of the molecule.
+: Add a dummy atom at the geometric center of the molecule or the selected atoms.
 
 Add Center of Mass
-: Add a dummy atom at the center of mass of the molecule.
+: Add a dummy atom at the center of mass of the molecule or the selected atoms.
 
 Add Perpendicular
-: Add a dummy atom perpendicular to the plane of the molecule
+: Add a dummy atom perpendicular to the plane of the molecule or the selected atoms.
 
 :::{note}
 If the molecule is not planar, the plane that this is perpendicular to is the plane that has the smallest average distance to every atom.
