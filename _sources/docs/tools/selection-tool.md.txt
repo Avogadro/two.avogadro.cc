@@ -70,7 +70,7 @@ Change Layer
 
   Putting parts of a molecule, or members of an ensemble, into different layers allows different visual settings to be applied to different elements within the same ["Molecule"](panes-molecules) (what Avogadro calls a file).
 
-  See [Layers](panes-layers) for more information on how to use them.
+  See [Layers](panes-layers-pane) for more information on how to use them.
 
 ## See Also
 

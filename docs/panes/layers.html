@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>&lt;no title&gt; &#8212; Avogadro 1.103.0 documentation</title>
+    <title>Layers Pane &#8212; Avogadro 1.103.0 documentation</title>
   
   
   
@@ -56,6 +56,8 @@
     <link rel="canonical" href="https://two.avogadro.cc/docs/panes/layers.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Molecules Pane" href="molecules.html" />
+    <link rel="prev" title="Display Options Pane" href="display-options.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -158,7 +160,7 @@
 </li>
 
 
-<li class="nav-item ">
+<li class="nav-item current active">
   <a class="nav-link nav-internal" href="../index.html">
     Guide
   </a>
@@ -323,7 +325,7 @@ document.write(`
 </li>
 
 
-<li class="nav-item ">
+<li class="nav-item current active">
   <a class="nav-link nav-internal" href="../index.html">
     Guide
   </a>
@@ -428,7 +430,28 @@ document.write(`
 <nav class="bd-docs-nav bd-links"
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
-  <div class="bd-toc-item navbar-nav"></div>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">User Documentation</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whats-new-in-avogadro-2/index.html">What’s New in Avogadro 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../building-molecules/index.html">Building Molecules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../menus/index.html">Menus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../display-types/index.html">Display Types</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Panes</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="current-tool.html">Current Tool Pane</a></li>
+<li class="toctree-l2"><a class="reference internal" href="display-types.html">Display Types Pane</a></li>
+<li class="toctree-l2"><a class="reference internal" href="display-options.html">Display Options Pane</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Layers Pane</a></li>
+<li class="toctree-l2"><a class="reference internal" href="molecules.html">Molecules Pane</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../optimizing-geometry/index.html">Optimizing Geometry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../settings/index.html">Settings</a></li>
+</ul>
+</div>
 </nav></div>
     </div>
   
@@ -464,7 +487,13 @@ document.write(`
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    <li class="breadcrumb-item active" aria-current="page">&lt;no title&gt;</li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Guide</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Panes</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Layers Pane</li>
   </ul>
 </nav>
 </div>
@@ -481,7 +510,29 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  
+  <section class="tex2jax_ignore mathjax_ignore" id="layers-pane">
+<span id="panes-layers-pane"></span><h1>Layers Pane<a class="headerlink" href="#layers-pane" title="Link to this heading">#</a></h1>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 2.0: </span>Layers are a new feature in version 2.0. In addition to customizing display
+options, they can be a useful way to organize complex systems. Some
+input generators can support layers for setting up QM / MM calculations,
+fragments, etc.</p>
+</div>
+<p>Layers allow you to configure the display and actions on different atoms,
+much like in graphical editing programs like Photoshop or Inkscape.</p>
+<p><img alt="Screenshot of the layers pane" src="../../_images/LayersPane.png" /></p>
+<p>In this example with two layers, several atoms were selected, then <code class="docutils literal notranslate"><span class="pre">Select</span></code> ⇒ <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">New</span> <span class="pre">Layer</span> <span class="pre">from</span> <span class="pre">Selection</span></code> to move those atoms into a second layer.</p>
+<p>Clicking on a particular layer, allows you to customize the <a class="reference internal" href="display-types.html#panes-display-types-pane"><span class="std std-ref">display types</span></a> and <a class="reference internal" href="display-options.html#panes-display-options-pane"><span class="std std-ref">options</span></a> for each layer independently.</p>
+<p>Clicking on the eye icon allows you to hide or show all atoms in a layer</p>
+<p>Clicking on the lock icon allows you to lock or unlock the atoms in that layer from editing or modification</p>
+<p>Examples include:</p>
+<ul class="simple">
+<li><p>Selecting water or other solvent molecules and moving them to a new layer to hide them or tune the display style to focus on the central molecule.</p></li>
+<li><p>Selecting a metal atom in a protein or organometallic complex to display with a van der Waals sphere</p></li>
+<li><p>Setting layers for a QM/QM or QM/MM multiscale calculation</p></li>
+</ul>
+</section>
+
 
                 </article>
               
@@ -492,6 +543,24 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="display-options.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Display Options Pane</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="molecules.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Molecules Pane</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -501,18 +570,6 @@ document.write(`
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
-
-  <div class="sidebar-secondary-item">
-<div
-    id="pst-page-navigation-heading-2"
-    class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> On this page
-  </div>
-  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
-    <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-  </nav></div>
 
   <div class="sidebar-secondary-item">
 
