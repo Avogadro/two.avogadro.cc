@@ -16,4 +16,5 @@ view-menu
 build-menu
 select-menu
 extensions-menu
+crystal-menu
 ```
