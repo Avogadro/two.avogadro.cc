@@ -9,13 +9,9 @@ The left panel in Avogadro displays several panes for controlling the view, laye
 caption: Panes
 ---
 
-view
 current-tool
 display-types
+display-options
 layers
 molecules
-properties
-molecular-orbitals
-vibrational-modes
-conformers
 ```
