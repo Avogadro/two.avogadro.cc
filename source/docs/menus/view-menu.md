@@ -32,9 +32,9 @@ An orthographic projection means all atoms are the same size, while a perspectiv
 Color Atoms
 : Change the color of the atoms by a property with one of the available colormaps, or by a custom color. By default, this colors atoms by their element. There are two sets of available colormaps for atoms, one set for charge that works on a blue-red motif, and another for color-by-index and color-by-distance that has a larger range of colors.
 
-:::{note}
-:class: dropdown
-:label: Available Colormaps
+:::{dropdown} Show Available Colormaps
+:color: info
+
 ![](../../_static/avogadro_charge_colors.svg)
 ![](../../_static/avogadro_colors.svg)
 :::
