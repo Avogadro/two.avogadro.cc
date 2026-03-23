@@ -50,4 +50,4 @@ One shrink is equivalent to **two** enlarges!
 :::
 
 Create New Layer from Selection
-: Separate the selected atoms into a new layer.
+: Separate the selected atoms into a new {ref}`layer <panes-layers-pane>`.

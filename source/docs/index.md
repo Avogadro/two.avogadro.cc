@@ -63,6 +63,7 @@ building-molecules/index
 tools/index
 menus/index
 display-types/index
+panes/index
 optimizing-geometry/index
 tutorials/index
 settings/index
