@@ -16,11 +16,13 @@ Molecule Orbitals
 :::{dropdown} Molecular Orbital Window
 :color: info
 :icon: image
+:open:
 
 ```{image} ../../_static/molecular_orbital_dialog.png
 :alt: Example of the molecular orbital window
 :align: center
 :width: 250px
+:class: dark-light
 ```
 :::
 
@@ -51,6 +53,7 @@ Molecular
 :alt: Example of the molecular properties dialog
 :align: center
 :width: 360px
+:class: dark-light
 ```
 :::
 
@@ -65,6 +68,7 @@ Atom Properties
 ```{image} ../../_static/atom_properties_dialog.png
 :alt: Example of the atom properties dialog
 :align: center
+:class: dark-light
 ```
 :::
 
@@ -79,6 +83,7 @@ Bond Properties
 ```{image} ../../_static/bond_properties_dialog.png
 :alt: Example of the Bond Properties Dialog
 :align: center
+:class: dark-light
 ```
 :::
 
@@ -94,6 +99,7 @@ Angle Properties
 :alt: Example of the Angle Properties Dialog
 :align: center
 :width: 360px
+:class: dark-light
 ```
 :::
 
@@ -109,6 +115,7 @@ Torsion Properties
 :alt: Example of the Torsion Properties Dialog
 :align: center
 :width: 250px
+:class: dark-light
 ```
 :::
 
@@ -127,6 +134,7 @@ Conformer Properties
 :alt: Example of the Conformer Properties Dialog
 :align: center
 :width: 250px
+:class: dark-light
 ```
 :::
 
@@ -146,6 +154,7 @@ The surfaces dialog has several useful tools for calculating and rendering vario
 :alt: Example of the surfaces dialog
 :align: center
 :width: 420px
+:class: dark-light
 ```
 :::
 
@@ -163,6 +172,7 @@ For any surface other than a molecular orbital, you can choose to color the surf
 ```{image} ../../_static/example_electron_density.png
 :alt: Example of the electron density of coronene colored by the electrostatic potential
 :align: center
+:class: dark-light
 ```
 
 :::{dropdown} Available Color Maps
@@ -185,6 +195,8 @@ The resolution option sets the spacing between volume elements in the rendered i
 :::{tab-item} Very Low
 ```{image} ../../_static/pyrazine_homo_verylow_res.png
 :alt: The HOMO of Pyrazine with the Very Low resolution setting.
+:align: center
+:class: dark-light
 ```
 :::
 
@@ -192,6 +204,7 @@ The resolution option sets the spacing between volume elements in the rendered i
 ```{image} ../../_static/pyrazine_homo_low_res.png
 :alt: The HOMO of Pyrazine with the Low resolution setting.
 :align: center
+:class: dark-light
 ```
 :::
 
@@ -200,6 +213,7 @@ The resolution option sets the spacing between volume elements in the rendered i
 ```{image} ../../_static/pyrazine_homo_medium_res.png
 :alt: The HOMO of Pyrazine with the Medium resolution setting.
 :align: center
+:class: dark-light
 ```
 :::
 
@@ -207,6 +221,7 @@ The resolution option sets the spacing between volume elements in the rendered i
 ```{image} ../../_static/pyrazine_homo_high_res.png
 :alt: The HOMO of Pyrazine with the High resolution setting.
 :align: center
+:class: dark-light
 ```
 :::
 
@@ -214,6 +229,7 @@ The resolution option sets the spacing between volume elements in the rendered i
 ```{image} ../../_static/pyrazine_homo_veryhigh_res.png
 :alt: The HOMO of Pyrazine with the Very High resolution setting.
 :align: center
+:class: dark-light
 ```
 :::
 
@@ -237,6 +253,7 @@ The smoothing option, as the name implies, affects how visually smooth the surfa
 ```{image} ../../_static/pyrazine_van_der_waals_light_smoothing.png
 :alt: Van der Waals surface of pyrazine with light smoothing
 :align: center
+:class: dark-light
 ```
 :::
 
@@ -245,6 +262,7 @@ The smoothing option, as the name implies, affects how visually smooth the surfa
 ```{image} ../../_static/pyrazine_van_der_waals_medium_smoothing.png
 :alt: Van der Waals surface of pyrazine with Medium smoothing
 :align: center
+:class: dark-light
 ```
 :::
 
@@ -252,6 +270,7 @@ The smoothing option, as the name implies, affects how visually smooth the surfa
 ```{image} ../../_static/pyrazine_van_der_waals_strong_smoothing.png
 :alt: Van der Waals surface of pyrazine with Strong smoothing
 :align: center
+:class: dark-light
 ```
 :::
 

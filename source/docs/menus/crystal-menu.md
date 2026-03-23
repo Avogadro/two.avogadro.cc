@@ -67,6 +67,7 @@ The unit cell editor is used for manipulating the unit cell.
 :alt: Cell parameters for Palladium
 :align: center
 :width: 360px
+:class: dark-light
 ```
 :::
 
@@ -104,12 +105,14 @@ As a visual demonstration of this, consider a the conventional unit cell of Pall
 ```{image} ../../_static/pd_filled.png
 :alt: Filled palladium unit cell
 :align: center
+:class: dark-light
 ```
 
 ```{image} ../../_static/pd_cell_parameters.png
 :alt: Cell parameters for Palladium
 :align: center
 :width: 360px
+:class: dark-light
 ```
 
 Applying transformations to the atoms on the corners of the unit cell (highlighted in blue here)
@@ -117,6 +120,7 @@ Applying transformations to the atoms on the corners of the unit cell (highlight
 ```{image} ../../_static/pd_filled_highlighted_corners.png
 :alt: Filled palladium unit cell with the corner atoms highlighted
 :align: center
+:class: dark-light
 ```
 
 The coordinates of these atoms are (in no particular order),
@@ -157,6 +161,7 @@ Now moving on to the face atoms, again highlighted in the image below.
 ```{image} ../../_static/pd_filled_highlighted_faces.png
 :alt: Filled unit cell of palladium with the atoms on the faces highlighted
 :align: center
+:class: dark-light
 ```
 
 
@@ -188,6 +193,7 @@ Thus, we know that the *translational unit cell* contains only atoms 1, 9, 10, a
 ```{image} ../../_static/pd_translation_cell.png
 :alt: Translational unit cell of palladium
 :align: center
+:class: dark-light
 ```
 
 (space-group-menu)=
@@ -214,6 +220,7 @@ Conventionalize Cell
 ```{image} ../../_static/pd_conventional_cell.png
 :alt: Conventional unit cell of palladium
 :align: center
+:class: dark-light
 ```
 :::
 
@@ -221,6 +228,7 @@ Conventionalize Cell
 ```{image} ../../_static/pd_primitive_cell.png
 :alt: Primitive unit cell of palladium
 :align: center
+:class: dark-light
 ```
 :::
 

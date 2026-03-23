@@ -36,8 +36,14 @@ Color Atoms
 :color: info
 :icon: image
 
-![](../../_static/avogadro_charge_colors.svg)
-![](../../_static/avogadro_colors.svg)
+```{image} ../../_static/avogadro_charge_colors.svg
+:alt: Colormaps available when coloring by charge.
+:align: center
+```
+```{image} ../../_static/avogadro_colors.svg
+:alt: Colormaps available when coloring by index or by distance
+:align: center
+```
 :::
 
 Color Residues
