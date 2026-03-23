@@ -182,6 +182,12 @@ For any surface other than a molecular orbital, you can choose to color the surf
 ```{image} ../../_static/avogadro_charge_colors.svg
 :alt: The color maps available for coloring by electrostatic potential
 :align: center
+:class: only-light
+```
+```{image} ../../_static/avogadro_charge_colors_darkmode.svg
+:alt: The color maps available for coloring by electrostatic potential
+:align: center
+:class: only-dark
 ```
 :::
 ::::
