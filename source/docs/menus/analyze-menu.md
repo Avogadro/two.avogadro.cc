@@ -16,7 +16,6 @@ Molecule Orbitals
 :::{dropdown} Molecular Orbital Window
 :color: info
 :icon: image
-:open:
 
 ```{image} ../../_static/molecular_orbital_dialog.png
 :alt: Example of the molecular orbital window
@@ -48,7 +47,7 @@ Molecular
 :::{dropdown} Molecular Properties Dialog
 :color: info
 :icon: image
-:open:
+
 ```{image} ../../_static/molecular_properties_dialog.png
 :alt: Example of the molecular properties dialog
 :align: center
@@ -63,7 +62,6 @@ Atom Properties
 :::{dropdown} Atom Properties Dialog
 :color: info
 :icon: image
-:open:
 
 ```{image} ../../_static/atom_properties_dialog.png
 :alt: Example of the atom properties dialog
@@ -75,10 +73,9 @@ Atom Properties
 Bond Properties
 : Open a dialog containing bonding information.
 
-:::{dropdown} Bond Properties
+:::{dropdown} Bond Properties Dialog
 :color: info
 :icon: image
-:open:
 
 ```{image} ../../_static/bond_properties_dialog.png
 :alt: Example of the Bond Properties Dialog
@@ -90,10 +87,9 @@ Bond Properties
 Angle Properties
 : Open a dialog containing information about the angles formed by atoms.
 
-:::{dropdown} Example Dialog
+:::{dropdown} Angle Properties Dialog
 :color: info
 :icon: image
-:open:
 
 ```{image} ../../_static/angle_properties_dialog.png
 :alt: Example of the Angle Properties Dialog
@@ -109,7 +105,6 @@ Torsion Properties
 :::{dropdown} Torsion Properties
 :color: info
 :icon: image
-:open:
 
 ```{image} ../../_static/torsion_properties_dialog.png
 :alt: Example of the Torsion Properties Dialog
@@ -125,10 +120,9 @@ Residue Properties
 Conformer Properties
 : Open a dialog containing information about any conformers present in the document.
 
-:::{dropdown} Example Dialog
+:::{dropdown} Conformer Properties Dialog
 :color: info
 :icon: image
-:open:
 
 ```{image} ../../_static/conformer_properties_dialog.png
 :alt: Example of the Conformer Properties Dialog
@@ -146,17 +140,12 @@ Symmetry
 
 The surfaces dialog has several useful tools for calculating and rendering various types of surfaces.
 
-:::{dropdown} Example Surfaces Dialog
-:color: info
-:icon: image
-:open:
-```{image} ../../_static/surfaces_dialog.png
+```{figure} ../../_static/surfaces_dialog.png
 :alt: Example of the surfaces dialog
 :align: center
 :width: 420px
 :class: dark-light
 ```
-:::
 
 ### Surface Types and Coloring
 
@@ -169,7 +158,7 @@ For any surface other than a molecular orbital, you can choose to color the surf
 :icon: image
 :open:
 
-```{image} ../../_static/example_electron_density.png
+```{figure} ../../_static/example_electron_density.png
 :alt: Example of the electron density of coronene colored by the electrostatic potential
 :align: center
 :class: dark-light

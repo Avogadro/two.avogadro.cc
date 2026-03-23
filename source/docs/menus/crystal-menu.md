@@ -11,7 +11,7 @@ Add Unit Cell
 : Add a unit cell to the current document and open the [Unit Cell Editor](unit-cell-editor). (only if there is not a unit cell)
 
 :::{note}
-The remaining options are only available if the document has a unit cell.
+The following options are only available if the document has a unit cell.
 :::
 
 Remove Unit Cell
@@ -59,17 +59,13 @@ Plot Pair Distribution Function
 ## Unit Cell Editor
 
 The unit cell editor is used for manipulating the unit cell.
-:::{dropdown} Unit Cell Editor
-:color: info
-:icon: image
-:open:
-```{image} ../../_static/pd_cell_parameters.png
+
+```{figure} ../../_static/pd_cell_parameters.png
 :alt: Cell parameters for Palladium
 :align: center
 :width: 360px
 :class: dark-light
 ```
-:::
 
 At the top of the unit cell editor are the lattice parameters $A$, $B$, $C$, $\alpha$, $\beta$, and $\gamma$. These either used to calculate the cell matrix, or can be calculated from the cell matrix. Below this is the cell matrix, which contains the three 3D lattice vectors, $\textbf{a}_i = (a^x_i, a^y_i, a^z_i)$ that make up the cell matrix (denoted here as $\mathbb{A}$). Below the cell matrix is the fractional matrix, which is the inverse of the unit cell matrix (denoted $\mathbb{A}^{-1}$). Together, the product of these matrices yields the identity matrix ($\mathbb{I}$),
 ```{math}
@@ -102,22 +98,28 @@ The individual lattice vectors $\textbf{a}_i = (a^x_i, a^y_i, a^z_i)$, or their 
 
 As a visual demonstration of this, consider a the conventional unit cell of Palladium, which has a Face-Centered Cubic crystal structure. Below we show the unit cell produced with the `Fill Unit Cell` command and the unit cell matrix ($\mathbb{A}$ from above):
 
+::::{tab-set}
+:::{tab-item} Unit Cell
 ```{image} ../../_static/pd_filled.png
 :alt: Filled palladium unit cell
 :align: center
+:height: 360px
 :class: dark-light
 ```
-
+:::
+:::{tab-item} Cell Matrix
 ```{image} ../../_static/pd_cell_parameters.png
 :alt: Cell parameters for Palladium
 :align: center
-:width: 360px
+:height: 360px
 :class: dark-light
 ```
+:::
+::::
 
 Applying transformations to the atoms on the corners of the unit cell (highlighted in blue here)
 
-```{image} ../../_static/pd_filled_highlighted_corners.png
+```{figure} ../../_static/pd_filled_highlighted_corners.png
 :alt: Filled palladium unit cell with the corner atoms highlighted
 :align: center
 :class: dark-light
@@ -158,7 +160,7 @@ The remaining corner atoms are a simple extension of this, but with multiple tra
 
 Now moving on to the face atoms, again highlighted in the image below.
 
-```{image} ../../_static/pd_filled_highlighted_faces.png
+```{figure} ../../_static/pd_filled_highlighted_faces.png
 :alt: Filled unit cell of palladium with the atoms on the faces highlighted
 :align: center
 :class: dark-light
@@ -190,7 +192,7 @@ As such, we know that some of these atoms will need to remain in the *translatio
 
 Thus, we know that the *translational unit cell* contains only atoms 1, 9, 10, and 11. Using Avogadro 2's `Fill Translation Cell` command, we see that this is the exact unit cell that we get:
 
-```{image} ../../_static/pd_translation_cell.png
+```{figure} ../../_static/pd_translation_cell.png
 :alt: Translational unit cell of palladium
 :align: center
 :class: dark-light
