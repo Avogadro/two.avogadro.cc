@@ -60,10 +60,10 @@ Plot Pair Distribution Function
 
 The unit cell editor is used for manipulating the unit cell.
 
-```{figure} ../../_static/pd_cell_parameters.png
+```{figure} /_static/menus/crystal-menu/pd_unit_cell_editor.png
 :alt: Cell parameters for Palladium
 :align: center
-:width: 360px
+:height: 300px
 :class: dark-light
 ```
 
@@ -100,18 +100,24 @@ As a visual demonstration of this, consider a the conventional unit cell of Pall
 
 ::::{tab-set}
 :::{tab-item} Unit Cell
-```{image} ../../_static/pd_filled.png
+```{image} /_static/menus/crystal-menu/pd_conventional_cell_dark.png
 :alt: Filled palladium unit cell
 :align: center
-:height: 360px
-:class: dark-light
+:height: 300px
+:class: only-dark
+```
+```{image} /_static/menus/crystal-menu/pd_conventional_cell_light.png
+:alt: Filled palladium unit cell
+:align: center
+:height: 300px
+:class: only-light
 ```
 :::
 :::{tab-item} Cell Matrix
-```{image} ../../_static/pd_cell_parameters.png
+```{image} /_static/menus/crystal-menu/pd_unit_cell_editor.png
 :alt: Cell parameters for Palladium
 :align: center
-:height: 360px
+:height: 300px
 :class: dark-light
 ```
 :::
@@ -119,10 +125,17 @@ As a visual demonstration of this, consider a the conventional unit cell of Pall
 
 Applying transformations to the atoms on the corners of the unit cell (highlighted in blue here)
 
-```{figure} ../../_static/pd_filled_highlighted_corners.png
+```{figure} /_static/menus/crystal-menu/pd_filled_highlighted_corners_dark.png
 :alt: Filled palladium unit cell with the corner atoms highlighted
 :align: center
-:class: dark-light
+:height: 300px
+:class: only-dark
+```
+```{figure} /_static/menus/crystal-menu/pd_filled_highlighted_corners_light.png
+:alt: Filled palladium unit cell with the corner atoms highlighted
+:align: center
+:height: 300px
+:class: only-light
 ```
 
 The coordinates of these atoms are (in no particular order),
@@ -160,10 +173,17 @@ The remaining corner atoms are a simple extension of this, but with multiple tra
 
 Now moving on to the face atoms, again highlighted in the image below.
 
-```{figure} ../../_static/pd_filled_highlighted_faces.png
+```{figure} /_static/menus/crystal-menu/pd_filled_highlighted_faces_dark.png
 :alt: Filled unit cell of palladium with the atoms on the faces highlighted
 :align: center
-:class: dark-light
+:height: 300px
+:class: only-dark
+```
+```{figure} /_static/menus/crystal-menu/pd_filled_highlighted_faces_light.png
+:alt: Filled unit cell of palladium with the atoms on the faces highlighted
+:align: center
+:height: 300px
+:class: only-light
 ```
 
 
@@ -192,10 +212,17 @@ As such, we know that some of these atoms will need to remain in the *translatio
 
 Thus, we know that the *translational unit cell* contains only atoms 1, 9, 10, and 11. Using Avogadro 2's `Fill Translation Cell` command, we see that this is the exact unit cell that we get:
 
-```{figure} ../../_static/pd_translation_cell.png
+```{figure} /_static/menus/crystal-menu/pd_translation_cell_dark.png
 :alt: Translational unit cell of palladium
 :align: center
-:class: dark-light
+:height: 300px
+:class: only-dark
+```
+```{figure} /_static/menus/crystal-menu/pd_translation_cell_light.png
+:alt: Translational unit cell of palladium
+:align: center
+:height: 300px
+:class: only-light
 ```
 
 (space-group-menu)=
@@ -219,18 +246,32 @@ Conventionalize Cell
 ::::{tab-set}
 
 :::{tab-item} Conventional Unit Cell
-```{image} ../../_static/pd_conventional_cell.png
+```{image} /_static/menus/crystal-menu/pd_conventional_cell_dark.png
 :alt: Conventional unit cell of palladium
 :align: center
-:class: dark-light
+:height: 300px
+:class: only-dark
+```
+```{image} /_static/menus/crystal-menu/pd_conventional_cell_light.png
+:alt: Conventional unit cell of palladium
+:align: center
+:height: 300px
+:class: only-light
 ```
 :::
 
 :::{tab-item} Primitive Unit Cell
-```{image} ../../_static/pd_primitive_cell.png
+```{image} /_static/menus/crystal-menu/pd_primitive_cell_dark.png
 :alt: Primitive unit cell of palladium
 :align: center
-:class: dark-light
+:height: 300px
+:class: only-dark
+```
+```{image} /_static/menus/crystal-menu/pd_primitive_cell_light.png
+:alt: Primitive unit cell of palladium
+:align: center
+:height: 300px
+:class: only-light
 ```
 :::
 
