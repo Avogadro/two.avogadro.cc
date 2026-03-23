@@ -31,7 +31,7 @@ Vibrational Modes
 : Open a window with vibrational modes from a quantum chemistry program.
 
 Plot Conformer Data
-: @ghutchis
+: Create plots of the conformers in the current document.
 
 Plot Spectra
 : Plot electronic and vibrational spectra (IR, NMR, etc.)
@@ -149,6 +149,8 @@ The surfaces dialog has several useful tools for calculating and rendering vario
 ```
 :::
 
+### Surface Types and Coloring
+
 You can choose to render several surfaces from the first dropdown, including a Van der Waals surface, solvent accessible and solvent excluded surfaces, molecular orbitals, and electron density. The latter two require an output from a quantum calculation.
 
 For any surface other than a molecular orbital, you can choose to color the surface by the electrostatic potential, and select from several color maps.
@@ -173,6 +175,8 @@ For any surface other than a molecular orbital, you can choose to color the surf
 ```
 :::
 ::::
+
+### Resolution
 
 The resolution option sets the spacing between volume elements in the rendered image.
 
@@ -219,4 +223,36 @@ The resolution option sets the spacing between volume elements in the rendered i
 While a higher volume may be desirable, keep in mind that the time to compute the surface scales cubically!
 :::
 
+### Isosurface Value
 
+The Isosurface value determines the cutoff distance for the surface by dictating the lowest value of the volume scalars to display. There is not an accepted set of isosurface values that should be used in papers, however it is recommended to stick to 0.01-0.10, and it is strongly encouraged to report your isosurface values if you include a surface in a figure.
+
+### Smoothing
+
+The smoothing option, as the name implies, affects how visually smooth the surface is. In general, this has a more pronounced effect on the Van der Waals and Solvent Accessible/Excluded surfaces. Unlike the resolution, the smoothing value has a significantly smaller effect on compute time.
+
+::::{tab-set}
+
+:::{tab-item} Light
+```{image} ../../_static/pyrazine_van_der_waals_light_smoothing.png
+:alt: Van der Waals surface of pyrazine with light smoothing
+:align: center
+```
+:::
+
+:::{tab-item} Medium
+:selected:
+```{image} ../../_static/pyrazine_van_der_waals_medium_smoothing.png
+:alt: Van der Waals surface of pyrazine with Medium smoothing
+:align: center
+```
+:::
+
+:::{tab-item} Strong
+```{image} ../../_static/pyrazine_van_der_waals_strong_smoothing.png
+:alt: Van der Waals surface of pyrazine with Strong smoothing
+:align: center
+```
+:::
+
+::::=
