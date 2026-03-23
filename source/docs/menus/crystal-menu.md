@@ -30,7 +30,7 @@ Wrap Atoms to Unit Cell
 : Take all atoms outside the unit cell and translate them into their equivalent position inside the unit cell.
 
 Rotate to Standard Orientation
-: TODO
+: Rotate the unit cell such that the cell matrix is in Hermite Normal Form.
 
 Scale Cell Volume
 : Apply a uniform scaling to the unit cell, and optionally translate the atoms as well.
@@ -59,7 +59,16 @@ Plot Pair Distribution Function
 ## Unit Cell Editor
 
 The unit cell editor is used for manipulating the unit cell.
-![](../../_static/pd_cell_parameters.png)
+:::{dropdown} Unit Cell Editor
+:color: info
+:icon: image
+:open:
+```{image} ../../_static/pd_cell_parameters.png
+:alt: Cell parameters for Palladium
+:align: center
+:width: 360px
+```
+:::
 
 At the top of the unit cell editor are the lattice parameters $A$, $B$, $C$, $\alpha$, $\beta$, and $\gamma$. These either used to calculate the cell matrix, or can be calculated from the cell matrix. Below this is the cell matrix, which contains the three 3D lattice vectors, $\textbf{a}_i = (a^x_i, a^y_i, a^z_i)$ that make up the cell matrix (denoted here as $\mathbb{A}$). Below the cell matrix is the fractional matrix, which is the inverse of the unit cell matrix (denoted $\mathbb{A}^{-1}$). Together, the product of these matrices yields the identity matrix ($\mathbb{I}$),
 ```{math}
@@ -91,11 +100,24 @@ a^x_3 & a^y_3 & a^z_3
 The individual lattice vectors $\textbf{a}_i = (a^x_i, a^y_i, a^z_i)$, or their integer multiples (e.g. $1\times\textbf{a}_i$, $-1\times\textbf{a}_i$, $2\times\textbf{a}_i$, $-2\times\textbf{a}_i$, etc.), can be used to *translate* or *slide* atoms around in space. To find the *translationally equivalent* atoms in a unit cell, you can take all of the atoms in the cell, apply positive (+) or negative (-) translations (possibly with an integer multiplier) with the lattice vectors, and then remove all of the atoms which are related by that translation.
 
 As a visual demonstration of this, consider a the conventional unit cell of Palladium, which has a Face-Centered Cubic crystal structure. Below we show the unit cell produced with the `Fill Unit Cell` command and the unit cell matrix ($\mathbb{A}$ from above):
-![](../../_static/pd_filled.png)
-![](../../_static/pd_cell_parameters.png)
+
+```{image} ../../_static/pd_filled.png
+:alt: Filled palladium unit cell
+:align: center
+```
+
+```{image} ../../_static/pd_cell_parameters.png
+:alt: Cell parameters for Palladium
+:align: center
+:width: 360px
+```
 
 Applying transformations to the atoms on the corners of the unit cell (highlighted in blue here)
-![](../../_static/pd_filled_highlighted_corners.png)
+
+```{image} ../../_static/pd_filled_highlighted_corners.png
+:alt: Filled palladium unit cell with the corner atoms highlighted
+:align: center
+```
 
 The coordinates of these atoms are (in no particular order),
 | Atom Number | X Pos. (Å) | Y Pos. (Å) | Z Pos. (Å) |
@@ -131,7 +153,12 @@ The remaining corner atoms are a simple extension of this, but with multiple tra
 ```
 
 Now moving on to the face atoms, again highlighted in the image below.
-![](../../_static/pd_filled_highlighted_faces.png)
+
+```{image} ../../_static/pd_filled_highlighted_faces.png
+:alt: Filled unit cell of palladium with the atoms on the faces highlighted
+:align: center
+```
+
 
 Their coordinates are listed below (with numbering starting from 9 to avoid confusion with the corner atoms):
 | Atom Number | X Pos. (Å) | Y Pos. (Å) | Z Pos. (Å) |
@@ -157,9 +184,55 @@ As such, we know that some of these atoms will need to remain in the *translatio
 ```
 
 Thus, we know that the *translational unit cell* contains only atoms 1, 9, 10, and 11. Using Avogadro 2's `Fill Translation Cell` command, we see that this is the exact unit cell that we get:
-![](../../_static/pd_translation_cell.png)
+
+```{image} ../../_static/pd_translation_cell.png
+:alt: Translational unit cell of palladium
+:align: center
+```
 
 (space-group-menu)=
 ## Space Group Menu
 
+The Space Group dropdown supplies tools for interacting with the [Space Group Library (Spglib)](https://spglib.readthedocs.io/en/stable/index.html) through Avogadro 2.
 
+Perceive Space Group
+: Determine the space group of the current crystal structure.
+
+Reduce to Primitive
+: Reduce the current unit cell to the primitive unit cell.
+
+Conventionalize Cell
+: Take a primitive unit cell and turn it into its conventional form.
+
+:::::{dropdown} Primitive vs. Conventional Cell
+:color: info
+:icon: image
+
+::::{tab-set}
+
+:::{tab-item} Conventional Unit Cell
+```{image} ../../_static/pd_conventional_cell.png
+:alt: Conventional unit cell of palladium
+:align: center
+```
+:::
+
+:::{tab-item} Primitive Unit Cell
+```{image} ../../_static/pd_primitive_cell.png
+:alt: Primitive unit cell of palladium
+:align: center
+```
+:::
+
+::::
+
+:::::
+
+Symmetrize
+: Take a cell that is not perfectly symmetric, reduce it to its primitive form, and idealize it.
+
+Reduce to Asymmetric Unit
+: Reduce the unit cell to all atoms which can not be represented by the point group's symmetry operations.
+
+Set Tolerance
+: Set the default tolerance for the other operations in the menu.
