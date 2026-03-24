@@ -4,7 +4,14 @@
 
 The input menu is where you can find various input generators, either provided by Avogadro or downloaded in the [Extensions Menu](menus-extensions-menu).
 
-By default, Avogadro comes packaged with several input generators.
+By default, Avogadro comes packaged with several input generators, which you should be able to see in the input menu as long as you have properly configured Python.
+
+```{figure} /_static/menus/input-menu/input_dropdown.png
+:alt: Image of the input menu
+:align: center
+:height: 400px
+:class: dark-light
+```
 
 APBS
 : The [Adaptive Poisson-Boltzmann Solver](https://www.poissonboltzmann.org/) software.
@@ -41,6 +48,22 @@ NWChem
 
 ORCA
 : The [ORCA](https://www.faccts.de/orca/) program.
+
+:::{dropdown} ORCA Input Generator
+:color: info
+:icon: image
+
+```{image} /_static/menus/input-menu/orca_input_generator_light.png
+:alt: Example image of the ORCA input generator
+:align: center
+:class: only-light
+```
+```{image} /_static/menus/input-menu/orca_input_generator_dark.png
+:alt: Example image of the ORCA input generator
+:align: center
+:class: only-dark
+```
+:::
 
 Psi
 : The [Psi4](https://psicode.org/) program.
