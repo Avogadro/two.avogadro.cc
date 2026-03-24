@@ -116,7 +116,19 @@ Torsion Properties
 :::
 
 Residue Properties
-: @ghutchis
+: Open a dialog containing information about any amino acid residues.
+
+:::{dropdown} Residue Properties
+:color: info
+:icon: image
+
+```{image} /_static/menus/analyze-menu/residue_properties_dialog.png
+:alt: Example of the Residue Properties Dialog
+:align: center
+:width: 90%
+:class: dark-light
+```
+:::
 
 Conformer Properties
 : Open a dialog containing information about any conformers present in the document.
@@ -128,7 +140,7 @@ Conformer Properties
 ```{image} /_static/menus/analyze-menu/conformer_properties_dialog.png
 :alt: Example of the Conformer Properties Dialog
 :align: center
-:width: 250px
+:width: 45%
 :class: dark-light
 ```
 :::
