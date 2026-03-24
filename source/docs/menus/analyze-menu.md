@@ -17,10 +17,10 @@ Molecule Orbitals
 :color: info
 :icon: image
 
-```{image} ../../_static/molecular_orbital_dialog.png
+```{image} /_static/menus/analyze-menu/molecular_orbital_window.png
 :alt: Example of the molecular orbital window
 :align: center
-:width: 250px
+:width: 360px
 :class: dark-light
 ```
 :::
@@ -48,10 +48,10 @@ Molecular
 :color: info
 :icon: image
 
-```{image} ../../_static/molecular_properties_dialog.png
+```{image} /_static/menus/analyze-menu/molecular_properties_dialog.png
 :alt: Example of the molecular properties dialog
 :align: center
-:width: 360px
+:width: 60%
 :class: dark-light
 ```
 :::
@@ -63,7 +63,7 @@ Atom Properties
 :color: info
 :icon: image
 
-```{image} ../../_static/atom_properties_dialog.png
+```{image} /_static/menus/analyze-menu/atom_properties_dialog.png
 :alt: Example of the atom properties dialog
 :align: center
 :class: dark-light
@@ -77,9 +77,10 @@ Bond Properties
 :color: info
 :icon: image
 
-```{image} ../../_static/bond_properties_dialog.png
+```{image} /_static/menus/analyze-menu/bond_properties_dialog.png
 :alt: Example of the Bond Properties Dialog
 :align: center
+:width: 90%
 :class: dark-light
 ```
 :::
@@ -91,10 +92,10 @@ Angle Properties
 :color: info
 :icon: image
 
-```{image} ../../_static/angle_properties_dialog.png
+```{image} /_static/menus/analyze-menu/angle_properties_dialog.png
 :alt: Example of the Angle Properties Dialog
 :align: center
-:width: 360px
+:width: 65%
 :class: dark-light
 ```
 :::
@@ -106,10 +107,10 @@ Torsion Properties
 :color: info
 :icon: image
 
-```{image} ../../_static/torsion_properties_dialog.png
+```{image} /_static/menus/analyze-menu/torsion_properties_dialog.png
 :alt: Example of the Torsion Properties Dialog
 :align: center
-:width: 250px
+:width: 75%
 :class: dark-light
 ```
 :::
@@ -124,7 +125,7 @@ Conformer Properties
 :color: info
 :icon: image
 
-```{image} ../../_static/conformer_properties_dialog.png
+```{image} /_static/menus/analyze-menu/conformer_properties_dialog.png
 :alt: Example of the Conformer Properties Dialog
 :align: center
 :width: 250px
@@ -140,7 +141,7 @@ Symmetry
 
 The surfaces dialog has several useful tools for calculating and rendering various types of surfaces.
 
-```{figure} ../../_static/surfaces_dialog.png
+```{figure} /_static/menus/analyze-menu/surfaces_dialog.png
 :alt: Example of the surfaces dialog
 :align: center
 :width: 420px
@@ -153,33 +154,34 @@ You can choose to render several surfaces from the first dropdown, including a V
 
 For any surface other than a molecular orbital, you can choose to color the surface by the electrostatic potential, and select from several color maps.
 
-::::{dropdown} Electron Density colored by Electrostatic Potential
-:color: info
-:icon: image
-:open:
-
-```{figure} ../../_static/example_electron_density.png
+```{figure} /_static/menus/analyze-menu/coronene_colored_density_dark.png
 :alt: Example of the electron density of coronene colored by the electrostatic potential
 :align: center
-:class: dark-light
+:class: only-dark
+:height: 300px
+```
+```{figure} /_static/menus/analyze-menu/coronene_colored_density_light.png
+:alt: Example of the electron density of coronene colored by the electrostatic potential
+:align: center
+:class: only-light
+:height: 300px
 ```
 
 :::{dropdown} Available Color Maps
 :color: info
 :icon: image
 
-```{image} ../../_static/avogadro_charge_colors.svg
+```{image} /_static/avogadro_charge_colors.svg
 :alt: The color maps available for coloring by electrostatic potential
 :align: center
 :class: only-light
 ```
-```{image} ../../_static/avogadro_charge_colors_darkmode.svg
+```{image} /_static/avogadro_charge_colors_darkmode.svg
 :alt: The color maps available for coloring by electrostatic potential
 :align: center
 :class: only-dark
 ```
 :::
-::::
 
 ### Resolution
 
@@ -188,50 +190,85 @@ The resolution option sets the spacing between volume elements in the rendered i
 ::::{tab-set}
 
 :::{tab-item} Very Low
-```{image} ../../_static/pyrazine_homo_verylow_res.png
+```{image} /_static/menus/analyze-menu/pyrazine_homo_verylow_res_light.png
 :alt: The HOMO of Pyrazine with the Very Low resolution setting.
 :align: center
-:class: dark-light
+:height: 300px
+:class: only-light
+```
+```{image} /_static/menus/analyze-menu/pyrazine_homo_verylow_res_dark.png
+:alt: The HOMO of Pyrazine with the Very Low resolution setting.
+:align: center
+:height: 300px
+:class: only-dark
 ```
 :::
 
 :::{tab-item} Low
-```{image} ../../_static/pyrazine_homo_low_res.png
+```{image} /_static/menus/analyze-menu/pyrazine_homo_low_res_light.png
 :alt: The HOMO of Pyrazine with the Low resolution setting.
 :align: center
-:class: dark-light
+:height: 300px
+:class: only-light
+```
+```{image} /_static/menus/analyze-menu/pyrazine_homo_low_res_dark.png
+:alt: The HOMO of Pyrazine with the Low resolution setting.
+:align: center
+:height: 300px
+:class: only-dark
 ```
 :::
 
 :::{tab-item} Medium
 :selected:
-```{image} ../../_static/pyrazine_homo_medium_res.png
+```{image} /_static/menus/analyze-menu/pyrazine_homo_medium_res_light.png
 :alt: The HOMO of Pyrazine with the Medium resolution setting.
 :align: center
-:class: dark-light
+:height: 300px
+:class: only-light
+```
+```{image} /_static/menus/analyze-menu/pyrazine_homo_medium_res_dark.png
+:alt: The HOMO of Pyrazine with the Medium resolution setting.
+:align: center
+:height: 300px
+:class: only-dark
 ```
 :::
 
 :::{tab-item} High
-```{image} ../../_static/pyrazine_homo_high_res.png
+```{image} /_static/menus/analyze-menu/pyrazine_homo_high_res_light.png
 :alt: The HOMO of Pyrazine with the High resolution setting.
 :align: center
-:class: dark-light
+:height: 300px
+:class: only-light
+```
+```{image} /_static/menus/analyze-menu/pyrazine_homo_high_res_dark.png
+:alt: The HOMO of Pyrazine with the High resolution setting.
+:align: center
+:height: 300px
+:class: only-dark
 ```
 :::
 
 :::{tab-item} Very High
-```{image} ../../_static/pyrazine_homo_veryhigh_res.png
+```{image} /_static/menus/analyze-menu/pyrazine_homo_veryhigh_res_light.png
 :alt: The HOMO of Pyrazine with the Very High resolution setting.
 :align: center
-:class: dark-light
+:height: 300px
+:class: only-light
+```
+```{image} /_static/menus/analyze-menu/pyrazine_homo_veryhigh_res_dark.png
+:alt: The HOMO of Pyrazine with the Very High resolution setting.
+:align: center
+:height: 300px
+:class: only-dark
 ```
 :::
 
 ::::
 
 :::{hint}
-While a higher volume may be desirable, keep in mind that the time to compute the surface scales cubically!
+While a higher resolution may be desirable, keep in mind that the time to compute the surface scales cubically!
 :::
 
 ### Isosurface Value
@@ -244,28 +281,79 @@ The smoothing option, as the name implies, affects how visually smooth the surfa
 
 ::::{tab-set}
 
-:::{tab-item} Light
-```{image} ../../_static/pyrazine_van_der_waals_light_smoothing.png
-:alt: Van der Waals surface of pyrazine with light smoothing
+:::{tab-item} Light (1)
+```{image} /_static/menus/analyze-menu/pyrazine_vdw_light_smoothing_light.png
+:alt: Van der Waals surface of pyrazine with Light (Level 1) smoothing
 :align: center
-:class: dark-light
+:height: 300px
+:class: only-light
+```
+```{image} /_static/menus/analyze-menu/pyrazine_vdw_light_smoothing_dark.png
+:alt: Van der Waals surface of pyrazine with Light (Level 1) smoothing
+:align: center
+:height: 300px
+:class: only-dark
 ```
 :::
 
-:::{tab-item} Medium
+:::{tab-item} Level 3
+```{image} /_static/menus/analyze-menu/pyrazine_vdw_3_smoothing_light.png
+:alt: Van der Waals surface of pyrazine with Level 3 smoothing
+:align: center
+:height: 300px
+:class: only-light
+```
+```{image} /_static/menus/analyze-menu/pyrazine_vdw_3_smoothing_dark.png
+:alt: Van der Waals surface of pyrazine with Level 3 smoothing
+:align: center
+:height: 300px
+:class: only-dark
+```
+:::
+
+:::{tab-item} Medium (5)
 :selected:
-```{image} ../../_static/pyrazine_van_der_waals_medium_smoothing.png
-:alt: Van der Waals surface of pyrazine with Medium smoothing
+```{image} /_static/menus/analyze-menu/pyrazine_vdw_medium_smoothing_light.png
+:alt: Van der Waals surface of pyrazine with Medium (Level 5) smoothing
 :align: center
-:class: dark-light
+:height: 300px
+:class: only-light
+```
+```{image} /_static/menus/analyze-menu/pyrazine_vdw_medium_smoothing_dark.png
+:alt: Van der Waals surface of pyrazine with Medium (Level 5) smoothing
+:align: center
+:height: 300px
+:class: only-dark
 ```
 :::
 
-:::{tab-item} Strong
-```{image} ../../_static/pyrazine_van_der_waals_strong_smoothing.png
-:alt: Van der Waals surface of pyrazine with Strong smoothing
+:::{tab-item} Level 7
+```{image} /_static/menus/analyze-menu/pyrazine_vdw_7_smoothing_light.png
+:alt: Van der Waals surface of pyrazine with Level 7 smoothing
 :align: center
-:class: dark-light
+:height: 300px
+:class: only-light
+```
+```{image} /_static/menus/analyze-menu/pyrazine_vdw_7_smoothing_dark.png
+:alt: Van der Waals surface of pyrazine with Level 7 smoothing
+:align: center
+:height: 300px
+:class: only-dark
+```
+:::
+
+:::{tab-item} Strong (9)
+```{image} /_static/menus/analyze-menu/pyrazine_vdw_strong_smoothing_light.png
+:alt: Van der Waals surface of pyrazine with Strong (Level 9) smoothing
+:align: center
+:height: 300px
+:class: only-light
+```
+```{image} /_static/menus/analyze-menu/pyrazine_vdw_strong_smoothing_dark.png
+:alt: Van der Waals surface of pyrazine with Strong (Level 9) smoothing
+:align: center
+:height: 300px
+:class: only-dark
 ```
 :::
 
