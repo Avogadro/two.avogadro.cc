@@ -148,6 +148,18 @@ Conformer Properties
 Symmetry
 : Open the symmetry dialog, where you can access information about the molecule's point group, visualize symmetry operations, and identify symmetry-equivalent atoms.
 
+:::{dropdown} Symmetry Dialog
+:color: info
+:icon: image
+
+```{image} /_static/menus/analyze-menu/symmetry_dialog.png
+:alt: Example of the Symmetry Dialog
+:align: center
+:width: 65%
+:class: dark-light
+```
+:::
+
 (surfaces-dialog)=
 ## Surfaces Dialog
 
