@@ -2,25 +2,91 @@
 
 # Building a Supercell
 
-Once a crystal surface has been built, the Super Cell Builder can expand atoms within a space group, replicate the unit cell, and perform simple bonding.
+A common task in solid state simulations is the use of supercells for calculating various properties such as phonon modes. Avogadro's supercell builder in the [Crystal Menu](menus-crystal-menu) can be used to create supercells with ease.
 
-When "Super Cell Builder..." is selected under the "Build" menu, the dialog box below pops up. This dialog box will allow you to replicate a unit cell that has already been created \(if need be, a unit cell can be created by selecting "Add Unit Cell" under the "Crystallography" menu\).
+To start, import a crystal with **File ⇒ Import ⇒ Crystal...** and import a crystal structure. This guide will use halite (NaCl).
 
-![](../../_static/8ffd03c7-52fb-443c-a2a3-e6e7605c113e.png)
+```{figure} /_static/building-materials/import_halite.png
+:alt: Picture of the import menu showing halite
+:align: center
+:class: dark-light
+```
+
+```{figure} /_static/building-materials/halite_basic_cell_light.png
+:alt: Picture of the unfilled halite unit cell
+:align: center
+:height: 300px
+:class: only-light
+```
+```{figure} /_static/building-materials/halite_basic_cell_dark.png
+:alt: Picture of the unfilled halite unit cell
+:align: center
+:height: 300px
+:class: only-dark
+```
+
+Once you've imported the crystal, go to **Crystal ⇒ Fill Translation Cell** to fill only the [translationally inequivalent atoms](translational-equivalence), which is most suitable for use in a calculation.
+
+```{figure} /_static/building-materials/halite_translation_cell_light.png
+:alt: Picture of the translation-inequivalent filled halite unit cell
+:align: center
+:height: 300px
+:class: only-light
+```
+```{figure} /_static/building-materials/halite_translation_cell_dark.png
+:alt: Picture of the translation-inequivalent filled halite unit cell
+:align: center
+:height: 300px
+:class: only-dark
+```
+
+After this, you can go to **Crystal ⇒ Build Supercell...** which will open the supercell builder.
+
+```{figure} /_static/building-materials/supercell_dialog.png
+:alt: Picture of the supercell builder
+:align: center
+:class: dark-light
+```
+
+In this instance, a 2×2×2 supercell is used, but Avogadro 2 is capable of handling very large systems, so don't feel limited to this size. Hit **OK**, to build the supercell, and you're ready for a calculation!
+
+::::{tab-set}
+
+:::{tab-item} Single Unit Cell
+```{image} /_static/building-materials/halite_translation_cell_small_light.png
+:alt: Zoomed-out view of the single halite translation cell
+:align: center
+:height: 480px
+:class: only-light
+```
+```{image} /_static/building-materials/halite_translation_cell_small_dark.png
+:alt: Zoomed-out view of the single halite translation cell
+:align: center
+:height: 480px
+:class: only-dark
+```
+:::
+
+:::{tab-item} Supercell
+```{image} /_static/building-materials/halite_translation_supercell_light.png
+:alt: 2×2×2 supercell of halite.
+:align: center
+:height: 480px
+:class: only-light
+```
+```{image} /_static/building-materials/halite_translation_supercell_dark.png
+:alt: 2×2×2 supercell of halite.
+:align: center
+:height: 480px
+:class: only-dark
+```
+:::
+
+::::
 
 ## Creating a Surface
 
-One way supercell can be utilized is by creating a surface. Below is an elemental unit cell comprised of silver. This cell was imported through the "File" menu, under "Import", "Crystal...". When the dialog box appears follow the procedure displayed below.
-
-![](../../_static/creating-a-surface-.png)
-
-A unit cell can then be replicated to make a _slab_ or a surface. For this example, the parameters were edited as shown in the image below. After editing the parameters, clicking "Generate Cell" will expand your surface.
-
-![](../../_static/ec31d9a6-90a0-43ca-85f1-de1d800a9495.png)
-
-A surface can then be _modified_ by introducing impurities. Here, copper impurities were added to the silver surface. This file can now be exported to another program to determine, through calculations, how the impurities will impact the surface.
-
-![](../../_static/86d36773-eb7f-4cce-9269-40feb6993009.png)
+The supercell builder can also be used for basic slab creation. Here we will demonstrate the creation of a nanopore in a graphene sheet using the supercell builder.
 
 ## See Also
 
