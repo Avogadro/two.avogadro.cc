@@ -1,0 +1,47 @@
+name: Update Plugin Index
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '15 6 * * *' # daily at 06:15 UTC
+
+jobs:
+  update-plugins:
+    name: Generate plugins2.json
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+    - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd #v5
+      with:
+        ref: gh-pages
+
+    - name: Checkout plugins repo
+      uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd #v5
+      with:
+        repository: avogadro/plugins
+        path: plugins
+
+    - name: Set up Python
+      uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6
+      with:
+        python-version: '3.12'
+
+    - name: Install dependencies
+      run: pip install requests PyGithub
+
+    - name: Generate plugin index
+      run: python generate_index.py -t ${{ secrets.GITHUB_TOKEN }}
+      working-directory: plugins
+
+    - name: Move plugins2.json to root
+      run: mv plugins/plugins2.json plugins2.json
+
+    - name: Commit and push if changed
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+        git add plugins2.json
+        git diff --cached --quiet || git commit -m "Update plugins2.json"
+        git push
