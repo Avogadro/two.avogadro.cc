@@ -51,7 +51,7 @@ Molecular
 ```{image} /_static/menus/analyze-menu/molecular_properties_dialog.png
 :alt: Example of the molecular properties dialog
 :align: center
-:width: 60%
+:width: 43%
 :class: dark-light
 ```
 :::
@@ -80,7 +80,7 @@ Bond Properties
 ```{image} /_static/menus/analyze-menu/bond_properties_dialog.png
 :alt: Example of the Bond Properties Dialog
 :align: center
-:width: 90%
+:width: 67%
 :class: dark-light
 ```
 :::
@@ -95,7 +95,7 @@ Angle Properties
 ```{image} /_static/menus/analyze-menu/angle_properties_dialog.png
 :alt: Example of the Angle Properties Dialog
 :align: center
-:width: 65%
+:width: 49%
 :class: dark-light
 ```
 :::
@@ -110,7 +110,7 @@ Torsion Properties
 ```{image} /_static/menus/analyze-menu/torsion_properties_dialog.png
 :alt: Example of the Torsion Properties Dialog
 :align: center
-:width: 75%
+:width: 59%
 :class: dark-light
 ```
 :::
@@ -125,7 +125,7 @@ Residue Properties
 ```{image} /_static/menus/analyze-menu/residue_properties_dialog.png
 :alt: Example of the Residue Properties Dialog
 :align: center
-:width: 90%
+:width: 74%
 :class: dark-light
 ```
 :::
@@ -140,7 +140,7 @@ Conformer Properties
 ```{image} /_static/menus/analyze-menu/conformer_properties_dialog.png
 :alt: Example of the Conformer Properties Dialog
 :align: center
-:width: 45%
+:width: 36%
 :class: dark-light
 ```
 :::
@@ -155,7 +155,7 @@ Symmetry
 ```{image} /_static/menus/analyze-menu/symmetry_dialog.png
 :alt: Example of the Symmetry Dialog
 :align: center
-:width: 65%
+:width: 48%
 :class: dark-light
 ```
 :::
@@ -297,7 +297,323 @@ While a higher resolution may be desirable, keep in mind that the time to comput
 
 ### Isosurface Value
 
-The Isosurface value determines the cutoff distance for the surface by dictating the lowest value of the volume scalars to display. There is not an accepted set of isosurface values that should be used in papers, however it is recommended to stick to 0.01-0.10, and it is strongly encouraged to report your isosurface values if you include a surface in a figure.
+The Isosurface value determines the cutoff distance for the surface by dictating the lowest value of the volume scalars to display. There is not an accepted set of isosurface values that should be used in papers, however it is recommended to stick to 0.01–0.10, and it is strongly encouraged to report your isosurface values if you include a surface in a figure. 
+
+The reason for this becomes evident with the figure below, which shows the HOMO of pyrazine at 10 different isosurface values. As you move through the different values, you'll see that the orbital overlap between atoms can change drastically as a function of the chosen isosurface value. At 0.01, you might be tempted to say the nitrogens on opposite ends of the pyrazine have bonding character right through the middle of the molecule, but as we know, this is not the case. Only once the isosurface value reaches ~0.08 do we see that in fact the nature of the HOMO is more likely a pair of $\sigma_b$ orbitals between the carbon atoms and two lone pairs on the nitrogen atoms.
+
+::::{tab-set}
+
+:::{tab-item} 0.01
+```{image} /_static/menus/analyze-menu/pyrazine_iso/pyrazine_homo_iso_0.01_light.png
+:alt: HOMO of pyrazine with an Isosurface value of 0.01
+:align: center
+:height: 300px
+:class: only-light
+```
+```{image} /_static/menus/analyze-menu/pyrazine_iso/pyrazine_homo_iso_0.01_dark.png
+:alt: HOMO of pyrazine with an Isosurface value of 0.01
+:align: center
+:height: 300px
+:class: only-dark
+```
+:::
+
+:::{tab-item} 0.02
+```{image} /_static/menus/analyze-menu/pyrazine_iso/pyrazine_homo_iso_0.02_light.png
+:alt: HOMO of pyrazine with an Isosurface value of 0.02
+:align: center
+:height: 300px
+:class: only-light
+```
+```{image} /_static/menus/analyze-menu/pyrazine_iso/pyrazine_homo_iso_0.02_dark.png
+:alt: HOMO of pyrazine with an Isosurface value of 0.02
+:align: center
+:height: 300px
+:class: only-dark
+```
+:::
+
+:::{tab-item} 0.03 (Default)
+:selected:
+```{image} /_static/menus/analyze-menu/pyrazine_iso/pyrazine_homo_iso_0.03_light.png
+:alt: HOMO of pyrazine with an Isosurface value of 0.03
+:align: center
+:height: 300px
+:class: only-light
+```
+```{image} /_static/menus/analyze-menu/pyrazine_iso/pyrazine_homo_iso_0.03_dark.png
+:alt: HOMO of pyrazine with an Isosurface value of 0.03
+:align: center
+:height: 300px
+:class: only-dark
+```
+:::
+
+:::{tab-item} 0.04
+```{image} /_static/menus/analyze-menu/pyrazine_iso/pyrazine_homo_iso_0.04_light.png
+:alt: HOMO of pyrazine with an Isosurface value of 0.04
+:align: center
+:height: 300px
+:class: only-light
+```
+```{image} /_static/menus/analyze-menu/pyrazine_iso/pyrazine_homo_iso_0.04_dark.png
+:alt: HOMO of pyrazine with an Isosurface value of 0.04
+:align: center
+:height: 300px
+:class: only-dark
+```
+:::
+
+:::{tab-item} 0.05
+```{image} /_static/menus/analyze-menu/pyrazine_iso/pyrazine_homo_iso_0.05_light.png
+:alt: HOMO of pyrazine with an Isosurface value of 0.05
+:align: center
+:height: 300px
+:class: only-light
+```
+```{image} /_static/menus/analyze-menu/pyrazine_iso/pyrazine_homo_iso_0.05_dark.png
+:alt: HOMO of pyrazine with an Isosurface value of 0.05
+:align: center
+:height: 300px
+:class: only-dark
+```
+:::
+
+:::{tab-item} 0.06
+```{image} /_static/menus/analyze-menu/pyrazine_iso/pyrazine_homo_iso_0.06_light.png
+:alt: HOMO of pyrazine with an Isosurface value of 0.06
+:align: center
+:height: 300px
+:class: only-light
+```
+```{image} /_static/menus/analyze-menu/pyrazine_iso/pyrazine_homo_iso_0.06_dark.png
+:alt: HOMO of pyrazine with an Isosurface value of 0.06
+:align: center
+:height: 300px
+:class: only-dark
+```
+:::
+
+:::{tab-item} 0.07
+```{image} /_static/menus/analyze-menu/pyrazine_iso/pyrazine_homo_iso_0.07_light.png
+:alt: HOMO of pyrazine with an Isosurface value of 0.07
+:align: center
+:height: 300px
+:class: only-light
+```
+```{image} /_static/menus/analyze-menu/pyrazine_iso/pyrazine_homo_iso_0.07_dark.png
+:alt: HOMO of pyrazine with an Isosurface value of 0.07
+:align: center
+:height: 300px
+:class: only-dark
+```
+:::
+
+:::{tab-item} 0.08
+```{image} /_static/menus/analyze-menu/pyrazine_iso/pyrazine_homo_iso_0.08_light.png
+:alt: HOMO of pyrazine with an Isosurface value of 0.08
+:align: center
+:height: 300px
+:class: only-light
+```
+```{image} /_static/menus/analyze-menu/pyrazine_iso/pyrazine_homo_iso_0.08_dark.png
+:alt: HOMO of pyrazine with an Isosurface value of 0.08
+:align: center
+:height: 300px
+:class: only-dark
+```
+:::
+
+:::{tab-item} 0.09
+```{image} /_static/menus/analyze-menu/pyrazine_iso/pyrazine_homo_iso_0.09_light.png
+:alt: HOMO of pyrazine with an Isosurface value of 0.09
+:align: center
+:height: 300px
+:class: only-light
+```
+```{image} /_static/menus/analyze-menu/pyrazine_iso/pyrazine_homo_iso_0.09_dark.png
+:alt: HOMO of pyrazine with an Isosurface value of 0.09
+:align: center
+:height: 300px
+:class: only-dark
+```
+:::
+
+:::{tab-item} 0.10
+```{image} /_static/menus/analyze-menu/pyrazine_iso/pyrazine_homo_iso_0.10_light.png
+:alt: HOMO of pyrazine with an Isosurface value of 0.10
+:align: center
+:height: 300px
+:class: only-light
+```
+```{image} /_static/menus/analyze-menu/pyrazine_iso/pyrazine_homo_iso_0.10_dark.png
+:alt: HOMO of pyrazine with an Isosurface value of 0.10
+:align: center
+:height: 300px
+:class: only-dark
+```
+:::
+
+::::
+
+It should be noted, however, that while one may initially conclude that all orbitals should be shown with an isosurface value of ~0.08, this is not the case. The isosurface value is not universal across varying system sizes, which can be seen simply by examining the HOMO of coronene below. At 0.08 there is essentially zero bonding character shown at all, when we know that the HOMO of coronene should be a $\pi$-bonding network. It could be suggested that the correct isosurface value in this case is between 0.03 and 0.04, which both show the bonding nature of the HOMO quite well.
+
+::::{tab-set}
+
+:::{tab-item} 0.01
+```{image} /_static/menus/analyze-menu/coronene_iso/coronene_homo_iso_0.01_light.png
+:alt: HOMO of coronene with an Isosurface value of 0.01
+:align: center
+:height: 300px
+:class: only-light
+```
+```{image} /_static/menus/analyze-menu/coronene_iso/coronene_homo_iso_0.01_dark.png
+:alt: HOMO of coronene with an Isosurface value of 0.01
+:align: center
+:height: 300px
+:class: only-dark
+```
+:::
+
+:::{tab-item} 0.02
+```{image} /_static/menus/analyze-menu/coronene_iso/coronene_homo_iso_0.02_light.png
+:alt: HOMO of coronene with an Isosurface value of 0.02
+:align: center
+:height: 300px
+:class: only-light
+```
+```{image} /_static/menus/analyze-menu/coronene_iso/coronene_homo_iso_0.02_dark.png
+:alt: HOMO of coronene with an Isosurface value of 0.02
+:align: center
+:height: 300px
+:class: only-dark
+```
+:::
+
+:::{tab-item} 0.03 (Default)
+:selected:
+```{image} /_static/menus/analyze-menu/coronene_iso/coronene_homo_iso_0.03_light.png
+:alt: HOMO of coronene with an Isosurface value of 0.03
+:align: center
+:height: 300px
+:class: only-light
+```
+```{image} /_static/menus/analyze-menu/coronene_iso/coronene_homo_iso_0.03_dark.png
+:alt: HOMO of coronene with an Isosurface value of 0.03
+:align: center
+:height: 300px
+:class: only-dark
+```
+:::
+
+:::{tab-item} 0.04
+```{image} /_static/menus/analyze-menu/coronene_iso/coronene_homo_iso_0.04_light.png
+:alt: HOMO of coronene with an Isosurface value of 0.04
+:align: center
+:height: 300px
+:class: only-light
+```
+```{image} /_static/menus/analyze-menu/coronene_iso/coronene_homo_iso_0.04_dark.png
+:alt: HOMO of coronene with an Isosurface value of 0.04
+:align: center
+:height: 300px
+:class: only-dark
+```
+:::
+
+:::{tab-item} 0.05
+```{image} /_static/menus/analyze-menu/coronene_iso/coronene_homo_iso_0.05_light.png
+:alt: HOMO of coronene with an Isosurface value of 0.05
+:align: center
+:height: 300px
+:class: only-light
+```
+```{image} /_static/menus/analyze-menu/coronene_iso/coronene_homo_iso_0.05_dark.png
+:alt: HOMO of coronene with an Isosurface value of 0.05
+:align: center
+:height: 300px
+:class: only-dark
+```
+:::
+
+:::{tab-item} 0.06
+```{image} /_static/menus/analyze-menu/coronene_iso/coronene_homo_iso_0.06_light.png
+:alt: HOMO of coronene with an Isosurface value of 0.06
+:align: center
+:height: 300px
+:class: only-light
+```
+```{image} /_static/menus/analyze-menu/coronene_iso/coronene_homo_iso_0.06_dark.png
+:alt: HOMO of coronene with an Isosurface value of 0.06
+:align: center
+:height: 300px
+:class: only-dark
+```
+:::
+
+:::{tab-item} 0.07
+```{image} /_static/menus/analyze-menu/coronene_iso/coronene_homo_iso_0.07_light.png
+:alt: HOMO of coronene with an Isosurface value of 0.07
+:align: center
+:height: 300px
+:class: only-light
+```
+```{image} /_static/menus/analyze-menu/coronene_iso/coronene_homo_iso_0.07_dark.png
+:alt: HOMO of coronene with an Isosurface value of 0.07
+:align: center
+:height: 300px
+:class: only-dark
+```
+:::
+
+:::{tab-item} 0.08
+```{image} /_static/menus/analyze-menu/coronene_iso/coronene_homo_iso_0.08_light.png
+:alt: HOMO of coronene with an Isosurface value of 0.08
+:align: center
+:height: 300px
+:class: only-light
+```
+```{image} /_static/menus/analyze-menu/coronene_iso/coronene_homo_iso_0.08_dark.png
+:alt: HOMO of coronene with an Isosurface value of 0.08
+:align: center
+:height: 300px
+:class: only-dark
+```
+:::
+
+:::{tab-item} 0.09
+```{image} /_static/menus/analyze-menu/coronene_iso/coronene_homo_iso_0.09_light.png
+:alt: HOMO of coronene with an Isosurface value of 0.09
+:align: center
+:height: 300px
+:class: only-light
+```
+```{image} /_static/menus/analyze-menu/coronene_iso/coronene_homo_iso_0.09_dark.png
+:alt: HOMO of coronene with an Isosurface value of 0.09
+:align: center
+:height: 300px
+:class: only-dark
+```
+:::
+
+:::{tab-item} 0.10
+```{image} /_static/menus/analyze-menu/coronene_iso/coronene_homo_iso_0.10_light.png
+:alt: HOMO of coronene with an Isosurface value of 0.10
+:align: center
+:height: 300px
+:class: only-light
+```
+```{image} /_static/menus/analyze-menu/coronene_iso/coronene_homo_iso_0.10_dark.png
+:alt: HOMO of coronene with an Isosurface value of 0.10
+:align: center
+:height: 300px
+:class: only-dark
+```
+:::
+
+::::
+
+In summary, always ensure that you have chosen a suitable isosurface value for publications, and more importantly, **always report isosurface values**.
 
 ### Smoothing
 
