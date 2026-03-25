@@ -63,7 +63,7 @@ The unit cell editor is used for manipulating the unit cell.
 ```{figure} /_static/menus/crystal-menu/pd_unit_cell_editor.png
 :alt: Cell parameters for Palladium
 :align: center
-:height: 300px
+:height: 480px
 :class: dark-light
 ```
 
@@ -94,7 +94,7 @@ a^x_2 & a^y_2 & a^z_2 \\
 a^x_3 & a^y_3 & a^z_3
 \end{pmatrix}
 ```
-The individual lattice vectors $\textbf{a}_i = (a^x_i, a^y_i, a^z_i)$, or their integer multiples (e.g. $1\times\textbf{a}_i$, $-1\times\textbf{a}_i$, $2\times\textbf{a}_i$, $-2\times\textbf{a}_i$, etc.), can be used to *translate* or *slide* atoms around in space. To find the *translationally equivalent* atoms in a unit cell, you can take all of the atoms in the cell, apply positive (+) or negative (-) translations (possibly with an integer multiplier) with the lattice vectors, and then remove all of the atoms which are related by that translation.
+The individual lattice vectors $\textbf{a}_i = (a^x_i, a^y_i, a^z_i)$, or their integer multiples (e.g. $1\times\textbf{a}_i$, $-1\times\textbf{a}_i$, $2\times\textbf{a}_i$, $-2\times\textbf{a}_i$, etc.), can be used to *translate* or *slide* atoms around in space. To find the *translationally equivalent* atoms in a unit cell, you can take all of the atoms in the cell, apply positive ($+$) or negative ($-$) translations (possibly with an integer multiplier) with the lattice vectors, and then remove all of the atoms which are related by that translation.
 
 As a visual demonstration of this, consider a the conventional unit cell of Palladium, which has a Face-Centered Cubic crystal structure. Below we show the unit cell produced with the `Fill Unit Cell` command and the unit cell matrix ($\mathbb{A}$ from above):
 
