@@ -85,11 +85,14 @@ jobs:
       timeout-minutes: 30
 
     - name: Deploy to gh-pages
-      uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e # v4
-      # If you're changing the branch from main,
-      # also change the `main` in `refs/heads/main`
-      # below accordingly.
       if: github.ref == 'refs/heads/main'
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_branch: gh-pages
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+        git checkout --orphan gh-pages-deploy
+        git rm -rf .
+        cp -r public/* .
+        touch .nojekyll
+        git add -A
+        git commit -m "Deploy to gh-pages from ${GITHUB_SHA::7}"
+        git push origin gh-pages-deploy:gh-pages --force
