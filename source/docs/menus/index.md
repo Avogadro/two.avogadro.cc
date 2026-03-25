@@ -15,5 +15,8 @@ edit-menu
 view-menu
 build-menu
 select-menu
+analyze-menu
+crystal-menu
 extensions-menu
+input-menu
 ```

@@ -54,6 +54,7 @@ extensions = [
     'breathe',
     'myst_parser',
     'sphinxcontrib.mermaid',
+    'pydata_sphinx_theme',
 ]
 
 myst_enable_extensions = [
@@ -120,7 +121,7 @@ breathe_default_members = ('members', 'undoc-members', 'protected-members')
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.
-html_theme ='pydata_sphinx_theme'
+html_theme = 'pydata_sphinx_theme'
 html_show_sourcelink = False
 
 html_baseurl = 'https://two.avogadro.cc'
