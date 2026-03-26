@@ -1,140 +1,233 @@
-- Yunus AK
+- _colDan
 - Ahmad Abdolmaleki
 - Acun
 - Robert Adam
-- B Adarsh
 - Aditya
+- Daniel Aguila
 - Niskala Airaha
+- Yunus AK
 - Alex
 - Bryce Anderson
 - Andre870-hub
+- angryBird87
+- atharrrva15
+- Atharva-Kanherkar
+- Heiner Atze
 - Patrick Avery
+- Azaathooth
+- Kristof Bal
+- Adarsh Balasubramanian
+- balducci
 - Ty Balduf
 - Heiko Becker
+- Makiah Bennett
 - Eric Berquist
 - Ludovico Besana
+- Edward Betts
 - Nathan Bonnemains
 - Alex Brohovsky
+- Arif Budiman
 - Libor Bukata
+- James Bunt
+- C.Y.A.N
+- caesar
+- Cart
+- Armando Castro
+- Javier Cerezo
 - Andi Chandler
 - Guillaume Charifi
+- Evgeny Chernyavsky
+- مهدي شينون (Mehdi Chinoune)
 - Yuri Chornoivan
+- Claudio
 - Christian Clauss
 - David Cole
 - Andreas Cord-Landwehr
+- Raphael Kubo da Costa
+- FX Coudert
+- crlambda
+- danialk03
+- Reinis Danne
+- darkenzee
 - DDinghoya
 - Diazonium
+- DJ-Aswin
+- dnandz
+- dtelsing
 - Amanda Dumi
+- dvermd
+- Brock Dyer
+- Mirkó Attila Dániel
 - Sebastian Ehlert
+- ejatjon
+- Iago Emanuel
 - Aritz Erkiaga
 - Oğuz Ersen
+- Zackary Falls
 - Boris Faure
 - Nicolas Fella
 - Dominik Florjan
-- FunnyCode
+- for_the_zero
+- Naomi Fox
+- Narada Fox
+- Raimondas Galvelis
 - Alessandro Genova
+- Tibor Győri
 - Marcus D. Hanwell
 - Chris Harris
 - Andrés Henao
+- hgokhanb
+- Grant Hill
 - Brenton Horne
 - Geoff Hutchison
 - Takaki IEKURA
+- Barry Moore II
+- ilyarya131
 - Milo Ivir
+- ivo6t
+- Benoit Jacob
+- Jakob
+- jawlensky
+- jeannemfavret
+- joanavieira8
 - Marcus Johansson
 - Bert de Jong
 - Das Jott
 - Xavier Jouvenot
 - Gustavo Sousa Jr
-- Atharva Kanherkar
+- Henrique C. S. Junior
+- Vinayakjeet Singh Karki
 - Eisuke Kawashima
+- Gary Kedziora
+- Yarema Kertytsky
+- Anton Kesy
+- KGS-Rastede
+- Khemis
 - Brad King
+- kiranV29
+- koffevar
+- Ricky From Hong Kong
+- Hakkı Konu
 - KovalevArtem
+- Dávid Krajczár
+- Nallana Hari Krishna 
+- Barnala Bala Vamsi Krishna
 - Anubhav Kumar
 - Karol M. Langner
+- Cristian Le
 - Justin Lecher
+- Dagmar Lenk
 - Maxime Leroy
-- Artem M.
+- Chiyu Liang
+- Joeri van Limpt
 - M3CG
 - Emin Macanović
+- Maetnicio
 - Anna Malinovskaia
 - Alessandro Mandelli
+- Jordan Mantha
 - Marco Marchiò
+- matthewkennedy6
+- Oliver Matys
 - Salif Mehmed
-- Barry Moore
+- Matthew Milner
+- Milziade
+- Marcus Minhorst
+- mirosnik1
+- Ivan Mitrichev
+- Geongi Moon
 - Anton Morgunov
+- mperez
+- mrmrcl
 - Julien Nabet
+- nbehrnd
+- nicolazanna
+- Katsuhiko Nishimra
 - Allan Nordhøy
 - NorwayFun
+- nothingonedlike
+- octycs
+- Tuguldur Odbadrakh
 - OfficerBrasidas
+- Onur
+- ovari
+- Saúl Palacios
+- Andika Tulus Pangestu
+- Nicolas PARLANT
 - Drew Parsons
 - Ethan Pavolik
+- peach280
 - Pietro026
+- pltmo
+- Tomáš Poláček
+- Sergey Ponomarev
 - Sagan Potenza
 - Suleyman Poyraz
 - Michael Quevillon
+- RahulBahuguna-code
+- Reportiv
+- research11111
 - Reza
 - Koen Roggemans
 - Antonio Rojas
+- Jarl Ryan
 - Silvério Santos
+- Emir SARI
+- Rahul Sathe
 - Sanjeed Schamnad
 - Dillon Schultz
+- Andreas Schwab
+- Sensor
+- serk
+- ShahzadAK
 - Oleg Shparber
+- shuo
+- simmon
+- Perminder Singh
 - Prabhjot Singh
+- Sergey Smirnov
 - Adrea Snow
+- soc
 - StefanBruens
+- Casper Steinmann
+- stilldown
 - Andreas Sturmlechner
 - Tanuj
+- taylorcornell
 - Kavin Teenakul
 - Suraj Thakur
-- TiborGY
-- Konstantin Tokarev
-- Regen Tsai
-- Tsuki
-- Ömer Fadıl USTA
-- Shiv Upadhyay
-- Allison Vacanti
-- Tim Vandermeersch
-- VeryTastyTomato
-- Brás Washington
-- Oskar Weser
-- Raymond Wooninck
-- LIHAN ZHU
-- Zulfikar
-- alexrsoares
-- angryBird87
-- atharrrva15
-- balducci
-- crlambda
-- cαεsαɾ
-- danialk03
-- dnandz
-- dtelsing
-- dvermd
-- ejatjon
-- for-the-zero
-- hgokhanb
-- joanavieira8
-- koffevar
-- matterhorn103
-- mirosnik1
-- mrmrcl
-- nbehrnd
-- nicolazanna
-- octycs
-- ovari
-- research11111
-- serk
-- simmon
+- Jens Thomas
 - tiagomalho
 - tictactoe101
+- Ricky Tigg
+- Jonathan Tinkham
+- Konstantin Tokarev
+- David Toneian
+- Regen Tsai
+- Tsuki
 - udopton
+- Shiv Upadhyay
 - urkawa
-- vamsibarnala
-- victordargallo
+- Default User
+- Ömer Fadıl USTA
+- Jorge Luis Gálvez Vallejo
+- Tim Vandermeersch
+- Jure Varlec
+- VeryTastyTomato
+- Brás Washington
 - wb957
 - weblate
+- Oskar Weser
+- Egon Willighagen
 - willow88
+- Raymond Wooninck
 - xyz
-- yavgech
+- Haoming Yan
+- Yeims20
+- Nathan Young
 - yuri@FreeBSD
+- Sihan Zhang
+- LIHAN ZHU
+- Zulfikar
 - Ondřej Čertík
+- தமிழ் நேரம்
