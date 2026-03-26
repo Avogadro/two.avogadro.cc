@@ -27,8 +27,10 @@ REPOS = [
 
 # Known login -> display name overrides
 NAME_OVERRIDES = {
-    "serk": "Marc Masó",
+    "serk12": "Marc Masó",
     "badarsh2": "Adarsh Balasubramanian",
+    "taylorcornell": "Taylor Cornell",
+    "weblate": "Weblate",
 }
 
 # Collect unique contributors by login across all repos
