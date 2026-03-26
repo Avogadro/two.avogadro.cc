@@ -89,10 +89,10 @@ jobs:
       run: |
         git config user.name "github-actions[bot]"
         git config user.email "github-actions[bot]@users.noreply.github.com"
-        git checkout --orphan gh-pages-deploy
-        git rm -rf .
+        git fetch origin gh-pages
+        git checkout gh-pages
         cp -r public/* .
         touch .nojekyll
         git add -A
-        git commit -m "Deploy to gh-pages from ${GITHUB_SHA::7}"
-        git push origin gh-pages-deploy:gh-pages --force
+        git diff --cached --quiet || git commit -m "Deploy to gh-pages from ${GITHUB_SHA::7}"
+        git push origin gh-pages
