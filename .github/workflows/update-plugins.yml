@@ -32,7 +32,7 @@ jobs:
       run: pip install requests PyGithub
 
     - name: Generate plugin index
-      run: python scripts/generate_index.py -t ${{ secrets.GITHUB_TOKEN }}
+      run: python scripts/generate_index.py -t ${{ secrets.GITHUB_TOKEN }} repositories.toml
       working-directory: plugins
 
     - name: Move plugins2.json to root
