@@ -13,7 +13,7 @@ if not token:
 g = Github(auth=Auth.Token(token))
 
 REPOS = [
-    "cryos/avogadro",
+    "avogadro/two.avogadro.cc",
     "openchemistry/avogadrolibs",
     "openchemistry/avogadroapp",
     "openchemistry/fragments",
@@ -21,8 +21,6 @@ REPOS = [
     "openchemistry/crystals",
     "openchemistry/avogenerators",
     "openchemistry/chemicaljson",
-    "avogadro/two.avogadro.cc",
-    "avogadro/manual",
 ]
 
 # Known login -> display name overrides
