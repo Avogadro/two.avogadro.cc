@@ -1,0 +1,76 @@
+(v090)=
+
+# Avogadro 0.9.0
+
+Avogadro 0.9.0 was released on 12 January 2009. This is the first of our final beta series before Avogadro 1.0.0 is released. Please help us by providing feedback.
+
+What's New
+----------
+
+The following list includes some of the changes since [Avogadro 0.8.1](Avogadro 0.8.1 "wikilink")
+
+
+
+-   The core API of Avogadro was rewritten -- improved thread safety, Qt-like API.
+-   Rewritten core allows independence from the underlying libraries -- OpenBabel API not exposed.
+-   Initial unit testing added for Molecule class.
+
+
+
+-   POV-Ray export dialog added -- POV-Ray can be called directly.
+-   Export graphics improvements -- should work on more systems.
+-   The navigate tool is now called if tools do not accept the mouse events.
+-   Keyboard events sent to the tools -- arrow keys manipulate the view.
+
+
+
+-   Mesh generation speeds massively improved.
+-   Mesh rendering improved -- managed by the molecule now.
+-   Primitives / colors only shown for display types that support them.
+-   Meshes can now be rendered using POV-Ray.
+-   POV-Ray rendering improved for transparent surfaces.
+-   Wireframe engine shows aromatic bonds, double bonds etc.
+-   Initial GLSL support added for improved rendering on graphics cards that support it.
+-   Depth cues using fog have been added.
+-   Quick draw optimizations when moving the view can be turned off.
+
+
+
+-   QtConcurrent used to multithread cube calculations.
+-   MO and electron density cubes can be calculated from MOPAC AUX files.
+-   Q-Chem input generation support.
+-   Van der Waals surfaces at any distance can be made.
+-   Initial animation support added.
+
+
+
+-   New Boost Python bindings.
+-   Integration with PyQt4.
+-   Improved Python terminal (save commands between sessions and syntax highlighting).
+-   PythonEngine: You can now use Python scripts to add new display types (wireframe.py example included).
+-   Python extensions behave more like real extensions (choose menu path, provide multiple actions, ...)
+-   First release to have windows installer with Python support.
+
+Known Issues & Limitations
+--------------------------
+
+This release is a beta release and is intended to gain feedback and interest in the project.
+
+The code currently expects to be editing one 3D molecule per file with one coordinate set. This means:
+
+-   Editing a multi-molecule file will only edit the first molecule. Saving will overwrite all records except the first.
+-   Opening a SMILES file will not create 3D coordinates either (although you can insert SMILES as fragments into an Avogadro window)
+-   Saving to a 2D format will not necessarily produce correct 2D stereochemistry.
+
+
+
+-   Several builder features are not implemented, including:
+    -   Protein and biomolecule builders
+    -   Crystal structure builder
+    -   Carbon Nanotube builder
+    -   Z-matrix editor
+
+
+
+-   Views cannot yet be removed into separate windows. In future releases, you will be able to have separate views of the same molecule in separate windows. Early support is in but disabled -- this should make it into the next release.
+-   Export graphics will only save the current resolution in the window in bitmap form.

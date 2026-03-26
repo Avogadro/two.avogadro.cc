@@ -1,0 +1,1018 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Avogadro::QtGui::PythonScript &#8212; Avogadro 1.103.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=ee427ece" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mermaid-theme.css?v=7f85688a" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=4a00f340"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'develop/class/class_avogadro_1_1_qt_gui_1_1_python_script';</script>
+    <link rel="canonical" href="https://two.avogadro.cc/develop/class/class_avogadro_1_1_qt_gui_1_1_python_script.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Avogadro::QtGui::RWAtom" href="class_avogadro_1_1_qt_gui_1_1_r_w_atom.html" />
+    <link rel="prev" title="Avogadro::QtGui::PluginLayerManager" href="class_avogadro_1_1_qt_gui_1_1_plugin_layer_manager.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/avogadro2.png" class="logo__image only-light" alt="Avogadro Documentation- Home"/>
+    <script>document.write(`<img src="../../_static/avogadro2-dark.png" class="logo__image only-dark" alt="Avogadro Documentation- Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../install/index.html">
+    Install
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../docs/index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Develop
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../contrib/index.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../teach/index.html">
+    Teach
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+    Discuss
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/avogadro.cc" title="Bluesky" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-bluesky fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../install/index.html">
+    Install
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../docs/index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Develop
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../contrib/index.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../teach/index.html">
+    Teach
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+    Discuss
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/avogadro.cc" title="Bluesky" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-bluesky fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Develop</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../structure.html">Project Structure and C++ API</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../avogadroapp.html">Avogadro App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calc.html">Avogadro::Calc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../core.html">Avogadro::Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../io.html">Avogadro::IO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../molequeue.html">Avogadro::MoleQueue</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../qtgui.html">Avogadro::QtGui</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_background_file_format.html">Avogadro::QtGui::BackgroundFileFormat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_chart_dialog.html">Avogadro::QtGui::ChartDialog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_chart_widget.html">Avogadro::QtGui::ChartWidget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_color_button.html">Avogadro::QtGui::ColorButton</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_container_widget.html">Avogadro::QtGui::ContainerWidget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_custom_element_dialog.html">Avogadro::QtGui::CustomElementDialog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_element_detail.html">Avogadro::QtGui::ElementDetail</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_element_item.html">Avogadro::QtGui::ElementItem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_element_translator.html">Avogadro::QtGui::ElementTranslator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_extension_plugin.html">Avogadro::QtGui::ExtensionPlugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_extension_plugin_factory.html">Avogadro::QtGui::ExtensionPluginFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_file_browse_widget.html">Avogadro::QtGui::FileBrowseWidget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_file_format_dialog.html">Avogadro::QtGui::FileFormatDialog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_gaussian_set_concurrent.html">Avogadro::QtGui::GaussianSetConcurrent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_generic_highlighter.html">Avogadro::QtGui::GenericHighlighter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_generic_highlighter_1_1_rule.html">Avogadro::QtGui::GenericHighlighter::Rule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_hydrogen_tools.html">Avogadro::QtGui::HydrogenTools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_insert_fragment_dialog.html">Avogadro::QtGui::InsertFragmentDialog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_interface_script.html">Avogadro::QtGui::InterfaceScript</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_interface_widget.html">Avogadro::QtGui::InterfaceWidget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_json_widget.html">Avogadro::QtGui::JsonWidget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_layer_model.html">Avogadro::QtGui::LayerModel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_mesh_generator.html">Avogadro::QtGui::MeshGenerator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_molecule.html">Avogadro::QtGui::Molecule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_molecule_model.html">Avogadro::QtGui::MoleculeModel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_multi_view_widget.html">Avogadro::QtGui::MultiViewWidget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_periodic_table_scene.html">Avogadro::QtGui::PeriodicTableScene</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_periodic_table_view.html">Avogadro::QtGui::PeriodicTableView</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_persistent_atom.html">Avogadro::QtGui::PersistentAtom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_persistent_bond.html">Avogadro::QtGui::PersistentBond</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_plugin_layer_manager.html">Avogadro::QtGui::PluginLayerManager</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Avogadro::QtGui::PythonScript</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_r_w_atom.html">Avogadro::QtGui::RWAtom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_r_w_bond.html">Avogadro::QtGui::RWBond</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_r_w_layer_manager.html">Avogadro::QtGui::RWLayerManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_r_w_molecule.html">Avogadro::QtGui::RWMolecule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_rich_text_delegate.html">Avogadro::QtGui::RichTextDelegate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_scene_plugin.html">Avogadro::QtGui::ScenePlugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_scene_plugin_factory.html">Avogadro::QtGui::ScenePluginFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_scene_plugin_model.html">Avogadro::QtGui::ScenePluginModel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_script_loader.html">Avogadro::QtGui::ScriptLoader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_slater_set_concurrent.html">Avogadro::QtGui::SlaterSetConcurrent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_sort_filter_tree_proxy_model.html">Avogadro::QtGui::SortFilterTreeProxyModel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_timed_progress_dialog.html">Avogadro::QtGui::TimedProgressDialog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_tool_plugin.html">Avogadro::QtGui::ToolPlugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_tool_plugin_factory.html">Avogadro::QtGui::ToolPluginFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_view_factory.html">Avogadro::QtGui::ViewFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_open_g_l_1_1_active_objects.html">Avogadro::QtOpenGL::ActiveObjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_open_g_l_1_1_g_l_widget.html">Avogadro::QtOpenGL::GLWidget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_open_g_l_1_1_qt_text_render_strategy.html">Avogadro::QtOpenGL::QtTextRenderStrategy</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../qtplugins.html">Avogadro::QtPlugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rendering.html">Avogadro::Rendering</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../build.html">Building Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">Script Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rpc.html">Avogadro Remote Procedure Call (RPC)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contrib/code.html">Contributing Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contrib/ai-usage.html">AI Usage Policy</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Develop</a></li>
+    
+    
+    <li class="breadcrumb-item"><i class="fa-solid fa-ellipsis"></i></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../qtgui.html" class="nav-link">Avogadro::QtGui</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Avogadro::Qt...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="avogadro-qtgui-pythonscript">
+<h1>Avogadro::QtGui::PythonScript<a class="headerlink" href="#avogadro-qtgui-pythonscript" title="Link to this heading">#</a></h1>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui12PythonScriptE">
+<span id="_CPPv3N8Avogadro5QtGui12PythonScriptE"></span><span id="_CPPv2N8Avogadro5QtGui12PythonScriptE"></span><span id="Avogadro::QtGui::PythonScript"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PythonScript</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">QObject</span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui12PythonScriptE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The <a class="reference internal" href="#class_avogadro_1_1_qt_gui_1_1_python_script"><span class="std std-ref">PythonScript</span></a> class implements a interface for calling short-lived python utility scripts. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-unnamed-group">Unnamed Group</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui12PythonScript12PythonScriptERK7QStringP7QObject">
+<span id="_CPPv3N8Avogadro5QtGui12PythonScript12PythonScriptERK7QStringP7QObject"></span><span id="_CPPv2N8Avogadro5QtGui12PythonScript12PythonScriptERK7QStringP7QObject"></span><span id="Avogadro::QtGui::PythonScript::PythonScript__QStringCR.QObjectP"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1a0c702088c34e0fae1e2ed926da07c073"></span><span class="k"><span class="pre">explicit</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PythonScript</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">scriptFilePath_</span></span>, <span class="n"><span class="pre">QObject</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">parent_</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">nullptr</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui12PythonScript12PythonScriptERK7QStringP7QObject" title="Link to this definition">#</a><br /></dt>
+<dd><p>Constructors </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>scriptFilePath_</strong> – Absolute path to python script. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui12PythonScript12PythonScriptEP7QObject">
+<span id="_CPPv3N8Avogadro5QtGui12PythonScript12PythonScriptEP7QObject"></span><span id="_CPPv2N8Avogadro5QtGui12PythonScript12PythonScriptEP7QObject"></span><span id="Avogadro::QtGui::PythonScript::PythonScript__QObjectP"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1a55b52957d8519db9cabecf231974fafe"></span><span class="k"><span class="pre">explicit</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PythonScript</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">QObject</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">parent_</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">nullptr</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui12PythonScript12PythonScriptEP7QObject" title="Link to this definition">#</a><br /></dt>
+<dd><p>Constructors </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>scriptFilePath_</strong> – Absolute path to python script. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui12PythonScriptD0Ev">
+<span id="_CPPv3N8Avogadro5QtGui12PythonScriptD0Ev"></span><span id="_CPPv2N8Avogadro5QtGui12PythonScriptD0Ev"></span><span id="Avogadro::QtGui::PythonScript::~PythonScript"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1a7b714499441f5296bd92b9ca776a4aed"></span><span class="sig-name descname"><span class="n"><span class="pre">~PythonScript</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui12PythonScriptD0Ev" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro5QtGui12PythonScript5debugEv">
+<span id="_CPPv3NK8Avogadro5QtGui12PythonScript5debugEv"></span><span id="_CPPv2NK8Avogadro5QtGui12PythonScript5debugEv"></span><span id="Avogadro::QtGui::PythonScript::debugC"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1a1d829a8cc5502cefd6713febc645035a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">debug</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro5QtGui12PythonScript5debugEv" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if debugging of python I/O is enabled. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro5QtGui12PythonScript14scriptFilePathEv">
+<span id="_CPPv3NK8Avogadro5QtGui12PythonScript14scriptFilePathEv"></span><span id="_CPPv2NK8Avogadro5QtGui12PythonScript14scriptFilePathEv"></span><span id="Avogadro::QtGui::PythonScript::scriptFilePathC"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1a2d90664e0dda3c954b7d3350aa94749b"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">scriptFilePath</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro5QtGui12PythonScript14scriptFilePathEv" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The path to the generator file. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui12PythonScript17setScriptFilePathERK7QString">
+<span id="_CPPv3N8Avogadro5QtGui12PythonScript17setScriptFilePathERK7QString"></span><span id="_CPPv2N8Avogadro5QtGui12PythonScript17setScriptFilePathERK7QString"></span><span id="Avogadro::QtGui::PythonScript::setScriptFilePath__QStringCR"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1a714c77d4285ed50ce9da3647007f68f1"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setScriptFilePath</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">scriptFile</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui12PythonScript17setScriptFilePathERK7QString" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the path to the input generator script file. This will reset any cached data held by this class. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui12PythonScript14setPackageInfoERK7QStringRK7QStringRK7QStringRK7QString">
+<span id="_CPPv3N8Avogadro5QtGui12PythonScript14setPackageInfoERK7QStringRK7QStringRK7QStringRK7QString"></span><span id="_CPPv2N8Avogadro5QtGui12PythonScript14setPackageInfoERK7QStringRK7QStringRK7QStringRK7QString"></span><span id="Avogadro::QtGui::PythonScript::setPackageInfo__QStringCR.QStringCR.QStringCR.QStringCR"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1aedb8d006c53709cec061ae33a4234e83"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setPackageInfo</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">packageDir</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">command</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">identifier</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">displayName</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui12PythonScript14setPackageInfoERK7QStringRK7QStringRK7QStringRK7QString" title="Link to this definition">#</a><br /></dt>
+<dd><p>Enable package mode. In this mode, <a class="reference internal" href="#class_avogadro_1_1_qt_gui_1_1_python_script_1ae2f834dbb73faf82ebdb9fa11392ebe1"><span class="std std-ref">execute()</span></a> runs “pixi run &lt;command&gt; &lt;identifier&gt; [args]” with packageDir as the working directory, instead of launching a script file via python. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro5QtGui12PythonScript13isPackageModeEv">
+<span id="_CPPv3NK8Avogadro5QtGui12PythonScript13isPackageModeEv"></span><span id="_CPPv2NK8Avogadro5QtGui12PythonScript13isPackageModeEv"></span><span id="Avogadro::QtGui::PythonScript::isPackageModeC"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1a490dcfa6067e3f7c46a9fa7416a2b3bb"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isPackageMode</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro5QtGui12PythonScript13isPackageModeEv" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if this script is in package mode. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro5QtGui12PythonScript10packageDirEv">
+<span id="_CPPv3NK8Avogadro5QtGui12PythonScript10packageDirEv"></span><span id="_CPPv2NK8Avogadro5QtGui12PythonScript10packageDirEv"></span><span id="Avogadro::QtGui::PythonScript::packageDirC"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1a67e994572b3bba04748e030869ea68d7"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">packageDir</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro5QtGui12PythonScript10packageDirEv" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The package directory (only meaningful in package mode). </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro5QtGui12PythonScript14packageCommandEv">
+<span id="_CPPv3NK8Avogadro5QtGui12PythonScript14packageCommandEv"></span><span id="_CPPv2NK8Avogadro5QtGui12PythonScript14packageCommandEv"></span><span id="Avogadro::QtGui::PythonScript::packageCommandC"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1aeedc24ad38f429bf2e82841bd7055879"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">packageCommand</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro5QtGui12PythonScript14packageCommandEv" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The package command (only meaningful in package mode). </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro5QtGui12PythonScript17packageIdentifierEv">
+<span id="_CPPv3NK8Avogadro5QtGui12PythonScript17packageIdentifierEv"></span><span id="_CPPv2NK8Avogadro5QtGui12PythonScript17packageIdentifierEv"></span><span id="Avogadro::QtGui::PythonScript::packageIdentifierC"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1af344858364d2acad4ee5514c424eea3f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">packageIdentifier</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro5QtGui12PythonScript17packageIdentifierEv" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The package identifier (only meaningful in package mode). </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro5QtGui12PythonScript18packageDisplayNameEv">
+<span id="_CPPv3NK8Avogadro5QtGui12PythonScript18packageDisplayNameEv"></span><span id="_CPPv2NK8Avogadro5QtGui12PythonScript18packageDisplayNameEv"></span><span id="Avogadro::QtGui::PythonScript::packageDisplayNameC"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1aec0174b82cf47439895f47b400f0e386"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">packageDisplayName</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro5QtGui12PythonScript18packageDisplayNameEv" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The package display name from metadata, if one was provided. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro5QtGui12PythonScript9hasErrorsEv">
+<span id="_CPPv3NK8Avogadro5QtGui12PythonScript9hasErrorsEv"></span><span id="_CPPv2NK8Avogadro5QtGui12PythonScript9hasErrorsEv"></span><span id="Avogadro::QtGui::PythonScript::hasErrorsC"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1ab992cfc3a5b4e04ec9d8057d614a572c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">hasErrors</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro5QtGui12PythonScript9hasErrorsEv" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if an error is set. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui12PythonScript11clearErrorsEv">
+<span id="_CPPv3N8Avogadro5QtGui12PythonScript11clearErrorsEv"></span><span id="_CPPv2N8Avogadro5QtGui12PythonScript11clearErrorsEv"></span><span id="Avogadro::QtGui::PythonScript::clearErrors"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1a5a1056d4e9d26a692f621e83be8cd8d1"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">clearErrors</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui12PythonScript11clearErrorsEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Reset the error counter. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro5QtGui12PythonScript9errorListEv">
+<span id="_CPPv3NK8Avogadro5QtGui12PythonScript9errorListEv"></span><span id="_CPPv2NK8Avogadro5QtGui12PythonScript9errorListEv"></span><span id="Avogadro::QtGui::PythonScript::errorListC"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1a08fb2df150486aca94c773f609f56df6"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">QStringList</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">errorList</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro5QtGui12PythonScript9errorListEv" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A QStringList containing all errors that occurred in the last call to the input generator script. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui12PythonScript27setDefaultPythonInterpreterEv">
+<span id="_CPPv3N8Avogadro5QtGui12PythonScript27setDefaultPythonInterpreterEv"></span><span id="_CPPv2N8Avogadro5QtGui12PythonScript27setDefaultPythonInterpreterEv"></span><span id="Avogadro::QtGui::PythonScript::setDefaultPythonInterpreter"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1a741dd2be1e86530f72b7e3cdcd7646aa"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setDefaultPythonInterpreter</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui12PythonScript27setDefaultPythonInterpreterEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Reset the python interpretor path. The following are checked, in order:<ul class="simple">
+<li><p>The AVO_PYTHON_INTERPRETER environment variable</p></li>
+<li><p>The “interpreters/python” QSettings value</p></li>
+<li><p>The path specified in avogadropython.h. </p></li>
+</ul>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui12PythonScript7executeERK11QStringListRK10QByteArray">
+<span id="_CPPv3N8Avogadro5QtGui12PythonScript7executeERK11QStringListRK10QByteArray"></span><span id="_CPPv2N8Avogadro5QtGui12PythonScript7executeERK11QStringListRK10QByteArray"></span><span id="Avogadro::QtGui::PythonScript::execute__QStringListCR.QByteArrayCR"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1ae2f834dbb73faf82ebdb9fa11392ebe1"></span><span class="n"><span class="pre">QByteArray</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">execute</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QStringList</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">args</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QByteArray</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">scriptStdin</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">QByteArray</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui12PythonScript7executeERK11QStringListRK10QByteArray" title="Link to this definition">#</a><br /></dt>
+<dd><p>Start a new process to execute: “&lt;m_pythonInterpreter&gt; &lt;scriptFilePath()&gt; [args …]”, optionally passing scriptStdin to the processes standard input. Returns the standard output of the process when finished. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui12PythonScript12asyncExecuteERK11QStringListRK10QByteArraybb">
+<span id="_CPPv3N8Avogadro5QtGui12PythonScript12asyncExecuteERK11QStringListRK10QByteArraybb"></span><span id="_CPPv2N8Avogadro5QtGui12PythonScript12asyncExecuteERK11QStringListRK10QByteArraybb"></span><span id="Avogadro::QtGui::PythonScript::asyncExecute__QStringListCR.QByteArrayCR.b.b"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1a556d6ce16414954f742129cc0041aa93"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">asyncExecute</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QStringList</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">args</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QByteArray</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">scriptStdin</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">QByteArray</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">mergedChannels</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">true</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">closeWriteChannel</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">true</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui12PythonScript12asyncExecuteERK11QStringListRK10QByteArraybb" title="Link to this definition">#</a><br /></dt>
+<dd><p>Start a new process to execute asynchronously “&lt;m_pythonInterpreter&gt; &lt;scriptFilePath()&gt; [args …]”, optionally passing scriptStdin to the processes standard input. If <code class="docutils literal notranslate"><span class="pre">closeWriteChannel</span></code> is false, stdin remains open for follow-up writes.</p>
+<p>Will send asyncFinished() signal when finished </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui12PythonScript21asyncWriteAndResponseE10QByteArray">
+<span id="_CPPv3N8Avogadro5QtGui12PythonScript21asyncWriteAndResponseE10QByteArray"></span><span id="_CPPv2N8Avogadro5QtGui12PythonScript21asyncWriteAndResponseE10QByteArray"></span><span id="Avogadro::QtGui::PythonScript::asyncWriteAndResponse__QByteArray"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1abb061623d338ceedeecc09ba722de791"></span><span class="n"><span class="pre">QByteArray</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">asyncWriteAndResponse</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">QByteArray</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">input</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui12PythonScript21asyncWriteAndResponseE10QByteArray" title="Link to this definition">#</a><br /></dt>
+<dd><p>Write input to the asynchronous process’ standard input and return the standard output when ready. Does not wait for the process to terminate before returning (e.g. “server mode”).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>input</strong> – The input to write to the process’ standard input </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The standard output of the process </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui12PythonScript24asyncWriteAndResponseRawERK10QByteArrayi">
+<span id="_CPPv3N8Avogadro5QtGui12PythonScript24asyncWriteAndResponseRawERK10QByteArrayi"></span><span id="_CPPv2N8Avogadro5QtGui12PythonScript24asyncWriteAndResponseRawERK10QByteArrayi"></span><span id="Avogadro::QtGui::PythonScript::asyncWriteAndResponseRaw__QByteArrayCR.i"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1a9b5c3cdf4484e40b9673f8e0282a85d3"></span><span class="n"><span class="pre">QByteArray</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">asyncWriteAndResponseRaw</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QByteArray</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">input</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">timeoutMs</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">5000</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui12PythonScript24asyncWriteAndResponseRawERK10QByteArrayi" title="Link to this definition">#</a><br /></dt>
+<dd><p>Write input to the asynchronous process’ standard input and return raw bytes from stdout. Unlike <a class="reference internal" href="#class_avogadro_1_1_qt_gui_1_1_python_script_1abb061623d338ceedeecc09ba722de791"><span class="std std-ref">asyncWriteAndResponse()</span></a>, this does not require line-oriented output and is suitable for framed binary protocols. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui12PythonScript14asyncTerminateEv">
+<span id="_CPPv3N8Avogadro5QtGui12PythonScript14asyncTerminateEv"></span><span id="_CPPv2N8Avogadro5QtGui12PythonScript14asyncTerminateEv"></span><span id="Avogadro::QtGui::PythonScript::asyncTerminate"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1ad9d5f4a9db8e9bc929c42838f61b0ce0"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">asyncTerminate</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui12PythonScript14asyncTerminateEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Terminate the asynchronous process. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui12PythonScript13asyncResponseEv">
+<span id="_CPPv3N8Avogadro5QtGui12PythonScript13asyncResponseEv"></span><span id="_CPPv2N8Avogadro5QtGui12PythonScript13asyncResponseEv"></span><span id="Avogadro::QtGui::PythonScript::asyncResponse"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1a23e9771831b04f40de6ea8532b6b0e08"></span><span class="n"><span class="pre">QByteArray</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">asyncResponse</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui12PythonScript13asyncResponseEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Returns the standard output of the asynchronous process when finished. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-slots">Public Slots</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui12PythonScript8setDebugEb">
+<span id="_CPPv3N8Avogadro5QtGui12PythonScript8setDebugEb"></span><span id="_CPPv2N8Avogadro5QtGui12PythonScript8setDebugEb"></span><span id="Avogadro::QtGui::PythonScript::setDebug__b"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1ab934152422e35855a5348466c113212d"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setDebug</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">d</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui12PythonScript8setDebugEb" title="Link to this definition">#</a><br /></dt>
+<dd><p>Enable/disable debugging. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui12PythonScript15processFinishedEiN8QProcess10ExitStatusE">
+<span id="_CPPv3N8Avogadro5QtGui12PythonScript15processFinishedEiN8QProcess10ExitStatusE"></span><span id="_CPPv2N8Avogadro5QtGui12PythonScript15processFinishedEiN8QProcess10ExitStatusE"></span><span id="Avogadro::QtGui::PythonScript::processFinished__i.QProcess::ExitStatus"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1ae72e2d4a6a219e4bf9603ef58e9cf9dc"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">processFinished</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">exitCode</span></span>, <span class="n"><span class="pre">QProcess</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ExitStatus</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">exitStatus</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui12PythonScript15processFinishedEiN8QProcess10ExitStatusE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Handle a finished process; </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-signals">Signals</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui12PythonScript8finishedEv">
+<span id="_CPPv3N8Avogadro5QtGui12PythonScript8finishedEv"></span><span id="_CPPv2N8Avogadro5QtGui12PythonScript8finishedEv"></span><span id="Avogadro::QtGui::PythonScript::finished"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1af7b21038ab82868484b3a459947b0dbf"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">finished</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui12PythonScript8finishedEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>The asynchronous execution is finished or timed out </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-attributes">Protected Attributes</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui12PythonScript7m_debugE">
+<span id="_CPPv3N8Avogadro5QtGui12PythonScript7m_debugE"></span><span id="_CPPv2N8Avogadro5QtGui12PythonScript7m_debugE"></span><span id="Avogadro::QtGui::PythonScript::m_debug__b"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1a67320329e3515c9d02089a22e12ba035"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_debug</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui12PythonScript7m_debugE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui12PythonScript13m_packageModeE">
+<span id="_CPPv3N8Avogadro5QtGui12PythonScript13m_packageModeE"></span><span id="_CPPv2N8Avogadro5QtGui12PythonScript13m_packageModeE"></span><span id="Avogadro::QtGui::PythonScript::m_packageMode__b"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1af2c11cd99e53c7a136f470f80fb32dde"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_packageMode</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui12PythonScript13m_packageModeE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui12PythonScript19m_pythonInterpreterE">
+<span id="_CPPv3N8Avogadro5QtGui12PythonScript19m_pythonInterpreterE"></span><span id="_CPPv2N8Avogadro5QtGui12PythonScript19m_pythonInterpreterE"></span><span id="Avogadro::QtGui::PythonScript::m_pythonInterpreter__QString"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1a9ae7a7d88e4053fab8758e2c4dbaf404"></span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_pythonInterpreter</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui12PythonScript19m_pythonInterpreterE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui12PythonScript6m_pixiE">
+<span id="_CPPv3N8Avogadro5QtGui12PythonScript6m_pixiE"></span><span id="_CPPv2N8Avogadro5QtGui12PythonScript6m_pixiE"></span><span id="Avogadro::QtGui::PythonScript::m_pixi__QString"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1ad8b5bffb2c93672f64925ad0c157861b"></span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_pixi</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui12PythonScript6m_pixiE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui12PythonScript16m_scriptFilePathE">
+<span id="_CPPv3N8Avogadro5QtGui12PythonScript16m_scriptFilePathE"></span><span id="_CPPv2N8Avogadro5QtGui12PythonScript16m_scriptFilePathE"></span><span id="Avogadro::QtGui::PythonScript::m_scriptFilePath__QString"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1a2037d447682228e6040b12f36dfe570d"></span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_scriptFilePath</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui12PythonScript16m_scriptFilePathE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui12PythonScript12m_packageDirE">
+<span id="_CPPv3N8Avogadro5QtGui12PythonScript12m_packageDirE"></span><span id="_CPPv2N8Avogadro5QtGui12PythonScript12m_packageDirE"></span><span id="Avogadro::QtGui::PythonScript::m_packageDir__QString"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1a3cdd07ad0c655753179a389c9ac5a1ed"></span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_packageDir</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui12PythonScript12m_packageDirE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui12PythonScript16m_packageCommandE">
+<span id="_CPPv3N8Avogadro5QtGui12PythonScript16m_packageCommandE"></span><span id="_CPPv2N8Avogadro5QtGui12PythonScript16m_packageCommandE"></span><span id="Avogadro::QtGui::PythonScript::m_packageCommand__QString"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1a4032b1cd9aa6f999abe367367e548f64"></span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_packageCommand</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui12PythonScript16m_packageCommandE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui12PythonScript19m_packageIdentifierE">
+<span id="_CPPv3N8Avogadro5QtGui12PythonScript19m_packageIdentifierE"></span><span id="_CPPv2N8Avogadro5QtGui12PythonScript19m_packageIdentifierE"></span><span id="Avogadro::QtGui::PythonScript::m_packageIdentifier__QString"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1a29a7d470496c533775edb3a279531752"></span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_packageIdentifier</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui12PythonScript19m_packageIdentifierE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui12PythonScript20m_packageDisplayNameE">
+<span id="_CPPv3N8Avogadro5QtGui12PythonScript20m_packageDisplayNameE"></span><span id="_CPPv2N8Avogadro5QtGui12PythonScript20m_packageDisplayNameE"></span><span id="Avogadro::QtGui::PythonScript::m_packageDisplayName__QString"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1a4bd61ed0bf2ab2af7367d7546cb16358"></span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_packageDisplayName</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui12PythonScript20m_packageDisplayNameE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui12PythonScript8m_errorsE">
+<span id="_CPPv3N8Avogadro5QtGui12PythonScript8m_errorsE"></span><span id="_CPPv2N8Avogadro5QtGui12PythonScript8m_errorsE"></span><span id="Avogadro::QtGui::PythonScript::m_errors__QStringList"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1acab41fad1edfdb6fe92d45a24886960b"></span><span class="n"><span class="pre">QStringList</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_errors</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui12PythonScript8m_errorsE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui12PythonScript9m_processE">
+<span id="_CPPv3N8Avogadro5QtGui12PythonScript9m_processE"></span><span id="_CPPv2N8Avogadro5QtGui12PythonScript9m_processE"></span><span id="Avogadro::QtGui::PythonScript::m_process__QProcessP"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_python_script_1aa4966914f6ef644ec6dfa54c184c4f8c"></span><span class="n"><span class="pre">QProcess</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">m_process</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui12PythonScript9m_processE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="class_avogadro_1_1_qt_gui_1_1_plugin_layer_manager.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Avogadro::QtGui::PluginLayerManager</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="class_avogadro_1_1_qt_gui_1_1_r_w_atom.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Avogadro::QtGui::RWAtom</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui12PythonScriptE"><code class="docutils literal notranslate"><span class="pre">PythonScript</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui12PythonScript12PythonScriptERK7QStringP7QObject"><code class="docutils literal notranslate"><span class="pre">PythonScript::PythonScript()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui12PythonScript12PythonScriptEP7QObject"><code class="docutils literal notranslate"><span class="pre">PythonScript::PythonScript()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui12PythonScriptD0Ev"><code class="docutils literal notranslate"><span class="pre">PythonScript::~PythonScript()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui12PythonScript5debugEv"><code class="docutils literal notranslate"><span class="pre">PythonScript::debug()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui12PythonScript14scriptFilePathEv"><code class="docutils literal notranslate"><span class="pre">PythonScript::scriptFilePath()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui12PythonScript17setScriptFilePathERK7QString"><code class="docutils literal notranslate"><span class="pre">PythonScript::setScriptFilePath()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui12PythonScript14setPackageInfoERK7QStringRK7QStringRK7QStringRK7QString"><code class="docutils literal notranslate"><span class="pre">PythonScript::setPackageInfo()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui12PythonScript13isPackageModeEv"><code class="docutils literal notranslate"><span class="pre">PythonScript::isPackageMode()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui12PythonScript10packageDirEv"><code class="docutils literal notranslate"><span class="pre">PythonScript::packageDir()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui12PythonScript14packageCommandEv"><code class="docutils literal notranslate"><span class="pre">PythonScript::packageCommand()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui12PythonScript17packageIdentifierEv"><code class="docutils literal notranslate"><span class="pre">PythonScript::packageIdentifier()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui12PythonScript18packageDisplayNameEv"><code class="docutils literal notranslate"><span class="pre">PythonScript::packageDisplayName()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui12PythonScript9hasErrorsEv"><code class="docutils literal notranslate"><span class="pre">PythonScript::hasErrors()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui12PythonScript11clearErrorsEv"><code class="docutils literal notranslate"><span class="pre">PythonScript::clearErrors()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui12PythonScript9errorListEv"><code class="docutils literal notranslate"><span class="pre">PythonScript::errorList()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui12PythonScript27setDefaultPythonInterpreterEv"><code class="docutils literal notranslate"><span class="pre">PythonScript::setDefaultPythonInterpreter()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui12PythonScript7executeERK11QStringListRK10QByteArray"><code class="docutils literal notranslate"><span class="pre">PythonScript::execute()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui12PythonScript12asyncExecuteERK11QStringListRK10QByteArraybb"><code class="docutils literal notranslate"><span class="pre">PythonScript::asyncExecute()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui12PythonScript21asyncWriteAndResponseE10QByteArray"><code class="docutils literal notranslate"><span class="pre">PythonScript::asyncWriteAndResponse()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui12PythonScript24asyncWriteAndResponseRawERK10QByteArrayi"><code class="docutils literal notranslate"><span class="pre">PythonScript::asyncWriteAndResponseRaw()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui12PythonScript14asyncTerminateEv"><code class="docutils literal notranslate"><span class="pre">PythonScript::asyncTerminate()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui12PythonScript13asyncResponseEv"><code class="docutils literal notranslate"><span class="pre">PythonScript::asyncResponse()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui12PythonScript8setDebugEb"><code class="docutils literal notranslate"><span class="pre">PythonScript::setDebug()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui12PythonScript15processFinishedEiN8QProcess10ExitStatusE"><code class="docutils literal notranslate"><span class="pre">PythonScript::processFinished()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui12PythonScript8finishedEv"><code class="docutils literal notranslate"><span class="pre">PythonScript::finished()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui12PythonScript7m_debugE"><code class="docutils literal notranslate"><span class="pre">PythonScript::m_debug</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui12PythonScript13m_packageModeE"><code class="docutils literal notranslate"><span class="pre">PythonScript::m_packageMode</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui12PythonScript19m_pythonInterpreterE"><code class="docutils literal notranslate"><span class="pre">PythonScript::m_pythonInterpreter</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui12PythonScript6m_pixiE"><code class="docutils literal notranslate"><span class="pre">PythonScript::m_pixi</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui12PythonScript16m_scriptFilePathE"><code class="docutils literal notranslate"><span class="pre">PythonScript::m_scriptFilePath</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui12PythonScript12m_packageDirE"><code class="docutils literal notranslate"><span class="pre">PythonScript::m_packageDir</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui12PythonScript16m_packageCommandE"><code class="docutils literal notranslate"><span class="pre">PythonScript::m_packageCommand</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui12PythonScript19m_packageIdentifierE"><code class="docutils literal notranslate"><span class="pre">PythonScript::m_packageIdentifier</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui12PythonScript20m_packageDisplayNameE"><code class="docutils literal notranslate"><span class="pre">PythonScript::m_packageDisplayName</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui12PythonScript8m_errorsE"><code class="docutils literal notranslate"><span class="pre">PythonScript::m_errors</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui12PythonScript9m_processE"><code class="docutils literal notranslate"><span class="pre">PythonScript::m_process</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/avogadro/two.avogadro.cc/edit/main/source/develop/class/class_avogadro_1_1_qt_gui_1_1_python_script.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">          <p>
+            ©2026 The OpenChemistry / Avogadro Teams 
+          </p>
+          <p>Covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
+          </p></div>
+      
+        <div class="footer-item">        <p>
+          <a href="/contrib/index.html">Contribute</a>
+        </p></div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.0.2.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.4.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

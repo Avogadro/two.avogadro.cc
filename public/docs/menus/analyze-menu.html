@@ -1,0 +1,1053 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Analyze Menu &#8212; Avogadro 1.103.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=ee427ece" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mermaid-theme.css?v=7f85688a" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=4a00f340"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/menus/analyze-menu';</script>
+    <link rel="canonical" href="https://two.avogadro.cc/docs/menus/analyze-menu.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Crystal Menu" href="crystal-menu.html" />
+    <link rel="prev" title="Select Menu" href="select-menu.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/avogadro2.png" class="logo__image only-light" alt="Avogadro Documentation- Home"/>
+    <script>document.write(`<img src="../../_static/avogadro2-dark.png" class="logo__image only-dark" alt="Avogadro Documentation- Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../install/index.html">
+    Install
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../develop/index.html">
+    Develop
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../contrib/index.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../teach/index.html">
+    Teach
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+    Discuss
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/avogadro.cc" title="Bluesky" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-bluesky fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../install/index.html">
+    Install
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../develop/index.html">
+    Develop
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../contrib/index.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../teach/index.html">
+    Teach
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+    Discuss
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/avogadro.cc" title="Bluesky" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-bluesky fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">User Documentation</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whats-new-in-avogadro-2/index.html">What’s New in Avogadro 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../building-molecules/index.html">Building Molecules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html">Tools</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Menus</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="file-menu.html">File Menu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="edit-menu.html">Edit Menu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="view-menu.html">View Menu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build-menu.html">Build Menu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="select-menu.html">Select Menu</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Analyze Menu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crystal-menu.html">Crystal Menu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extensions-menu.html">Extensions Menu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input-menu.html">Input Menu</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../display-types/index.html">Display Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../panes/index.html">Panes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../optimizing-geometry/index.html">Optimizing Geometry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../settings/index.html">Settings</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Guide</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Menus</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Analyze Menu</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="analyze-menu">
+<span id="menus-analyze-menu"></span><h1>Analyze Menu<a class="headerlink" href="#analyze-menu" title="Link to this heading">#</a></h1>
+<p>The Analyze menu contains a wide array of analysis tools for analyzing molecular properties, orbital surfaces, vibrational modes, conformer data, and plotting spectra, as well as tools for performing QTAIM analysis.</p>
+<dl class="simple myst">
+<dt>Properties</dt><dd><p>See <a class="reference internal" href="#properties-dropdown"><span class="std std-ref">Properties</span></a>.</p>
+</dd>
+<dt>Create Surfaces</dt><dd><p>See <a class="reference internal" href="#surfaces-dialog"><span class="std std-ref">Surfaces Dialog</span></a>.</p>
+</dd>
+<dt>Molecule Orbitals</dt><dd><p>Open the molecular orbital window (requires orbitals from a quantum chemistry program).</p>
+</dd>
+</dl>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-info sd-bg-text-info">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-image" viewBox="0 0 16 16" aria-hidden="true"><path d="M16 13.25A1.75 1.75 0 0 1 14.25 15H1.75A1.75 1.75 0 0 1 0 13.25V2.75C0 1.784.784 1 1.75 1h12.5c.966 0 1.75.784 1.75 1.75ZM1.75 2.5a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h.94l.03-.03 6.077-6.078a1.75 1.75 0 0 1 2.412-.06L14.5 10.31V2.75a.25.25 0 0 0-.25-.25Zm12.5 11a.25.25 0 0 0 .25-.25v-.917l-4.298-3.889a.25.25 0 0 0-.344.009L4.81 13.5ZM7 6a2 2 0 1 1-3.999.001A2 2 0 0 1 7 6ZM5.5 6a.5.5 0 1 0-1 0 .5.5 0 0 0 1 0Z"></path></svg></span><span class="sd-summary-text">Molecular Orbital Window</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<a class="dark-light reference internal image-reference" href="../../_images/molecular_orbital_window.png"><img alt="Example of the molecular orbital window" class="dark-light align-center" src="../../_images/molecular_orbital_window.png" style="width: 360px;" />
+</a>
+</div>
+</details><dl class="simple myst">
+<dt>QTAIM</dt><dd><p>Run Quantum Theory of Atoms In Molecules (QTAIM) analyses (requires a <code class="docutils literal notranslate"><span class="pre">.wfn</span></code> file).</p>
+</dd>
+<dt>Vibrational Modes</dt><dd><p>Open a window with vibrational modes from a quantum chemistry program.</p>
+</dd>
+<dt>Plot Conformer Data</dt><dd><p>Create plots of the conformers in the current document.</p>
+</dd>
+<dt>Plot Spectra</dt><dd><p>Plot electronic and vibrational spectra (IR, NMR, etc.)</p>
+</dd>
+</dl>
+<section id="properties">
+<span id="properties-dropdown"></span><h2>Properties<a class="headerlink" href="#properties" title="Link to this heading">#</a></h2>
+<dl class="simple myst">
+<dt>Molecular</dt><dd><p>Open a dialog containing basic molecular properties as well as any additional information from a quantum chemical output.</p>
+</dd>
+</dl>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-info sd-bg-text-info">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-image" viewBox="0 0 16 16" aria-hidden="true"><path d="M16 13.25A1.75 1.75 0 0 1 14.25 15H1.75A1.75 1.75 0 0 1 0 13.25V2.75C0 1.784.784 1 1.75 1h12.5c.966 0 1.75.784 1.75 1.75ZM1.75 2.5a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h.94l.03-.03 6.077-6.078a1.75 1.75 0 0 1 2.412-.06L14.5 10.31V2.75a.25.25 0 0 0-.25-.25Zm12.5 11a.25.25 0 0 0 .25-.25v-.917l-4.298-3.889a.25.25 0 0 0-.344.009L4.81 13.5ZM7 6a2 2 0 1 1-3.999.001A2 2 0 0 1 7 6ZM5.5 6a.5.5 0 1 0-1 0 .5.5 0 0 0 1 0Z"></path></svg></span><span class="sd-summary-text">Molecular Properties Dialog</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<a class="dark-light reference internal image-reference" href="../../_images/molecular_properties_dialog.png"><img alt="Example of the molecular properties dialog" class="dark-light align-center" src="../../_images/molecular_properties_dialog.png" style="width: 43%;" />
+</a>
+</div>
+</details><dl class="simple myst">
+<dt>Atom Properties</dt><dd><p>Open a dialog containing atomic coordinate information as well as any additional information from a quantum chemical output.</p>
+</dd>
+</dl>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-info sd-bg-text-info">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-image" viewBox="0 0 16 16" aria-hidden="true"><path d="M16 13.25A1.75 1.75 0 0 1 14.25 15H1.75A1.75 1.75 0 0 1 0 13.25V2.75C0 1.784.784 1 1.75 1h12.5c.966 0 1.75.784 1.75 1.75ZM1.75 2.5a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h.94l.03-.03 6.077-6.078a1.75 1.75 0 0 1 2.412-.06L14.5 10.31V2.75a.25.25 0 0 0-.25-.25Zm12.5 11a.25.25 0 0 0 .25-.25v-.917l-4.298-3.889a.25.25 0 0 0-.344.009L4.81 13.5ZM7 6a2 2 0 1 1-3.999.001A2 2 0 0 1 7 6ZM5.5 6a.5.5 0 1 0-1 0 .5.5 0 0 0 1 0Z"></path></svg></span><span class="sd-summary-text">Atom Properties Dialog</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<img alt="Example of the atom properties dialog" class="dark-light align-center" src="../../_images/atom_properties_dialog.png" />
+</div>
+</details><dl class="simple myst">
+<dt>Bond Properties</dt><dd><p>Open a dialog containing bonding information.</p>
+</dd>
+</dl>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-info sd-bg-text-info">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-image" viewBox="0 0 16 16" aria-hidden="true"><path d="M16 13.25A1.75 1.75 0 0 1 14.25 15H1.75A1.75 1.75 0 0 1 0 13.25V2.75C0 1.784.784 1 1.75 1h12.5c.966 0 1.75.784 1.75 1.75ZM1.75 2.5a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h.94l.03-.03 6.077-6.078a1.75 1.75 0 0 1 2.412-.06L14.5 10.31V2.75a.25.25 0 0 0-.25-.25Zm12.5 11a.25.25 0 0 0 .25-.25v-.917l-4.298-3.889a.25.25 0 0 0-.344.009L4.81 13.5ZM7 6a2 2 0 1 1-3.999.001A2 2 0 0 1 7 6ZM5.5 6a.5.5 0 1 0-1 0 .5.5 0 0 0 1 0Z"></path></svg></span><span class="sd-summary-text">Bond Properties Dialog</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<a class="dark-light reference internal image-reference" href="../../_images/bond_properties_dialog.png"><img alt="Example of the Bond Properties Dialog" class="dark-light align-center" src="../../_images/bond_properties_dialog.png" style="width: 67%;" />
+</a>
+</div>
+</details><dl class="simple myst">
+<dt>Angle Properties</dt><dd><p>Open a dialog containing information about the angles formed by atoms.</p>
+</dd>
+</dl>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-info sd-bg-text-info">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-image" viewBox="0 0 16 16" aria-hidden="true"><path d="M16 13.25A1.75 1.75 0 0 1 14.25 15H1.75A1.75 1.75 0 0 1 0 13.25V2.75C0 1.784.784 1 1.75 1h12.5c.966 0 1.75.784 1.75 1.75ZM1.75 2.5a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h.94l.03-.03 6.077-6.078a1.75 1.75 0 0 1 2.412-.06L14.5 10.31V2.75a.25.25 0 0 0-.25-.25Zm12.5 11a.25.25 0 0 0 .25-.25v-.917l-4.298-3.889a.25.25 0 0 0-.344.009L4.81 13.5ZM7 6a2 2 0 1 1-3.999.001A2 2 0 0 1 7 6ZM5.5 6a.5.5 0 1 0-1 0 .5.5 0 0 0 1 0Z"></path></svg></span><span class="sd-summary-text">Angle Properties Dialog</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<a class="dark-light reference internal image-reference" href="../../_images/angle_properties_dialog.png"><img alt="Example of the Angle Properties Dialog" class="dark-light align-center" src="../../_images/angle_properties_dialog.png" style="width: 49%;" />
+</a>
+</div>
+</details><dl class="simple myst">
+<dt>Torsion Properties</dt><dd><p>Open a dialog containing information about the dihedrals formed by atoms.</p>
+</dd>
+</dl>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-info sd-bg-text-info">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-image" viewBox="0 0 16 16" aria-hidden="true"><path d="M16 13.25A1.75 1.75 0 0 1 14.25 15H1.75A1.75 1.75 0 0 1 0 13.25V2.75C0 1.784.784 1 1.75 1h12.5c.966 0 1.75.784 1.75 1.75ZM1.75 2.5a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h.94l.03-.03 6.077-6.078a1.75 1.75 0 0 1 2.412-.06L14.5 10.31V2.75a.25.25 0 0 0-.25-.25Zm12.5 11a.25.25 0 0 0 .25-.25v-.917l-4.298-3.889a.25.25 0 0 0-.344.009L4.81 13.5ZM7 6a2 2 0 1 1-3.999.001A2 2 0 0 1 7 6ZM5.5 6a.5.5 0 1 0-1 0 .5.5 0 0 0 1 0Z"></path></svg></span><span class="sd-summary-text">Torsion Properties</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<a class="dark-light reference internal image-reference" href="../../_images/torsion_properties_dialog.png"><img alt="Example of the Torsion Properties Dialog" class="dark-light align-center" src="../../_images/torsion_properties_dialog.png" style="width: 59%;" />
+</a>
+</div>
+</details><dl class="simple myst">
+<dt>Residue Properties</dt><dd><p>Open a dialog containing information about any amino acid residues.</p>
+</dd>
+</dl>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-info sd-bg-text-info">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-image" viewBox="0 0 16 16" aria-hidden="true"><path d="M16 13.25A1.75 1.75 0 0 1 14.25 15H1.75A1.75 1.75 0 0 1 0 13.25V2.75C0 1.784.784 1 1.75 1h12.5c.966 0 1.75.784 1.75 1.75ZM1.75 2.5a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h.94l.03-.03 6.077-6.078a1.75 1.75 0 0 1 2.412-.06L14.5 10.31V2.75a.25.25 0 0 0-.25-.25Zm12.5 11a.25.25 0 0 0 .25-.25v-.917l-4.298-3.889a.25.25 0 0 0-.344.009L4.81 13.5ZM7 6a2 2 0 1 1-3.999.001A2 2 0 0 1 7 6ZM5.5 6a.5.5 0 1 0-1 0 .5.5 0 0 0 1 0Z"></path></svg></span><span class="sd-summary-text">Residue Properties</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<a class="dark-light reference internal image-reference" href="../../_images/residue_properties_dialog.png"><img alt="Example of the Residue Properties Dialog" class="dark-light align-center" src="../../_images/residue_properties_dialog.png" style="width: 74%;" />
+</a>
+</div>
+</details><dl class="simple myst">
+<dt>Conformer Properties</dt><dd><p>Open a dialog containing information about any conformers present in the document.</p>
+</dd>
+</dl>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-info sd-bg-text-info">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-image" viewBox="0 0 16 16" aria-hidden="true"><path d="M16 13.25A1.75 1.75 0 0 1 14.25 15H1.75A1.75 1.75 0 0 1 0 13.25V2.75C0 1.784.784 1 1.75 1h12.5c.966 0 1.75.784 1.75 1.75ZM1.75 2.5a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h.94l.03-.03 6.077-6.078a1.75 1.75 0 0 1 2.412-.06L14.5 10.31V2.75a.25.25 0 0 0-.25-.25Zm12.5 11a.25.25 0 0 0 .25-.25v-.917l-4.298-3.889a.25.25 0 0 0-.344.009L4.81 13.5ZM7 6a2 2 0 1 1-3.999.001A2 2 0 0 1 7 6ZM5.5 6a.5.5 0 1 0-1 0 .5.5 0 0 0 1 0Z"></path></svg></span><span class="sd-summary-text">Conformer Properties Dialog</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<a class="dark-light reference internal image-reference" href="../../_images/conformer_properties_dialog.png"><img alt="Example of the Conformer Properties Dialog" class="dark-light align-center" src="../../_images/conformer_properties_dialog.png" style="width: 36%;" />
+</a>
+</div>
+</details><dl class="simple myst">
+<dt>Symmetry</dt><dd><p>Open the symmetry dialog, where you can access information about the molecule’s point group, visualize symmetry operations, and identify symmetry-equivalent atoms.</p>
+</dd>
+</dl>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-info sd-bg-text-info">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-image" viewBox="0 0 16 16" aria-hidden="true"><path d="M16 13.25A1.75 1.75 0 0 1 14.25 15H1.75A1.75 1.75 0 0 1 0 13.25V2.75C0 1.784.784 1 1.75 1h12.5c.966 0 1.75.784 1.75 1.75ZM1.75 2.5a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h.94l.03-.03 6.077-6.078a1.75 1.75 0 0 1 2.412-.06L14.5 10.31V2.75a.25.25 0 0 0-.25-.25Zm12.5 11a.25.25 0 0 0 .25-.25v-.917l-4.298-3.889a.25.25 0 0 0-.344.009L4.81 13.5ZM7 6a2 2 0 1 1-3.999.001A2 2 0 0 1 7 6ZM5.5 6a.5.5 0 1 0-1 0 .5.5 0 0 0 1 0Z"></path></svg></span><span class="sd-summary-text">Symmetry Dialog</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<a class="dark-light reference internal image-reference" href="../../_images/symmetry_dialog.png"><img alt="Example of the Symmetry Dialog" class="dark-light align-center" src="../../_images/symmetry_dialog.png" style="width: 48%;" />
+</a>
+</div>
+</details></section>
+<section id="surfaces-dialog">
+<span id="id1"></span><h2>Surfaces Dialog<a class="headerlink" href="#surfaces-dialog" title="Link to this heading">#</a></h2>
+<p>The surfaces dialog has several useful tools for calculating and rendering various types of surfaces.</p>
+<figure class="align-center">
+<a class="dark-light reference internal image-reference" href="../../_images/surfaces_dialog.png"><img alt="Example of the surfaces dialog" class="dark-light" src="../../_images/surfaces_dialog.png" style="width: 420px;" />
+</a>
+</figure>
+<section id="surface-types-and-coloring">
+<h3>Surface Types and Coloring<a class="headerlink" href="#surface-types-and-coloring" title="Link to this heading">#</a></h3>
+<p>You can choose to render several surfaces from the first dropdown, including a Van der Waals surface, solvent accessible and solvent excluded surfaces, molecular orbitals, and electron density. The latter two require an output from a quantum calculation.</p>
+<p>For any surface other than a molecular orbital, you can choose to color the surface by the electrostatic potential, and select from several color maps.</p>
+<figure class="align-center">
+<a class="only-dark reference internal image-reference" href="../../_images/coronene_colored_density_dark.png"><img alt="Example of the electron density of coronene colored by the electrostatic potential" class="only-dark" src="../../_images/coronene_colored_density_dark.png" style="height: 300px;" />
+</a>
+</figure>
+<figure class="align-center">
+<a class="only-light reference internal image-reference" href="../../_images/coronene_colored_density_light.png"><img alt="Example of the electron density of coronene colored by the electrostatic potential" class="only-light" src="../../_images/coronene_colored_density_light.png" style="height: 300px;" />
+</a>
+</figure>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-info sd-bg-text-info">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-image" viewBox="0 0 16 16" aria-hidden="true"><path d="M16 13.25A1.75 1.75 0 0 1 14.25 15H1.75A1.75 1.75 0 0 1 0 13.25V2.75C0 1.784.784 1 1.75 1h12.5c.966 0 1.75.784 1.75 1.75ZM1.75 2.5a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h.94l.03-.03 6.077-6.078a1.75 1.75 0 0 1 2.412-.06L14.5 10.31V2.75a.25.25 0 0 0-.25-.25Zm12.5 11a.25.25 0 0 0 .25-.25v-.917l-4.298-3.889a.25.25 0 0 0-.344.009L4.81 13.5ZM7 6a2 2 0 1 1-3.999.001A2 2 0 0 1 7 6ZM5.5 6a.5.5 0 1 0-1 0 .5.5 0 0 0 1 0Z"></path></svg></span><span class="sd-summary-text">Available Color Maps</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<img alt="The color maps available for coloring by electrostatic potential" class="only-light align-center" src="../../_images/avogadro_charge_colors.svg" />
+<img alt="The color maps available for coloring by electrostatic potential" class="only-dark align-center" src="../../_images/avogadro_charge_colors_darkmode.svg" />
+</div>
+</details></section>
+<section id="resolution">
+<h3>Resolution<a class="headerlink" href="#resolution" title="Link to this heading">#</a></h3>
+<p>The resolution option sets the spacing between volume elements in the rendered image.</p>
+<div class="sd-tab-set docutils">
+<input id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+Very Low</label><div class="sd-tab-content docutils">
+<a class="only-light reference internal image-reference" href="../../_images/pyrazine_homo_verylow_res_light.png"><img alt="The HOMO of Pyrazine with the Very Low resolution setting." class="only-light align-center" src="../../_images/pyrazine_homo_verylow_res_light.png" style="height: 300px;" />
+</a>
+<a class="only-dark reference internal image-reference" href="../../_images/pyrazine_homo_verylow_res_dark.png"><img alt="The HOMO of Pyrazine with the Very Low resolution setting." class="only-dark align-center" src="../../_images/pyrazine_homo_verylow_res_dark.png" style="height: 300px;" />
+</a>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+Low</label><div class="sd-tab-content docutils">
+<a class="only-light reference internal image-reference" href="../../_images/pyrazine_homo_low_res_light.png"><img alt="The HOMO of Pyrazine with the Low resolution setting." class="only-light align-center" src="../../_images/pyrazine_homo_low_res_light.png" style="height: 300px;" />
+</a>
+<a class="only-dark reference internal image-reference" href="../../_images/pyrazine_homo_low_res_dark.png"><img alt="The HOMO of Pyrazine with the Low resolution setting." class="only-dark align-center" src="../../_images/pyrazine_homo_low_res_dark.png" style="height: 300px;" />
+</a>
+</div>
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+Medium</label><div class="sd-tab-content docutils">
+<a class="only-light reference internal image-reference" href="../../_images/pyrazine_homo_medium_res_light.png"><img alt="The HOMO of Pyrazine with the Medium resolution setting." class="only-light align-center" src="../../_images/pyrazine_homo_medium_res_light.png" style="height: 300px;" />
+</a>
+<a class="only-dark reference internal image-reference" href="../../_images/pyrazine_homo_medium_res_dark.png"><img alt="The HOMO of Pyrazine with the Medium resolution setting." class="only-dark align-center" src="../../_images/pyrazine_homo_medium_res_dark.png" style="height: 300px;" />
+</a>
+</div>
+<input id="sd-tab-item-3" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-3">
+High</label><div class="sd-tab-content docutils">
+<a class="only-light reference internal image-reference" href="../../_images/pyrazine_homo_high_res_light.png"><img alt="The HOMO of Pyrazine with the High resolution setting." class="only-light align-center" src="../../_images/pyrazine_homo_high_res_light.png" style="height: 300px;" />
+</a>
+<a class="only-dark reference internal image-reference" href="../../_images/pyrazine_homo_high_res_dark.png"><img alt="The HOMO of Pyrazine with the High resolution setting." class="only-dark align-center" src="../../_images/pyrazine_homo_high_res_dark.png" style="height: 300px;" />
+</a>
+</div>
+<input id="sd-tab-item-4" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-4">
+Very High</label><div class="sd-tab-content docutils">
+<a class="only-light reference internal image-reference" href="../../_images/pyrazine_homo_veryhigh_res_light.png"><img alt="The HOMO of Pyrazine with the Very High resolution setting." class="only-light align-center" src="../../_images/pyrazine_homo_veryhigh_res_light.png" style="height: 300px;" />
+</a>
+<a class="only-dark reference internal image-reference" href="../../_images/pyrazine_homo_veryhigh_res_dark.png"><img alt="The HOMO of Pyrazine with the Very High resolution setting." class="only-dark align-center" src="../../_images/pyrazine_homo_veryhigh_res_dark.png" style="height: 300px;" />
+</a>
+</div>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>While a higher resolution may be desirable, keep in mind that the time to compute the surface scales cubically!</p>
+</div>
+</section>
+<section id="isosurface-value">
+<h3>Isosurface Value<a class="headerlink" href="#isosurface-value" title="Link to this heading">#</a></h3>
+<p>The Isosurface value determines the cutoff distance for the surface by dictating the lowest value of the volume scalars to display. There is not an accepted set of isosurface values that should be used in papers, however it is recommended to stick to 0.01–0.10, and it is strongly encouraged to report your isosurface values if you include a surface in a figure.</p>
+<p>The reason for this becomes evident with the figure below, which shows the HOMO of pyrazine at 10 different isosurface values. As you move through the different values, you’ll see that the orbital overlap between atoms can change drastically as a function of the chosen isosurface value. At 0.01, you might be tempted to say the nitrogens on opposite ends of the pyrazine have bonding character right through the middle of the molecule, but as we know, this is not the case. Only once the isosurface value reaches ~0.08 do we see that in fact the nature of the HOMO is more likely a pair of <span class="math notranslate nohighlight">\(\sigma_b\)</span> orbitals between the carbon atoms and two lone pairs on the nitrogen atoms.</p>
+<div class="sd-tab-set docutils">
+<input id="sd-tab-item-5" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-5">
+0.01</label><div class="sd-tab-content docutils">
+<a class="only-light reference internal image-reference" href="../../_images/pyrazine_homo_iso_0.01_light.png"><img alt="HOMO of pyrazine with an Isosurface value of 0.01" class="only-light align-center" src="../../_images/pyrazine_homo_iso_0.01_light.png" style="height: 300px;" />
+</a>
+<a class="only-dark reference internal image-reference" href="../../_images/pyrazine_homo_iso_0.01_dark.png"><img alt="HOMO of pyrazine with an Isosurface value of 0.01" class="only-dark align-center" src="../../_images/pyrazine_homo_iso_0.01_dark.png" style="height: 300px;" />
+</a>
+</div>
+<input id="sd-tab-item-6" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-6">
+0.02</label><div class="sd-tab-content docutils">
+<a class="only-light reference internal image-reference" href="../../_images/pyrazine_homo_iso_0.02_light.png"><img alt="HOMO of pyrazine with an Isosurface value of 0.02" class="only-light align-center" src="../../_images/pyrazine_homo_iso_0.02_light.png" style="height: 300px;" />
+</a>
+<a class="only-dark reference internal image-reference" href="../../_images/pyrazine_homo_iso_0.02_dark.png"><img alt="HOMO of pyrazine with an Isosurface value of 0.02" class="only-dark align-center" src="../../_images/pyrazine_homo_iso_0.02_dark.png" style="height: 300px;" />
+</a>
+</div>
+<input checked="checked" id="sd-tab-item-7" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-7">
+0.03 (Default)</label><div class="sd-tab-content docutils">
+<a class="only-light reference internal image-reference" href="../../_images/pyrazine_homo_iso_0.03_light.png"><img alt="HOMO of pyrazine with an Isosurface value of 0.03" class="only-light align-center" src="../../_images/pyrazine_homo_iso_0.03_light.png" style="height: 300px;" />
+</a>
+<a class="only-dark reference internal image-reference" href="../../_images/pyrazine_homo_iso_0.03_dark.png"><img alt="HOMO of pyrazine with an Isosurface value of 0.03" class="only-dark align-center" src="../../_images/pyrazine_homo_iso_0.03_dark.png" style="height: 300px;" />
+</a>
+</div>
+<input id="sd-tab-item-8" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-8">
+0.04</label><div class="sd-tab-content docutils">
+<a class="only-light reference internal image-reference" href="../../_images/pyrazine_homo_iso_0.04_light.png"><img alt="HOMO of pyrazine with an Isosurface value of 0.04" class="only-light align-center" src="../../_images/pyrazine_homo_iso_0.04_light.png" style="height: 300px;" />
+</a>
+<a class="only-dark reference internal image-reference" href="../../_images/pyrazine_homo_iso_0.04_dark.png"><img alt="HOMO of pyrazine with an Isosurface value of 0.04" class="only-dark align-center" src="../../_images/pyrazine_homo_iso_0.04_dark.png" style="height: 300px;" />
+</a>
+</div>
+<input id="sd-tab-item-9" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-9">
+0.05</label><div class="sd-tab-content docutils">
+<a class="only-light reference internal image-reference" href="../../_images/pyrazine_homo_iso_0.05_light.png"><img alt="HOMO of pyrazine with an Isosurface value of 0.05" class="only-light align-center" src="../../_images/pyrazine_homo_iso_0.05_light.png" style="height: 300px;" />
+</a>
+<a class="only-dark reference internal image-reference" href="../../_images/pyrazine_homo_iso_0.05_dark.png"><img alt="HOMO of pyrazine with an Isosurface value of 0.05" class="only-dark align-center" src="../../_images/pyrazine_homo_iso_0.05_dark.png" style="height: 300px;" />
+</a>
+</div>
+<input id="sd-tab-item-10" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-10">
+0.06</label><div class="sd-tab-content docutils">
+<a class="only-light reference internal image-reference" href="../../_images/pyrazine_homo_iso_0.06_light.png"><img alt="HOMO of pyrazine with an Isosurface value of 0.06" class="only-light align-center" src="../../_images/pyrazine_homo_iso_0.06_light.png" style="height: 300px;" />
+</a>
+<a class="only-dark reference internal image-reference" href="../../_images/pyrazine_homo_iso_0.06_dark.png"><img alt="HOMO of pyrazine with an Isosurface value of 0.06" class="only-dark align-center" src="../../_images/pyrazine_homo_iso_0.06_dark.png" style="height: 300px;" />
+</a>
+</div>
+<input id="sd-tab-item-11" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-11">
+0.07</label><div class="sd-tab-content docutils">
+<a class="only-light reference internal image-reference" href="../../_images/pyrazine_homo_iso_0.07_light.png"><img alt="HOMO of pyrazine with an Isosurface value of 0.07" class="only-light align-center" src="../../_images/pyrazine_homo_iso_0.07_light.png" style="height: 300px;" />
+</a>
+<a class="only-dark reference internal image-reference" href="../../_images/pyrazine_homo_iso_0.07_dark.png"><img alt="HOMO of pyrazine with an Isosurface value of 0.07" class="only-dark align-center" src="../../_images/pyrazine_homo_iso_0.07_dark.png" style="height: 300px;" />
+</a>
+</div>
+<input id="sd-tab-item-12" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-12">
+0.08</label><div class="sd-tab-content docutils">
+<a class="only-light reference internal image-reference" href="../../_images/pyrazine_homo_iso_0.08_light.png"><img alt="HOMO of pyrazine with an Isosurface value of 0.08" class="only-light align-center" src="../../_images/pyrazine_homo_iso_0.08_light.png" style="height: 300px;" />
+</a>
+<a class="only-dark reference internal image-reference" href="../../_images/pyrazine_homo_iso_0.08_dark.png"><img alt="HOMO of pyrazine with an Isosurface value of 0.08" class="only-dark align-center" src="../../_images/pyrazine_homo_iso_0.08_dark.png" style="height: 300px;" />
+</a>
+</div>
+<input id="sd-tab-item-13" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-13">
+0.09</label><div class="sd-tab-content docutils">
+<a class="only-light reference internal image-reference" href="../../_images/pyrazine_homo_iso_0.09_light.png"><img alt="HOMO of pyrazine with an Isosurface value of 0.09" class="only-light align-center" src="../../_images/pyrazine_homo_iso_0.09_light.png" style="height: 300px;" />
+</a>
+<a class="only-dark reference internal image-reference" href="../../_images/pyrazine_homo_iso_0.09_dark.png"><img alt="HOMO of pyrazine with an Isosurface value of 0.09" class="only-dark align-center" src="../../_images/pyrazine_homo_iso_0.09_dark.png" style="height: 300px;" />
+</a>
+</div>
+<input id="sd-tab-item-14" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-14">
+0.10</label><div class="sd-tab-content docutils">
+<a class="only-light reference internal image-reference" href="../../_images/pyrazine_homo_iso_0.10_light.png"><img alt="HOMO of pyrazine with an Isosurface value of 0.10" class="only-light align-center" src="../../_images/pyrazine_homo_iso_0.10_light.png" style="height: 300px;" />
+</a>
+<a class="only-dark reference internal image-reference" href="../../_images/pyrazine_homo_iso_0.10_dark.png"><img alt="HOMO of pyrazine with an Isosurface value of 0.10" class="only-dark align-center" src="../../_images/pyrazine_homo_iso_0.10_dark.png" style="height: 300px;" />
+</a>
+</div>
+</div>
+<p>It should be noted, however, that while one may initially conclude that all orbitals should be shown with an isosurface value of ~0.08, this is not the case. The isosurface value is not universal across varying system sizes, which can be seen simply by examining the HOMO of coronene below. At 0.08 there is essentially zero bonding character shown at all, when we know that the HOMO of coronene should be a <span class="math notranslate nohighlight">\(\pi\)</span>-bonding network. It could be suggested that the correct isosurface value in this case is between 0.03 and 0.04, which both show the bonding nature of the HOMO quite well.</p>
+<div class="sd-tab-set docutils">
+<input id="sd-tab-item-15" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-15">
+0.01</label><div class="sd-tab-content docutils">
+<a class="only-light reference internal image-reference" href="../../_images/coronene_homo_iso_0.01_light.png"><img alt="HOMO of coronene with an Isosurface value of 0.01" class="only-light align-center" src="../../_images/coronene_homo_iso_0.01_light.png" style="height: 300px;" />
+</a>
+<a class="only-dark reference internal image-reference" href="../../_images/coronene_homo_iso_0.01_dark.png"><img alt="HOMO of coronene with an Isosurface value of 0.01" class="only-dark align-center" src="../../_images/coronene_homo_iso_0.01_dark.png" style="height: 300px;" />
+</a>
+</div>
+<input id="sd-tab-item-16" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-16">
+0.02</label><div class="sd-tab-content docutils">
+<a class="only-light reference internal image-reference" href="../../_images/coronene_homo_iso_0.02_light.png"><img alt="HOMO of coronene with an Isosurface value of 0.02" class="only-light align-center" src="../../_images/coronene_homo_iso_0.02_light.png" style="height: 300px;" />
+</a>
+<a class="only-dark reference internal image-reference" href="../../_images/coronene_homo_iso_0.02_dark.png"><img alt="HOMO of coronene with an Isosurface value of 0.02" class="only-dark align-center" src="../../_images/coronene_homo_iso_0.02_dark.png" style="height: 300px;" />
+</a>
+</div>
+<input checked="checked" id="sd-tab-item-17" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-17">
+0.03 (Default)</label><div class="sd-tab-content docutils">
+<a class="only-light reference internal image-reference" href="../../_images/coronene_homo_iso_0.03_light.png"><img alt="HOMO of coronene with an Isosurface value of 0.03" class="only-light align-center" src="../../_images/coronene_homo_iso_0.03_light.png" style="height: 300px;" />
+</a>
+<a class="only-dark reference internal image-reference" href="../../_images/coronene_homo_iso_0.03_dark.png"><img alt="HOMO of coronene with an Isosurface value of 0.03" class="only-dark align-center" src="../../_images/coronene_homo_iso_0.03_dark.png" style="height: 300px;" />
+</a>
+</div>
+<input id="sd-tab-item-18" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-18">
+0.04</label><div class="sd-tab-content docutils">
+<a class="only-light reference internal image-reference" href="../../_images/coronene_homo_iso_0.04_light.png"><img alt="HOMO of coronene with an Isosurface value of 0.04" class="only-light align-center" src="../../_images/coronene_homo_iso_0.04_light.png" style="height: 300px;" />
+</a>
+<a class="only-dark reference internal image-reference" href="../../_images/coronene_homo_iso_0.04_dark.png"><img alt="HOMO of coronene with an Isosurface value of 0.04" class="only-dark align-center" src="../../_images/coronene_homo_iso_0.04_dark.png" style="height: 300px;" />
+</a>
+</div>
+<input id="sd-tab-item-19" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-19">
+0.05</label><div class="sd-tab-content docutils">
+<a class="only-light reference internal image-reference" href="../../_images/coronene_homo_iso_0.05_light.png"><img alt="HOMO of coronene with an Isosurface value of 0.05" class="only-light align-center" src="../../_images/coronene_homo_iso_0.05_light.png" style="height: 300px;" />
+</a>
+<a class="only-dark reference internal image-reference" href="../../_images/coronene_homo_iso_0.05_dark.png"><img alt="HOMO of coronene with an Isosurface value of 0.05" class="only-dark align-center" src="../../_images/coronene_homo_iso_0.05_dark.png" style="height: 300px;" />
+</a>
+</div>
+<input id="sd-tab-item-20" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-20">
+0.06</label><div class="sd-tab-content docutils">
+<a class="only-light reference internal image-reference" href="../../_images/coronene_homo_iso_0.06_light.png"><img alt="HOMO of coronene with an Isosurface value of 0.06" class="only-light align-center" src="../../_images/coronene_homo_iso_0.06_light.png" style="height: 300px;" />
+</a>
+<a class="only-dark reference internal image-reference" href="../../_images/coronene_homo_iso_0.06_dark.png"><img alt="HOMO of coronene with an Isosurface value of 0.06" class="only-dark align-center" src="../../_images/coronene_homo_iso_0.06_dark.png" style="height: 300px;" />
+</a>
+</div>
+<input id="sd-tab-item-21" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-21">
+0.07</label><div class="sd-tab-content docutils">
+<a class="only-light reference internal image-reference" href="../../_images/coronene_homo_iso_0.07_light.png"><img alt="HOMO of coronene with an Isosurface value of 0.07" class="only-light align-center" src="../../_images/coronene_homo_iso_0.07_light.png" style="height: 300px;" />
+</a>
+<a class="only-dark reference internal image-reference" href="../../_images/coronene_homo_iso_0.07_dark.png"><img alt="HOMO of coronene with an Isosurface value of 0.07" class="only-dark align-center" src="../../_images/coronene_homo_iso_0.07_dark.png" style="height: 300px;" />
+</a>
+</div>
+<input id="sd-tab-item-22" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-22">
+0.08</label><div class="sd-tab-content docutils">
+<a class="only-light reference internal image-reference" href="../../_images/coronene_homo_iso_0.08_light.png"><img alt="HOMO of coronene with an Isosurface value of 0.08" class="only-light align-center" src="../../_images/coronene_homo_iso_0.08_light.png" style="height: 300px;" />
+</a>
+<a class="only-dark reference internal image-reference" href="../../_images/coronene_homo_iso_0.08_dark.png"><img alt="HOMO of coronene with an Isosurface value of 0.08" class="only-dark align-center" src="../../_images/coronene_homo_iso_0.08_dark.png" style="height: 300px;" />
+</a>
+</div>
+<input id="sd-tab-item-23" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-23">
+0.09</label><div class="sd-tab-content docutils">
+<a class="only-light reference internal image-reference" href="../../_images/coronene_homo_iso_0.09_light.png"><img alt="HOMO of coronene with an Isosurface value of 0.09" class="only-light align-center" src="../../_images/coronene_homo_iso_0.09_light.png" style="height: 300px;" />
+</a>
+<a class="only-dark reference internal image-reference" href="../../_images/coronene_homo_iso_0.09_dark.png"><img alt="HOMO of coronene with an Isosurface value of 0.09" class="only-dark align-center" src="../../_images/coronene_homo_iso_0.09_dark.png" style="height: 300px;" />
+</a>
+</div>
+<input id="sd-tab-item-24" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-24">
+0.10</label><div class="sd-tab-content docutils">
+<a class="only-light reference internal image-reference" href="../../_images/coronene_homo_iso_0.10_light.png"><img alt="HOMO of coronene with an Isosurface value of 0.10" class="only-light align-center" src="../../_images/coronene_homo_iso_0.10_light.png" style="height: 300px;" />
+</a>
+<a class="only-dark reference internal image-reference" href="../../_images/coronene_homo_iso_0.10_dark.png"><img alt="HOMO of coronene with an Isosurface value of 0.10" class="only-dark align-center" src="../../_images/coronene_homo_iso_0.10_dark.png" style="height: 300px;" />
+</a>
+</div>
+</div>
+<p>In summary, always ensure that you have chosen a suitable isosurface value for publications, and more importantly, <strong>always report isosurface values</strong>.</p>
+</section>
+<section id="smoothing">
+<h3>Smoothing<a class="headerlink" href="#smoothing" title="Link to this heading">#</a></h3>
+<p>The smoothing option, as the name implies, affects how visually smooth the surface is. In general, this has a more pronounced effect on the Van der Waals and Solvent Accessible/Excluded surfaces. Unlike the resolution, the smoothing value has a significantly smaller effect on compute time.</p>
+<div class="sd-tab-set docutils">
+<input id="sd-tab-item-25" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-25">
+Light (1)</label><div class="sd-tab-content docutils">
+<a class="only-light reference internal image-reference" href="../../_images/pyrazine_vdw_light_smoothing_light.png"><img alt="Van der Waals surface of pyrazine with Light (Level 1) smoothing" class="only-light align-center" src="../../_images/pyrazine_vdw_light_smoothing_light.png" style="height: 300px;" />
+</a>
+<a class="only-dark reference internal image-reference" href="../../_images/pyrazine_vdw_light_smoothing_dark.png"><img alt="Van der Waals surface of pyrazine with Light (Level 1) smoothing" class="only-dark align-center" src="../../_images/pyrazine_vdw_light_smoothing_dark.png" style="height: 300px;" />
+</a>
+</div>
+<input id="sd-tab-item-26" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-26">
+Level 3</label><div class="sd-tab-content docutils">
+<a class="only-light reference internal image-reference" href="../../_images/pyrazine_vdw_3_smoothing_light.png"><img alt="Van der Waals surface of pyrazine with Level 3 smoothing" class="only-light align-center" src="../../_images/pyrazine_vdw_3_smoothing_light.png" style="height: 300px;" />
+</a>
+<a class="only-dark reference internal image-reference" href="../../_images/pyrazine_vdw_3_smoothing_dark.png"><img alt="Van der Waals surface of pyrazine with Level 3 smoothing" class="only-dark align-center" src="../../_images/pyrazine_vdw_3_smoothing_dark.png" style="height: 300px;" />
+</a>
+</div>
+<input checked="checked" id="sd-tab-item-27" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-27">
+Medium (5)</label><div class="sd-tab-content docutils">
+<a class="only-light reference internal image-reference" href="../../_images/pyrazine_vdw_medium_smoothing_light.png"><img alt="Van der Waals surface of pyrazine with Medium (Level 5) smoothing" class="only-light align-center" src="../../_images/pyrazine_vdw_medium_smoothing_light.png" style="height: 300px;" />
+</a>
+<a class="only-dark reference internal image-reference" href="../../_images/pyrazine_vdw_medium_smoothing_dark.png"><img alt="Van der Waals surface of pyrazine with Medium (Level 5) smoothing" class="only-dark align-center" src="../../_images/pyrazine_vdw_medium_smoothing_dark.png" style="height: 300px;" />
+</a>
+</div>
+<input id="sd-tab-item-28" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-28">
+Level 7</label><div class="sd-tab-content docutils">
+<a class="only-light reference internal image-reference" href="../../_images/pyrazine_vdw_7_smoothing_light.png"><img alt="Van der Waals surface of pyrazine with Level 7 smoothing" class="only-light align-center" src="../../_images/pyrazine_vdw_7_smoothing_light.png" style="height: 300px;" />
+</a>
+<a class="only-dark reference internal image-reference" href="../../_images/pyrazine_vdw_7_smoothing_dark.png"><img alt="Van der Waals surface of pyrazine with Level 7 smoothing" class="only-dark align-center" src="../../_images/pyrazine_vdw_7_smoothing_dark.png" style="height: 300px;" />
+</a>
+</div>
+<input id="sd-tab-item-29" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-29">
+Strong (9)</label><div class="sd-tab-content docutils">
+<a class="only-light reference internal image-reference" href="../../_images/pyrazine_vdw_strong_smoothing_light.png"><img alt="Van der Waals surface of pyrazine with Strong (Level 9) smoothing" class="only-light align-center" src="../../_images/pyrazine_vdw_strong_smoothing_light.png" style="height: 300px;" />
+</a>
+<a class="only-dark reference internal image-reference" href="../../_images/pyrazine_vdw_strong_smoothing_dark.png"><img alt="Van der Waals surface of pyrazine with Strong (Level 9) smoothing" class="only-dark align-center" src="../../_images/pyrazine_vdw_strong_smoothing_dark.png" style="height: 300px;" />
+</a>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="select-menu.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Select Menu</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="crystal-menu.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Crystal Menu</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#properties">Properties</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#surfaces-dialog">Surfaces Dialog</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#surface-types-and-coloring">Surface Types and Coloring</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resolution">Resolution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#isosurface-value">Isosurface Value</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#smoothing">Smoothing</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/avogadro/two.avogadro.cc/edit/main/source/docs/menus/analyze-menu.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">          <p>
+            ©2026 The OpenChemistry / Avogadro Teams 
+          </p>
+          <p>Covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
+          </p></div>
+      
+        <div class="footer-item">        <p>
+          <a href="/contrib/index.html">Contribute</a>
+        </p></div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.0.2.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.4.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

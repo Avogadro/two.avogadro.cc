@@ -1,0 +1,736 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Flatpak &#8212; Avogadro 1.103.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=ee427ece" />
+    <link rel="stylesheet" type="text/css" href="../_static/mermaid-theme.css?v=7f85688a" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=4a00f340"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'install/flatpak';</script>
+    <link rel="canonical" href="https://two.avogadro.cc/install/flatpak.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Version History" href="versions/index.html" />
+    <link rel="prev" title="Install" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/avogadro2.png" class="logo__image only-light" alt="Avogadro Documentation- Home"/>
+    <script>document.write(`<img src="../_static/avogadro2-dark.png" class="logo__image only-dark" alt="Avogadro Documentation- Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Install
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../docs/index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../develop/index.html">
+    Develop
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../contrib/index.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../teach/index.html">
+    Teach
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+    Discuss
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/avogadro.cc" title="Bluesky" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-bluesky fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Install
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../docs/index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../develop/index.html">
+    Develop
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../contrib/index.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../teach/index.html">
+    Teach
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+    Discuss
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/avogadro.cc" title="Bluesky" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-bluesky fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Installation</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Install</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Flatpak</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="versions/index.html">Version History</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Install</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Flatpak</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="flatpak">
+<span id="install-flatpak"></span><h1>Flatpak<a class="headerlink" href="#flatpak" title="Link to this heading">#</a></h1>
+<p>On Linux, Avogadro 2 is not only available from <a class="reference external" href="https://repology.org/project/avogadro2/versions">the repositories of many distros</a>, thanks to the work of many dedicated maintainers, and as a stand-alone AppImage, but also in the form of a Flatpak.</p>
+<p>The Flatpak provides the best and most reliable Avogadro user experience on Linux, and the Avogadro team recommends using it.</p>
+<p>As well as the usual benefits of Flatpaks (e.g. stability, sandboxing), by using the Avogadro Flatpak you can easily keep it up-to-date with the latest versions via updates.</p>
+<p>At the same time, the Flatpak does have a couple of limitations (see below) in comparison to other formats, and there are no plans to discontinue any of the other distribution methods, which may suit certain use-cases better.</p>
+<p>Avogadro is distributed through <a class="reference external" href="https://flathub.org/apps/org.openchemistry.Avogadro2">Flathub</a> on two branches: a <a class="reference internal" href="#install-flatpak-stable"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">stable</span></code></span></a> branch, which contains the most recent release, and a <a class="reference internal" href="#install-flatpak-beta"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">beta</span></code></span></a> branch, which is similar to the “nightly” versions on other platforms and has the latest features and bug fixes.</p>
+<section id="stable">
+<span id="install-flatpak-stable"></span><h2>Stable<a class="headerlink" href="#stable" title="Link to this heading">#</a></h2>
+<p>In many cases, <code class="docutils literal notranslate"><span class="pre">flatpak</span></code> is set up with Flathub out-of-the-box.
+If not, and you haven’t set it up yourself manually before, you can follow the instructions <a class="reference external" href="https://flathub.org/setup">here</a>.</p>
+<p>Once <code class="docutils literal notranslate"><span class="pre">flatpak</span></code> is set up, you can easily install Avogadro from Flathub in one of two ways:</p>
+<ol class="arabic simple">
+<li><p>Through your distro’s “app store” (e.g. KDE Discover or GNOME Software) – just search for Avogadro, or click on install on the <a class="reference external" href="https://flathub.org/apps/org.openchemistry.Avogadro2">Flathub page</a></p></li>
+<li><p>On the command line using:</p></li>
+</ol>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>flatpak<span class="w"> </span>install<span class="w"> </span>org.openchemistry.Avogadro2
+</pre></div>
+</div>
+<p>After installation, Avogadro should show up in your applications menu/drawer like any other app.
+If not, you can always run a Flatpak from the CLI using:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>flatpak<span class="w"> </span>run<span class="w"> </span>org.openchemistry.Avogadro2
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>By default, <code class="docutils literal notranslate"><span class="pre">flatpak</span></code> works on the system installation (see the <a class="reference external" href="https://docs.flatpak.org/en/latest/using-flatpak.html">flatpak usage guide</a>), just like <code class="docutils literal notranslate"><span class="pre">apt</span></code>, <code class="docutils literal notranslate"><span class="pre">dnf</span></code> and friends.
+This means that to add repos and install Avogadro using the commands above, or using your distro’s software manager, elevated privileges may be required.</p>
+<p>It is generally <em>not</em> recommended to run <code class="docutils literal notranslate"><span class="pre">flatpak</span></code> using <code class="docutils literal notranslate"><span class="pre">sudo</span></code>.
+Instead, use the commands as given, and authenticate via PolKit when prompted.</p>
+<p>On the whole it is recommended to perform system installation like this, but it might not always be possible.
+To install Avogadro just for your user, without elevated privileges, use the <code class="docutils literal notranslate"><span class="pre">flatpak</span></code> command with the <code class="docutils literal notranslate"><span class="pre">--user</span></code> flag, e.g.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>flatpak<span class="w"> </span>--user<span class="w"> </span>install<span class="w"> </span>org.openchemistry.Avogadro2
+flatpak<span class="w"> </span>--user<span class="w"> </span>run<span class="w"> </span>org.openchemistry.Avogadro2
+</pre></div>
+</div>
+</div>
+</section>
+<section id="beta">
+<span id="install-flatpak-beta"></span><h2>Beta<a class="headerlink" href="#beta" title="Link to this heading">#</a></h2>
+<p>Though our nightly builds are generally pretty robust, it is not allowed to distribute nightly, potentially unstable builds over Flathub, so instead we are providing an “almost-nightly” <code class="docutils literal notranslate"><span class="pre">beta</span></code> branch to fulfil the same purpose.
+It will receive the latest updates at regular intervals.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>While possible, it is strongly recommended that you do <em>not</em> have both the <code class="docutils literal notranslate"><span class="pre">stable</span></code> and <code class="docutils literal notranslate"><span class="pre">beta</span></code> version of Avogadro installed at the same time.
+This avoids complications that may arise from the fact that data and configuration files are shared between both.</p>
+</div>
+<p>To get the <code class="docutils literal notranslate"><span class="pre">beta</span></code> branch, you will first have to add the <code class="docutils literal notranslate"><span class="pre">flathub-beta</span></code> repository, which is located at <code class="docutils literal notranslate"><span class="pre">https://flathub.org/beta-repo/flathub-beta.flatpakrepo</span></code>.</p>
+<p>On the command line this is done using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">flatpak</span> <span class="n">remote</span><span class="o">-</span><span class="n">add</span> <span class="o">--</span><span class="k">if</span><span class="o">-</span><span class="ow">not</span><span class="o">-</span><span class="n">exists</span> <span class="n">flathub</span><span class="o">-</span><span class="n">beta</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">flathub</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">beta</span><span class="o">-</span><span class="n">repo</span><span class="o">/</span><span class="n">flathub</span><span class="o">-</span><span class="n">beta</span><span class="o">.</span><span class="n">flatpakrepo</span>
+</pre></div>
+</div>
+<p>If using a GUI software manager to manage your Flatpaks, they often also provide a way to add a repository.</p>
+<p>Once the repo has been added, you can install the Avogadro <code class="docutils literal notranslate"><span class="pre">beta</span></code> Flatpak in the usual way, done on the command line using:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>flatpak<span class="w"> </span>install<span class="w"> </span>org.openchemistry.Avogadro2//beta
+</pre></div>
+</div>
+<p>The Flatpak can then be run in the usual way.</p>
+</section>
+<section id="limitations">
+<span id="install-flatpak-limitations"></span><h2>Limitations<a class="headerlink" href="#limitations" title="Link to this heading">#</a></h2>
+<p>As mentioned, the Flatpak form of Avogadro is generally the version that provides the most robust experience.
+However, it is worth mentioning a couple of the downsides.
+Some of these are intrinsic to the Flatpak distribution method itself, while others are current problems specific to Avogadro that will be resolved in future.</p>
+<section id="inherent-disadvantages-of-flatpak">
+<h3>Inherent disadvantages of Flatpak<a class="headerlink" href="#inherent-disadvantages-of-flatpak" title="Link to this heading">#</a></h3>
+<p>The biggest complaint about Flatpaks is the storage space requirements.
+This arises from Flatpak’s use of runtimes: extra Flatpak versions of application support libraries that would on Linux normally be provided by the system.
+Flatpak runtimes are what allows the same application to run on many different distros, by guaranteeing the same version of the library dependencies.</p>
+<p>Runtimes are shared between Flatpak applications, so the effect is most significant and noticeable when either no or very few other Flatpak apps are installed.
+As such, if you install the Avogadro Flatpak, you may find that not only Avogadro itself will be downloaded and installed (as of v1.102.0, a modest 78.6 MB download and 166.4 MB installation size) but also a large (~1 GB) KDE runtime.
+It is important to realise that this extra storage cost is not paid for every Flatpak application, but only once for all Flatpaks that share the same runtime.</p>
+<p>For most users, this amount of storage space is not a concern, and the stability and portability advantages that result are generally worth it.
+However, those users for whom storage capacity is tight may be better off sticking to distro packages (requiring &lt;100 MB total) or the AppImage (127 MB as of v1.102.0).</p>
+</section>
+<section id="current-known-limitations-of-the-avogadro-flatpak">
+<h3>Current known limitations of the Avogadro Flatpak<a class="headerlink" href="#current-known-limitations-of-the-avogadro-flatpak" title="Link to this heading">#</a></h3>
+<p>By default, Avogadro has no access to your system files when run as a Flatpak.</p>
+<p>This is in accordance with best practice and does not generally cause problems, as normal filesystem operations such as opening and saving files are handled by a file dialog that <em>does</em> have access using a “Desktop Portal”.
+The Flatpak is also provided with a small corner specially reserved for the application’s own data, so plugins also work without issue.</p>
+<p>As of 2025, however, this sandboxing does cause two known issues, both of which are minor:</p>
+<section id="drag-and-drop">
+<h4>Drag-and-drop<a class="headerlink" href="#drag-and-drop" title="Link to this heading">#</a></h4>
+<p>When a file in some chemical format is dragged onto Avogadro’s main window, the usual behaviour is that the file is opened and its contents displayed.</p>
+<p>Unfortunately, the Qt library that Avogadro is built on does not yet use a Desktop Portal for this, so it requires the application to have access to the location of the file.
+As the Flatpak does not normally have this, drag-and-drop does not work.</p>
+<p>The normal functionality is easy to restore, simply by affording the Avogadro Flatpak permission to access the relevant part of your filesystem.</p>
+<p>On KDE, this can be done in <strong>System Settings</strong> under <strong>Application Permissions &gt; Avogadro &gt; Manage Flatpak Settings</strong>.
+On GNOME and other desktop environments that do not have an in-built way to adjust Flatpak permissions, this can be done most easily using <a class="reference external" href="https://flathub.org/en/apps/com.github.tchx84.Flatseal">Flatseal</a>.
+Permissions can also be set via the <code class="docutils literal notranslate"><span class="pre">flatpak</span></code> CLI.</p>
+<p>Support for the drag-and-drop Desktop Portal is expected in Qt in the near future, which will solve the issue without requiring applications to have filesystem access.</p>
+</section>
+<section id="user-specified-python-interpreters-and-environments">
+<h4>User-specified Python interpreters and environments<a class="headerlink" href="#user-specified-python-interpreters-and-environments" title="Link to this heading">#</a></h4>
+<p>Plugins for Avogadro are mostly written in Python and are run behind-the-scenes using a Python interpreter.
+In other versions of Avogadro, it is possible to ask Avogadro to use a specific Python interpreter, and therefore also to use the associated virtual environment, allowing users to reuse already-installed versions of large Python packages if they wish.</p>
+<p>The way filesystems are handled means that this does not work in the Flatpak version of Avogadro, with no known workaround.</p>
+<p>Note that Python plugins work with the Flatpak without any problems!
+The Avogadro Flatpak includes a Python interpreter, as well as Pixi, which Avogadro uses to maintain its own Python environments and run plugins within the sandbox.
+The only functionality that does not work is the custom interpreter setting.</p>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Install</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="versions/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Version History</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stable">Stable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beta">Beta</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations">Limitations</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inherent-disadvantages-of-flatpak">Inherent disadvantages of Flatpak</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#current-known-limitations-of-the-avogadro-flatpak">Current known limitations of the Avogadro Flatpak</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#drag-and-drop">Drag-and-drop</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#user-specified-python-interpreters-and-environments">User-specified Python interpreters and environments</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/avogadro/two.avogadro.cc/edit/main/source/install/flatpak.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">          <p>
+            ©2026 The OpenChemistry / Avogadro Teams 
+          </p>
+          <p>Covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
+          </p></div>
+      
+        <div class="footer-item">        <p>
+          <a href="/contrib/index.html">Contribute</a>
+        </p></div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.0.2.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.4.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
