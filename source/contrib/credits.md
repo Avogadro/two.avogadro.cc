@@ -66,7 +66,7 @@ Chemistry effort.
 Financial support for Avogadro and its contributors has come from many
 sources. We would particularly like to thank:
 
-- [Google Summer of Code] -- Support in 2007, 2008, 2011, 2016, 2018, 2019, 2021, 2022
+- [Google Summer of Code] -- Support in 2007, 2008, 2011, 2016, 2018, 2019, 2021, 2022, 2023, 2024
 - [Kitware, Inc.]
 - [University of Pittsburgh]
 - US Department of Defense (DoD) through the PETTT program
@@ -93,6 +93,7 @@ Avogadro relies on a number of projects for dependencies and other
 - [Blue Obelisk Group]
 - [Pybind11]
 - [Chemical Structures Database]
+- [Crystallography Open Database (COD)]
 - [CMake]
 - [Eigen]
 - [Qt Software](https://qt.io/)
@@ -105,6 +106,7 @@ Avogadro][amedeo avogadro] for their fundamental work in chemistry.
 [blue obelisk group]: http://blueobelisk.sourceforge.net/wiki/Main_Page
 [pybind11]: https://pybind11.readthedocs.io/
 [chemical structures database]: http://chem-file.sourceforge.net/
+[crystallography open database]: https://crystallography.net/cod/
 [cmake]: http://www.cmake.org/
 [eigen]: http://eigen.tuxfamily.org/
 [geoff hutchison]: https://hutchisonlab.org/
