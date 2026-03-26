@@ -7,6 +7,7 @@ A key task in Avogadro is building and editing molecules for visualization and s
 ```{toctree}
 ---
 caption: Building Molecules
+maxdepth: 1
 ---
 
 drawing-molecules
