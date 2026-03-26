@@ -90,8 +90,10 @@ jobs:
         git config user.name "github-actions[bot]"
         git config user.email "github-actions[bot]@users.noreply.github.com"
         git fetch origin gh-pages
-        git checkout gh-pages
-        cp -r public/* .
+        # Move build output out of the working tree before switching branches
+        mv public /tmp/sphinx-output
+        git checkout -f gh-pages
+        cp -r /tmp/sphinx-output/* .
         touch .nojekyll
         git add -A
         git diff --cached --quiet || git commit -m "Deploy to gh-pages from ${GITHUB_SHA::7}"
