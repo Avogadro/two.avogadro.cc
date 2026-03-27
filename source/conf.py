@@ -82,8 +82,9 @@ myst_enable_extensions = [
 rediraffe_branch = 'main'
 rediraffe_redirects = "redirects.txt"
 
-# FontAwesome icons in LaTeX / PDF output (overridden below for minimal TeX installs)
-sd_fontawesome_latex = True
+# sphinx-design's fontawesome (v4) conflicts with Sphinx's fontawesome5 in LaTeX.
+# Disable it here; Sphinx handles admonition icons via fontawesome5 on its own.
+sd_fontawesome_latex = False
 
 locale_dirs = ['locale/']   # path is example but recommended.
 gettext_compact = 'docs'    # one file
@@ -166,7 +167,6 @@ elif not _has_tex_package('fontawesome'):
     latex_elements['fontenc'] = r'\usepackage[OT1]{fontenc}'
     latex_elements['fontpkg'] = ''
     latex_elements['sphinxsetup'] = 'iconpackage=none'
-    sd_fontawesome_latex = False
 
 latex_logo = '_static/avogadro2.png'
 
