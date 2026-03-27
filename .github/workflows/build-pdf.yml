@@ -53,10 +53,13 @@ jobs:
         echo "version=$VERSION" >> "$GITHUB_OUTPUT"
 
     - name: Build PDF
+      continue-on-error: true
       run: |
         cd build/latex
         latexmk -pdf -dvi- -ps- -interaction=nonstopmode Avogadro.tex
-        cp Avogadro.pdf "Avogadro-v${VERSION}.pdf"
+
+    - name: Rename PDF
+      run: cp build/latex/Avogadro.pdf "build/latex/Avogadro-v${VERSION}.pdf"
       env:
         VERSION: ${{ steps.version.outputs.version }}
 
