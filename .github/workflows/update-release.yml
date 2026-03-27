@@ -1,0 +1,35 @@
+name: Update Release Info
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '45 6 * * *' # daily at 06:45 UTC
+
+jobs:
+  update-release:
+    name: Update release metadata
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+    - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd #v5
+
+    - name: Set up Python
+      uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6
+      with:
+        python-version: '3.12'
+
+    - name: Install dependencies
+      run: pip install 'requests>=2.32,<3'
+
+    - name: Fetch latest release info
+      run: python scripts/releases.py
+
+    - name: Commit and push if changed
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+        git add source/install/releases.json source/install/index.md
+        git diff --cached --quiet || git commit -m "Update release info"
+        git push
