@@ -54,8 +54,13 @@ extensions = [
     'breathe',
     'myst_parser',
     'sphinxcontrib.mermaid',
-    'pydata_sphinx_theme',
 ]
+
+# Only load pydata_sphinx_theme as an extension for HTML builds;
+# its translator crashes the LaTeX builder.
+import sys
+if not any(b in sys.argv for b in ('latex', 'latexpdf', 'qthelp')):
+    extensions.append('pydata_sphinx_theme')
 
 myst_enable_extensions = [
     "attrs_inline",
@@ -77,7 +82,7 @@ myst_enable_extensions = [
 rediraffe_branch = 'main'
 rediraffe_redirects = "redirects.txt"
 
-# Make sure icons show in LaTeX / PDF output
+# FontAwesome icons in LaTeX / PDF output (overridden below for minimal TeX installs)
 sd_fontawesome_latex = True
 
 locale_dirs = ['locale/']   # path is example but recommended.
@@ -117,6 +122,40 @@ exclude_patterns = []
 breathe_projects = { 'AvogadroLibs': '../../build/avogadrolibs/docs/xml' }
 breathe_default_project = 'AvogadroLibs'
 breathe_default_members = ('members', 'undoc-members', 'protected-members')
+
+# -- Options for LaTeX / PDF output ------------------------------------------
+
+latex_documents = [
+    ('latex-index', 'Avogadro.tex', 'Avogadro Documentation',
+     'The OpenChemistry / Avogadro Teams', 'manual'),
+]
+
+latex_elements = {
+    'papersize': 'letterpaper',
+    'pointsize': '11pt',
+    'preamble': r'''
+% Scale all images to 50% of their default size
+\let\origsphinxincludegraphics\sphinxincludegraphics
+\renewcommand{\sphinxincludegraphics}[2][]{%
+  \origsphinxincludegraphics[scale=0.5,#1]{#2}%
+}
+''',
+    # Avoid blank pages between chapters
+    'extraclassoptions': 'openany,oneside',
+    'tocdepth': 2,
+}
+
+# FontAwesome / font availability depends on the TeX installation.
+# CI has full texlive; local basic installs may not.
+import shutil
+if not shutil.which('gsftopk'):
+    # Minimal TeX install — disable icon fonts and use OT1/Computer Modern
+    latex_elements['fontenc'] = r'\usepackage[OT1]{fontenc}'
+    latex_elements['fontpkg'] = ''
+    latex_elements['sphinxsetup'] = 'iconpackage=none'
+    sd_fontawesome_latex = False
+
+latex_logo = '_static/avogadro2.png'
 
 # -- Options for HTML output -------------------------------------------------
 
