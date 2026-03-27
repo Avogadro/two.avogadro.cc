@@ -146,9 +146,22 @@ latex_elements = {
 }
 
 # FontAwesome / font availability depends on the TeX installation.
-# CI has full texlive; local basic installs may not.
-import shutil
-if not shutil.which('gsftopk'):
+# CI has full texlive (fontawesome5); local basic installs may not.
+import subprocess
+def _has_tex_package(name):
+    """Check if a TeX package (.sty) is available."""
+    try:
+        result = subprocess.run(
+            ['kpsewhich', f'{name}.sty'],
+            capture_output=True, timeout=5)
+        return result.returncode == 0
+    except (FileNotFoundError, subprocess.TimeoutExpired):
+        return False
+
+if _has_tex_package('fontawesome5'):
+    # Full TeX install — explicitly use fontawesome5 to avoid conflicts
+    latex_elements['sphinxsetup'] = 'iconpackage=fontawesome5'
+elif not _has_tex_package('fontawesome'):
     # Minimal TeX install — disable icon fonts and use OT1/Computer Modern
     latex_elements['fontenc'] = r'\usepackage[OT1]{fontenc}'
     latex_elements['fontpkg'] = ''
