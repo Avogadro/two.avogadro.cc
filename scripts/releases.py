@@ -6,6 +6,7 @@ and version-specific download URLs in source/install/index.md.
 """
 import json
 import re
+import sys
 from pathlib import Path
 
 import requests
@@ -50,7 +51,13 @@ def detect_platform(name):
 
 
 def main():
-    release = requests.get(API_URL).json()
+    try:
+        resp = requests.get(API_URL, timeout=10)
+        resp.raise_for_status()
+        release = resp.json()
+    except requests.exceptions.RequestException as e:
+        print(f"Error fetching release info: {e}")
+        sys.exit(1)
 
     assets = []
     for a in release["assets"]:
