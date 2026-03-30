@@ -28,7 +28,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
@@ -569,7 +569,7 @@ elements not in the list (e.g., if it does not support metals), or based on the 
 <p>Avogadro will write a temporary file in the specified file format and supply the filename when calling the script, e.g. <code class="docutils literal notranslate"><span class="pre">script.py</span> <span class="pre">-f</span> <span class="pre">tempfile.mol</span></code>.</p>
 <p>For example a script using Open Babel might use code like this:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># we declared &quot;inputFormat&quot;: &quot;cml&quot; in the metadata</span>
-<span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
     <span class="c1"># we get the molecule from the supplied filename</span>
     <span class="c1">#  in cjson format (it&#39;s a temporary file created by Avogadro)</span>
     <span class="n">mol</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">pybel</span><span class="o">.</span><span class="n">readfile</span><span class="p">(</span><span class="s2">&quot;cml&quot;</span><span class="p">,</span> <span class="n">filename</span><span class="p">))</span>
@@ -582,7 +582,7 @@ elements not in the list (e.g., if it does not support metals), or based on the 
 </pre></div>
 </div>
 <p>Another example is to use cjson and get elements and coordinates:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
     <span class="c1"># we get the molecule from the supplied filename</span>
     <span class="c1">#  in cjson format (it&#39;s a temporary file created by Avogadro)</span>
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>

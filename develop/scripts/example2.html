@@ -28,7 +28,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
@@ -560,7 +560,7 @@ So, an example input molecule for the replace or alloy command may look like:</p
 </section>
 <section id="runcommand-function">
 <h2>runCommand() Function<a class="headerlink" href="#runcommand-function" title="Link to this heading">#</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">runCommand</span><span class="p">():</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">runCommand</span><span class="p">():</span>
     <span class="c1"># Read options from stdin</span>
     <span class="n">stdinStr</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
@@ -610,7 +610,7 @@ So, an example input molecule for the replace or alloy command may look like:</p
 <p>This function gets executed through the runCommand() function. It is responsible for the required changes in the input molecule and thus, returns the modified molecule.</p>
 <section id="retrieving-necessary-components">
 <h3>Retrieving necessary components<a class="headerlink" href="#retrieving-necessary-components" title="Link to this heading">#</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">replace_element</span><span class="p">(</span><span class="n">opts</span><span class="p">,</span> <span class="n">mol</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">replace_element</span><span class="p">(</span><span class="n">opts</span><span class="p">,</span> <span class="n">mol</span><span class="p">):</span>
     <span class="n">original</span><span class="o">=</span> <span class="n">element_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">opts</span><span class="p">[</span><span class="s1">&#39;Find&#39;</span><span class="p">])</span>
     <span class="n">percent</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">opts</span><span class="p">[</span><span class="s1">&#39;Percent&#39;</span><span class="p">])</span>
     <span class="n">replace</span><span class="o">=</span> <span class="n">element_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">opts</span><span class="p">[</span><span class="s1">&#39;Replace&#39;</span><span class="p">])</span>
