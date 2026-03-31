@@ -447,6 +447,7 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="../panes/index.html">Panes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../optimizing-geometry/index.html">Optimizing Geometry</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plugins/index.html">Plugins and Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../settings/index.html">Settings</a></li>
 </ul>
 </div>
@@ -592,21 +593,24 @@ document.write(`
 <li><p>Band structure diagrams with Yaehmop <code class="docutils literal notranslate"><span class="pre">eht_bind</span></code></p></li>
 </ul>
 </section>
-<section id="python-commands-and-extensions">
-<h3>Python commands and extensions<a class="headerlink" href="#python-commands-and-extensions" title="Link to this heading">#</a></h3>
-<p>With Avogadro 2, it’s easier than ever to create a quick Python script and add it as an Avogadro command. These scripts could for example modify the molecule/atoms (e.g., add a solvent box), run analysis (e.g., assign R and S stereochemical labels with <code class="docutils literal notranslate"><span class="pre">rdkit</span></code>), optimize the geometry, create nanoparticles or nanotubes using installed Python modules (e.g., <code class="docutils literal notranslate"><span class="pre">pymatgen</span></code> or <code class="docutils literal notranslate"><span class="pre">ASE</span></code>), generate ice crystal structures, solvate molecules, and many more.</p>
-<p>Current extension types include:</p>
+<section id="python-commands-and-plugins">
+<h3>Python commands and plugins<a class="headerlink" href="#python-commands-and-plugins" title="Link to this heading">#</a></h3>
+<p>With Avogadro 2, it’s easier than ever to extend it with Python plugins.</p>
+<p>Plugins can add a variety of functionality:</p>
 <ul class="simple">
-<li><p>input file generators</p></li>
-<li><p>file format translators</p></li>
+<li><p>input file generators for computational chemistry programs</p></li>
+<li><p>parsers for additional file formats</p></li>
+<li><p>energy models for the <a class="reference internal" href="../tools/autoopt-tool.html#tools-autoopt-tool"><span class="std std-ref">AutoOptimization Tool</span></a></p></li>
+<li><p>electrostatic models to calculate partial charges or electrostatic potentials</p></li>
 <li><p>additional menu commands</p></li>
-<li><p>force fields</p></li>
-<li><p>electrostatics models</p></li>
-<li><p>data (e.g., molecule and crystal fragments)</p></li>
 </ul>
-<p>More information can be found in the section on <a class="reference internal" href="../extensions/index.html#extensions"><span class="std std-ref">Extensions and Python</span></a>.</p>
-<p>You can also share your extensions through GitHub and others can then download and install or update to new versions through the “Download Extensions” dialog:</p>
+<p>You can get new plugins that other users have created in the <strong>Download Plugins…</strong> dialog:</p>
 <figure><img src="../../_static/Download.png" alt="" width="563"><figcaption><p>Download Python extension scripts for menu commands, input generators, file formats and more</p></figcaption></figure>
+<p>More information on installing and using plugins can be found in the section on <a class="reference internal" href="../plugins/index.html#plugins"><span class="std std-ref">Plugins and Python</span></a>.</p>
+<p>Writing plugins of your own, whether it’s a quick script or a full package, has also been made much easier.
+See <a class="reference internal" href="../../develop/plugins/index.html#develop-plugins"><span class="std std-ref">Writing Plugins</span></a> for details.</p>
+<p>Menu commands in particular are very flexible and powerful – you could write a script to modify the molecule/atoms (e.g., add a solvent box), run analysis (e.g., assign R and S stereochemical labels with <code class="docutils literal notranslate"><span class="pre">rdkit</span></code>), optimize the geometry, create nanoparticles or nanotubes using installed Python modules (e.g., <code class="docutils literal notranslate"><span class="pre">pymatgen</span></code> or <code class="docutils literal notranslate"><span class="pre">ASE</span></code>), generate ice crystal structures, solvate molecules…
+Whatever you come up with, we’d love you to share what you come up with through GitHub so that others can install and use it too!</p>
 </section>
 <section id="python-scripting-and-jupyter-integration">
 <h3>Python scripting and Jupyter integration<a class="headerlink" href="#python-scripting-and-jupyter-integration" title="Link to this heading">#</a></h3>
@@ -684,7 +688,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solvent-accessible-and-solvent-excluded-surfaces">Solvent-accessible and solvent-excluded surfaces</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flexible-electrostatics-models">Flexible electrostatics models</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#new-analysis-tools">New analysis tools</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-commands-and-extensions">Python commands and extensions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-commands-and-plugins">Python commands and plugins</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-scripting-and-jupyter-integration">Python scripting and Jupyter integration</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#new-and-updated-interfaces-to-external-programs">New and updated interfaces to external programs</a></li>
 </ul>

@@ -435,7 +435,7 @@ document.write(`
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="structure.html">Project Structure and C++ API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="build.html">Building Source Code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="scripts/index.html">Script Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins/index.html">Writing Plugins</a></li>
 <li class="toctree-l1"><a class="reference internal" href="rpc.html">Avogadro Remote Procedure Call (RPC)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contrib/code.html">Contributing Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contrib/ai-usage.html">AI Usage Policy</a></li>
@@ -511,16 +511,20 @@ For guidance on how the project is managed, the coding style, and how to go abou
 <h2>Interfacing to and extending Avogadro<a class="headerlink" href="#interfacing-to-and-extending-avogadro" title="Link to this heading">#</a></h2>
 <section id="script-plugins">
 <h3>Script plugins<a class="headerlink" href="#script-plugins" title="Link to this heading">#</a></h3>
-<p>Many features in Avogadro can be extended with Python scripts, including:</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 2.0: </span>From the 2.0 release onwards, Avogadro’s plugin framework has seen a significant overhaul, making them more robust, more powerful, and easier to write than ever.
+We’re excited to see what people do with it!</p>
+</div>
+<p>Many features in Avogadro can be extended by plugins, including:</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="scripts/commands.html"><span class="doc std std-doc">menu commands</span></a></p></li>
-<li><p><a class="reference internal" href="scripts/charges.html"><span class="doc std std-doc">electrostatic models</span></a></p></li>
-<li><p><a class="reference internal" href="scripts/formats.html"><span class="doc std std-doc">file format import/export</span></a></p></li>
-<li><p><a class="reference internal" href="scripts/energy.html"><span class="doc std std-doc">force fields</span></a></p></li>
-<li><p><a class="reference internal" href="scripts/generators.html"><span class="doc std std-doc">input generators</span></a></p></li>
+<li><p>input file generators for computational chemistry programs</p></li>
+<li><p>parsers for additional file formats</p></li>
+<li><p>energy models for the <a class="reference internal" href="../docs/tools/autoopt-tool.html#tools-autoopt-tool"><span class="std std-ref">AutoOptimization Tool</span></a></p></li>
+<li><p>electrostatic models to calculate partial charges or electrostatic potentials</p></li>
+<li><p>additional menu commands</p></li>
 </ul>
-<p>These scripts can be installed by drag-and-drop into the main Avogadro window or from GitHub repositories.</p>
-<p>For more details, see the <a class="reference internal" href="scripts/index.html#develop-scripts"><span class="std std-ref">script plugin</span></a> documentation.</p>
+<p>Plugins are written in Python, and writing your own is easier to do than ever in Avogadro 2, whether it’s a quick script or a full package.
+See <a class="reference internal" href="plugins/index.html#develop-plugins"><span class="std std-ref">Writing Plugins</span></a> for details.</p>
 </section>
 <section id="external-scripting">
 <h3>External scripting<a class="headerlink" href="#external-scripting" title="Link to this heading">#</a></h3>

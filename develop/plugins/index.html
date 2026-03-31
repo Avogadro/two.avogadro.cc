@@ -1,0 +1,775 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Writing Plugins &#8212; Avogadro 1.103.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=ee427ece" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mermaid-theme.css?v=7f85688a" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=4a00f340"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'develop/plugins/index';</script>
+    <link rel="canonical" href="https://two.avogadro.cc/develop/plugins/index.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="How plugins are run" href="args.html" />
+    <link rel="prev" title="Building Source Code" href="../build.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/avogadro2.png" class="logo__image only-light" alt="Avogadro Documentation- Home"/>
+    <script>document.write(`<img src="../../_static/avogadro2-dark.png" class="logo__image only-dark" alt="Avogadro Documentation- Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../install/index.html">
+    Install
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../docs/index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Develop
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../contrib/index.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../teach/index.html">
+    Teach
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+    Discuss
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/avogadro.cc" title="Bluesky" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-bluesky fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../install/index.html">
+    Install
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../docs/index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Develop
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../contrib/index.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../teach/index.html">
+    Teach
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+    Discuss
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/avogadro.cc" title="Bluesky" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-bluesky fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Develop</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../structure.html">Project Structure and C++ API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build.html">Building Source Code</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Writing Plugins</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="args.html">How plugins are run</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html">The input JSON</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="metadata.html">Metadata and configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sharing.html">The online plugin repository/index</a></li>
+<li class="toctree-l2"><a class="reference internal" href="old-api/index.html">Pre-2.0 Plugin API</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../rpc.html">Avogadro Remote Procedure Call (RPC)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contrib/code.html">Contributing Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contrib/ai-usage.html">AI Usage Policy</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Develop</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Writing Plugins</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="writing-plugins">
+<span id="develop-plugins"></span><h1>Writing Plugins<a class="headerlink" href="#writing-plugins" title="Link to this heading">#</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For information on the installation and usage of plugins as a <em>user</em>, see the <a class="reference internal" href="../../docs/plugins/index.html#plugins"><span class="std std-ref">section in the Guide</span></a>.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 2.0: </span>From the 2.0 release onwards, Avogadro’s plugin framework has seen a significant overhaul, with a new plugin API, different metadata requirements, and changes to the infrastructure for sharing plugins.
+If you are looking to write a plugin for Avogadro 1.90–1.103, details of the old API can be found <a class="reference internal" href="old-api/index.html#develop-scripts"><span class="std std-ref">here</span></a>.</p>
+</div>
+<section id="a-brief-outline-of-avogadros-plugin-api">
+<h2>A brief outline of Avogadro’s plugin API<a class="headerlink" href="#a-brief-outline-of-avogadros-plugin-api" title="Link to this heading">#</a></h2>
+<section id="feature-types">
+<h3>Feature types<a class="headerlink" href="#feature-types" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Plugins can provide any number of the following features:</p></li>
+</ul>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Feature type</p></th>
+<th class="head"><p>TOML key</p></th>
+<th class="head"><p>Purpose</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Electrostatic Models</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">electrostatic-models</span></code></p></td>
+<td><p>Provide models for Avogadro to use in the calculation of partial charges and/or electrostatic potentials</p></td>
+</tr>
+<tr class="row-odd"><td><p>Energy Models</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">energy-models</span></code></p></td>
+<td><p>Provide models for Avogadro to use in the calculation of energies and gradients</p></td>
+</tr>
+<tr class="row-even"><td><p>File Formats</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">file-formats</span></code></p></td>
+<td><p>Parse chemical file formats that Avogadro doesn’t know</p></td>
+</tr>
+<tr class="row-odd"><td><p>Input Generators</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">input-generators</span></code></p></td>
+<td><p>Prepare input files for computational chemistry programs</p></td>
+</tr>
+<tr class="row-even"><td><p>Menu Commands</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">menu-commands</span></code></p></td>
+<td><p>Add additional items for the menus that carry out various tasks</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="basic-requirements">
+<h3>Basic requirements<a class="headerlink" href="#basic-requirements" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>For now, plugins for Avogadro must be written in Python</p>
+<ul>
+<li><p>Support for other languages may come at a later date; in particular, binary plugins would be of interest (though these would not be distributed via Avogadro’s infrastructure due to security concerns)</p></li>
+</ul>
+</li>
+<li><p>The installed form of a plugin used by Avogadro consists of a single directory bearing the plugin’s name and containing a metadata file (see below) as well as all the plugin’s source code in one of the three forms described below</p></li>
+<li><p>Plugins may only have <code class="docutils literal notranslate"><span class="pre">A-Z,</span> <span class="pre">a-z,</span> <span class="pre">0-9,</span> <span class="pre">-</span></code> i.e. ASCII letters, numbers, and the hyphen minus, in their names (no Unicode, no underscores, no other punctuation or whitespace)</p>
+<ul>
+<li><p>Underscores are substituted for hyphens in any situations where it is necessary, but the canonical name uses hyphens only</p></li>
+</ul>
+</li>
+<li><p>All plugin files, and communication over the Avogadro-plugin interface, must be exclusively in UTF-8</p></li>
+</ul>
+</section>
+<section id="plugin-types">
+<h3>Plugin types<a class="headerlink" href="#plugin-types" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>There are <strong>three sub-types</strong> of Python plugin:</p>
+<ol class="arabic simple">
+<li><p>Script(s)</p></li>
+<li><p>Python package</p></li>
+<li><p>Pixi project</p></li>
+</ol>
+</li>
+<li><p>Note: unlike Avogadro 1.102 and earlier, single-file scripts with no metadata are no longer allowed – all scripts must be within their own folder with a metadata file, making them a proper plugin (even if the folder only contains a single script)</p></li>
+</ul>
+<section id="script-plugins-pyscript">
+<h4>Script plugins (<code class="docutils literal notranslate"><span class="pre">pyscript</span></code>)<a class="headerlink" href="#script-plugins-pyscript" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>A script plugin consists of one or more Python scripts collected into a single bundle in a folder, allowing for easy installation, deinstallation, management, and distribution</p></li>
+<li><p>Regardless of the number of scripts, a <em>single</em> metadata file (see below) is required for the plugin as a whole and must be located in the folder next to the scripts</p></li>
+<li><p>The plugin is not allowed to have any dependencies</p></li>
+<li><p>Script plugins are invoked by Avogadro by each script being run individually via the <strong>script API</strong></p></li>
+</ul>
+</section>
+<section id="package-plugins-pypkg">
+<h4>Package plugins (<code class="docutils literal notranslate"><span class="pre">pypkg</span></code>)<a class="headerlink" href="#package-plugins-pypkg" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>A package plugin for Avogadro is essentially a standard Python package as found in the wider ecosystem – specifically, it consists of a directory that contains the source code for a Python <em>distribution</em> package, that can be built and installed by <code class="docutils literal notranslate"><span class="pre">pip</span></code>, <code class="docutils literal notranslate"><span class="pre">poetry</span></code>, <code class="docutils literal notranslate"><span class="pre">uv</span></code> etc.</p></li>
+<li><p>Metadata for Avogadro is generally contained in the package’s <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code></p></li>
+<li><p>The plugin may use dependencies from the PyPI repository</p></li>
+<li><p>The plugin may use any structure for its source code that works for a Python package – the two most common structures are the so-called “flat” and “src” layouts</p></li>
+<li><p>Avogadro will install the plugin as a Python package to a Python virtual environment in one of two places (to be decided):</p>
+<ol class="arabic simple">
+<li><p>The main Avogadro environment</p>
+<ul>
+<li><p>Allows shared dependencies</p></li>
+<li><p>Means code has to be written to account for the possibility that installation fails due to dependency conflicts</p></li>
+</ul>
+</li>
+<li><p>A plugin-specific environment contained within the plugin’s own folder</p></li>
+</ol>
+</li>
+<li><p>Package plugins are invoked by Avogadro using the <strong>package API</strong></p></li>
+</ul>
+</section>
+<section id="pixi-project-pypixi">
+<h4>Pixi project (<code class="docutils literal notranslate"><span class="pre">pypixi</span></code>)<a class="headerlink" href="#pixi-project-pypixi" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Pixi project plugins consist of a single directory containing a Pixi project, with a <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file used as the Pixi environment manifest</p></li>
+<li><p>Metadata for Avogadro is generally contained in the project’s <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code></p></li>
+<li><p>The plugin may use dependencies from the Conda ecosystem, as well as from the usual PyPI repository</p></li>
+<li><p>A plugin-specific Pixi environment is initialized for the plugin in its own directory, and all its dependencies are installed using Pixi</p></li>
+<li><p>Pixi plugins are also invoked by Avogadro using the <strong>package API</strong></p></li>
+</ul>
+</section>
+</section>
+<section id="the-layout-of-avogadros-local-plugin-directory">
+<h3>The layout of Avogadro’s local plugin directory<a class="headerlink" href="#the-layout-of-avogadros-local-plugin-directory" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Avogadro’s data is stored under <code class="docutils literal notranslate"><span class="pre">&lt;USERDATA&gt;/OpenChemistry/Avogadro/</span></code>, where <code class="docutils literal notranslate"><span class="pre">&lt;USERDATA&gt;</span></code> is platform-specific. This location will be referred to as <code class="docutils literal notranslate"><span class="pre">.</span></code> throughout the rest of the document.</p></li>
+<li><p>Installed plugins are stored in subfolders under <code class="docutils literal notranslate"><span class="pre">./plugins/</span></code>:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">plugins/python/</span></code> for plugins written in Python</p></li>
+</ul>
+</li>
+</ul>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../build.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Building Source Code</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="args.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">How plugins are run</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-brief-outline-of-avogadros-plugin-api">A brief outline of Avogadro’s plugin API</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-types">Feature types</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-requirements">Basic requirements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plugin-types">Plugin types</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#script-plugins-pyscript">Script plugins (<code class="docutils literal notranslate"><span class="pre">pyscript</span></code>)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#package-plugins-pypkg">Package plugins (<code class="docutils literal notranslate"><span class="pre">pypkg</span></code>)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pixi-project-pypixi">Pixi project (<code class="docutils literal notranslate"><span class="pre">pypixi</span></code>)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-layout-of-avogadros-local-plugin-directory">The layout of Avogadro’s local plugin directory</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/avogadro/two.avogadro.cc/edit/main/source/develop/plugins/index.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">          <p>
+            ©2026 The OpenChemistry / Avogadro Teams 
+          </p>
+          <p>Covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
+          </p></div>
+      
+        <div class="footer-item">        <p>
+          <a href="/contrib/index.html">Contribute</a>
+        </p></div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.0.2.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.4.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
