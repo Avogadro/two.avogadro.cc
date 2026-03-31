@@ -10,11 +10,11 @@ Optimize Geometry {kbd}`Ctrl+Alt+O`
 Calculate
 : See [Calculate](calculate_dropdown).
 
-Download Plugins...
-: See [Plugin Interface](plugin_interface).
+Manage Plugins...
+: Open the [**Plugin Manager**](plugins-manager).
 
 Python Settings...
-: Open a dialog to modify the Python path that Avogadro 2 uses.
+: Open a dialog to modify the Python path that Avogadro 2 uses. See [Setting Up Python](plugins-python).
 
 User Interface Language...
 : Open a dialog to switch the language in Avogadro 2.

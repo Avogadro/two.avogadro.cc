@@ -1,6 +1,6 @@
 (develop-plugins)=
 
-# Plugins
+# Writing Plugins
 
 :::{note}
 For information on the installation and usage of plugins as a _user_, see the [section in the Guide](plugins).
@@ -79,7 +79,6 @@ If you are looking to write a plugin for Avogadro 1.90--1.103, details of the ol
 
 ```{toctree}
 ---
-caption: Writing Plugins
 hidden: true
 ---
 args
@@ -92,4 +91,5 @@ menu-commands
 user-options
 metadata
 sharing
+old-api/index
 ```

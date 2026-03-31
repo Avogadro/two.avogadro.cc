@@ -1,6 +1,6 @@
 (develop-scripts)=
 
-# Script Plugins
+# Pre-2.0 Plugin API
 
 Avogadro can be extended easily using Python scripts:
 
@@ -12,6 +12,7 @@ Avogadro can be extended easily using Python scripts:
 
 More script types are anticipated in the future, including:
 
+- plotters
 - web databases
 - custom colors
 
@@ -27,7 +28,6 @@ Scripts can also be installed from GitHub repositories through the "Download Plu
 
 ```{toctree}
 ---
-caption: Python Scripts
 hidden: true
 ---
 install
