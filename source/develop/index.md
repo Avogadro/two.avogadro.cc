@@ -22,17 +22,21 @@ For guidance on how the project is managed, the coding style, and how to go abou
 
 ### Script plugins
 
-Many features in Avogadro can be extended with Python scripts, including:
+:::{versionchanged} 2.0
+From the 2.0 release onwards, Avogadro's plugin framework has seen a significant overhaul, making them more robust, more powerful, and easier to write than ever.
+We're excited to see what people do with it!
+:::
 
-- [menu commands](scripts/commands)
-- [electrostatic models](scripts/charges)
-- [file format import/export](scripts/formats)
-- [force fields](scripts/energy)
-- [input generators](scripts/generators)
+Many features in Avogadro can be extended by plugins, including:
 
-These scripts can be installed by drag-and-drop into the main Avogadro window or from GitHub repositories.
+* input file generators for computational chemistry programs
+* parsers for additional file formats
+* energy models for the [AutoOptimization Tool](tools-autoopt-tool)
+* electrostatic models to calculate partial charges or electrostatic potentials
+* additional menu commands
 
-For more details, see the [script plugin](develop-scripts) documentation.
+Plugins are written in Python, and writing your own is easier to do than ever in Avogadro 2, whether it's a quick script or a full package.
+See [Writing Plugins](develop-plugins) for details.
 
 ### External scripting
 
@@ -86,7 +90,7 @@ hidden: true
 Introduction <self>
 structure
 build
-scripts/index
+plugins/index
 rpc
 /contrib/code
 /contrib/ai-usage
