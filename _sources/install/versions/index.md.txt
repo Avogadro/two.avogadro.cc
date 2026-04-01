@@ -10,5 +10,6 @@ previous versions of Avogadro (1.2 and older)
 maxdepth: 2
 ---
 avogadro2
+avogadro2beta
 avogadro1
 ```
