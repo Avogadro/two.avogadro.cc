@@ -60,14 +60,14 @@ macOS
 :text-align: center
 :shadow: none
 
-:::{button-link} https://github.com/OpenChemistry/avogadrolibs/releases/download/1.103.0/Avogadro2-1.103.0-Darwin-arm64.dmg
+:::{button-link} https://github.com/OpenChemistry/avogadrolibs/releases/download/2.0.0/Avogadro2-2.0.0-Darwin-arm64.dmg
 :ref-type: myst
 :color: primary
 :outline:
 Download DMG (Apple Silicon)
 :::
 
-:::{button-link} https://github.com/OpenChemistry/avogadrolibs/releases/download/1.103.0/Avogadro2-1.103.0-Darwin.dmg
+:::{button-link} https://github.com/OpenChemistry/avogadrolibs/releases/download/2.0.0/Avogadro2-2.0.0-Darwin.dmg
 :color: primary
 :outline:
 Download DMG (Intel)
@@ -112,7 +112,7 @@ Windows
 :text-align: center
 :shadow: none
 
-:::{button-link} https://github.com/OpenChemistry/avogadrolibs/releases/download/1.103.0/Avogadro2-1.103.0-win64.exe
+:::{button-link} https://github.com/OpenChemistry/avogadrolibs/releases/download/2.0.0/Avogadro2-2.0.0-win64.exe
 :color: primary
 :outline:
 Download Installer
@@ -265,37 +265,37 @@ Avogadro on GitHub {fab}`github;fa-1x`
 <!-- JSON updated by scripts/releases.py -->
 <script id='avogadro-release' type='application/json'>
 {
-  "version": "1.103.0",
+  "version": "2.0.0",
   "published": "2026-02-06T02:01:13Z",
   "assets": [
     {
       "platform": "macOS-arm64",
-      "name": "Avogadro2-1.103.0-Darwin-arm64.dmg",
-      "url": "https://github.com/OpenChemistry/avogadrolibs/releases/download/1.103.0/Avogadro2-1.103.0-Darwin-arm64.dmg",
+      "name": "Avogadro2-2.0.0-Darwin-arm64.dmg",
+      "url": "https://github.com/OpenChemistry/avogadrolibs/releases/download/2.0.0/Avogadro2-2.0.0-Darwin-arm64.dmg",
       "size": "85.8 MB"
     },
     {
       "platform": "macOS-x64",
-      "name": "Avogadro2-1.103.0-Darwin.dmg",
-      "url": "https://github.com/OpenChemistry/avogadrolibs/releases/download/1.103.0/Avogadro2-1.103.0-Darwin.dmg",
+      "name": "Avogadro2-2.0.0-Darwin.dmg",
+      "url": "https://github.com/OpenChemistry/avogadrolibs/releases/download/2.0.0/Avogadro2-2.0.0-Darwin.dmg",
       "size": "90.3 MB"
     },
     {
       "platform": "windows-x64",
-      "name": "Avogadro2-1.103.0-win64.exe",
-      "url": "https://github.com/OpenChemistry/avogadrolibs/releases/download/1.103.0/Avogadro2-1.103.0-win64.exe",
+      "name": "Avogadro2-2.0.0-win64.exe",
+      "url": "https://github.com/OpenChemistry/avogadrolibs/releases/download/2.0.0/Avogadro2-2.0.0-win64.exe",
       "size": "113.7 MB"
     },
     {
       "platform": "linux-arm64",
       "name": "Avogadro2-aarch64.AppImage",
-      "url": "https://github.com/OpenChemistry/avogadrolibs/releases/download/1.103.0/Avogadro2-aarch64.AppImage",
+      "url": "https://github.com/OpenChemistry/avogadrolibs/releases/download/2.0.0/Avogadro2-aarch64.AppImage",
       "size": "105.5 MB"
     },
     {
       "platform": "linux-x64",
       "name": "Avogadro2-x86_64.AppImage",
-      "url": "https://github.com/OpenChemistry/avogadrolibs/releases/download/1.103.0/Avogadro2-x86_64.AppImage",
+      "url": "https://github.com/OpenChemistry/avogadrolibs/releases/download/2.0.0/Avogadro2-x86_64.AppImage",
       "size": "104.2 MB"
     }
   ]
