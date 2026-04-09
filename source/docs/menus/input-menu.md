@@ -10,7 +10,7 @@ By default, Avogadro comes packaged with several input generators, which you sho
 :alt: Image of the input menu
 :align: center
 :height: 400px
-:class: dark-light
+:class: dark-light unclickable-figure
 ```
 
 APBS
