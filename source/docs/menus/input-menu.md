@@ -56,12 +56,12 @@ ORCA
 ```{image} /_static/menus/input-menu/orca_input_generator_light.png
 :alt: Example image of the ORCA input generator
 :align: center
-:class: only-light
+:class: only-light unclickable-figure
 ```
 ```{image} /_static/menus/input-menu/orca_input_generator_dark.png
 :alt: Example image of the ORCA input generator
 :align: center
-:class: only-dark
+:class: only-dark unclickable-figure
 ```
 :::
 
