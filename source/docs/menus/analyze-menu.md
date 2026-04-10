@@ -96,7 +96,7 @@ Angle Properties
 :alt: Example of the Angle Properties Dialog
 :align: center
 :width: 49%
-:class: dark-ligh unclickable-figuret
+:class: dark-light unclickable-figure
 ```
 :::
 
@@ -111,7 +111,7 @@ Torsion Properties
 :alt: Example of the Torsion Properties Dialog
 :align: center
 :width: 59%
-:class: dark-ligh unclickable-figuret
+:class: dark-light unclickable-figure
 ```
 :::
 
@@ -354,7 +354,7 @@ The reason for this becomes evident with the figure below, which shows the HOMO 
 :alt: HOMO of pyrazine with an Isosurface value of 0.04
 :align: center
 :height: 300px
-:class: only-ligh unclickable-figuret
+:class: only-light unclickable-figure
 ```
 ```{image} /_static/menus/analyze-menu/pyrazine_iso/pyrazine_homo_iso_0.04_dark.png
 :alt: HOMO of pyrazine with an Isosurface value of 0.04
@@ -390,7 +390,7 @@ The reason for this becomes evident with the figure below, which shows the HOMO 
 :alt: HOMO of pyrazine with an Isosurface value of 0.06
 :align: center
 :height: 300px
-:class: only-dar unclickable-figurek
+:class: only-dark unclickable-figure
 ```
 :::
 
