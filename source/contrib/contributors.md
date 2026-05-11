@@ -49,6 +49,7 @@
 - dnandz
 - dtelsing
 - Amanda Dumi
+- DumKhunt
 - dvermd
 - Brock Dyer
 - Mirkó Attila Dániel
@@ -102,6 +103,7 @@
 - Nallana Hari Krishna 
 - Barnala Bala Vamsi Krishna
 - Anubhav Kumar
+- Laksan99
 - Karol M. Langner
 - Cristian Le
 - Justin Lecher
@@ -125,7 +127,6 @@
 - Geongi Moon
 - Anton Morgunov
 - mperez
-- mrmrcl
 - Julien Nabet
 - nbehrnd
 - nicolazanna
@@ -173,6 +174,7 @@
 - StefanBruens
 - stilldown
 - Andreas Sturmlechner
+- SwyftPain
 - Tanuj
 - Kavin Teenakul
 - Suraj Thakur
