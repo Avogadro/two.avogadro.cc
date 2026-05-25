@@ -42,6 +42,7 @@
 - Andreas Cord-Landwehr
 - FX Coudert
 - crlambda
+- crystalsymmetry
 - danialk03
 - DDinghoya
 - Diazonium
@@ -112,7 +113,6 @@
 - Joeri van Limpt
 - M3CG
 - Emin Macanović
-- Maetnicio
 - Anna Malinovskaia
 - Alessandro Mandelli
 - Marco Marchiò
@@ -133,6 +133,7 @@
 - Allan Nordhøy
 - NorwayFun
 - nothingonedlike
+- Steve Oakley
 - octycs
 - Tuguldur Odbadrakh
 - OfficerBrasidas
@@ -171,6 +172,7 @@
 - Perminder Singh
 - Prabhjot Singh
 - Adrea Snow
+- sofiane
 - StefanBruens
 - stilldown
 - Andreas Sturmlechner
