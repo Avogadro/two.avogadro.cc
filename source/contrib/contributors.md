@@ -51,6 +51,7 @@
 - dtelsing
 - Amanda Dumi
 - DumKhunt
+- Call of duty 
 - dvermd
 - Brock Dyer
 - Mirkó Attila Dániel
@@ -104,7 +105,6 @@
 - Nallana Hari Krishna 
 - Barnala Bala Vamsi Krishna
 - Anubhav Kumar
-- Laksan99
 - Karol M. Langner
 - Cristian Le
 - Justin Lecher
