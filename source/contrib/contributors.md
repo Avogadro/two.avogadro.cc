@@ -63,6 +63,7 @@
 - Boris Faure
 - Nicolas Fella
 - Dominik Florjan
+- Fmfl_Felix
 - for_the_zero
 - Narada Fox
 - Alessandro Genova
@@ -154,6 +155,7 @@
 - Michael Quevillon
 - RahulBahuguna-code
 - ramses-70
+- reducedradius
 - Reportiv
 - research11111
 - Reza
