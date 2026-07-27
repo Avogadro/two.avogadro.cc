@@ -7,10 +7,12 @@
 - Daniel Aguila
 - Niskala Airaha
 - Yunus AK
+- alevtina-karashokova
 - Alex
 - Bryce Anderson
 - Andre870-hub
 - angryBird87
+- aouxwoux
 - atharrrva15
 - Atharva-Kanherkar
 - Heiner Atze
@@ -44,6 +46,7 @@
 - crlambda
 - crystalsymmetry
 - danialk03
+- Datvex
 - DDinghoya
 - Diazonium
 - DJ-Aswin
@@ -73,6 +76,7 @@
 - Andrés Henao
 - hgokhanb
 - Grant Hill
+- hooray804
 - Brenton Horne
 - Geoff Hutchison
 - Takaki IEKURA
@@ -146,6 +150,7 @@
 - Drew Parsons
 - Ethan Pavolik
 - peach280
+- Billy Wayne McCann, PhD.
 - Pietro026
 - pltmo
 - Tomáš Poláček
@@ -197,6 +202,8 @@
 - Jorge Luis Gálvez Vallejo
 - Tim Vandermeersch
 - VeryTastyTomato
+- Yuri Victorovich
+- Michal Várady
 - wb957
 - Weblate
 - Oskar Weser
@@ -206,7 +213,6 @@
 - Haoming Yan
 - Yeims20
 - Nathan Young
-- yuri@FreeBSD
 - Sihan Zhang
 - LIHAN ZHU
 - Zulfikar
