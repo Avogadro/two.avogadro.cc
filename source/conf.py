@@ -176,7 +176,7 @@ latex_logo = '_static/avogadro2.png'
 html_theme = 'pydata_sphinx_theme'
 html_show_sourcelink = False
 
-html_baseurl = 'https://two.avogadro.cc'
+html_baseurl = 'https://avogadro.cc'
 
 html_theme_options = {
     'external_links': [
