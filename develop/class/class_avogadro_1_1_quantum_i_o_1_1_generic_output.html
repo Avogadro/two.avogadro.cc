@@ -109,6 +109,9 @@
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
 </div>
+<aside class="bd-header-announcement" aria-label="Announcement">
+  <div class="bd-header-announcement__content">Please fill out our <a href='https://forms.gle/315AsRMyHAHcTpvC8'>anonymous community survey</a> (only takes ~5 minutes)</div>
+</aside>
 
   
     <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
@@ -581,7 +584,7 @@ document.write(`
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9QuantumIO13GenericOutput10identifierEv">
-<span id="_CPPv3NK8Avogadro9QuantumIO13GenericOutput10identifierEv"></span><span id="_CPPv2NK8Avogadro9QuantumIO13GenericOutput10identifierEv"></span><span id="Avogadro::QuantumIO::GenericOutput::identifierC"></span><span class="target" id="class_avogadro_1_1_quantum_i_o_1_1_generic_output_1a3eaad8a6fe9989a1d32fe9898b3cb834"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">identifier</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9QuantumIO13GenericOutput10identifierEv" title="Link to this definition">#</a><br /></dt>
+<span id="_CPPv3NK8Avogadro9QuantumIO13GenericOutput10identifierEv"></span><span id="_CPPv2NK8Avogadro9QuantumIO13GenericOutput10identifierEv"></span><span id="Avogadro::QuantumIO::GenericOutput::identifierC"></span><span class="target" id="class_avogadro_1_1_quantum_i_o_1_1_generic_output_1a3eaad8a6fe9989a1d32fe9898b3cb834"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">identifier</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9QuantumIO13GenericOutput10identifierEv" title="Link to this definition">#</a><br /></dt>
 <dd><p>A unique identifier, used to retrieve formats programmatically. CML, XYZ, PDB etc. A runtime warning will be generated if the identifier is not unique. </p>
 </dd></dl>
 
@@ -660,6 +663,19 @@ document.write(`
 </dd></dl>
 
 </div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-attributes">Protected Attributes</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9QuantumIO13GenericOutput17m_identifierMutexE">
+<span id="_CPPv3N8Avogadro9QuantumIO13GenericOutput17m_identifierMutexE"></span><span id="_CPPv2N8Avogadro9QuantumIO13GenericOutput17m_identifierMutexE"></span><span id="Avogadro::QuantumIO::GenericOutput::m_identifierMutex__std::mutex"></span><span class="target" id="class_avogadro_1_1_quantum_i_o_1_1_generic_output_1ac74eecf7ed2d2ca12246ab297f3a7f49"></span><span class="k"><span class="pre">mutable</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">mutex</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_identifierMutex</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro9QuantumIO13GenericOutput17m_identifierMutexE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9QuantumIO13GenericOutput12m_identifierE">
+<span id="_CPPv3N8Avogadro9QuantumIO13GenericOutput12m_identifierE"></span><span id="_CPPv2N8Avogadro9QuantumIO13GenericOutput12m_identifierE"></span><span id="Avogadro::QuantumIO::GenericOutput::m_identifier__ss"></span><span class="target" id="class_avogadro_1_1_quantum_i_o_1_1_generic_output_1afffdd49c081c68e9f91089f23e4bab23"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_identifier</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;Avogadro:</span> <span class="pre">Generic</span> <span class="pre">Output&quot;</span></span><a class="headerlink" href="#_CPPv4N8Avogadro9QuantumIO13GenericOutput12m_identifierE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+</div>
 </dd></dl>
 
 </section>
@@ -723,6 +739,8 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro9QuantumIO13GenericOutput9mimeTypesEv"><code class="docutils literal notranslate"><span class="pre">GenericOutput::mimeTypes()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9QuantumIO13GenericOutput4readERNSt7istreamERN4Core8MoleculeE"><code class="docutils literal notranslate"><span class="pre">GenericOutput::read()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9QuantumIO13GenericOutput5writeERNSt7ostreamERKN4Core8MoleculeE"><code class="docutils literal notranslate"><span class="pre">GenericOutput::write()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9QuantumIO13GenericOutput17m_identifierMutexE"><code class="docutils literal notranslate"><span class="pre">GenericOutput::m_identifierMutex</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9QuantumIO13GenericOutput12m_identifierE"><code class="docutils literal notranslate"><span class="pre">GenericOutput::m_identifier</span></code></a></li>
 </ul>
 </li>
 </ul>

@@ -109,6 +109,9 @@
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
 </div>
+<aside class="bd-header-announcement" aria-label="Announcement">
+  <div class="bd-header-announcement__content">Please fill out our <a href='https://forms.gle/315AsRMyHAHcTpvC8'>anonymous community survey</a> (only takes ~5 minutes)</div>
+</aside>
 
   
     <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
@@ -825,12 +828,54 @@ document.write(`
 </p>
 </section>
 <section id="class_avogadro_1_1_qt_gui_1_1_interface_script_1autotoc_md26">
-<h2>Error Handling<a class="headerlink" href="#class_avogadro_1_1_qt_gui_1_1_interface_script_1autotoc_md26" title="Link to this heading">#</a></h2>
-<p id="class_avogadro_1_1_qt_gui_1_1_interface_script_1autotoc_md26">In general, these scripts should be written robustly so that they will not fail under normal circumstances. However, if for some reason an error occurs that must be reported to the user, simply write the error message to standard output as plain text (i.e. not JSON), and it will be shown to the user.</p>
+<h2>Progress and Status Updates<a class="headerlink" href="#class_avogadro_1_1_qt_gui_1_1_interface_script_1autotoc_md26" title="Link to this heading">#</a></h2>
+<p id="class_avogadro_1_1_qt_gui_1_1_interface_script_1autotoc_md26">A long-running command script can report its progress while it works, so the user sees a determinate progress bar and/or a status message instead of an anonymous spinner. To do so, print a single line of JSON to standard output of the form: <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;avogadro&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;message&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Optimizing conformer 3 of 25&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;value&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;maximum&quot;</span><span class="o">:</span>
+<span class="mf">25</span><span class="p">}}</span>
+</pre></div>
+</div>
+ All three members are optional:<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">message</span></code>: status text to display, e.g. “Current energy: -135.2 eV”.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: the current step of a determinate progress bar.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">maximum</span></code>: the total number of steps. Supply <code class="docutils literal notranslate"><span class="pre">value</span></code> and <code class="docutils literal notranslate"><span class="pre">maximum</span></code> together; a <code class="docutils literal notranslate"><span class="pre">message</span></code> on its own just updates the text and leaves the bar as it was.</p></li>
+</ul>
+</p>
+<p>These lines are consumed by Avogadro and removed from the script’s output, so they do not interfere with the final result. A line is only treated as a progress update if it is a complete JSON object on one line with exactly one member, named <code class="docutils literal notranslate"><span class="pre">avogadro</span></code>, whose value is an object — a pretty-printed result block is never mistaken for one, and any other output the script prints is passed through untouched.</p>
+<p><strong>Check  before printing an envelope.</strong> Avogadro 2.0.0 and earlier read the whole of a script’s standard output as a single JSON document, so an extra line makes that parse fail and the command reports an error instead of its result. Avogadro sets this environment variable only when it is reading progress updates, so a script that guards on it keeps working on older releases — it just shows the old indeterminate spinner. The value is the protocol revision, currently <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
+<p>**<code class="docutils literal notranslate"><span class="pre">flush=True</span></code> is required.** Python block-buffers standard output when it is connected to a pipe rather than a terminal, so without an explicit flush the updates sit in the buffer and only reach Avogadro when the script exits — by which point the progress bar is gone.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">avogadro.command</span></code> module (shipped with Avogadro) handles both of these, and is a no-op when progress is unsupported, so it is always safe to call: <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">avogadro.command</span><span class="w"> </span><span class="kn">import</span> <span class="n">report_progress</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">conformer</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">conformers</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">report_progress</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Conformer </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> of </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">conformers</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">conformers</span><span class="p">))</span>
+    <span class="n">optimize</span><span class="p">(</span><span class="n">conformer</span><span class="p">)</span>
+
+<span class="n">report_progress</span><span class="p">(</span><span class="s2">&quot;Writing results&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+ That module is not importable in every environment a script may run in (for example a package plugin with its own pixi environment), so scripts are free to copy this self-contained equivalent instead. Do not drop the environment check — without it the script breaks on Avogadro 2.0.0: <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">json</span><span class="o">,</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">report_progress</span><span class="p">(</span><span class="n">message</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">maximum</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="c1"># Older Avogadro cannot parse these lines; stay silent there.</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;AVO_PROGRESS_PROTOCOL&quot;</span><span class="p">):</span>
+        <span class="k">return</span>
+    <span class="n">payload</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">if</span> <span class="n">message</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span> <span class="n">payload</span><span class="p">[</span><span class="s2">&quot;message&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">message</span>
+    <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>   <span class="n">payload</span><span class="p">[</span><span class="s2">&quot;value&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+    <span class="k">if</span> <span class="n">maximum</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span> <span class="n">payload</span><span class="p">[</span><span class="s2">&quot;maximum&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">maximum</span>
+    <span class="c1"># flush=True is required - stdout is block-buffered when piped</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s2">&quot;avogadro&quot;</span><span class="p">:</span> <span class="n">payload</span><span class="p">}),</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+ Reporting progress is entirely optional; a script that prints nothing until it is finished behaves exactly as it always has.</p>
+<p>The progress dialog shown while a command runs has a Cancel button, which kills the script’s process. Scripts that write files or otherwise touch state outside Avogadro should be prepared to be terminated partway through.</p>
 </section>
 <section id="class_avogadro_1_1_qt_gui_1_1_interface_script_1autotoc_md27">
-<h2>Debugging<a class="headerlink" href="#class_avogadro_1_1_qt_gui_1_1_interface_script_1autotoc_md27" title="Link to this heading">#</a></h2>
-<p id="class_avogadro_1_1_qt_gui_1_1_interface_script_1autotoc_md27">Debugging may be enabled by defining AVO_QM_INPUT_DEBUG in the process’s environment. This will cause the <code class="docutils literal notranslate"><span class="pre">debug</span></code> option to be passed in all calls to generator scripts, and will print extra information to the qDebug() stream from within avogadro. The script is free to handle the debug flag as the author wishes. </p>
+<h2>Error Handling<a class="headerlink" href="#class_avogadro_1_1_qt_gui_1_1_interface_script_1autotoc_md27" title="Link to this heading">#</a></h2>
+<p id="class_avogadro_1_1_qt_gui_1_1_interface_script_1autotoc_md27">In general, these scripts should be written robustly so that they will not fail under normal circumstances. However, if for some reason an error occurs that must be reported to the user, simply write the error message to standard output as plain text (i.e. not JSON), and it will be shown to the user.</p>
+<p>While a command script runs (<code class="docutils literal notranslate"><span class="pre">--run-command</span></code>), its standard output and standard error are kept separate: the result and any plain-text error belong on standard output, while standard error is captured for diagnostics and reported if the output cannot be parsed. This means library chatter and warnings on standard error cannot corrupt the result.</p>
+</section>
+<section id="class_avogadro_1_1_qt_gui_1_1_interface_script_1autotoc_md28">
+<h2>Debugging<a class="headerlink" href="#class_avogadro_1_1_qt_gui_1_1_interface_script_1autotoc_md28" title="Link to this heading">#</a></h2>
+<p id="class_avogadro_1_1_qt_gui_1_1_interface_script_1autotoc_md28">Debugging may be enabled by defining AVO_QM_INPUT_DEBUG in the process’s environment. This will cause the <code class="docutils literal notranslate"><span class="pre">debug</span></code> option to be passed in all calls to generator scripts, and will print extra information to the qDebug() stream from within avogadro. The script is free to handle the debug flag as the author wishes. </p>
 </section>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1136,6 +1181,23 @@ document.write(`
 <span id="_CPPv3N8Avogadro5QtGui15InterfaceScript8finishedEv"></span><span id="_CPPv2N8Avogadro5QtGui15InterfaceScript8finishedEv"></span><span id="Avogadro::QtGui::InterfaceScript::finished"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_interface_script_1af7b21038ab82868484b3a459947b0dbf"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">finished</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui15InterfaceScript8finishedEv" title="Link to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui15InterfaceScript8progressERK7QStringii">
+<span id="_CPPv3N8Avogadro5QtGui15InterfaceScript8progressERK7QStringii"></span><span id="_CPPv2N8Avogadro5QtGui15InterfaceScript8progressERK7QStringii"></span><span id="Avogadro::QtGui::InterfaceScript::progress__QStringCR.i.i"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_interface_script_1acc8cfc3bfd479ff42c325694929d66ee"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">progress</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">message</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">value</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">maximum</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui15InterfaceScript8progressERK7QStringii" title="Link to this definition">#</a><br /></dt>
+<dd><p><p>A running command script reported its progress. See the “Progress and</p>
+<p>Status Updates” section above for the script-side protocol.</p>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>message</strong> – Status text to show, or an empty string if the script did not supply one. </p></li>
+<li><p><strong>value</strong> – The current step, or -1 if the script did not supply one. </p></li>
+<li><p><strong>maximum</strong> – The total number of steps, or -1 if the script did not supply one. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
 </div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-functions">Protected Functions</p>
@@ -1255,6 +1317,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui15InterfaceScript8setDebugEb"><code class="docutils literal notranslate"><span class="pre">InterfaceScript::setDebug()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui15InterfaceScript15commandFinishedEv"><code class="docutils literal notranslate"><span class="pre">InterfaceScript::commandFinished()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui15InterfaceScript8finishedEv"><code class="docutils literal notranslate"><span class="pre">InterfaceScript::finished()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui15InterfaceScript8progressERK7QStringii"><code class="docutils literal notranslate"><span class="pre">InterfaceScript::progress()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui15InterfaceScript9parseJsonERK10QByteArrayR13QJsonDocument"><code class="docutils literal notranslate"><span class="pre">InterfaceScript::parseJson()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui15InterfaceScript23generateCoordinateBlockERK7QStringRKN4Core8MoleculeE"><code class="docutils literal notranslate"><span class="pre">InterfaceScript::generateCoordinateBlock()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui15InterfaceScript15replaceKeywordsER7QStringRKN4Core8MoleculeE"><code class="docutils literal notranslate"><span class="pre">InterfaceScript::replaceKeywords()</span></code></a></li>

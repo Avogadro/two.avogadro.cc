@@ -109,6 +109,9 @@
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
 </div>
+<aside class="bd-header-announcement" aria-label="Announcement">
+  <div class="bd-header-announcement__content">Please fill out our <a href='https://forms.gle/315AsRMyHAHcTpvC8'>anonymous community survey</a> (only takes ~5 minutes)</div>
+</aside>
 
   
     <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
@@ -578,11 +581,12 @@ document.write(`
 <span id="_CPPv3N8Avogadro4Core10ConstraintE"></span><span id="_CPPv2N8Avogadro4Core10ConstraintE"></span><span id="Avogadro::Core::Constraint"></span><span class="target" id="class_avogadro_1_1_core_1_1_constraint"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Constraint</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core10ConstraintE" title="Link to this definition">#</a><br /></dt>
 <dd><p>Constraints for optimization / dynamics. </p>
 <p>
-This class represents a distance, angle, or torsional constraint / restraint during optimization or dynamics. More technically, these are implemented as stiff harmonic oscillators restraining a particular atom set towards the value. <dl class="simple">
+This class represents a distance, angle, or torsional constraint / restraint during optimization or dynamics. More technically, these are implemented as stiff harmonic oscillators restraining a particular atom set towards the value.<dl class="simple">
 <dt><strong>Author</strong></dt><dd><p>Geoffrey R. Hutchison</p>
 </dd>
 </dl>
 </p>
+<p>Distances are stored in Angstrom and angles / torsions in degrees, matching what the user sees in the property tables and constraint dialog. Energy calculators convert angular values to radians internally, so the angular force constants are in kJ/mol/radian^2. </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-types">Public Types</p>
 <dl class="cpp enum">
@@ -635,7 +639,7 @@ This class represents a distance, angle, or torsional constraint / restraint dur
 <li><p><strong>b</strong> – <a class="reference internal" href="class_avogadro_1_1_core_1_1_atom.html#class_avogadro_1_1_core_1_1_atom"><span class="std std-ref">Atom</span></a> index of the second atom of the constraint </p></li>
 <li><p><strong>c</strong> – <a class="reference internal" href="class_avogadro_1_1_core_1_1_atom.html#class_avogadro_1_1_core_1_1_atom"><span class="std std-ref">Atom</span></a> index of the third atom (for angles or torsions) or MaxIndex </p></li>
 <li><p><strong>d</strong> – <a class="reference internal" href="class_avogadro_1_1_core_1_1_atom.html#class_avogadro_1_1_core_1_1_atom"><span class="std std-ref">Atom</span></a> index of the fourth atom (for torsion constraints) or MaxIndex </p></li>
-<li><p><strong>value</strong> – The value of the constraint, either Angstrom for distance or radians) </p></li>
+<li><p><strong>value</strong> – The value of the constraint, either Angstrom for distance or degrees for angles and torsions </p></li>
 </ul>
 </dd>
 </dl>
@@ -652,7 +656,7 @@ This class represents a distance, angle, or torsional constraint / restraint dur
 <li><p><strong>b</strong> – <a class="reference internal" href="class_avogadro_1_1_core_1_1_atom.html#class_avogadro_1_1_core_1_1_atom"><span class="std std-ref">Atom</span></a> index of the second atom of the constraint </p></li>
 <li><p><strong>c</strong> – <a class="reference internal" href="class_avogadro_1_1_core_1_1_atom.html#class_avogadro_1_1_core_1_1_atom"><span class="std std-ref">Atom</span></a> index of the third atom (for angles or torsions) or MaxIndex </p></li>
 <li><p><strong>d</strong> – <a class="reference internal" href="class_avogadro_1_1_core_1_1_atom.html#class_avogadro_1_1_core_1_1_atom"><span class="std std-ref">Atom</span></a> index of the fourth atom (for torsion constraints) or MaxIndex </p></li>
-<li><p><strong>value</strong> – The value of the constraint, either Angstrom for distance or radians) </p></li>
+<li><p><strong>value</strong> – The value of the constraint, either Angstrom for distance or degrees for angles and torsions </p></li>
 </ul>
 </dd>
 </dl>
@@ -664,7 +668,7 @@ This class represents a distance, angle, or torsional constraint / restraint dur
 <dd><p>Set the constraint value (distance, angle, dihedral) </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>value</strong> – The value of the constraint, either Angstrom for distance or radians) </p>
+<dd class="field-odd"><p><strong>value</strong> – The value of the constraint, either Angstrom for distance or degrees for angles and torsions </p>
 </dd>
 </dl>
 </dd></dl>
@@ -717,7 +721,12 @@ This class represents a distance, angle, or torsional constraint / restraint dur
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core10Constraint1kEv">
 <span id="_CPPv3NK8Avogadro4Core10Constraint1kEv"></span><span id="_CPPv2NK8Avogadro4Core10Constraint1kEv"></span><span id="Avogadro::Core::Constraint::kC"></span><span class="target" id="class_avogadro_1_1_core_1_1_constraint_1a8acb7edfaba81c3c90d003645a1bb486"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">Real</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">k</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core10Constraint1kEv" title="Link to this definition">#</a><br /></dt>
-<dd></dd></dl>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the harmonic force constant, either kJ/mol/Angstrom^2 for a distance restraint or kJ/mol/radian^2 for an angular one. If no force constant has been set explicitly, a type-appropriate default is used &amp;#8212; the two have different units and cannot share a value. </p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core10Constraint4setKE4Real">
@@ -737,12 +746,27 @@ This class represents a distance, angle, or torsional constraint / restraint dur
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core10Constraint7setTypeEN10Constraint4TypeE">
 <span id="_CPPv3NK8Avogadro4Core10Constraint7setTypeEN10Constraint4TypeE"></span><span id="_CPPv2NK8Avogadro4Core10Constraint7setTypeEN10Constraint4TypeE"></span><span id="Avogadro::Core::Constraint::setType__Constraint::TypeC"></span><span class="target" id="class_avogadro_1_1_core_1_1_constraint_1aa7094d3158b95ec60a32dcbfe6a578cc"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setType</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N8Avogadro4Core10ConstraintE" title="Avogadro::Core::Constraint"><span class="n"><span class="pre">Constraint</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N8Avogadro4Core10Constraint4TypeE" title="Avogadro::Core::Constraint::Type"><span class="n"><span class="pre">Type</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">type</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core10Constraint7setTypeEN10Constraint4TypeE" title="Link to this definition">#</a><br /></dt>
-<dd><p>Set the type of constraint </p>
+<dd><p>Set the type of constraint. An explicit type survives later <a class="reference internal" href="#class_avogadro_1_1_core_1_1_constraint_1ae3662b1fad341fa3b6b73940452b1dc0"><span class="std std-ref">set()</span></a> calls, since it cannot always be inferred from the atom indices &amp;#8212; an out-of-plane constraint has the same four indices as a torsion. Pass None to go back to inferring the type from the indices. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>type</strong> – The type of constraint </p>
 </dd>
 </dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-attributes">Public Static Attributes</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core10Constraint16DefaultDistanceKE">
+<span id="_CPPv3N8Avogadro4Core10Constraint16DefaultDistanceKE"></span><span id="_CPPv2N8Avogadro4Core10Constraint16DefaultDistanceKE"></span><span id="Avogadro::Core::Constraint::DefaultDistanceK__Real"></span><span class="target" id="class_avogadro_1_1_core_1_1_constraint_1acce2a24c4bd40cbc4f9f64d920017301"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="n"><span class="pre">Real</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">DefaultDistanceK</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">41840.0</span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core10Constraint16DefaultDistanceKE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Default force constant for distance restraints, in kJ/mol/Angstrom^2 </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core10Constraint15DefaultAngularKE">
+<span id="_CPPv3N8Avogadro4Core10Constraint15DefaultAngularKE"></span><span id="_CPPv2N8Avogadro4Core10Constraint15DefaultAngularKE"></span><span id="Avogadro::Core::Constraint::DefaultAngularK__Real"></span><span class="target" id="class_avogadro_1_1_core_1_1_constraint_1ab9420569a372e56f31bd197848bacaef"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="n"><span class="pre">Real</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">DefaultAngularK</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">10000.0</span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core10Constraint15DefaultAngularKE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Default force constant for angular restraints, in kJ/mol/radian^2 </p>
 </dd></dl>
 
 </div>
@@ -775,12 +799,22 @@ This class represents a distance, angle, or torsional constraint / restraint dur
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core10Constraint3m_kE">
-<span id="_CPPv3N8Avogadro4Core10Constraint3m_kE"></span><span id="_CPPv2N8Avogadro4Core10Constraint3m_kE"></span><span id="Avogadro::Core::Constraint::m_k__Real"></span><span class="target" id="class_avogadro_1_1_core_1_1_constraint_1a1f5a12dcf6509da70b7475c9d091298f"></span><span class="n"><span class="pre">Real</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_k</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">41840.0</span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core10Constraint3m_kE" title="Link to this definition">#</a><br /></dt>
+<span id="_CPPv3N8Avogadro4Core10Constraint3m_kE"></span><span id="_CPPv2N8Avogadro4Core10Constraint3m_kE"></span><span id="Avogadro::Core::Constraint::m_k__Real"></span><span class="target" id="class_avogadro_1_1_core_1_1_constraint_1a1f5a12dcf6509da70b7475c9d091298f"></span><span class="n"><span class="pre">Real</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_k</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro4Core10Constraint16DefaultDistanceKE" title="Avogadro::Core::Constraint::DefaultDistanceK"><span class="n"><span class="pre">DefaultDistanceK</span></span></a><a class="headerlink" href="#_CPPv4N8Avogadro4Core10Constraint3m_kE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core10Constraint6m_kSetE">
+<span id="_CPPv3N8Avogadro4Core10Constraint6m_kSetE"></span><span id="_CPPv2N8Avogadro4Core10Constraint6m_kSetE"></span><span id="Avogadro::Core::Constraint::m_kSet__b"></span><span class="target" id="class_avogadro_1_1_core_1_1_constraint_1afb51678e336c40346bb3bb43c6b730d2"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_kSet</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core10Constraint6m_kSetE" title="Link to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core10Constraint6m_typeE">
 <span id="_CPPv3N8Avogadro4Core10Constraint6m_typeE"></span><span id="_CPPv2N8Avogadro4Core10Constraint6m_typeE"></span><span id="Avogadro::Core::Constraint::m_type__Constraint::Type"></span><span class="target" id="class_avogadro_1_1_core_1_1_constraint_1afe6b9ad3056ef38d9b28c80b5fcea114"></span><span class="k"><span class="pre">mutable</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro4Core10ConstraintE" title="Avogadro::Core::Constraint"><span class="n"><span class="pre">Constraint</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N8Avogadro4Core10Constraint4TypeE" title="Avogadro::Core::Constraint::Type"><span class="n"><span class="pre">Type</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_type</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro4Core10Constraint4Type4NoneE" title="Avogadro::Core::Constraint::None"><span class="n"><span class="pre">None</span></span></a><a class="headerlink" href="#_CPPv4N8Avogadro4Core10Constraint6m_typeE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core10Constraint14m_typeExplicitE">
+<span id="_CPPv3N8Avogadro4Core10Constraint14m_typeExplicitE"></span><span id="_CPPv2N8Avogadro4Core10Constraint14m_typeExplicitE"></span><span id="Avogadro::Core::Constraint::m_typeExplicit__b"></span><span class="target" id="class_avogadro_1_1_core_1_1_constraint_1a22a902aaff97d2af5c94fc9ae516d38e"></span><span class="k"><span class="pre">mutable</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_typeExplicit</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core10Constraint14m_typeExplicitE" title="Link to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 </div>
@@ -857,13 +891,17 @@ This class represents a distance, angle, or torsional constraint / restraint dur
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core10Constraint4setKE4Real"><code class="docutils literal notranslate"><span class="pre">Constraint::setK()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core10Constraint4typeEv"><code class="docutils literal notranslate"><span class="pre">Constraint::type()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core10Constraint7setTypeEN10Constraint4TypeE"><code class="docutils literal notranslate"><span class="pre">Constraint::setType()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core10Constraint16DefaultDistanceKE"><code class="docutils literal notranslate"><span class="pre">Constraint::DefaultDistanceK</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core10Constraint15DefaultAngularKE"><code class="docutils literal notranslate"><span class="pre">Constraint::DefaultAngularK</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core10Constraint8m_aIndexE"><code class="docutils literal notranslate"><span class="pre">Constraint::m_aIndex</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core10Constraint8m_bIndexE"><code class="docutils literal notranslate"><span class="pre">Constraint::m_bIndex</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core10Constraint8m_cIndexE"><code class="docutils literal notranslate"><span class="pre">Constraint::m_cIndex</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core10Constraint8m_dIndexE"><code class="docutils literal notranslate"><span class="pre">Constraint::m_dIndex</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core10Constraint7m_valueE"><code class="docutils literal notranslate"><span class="pre">Constraint::m_value</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core10Constraint3m_kE"><code class="docutils literal notranslate"><span class="pre">Constraint::m_k</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core10Constraint6m_kSetE"><code class="docutils literal notranslate"><span class="pre">Constraint::m_kSet</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core10Constraint6m_typeE"><code class="docutils literal notranslate"><span class="pre">Constraint::m_type</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core10Constraint14m_typeExplicitE"><code class="docutils literal notranslate"><span class="pre">Constraint::m_typeExplicit</span></code></a></li>
 </ul>
 </li>
 </ul>

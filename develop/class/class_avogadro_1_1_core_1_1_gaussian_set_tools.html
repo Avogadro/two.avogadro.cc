@@ -109,6 +109,9 @@
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
 </div>
+<aside class="bd-header-announcement" aria-label="Announcement">
+  <div class="bd-header-announcement__content">Please fill out our <a href='https://forms.gle/315AsRMyHAHcTpvC8'>anonymous community survey</a> (only takes ~5 minutes)</div>
+</aside>
 
   
     <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
@@ -623,6 +626,17 @@ document.write(`
 </dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core16GaussianSetTools29calculateMolecularOrbitalSlabER4Cubeiii">
+<span id="_CPPv3NK8Avogadro4Core16GaussianSetTools29calculateMolecularOrbitalSlabER4Cubeiii"></span><span id="_CPPv2NK8Avogadro4Core16GaussianSetTools29calculateMolecularOrbitalSlabER4Cubeiii"></span><span id="Avogadro::Core::GaussianSetTools::calculateMolecularOrbitalSlab__CubeR.i.i.iC"></span><span class="target" id="class_avogadro_1_1_core_1_1_gaussian_set_tools_1ab3289e6310e8cdd773256914f13ba5d2"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">calculateMolecularOrbitalSlab</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="class_avogadro_1_1_core_1_1_cube.html#_CPPv4N8Avogadro4Core4CubeE" title="Avogadro::Core::Cube"><span class="n"><span class="pre">Cube</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">cube</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">molecularOrbitalNumber</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">iStart</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">iEnd</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core16GaussianSetTools29calculateMolecularOrbitalSlabER4Cubeiii" title="Link to this definition">#</a><br /></dt>
+<dd><p>Populate an x-slab [iStart, iEnd) of the cube with MO values. Threads can call this concurrently with non-overlapping i ranges; each slab maps to a contiguous region of the cube buffer so writes never conflict. Out-of-range bounds are clamped to [0, nx). </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True on success, false on failure. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core16GaussianSetTools25calculateMolecularOrbitalERK7Vector3i">
 <span id="_CPPv3NK8Avogadro4Core16GaussianSetTools25calculateMolecularOrbitalERK7Vector3i"></span><span id="_CPPv2NK8Avogadro4Core16GaussianSetTools25calculateMolecularOrbitalERK7Vector3i"></span><span id="Avogadro::Core::GaussianSetTools::calculateMolecularOrbital__Vector3CR.iC"></span><span class="target" id="class_avogadro_1_1_core_1_1_gaussian_set_tools_1a4b683fff77c6f5ba67adcd1bc6255004"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">calculateMolecularOrbital</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Vector3</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">position</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">molecularOrbitalNumber</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core16GaussianSetTools25calculateMolecularOrbitalERK7Vector3i" title="Link to this definition">#</a><br /></dt>
 <dd><p>Calculate the value of the specified molecular orbital at the position specified. </p>
@@ -654,6 +668,17 @@ document.write(`
 </dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core16GaussianSetTools28calculateElectronDensitySlabER4Cubeii">
+<span id="_CPPv3NK8Avogadro4Core16GaussianSetTools28calculateElectronDensitySlabER4Cubeii"></span><span id="_CPPv2NK8Avogadro4Core16GaussianSetTools28calculateElectronDensitySlabER4Cubeii"></span><span id="Avogadro::Core::GaussianSetTools::calculateElectronDensitySlab__CubeR.i.iC"></span><span class="target" id="class_avogadro_1_1_core_1_1_gaussian_set_tools_1ad6b750f66f3145b1d98c37c51f60f0b9"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">calculateElectronDensitySlab</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="class_avogadro_1_1_core_1_1_cube.html#_CPPv4N8Avogadro4Core4CubeE" title="Avogadro::Core::Cube"><span class="n"><span class="pre">Cube</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">cube</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">iStart</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">iEnd</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core16GaussianSetTools28calculateElectronDensitySlabER4Cubeii" title="Link to this definition">#</a><br /></dt>
+<dd><p>Populate an x-slab [iStart, iEnd) of the cube with electron density. Safe to call from concurrent threads on non-overlapping slabs. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True on success, false on failure. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core16GaussianSetTools24calculateElectronDensityERK7Vector3">
 <span id="_CPPv3NK8Avogadro4Core16GaussianSetTools24calculateElectronDensityERK7Vector3"></span><span id="_CPPv2NK8Avogadro4Core16GaussianSetTools24calculateElectronDensityERK7Vector3"></span><span id="Avogadro::Core::GaussianSetTools::calculateElectronDensity__Vector3CRC"></span><span class="target" id="class_avogadro_1_1_core_1_1_gaussian_set_tools_1a867e0efffad28fe0f0b413ee9b28a8d4"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">calculateElectronDensity</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Vector3</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">position</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core16GaussianSetTools24calculateElectronDensityERK7Vector3" title="Link to this definition">#</a><br /></dt>
 <dd><p>Calculate the value of the electron density at the position specified. </p>
@@ -677,6 +702,17 @@ document.write(`
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>True on success, false on failure. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core16GaussianSetTools24calculateSpinDensitySlabER4Cubeii">
+<span id="_CPPv3NK8Avogadro4Core16GaussianSetTools24calculateSpinDensitySlabER4Cubeii"></span><span id="_CPPv2NK8Avogadro4Core16GaussianSetTools24calculateSpinDensitySlabER4Cubeii"></span><span id="Avogadro::Core::GaussianSetTools::calculateSpinDensitySlab__CubeR.i.iC"></span><span class="target" id="class_avogadro_1_1_core_1_1_gaussian_set_tools_1a577980a10cd36b2e969c141645916dcd"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">calculateSpinDensitySlab</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="class_avogadro_1_1_core_1_1_cube.html#_CPPv4N8Avogadro4Core4CubeE" title="Avogadro::Core::Cube"><span class="n"><span class="pre">Cube</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">cube</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">iStart</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">iEnd</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core16GaussianSetTools24calculateSpinDensitySlabER4Cubeii" title="Link to this definition">#</a><br /></dt>
+<dd><p>Populate an x-slab [iStart, iEnd) of the cube with spin density. Safe to call from concurrent threads on non-overlapping slabs. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True on success, false on failure. </p>
 </dd>
 </dl>
 </dd></dl>
@@ -762,10 +798,13 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core16GaussianSetToolsD0Ev"><code class="docutils literal notranslate"><span class="pre">GaussianSetTools::~GaussianSetTools()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core16GaussianSetTools15setElectronTypeEN8BasisSet12ElectronTypeE"><code class="docutils literal notranslate"><span class="pre">GaussianSetTools::setElectronType()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core16GaussianSetTools25calculateMolecularOrbitalER4Cubei"><code class="docutils literal notranslate"><span class="pre">GaussianSetTools::calculateMolecularOrbital()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core16GaussianSetTools29calculateMolecularOrbitalSlabER4Cubeiii"><code class="docutils literal notranslate"><span class="pre">GaussianSetTools::calculateMolecularOrbitalSlab()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core16GaussianSetTools25calculateMolecularOrbitalERK7Vector3i"><code class="docutils literal notranslate"><span class="pre">GaussianSetTools::calculateMolecularOrbital()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core16GaussianSetTools24calculateElectronDensityER4Cube"><code class="docutils literal notranslate"><span class="pre">GaussianSetTools::calculateElectronDensity()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core16GaussianSetTools28calculateElectronDensitySlabER4Cubeii"><code class="docutils literal notranslate"><span class="pre">GaussianSetTools::calculateElectronDensitySlab()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core16GaussianSetTools24calculateElectronDensityERK7Vector3"><code class="docutils literal notranslate"><span class="pre">GaussianSetTools::calculateElectronDensity()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core16GaussianSetTools20calculateSpinDensityER4Cube"><code class="docutils literal notranslate"><span class="pre">GaussianSetTools::calculateSpinDensity()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core16GaussianSetTools24calculateSpinDensitySlabER4Cubeii"><code class="docutils literal notranslate"><span class="pre">GaussianSetTools::calculateSpinDensitySlab()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core16GaussianSetTools20calculateSpinDensityERK7Vector3"><code class="docutils literal notranslate"><span class="pre">GaussianSetTools::calculateSpinDensity()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core16GaussianSetTools7isValidEv"><code class="docutils literal notranslate"><span class="pre">GaussianSetTools::isValid()</span></code></a></li>
 </ul>
