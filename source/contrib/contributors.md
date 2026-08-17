@@ -143,7 +143,6 @@
 - Tuguldur Odbadrakh
 - OfficerBrasidas
 - Onur
-- ovari
 - Saúl Palacios
 - Andika Tulus Pangestu
 - Nicolas PARLANT
