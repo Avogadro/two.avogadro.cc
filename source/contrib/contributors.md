@@ -46,7 +46,6 @@
 - crlambda
 - crystalsymmetry
 - danialk03
-- Datvex
 - DDinghoya
 - Diazonium
 - DJ-Aswin
@@ -113,6 +112,7 @@
 - Karol M. Langner
 - Cristian Le
 - Justin Lecher
+- Leist
 - Maxime Leroy
 - Chiyu Liang
 - Joeri van Limpt
