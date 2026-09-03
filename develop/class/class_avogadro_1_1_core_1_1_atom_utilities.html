@@ -110,7 +110,7 @@
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
 </div>
 <aside class="bd-header-announcement" aria-label="Announcement">
-  <div class="bd-header-announcement__content">Please fill out our <a href='https://forms.gle/315AsRMyHAHcTpvC8'>anonymous community survey</a> (only takes ~5 minutes)</div>
+  <div class="bd-header-announcement__content">Please see the results of our <a href='https://discuss.avogadro.cc/t/avogadro-2026-survey-results/7502'>anonymous community survey</a> - more feedback welcome!</div>
 </aside>
 
   
@@ -593,6 +593,19 @@ document.write(`
 <dd><p>Generate a new bond vector (unit length) </p>
 </dd></dl>
 
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core13AtomUtilities15idealBondLengthEhhh">
+<span id="_CPPv3N8Avogadro4Core13AtomUtilities15idealBondLengthEhhh"></span><span id="_CPPv2N8Avogadro4Core13AtomUtilities15idealBondLengthEhhh"></span><span id="Avogadro::Core::AtomUtilities::idealBondLength__unsigned-c.unsigned-c.unsigned-c"></span><span class="target" id="class_avogadro_1_1_core_1_1_atom_utilities_1a046395f2ec36e6cf023e1afd06a9b022"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="n"><span class="pre">Real</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">idealBondLength</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">atomicNumber1</span></span>, <span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">atomicNumber2</span></span>, <span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">bondOrder</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core13AtomUtilities15idealBondLengthEhhh" title="Link to this definition">#</a><br /></dt>
+<dd><p>
+The default is the sum of the Pyykko covalent radii, scaled down for double and triple bonds. That estimate is within a few percent for most element pairs, but it is systematically wrong for strongly polar bonds (Si-F, B-F, P-O) and for bonds between lone-pair rich atoms (O-O, F-F), so a table of measured lengths overrides it for common bonds.</p>
+<p>Intended for building and editing geometries, not for structure validation: the returned value is a single representative length and ignores hybridization, formal charge, and neighboring substituents. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the ideal length in Angstroms of a bond of order <em>bondOrder</em> between elements <em>atomicNumber1</em> and <em>atomicNumber2</em>.</p>
+</dd>
+</dl>
+</dd></dl>
+
 </div>
 </dd></dl>
 
@@ -647,6 +660,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core13AtomUtilitiesE"><code class="docutils literal notranslate"><span class="pre">AtomUtilities</span></code></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core13AtomUtilities21perceiveHybridizationERK4Atom"><code class="docutils literal notranslate"><span class="pre">AtomUtilities::perceiveHybridization()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core13AtomUtilities21generateNewBondVectorERK4AtomRKNSt6vectorI7Vector3EE17AtomHybridization"><code class="docutils literal notranslate"><span class="pre">AtomUtilities::generateNewBondVector()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core13AtomUtilities15idealBondLengthEhhh"><code class="docutils literal notranslate"><span class="pre">AtomUtilities::idealBondLength()</span></code></a></li>
 </ul>
 </li>
 </ul>

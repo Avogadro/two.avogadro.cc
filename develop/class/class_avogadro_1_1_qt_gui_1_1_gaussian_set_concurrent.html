@@ -110,7 +110,7 @@
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
 </div>
 <aside class="bd-header-announcement" aria-label="Announcement">
-  <div class="bd-header-announcement__content">Please fill out our <a href='https://forms.gle/315AsRMyHAHcTpvC8'>anonymous community survey</a> (only takes ~5 minutes)</div>
+  <div class="bd-header-announcement__content">Please see the results of our <a href='https://discuss.avogadro.cc/t/avogadro-2026-survey-results/7502'>anonymous community survey</a> - more feedback welcome!</div>
 </aside>
 
   
@@ -627,6 +627,16 @@ document.write(`
 </dd></dl>
 
 </div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-functions">Public Static Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui21GaussianSetConcurrent21cancelAllCalculationsEv">
+<span id="_CPPv3N8Avogadro5QtGui21GaussianSetConcurrent21cancelAllCalculationsEv"></span><span id="_CPPv2N8Avogadro5QtGui21GaussianSetConcurrent21cancelAllCalculationsEv"></span><span id="Avogadro::QtGui::GaussianSetConcurrent::cancelAllCalculations"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_gaussian_set_concurrent_1a32700644822c734e08e4d22cd142ea0f"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cancelAllCalculations</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui21GaussianSetConcurrent21cancelAllCalculationsEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Cancel every running calculation and wait for the worker threads to stop.</p>
+<p>A running calculation reads the molecule’s basis set and writes into the cube it was handed, so anything about to delete either has to stop the work first. The calculation may belong to a different part of the application than the code doing the deleting, which is why this reaches every instance rather than just one. </p>
+</dd></dl>
+
+</div>
 </dd></dl>
 
 </section>
@@ -686,6 +696,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui21GaussianSetConcurrent20calculateSpinDensityEPN4Core4CubeE"><code class="docutils literal notranslate"><span class="pre">GaussianSetConcurrent::calculateSpinDensity()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui21GaussianSetConcurrent7watcherEv"><code class="docutils literal notranslate"><span class="pre">GaussianSetConcurrent::watcher()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui21GaussianSetConcurrent8finishedEv"><code class="docutils literal notranslate"><span class="pre">GaussianSetConcurrent::finished()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui21GaussianSetConcurrent21cancelAllCalculationsEv"><code class="docutils literal notranslate"><span class="pre">GaussianSetConcurrent::cancelAllCalculations()</span></code></a></li>
 </ul>
 </li>
 </ul>

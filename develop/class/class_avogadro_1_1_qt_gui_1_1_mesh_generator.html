@@ -110,7 +110,7 @@
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
 </div>
 <aside class="bd-header-announcement" aria-label="Announcement">
-  <div class="bd-header-announcement__content">Please fill out our <a href='https://forms.gle/315AsRMyHAHcTpvC8'>anonymous community survey</a> (only takes ~5 minutes)</div>
+  <div class="bd-header-announcement__content">Please see the results of our <a href='https://discuss.avogadro.cc/t/avogadro-2026-survey-results/7502'>anonymous community survey</a> - more feedback welcome!</div>
 </aside>
 
   
@@ -739,6 +739,16 @@ This class implements a method of generating an isosurface Mesh from volumetric 
 
 </div>
 <div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-functions">Public Static Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui13MeshGenerator21cancelAllCalculationsEv">
+<span id="_CPPv3N8Avogadro5QtGui13MeshGenerator21cancelAllCalculationsEv"></span><span id="_CPPv2N8Avogadro5QtGui13MeshGenerator21cancelAllCalculationsEv"></span><span id="Avogadro::QtGui::MeshGenerator::cancelAllCalculations"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_mesh_generator_1a32700644822c734e08e4d22cd142ea0f"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cancelAllCalculations</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui13MeshGenerator21cancelAllCalculationsEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Wait for every running <a class="reference internal" href="#class_avogadro_1_1_qt_gui_1_1_mesh_generator"><span class="std std-ref">MeshGenerator</span></a> to finish.</p>
+<p>A running generator reads the cube and writes into the mesh it was handed, so anything about to delete either has to join the calculation first. There is no way to interrupt a generator once started, so this blocks until each one completes; each instance’s finished() signal is blocked while waiting so a caller elsewhere does not react to a completion that belongs to data already being torn down. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-functions">Protected Functions</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro5QtGui13MeshGenerator9isCutEdgeERKiRKiRKi">
@@ -1001,6 +1011,7 @@ This class implements a method of generating an isosurface Mesh from volumetric 
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui13MeshGenerator15progressMinimumEv"><code class="docutils literal notranslate"><span class="pre">MeshGenerator::progressMinimum()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui13MeshGenerator15progressMaximumEv"><code class="docutils literal notranslate"><span class="pre">MeshGenerator::progressMaximum()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui13MeshGenerator20progressValueChangedEi"><code class="docutils literal notranslate"><span class="pre">MeshGenerator::progressValueChanged()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui13MeshGenerator21cancelAllCalculationsEv"><code class="docutils literal notranslate"><span class="pre">MeshGenerator::cancelAllCalculations()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui13MeshGenerator9isCutEdgeERKiRKiRKi"><code class="docutils literal notranslate"><span class="pre">MeshGenerator::isCutEdge()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui13MeshGenerator17interpolateOnCubeERKNSt5arrayINSt5arrayIfXL3EEEEXL8EEEERKNSt5arrayIfXL8EEEERKh"><code class="docutils literal notranslate"><span class="pre">MeshGenerator::interpolateOnCube()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui13MeshGenerator11interpolateERKNSt5arrayIfXL3EEEERKNSt5arrayIfXL3EEEERKf"><code class="docutils literal notranslate"><span class="pre">MeshGenerator::interpolate()</span></code></a></li>

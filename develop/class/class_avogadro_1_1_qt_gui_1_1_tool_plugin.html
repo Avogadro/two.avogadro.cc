@@ -110,7 +110,7 @@
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
 </div>
 <aside class="bd-header-announcement" aria-label="Announcement">
-  <div class="bd-header-announcement__content">Please fill out our <a href='https://forms.gle/315AsRMyHAHcTpvC8'>anonymous community survey</a> (only takes ~5 minutes)</div>
+  <div class="bd-header-announcement__content">Please see the results of our <a href='https://discuss.avogadro.cc/t/avogadro-2026-survey-results/7502'>anonymous community survey</a> - more feedback welcome!</div>
 </aside>
 
   
@@ -834,12 +834,42 @@ document.write(`
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10ToolPlugin15commandFinishedERK7QString">
-<span id="_CPPv3N8Avogadro5QtGui10ToolPlugin15commandFinishedERK7QString"></span><span id="_CPPv2N8Avogadro5QtGui10ToolPlugin15commandFinishedERK7QString"></span><span id="Avogadro::QtGui::ToolPlugin::commandFinished__QStringCR"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_tool_plugin_1a84280a4669051df789d68bb282659dc7"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">commandFinished</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">message</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10ToolPlugin15commandFinishedERK7QString" title="Link to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10ToolPlugin14commandStartedEv">
+<span id="_CPPv3N8Avogadro5QtGui10ToolPlugin14commandStartedEv"></span><span id="_CPPv2N8Avogadro5QtGui10ToolPlugin14commandStartedEv"></span><span id="Avogadro::QtGui::ToolPlugin::commandStarted"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_tool_plugin_1a10c310e8bc9ce01f8485db1552d02ed6"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">commandStarted</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10ToolPlugin14commandStartedEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Indicate that a command has been started, but is not yet finished &amp;#8212; for example, work that <a class="reference internal" href="#class_avogadro_1_1_qt_gui_1_1_tool_plugin_1ad867bbd737d052a02bce1d919d4588af"><span class="std std-ref">handleCommand()</span></a> handed to a background thread.</p>
+<p>The application holds the caller’s reply until the command completes. Once this is emitted, every code path must end in <a class="reference internal" href="#class_avogadro_1_1_qt_gui_1_1_tool_plugin_1ae829a78142f41be3e49c3d3e262f4e72"><span class="std std-ref">commandFinished()</span></a> or <a class="reference internal" href="#class_avogadro_1_1_qt_gui_1_1_tool_plugin_1ab9dcd92da8935f6dfa60db71ac81f4cd"><span class="std std-ref">commandFailed()</span></a>, or the caller waits until the command times out.</p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#class_avogadro_1_1_qt_gui_1_1_tool_plugin_1ae829a78142f41be3e49c3d3e262f4e72"><span class="std std-ref">commandFinished</span></a>, <a class="reference internal" href="#class_avogadro_1_1_qt_gui_1_1_tool_plugin_1ab9dcd92da8935f6dfa60db71ac81f4cd"><span class="std std-ref">commandFailed</span></a></p>
+</div>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10ToolPlugin15commandFinishedERK7QStringRK11QVariantMap">
+<span id="_CPPv3N8Avogadro5QtGui10ToolPlugin15commandFinishedERK7QStringRK11QVariantMap"></span><span id="_CPPv2N8Avogadro5QtGui10ToolPlugin15commandFinishedERK7QStringRK11QVariantMap"></span><span id="Avogadro::QtGui::ToolPlugin::commandFinished__QStringCR.QVariantMapCR"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_tool_plugin_1ae829a78142f41be3e49c3d3e262f4e72"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">commandFinished</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">message</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QVariantMap</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">result</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">QVariantMap</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10ToolPlugin15commandFinishedERK7QStringRK11QVariantMap" title="Link to this definition">#</a><br /></dt>
 <dd><p>Indicate that a particular script command is finished. (e.g., from handleCommand) </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>message</strong> – An optional message to the script or user </p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>message</strong> – An optional message to the script or user </p></li>
+<li><p><strong>result</strong> – Optional results for the caller, e.g. an energy or a gradient. Only types with a JSON equivalent survive the trip to a script, so convert Eigen and <a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#class_avogadro_1_1_core_1_1_array"><span class="std std-ref">Core::Array</span></a> values to lists of numbers before adding them. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10ToolPlugin13commandFailedERK7QString">
+<span id="_CPPv3N8Avogadro5QtGui10ToolPlugin13commandFailedERK7QString"></span><span id="_CPPv2N8Avogadro5QtGui10ToolPlugin13commandFailedERK7QString"></span><span id="Avogadro::QtGui::ToolPlugin::commandFailed__QStringCR"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_tool_plugin_1ab9dcd92da8935f6dfa60db71ac81f4cd"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">commandFailed</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">message</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">QString</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10ToolPlugin13commandFailedERK7QString" title="Link to this definition">#</a><br /></dt>
+<dd><p>Indicate that a command that was started cannot be completed. <div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#class_avogadro_1_1_qt_gui_1_1_tool_plugin_1a10c310e8bc9ce01f8485db1552d02ed6"><span class="std std-ref">commandStarted</span></a></p>
+</div>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>message</strong> – A message to the script or user explaining the failure </p>
 </dd>
 </dl>
 </dd></dl>
@@ -923,7 +953,9 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10ToolPlugin15updateRequestedEv"><code class="docutils literal notranslate"><span class="pre">ToolPlugin::updateRequested()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10ToolPlugin15registerCommandE7QString7QString"><code class="docutils literal notranslate"><span class="pre">ToolPlugin::registerCommand()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10ToolPlugin25requestActiveDisplayTypesE11QStringList"><code class="docutils literal notranslate"><span class="pre">ToolPlugin::requestActiveDisplayTypes()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10ToolPlugin15commandFinishedERK7QString"><code class="docutils literal notranslate"><span class="pre">ToolPlugin::commandFinished()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10ToolPlugin14commandStartedEv"><code class="docutils literal notranslate"><span class="pre">ToolPlugin::commandStarted()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10ToolPlugin15commandFinishedERK7QStringRK11QVariantMap"><code class="docutils literal notranslate"><span class="pre">ToolPlugin::commandFinished()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10ToolPlugin13commandFailedERK7QString"><code class="docutils literal notranslate"><span class="pre">ToolPlugin::commandFailed()</span></code></a></li>
 </ul>
 </li>
 </ul>
