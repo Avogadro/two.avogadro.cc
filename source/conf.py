@@ -186,7 +186,7 @@ html_theme_options = {
     'github_url': 'https://github.com/openchemistry/avogadrolibs',
     'use_edit_page_button': True,
     'show_toc_level': 2,
-    'announcement': "Please fill out our <a href='https://forms.gle/315AsRMyHAHcTpvC8'>anonymous community survey</a> (only takes ~5 minutes)",
+    'announcement': "Please see the results of our <a href='https://discuss.avogadro.cc/t/avogadro-2026-survey-results/7502'>anonymous community survey</a> - more feedback welcome!",
     "header_links_before_dropdown": 6,
     'collapse_navigation': True,
     "logo": {
