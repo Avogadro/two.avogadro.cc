@@ -64,7 +64,7 @@ The unit cell editor is used for manipulating the unit cell.
 :alt: Cell parameters for Palladium
 :align: center
 :height: 480px
-:class: dark-light
+:class: dark-light unclickable-figure
 ```
 
 At the top of the unit cell editor are the lattice parameters $A$, $B$, $C$, $\alpha$, $\beta$, and $\gamma$. These either used to calculate the cell matrix, or can be calculated from the cell matrix. Below this is the cell matrix, which contains the three 3D lattice vectors, $\textbf{a}_i = (a^x_i, a^y_i, a^z_i)$ that make up the cell matrix (denoted here as $\mathbb{A}$). Below the cell matrix is the fractional matrix, which is the inverse of the unit cell matrix (denoted $\mathbb{A}^{-1}$). Together, the product of these matrices yields the identity matrix ($\mathbb{I}$),
@@ -104,13 +104,13 @@ As a visual demonstration of this, consider a the conventional unit cell of Pall
 :alt: Filled palladium unit cell
 :align: center
 :height: 300px
-:class: only-dark
+:class: only-dark unclickable-figure
 ```
 ```{image} /_static/menus/crystal-menu/pd_conventional_cell_light.png
 :alt: Filled palladium unit cell
 :align: center
 :height: 300px
-:class: only-light
+:class: only-light unclickable-figure
 ```
 :::
 :::{tab-item} Cell Matrix
@@ -118,7 +118,7 @@ As a visual demonstration of this, consider a the conventional unit cell of Pall
 :alt: Cell parameters for Palladium
 :align: center
 :height: 300px
-:class: dark-light
+:class: dark-light unclickable-figure
 ```
 :::
 ::::
@@ -129,13 +129,13 @@ Applying transformations to the atoms on the corners of the unit cell (highlight
 :alt: Filled palladium unit cell with the corner atoms highlighted
 :align: center
 :height: 300px
-:class: only-dark
+:class: only-dark unclickable-figure
 ```
 ```{figure} /_static/menus/crystal-menu/pd_filled_highlighted_corners_light.png
 :alt: Filled palladium unit cell with the corner atoms highlighted
 :align: center
 :height: 300px
-:class: only-light
+:class: only-light unclickable-figure
 ```
 
 The coordinates of these atoms are (in no particular order),
@@ -177,13 +177,13 @@ Now moving on to the face atoms, again highlighted in the image below.
 :alt: Filled unit cell of palladium with the atoms on the faces highlighted
 :align: center
 :height: 300px
-:class: only-dark
+:class: only-dark unclickable-figure
 ```
 ```{figure} /_static/menus/crystal-menu/pd_filled_highlighted_faces_light.png
 :alt: Filled unit cell of palladium with the atoms on the faces highlighted
 :align: center
 :height: 300px
-:class: only-light
+:class: only-light unclickable-figure
 ```
 
 
@@ -216,13 +216,13 @@ Thus, we know that the *translational unit cell* contains only atoms 1, 9, 10, a
 :alt: Translational unit cell of palladium
 :align: center
 :height: 300px
-:class: only-dark
+:class: only-dark unclickable-figure
 ```
 ```{figure} /_static/menus/crystal-menu/pd_translation_cell_light.png
 :alt: Translational unit cell of palladium
 :align: center
 :height: 300px
-:class: only-light
+:class: only-light unclickable-figure
 ```
 
 (space-group-menu)=
@@ -250,13 +250,13 @@ Conventionalize Cell
 :alt: Conventional unit cell of palladium
 :align: center
 :height: 300px
-:class: only-dark
+:class: only-dark unclickable-figure
 ```
 ```{image} /_static/menus/crystal-menu/pd_conventional_cell_light.png
 :alt: Conventional unit cell of palladium
 :align: center
 :height: 300px
-:class: only-light
+:class: only-light unclickable-figure
 ```
 :::
 
@@ -265,13 +265,13 @@ Conventionalize Cell
 :alt: Primitive unit cell of palladium
 :align: center
 :height: 300px
-:class: only-dark
+:class: only-dark unclickable-figure
 ```
 ```{image} /_static/menus/crystal-menu/pd_primitive_cell_light.png
 :alt: Primitive unit cell of palladium
 :align: center
 :height: 300px
-:class: only-light
+:class: only-light unclickable-figure
 ```
 :::
 
