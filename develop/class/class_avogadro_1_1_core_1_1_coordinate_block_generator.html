@@ -615,6 +615,34 @@ document.write(`
 
 </div>
 <div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-types">Public Types</p>
+<dl class="cpp enum-class">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core24CoordinateBlockGenerator4ModeE">
+<span id="_CPPv3N8Avogadro4Core24CoordinateBlockGenerator4ModeE"></span><span id="_CPPv2N8Avogadro4Core24CoordinateBlockGenerator4ModeE"></span><span class="target" id="class_avogadro_1_1_core_1_1_coordinate_block_generator_1a46c8a310cf4c094f8c80e1cb8dc1f911"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Mode</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core24CoordinateBlockGenerator4ModeE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The kind of block produced. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core24CoordinateBlockGenerator4Mode9CartesianE">
+<span id="_CPPv3N8Avogadro4Core24CoordinateBlockGenerator4Mode9CartesianE"></span><span id="_CPPv2N8Avogadro4Core24CoordinateBlockGenerator4Mode9CartesianE"></span><span class="target" id="class_avogadro_1_1_core_1_1_coordinate_block_generator_1a46c8a310cf4c094f8c80e1cb8dc1f911ac62cd6a7dfc8d04ae078b2b3d6293b9c"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Cartesian</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core24CoordinateBlockGenerator4Mode9CartesianE" title="Link to this definition">#</a><br /></dt>
+<dd><p>One line of Cartesian or lattice coordinates per atom. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core24CoordinateBlockGenerator4Mode7ZMatrixE">
+<span id="_CPPv3N8Avogadro4Core24CoordinateBlockGenerator4Mode7ZMatrixE"></span><span id="_CPPv2N8Avogadro4Core24CoordinateBlockGenerator4Mode7ZMatrixE"></span><span class="target" id="class_avogadro_1_1_core_1_1_coordinate_block_generator_1a46c8a310cf4c094f8c80e1cb8dc1f911aa28f900fd088709c1e197fe231998e97"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ZMatrix</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core24CoordinateBlockGenerator4Mode7ZMatrixE" title="Link to this definition">#</a><br /></dt>
+<dd><p>A z-matrix, with the missing fields of the opening rows left out entirely along with the space that would have preceded them. This is the form Gaussian, NWChem, Q-Chem, Psi4, Molpro and CFOUR read. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core24CoordinateBlockGenerator4Mode13ZMatrixPaddedE">
+<span id="_CPPv3N8Avogadro4Core24CoordinateBlockGenerator4Mode13ZMatrixPaddedE"></span><span id="_CPPv2N8Avogadro4Core24CoordinateBlockGenerator4Mode13ZMatrixPaddedE"></span><span class="target" id="class_avogadro_1_1_core_1_1_coordinate_block_generator_1a46c8a310cf4c094f8c80e1cb8dc1f911afc85b060b4863f5b5ec65e663414f645"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ZMatrixPadded</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core24CoordinateBlockGenerator4Mode13ZMatrixPaddedE" title="Link to this definition">#</a><br /></dt>
+<dd><p>A z-matrix whose opening rows are padded out with zeros, so that every row carries every field. This is the form ORCA’s <code class="docutils literal notranslate"><span class="pre">int</span></code>, MOPAC and SIESTA read. </p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core24CoordinateBlockGenerator24CoordinateBlockGeneratorEv">
@@ -653,6 +681,22 @@ document.write(`
  <span class="o">-</span> <span class="nd">@c</span> <span class="mi">0</span><span class="p">:</span> <span class="n">A</span> <span class="n">literal</span> <span class="s2">&quot;0&quot;</span><span class="o">.</span> <span class="n">Useful</span> <span class="k">for</span> <span class="n">optimization</span> <span class="n">flags</span><span class="o">.</span>
  <span class="o">-</span> <span class="nd">@c</span> <span class="mi">1</span><span class="p">:</span> <span class="n">A</span> <span class="n">literal</span> <span class="s2">&quot;1&quot;</span><span class="o">.</span> <span class="n">Useful</span> <span class="k">for</span> <span class="n">optimization</span> <span class="n">flags</span><span class="o">.</span>
  <span class="o">-</span> <span class="nd">@c</span> <span class="n">_</span><span class="p">:</span> <span class="n">A</span> <span class="n">space</span> <span class="n">character</span><span class="o">.</span> <span class="n">Useful</span> <span class="k">for</span> <span class="n">alignment</span><span class="o">.</span>
+ <span class="o">-</span> <span class="nd">@c</span> <span class="p">,:</span> <span class="n">A</span> <span class="n">literal</span> <span class="n">comma</span><span class="p">,</span> <span class="k">with</span> <span class="n">no</span> <span class="n">space</span> <span class="n">added</span> <span class="n">on</span> <span class="n">either</span> <span class="n">side</span> <span class="n">of</span> <span class="n">it</span><span class="o">.</span>
+   <span class="n">Useful</span> <span class="k">for</span> <span class="n">comma</span><span class="o">-</span><span class="n">delimited</span> <span class="n">formats</span> <span class="n">such</span> <span class="k">as</span> <span class="n">Molpro</span><span class="o">.</span>
+
+ <span class="n">In</span> <span class="n">the</span> <span class="n">z</span><span class="o">-</span><span class="n">matrix</span> <span class="n">modes</span> <span class="p">(</span><span class="n">see</span> <span class="n">setMode</span><span class="p">())</span> <span class="n">a</span> <span class="n">row</span> <span class="n">describes</span> <span class="n">one</span> <span class="n">atom</span> <span class="ow">in</span> <span class="n">terms</span>
+ <span class="n">of</span> <span class="n">three</span> <span class="n">earlier</span> <span class="n">ones</span><span class="p">,</span> <span class="ow">and</span> <span class="n">six</span> <span class="n">further</span> <span class="n">characters</span> <span class="n">are</span> <span class="n">recognized</span><span class="p">:</span>
+ <span class="o">-</span> <span class="nd">@c</span> <span class="n">I</span><span class="p">:</span> <span class="n">Index</span> <span class="n">of</span> <span class="n">the</span> <span class="n">distance</span> <span class="n">reference</span> <span class="n">atom</span><span class="s1">&#39;s row</span>
+ <span class="o">-</span> <span class="nd">@c</span> <span class="n">J</span><span class="p">:</span> <span class="n">Index</span> <span class="n">of</span> <span class="n">the</span> <span class="n">angle</span> <span class="n">reference</span> <span class="n">atom</span><span class="s1">&#39;s row</span>
+ <span class="o">-</span> <span class="nd">@c</span> <span class="n">K</span><span class="p">:</span> <span class="n">Index</span> <span class="n">of</span> <span class="n">the</span> <span class="n">dihedral</span> <span class="n">reference</span> <span class="n">atom</span><span class="s1">&#39;s row</span>
+ <span class="o">-</span> <span class="nd">@c</span> <span class="n">R</span><span class="p">:</span> <span class="n">Distance</span> <span class="n">to</span> <span class="n">the</span> <span class="nd">@c</span> <span class="n">I</span> <span class="n">atom</span>
+ <span class="o">-</span> <span class="nd">@c</span> <span class="n">A</span><span class="p">:</span> <span class="n">Angle</span> <span class="n">at</span> <span class="n">the</span> <span class="nd">@c</span> <span class="n">I</span> <span class="n">atom</span> <span class="n">to</span> <span class="n">the</span> <span class="nd">@c</span> <span class="n">J</span> <span class="n">atom</span><span class="p">,</span> <span class="ow">in</span> <span class="n">degrees</span>
+ <span class="o">-</span> <span class="nd">@c</span> <span class="n">T</span><span class="p">:</span> <span class="n">Dihedral</span> <span class="n">about</span> <span class="n">the</span> <span class="nd">@c</span> <span class="n">I</span> <span class="o">-</span> <span class="nd">@c</span> <span class="n">J</span> <span class="n">axis</span> <span class="n">to</span> <span class="n">the</span> <span class="nd">@c</span> <span class="n">K</span> <span class="n">atom</span><span class="p">,</span> <span class="ow">in</span> <span class="n">degrees</span>
+
+ <span class="n">All</span> <span class="n">of</span> <span class="n">these</span> <span class="n">are</span> <span class="n">one</span><span class="o">-</span><span class="n">based</span><span class="p">,</span> <span class="ow">and</span> <span class="n">they</span> <span class="n">number</span> <span class="n">z</span><span class="o">-</span><span class="n">matrix</span> <span class="nd">@em</span> <span class="n">rows</span> <span class="n">rather</span>
+ <span class="n">than</span> <span class="n">molecule</span> <span class="n">atoms</span><span class="o">.</span> <span class="n">The</span> <span class="n">two</span> <span class="n">agree</span> <span class="n">unless</span> <span class="n">the</span> <span class="n">z</span><span class="o">-</span><span class="n">matrix</span> <span class="n">had</span> <span class="n">to</span> <span class="n">be</span>
+ <span class="n">reordered</span><span class="p">,</span> <span class="n">which</span> <span class="n">atomsReordered</span><span class="p">()</span> <span class="n">reports</span><span class="o">.</span> <span class="nd">@c</span> <span class="c1"># likewise gives the row</span>
+ <span class="n">number</span> <span class="ow">in</span> <span class="n">these</span> <span class="n">modes</span><span class="p">,</span> <span class="n">so</span> <span class="n">that</span> <span class="n">it</span> <span class="n">lines</span> <span class="n">up</span> <span class="k">with</span> <span class="nd">@c</span> <span class="n">I</span><span class="p">,</span> <span class="nd">@c</span> <span class="n">J</span> <span class="ow">and</span> <span class="nd">@c</span> <span class="n">K</span><span class="o">.</span>
 
  <span class="n">For</span> <span class="n">example</span><span class="p">,</span> <span class="n">the</span> <span class="n">specification</span> <span class="n">string</span>
 </pre></div>
@@ -680,9 +724,33 @@ document.write(`
 <dd></dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core24CoordinateBlockGenerator7setModeE4Mode">
+<span id="_CPPv3N8Avogadro4Core24CoordinateBlockGenerator7setModeE4Mode"></span><span id="_CPPv2N8Avogadro4Core24CoordinateBlockGenerator7setModeE4Mode"></span><span id="Avogadro::Core::CoordinateBlockGenerator::setMode__Mode"></span><span class="target" id="class_avogadro_1_1_core_1_1_coordinate_block_generator_1a4b34ebde6b79d33b36401d5298572c66"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setMode</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N8Avogadro4Core24CoordinateBlockGenerator4ModeE" title="Avogadro::Core::CoordinateBlockGenerator::Mode"><span class="n"><span class="pre">Mode</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">mode</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core24CoordinateBlockGenerator7setModeE4Mode" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core24CoordinateBlockGenerator4modeEv">
+<span id="_CPPv3NK8Avogadro4Core24CoordinateBlockGenerator4modeEv"></span><span id="_CPPv2NK8Avogadro4Core24CoordinateBlockGenerator4modeEv"></span><span id="Avogadro::Core::CoordinateBlockGenerator::modeC"></span><span class="target" id="class_avogadro_1_1_core_1_1_coordinate_block_generator_1a8465aec809701522ac274e53aa84e375"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N8Avogadro4Core24CoordinateBlockGenerator4ModeE" title="Avogadro::Core::CoordinateBlockGenerator::Mode"><span class="n"><span class="pre">Mode</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">mode</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core24CoordinateBlockGenerator4modeEv" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core24CoordinateBlockGenerator23generateCoordinateBlockEv">
 <span id="_CPPv3N8Avogadro4Core24CoordinateBlockGenerator23generateCoordinateBlockEv"></span><span id="_CPPv2N8Avogadro4Core24CoordinateBlockGenerator23generateCoordinateBlockEv"></span><span id="Avogadro::Core::CoordinateBlockGenerator::generateCoordinateBlock"></span><span class="target" id="class_avogadro_1_1_core_1_1_coordinate_block_generator_1a84d50daa8eac4e199f56af72cf786e80"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">generateCoordinateBlock</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core24CoordinateBlockGenerator23generateCoordinateBlockEv" title="Link to this definition">#</a><br /></dt>
 <dd><p>Generate and return the coordinate block. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core24CoordinateBlockGenerator14atomsReorderedEv">
+<span id="_CPPv3NK8Avogadro4Core24CoordinateBlockGenerator14atomsReorderedEv"></span><span id="_CPPv2NK8Avogadro4Core24CoordinateBlockGenerator14atomsReorderedEv"></span><span id="Avogadro::Core::CoordinateBlockGenerator::atomsReorderedC"></span><span class="target" id="class_avogadro_1_1_core_1_1_coordinate_block_generator_1a151aff642bf20e2a722f2f9c7d548a9f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">atomsReordered</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core24CoordinateBlockGenerator14atomsReorderedEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Whether the last z-matrix generated put the atoms in an order other than the molecule’s own, so that the row numbers in the block do not match the atom numbering the user sees.</p>
+<p>A z-matrix has to describe each atom against atoms already placed, which a molecule’s atom order does not always allow. Always false after a Cartesian block, whose atoms are always in molecule order. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core24CoordinateBlockGenerator10linearRowsEv">
+<span id="_CPPv3NK8Avogadro4Core24CoordinateBlockGenerator10linearRowsEv"></span><span id="_CPPv2NK8Avogadro4Core24CoordinateBlockGenerator10linearRowsEv"></span><span id="Avogadro::Core::CoordinateBlockGenerator::linearRowsC"></span><span class="target" id="class_avogadro_1_1_core_1_1_coordinate_block_generator_1af3ebf1bda674d20ae30f7c3bf2a870d3"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#_CPPv4I0EN8Avogadro4Core5ArrayE" title="Avogadro::Core::Array"><span class="n"><span class="pre">Array</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Index</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">linearRows</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core24CoordinateBlockGenerator10linearRowsEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>The rows of the last z-matrix generated whose angle or dihedral is measured against three atoms too close to a straight line for the value to be meaningful.</p>
+<p>The geometry is still described correctly, but such a coordinate cannot be read or edited sensibly, and a program rebuilding Cartesians from it may not reproduce the molecule exactly. Row numbers are zero-based, as indices into the block’s lines; add one to match the <code class="docutils literal notranslate"><span class="pre">#</span></code> field. </p>
 </dd></dl>
 
 </div>
@@ -744,12 +812,22 @@ document.write(`
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core24CoordinateBlockGenerator15setDistanceUnitE12DistanceUnit"><code class="docutils literal notranslate"><span class="pre">CoordinateBlockGenerator::setDistanceUnit()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core24CoordinateBlockGenerator12distanceUnitEv"><code class="docutils literal notranslate"><span class="pre">CoordinateBlockGenerator::distanceUnit()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core24CoordinateBlockGenerator4ModeE"><code class="docutils literal notranslate"><span class="pre">CoordinateBlockGenerator::Mode</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core24CoordinateBlockGenerator4Mode9CartesianE"><code class="docutils literal notranslate"><span class="pre">CoordinateBlockGenerator::Mode::Cartesian</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core24CoordinateBlockGenerator4Mode7ZMatrixE"><code class="docutils literal notranslate"><span class="pre">CoordinateBlockGenerator::Mode::ZMatrix</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core24CoordinateBlockGenerator4Mode13ZMatrixPaddedE"><code class="docutils literal notranslate"><span class="pre">CoordinateBlockGenerator::Mode::ZMatrixPadded</span></code></a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core24CoordinateBlockGenerator24CoordinateBlockGeneratorEv"><code class="docutils literal notranslate"><span class="pre">CoordinateBlockGenerator::CoordinateBlockGenerator()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core24CoordinateBlockGenerator11setMoleculeEPK8Molecule"><code class="docutils literal notranslate"><span class="pre">CoordinateBlockGenerator::setMolecule()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core24CoordinateBlockGenerator8moleculeEv"><code class="docutils literal notranslate"><span class="pre">CoordinateBlockGenerator::molecule()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core24CoordinateBlockGenerator16setSpecificationERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">CoordinateBlockGenerator::setSpecification()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core24CoordinateBlockGenerator13specificationEv"><code class="docutils literal notranslate"><span class="pre">CoordinateBlockGenerator::specification()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core24CoordinateBlockGenerator7setModeE4Mode"><code class="docutils literal notranslate"><span class="pre">CoordinateBlockGenerator::setMode()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core24CoordinateBlockGenerator4modeEv"><code class="docutils literal notranslate"><span class="pre">CoordinateBlockGenerator::mode()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core24CoordinateBlockGenerator23generateCoordinateBlockEv"><code class="docutils literal notranslate"><span class="pre">CoordinateBlockGenerator::generateCoordinateBlock()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core24CoordinateBlockGenerator14atomsReorderedEv"><code class="docutils literal notranslate"><span class="pre">CoordinateBlockGenerator::atomsReordered()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core24CoordinateBlockGenerator10linearRowsEv"><code class="docutils literal notranslate"><span class="pre">CoordinateBlockGenerator::linearRows()</span></code></a></li>
 </ul>
 </li>
 </ul>

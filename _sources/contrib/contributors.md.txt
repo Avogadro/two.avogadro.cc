@@ -71,6 +71,7 @@
 - Alessandro Genova
 - Tibor Győri
 - Marcus D. Hanwell
+- Vaclav Hanzl
 - Chris Harris
 - Andrés Henao
 - hgokhanb
@@ -212,6 +213,7 @@
 - Haoming Yan
 - Yeims20
 - Nathan Young
+- YuriNikolai
 - Sihan Zhang
 - LIHAN ZHU
 - Zulfikar

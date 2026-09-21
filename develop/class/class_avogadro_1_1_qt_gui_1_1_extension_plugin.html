@@ -642,6 +642,29 @@ The caller takes ownership of the objects in the returned list. </p>
 <dd><p>If the extension plugin has script commands, this method should be implemented to emit the registerCommand signals. </p>
 </dd></dl>
 
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro5QtGui15ExtensionPlugin11dockWidgetsEv">
+<span id="_CPPv3NK8Avogadro5QtGui15ExtensionPlugin11dockWidgetsEv"></span><span id="_CPPv2NK8Avogadro5QtGui15ExtensionPlugin11dockWidgetsEv"></span><span id="Avogadro::QtGui::ExtensionPlugin::dockWidgetsC"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_extension_plugin_1acb78a9411ac884f92dc577ab5d027758"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">QList</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">QDockWidget</span></span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dockWidgets</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro5QtGui15ExtensionPlugin11dockWidgetsEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>
+Most extensions contribute none and need not implement this. The application adds what is returned to its window; the plugin keeps ownership and decides what the dock contains.</p>
+<p>A contributed dock starts hidden, since the window already carries several of its own. Showing it is the plugin’s business: give it a checkable QAction through <a class="reference internal" href="#class_avogadro_1_1_qt_gui_1_1_extension_plugin_1ab66bcccd003716a14b6de3140a03d7cc"><span class="std std-ref">actions()</span></a> and <a class="reference internal" href="#class_avogadro_1_1_qt_gui_1_1_extension_plugin_1a6f39059456942bb8e8c0a5363423e45e"><span class="std std-ref">menuPath()</span></a> like any other menu entry, and QDockWidget::toggleViewAction() is usually the action you want. Set a windowTitle() on each dock, since that is what its title bar shows, and a unique objectName() so window state can be saved and restored. This is consulted once, when the application starts. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The dock widgets this extension contributes to the main window.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro5QtGui15ExtensionPlugin17preferredDockAreaEP11QDockWidget">
+<span id="_CPPv3NK8Avogadro5QtGui15ExtensionPlugin17preferredDockAreaEP11QDockWidget"></span><span id="_CPPv2NK8Avogadro5QtGui15ExtensionPlugin17preferredDockAreaEP11QDockWidget"></span><span id="Avogadro::QtGui::ExtensionPlugin::preferredDockArea__QDockWidgetPC"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_extension_plugin_1aa85f62f9cbd7967c7faf88a8535ec68d"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">Qt</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">DockWidgetArea</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">preferredDockArea</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">QDockWidget</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">widget</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro5QtGui15ExtensionPlugin17preferredDockAreaEP11QDockWidget" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The dock area <code class="docutils literal notranslate"><span class="pre">widget</span></code> should be placed in when it is first added. Defaults to the right area, since the left already carries the tool, display, file and layer docks. </p>
+</dd>
+</dl>
+</dd></dl>
+
 </div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-slots">Public Slots</p>
@@ -845,6 +868,8 @@ The caller takes ownership of the objects in the returned list. </p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui15ExtensionPlugin8menuPathEP7QAction"><code class="docutils literal notranslate"><span class="pre">ExtensionPlugin::menuPath()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui15ExtensionPlugin11fileFormatsEv"><code class="docutils literal notranslate"><span class="pre">ExtensionPlugin::fileFormats()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui15ExtensionPlugin16registerCommandsEv"><code class="docutils literal notranslate"><span class="pre">ExtensionPlugin::registerCommands()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui15ExtensionPlugin11dockWidgetsEv"><code class="docutils literal notranslate"><span class="pre">ExtensionPlugin::dockWidgets()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui15ExtensionPlugin17preferredDockAreaEP11QDockWidget"><code class="docutils literal notranslate"><span class="pre">ExtensionPlugin::preferredDockArea()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui15ExtensionPlugin11setMoleculeEPN5QtGui8MoleculeE"><code class="docutils literal notranslate"><span class="pre">ExtensionPlugin::setMolecule()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui15ExtensionPlugin12readMoleculeERN5QtGui8MoleculeE"><code class="docutils literal notranslate"><span class="pre">ExtensionPlugin::readMolecule()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui15ExtensionPlugin8setSceneEPN9Rendering5SceneE"><code class="docutils literal notranslate"><span class="pre">ExtensionPlugin::setScene()</span></code></a></li>

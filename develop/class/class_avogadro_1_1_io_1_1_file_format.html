@@ -1005,6 +1005,30 @@ This serves as the common base class for chemical file formats. Classes deriving
 </dl>
 </dd></dl>
 
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro2Io10FileFormat25maxDecompressedSizeOptionEv">
+<span id="_CPPv3N8Avogadro2Io10FileFormat25maxDecompressedSizeOptionEv"></span><span id="_CPPv2N8Avogadro2Io10FileFormat25maxDecompressedSizeOptionEv"></span><span id="Avogadro::Io::FileFormat::maxDecompressedSizeOption"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_1aa74adee8022157dcaf57ba40ee072f9f"></span><span class="kt"><span class="pre">long</span></span><span class="w"> </span><span class="kt"><span class="pre">long</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">maxDecompressedSizeOption</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro2Io10FileFormat25maxDecompressedSizeOptionEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>The ceiling on decompressed data for this read, in bytes. </p>
+<p>Reads the “maxDecompressedSize” option, falling back to the default when absent, and appending an error and using the default when negative. Zero means no ceiling. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro2Io10FileFormat13integerOptionERKNSt6stringERx">
+<span id="_CPPv3N8Avogadro2Io10FileFormat13integerOptionERKNSt6stringERx"></span><span id="_CPPv2N8Avogadro2Io10FileFormat13integerOptionERKNSt6stringERx"></span><span id="Avogadro::Io::FileFormat::integerOption__ssCR.l-lR"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_1a55ad8fb88ad95cbb6f8fb89875266f67"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">integerOption</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span>, <span class="kt"><span class="pre">long</span></span><span class="w"> </span><span class="kt"><span class="pre">long</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro2Io10FileFormat13integerOptionERKNSt6stringERx" title="Link to this definition">#</a><br /></dt>
+<dd><p>Look up an integer value in the <a class="reference internal" href="#class_avogadro_1_1_io_1_1_file_format_1a0f71fd5dabc543c8ed47c05ccd2487d7"><span class="std std-ref">options()</span></a> string. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> – The name of the option to look up. </p></li>
+<li><p><strong>value</strong> – Set to the stored value when the option is present and is an integer, otherwise left untouched, so seed it with the format default. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>False when the option is present but holds the wrong type, see <a class="reference internal" href="#class_avogadro_1_1_io_1_1_file_format_1abbd3b9908114225b287b965499da8d5c"><span class="std std-ref">boolOption()</span></a> for how this is intended to be used. </p>
+</dd>
+</dl>
+</dd></dl>
+
 </div>
 </dd></dl>
 
@@ -1102,6 +1126,8 @@ This serves as the common base class for chemical file formats. Classes deriving
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro2Io10FileFormat10boolOptionERKNSt6stringERb"><code class="docutils literal notranslate"><span class="pre">FileFormat::boolOption()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro2Io10FileFormat12stringOptionERKNSt6stringERNSt6stringE"><code class="docutils literal notranslate"><span class="pre">FileFormat::stringOption()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro2Io10FileFormat17stringArrayOptionERKNSt6stringERNSt6vectorINSt6stringEEE"><code class="docutils literal notranslate"><span class="pre">FileFormat::stringArrayOption()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro2Io10FileFormat25maxDecompressedSizeOptionEv"><code class="docutils literal notranslate"><span class="pre">FileFormat::maxDecompressedSizeOption()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro2Io10FileFormat13integerOptionERKNSt6stringERx"><code class="docutils literal notranslate"><span class="pre">FileFormat::integerOption()</span></code></a></li>
 </ul>
 </li>
 </ul>

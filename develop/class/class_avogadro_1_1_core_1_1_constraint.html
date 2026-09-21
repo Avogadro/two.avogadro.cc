@@ -744,6 +744,55 @@ This class represents a distance, angle, or torsional constraint / restraint dur
 </dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core10Constraint7matchesE5Index5Index5Index5Index">
+<span id="_CPPv3NK8Avogadro4Core10Constraint7matchesE5Index5Index5Index5Index"></span><span id="_CPPv2NK8Avogadro4Core10Constraint7matchesE5Index5Index5Index5Index"></span><span id="Avogadro::Core::Constraint::matches__Index.Index.Index.IndexC"></span><span class="target" id="class_avogadro_1_1_core_1_1_constraint_1a3313f2e69621fc8c74730511763ef6a8"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">matches</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Index</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">a</span></span>, <span class="n"><span class="pre">Index</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">b</span></span>, <span class="n"><span class="pre">Index</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">c</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">MaxIndex</span></span>, <span class="n"><span class="pre">Index</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">d</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">MaxIndex</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core10Constraint7matchesE5Index5Index5Index5Index" title="Link to this definition">#</a><br /></dt>
+<dd><p>Whether this constraint is on the coordinate the given atoms name. A coordinate read backwards is the same coordinate &amp;#8212; the distance a-b is the distance b-a, and the torsion a-b-c-d is the torsion d-c-b-a &amp;#8212; so both directions match. A table that lists a coordinate in its own order can then find the constraint on it however it happens to be stored. Out of plane constraints have no such symmetry and are matched exactly. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> – <a class="reference internal" href="class_avogadro_1_1_core_1_1_atom.html#class_avogadro_1_1_core_1_1_atom"><span class="std std-ref">Atom</span></a> index of the first atom of the coordinate </p></li>
+<li><p><strong>b</strong> – <a class="reference internal" href="class_avogadro_1_1_core_1_1_atom.html#class_avogadro_1_1_core_1_1_atom"><span class="std std-ref">Atom</span></a> index of the second atom of the coordinate </p></li>
+<li><p><strong>c</strong> – <a class="reference internal" href="class_avogadro_1_1_core_1_1_atom.html#class_avogadro_1_1_core_1_1_atom"><span class="std std-ref">Atom</span></a> index of the third atom (for angles or torsions) or MaxIndex </p></li>
+<li><p><strong>d</strong> – <a class="reference internal" href="class_avogadro_1_1_core_1_1_atom.html#class_avogadro_1_1_core_1_1_atom"><span class="std std-ref">Atom</span></a> index of the fourth atom (for torsions) or MaxIndex </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core10Constraint7isValidE5Index">
+<span id="_CPPv3NK8Avogadro4Core10Constraint7isValidE5Index"></span><span id="_CPPv2NK8Avogadro4Core10Constraint7isValidE5Index"></span><span id="Avogadro::Core::Constraint::isValid__IndexC"></span><span class="target" id="class_avogadro_1_1_core_1_1_constraint_1a784d8c2a3799030c9910d9f5b972a1b9"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isValid</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Index</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">atomCount</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core10Constraint7isValidE5Index" title="Link to this definition">#</a><br /></dt>
+<dd><p><p>Check that every atom this constraint names still exists.</p>
+<p>Constraints outlive the atoms they name, since deleting an atom leaves the stored indices behind.</p>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>atomCount</strong> – The number of atoms available </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the constraint can be evaluated against that many atoms</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core10Constraint8evaluateERK5ArrayI7Vector3ER4Real">
+<span id="_CPPv3NK8Avogadro4Core10Constraint8evaluateERK5ArrayI7Vector3ER4Real"></span><span id="_CPPv2NK8Avogadro4Core10Constraint8evaluateERK5ArrayI7Vector3ER4Real"></span><span id="Avogadro::Core::Constraint::evaluate__Array:Vector3:CR.RealRC"></span><span class="target" id="class_avogadro_1_1_core_1_1_constraint_1abad1fddc3702f06233efe11da41296fd"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">evaluate</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#_CPPv4I0EN8Avogadro4Core5ArrayE" title="Avogadro::Core::Array"><span class="n"><span class="pre">Array</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Vector3</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">positions</span></span>, <span class="n"><span class="pre">Real</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">value</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core10Constraint8evaluateERK5ArrayI7Vector3ER4Real" title="Link to this definition">#</a><br /></dt>
+<dd><p>Measure this constraint’s coordinate in a set of atomic positions, which need not be the molecule’s active one &amp;#8212; a trajectory or relaxed scan can be measured frame by frame. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>positions</strong> – The atomic positions to measure </p></li>
+<li><p><strong>value</strong> – Receives the measurement: Angstrom for a distance, degrees for an angle or torsion, matching <a class="reference internal" href="#class_avogadro_1_1_core_1_1_constraint_1a72887400b9a4d1ba185b887b84876cdc"><span class="std std-ref">value()</span></a></p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the constraint could be measured, false if it names an atom the positions do not have or has no single coordinate (out of plane) </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Core10Constraint7setTypeEN10Constraint4TypeE">
 <span id="_CPPv3NK8Avogadro4Core10Constraint7setTypeEN10Constraint4TypeE"></span><span id="_CPPv2NK8Avogadro4Core10Constraint7setTypeEN10Constraint4TypeE"></span><span id="Avogadro::Core::Constraint::setType__Constraint::TypeC"></span><span class="target" id="class_avogadro_1_1_core_1_1_constraint_1aa7094d3158b95ec60a32dcbfe6a578cc"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setType</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N8Avogadro4Core10ConstraintE" title="Avogadro::Core::Constraint"><span class="n"><span class="pre">Constraint</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N8Avogadro4Core10Constraint4TypeE" title="Avogadro::Core::Constraint::Type"><span class="n"><span class="pre">Type</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">type</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Core10Constraint7setTypeEN10Constraint4TypeE" title="Link to this definition">#</a><br /></dt>
 <dd><p>Set the type of constraint. An explicit type survives later <a class="reference internal" href="#class_avogadro_1_1_core_1_1_constraint_1ae3662b1fad341fa3b6b73940452b1dc0"><span class="std std-ref">set()</span></a> calls, since it cannot always be inferred from the atom indices &amp;#8212; an out-of-plane constraint has the same four indices as a torsion. Pass None to go back to inferring the type from the indices. </p>
@@ -890,6 +939,9 @@ This class represents a distance, angle, or torsional constraint / restraint dur
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core10Constraint1kEv"><code class="docutils literal notranslate"><span class="pre">Constraint::k()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core10Constraint4setKE4Real"><code class="docutils literal notranslate"><span class="pre">Constraint::setK()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core10Constraint4typeEv"><code class="docutils literal notranslate"><span class="pre">Constraint::type()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core10Constraint7matchesE5Index5Index5Index5Index"><code class="docutils literal notranslate"><span class="pre">Constraint::matches()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core10Constraint7isValidE5Index"><code class="docutils literal notranslate"><span class="pre">Constraint::isValid()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core10Constraint8evaluateERK5ArrayI7Vector3ER4Real"><code class="docutils literal notranslate"><span class="pre">Constraint::evaluate()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro4Core10Constraint7setTypeEN10Constraint4TypeE"><code class="docutils literal notranslate"><span class="pre">Constraint::setType()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core10Constraint16DefaultDistanceKE"><code class="docutils literal notranslate"><span class="pre">Constraint::DefaultDistanceK</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core10Constraint15DefaultAngularKE"><code class="docutils literal notranslate"><span class="pre">Constraint::DefaultAngularK</span></code></a></li>

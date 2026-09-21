@@ -913,6 +913,25 @@ document.write(`
 </dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10RWMolecule12reorderAtomsERKN4Core5ArrayI5IndexEE">
+<span id="_CPPv3N8Avogadro5QtGui10RWMolecule12reorderAtomsERKN4Core5ArrayI5IndexEE"></span><span id="_CPPv2N8Avogadro5QtGui10RWMolecule12reorderAtomsERKN4Core5ArrayI5IndexEE"></span><span id="Avogadro::QtGui::RWMolecule::reorderAtoms__Core::Array:Index:CR"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_r_w_molecule_1a50891ff3c83b860cd3ee4d62ebac329e"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">reorderAtoms</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#_CPPv4I0EN8Avogadro4Core5ArrayE" title="Avogadro::Core::Array"><span class="n"><span class="pre">Array</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Index</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">newOrder</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10RWMolecule12reorderAtomsERKN4Core5ArrayI5IndexEE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Renumber the atoms in this molecule.</p>
+<p>Everything holding an atom index follows its atom: positions, labels, charges, colors, selection, layers, bonds, residue membership, constraints, normal mode displacements, the atom each basis function is centred on, coordinate sets and unique ids. No atom or bond is added or removed, so this is a relabelling of the same structure, and results computed for it &amp;#8212; a wavefunction, a set of vibrations &amp;#8212; stay valid.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Atom indices are how selections, scripts and other tables refer to atoms, so this invalidates any index held elsewhere. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>newOrder</strong> – A permutation of [0, <a class="reference internal" href="#class_avogadro_1_1_qt_gui_1_1_r_w_molecule_1a7ab455d3fe2cb865b08606f19877c3bd"><span class="std std-ref">atomCount()</span></a>): newOrder[i] is the index the atom currently at that position will be moved <em>from</em>, so that after the call atom <em>i</em> is the atom that was at newOrder[i]. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True on success. False, changing nothing, if <em>newOrder</em> is not a permutation of exactly the molecule’s atoms.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10RWMolecule15adjustHydrogensE5Index">
 <span id="_CPPv3N8Avogadro5QtGui10RWMolecule15adjustHydrogensE5Index"></span><span id="_CPPv2N8Avogadro5QtGui10RWMolecule15adjustHydrogensE5Index"></span><span id="Avogadro::QtGui::RWMolecule::adjustHydrogens__Index"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_r_w_molecule_1a7dd0899e4f18e5b709e0bf171a14b55e"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">adjustHydrogens</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Index</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">atomId</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10RWMolecule15adjustHydrogensE5Index" title="Link to this definition">#</a><br /></dt>
 <dd><p>Adjust hydrogens for an atom. </p>
@@ -2057,6 +2076,7 @@ The <code class="docutils literal notranslate"><span class="pre">change</span></
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui10RWMolecule9atomCountEv"><code class="docutils literal notranslate"><span class="pre">RWMolecule::atomCount()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui10RWMolecule9atomCountEh"><code class="docutils literal notranslate"><span class="pre">RWMolecule::atomCount()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10RWMolecule10clearAtomsEv"><code class="docutils literal notranslate"><span class="pre">RWMolecule::clearAtoms()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10RWMolecule12reorderAtomsERKN4Core5ArrayI5IndexEE"><code class="docutils literal notranslate"><span class="pre">RWMolecule::reorderAtoms()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10RWMolecule15adjustHydrogensE5Index"><code class="docutils literal notranslate"><span class="pre">RWMolecule::adjustHydrogens()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10RWMolecule15adjustHydrogensERKN4Core5ArrayI5IndexEE"><code class="docutils literal notranslate"><span class="pre">RWMolecule::adjustHydrogens()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui10RWMolecule13atomicNumbersEv"><code class="docutils literal notranslate"><span class="pre">RWMolecule::atomicNumbers()</span></code></a></li>

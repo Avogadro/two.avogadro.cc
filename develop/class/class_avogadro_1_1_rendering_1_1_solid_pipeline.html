@@ -609,9 +609,10 @@ document.write(`
 <dd></dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13SolidPipeline3endEv">
-<span id="_CPPv3N8Avogadro9Rendering13SolidPipeline3endEv"></span><span id="_CPPv2N8Avogadro9Rendering13SolidPipeline3endEv"></span><span id="Avogadro::Rendering::SolidPipeline::end"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_solid_pipeline_1aaf81d3fdaf258088d7692fa70cece087"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">end</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline3endEv" title="Link to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13SolidPipeline3endERK6Camera">
+<span id="_CPPv3N8Avogadro9Rendering13SolidPipeline3endERK6Camera"></span><span id="_CPPv2N8Avogadro9Rendering13SolidPipeline3endERK6Camera"></span><span id="Avogadro::Rendering::SolidPipeline::end__CameraCR"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_solid_pipeline_1a7b4d2b9fcc056f631549f6a18bc66cbe"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">end</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="class_avogadro_1_1_rendering_1_1_camera.html#_CPPv4N8Avogadro9Rendering6CameraE" title="Avogadro::Rendering::Camera"><span class="n"><span class="pre">Camera</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">camera</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline3endERK6Camera" title="Link to this definition">#</a><br /></dt>
 <dd><p>End solid geometry rendering and apply screen-space shaders. </p>
+<p>The camera is needed by the ambient occlusion blur, which turns window depth back into scene units to tell surfaces apart. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -707,6 +708,7 @@ document.write(`
 <dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13SolidPipeline12getEdEnabledEv">
 <span id="_CPPv3N8Avogadro9Rendering13SolidPipeline12getEdEnabledEv"></span><span id="_CPPv2N8Avogadro9Rendering13SolidPipeline12getEdEnabledEv"></span><span id="Avogadro::Rendering::SolidPipeline::getEdEnabled"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_solid_pipeline_1aaa735de696eaa944196808db64a31870"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getEdEnabled</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline12getEdEnabledEv" title="Link to this definition">#</a><br /></dt>
 <dd><p>Get or set whether Edge Detection is enabled. </p>
+<p>Enabling leaves the strength alone, so a configured strength survives being switched off and back on. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -738,8 +740,9 @@ document.write(`
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N8Avogadro9Rendering13SolidPipeline13getEdStrengthEv">
-<span id="_CPPv3N8Avogadro9Rendering13SolidPipeline13getEdStrengthEv"></span><span id="_CPPv2N8Avogadro9Rendering13SolidPipeline13getEdStrengthEv"></span><span id="Avogadro::Rendering::SolidPipeline::getEdStrength"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_solid_pipeline_1abad4ac7852014fe36ba2417f6037369f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getEdStrength</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline13getEdStrengthEv" title="Link to this definition">#</a><br /></dt>
+<span id="_CPPv3N8Avogadro9Rendering13SolidPipeline13getEdStrengthEv"></span><span id="_CPPv2N8Avogadro9Rendering13SolidPipeline13getEdStrengthEv"></span><span id="Avogadro::Rendering::SolidPipeline::getEdStrength"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_solid_pipeline_1ab6970321d384d0929848763963779ebb"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getEdStrength</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline13getEdStrengthEv" title="Link to this definition">#</a><br /></dt>
 <dd><p>Get or set the strength of the edge effect. </p>
+<p>Up to 1.0 this fades the outline in at the one-pixel width the effect has always had. Above 1.0 the outline is fully dark and the value is its half-width in pixels, so 2.5 gives a distinctly bolder outline than 1.0. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -806,7 +809,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline10initializeEv"><code class="docutils literal notranslate"><span class="pre">SolidPipeline::initialize()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline5beginEv"><code class="docutils literal notranslate"><span class="pre">SolidPipeline::begin()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline12adjustOffsetERK6Camera"><code class="docutils literal notranslate"><span class="pre">SolidPipeline::adjustOffset()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline3endEv"><code class="docutils literal notranslate"><span class="pre">SolidPipeline::end()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline3endERK6Camera"><code class="docutils literal notranslate"><span class="pre">SolidPipeline::end()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline6resizeEii"><code class="docutils literal notranslate"><span class="pre">SolidPipeline::resize()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline13setPixelRatioEf"><code class="docutils literal notranslate"><span class="pre">SolidPipeline::setPixelRatio()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering13SolidPipeline12getAoEnabledEv"><code class="docutils literal notranslate"><span class="pre">SolidPipeline::getAoEnabled()</span></code></a></li>
