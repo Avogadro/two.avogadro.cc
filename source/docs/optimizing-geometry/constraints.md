@@ -11,6 +11,8 @@ When optimizing geometries in Avogadro, sometimes you may wish to:
 
 **Constraints** can be applied to fix (freeze) a specific selection of atoms in a molecule, as well as to fix X, Y, or Z axes, distances, and angles. For additional information see the [AutoOptimize Tool](tools-autoopt-tool) and [Extensions Menu](menus-extensions-menu) documentation.
 
+For step-by-step instructions organized by task (for example, optimizing just one region or holding a dihedral angle fixed), see the {ref}`Optimizing with Constraints tutorial<tutorials-optimizing-with-constraints>`.
+
 :::{versionadded} 2.0
 In version 2, constraints have been reworked, offering new ways to add or remove them. A "fuse" command has also been added to enable a set of atoms to remain together (e.g. a nanoparticle or metal cluster) while optimizing other components.
 :::
