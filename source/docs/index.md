@@ -60,6 +60,7 @@ Introduction <self>
 whats-new-in-avogadro-2/index
 getting-started/index
 building-molecules/index
+building-materials/index
 tools/index
 menus/index
 display-types/index
