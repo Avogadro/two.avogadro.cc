@@ -17,6 +17,7 @@
 - Atharva-Kanherkar
 - Heiner Atze
 - Patrick Avery
+- Samuel Ayibatarri 
 - Azaathooth
 - Adarsh Balasubramanian
 - balducci
@@ -173,6 +174,7 @@
 - Sanjeed Schamnad
 - Dillon Schultz
 - Sensor
+- shaneraphel
 - Oleg Shparber
 - shuo
 - simmon
