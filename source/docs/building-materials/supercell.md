@@ -2,25 +2,338 @@
 
 # Building a Supercell
 
-Once a crystal surface has been built, the Super Cell Builder can expand atoms within a space group, replicate the unit cell, and perform simple bonding.
+A common task in solid state simulations is the use of supercells for calculating various properties such as phonon modes.
+Avogadro's supercell builder in the [Crystal Menu](menus-crystal-menu) can be used to create supercells with ease.
 
-When "Super Cell Builder..." is selected under the "Build" menu, the dialog box below pops up. This dialog box will allow you to replicate a unit cell that has already been created \(if need be, a unit cell can be created by selecting "Add Unit Cell" under the "Crystallography" menu\).
+To start, import a crystal with **File ⇒ Import ⇒ Crystal...** and import a crystal structure.
+This guide will use halite (NaCl).
 
-![](../../_static/8ffd03c7-52fb-443c-a2a3-e6e7605c113e.png)
+```{figure} /_static/building-materials/supercell/import_halite.png
+:alt: Picture of the import menu showing halite
+:align: center
+:height: 300px
+:class: dark-light
+```
+
+```{figure} /_static/building-materials/supercell/halite_basic_cell_light.png
+:alt: Picture of the unfilled halite unit cell
+:align: center
+:height: 300px
+:class: only-light
+```
+```{figure} /_static/building-materials/supercell/halite_basic_cell_dark.png
+:alt: Picture of the unfilled halite unit cell
+:align: center
+:height: 300px
+:class: only-dark
+```
+
+Once you've imported the crystal, go to **Crystal ⇒ Fill Translation Cell** to fill only the [translationally inequivalent atoms](translational-equivalence), which is most suitable for use in a calculation.
+
+```{figure} /_static/building-materials/supercell/halite_translation_cell_light.png
+:alt: Picture of the translation-inequivalent filled halite unit cell
+:align: center
+:height: 300px
+:class: only-light
+```
+```{figure} /_static/building-materials/supercell/halite_translation_cell_dark.png
+:alt: Picture of the translation-inequivalent filled halite unit cell
+:align: center
+:height: 300px
+:class: only-dark
+```
+
+After this, you can go to **Crystal ⇒ Build Supercell...** which will open the supercell builder.
+
+```{figure} /_static/building-materials/supercell/supercell_dialog.png
+:alt: Picture of the supercell builder
+:align: center
+:class: dark-light
+```
+
+In this instance, a 2×2×2 supercell is used, but Avogadro 2 is capable of handling very large systems, so don't feel limited to this size.
+Hit **OK**, to build the supercell, and you're ready for a calculation!
+
+::::{tab-set}
+
+:::{tab-item} Single Unit Cell
+```{image} /_static/building-materials/supercell/halite_translation_cell_small_light.png
+:alt: Zoomed-out view of the single halite translation cell
+:align: center
+:height: 480px
+:class: only-light
+```
+```{image} /_static/building-materials/supercell/halite_translation_cell_small_dark.png
+:alt: Zoomed-out view of the single halite translation cell
+:align: center
+:height: 480px
+:class: only-dark
+```
+:::
+
+:::{tab-item} Supercell
+```{image} /_static/building-materials/supercell/halite_translation_supercell_light.png
+:alt: 2×2×2 supercell of halite.
+:align: center
+:height: 480px
+:class: only-light
+```
+```{image} /_static/building-materials/supercell/halite_translation_supercell_dark.png
+:alt: 2×2×2 supercell of halite.
+:align: center
+:height: 480px
+:class: only-dark
+```
+:::
+
+::::
 
 ## Creating a Surface
 
-One way supercell can be utilized is by creating a surface. Below is an elemental unit cell comprised of silver. This cell was imported through the "File" menu, under "Import", "Crystal...". When the dialog box appears follow the procedure displayed below.
+The supercell builder can also be used for basic slab creation.
+Here we will demonstrate how one might create a nanopore in a graphene sheet using the supercell builder.
 
-![](../../_static/creating-a-surface-.png)
+First start by importing the crystal structure of graphite, which is simply just stacked graphene sheets.
 
-A unit cell can then be replicated to make a _slab_ or a surface. For this example, the parameters were edited as shown in the image below. After editing the parameters, clicking "Generate Cell" will expand your surface.
+```{figure} /_static/building-materials/supercell/import_graphite.png
+:alt: Picture of the import menu showing graphite
+:align: center
+:height: 480px
+:class: dark-light
+```
 
-![](../../_static/ec31d9a6-90a0-43ca-85f1-de1d800a9495.png)
+Next, use **Crystal ⇒ Fill Translation Cell** to remove the redundant atoms, after which you should be left with a structure that looks like the one below.
 
-A surface can then be _modified_ by introducing impurities. Here, copper impurities were added to the silver surface. This file can now be exported to another program to determine, through calculations, how the impurities will impact the surface.
+```{figure} /_static/building-materials/supercell/graphene_example/graphite_translation_cell_light.png
+:alt: Picture of the translation cell of graphite
+:align: center
+:height: 300px
+:class: only-light
+```
+```{figure} /_static/building-materials/supercell/graphene_example/graphite_translation_cell_dark.png
+:alt: Picture of the translation cell of graphite
+:align: center
+:height: 300px
+:class: only-dark
+```
 
-![](../../_static/86d36773-eb7f-4cce-9269-40feb6993009.png)
+After this, we are going to build a 1-1-2 supercell and remove the atoms above and below the middle layer.
+This will give us some vacuum padding on the top and bottom of our graphene sheet so that they don't interact with each other in a periodic calculation.
+
+::::{tab-set}
+
+:::{tab-item} Supercell Dialog
+```{image} /_static/building-materials/supercell/graphite_112_supercell_dialog.png
+:alt: 1-1-2 supercell dialog.
+:align: center
+:height: 480px
+:class: dark-light
+```
+:::
+
+:::{tab-item} Elongated Supercell
+```{image} /_static/building-materials/supercell/graphene_example/graphite_112_supercell_light.png
+:alt: The 1-1-2 graphite supercell.
+:align: center
+:height: 480px
+:class: only-light
+```
+```{image} /_static/building-materials/supercell/graphene_example/graphite_112_supercell_dark.png
+:alt: The 1-1-2 graphite supercell.
+:align: center
+:height: 480px
+:class: only-dark
+```
+:::
+
+:::{tab-item} Atoms to delete
+```{image} /_static/building-materials/supercell/graphene_example/graphite_112_supercell_selected_light.png
+:alt: The 1-1-2 graphite supercell with the atoms above and below the middle selected.
+:align: center
+:height: 480px
+:class: only-light
+```
+```{image} /_static/building-materials/supercell/graphene_example/graphite_112_supercell_selected_dark.png
+:alt: The 1-1-2 graphite supercell with the atoms above and below the middle selected.
+:align: center
+:height: 480px
+:class: only-dark
+```
+:::
+
+:::{tab-item} Resulting Supercell
+```{image} /_static/building-materials/supercell/graphene_example/graphite_112_supercell_trimmed_light.png
+:alt: The 1-1-2 graphite supercell with only the middle atoms remaining.
+:align: center
+:height: 480px
+:class: only-light
+```
+```{image} /_static/building-materials/supercell/graphene_example/graphite_112_supercell_trimmed_dark.png
+:alt: The 1-1-2 graphite supercell with only the middle atoms remaining.
+:align: center
+:height: 480px
+:class: only-dark
+```
+:::
+
+::::
+
+Now that we have our 1-1-2 supercell ready, we can proceed to creating the final 8-8-2 supercell for our nanopore defect.
+Keep in mind that since we have already created the 1-1-2, we only need to put in 8-8-1 into the supercell builder dialog.
+
+::::{tab-set}
+
+:::{tab-item} Supercell Dialog
+```{image} /_static/building-materials/supercell/graphite_882_supercell_dialog.png
+:alt: 8-8-2 supercell dialog.
+:align: center
+:height: 300px
+:class: dark-light
+```
+:::
+
+:::{tab-item} 1-1-2 Supercell
+```{image} /_static/building-materials/supercell/graphene_example/graphite_pre_supercell_topdown_light.png
+:alt: The 1-1-2 graphene supercell.
+:align: center
+:height: 300px
+:class: only-light
+```
+```{image} /_static/building-materials/supercell/graphene_example/graphite_pre_supercell_topdown_dark.png
+:alt: The 1-1-2 graphene supercell.
+:align: center
+:height: 300px
+:class: only-dark
+```
+:::
+
+:::{tab-item} 8-8-2 Supercell
+```{image} /_static/building-materials/supercell/graphene_example/graphite_882_supercell_light.png
+:alt: The 8-8-2 graphene supercell
+:align: center
+:height: 300px
+:class: only-light
+```
+```{image} /_static/building-materials/supercell/graphene_example/graphite_882_supercell_dark.png
+:alt: The 8-8-2 graphene supercell
+:align: center
+:height: 300px
+:class: only-dark
+```
+:::
+
+::::
+
+Now that we have our final size of supercell, we can start carving out the nanopore.
+First, we are starting with a small set of 6 carbon atoms in the middle of the cell, which we will be deleting.
+Next, replace the two pairs of carbon atoms jutting out into the new hole we have created with hydrogen atoms.
+When you do this, be sure to delete the bond between the carbon atoms first so that Avogadro will automatically re-scale the bond lengths to be more appropriate.
+Finally, replace the two pairs of carbon atoms that have unsatisfied octets (highlighted) with nitrogen atoms, and you're done!
+
+::::{tab-set}
+
+:::{tab-item} Start
+```{image} /_static/building-materials/supercell/graphene_example/graphite_882_supercell_selected_light.png
+:alt: The 8-8-2 supercell with the atoms that will be deleted to make our nanopore.
+:align: center
+:height: 300px
+:class: only-light
+```
+```{image} /_static/building-materials/supercell/graphene_example/graphite_882_supercell_selected_dark.png
+:alt: The 8-8-2 supercell with the atoms that will be deleted to make our nanopore.
+:align: center
+:height: 300px
+:class: only-dark
+```
+:::
+
+:::{tab-item} Initial Pore
+```{image} /_static/building-materials/supercell/graphene_example/graphite_882_supercell_highlight_hydrogens_light.png
+:alt: The 8-8-2 graphene supercell with the nanopore opened up and the next atoms to change highlighted.
+:align: center
+:height: 300px
+:class: only-light
+```
+```{image} /_static/building-materials/supercell/graphene_example/graphite_882_supercell_highlight_hydrogens_dark.png
+:alt: The 8-8-2 graphene supercell with the nanopore opened up and the next atoms to change highlighted.
+:align: center
+:height: 300px
+:class: only-dark
+```
+:::
+
+:::{tab-item} Replace with Hydrogen
+```{image} /_static/building-materials/supercell/graphene_example/graphite_882_supercell_highlight_nitrogens_light.png
+:alt: The 8-8-2 graphene supercell with the hydrogens placed and the next atoms to change highlighted.
+:align: center
+:height: 300px
+:class: only-light
+```
+```{image} /_static/building-materials/supercell/graphene_example/graphite_882_supercell_highlight_nitrogens_dark.png
+:alt: The 8-8-2 graphene supercell with the hydrogens placed and the next atoms to change highlighted.
+:align: center
+:height: 300px
+:class: only-dark
+```
+:::
+
+:::{tab-item} Replace with Nitrogen
+```{image} /_static/building-materials/supercell/graphene_example/graphite_882_supercell_nitrogens_light.png
+:alt: The 8-8-2 graphene supercell with the completed nitrogen-functionalized nanopore.
+:align: center
+:height: 300px
+:class: only-light
+```
+```{image} /_static/building-materials/supercell/graphene_example/graphite_882_supercell_nitrogens_dark.png
+:alt: The 8-8-2 graphene supercell with the completed nitrogen-functionalized nanopore.
+:align: center
+:height: 300px
+:class: only-dark
+```
+:::
+
+::::
+
+Now that you have the defect crafted, you can proceed to run calculations with it!
+In [Jiang, Cooper, and Dai, 2009](https://doi.org/10.1021/nl9021946), calculations were run that indicated that porous graphene could be a highly selective membrane for gas separation.
+Their work had them using a graphene cell with the exact same defect that we created above and using molecular dynamics simulations to see how gas molecules might diffuse through the membrane.
+If we look at the [Solvent Accessible](surfaces-dialog) surface of our graphene, colored by the electrostatic potential, we can see that a hydrogen molecule would just barely fit through the opening, exactly as they showed!
+
+::::{tab-set}
+
+:::{tab-item} Solvent Accessible Surface
+```{image} /_static/building-materials/supercell/graphene_example/graphite_882_supercell_solvent_accessible_light.png
+:alt: The Solvent-Accessible surface of the graphene nanopore created above.
+:align: center
+:height: 300px
+:class: only-light
+```
+```{image} /_static/building-materials/supercell/graphene_example/graphite_882_supercell_solvent_accessible_dark.png
+:alt: The Solvent-Accessible surface of the graphene nanopore created above.
+:align: center
+:height: 300px
+:class: only-dark
+```
+:::
+
+:::{tab-item} With a Hydrogen Molecule
+```{image} /_static/building-materials/supercell/graphene_example/graphite_882_supercell_solvent_accessible_hydrogen_light.png
+:alt: The Solvent-Accessible surface of the graphene nanopore with a hydrogen molecule placed in the pore.
+:align: center
+:height: 300px
+:class: only-light
+```
+```{image} /_static/building-materials/supercell/graphene_example/graphite_882_supercell_solvent_accessible_hydrogen_dark.png
+:alt: The Solvent-Accessible surface of the graphene nanopore with a hydrogen molecule placed in the pore.
+:align: center
+:height: 300px
+:class: only-dark
+```
+:::
+
+::::
+
+
 
 ## See Also
 

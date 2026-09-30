@@ -9,8 +9,9 @@ Avogadro provides tools for building and manipulating crystalline materials, inc
 caption: Building Materials
 ---
 
-crystal-symmetry-perception
-reducing-crystals-to-primitive-cells
 scaling-crystal-volumes
 supercell
+crystal-symmetry-perception
+molecule-surface-interactions
+building-a-polymer-unit-cell
 ```
