@@ -55,3 +55,5 @@ This will bring up a window with all the generated conformers:
 The RSMD column will indicate the root mean squared displacement of atomic coordinates (in Å) compared to the first geometry. The Energy column will indicate the relative energy compared to the lowest-energy conformer.
 
 You can click on the two columns to sort them (e.g., to find the lowest-energy conformer).
+
+To plot the energies or RMSD, or to follow a dihedral across the conformers, use `Analyze` ⇒ `Plot Conformer Data…`. See {ref}`analyze-conformer-plot`.

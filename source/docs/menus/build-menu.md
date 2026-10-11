@@ -7,6 +7,13 @@ The Build menu contains commands useful for creating and modifying molecular geo
 Atomic Coordinate Editor
 : Open the [Atomic Coordinate Editor](coordinate-editor).
 
+Z-Matrix Editor
+: Show or hide the {ref}`Z-Matrix Editor <building-molecules-zmatrix-editor>` panel, to view and edit the molecule as distances, angles and dihedrals.
+
+```{tip} **New in 2.1**
+The Z-Matrix Editor is new in version 2.1.
+```
+
 Insert
 : See [Insert](insert-dropdown).
 
@@ -75,6 +82,13 @@ Molecule
 
 DNA/RNA
 : Insert **DNA/RNA** fragments using the [Nucleic Acid Builder](nucleic-acid-builder).
+
+Polymer
+: Insert a **polymer** chain or copolymer using the {ref}`Polymer builder <building-molecules-polymers>`.
+
+```{tip} **New in 2.1**
+The Polymer builder is new in version 2.1.
+```
 
 InChI
 : Insert a molecule using an International Chemical Identifier ([InChI](https://www.inchi-trust.org/)).

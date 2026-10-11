@@ -32,7 +32,11 @@ Vibrational Modes
 : Open a window with vibrational modes from a quantum chemistry program.
 
 Plot Conformer Data
-: Create plots of the conformers in the current document.
+: Plot energies, RMSD, distances, angles, dihedrals, temperature and other quantities across the conformers or trajectory frames in the current document. See {ref}`analyze-conformer-plot`.
+
+```{tip} **New in 2.1**
+The conformer plot window has been rewritten in version 2.1.
+```
 
 Plot Spectra
 : Plot electronic and vibrational spectra (IR, NMR, etc.)
@@ -131,7 +135,7 @@ Residue Properties
 :::
 
 Conformer Properties
-: Open a dialog containing information about any conformers present in the document.
+: Open a dialog containing information about any conformers present in the document, with the same quantities that can be plotted with [Plot Conformer Data](analyze-conformer-plot).
 
 :::{dropdown} Conformer Properties Dialog
 :color: info
