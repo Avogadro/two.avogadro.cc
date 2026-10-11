@@ -918,6 +918,19 @@ This serves as the common base class for chemical file formats. Classes deriving
 </dl>
 </dd></dl>
 
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro2Io10FileFormat15contentPatternsEv">
+<span id="_CPPv3NK8Avogadro2Io10FileFormat15contentPatternsEv"></span><span id="_CPPv2NK8Avogadro2Io10FileFormat15contentPatternsEv"></span><span id="Avogadro::Io::FileFormat::contentPatternsC"></span><span class="target" id="class_avogadro_1_1_io_1_1_file_format_1a7fa4fe42f8396a18d35cceeffa8023d7"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">contentPatterns</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro2Io10FileFormat15contentPatternsEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get literal strings that identify files in this format by content. </p>
+<p>Each entry is a plain substring (not a regular expression). If any one of them occurs in a line of a file, the file is taken to be in this format. Generic extensions such as “.out” and “.log” are written by many programs, so the extension alone cannot choose a reader; <a class="reference internal" href="class_avogadro_1_1_quantum_i_o_1_1_generic_output.html#class_avogadro_1_1_quantum_i_o_1_1_generic_output"><span class="std std-ref">QuantumIO::GenericOutput</span></a> consults these patterns to pick one. Empty entries are meaningless (they would match every line) and should not be returned.</p>
+<p>The default implementation returns an empty list: the format is never chosen by content. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A vector of substrings, possibly empty. </p>
+</dd>
+</dl>
+</dd></dl>
+
 </div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-functions">Public Static Functions</p>
@@ -1121,6 +1134,7 @@ This serves as the common base class for chemical file formats. Classes deriving
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro2Io10FileFormat16specificationUrlEv"><code class="docutils literal notranslate"><span class="pre">FileFormat::specificationUrl()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro2Io10FileFormat14fileExtensionsEv"><code class="docutils literal notranslate"><span class="pre">FileFormat::fileExtensions()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro2Io10FileFormat9mimeTypesEv"><code class="docutils literal notranslate"><span class="pre">FileFormat::mimeTypes()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro2Io10FileFormat15contentPatternsEv"><code class="docutils literal notranslate"><span class="pre">FileFormat::contentPatterns()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro2Io10FileFormat16validateFileNameERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">FileFormat::validateFileName()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro2Io10FileFormat11appendErrorERKNSt6stringEb"><code class="docutils literal notranslate"><span class="pre">FileFormat::appendError()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro2Io10FileFormat10boolOptionERKNSt6stringERb"><code class="docutils literal notranslate"><span class="pre">FileFormat::boolOption()</span></code></a></li>

@@ -701,6 +701,61 @@ document.write(`
 <span id="_CPPv3NK8Avogadro5QtGui10LayerModel10layerCountEv"></span><span id="_CPPv2NK8Avogadro5QtGui10LayerModel10layerCountEv"></span><span id="Avogadro::QtGui::LayerModel::layerCountC"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_layer_model_1ab1bd605c0041486686b5da15d807fa3c"></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">layerCount</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro5QtGui10LayerModel10layerCountEv" title="Link to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro5QtGui10LayerModel11layerForRowEi">
+<span id="_CPPv3NK8Avogadro5QtGui10LayerModel11layerForRowEi"></span><span id="_CPPv2NK8Avogadro5QtGui10LayerModel11layerForRowEi"></span><span id="Avogadro::QtGui::LayerModel::layerForRow__iC"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_layer_model_1ac23f91ef7d77516cbd40c62667ea245a"></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">layerForRow</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">row</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro5QtGui10LayerModel11layerForRowEi" title="Link to this definition">#</a><br /></dt>
+<dd><p>Translate a Layers dock row &amp;#8212; as this model lays them out: one header row per layer, followed by a row for each scene plugin enabled only in that layer, so a row and its layer id can diverge &amp;#8212; to the layer id it belongs to.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the layer id, or <em>MaxIndex</em> if <code class="docutils literal notranslate"><span class="pre">row</span></code> does not name a layer (negative, the synthetic “+” row, or past it). </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro5QtGui10LayerModel12layerVisibleE6size_t">
+<span id="_CPPv3NK8Avogadro5QtGui10LayerModel12layerVisibleE6size_t"></span><span id="_CPPv2NK8Avogadro5QtGui10LayerModel12layerVisibleE6size_t"></span><span id="Avogadro::QtGui::LayerModel::layerVisible__sC"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_layer_model_1a7588106da38fe158c4c96e923270b12d"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">layerVisible</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">layer</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro5QtGui10LayerModel12layerVisibleE6size_t" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>whether <code class="docutils literal notranslate"><span class="pre">layer</span></code> is visible. Out-of-range is harmless: it reads back the same default a fresh layer starts with. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro5QtGui10LayerModel11layerLockedE6size_t">
+<span id="_CPPv3NK8Avogadro5QtGui10LayerModel11layerLockedE6size_t"></span><span id="_CPPv2NK8Avogadro5QtGui10LayerModel11layerLockedE6size_t"></span><span id="Avogadro::QtGui::LayerModel::layerLocked__sC"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_layer_model_1af5c0e51dfe1f6bd1a666589617d7e628"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">layerLocked</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">layer</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro5QtGui10LayerModel11layerLockedE6size_t" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>whether <code class="docutils literal notranslate"><span class="pre">layer</span></code> is locked. Out-of-range is harmless: it reads back the same default a fresh layer starts with. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10LayerModel15setLayerVisibleE6size_tb">
+<span id="_CPPv3N8Avogadro5QtGui10LayerModel15setLayerVisibleE6size_tb"></span><span id="_CPPv2N8Avogadro5QtGui10LayerModel15setLayerVisibleE6size_tb"></span><span id="Avogadro::QtGui::LayerModel::setLayerVisible__s.b"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_layer_model_1a38b1a192e0a050abc9257f134ef135ab"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setLayerVisible</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">layer</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">visible</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10LayerModel15setLayerVisibleE6size_tb" title="Link to this definition">#</a><br /></dt>
+<dd><p>Show or hide <code class="docutils literal notranslate"><span class="pre">layer</span></code>. A no-op if it already matches <code class="docutils literal notranslate"><span class="pre">visible</span></code>, or if <code class="docutils literal notranslate"><span class="pre">layer</span></code> is out of range. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10LayerModel14setLayerLockedE6size_tb">
+<span id="_CPPv3N8Avogadro5QtGui10LayerModel14setLayerLockedE6size_tb"></span><span id="_CPPv2N8Avogadro5QtGui10LayerModel14setLayerLockedE6size_tb"></span><span id="Avogadro::QtGui::LayerModel::setLayerLocked__s.b"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_layer_model_1ae06a4d7a1694bfc174e2d0039f21f0b7"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setLayerLocked</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">layer</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">locked</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10LayerModel14setLayerLockedE6size_tb" title="Link to this definition">#</a><br /></dt>
+<dd><p>Lock or unlock <code class="docutils literal notranslate"><span class="pre">layer</span></code> against edits. A no-op if it already matches <code class="docutils literal notranslate"><span class="pre">locked</span></code>, or if <code class="docutils literal notranslate"><span class="pre">layer</span></code> is out of range. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10LayerModel16setActiveLayerIdE6size_tP10RWMolecule">
+<span id="_CPPv3N8Avogadro5QtGui10LayerModel16setActiveLayerIdE6size_tP10RWMolecule"></span><span id="_CPPv2N8Avogadro5QtGui10LayerModel16setActiveLayerIdE6size_tP10RWMolecule"></span><span id="Avogadro::QtGui::LayerModel::setActiveLayerId__s.RWMoleculeP"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_layer_model_1a4d893ce0fbd2ce020978c2adfe3e9c57"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setActiveLayerId</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">layer</span></span>, <a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_r_w_molecule.html#_CPPv4N8Avogadro5QtGui10RWMoleculeE" title="Avogadro::QtGui::RWMolecule"><span class="n"><span class="pre">RWMolecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">rwmolecule</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10LayerModel16setActiveLayerIdE6size_tP10RWMolecule" title="Link to this definition">#</a><br /></dt>
+<dd><p>Make <code class="docutils literal notranslate"><span class="pre">layer</span></code> the active layer. A no-op if <code class="docutils literal notranslate"><span class="pre">layer</span></code> is out of range. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui10LayerModel13removeLayerIdE6size_tP10RWMolecule">
+<span id="_CPPv3N8Avogadro5QtGui10LayerModel13removeLayerIdE6size_tP10RWMolecule"></span><span id="_CPPv2N8Avogadro5QtGui10LayerModel13removeLayerIdE6size_tP10RWMolecule"></span><span id="Avogadro::QtGui::LayerModel::removeLayerId__s.RWMoleculeP"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_layer_model_1a3bdcac56ce27392e59b6cb07fba4dfc5"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">removeLayerId</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">layer</span></span>, <a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_r_w_molecule.html#_CPPv4N8Avogadro5QtGui10RWMoleculeE" title="Avogadro::QtGui::RWMolecule"><span class="n"><span class="pre">RWMolecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">rwmolecule</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui10LayerModel13removeLayerIdE6size_tP10RWMolecule" title="Link to this definition">#</a><br /></dt>
+<dd><p>Remove <code class="docutils literal notranslate"><span class="pre">layer</span></code>. A no-op if <code class="docutils literal notranslate"><span class="pre">layer</span></code> is out of range. </p>
+</dd></dl>
+
 </div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-slots">Public Slots</p>
@@ -787,6 +842,13 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10LayerModel11flipVisibleE6size_t"><code class="docutils literal notranslate"><span class="pre">LayerModel::flipVisible()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10LayerModel10flipLockedE6size_t"><code class="docutils literal notranslate"><span class="pre">LayerModel::flipLocked()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui10LayerModel10layerCountEv"><code class="docutils literal notranslate"><span class="pre">LayerModel::layerCount()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui10LayerModel11layerForRowEi"><code class="docutils literal notranslate"><span class="pre">LayerModel::layerForRow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui10LayerModel12layerVisibleE6size_t"><code class="docutils literal notranslate"><span class="pre">LayerModel::layerVisible()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui10LayerModel11layerLockedE6size_t"><code class="docutils literal notranslate"><span class="pre">LayerModel::layerLocked()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10LayerModel15setLayerVisibleE6size_tb"><code class="docutils literal notranslate"><span class="pre">LayerModel::setLayerVisible()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10LayerModel14setLayerLockedE6size_tb"><code class="docutils literal notranslate"><span class="pre">LayerModel::setLayerLocked()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10LayerModel16setActiveLayerIdE6size_tP10RWMolecule"><code class="docutils literal notranslate"><span class="pre">LayerModel::setActiveLayerId()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10LayerModel13removeLayerIdE6size_tP10RWMolecule"><code class="docutils literal notranslate"><span class="pre">LayerModel::removeLayerId()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui10LayerModel10updateRowsEv"><code class="docutils literal notranslate"><span class="pre">LayerModel::updateRows()</span></code></a></li>
 </ul>
 </li>
