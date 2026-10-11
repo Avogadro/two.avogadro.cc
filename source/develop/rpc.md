@@ -95,6 +95,11 @@ instance leaves the server alone, and if it does not it takes the name over.
 This means messages always go to the instance that started first and is still
 alive.
 
+To use a different name, start Avogadro with `--rpc-name NAME` and pass the
+same name to the client, e.g. `connect("NAME")`. This lets a script run its
+own copy of Avogadro alongside your regular session. See [Automation and
+Headless Usage](develop-automation).
+
 Each packet on the wire is a 4-byte big-endian unsigned length followed by that
 many bytes of UTF-8 JSON. The same framing is used in both directions, so a
 reply must be read by taking the 4-byte header first and then exactly that many
@@ -267,8 +272,11 @@ Shared options:
 * `spin` — set to `"beta"` for the beta orbitals or density of an
   open-shell calculation; alpha is used otherwise.
 
-Surface generation runs in the background. The reply comes back as soon as the
-calculation has been started, not when the surface appears.
+Surface generation runs in the background. By default the reply comes back as
+soon as the calculation has been started, not when the surface appears. Pass
+`wait=True` to hold the reply until the surface is ready, for example before
+saving an image (see [Waiting for commands to
+finish](automation-wait)).
 
 ```python
 with connect() as avo:
