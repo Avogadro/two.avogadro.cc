@@ -9,6 +9,7 @@ It can be found under **Extensions > Manage Plugins…**
 :align: center
 :width: 90.4%
 :alt: The Plugin Manager's dialog window, as it appears under Linux with KDE
+:class: unclickable-figure
 :::
 
 The **Status** column shows the current installation status of each plugin using emoji:
@@ -40,6 +41,7 @@ Click the row of a plugin to select it and display detailed information for the 
 :align: center
 :width: 85.8%
 :alt: The Plugin Manager's dialog window, with the generators plugin selected and its detailed information displayed
+:class: unclickable-figure
 :::
 
 :::{tip}
