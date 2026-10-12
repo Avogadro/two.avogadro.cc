@@ -1,5 +1,6 @@
 - Sabbir Hossain (Nipu)
 - _colDan
+- AADITYA007x
 - Ahmad Abdolmaleki
 - Acun
 - Robert Adam
@@ -31,6 +32,7 @@
 - Arif Budiman
 - Libor Bukata
 - C.Y.A.N
+- Rayan Abdul Cader
 - caesar
 - Cart
 - Armando Castro
@@ -69,6 +71,7 @@
 - Fmfl_Felix
 - for_the_zero
 - Narada Fox
+- GansasOnGithup
 - Alessandro Genova
 - Tibor Győri
 - Marcus D. Hanwell
@@ -90,6 +93,7 @@
 - jawlensky
 - JEAM-professional
 - jeannemfavret
+- Sumeet Jha
 - joanavieira8
 - Marcus Johansson
 - Bert de Jong
