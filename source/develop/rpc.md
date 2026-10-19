@@ -53,6 +53,8 @@ with connect() as avo:
 | `open_file(filename)` | Open a file from disk, inferring the format from the extension |
 | `load_molecule(content, format="cjson")` | Load molecular data from a string |
 | `export_file(filename)` | Write the active molecule, inferring the format from the extension |
+| `fetch_by_name(name)` | Download a structure by chemical name and load it |
+| `fetch_pdb(code)` | Download a Protein Data Bank entry by its four-character code |
 | `save_graphic(filename)` | Save a bitmap image of the current view |
 | `command(name, **options)` | Run any registered command, e.g. `command("setVibrationalMode", mode=3)` |
 | `send(method, params=None, wait=True)` | Send any JSON-RPC method; the general escape hatch |
@@ -189,6 +191,31 @@ using.
 
 Unless noted otherwise, a command needs an open molecule and returns an error
 if there is none.
+
+### Databases
+
+These two are the exception to the rule above: they replace the active
+molecule, so they do not need one to begin with.
+
+| Command | Parameters | Description |
+|---------|-----------|-------------|
+| `fetchByName` | `name` | Download a structure by common or IUPAC name and load it. Queries the NIH Cactus resolver, then retries against PubChem's 3D endpoint if Cactus errors or returns 2D-only coordinates. |
+| `fetchPDB` | `code` | Download a Protein Data Bank entry from RCSB and load it. `code` is the four-character identifier, the first character a digit 1-9 and the rest letters or digits. |
+
+Both hand the work to the network, so the reply does not come back until the
+download has finished and the structure has been loaded — send them with
+`wait` set, which is what the `fetch_by_name()` and `fetch_pdb()` helpers do
+for you. On success they report the `name` that was fetched and the `source`
+that answered (`"cactus"`, `"pubchem"` or `"rcsb"`), along with `atomCount`
+and `formula` where the molecule is available; `fetchPDB` adds
+`residueCount`. A code that is malformed, a name with no match, and a
+download that cannot be read are all errors rather than empty successes.
+
+```python
+with connect() as avo:
+    entry = avo.fetch_pdb("1crn")
+    print(entry["formula"], entry["residueCount"])
+```
 
 ### Atoms and bonds
 
