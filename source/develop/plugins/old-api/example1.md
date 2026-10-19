@@ -2,7 +2,7 @@
 Let's consider [Alloy/Alchemy command](https://github.com/OpenChemistry/avogadro-commands/blob/master/replace.py) as a reference for writing code for scripts or plugins
 
 ## The Main function:
-The `main` function is responsible for parsing command-line arguments . It serves as the entry point for the script , facilitates its interaction with the user and executes the appropriate actions. 
+The `main` function is responsible for parsing command-line arguments . It serves as the entry point for the script , facilitates its interaction with the user and executes the appropriate actions.
 
 Below is a detailed explanation of the `main` function:
 
@@ -47,7 +47,7 @@ Here's a detailed breakdown of the `main` function:
 3. **Debug Mode**:
    If the `--debug` flag is set, the `debug` variable is set to `True`. This can be used to control the script's debugging behavior.
 
- ### Input Arguments  
+ ### Input Arguments
 
 1. **Display Name**:
    If the `--display-name` flag is provided, the script prints ``Replace Elements`` as the display name of the operation.
@@ -77,7 +77,6 @@ def getOptions():
 The getOptions function is used to specify the [script Interfaces](https://two.avogadro.cc/scripts/inte**rface.html#script-interfaces) or **the pop-up menu** for the script. For each option in the userOptions list, Avogadro will create appropriate labels, menus, text boxes, check boxes, etc.
 Interface will look something like this:
 
-<img src="../../_static/image-6.png" alt="7th">
+<img src="../../../_static/image-6.png" alt="7th">
 
-It is called in the command line when `--print-options` is given as the input argument. 
-
+It is called in the command line when `--print-options` is given as the input argument.
