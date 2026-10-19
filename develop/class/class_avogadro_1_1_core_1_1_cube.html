@@ -468,8 +468,6 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_layer_manager.html">Avogadro::Core::LayerManager</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_mesh.html">Avogadro::Core::Mesh</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html">Avogadro::Core::Molecule</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule_deserializer.html">Avogadro::Core::MoleculeDeserializer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule_serializer.html">Avogadro::Core::MoleculeSerializer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_mutex.html">Avogadro::Core::Mutex</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_name_atom_typer.html">Avogadro::Core::NameAtomTyper</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_neighbor_perceiver.html">Avogadro::Core::NeighborPerceiver</a></li>
@@ -706,9 +704,6 @@ document.write(`
 <li><p><strong>points</strong> – The number of (integer) points in the cube. </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>False, leaving the cube unchanged, if any axis has fewer than two points (the spacing would be undefined), the total point count exceeds INT_MAX, or min or max is not finite. </p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -723,9 +718,6 @@ document.write(`
 <li><p><strong>max</strong> – The maximum point in the cube. </p></li>
 <li><p><strong>spacing</strong> – The interval between points in the cube. </p></li>
 </ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>False, leaving the cube unchanged, if spacing is not positive and finite or the resulting grid has fewer than two points on any axis. </p>
 </dd>
 </dl>
 </dd></dl>
@@ -742,9 +734,6 @@ document.write(`
 <li><p><strong>spacing</strong> – The interval between points in the cube. </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>False, leaving the cube unchanged, if any dimension is below one, the total point count exceeds INT_MAX, or spacing is not positive and finite. </p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -760,9 +749,6 @@ document.write(`
 <li><p><strong>spacing</strong> – The interval between points in the cube. </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>False, leaving the cube unchanged, if any dimension is below one, the total point count exceeds INT_MAX, or any spacing component is not positive and finite. </p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -773,9 +759,6 @@ document.write(`
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>cube</strong> – Existing <a class="reference internal" href="#class_avogadro_1_1_core_1_1_cube"><span class="std std-ref">Cube</span></a> to copy the limits from. </p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>False, leaving this cube unchanged, if <code class="docutils literal notranslate"><span class="pre">cube</span></code> has no points. </p>
 </dd>
 </dl>
 </dd></dl>

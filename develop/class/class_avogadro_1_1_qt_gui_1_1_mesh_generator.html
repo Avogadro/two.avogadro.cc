@@ -483,7 +483,6 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_scene_plugin.html">Avogadro::QtGui::ScenePlugin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_scene_plugin_factory.html">Avogadro::QtGui::ScenePluginFactory</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_scene_plugin_model.html">Avogadro::QtGui::ScenePluginModel</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_script_loader.html">Avogadro::QtGui::ScriptLoader</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_slater_set_concurrent.html">Avogadro::QtGui::SlaterSetConcurrent</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_sort_filter_tree_proxy_model.html">Avogadro::QtGui::SortFilterTreeProxyModel</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_timed_progress_dialog.html">Avogadro::QtGui::TimedProgressDialog</a></li>
@@ -735,16 +734,6 @@ This class implements a method of generating an isosurface Mesh from volumetric 
 <dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui13MeshGenerator20progressValueChangedEi">
 <span id="_CPPv3N8Avogadro5QtGui13MeshGenerator20progressValueChangedEi"></span><span id="_CPPv2N8Avogadro5QtGui13MeshGenerator20progressValueChangedEi"></span><span id="Avogadro::QtGui::MeshGenerator::progressValueChanged__i"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_mesh_generator_1a533fa46faaa5c744ca1d66c7a617d579"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">progressValueChanged</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui13MeshGenerator20progressValueChangedEi" title="Link to this definition">#</a><br /></dt>
 <dd><p>The current value of the calculation’s progress. </p>
-</dd></dl>
-
-</div>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-functions">Public Static Functions</p>
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui13MeshGenerator21cancelAllCalculationsEv">
-<span id="_CPPv3N8Avogadro5QtGui13MeshGenerator21cancelAllCalculationsEv"></span><span id="_CPPv2N8Avogadro5QtGui13MeshGenerator21cancelAllCalculationsEv"></span><span id="Avogadro::QtGui::MeshGenerator::cancelAllCalculations"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_mesh_generator_1a32700644822c734e08e4d22cd142ea0f"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cancelAllCalculations</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui13MeshGenerator21cancelAllCalculationsEv" title="Link to this definition">#</a><br /></dt>
-<dd><p>Wait for every running <a class="reference internal" href="#class_avogadro_1_1_qt_gui_1_1_mesh_generator"><span class="std std-ref">MeshGenerator</span></a> to finish.</p>
-<p>A running generator reads the cube and writes into the mesh it was handed, so anything about to delete either has to join the calculation first. There is no way to interrupt a generator once started, so this blocks until each one completes; each instance’s finished() signal is blocked while waiting so a caller elsewhere does not react to a completion that belongs to data already being torn down. </p>
 </dd></dl>
 
 </div>
@@ -1011,7 +1000,6 @@ This class implements a method of generating an isosurface Mesh from volumetric 
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui13MeshGenerator15progressMinimumEv"><code class="docutils literal notranslate"><span class="pre">MeshGenerator::progressMinimum()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui13MeshGenerator15progressMaximumEv"><code class="docutils literal notranslate"><span class="pre">MeshGenerator::progressMaximum()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui13MeshGenerator20progressValueChangedEi"><code class="docutils literal notranslate"><span class="pre">MeshGenerator::progressValueChanged()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui13MeshGenerator21cancelAllCalculationsEv"><code class="docutils literal notranslate"><span class="pre">MeshGenerator::cancelAllCalculations()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui13MeshGenerator9isCutEdgeERKiRKiRKi"><code class="docutils literal notranslate"><span class="pre">MeshGenerator::isCutEdge()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui13MeshGenerator17interpolateOnCubeERKNSt5arrayINSt5arrayIfXL3EEEEXL8EEEERKNSt5arrayIfXL8EEEERKh"><code class="docutils literal notranslate"><span class="pre">MeshGenerator::interpolateOnCube()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui13MeshGenerator11interpolateERKNSt5arrayIfXL3EEEERKNSt5arrayIfXL3EEEERKf"><code class="docutils literal notranslate"><span class="pre">MeshGenerator::interpolate()</span></code></a></li>

@@ -468,8 +468,6 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_layer_manager.html">Avogadro::Core::LayerManager</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_mesh.html">Avogadro::Core::Mesh</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html">Avogadro::Core::Molecule</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule_deserializer.html">Avogadro::Core::MoleculeDeserializer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule_serializer.html">Avogadro::Core::MoleculeSerializer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_mutex.html">Avogadro::Core::Mutex</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_name_atom_typer.html">Avogadro::Core::NameAtomTyper</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_avogadro_1_1_core_1_1_neighbor_perceiver.html">Avogadro::Core::NeighborPerceiver</a></li>
@@ -599,81 +597,9 @@ document.write(`
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core11SpaceGroups10hallNumberERKNSt6stringE">
 <span id="_CPPv3N8Avogadro4Core11SpaceGroups10hallNumberERKNSt6stringE"></span><span id="_CPPv2N8Avogadro4Core11SpaceGroups10hallNumberERKNSt6stringE"></span><span id="Avogadro::Core::SpaceGroups::hallNumber__ssCR"></span><span class="target" id="class_avogadro_1_1_core_1_1_space_groups_1a4138c98527e839da7ec344182fbb5d46"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">short</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">hallNumber</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">spaceGroup</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core11SpaceGroups10hallNumberERKNSt6stringE" title="Link to this definition">#</a><br /></dt>
-<dd><p>
-Besides the strings in the table (Hall symbol, international symbols), this accepts the spellings other programs write: screw axes without the underscore (“P 63 m c”, “P 1 21/c 1”), a trailing setting that selects an origin choice or the hexagonal / rhombohedral axes (“F d -3 m :2”, “R -3 m :H”), the pre-1983 cubic notation (“I m 3 m”) and a bare international table number (“229”).</p>
-<p>A symbol or number that fits several settings (origin choice, axes) is not guessed: 0 is returned. See <a class="reference internal" href="#class_avogadro_1_1_core_1_1_space_groups_1a66038d79b7b2b4467beb19414f5f8cdd"><span class="std std-ref">internationalNumberFromString()</span></a>. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>The hall number of the matching space group string or 0 if not found</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core11SpaceGroups24hallNumberFromHallSymbolERKNSt6stringE">
-<span id="_CPPv3N8Avogadro4Core11SpaceGroups24hallNumberFromHallSymbolERKNSt6stringE"></span><span id="_CPPv2N8Avogadro4Core11SpaceGroups24hallNumberFromHallSymbolERKNSt6stringE"></span><span id="Avogadro::Core::SpaceGroups::hallNumberFromHallSymbol__ssCR"></span><span class="target" id="class_avogadro_1_1_core_1_1_space_groups_1a650e15dcdb1c8f6b271ab26b15217612"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">short</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">hallNumberFromHallSymbol</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">hallSymbol</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core11SpaceGroups24hallNumberFromHallSymbolERKNSt6stringE" title="Link to this definition">#</a><br /></dt>
-<dd><p>
-Unlike <a class="reference internal" href="#class_avogadro_1_1_core_1_1_space_groups_1a4138c98527e839da7ec344182fbb5d46"><span class="std std-ref">hallNumber()</span></a>, the international symbols and numbers are not accepted: a string that is not a Hall symbol of the table gives 0. Runs of white space are collapsed and a double quote is read as ‘=’, as in the table, so “-P  2yn” and “P 3 2&quot;” (the table’s “P 3 2=”) match. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>the hall number whose Hall symbol is exactly <code class="docutils literal notranslate"><span class="pre">hallSymbol</span></code>, or 0 if there is none.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core11SpaceGroups19normalizeHallSymbolERKNSt6stringE">
-<span id="_CPPv3N8Avogadro4Core11SpaceGroups19normalizeHallSymbolERKNSt6stringE"></span><span id="_CPPv2N8Avogadro4Core11SpaceGroups19normalizeHallSymbolERKNSt6stringE"></span><span id="Avogadro::Core::SpaceGroups::normalizeHallSymbol__ssCR"></span><span class="target" id="class_avogadro_1_1_core_1_1_space_groups_1afb8ab9fb2942114b5292b15ca8db30dd"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">normalizeHallSymbol</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">hallSymbol</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core11SpaceGroups19normalizeHallSymbolERKNSt6stringE" title="Link to this definition">#</a><br /></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">hallSymbol</span></code> in the spelling of the table: runs of white space (spaces, tabs and line endings) collapsed to one space, the ends trimmed, and ‘=’ where a file has a double quote. The result is not checked against the table. </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core11SpaceGroups24hallNumberFromTransformsERKNSt6vectorINSt6stringEEE">
-<span id="_CPPv3N8Avogadro4Core11SpaceGroups24hallNumberFromTransformsERKNSt6vectorINSt6stringEEE"></span><span id="_CPPv2N8Avogadro4Core11SpaceGroups24hallNumberFromTransformsERKNSt6vectorINSt6stringEEE"></span><span id="Avogadro::Core::SpaceGroups::hallNumberFromTransforms__std::vector:ss:CR"></span><span class="target" id="class_avogadro_1_1_core_1_1_space_groups_1aa8a7e11a9298dafa7f1cf95def36501f"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">short</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">hallNumberFromTransforms</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">operations</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core11SpaceGroups24hallNumberFromTransformsERKNSt6vectorINSt6stringEEE" title="Link to this definition">#</a><br /></dt>
-<dd><p>
-This is how most crystallography programs resolve a setting: the symmetry operations a CIF file lists identify the origin choice and axes (which an H-M symbol often leaves out), and cannot disagree with the coordinates.</p>
-<p>Each operation is written like “x,y,z”, “-x+1/2,y,-z”, “1/2+x,y,z” or “x-y,x,z+1/6”. Letters may be upper case, spaces and quotes are ignored, and constants may be decimals (0.5, 0.3333, 0.6667) if they are close to a multiple of 1/12. Translations are taken modulo one. The order of the operations and repeats do not matter. All operations must be present and none may be extra. Text that is not an operation, or an empty list, gives 0.</p>
-<p>Three pairs of entries in the table (hall numbers 322 and 324, 326 and 328, 330 and 332, all group 68) have the same operations and the same Hall symbol, and differ only in a setting label. The lower number is returned. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>the hall number of the space group whose symmetry operations are exactly <code class="docutils literal notranslate"><span class="pre">operations</span></code>, or 0 if no entry of the table has this set.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core11SpaceGroups29internationalNumberFromStringERKNSt6stringE">
-<span id="_CPPv3N8Avogadro4Core11SpaceGroups29internationalNumberFromStringERKNSt6stringE"></span><span id="_CPPv2N8Avogadro4Core11SpaceGroups29internationalNumberFromStringERKNSt6stringE"></span><span id="Avogadro::Core::SpaceGroups::internationalNumberFromString__ssCR"></span><span class="target" id="class_avogadro_1_1_core_1_1_space_groups_1a66038d79b7b2b4467beb19414f5f8cdd"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">short</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">internationalNumberFromString</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">spaceGroup</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core11SpaceGroups29internationalNumberFromStringERKNSt6stringE" title="Link to this definition">#</a><br /></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>the international table number (1-230) that the string refers to, even if <a class="reference internal" href="#class_avogadro_1_1_core_1_1_space_groups_1a4138c98527e839da7ec344182fbb5d46"><span class="std std-ref">hallNumber()</span></a> cannot pick one setting for it (e.g. “74”), or 0 if the string is not recognized. </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core11SpaceGroups13setSpaceGroupER8MoleculeRKNSt6stringE">
-<span id="_CPPv3N8Avogadro4Core11SpaceGroups13setSpaceGroupER8MoleculeRKNSt6stringE"></span><span id="_CPPv2N8Avogadro4Core11SpaceGroups13setSpaceGroupER8MoleculeRKNSt6stringE"></span><span id="Avogadro::Core::SpaceGroups::setSpaceGroup__MoleculeR.ssCR"></span><span class="target" id="class_avogadro_1_1_core_1_1_space_groups_1a04c87c1498a17c624e9ab0aea2760493"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setSpaceGroup</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">molecule</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">spaceGroup</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core11SpaceGroups13setSpaceGroupER8MoleculeRKNSt6stringE" title="Link to this definition">#</a><br /></dt>
-<dd><p>Record the space group that a file gives as a string (a symbol, with or without a setting, or a bare international table number) in <code class="docutils literal notranslate"><span class="pre">molecule</span></code>.</p>
-<p>If the string identifies one setting, the Hall number of the molecule is set (see <a class="reference internal" href="#class_avogadro_1_1_core_1_1_space_groups_1a4138c98527e839da7ec344182fbb5d46"><span class="std std-ref">hallNumber()</span></a>). If it only identifies the group, because several settings fit (origin choice, axes), the international table number is kept in the data map under <a class="reference internal" href="#class_avogadro_1_1_core_1_1_space_groups_1a064900a1cc52e9d414d5dc0cd694b812"><span class="std std-ref">internationalNumberKey()</span></a>, so that the user can be asked for just those settings. A Hall number set later removes it.</p>
-<p>The string is resolved once. A space group that is not recognized leaves the molecule unchanged.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>true if the Hall number or the international number was set. </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core11SpaceGroups22internationalNumberKeyEv">
-<span id="_CPPv3N8Avogadro4Core11SpaceGroups22internationalNumberKeyEv"></span><span id="_CPPv2N8Avogadro4Core11SpaceGroups22internationalNumberKeyEv"></span><span id="Avogadro::Core::SpaceGroups::internationalNumberKey"></span><span class="target" id="class_avogadro_1_1_core_1_1_space_groups_1a064900a1cc52e9d414d5dc0cd694b812"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">internationalNumberKey</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro4Core11SpaceGroups22internationalNumberKeyEv" title="Link to this definition">#</a><br /></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>the key of the <a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#class_avogadro_1_1_core_1_1_molecule"><span class="std std-ref">Molecule</span></a> data map entry (an int) in which file readers keep the international table number of a space group whose Hall number is ambiguous. <a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#class_avogadro_1_1_core_1_1_molecule_1a7b30ece0c744f046c3e700730500c109"><span class="std std-ref">Molecule::setHallNumber()</span></a> removes it once a Hall number is known. It is never written to files: the file writers and the molecular properties table skip it. </p>
+<dd class="field-odd"><p>The hall number of the matching space group string or 0 if not found </p>
 </dd>
 </dl>
 </dd></dl>
@@ -814,15 +740,6 @@ This is how most crystallography programs resolve a setting: the symmetry operat
 </dd></dl>
 
 </div>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-attributes">Public Static Attributes</p>
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro4Core11SpaceGroups14lastHallNumberE">
-<span id="_CPPv3N8Avogadro4Core11SpaceGroups14lastHallNumberE"></span><span id="_CPPv2N8Avogadro4Core11SpaceGroups14lastHallNumberE"></span><span id="Avogadro::Core::SpaceGroups::lastHallNumber__unsigned-short"></span><span class="target" id="class_avogadro_1_1_core_1_1_space_groups_1aa0e38b88ab24dedb06c33bf08aded404"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">short</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lastHallNumber</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">530</span></span><a class="headerlink" href="#_CPPv4N8Avogadro4Core11SpaceGroups14lastHallNumberE" title="Link to this definition">#</a><br /></dt>
-<dd><p>The highest Hall number. The Hall numbers run from 1 to this value; 0 means “no space group” throughout this class. </p>
-</dd></dl>
-
-</div>
 </dd></dl>
 
 </section>
@@ -877,12 +794,6 @@ This is how most crystallography programs resolve a setting: the symmetry operat
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core11SpaceGroups11SpaceGroupsEv"><code class="docutils literal notranslate"><span class="pre">SpaceGroups::SpaceGroups()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core11SpaceGroupsD0Ev"><code class="docutils literal notranslate"><span class="pre">SpaceGroups::~SpaceGroups()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core11SpaceGroups10hallNumberERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">SpaceGroups::hallNumber()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core11SpaceGroups24hallNumberFromHallSymbolERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">SpaceGroups::hallNumberFromHallSymbol()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core11SpaceGroups19normalizeHallSymbolERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">SpaceGroups::normalizeHallSymbol()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core11SpaceGroups24hallNumberFromTransformsERKNSt6vectorINSt6stringEEE"><code class="docutils literal notranslate"><span class="pre">SpaceGroups::hallNumberFromTransforms()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core11SpaceGroups29internationalNumberFromStringERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">SpaceGroups::internationalNumberFromString()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core11SpaceGroups13setSpaceGroupER8MoleculeRKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">SpaceGroups::setSpaceGroup()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core11SpaceGroups22internationalNumberKeyEv"><code class="docutils literal notranslate"><span class="pre">SpaceGroups::internationalNumberKey()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core11SpaceGroups13crystalSystemEt"><code class="docutils literal notranslate"><span class="pre">SpaceGroups::crystalSystem()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core11SpaceGroups19internationalNumberEt"><code class="docutils literal notranslate"><span class="pre">SpaceGroups::internationalNumber()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core11SpaceGroups11schoenfliesEt"><code class="docutils literal notranslate"><span class="pre">SpaceGroups::schoenflies()</span></code></a></li>
@@ -897,7 +808,6 @@ This is how most crystallography programs resolve a setting: the symmetry operat
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core11SpaceGroups23fillTranslationalCopiesER8Moleculed"><code class="docutils literal notranslate"><span class="pre">SpaceGroups::fillTranslationalCopies()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core11SpaceGroups22reduceToAsymmetricUnitER8Moleculetd"><code class="docutils literal notranslate"><span class="pre">SpaceGroups::reduceToAsymmetricUnit()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core11SpaceGroups24translationalUniqueAtomsERK8Moleculed"><code class="docutils literal notranslate"><span class="pre">SpaceGroups::translationalUniqueAtoms()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro4Core11SpaceGroups14lastHallNumberE"><code class="docutils literal notranslate"><span class="pre">SpaceGroups::lastHallNumber</span></code></a></li>
 </ul>
 </li>
 </ul>
