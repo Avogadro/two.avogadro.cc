@@ -62,6 +62,12 @@ import sys
 if not any(b in sys.argv for b in ('latex', 'latexpdf', 'qthelp')):
     extensions.append('pydata_sphinx_theme')
 
+# True when building the PDF (LaTeX) output
+is_latex_build = any(b in sys.argv for b in ('latex', 'latexpdf'))
+if is_latex_build:
+    # Convert the SVG images (tool icons, etc.) to vector PDF with rsvg-convert
+    extensions.append('sphinxcontrib.rsvgconverter')
+
 myst_enable_extensions = [
     "attrs_inline",
     "colon_fence",
@@ -112,6 +118,11 @@ myst_url_schemes = {
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = []
 
+if is_latex_build:
+    # The API reference pages (generated from the doxygen XML by breathe) are
+    # HTML-only; they are hundreds of pages and need the doxygen XML to build.
+    exclude_patterns.append('develop/class/*')
+
 # Add Open Babel and maybe RDKit too?
 #intersphinx_mapping = {
 #    'python' : ('https://docs.python.org/3/', None),
@@ -125,6 +136,14 @@ breathe_default_project = 'AvogadroLibs'
 breathe_default_members = ('members', 'undoc-members', 'protected-members')
 
 # -- Options for LaTeX / PDF output ------------------------------------------
+# The PDF is built with LuaLaTeX (Unicode engine), which needs:
+#   * TeX Live packages: fontspec, luaotfload, lm, fontawesome5, mhchem,
+#     newunicodechar (see .github/workflows/build-pdf.yml for the full list)
+#   * Noto fonts (Debian/Ubuntu: fonts-noto-core, fonts-noto-cjk) for
+#     sub/superscripts, math symbols, Tamil, Arabic and CJK, which Latin
+#     Modern lacks
+
+latex_engine = 'lualatex'
 
 latex_documents = [
     ('latex-index', 'Avogadro.tex', 'Avogadro Documentation',
@@ -134,39 +153,62 @@ latex_documents = [
 latex_elements = {
     'papersize': 'letterpaper',
     'pointsize': '11pt',
-    'preamble': r'''
+    # Latin Modern for text. Characters it lacks (arrows, math symbols,
+    # Tamil, Arabic, ...) fall back, glyph by glyph, to the Noto fonts.
+    'fontpkg': r"""
+\usepackage{fontspec}
+\directlua{
+  luaotfload.add_fallback("avofallback", {
+    "Noto Sans:mode=harf;",
+    "Noto Sans Math:mode=harf;",
+    "Noto Sans Symbols:mode=harf;",
+    "Noto Sans Symbols 2:mode=harf;",
+    "Noto Sans Tamil:mode=harf;script=taml;",
+    "Noto Naskh Arabic:mode=harf;script=arab;",
+    "Noto Sans CJK SC:mode=harf;",
+  })
+}
+\setmainfont{Latin Modern Roman}[RawFeature={fallback=avofallback}]
+\setsansfont{Latin Modern Sans}[RawFeature={fallback=avofallback}]
+\setmonofont{Latin Modern Mono}[RawFeature={fallback=avofallback}]
+""",
+    'preamble': r"""
 % Scale all images to 50% of their default size
 \let\origsphinxincludegraphics\sphinxincludegraphics
 \renewcommand{\sphinxincludegraphics}[2][]{%
   \origsphinxincludegraphics[scale=0.5,#1]{#2}%
 }
-''',
+
+% Chemical formulas: \ce{...} (rendered by MathJax in HTML)
+\usepackage[version=4]{mhchem}
+
+% Emoji used in the text: map them to FontAwesome icons rather than
+% requiring a colour emoji font
+\usepackage{fontawesome5}
+\usepackage{newunicodechar}
+\newunicodechar{📄}{\faFile}
+\newunicodechar{⚡}{\faBolt}
+\newunicodechar{⚛}{\faAtom}
+\newunicodechar{🔒}{\faLock}
+\newunicodechar{☰}{\faBars}
+\newunicodechar{➕}{\faPlus}
+\newunicodechar{✅}{\faCheck}
+\newunicodechar{📁}{\faFolder}
+\newunicodechar{🛑}{\faStopCircle}
+\newunicodechar{❗}{\faExclamation}
+""",
     # Avoid blank pages between chapters
     'extraclassoptions': 'openany,oneside',
     'tocdepth': 2,
+    # sphinx-design's FontAwesome v4 conflicts with Sphinx's fontawesome5
+    'sphinxsetup': 'iconpackage=fontawesome5',
 }
 
-# FontAwesome / font availability depends on the TeX installation.
-# CI has full texlive (fontawesome5); local basic installs may not.
-import subprocess
-def _has_tex_package(name):
-    """Check if a TeX package (.sty) is available."""
-    try:
-        result = subprocess.run(
-            ['kpsewhich', f'{name}.sty'],
-            capture_output=True, timeout=5)
-        return result.returncode == 0
-    except (FileNotFoundError, subprocess.TimeoutExpired):
-        return False
-
-if _has_tex_package('fontawesome5'):
-    # Full TeX install — explicitly use fontawesome5 to avoid conflicts
-    latex_elements['sphinxsetup'] = 'iconpackage=fontawesome5'
-elif not _has_tex_package('fontawesome'):
-    # Minimal TeX install — disable icon fonts and use OT1/Computer Modern
-    latex_elements['fontenc'] = r'\usepackage[OT1]{fontenc}'
-    latex_elements['fontpkg'] = ''
-    latex_elements['sphinxsetup'] = 'iconpackage=none'
+# Sphinx's default 'colorrows' table style (zebra stripes) overrides colortbl's
+# \CT@everycr; with array >= 2026/02/24 (TeX Live 2026) colortbl no longer
+# keeps that token list separate from \everycr, so Sphinx's hack recurses
+# forever ("TeX capacity exceeded, input stack size") at the first table.
+latex_table_style = ['booktabs']
 
 latex_logo = '_static/avogadro2.png'
 
