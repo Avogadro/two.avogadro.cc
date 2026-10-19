@@ -37,15 +37,16 @@ jobs:
         path: ${{ runner.workspace }}/build/avogadrolibs/docs/xml
         key: v1-doxygen-xml-${{ runner.os }}-${{ steps.release.outputs.image }}-${{ steps.release.outputs.tag }}
 
-    - name: Checkout avogadrolibs
+    # clone outside the workspace, or the gh-pages deploy's `git add -A`
+    # commits it as a submodule and breaks the Pages build
+    - name: Clone avogadrolibs
       if: steps.doxygen-cache.outputs.cache-hit != 'true'
-      uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 #v5
-      with:
-        repository: openchemistry/avogadrolibs
-        ref: ${{ steps.release.outputs.tag }}
-        fetch-depth: 1
-        persist-credentials: false
-        path: avogadrolibs
+      run: |
+        git -c advice.detachedHead=false clone -q --depth 1 --branch "$TAG" \
+          https://github.com/openchemistry/avogadrolibs.git \
+          "$RUNNER_TEMP/avogadrolibs"
+      env:
+        TAG: ${{ steps.release.outputs.tag }}
 
     - name: Install doxygen
       if: steps.doxygen-cache.outputs.cache-hit != 'true'
@@ -56,7 +57,7 @@ jobs:
     - name: Build doxygen XML
       if: steps.doxygen-cache.outputs.cache-hit != 'true'
       run: |
-        src="$GITHUB_WORKSPACE/avogadrolibs"
+        src="$RUNNER_TEMP/avogadrolibs"
         out="${{ runner.workspace }}/build/avogadrolibs/docs"
         version="${TAG}"
         mkdir -p "$out"
