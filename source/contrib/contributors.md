@@ -63,6 +63,7 @@
 - Sebastian Ehlert
 - ejatjon
 - Iago Emanuel
+- emirtkgz
 - Aritz Erkiaga
 - Oğuz Ersen
 - Boris Faure
@@ -201,6 +202,7 @@
 - Traductor
 - Regen Tsai
 - Tsuki
+- Mohd Quamar Tyagi
 - udopton
 - Shiv Upadhyay
 - urkawa
