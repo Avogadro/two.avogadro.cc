@@ -188,8 +188,10 @@ connections, but the request that opened the dialog never gets a reply.
 `saveGraphic` returns an error instead of opening a message box. Some
 commands can still open a dialog, so avoid these in unattended scripts:
 
-* `fillUnitCell` and `fillTranslationalCell`
-* commands whose names start with `show`, such as `showVibrations`
+* `showPdfPlot` and `showXrdPlot`, which ask for their options in a modal
+  dialog
+* other commands whose names start with `show`, such as `showVibrations`,
+  which open windows
 * `fetchPDB` and `fetchByName`, which also depend on the network
 
 If a script seems stuck, a second connection can ask what is open:
