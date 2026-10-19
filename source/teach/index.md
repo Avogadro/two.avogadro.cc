@@ -58,7 +58,7 @@ Beyond published articles, we include a variety of activities contributed by the
 
 * Illustrate the geometry and bond lengths in sp<sup>3</sup>, sp<sup>2</sup> and sp hybridized carbons.
 
-### Biochemistry:
+### Biochemistry
 
 [*Acid-Base Properties of Amino Acids*](acid_base)
 

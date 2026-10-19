@@ -1,5 +1,6 @@
 - Sabbir Hossain (Nipu)
 - _colDan
+- AADITYA007x
 - Ahmad Abdolmaleki
 - Acun
 - Robert Adam
@@ -17,6 +18,7 @@
 - Atharva-Kanherkar
 - Heiner Atze
 - Patrick Avery
+- Samuel Ayibatarri 
 - Azaathooth
 - Adarsh Balasubramanian
 - balducci
@@ -30,6 +32,7 @@
 - Arif Budiman
 - Libor Bukata
 - C.Y.A.N
+- Rayan Abdul Cader
 - caesar
 - Cart
 - Armando Castro
@@ -60,6 +63,7 @@
 - Sebastian Ehlert
 - ejatjon
 - Iago Emanuel
+- emirtkgz
 - Aritz Erkiaga
 - Oğuz Ersen
 - Boris Faure
@@ -68,6 +72,7 @@
 - Fmfl_Felix
 - for_the_zero
 - Narada Fox
+- GansasOnGithup
 - Alessandro Genova
 - Tibor Győri
 - Marcus D. Hanwell
@@ -79,6 +84,7 @@
 - hooray804
 - Brenton Horne
 - Geoff Hutchison
+- ian0318git
 - Takaki IEKURA
 - Barry Moore II
 - ilyarya131
@@ -88,6 +94,7 @@
 - jawlensky
 - JEAM-professional
 - jeannemfavret
+- Sumeet Jha
 - joanavieira8
 - Marcus Johansson
 - Bert de Jong
@@ -173,6 +180,7 @@
 - Sanjeed Schamnad
 - Dillon Schultz
 - Sensor
+- shaneraphel
 - Oleg Shparber
 - shuo
 - simmon
@@ -194,6 +202,7 @@
 - Traductor
 - Regen Tsai
 - Tsuki
+- Mohd Quamar Tyagi
 - udopton
 - Shiv Upadhyay
 - urkawa

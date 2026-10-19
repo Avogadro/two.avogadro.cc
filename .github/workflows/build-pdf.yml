@@ -6,6 +6,9 @@ on:
     branches:
       - 'main'
 
+permissions:
+  contents: read
+
 jobs:
   build-pdf:
     name: Build PDF documentation
@@ -16,19 +19,78 @@ jobs:
 
     steps:
     - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 #v5
+      with:
+        persist-credentials: false
 
-    - name: Install TeX Live and fonts
+    # Small system packages only (a few seconds). TeX Live itself comes from
+    # setup-texlive-action below, not from apt.
+    #   fonts-noto-core: Noto Sans (sub/superscripts), Math, Symbols, Tamil,
+    #                    Naskh Arabic -- the LuaLaTeX fallback fonts
+    #   fonts-noto-cjk:  CJK glyphs (a contributor name)
+    #   librsvg2-bin:    rsvg-convert, for SVG -> PDF in the LaTeX build
+    #   ghostscript:     shrinks the final PDF
+    - name: Install fonts and tools
       run: |
         sudo apt-get -qq update
-        sudo apt-get -qq install \
-          texlive-latex-recommended \
-          texlive-latex-extra \
-          texlive-fonts-recommended \
-          texlive-fonts-extra \
+        sudo apt-get -qq install --no-install-recommends \
+          fonts-noto-core \
+          fonts-noto-cjk \
+          librsvg2-bin \
+          ghostscript
+
+    # Minimal TeX Live: the infrastructure scheme plus only the packages the
+    # generated Avogadro.tex needs (and their dependencies). The installation
+    # is cached by the action. The version is pinned because Sphinx's LaTeX
+    # table code is sensitive to kernel/array changes between TeX Live years.
+    - name: Install TeX Live
+      uses: TeX-Live/setup-texlive-action@eb78d21f41941476d9121e3a0abcab73265c876f # v4.1.1
+      with:
+        version: 2026
+        packages: |
           latexmk
+          latex-bin
+          luatex
+          luaotfload
+          luatexbase
+          luatex85
+          fontspec
+          lm
+          polyglossia
+          amsmath
+          amsfonts
+          tools
+          tabulary
+          colortbl
+          graphics
+          hyperref
+          hypcap
+          geometry
+          fncychap
+          titlesec
+          varwidth
+          framed
+          wrapfig
+          capt-of
+          needspace
+          float
+          parskip
+          fancyvrb
+          upquote
+          cmap
+          xcolor
+          etoolbox
+          fancyhdr
+          booktabs
+          kvoptions
+          pict2e
+          carlisle
+          oberdiek
+          mhchem
+          fontawesome5
+          newunicodechar
 
     - name: Install uv
-      uses: astral-sh/setup-uv@20cfd1bf945f4377ade1205e4dbc17946fc9a30d # v10.0.1
+      uses: astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884 # v10.3.0
       with:
         enable-cache: true
         cache-dependency-glob: "uv.lock"
@@ -41,6 +103,8 @@ jobs:
     - name: Install Sphinx and requirements
       run: uv sync
 
+    # The API class pages (breathe/doxygen) are left out of the PDF, so no
+    # doxygen XML is needed here.
     - name: Build LaTeX
       run: |
         cd source
@@ -52,19 +116,54 @@ jobs:
         VERSION=$(curl -s https://api.github.com/repos/openchemistry/avogadrolibs/releases/latest | python3 -c "import sys,json; print(json.load(sys.stdin)['tag_name'])")
         echo "version=$VERSION" >> "$GITHUB_OUTPUT"
 
+    # latexmk -f keeps going after errors, so references, the table of
+    # contents and the index still get their extra passes; it exits non-zero
+    # if *any* error was seen, so the exit code is checked by the next step
+    # (which reads the log) instead of failing here.
     - name: Build PDF
-      continue-on-error: true
+      env:
+        LATEXOPTS: -interaction=nonstopmode
       run: |
         cd build/latex
-        latexmk -pdf -dvi- -ps- -interaction=nonstopmode Avogadro.tex
+        latexmk -f -pdf -dvi- -ps- Avogadro.tex || echo "latexmk exited with status $?"
 
-    - name: Rename PDF
-      run: cp build/latex/Avogadro.pdf "build/latex/Avogadro-v${VERSION}.pdf"
+    # Fail on any LaTeX error except missing image files. A missing image is
+    # replaced by a labelled draft box and reported as a warning annotation
+    # instead; the AutoOpt tool page currently references two screenshots
+    # that have not been added yet.
+    - name: Check LaTeX log
+      run: |
+        log=build/latex/Avogadro.log
+        if [ ! -s build/latex/Avogadro.pdf ] || [ ! -s "$log" ]; then
+          echo "::error::LaTeX did not produce Avogadro.pdf"
+          exit 1
+        fi
+        missing=$(grep -F '! Package luatex.def Error: File `' "$log" | sort -u || true)
+        while IFS= read -r line; do
+          [ -n "$line" ] && echo "::warning title=Missing image::$line"
+        done <<< "$missing"
+        errors=$(grep -E '^!' "$log" | grep -vF '! Package luatex.def Error: File `' | sort | uniq -c || true)
+        if [ -n "$errors" ]; then
+          echo "::error title=LaTeX errors::See the log for details"
+          echo "LaTeX errors (count, message):"
+          echo "$errors"
+          exit 1
+        fi
+
+    # The screenshots dominate the file size; /ebook downsamples images to
+    # 150 dpi (text and fonts stay vector).
+    - name: Compress PDF
       env:
         VERSION: ${{ steps.version.outputs.version }}
+      run: |
+        gs -q -dNOPAUSE -dBATCH -dSAFER -sDEVICE=pdfwrite \
+          -dCompatibilityLevel=1.7 -dPDFSETTINGS=/ebook \
+          -sOutputFile="build/latex/Avogadro-v${VERSION}.pdf" \
+          build/latex/Avogadro.pdf
+        ls -l build/latex/Avogadro.pdf "build/latex/Avogadro-v${VERSION}.pdf"
 
     - name: Upload PDF artifact
-      uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+      uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
       with:
         name: Avogadro-v${{ steps.version.outputs.version }}
         path: build/latex/Avogadro-v${{ steps.version.outputs.version }}.pdf
