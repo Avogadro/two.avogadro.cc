@@ -165,10 +165,10 @@ r_4 - \textbf{a}_3 = (0.0000, 0.0000, 3.8898) - (0.0000, 0.0000, 3.8898) = (0, 0
 
 The remaining corner atoms are a simple extension of this, but with multiple translations:
 ```{math}
-&r_5 - \textbf{a}_1 - \textbf{a}_2 &= (0, 0, 0) \\
-&r_6 - \textbf{a}_1 - \textbf{a}_3 &= (0, 0, 0) \\
-&r_7 - \textbf{a}_2 - \textbf{a}_3 &= (0, 0, 0) \\
-&r_8 - \textbf{a}_1 - \textbf{a}_2 - \textbf{a}_3 &= (0, 0, 0)
+r_5 - \textbf{a}_1 - \textbf{a}_2 &= (0, 0, 0) \\
+r_6 - \textbf{a}_1 - \textbf{a}_3 &= (0, 0, 0) \\
+r_7 - \textbf{a}_2 - \textbf{a}_3 &= (0, 0, 0) \\
+r_8 - \textbf{a}_1 - \textbf{a}_2 - \textbf{a}_3 &= (0, 0, 0)
 ```
 
 Now moving on to the face atoms, again highlighted in the image below.
@@ -205,9 +205,9 @@ r_9 - \textbf{a}_2 - \textbf{a}_3 = (0.0000, -1.9449, -1.9449)
 
 As such, we know that some of these atoms will need to remain in the *translational unit cell*. Applying the same formulas from above, we can see that atoms 12, 13, and 14 can be translated by the lattice vectors into atoms 9, 10, and 11.
 ```{math}
-&r_{12} - \textbf{a}_1 &= (0.0000,\; 1.9449,\; 1.9449) &= r_9 \\
-&r_{13} - \textbf{a}_2 &= (1.9449,\; 0.0000,\; 1.9449) &= r_{10} \\
-&r_{14} - \textbf{a}_3 &= (1.9449,\; 1.9449,\; 0.0000) &= r_{11}
+r_{12} - \textbf{a}_1 &= (0.0000,\; 1.9449,\; 1.9449) = r_9 \\
+r_{13} - \textbf{a}_2 &= (1.9449,\; 0.0000,\; 1.9449) = r_{10} \\
+r_{14} - \textbf{a}_3 &= (1.9449,\; 1.9449,\; 0.0000) = r_{11}
 ```
 
 Thus, we know that the *translational unit cell* contains only atoms 1, 9, 10, and 11. Using Avogadro 2's `Fill Translation Cell` command, we see that this is the exact unit cell that we get:
