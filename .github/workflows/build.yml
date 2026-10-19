@@ -19,24 +19,60 @@ jobs:
     steps:
     - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 #v5
 
-    # build the doxygen XML for breathe
-    - name: Checkout openchemistry
-      uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 #v5
-      with:
-        repository: openchemistry/openchemistry
-        submodules: recursive
-        path: openchemistry
+    # doxygen XML for breathe, from the latest avogadrolibs release
+    - name: Find latest avogadrolibs release
+      id: release
+      run: |
+        tag=$(gh api repos/openchemistry/avogadrolibs/releases/latest --jq .tag_name)
+        test -n "$tag"
+        echo "tag=$tag" >> "$GITHUB_OUTPUT"
+        echo "image=${ImageOS}" >> "$GITHUB_OUTPUT"
+      env:
+        GH_TOKEN: ${{ github.token }}
 
-    - name: Checkout openchemistry and avogadrolibs
+    - name: Cache doxygen XML
+      id: doxygen-cache
+      uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+      with:
+        path: ${{ runner.workspace }}/build/avogadrolibs/docs/xml
+        key: v1-doxygen-xml-${{ runner.os }}-${{ steps.release.outputs.image }}-${{ steps.release.outputs.tag }}
+
+    - name: Checkout avogadrolibs
+      if: steps.doxygen-cache.outputs.cache-hit != 'true'
       uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 #v5
       with:
         repository: openchemistry/avogadrolibs
-        path: openchemistry/avogadrolibs
+        ref: ${{ steps.release.outputs.tag }}
+        fetch-depth: 1
+        persist-credentials: false
+        path: avogadrolibs
 
-    - name: Install packages
+    - name: Install doxygen
+      if: steps.doxygen-cache.outputs.cache-hit != 'true'
       run: |
         sudo apt-get -qq update
-        sudo apt-get -qq install doxygen graphviz ninja-build libeigen3-dev libglew-dev libxml2-dev
+        sudo apt-get -qq install doxygen
+
+    - name: Build doxygen XML
+      if: steps.doxygen-cache.outputs.cache-hit != 'true'
+      run: |
+        src="$GITHUB_WORKSPACE/avogadrolibs"
+        out="${{ runner.workspace }}/build/avogadrolibs/docs"
+        version="${TAG}"
+        mkdir -p "$out"
+        sed -e "s|@CMAKE_PROJECT_NAME@|AvogadroLibs|" \
+            -e "s|@AvogadroLibs_VERSION@|${version}|" \
+            -e "s|@doxygen_output_dir@|${out}|" \
+            -e "s|@doxygen_source_dirs@|${src}/avogadro ${src}/docs|" \
+            "$src/docs/doxyfile.in" > "$out/doxyfile"
+        # later assignments win; only the XML is used
+        echo "GENERATE_HTML = NO" >> "$out/doxyfile"
+        cd "$src/docs"
+        doxygen "$out/doxyfile"
+        test -f "$out/xml/index.xml"
+      shell: bash
+      env:
+        TAG: ${{ steps.release.outputs.tag }}
 
     - name: Install uv
       uses: astral-sh/setup-uv@bec219d24cd3e171d82865faccec33120bb574f4 # v10.1.0
@@ -51,25 +87,6 @@ jobs:
 
     - name: Install Sphinx and requirements
       run: uv sync
-
-    - name: Install Qt
-      uses: jurplel/install-qt-action@bcb88e3bed2e992f5f9e24c0f9e364a231d278eb # v4.4.0
-
-    - name: Configure
-      run: |
-        mv openchemistry ${{ runner.workspace }}
-        if [ ! -d "${{ runner.workspace }}/build" ]; then mkdir "${{ runner.workspace }}/build"; fi
-        cd "${{ runner.workspace }}/build"
-        cmake ${{ runner.workspace }}/openchemistry -G "Ninja" -DBUILD_DOCUMENTATION=ON -DUSE_SYSTEM_LIBXML2=ON -DUSE_SYSTEM_ZLIB=ON -DBUILD_GPL_PLUGINS=ON -DBUILD_MOLEQUEUE=OFF -DWITH_COORDGEN=OFF -DQT_VERSION=6 -DUSE_YAEHMOP=ON
-      shell: bash
-
-    - name: Build doxygen
-      run: |
-        ninja || true # might fail with warnings
-        cd avogadrolibs
-        ninja documentation
-      shell: bash
-      working-directory: ${{ runner.workspace }}/build
 
     - name: Build Sphinx
       run: |
