@@ -277,3 +277,81 @@ html_css_files = [
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
+
+
+# -- PDF section hierarchy ---------------------------------------------------
+# The index pages of the four top-level parts (docs, develop, contrib, teach)
+# end with a hidden toctree, after some "##" headings. docutils places that
+# toctree inside the last open section, so in LaTeX every child document would
+# be nested under whatever heading happens to come last. For the PDF only,
+# flatten the subsections of such a page into unnumbered headings (rubrics) so
+# the toctree is a direct child of the page's top-level section and the child
+# documents become proper sections of the chapter. HTML is not affected.
+
+def _flatten_section(section):
+    """Return the section's title as a rubric, then its body, recursively."""
+    from docutils import nodes
+
+    rubric = nodes.rubric(rawsource=section.rawsource)
+    rubric.extend(section[0].children)
+    # keep the ids/names, so labels and heading anchors still resolve
+    for key in ('ids', 'names', 'dupnames', 'classes'):
+        rubric[key] = list(section.get(key, []))
+    flat = [rubric]
+    if rubric['ids']:
+        # the LaTeX writer emits no \label for a rubric, so add a target for
+        # the same ids in front of it, to keep {ref} links into it working
+        flat.insert(0, nodes.target('', '', ids=list(rubric['ids'])))
+    for child in section.children[1:]:
+        if isinstance(child, nodes.section):
+            flat.extend(_flatten_section(child))
+        else:
+            flat.append(child)
+    return flat
+
+
+def _flatten_nested_toctree_sections(app, doctree):
+    """doctree-read handler: lift toctrees out of subsections (LaTeX only)."""
+    from docutils import nodes
+    from sphinx import addnodes
+
+    if app.builder.format != 'latex':
+        return
+    top = next((n for n in doctree.children if isinstance(n, nodes.section)),
+               None)
+    if top is None:
+        return
+    # only documents with a toctree nested below the top-level section, and
+    # with child documents to put in its place (not just "self" or URLs)
+    docname = app.env.docname
+    if not any(next((a for a in _ancestors(t)
+                     if isinstance(a, nodes.section)), None) is not top
+               and any(ref in app.env.found_docs and ref != docname
+                       for _, ref in t['entries'])
+               for t in doctree.findall(addnodes.toctree)):
+        return
+
+    children = []
+    for child in top.children:
+        if isinstance(child, nodes.section):
+            children.extend(_flatten_section(child))
+        else:
+            children.append(child)
+    top.children = []
+    top.extend(children)
+    # point the document's id lookup at the new rubric nodes
+    for rubric in top.findall(nodes.rubric):
+        for id_ in rubric['ids']:
+            doctree.ids[id_] = rubric
+
+
+def _ancestors(node):
+    node = node.parent
+    while node is not None:
+        yield node
+        node = node.parent
+
+
+def setup(app):
+    # run before the toc/domain collectors so they see the flattened tree
+    app.connect('doctree-read', _flatten_nested_toctree_sections, priority=1)
