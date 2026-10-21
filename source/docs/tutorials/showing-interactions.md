@@ -52,8 +52,6 @@ Maximum distance
 Line width
 : The width of the dashed lines.
 
-% TODO(review): the Non-Covalent distance cutoff is the vdW-radius sum plus this value (H···O up to about 3.7 Å by default) -- check that this is the intended criterion
-
 ## Show Close Contacts and Salt Bridges
 
 Check **Close Contacts** in the Display Types pane. It draws three kinds of contact, with a tab for each in its settings (the **…** button):

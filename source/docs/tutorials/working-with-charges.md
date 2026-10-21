@@ -48,7 +48,9 @@ To save the charges (for example, to use in a spreadsheet, a script, or another 
 
 To copy just some of the atoms instead, select their rows, right-click and choose **Copy**, then paste into a spreadsheet or text editor. The columns are separated by tabs.
 
-% TODO(review): CSV export writes locale-formatted numbers without quoting; in a decimal-comma locale the columns split -- fix in the app or add a note here
+:::{warning}
+CSV export writes locale-formatted numbers; in a decimal-comma locale the columns may be split. Tab-separated is safer.
+:::
 
 :::{tip}
 Charges are shown, copied and exported to three decimal places.

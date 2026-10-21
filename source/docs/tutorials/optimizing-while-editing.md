@@ -27,8 +27,6 @@ While the optimization is running:
 
 You can also switch to another tool, such as the [Draw Tool](tools-draw-tool) or [Template Tool](tools-template-tool), while the optimization is still running. Each time you add, delete or change atoms or bonds, Auto Optimize picks up the new structure and keeps relaxing it. Switch back to the Auto Optimize Tool to click **Stop**.
 
-% TODO(review): confirm in the app that Auto Optimize keeps running after switching to the Draw tool (the code suggests it does)
-
 :::{tip}
 This is a fast way to clean up a structure as you draw it: start Auto Optimize, switch to the Draw Tool, and each new atom or group settles into place as you add it.
 :::

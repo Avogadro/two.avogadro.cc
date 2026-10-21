@@ -38,7 +38,7 @@ Distances, angles and dihedrals can now be edited directly in the Measure tool.
 
 The [Tool pane](panes-tool-pane) shows each value as an editable box. Type a new value and press <kbd>Enter</kbd>, or use the arrow buttons, the up and down arrow keys, or the mouse wheel to change it step by step. The atoms move as soon as the edit is applied.
 
-% TODO(screenshot): /_static/measure-tool-edit.png -- the Tool pane with four atoms picked, showing the six editable rows and the "#1 stays fixed" line
+![](../../_static/measure-tool-edit.png)
 
 The rows shown depend on how many atoms are picked:
 
@@ -82,4 +82,3 @@ After large edits, a quick geometry optimization will clean up the rest of the s
 - {ref}`tools-bond-centric-manipulation-tool` – Adjust bond lengths and angles interactively
 - {ref}`building-molecules-zmatrix-editor` – Edit every distance, angle and dihedral of the molecule in a table
 - {ref}`optimize-constraints` – Hold distances, angles and dihedrals fixed during optimization
-
