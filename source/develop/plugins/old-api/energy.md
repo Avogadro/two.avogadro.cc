@@ -69,7 +69,7 @@ def run(filename):
     # we get the molecule from the supplied filename
     #  in cjson format (it's a temporary file created by Avogadro)
     mol = next(pybel.readfile("cml", filename))
- 
+
     ff = pybel._forcefields["uff"]
     success = ff.Setup(mol.OBMol)
     if not success:
@@ -85,7 +85,7 @@ def run(filename):
     #  in cjson format (it's a temporary file created by Avogadro)
     with open(filename, "r") as f:
         mol_cjson = json.load(f)
- 
+
     # get the atomic numbers
     atoms = np.array(mol_cjson["atoms"]["elements"]["number"])
     # get the coordinates in a list of [ [x, y, z], [x, y, z] … ]
@@ -93,7 +93,7 @@ def run(filename):
     coordinates = np.array(coord_list, dtype=float).reshape(-1, 3)
 ```
 
-After reading coordinates from the tempory filename on the command-line arguments, Avogadro will supply updated coordinates through standard input and expect energies and gradients on the standard output.
+After reading coordinates from the temporary filename on the command-line arguments, Avogadro will supply updated coordinates through standard input and expect energies and gradients on the standard output.
 
 ```python
     # we loop forever - Avogadro will kill the process when done
@@ -104,10 +104,10 @@ After reading coordinates from the tempory filename on the command-line argument
             coordinates = np.fromstring(input(), sep=" ")
             atom = mol.atoms[i]
             atom.OBAtom.SetVector(coordinates[0], coordinates[1], coordinates[2])
- 
+
         # update the molecule geometry for the next energy
         ff.SetCoordinates(mol.OBMol)
- 
+
         # first print the energy of these coordinates
         energy = ff.Energy(True)  # in kJ/mol
         print("AvogadroEnergy:", energy)  # in kJ/mol

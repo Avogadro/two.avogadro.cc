@@ -110,7 +110,7 @@ class MyClass;
 
   - Most IDEs show the argument names in their autocompletion
   - It looks better in the generated documentation
-  - Poor style making people guess the purpose of an argument
+  - Making people guess the purpose of an argument is poor style
 
 - Avoid abbreviations, as they are often ambiguous and we can afford
   a few extra bytes

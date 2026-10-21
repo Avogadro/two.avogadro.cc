@@ -18,7 +18,7 @@ For simplicity, this guide will focus on the first approach.
 The instructions in this guide assume that you know how to execute commands in a terminal.
 
 :::{tip}
-Platform-specific instructions, guidance, and information is provided in expandable callouts marked by the respective icons {fab}`windows` {fab}`apple` {fab}`linux`.
+Platform-specific instructions, guidance, and information are provided in expandable callouts marked by the respective icons {fab}`windows` {fab}`apple` {fab}`linux`.
 :::
 
 :::{admonition} Windows {fab}`windows`
@@ -99,7 +99,7 @@ CMake can also be installed using `winget install --exact --id Kitware.CMake`.
 
 :::{admonition} macOS {fab}`apple`
 :class: dropdown
-We recommend to use [Clang 17](https://clang.llvm.org/) on a Mac, with Ninja and CMake.
+We recommend using [Clang 17](https://clang.llvm.org/) on a Mac, with Ninja and CMake.
 :::
 
 :::{admonition} Linux {fab}`linux`
@@ -146,7 +146,7 @@ Be sure to make a note of the install directory of Qt (e.g. `C:/Qt/5.15.2/msvc20
 Qt is widely used in the open-source community, including as the base for the KDE Plasma desktop environment, so it is generally either already installed (though not necessarily including the development libraries that you need) or easily available from package managers.
 
 Qt is large, so on Linux distributions it is often broken up into its modules.
-Unfortunately, the names of the packages for the modules varies from distro to distro, such that it is hard to say exactly which packages you should install.
+Unfortunately, the names of the packages for the modules vary from distro to distro, such that it is hard to say exactly which packages you should install.
 
 You should however make sure the following Qt modules are installed:
 
@@ -184,7 +184,7 @@ You will need to install the following from your package manager, or similarly n
 - `readline-devel`
 - `rapidjson-devel`
 
-You will also need `libopenssl` -- either v1.1 if are building with Qt 5, or >3.0 if you are building with Qt 6.
+You will also need `libopenssl` -- either v1.1 if you are building with Qt 5, or >3.0 if you are building with Qt 6.
 
 :::{warning}
 For a successful build of Open Babel and therefore a successful build of Avogadro, the `rapidjson` version used cannot be the v1.1.0 release; it must have been patched to include at least [this patch](https://github.com/Tencent/rapidjson/pull/719) from 2016.
@@ -200,7 +200,7 @@ Many dependencies that Avogadro needs will be automatically downloaded and built
 This means you do not need to install them in advance, and versions will be used that the Avogadro team has determined are compatible.
 
 However, if you would prefer to use versions of these libraries that are installed on your system, you can build Avogadro with CMake flags of the style `-DUSE_SYSTEM_EIGEN`.
-For some of them it is also possible to do without them altogether by telling Avogadro to build without the features that require it.
+For some of them it is also possible to do without them altogether by telling Avogadro to build without the features that require them.
 
 This list includes:
 
@@ -502,7 +502,7 @@ codesign --force --deep -s "Developer ID Application: Username (Team ID)" prefix
 
 `avogadroapp` can build installers for Avogadro.
 
-In order to do this, move into the cd into the appropriate subdirectory within the build tree and call `make package`. So, to build the Avogadro 2 package:
+In order to do this, cd into the appropriate subdirectory within the build tree and call `make package`. So, to build the Avogadro 2 package:
 
 ```shell
 cd build/avogadroapp

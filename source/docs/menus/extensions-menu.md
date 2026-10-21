@@ -26,7 +26,7 @@ Periodic Table
 : Open an interactive periodic table dialog.
 
 :::{note}
-The colorations of each element's box correspond to the color of each element when drawn.
+The color of each element's box matches the color used to draw that element.
 :::
 
 Open Babel
@@ -65,7 +65,7 @@ Fuse Selected Atoms
 : Apply constraints to the selected atoms
 
 :::{note}
-This will apply varying types of constraints depending on the number of atoms selected. Selecting 2 atoms constrains their distance, selecting 3 atoms constraints distances and the angle between them, and selecting 4 atoms constrains distances, angles, and their dihedral. Selecting 1 atom has no effect.
+This will apply varying types of constraints depending on the number of atoms selected. Selecting 2 atoms constrains their distance, selecting 3 atoms constrains distances and the angle between them, and selecting 4 atoms constrains distances, angles, and their dihedral. Selecting 1 atom has no effect.
 :::
 
 Unfuse Selected Atoms
@@ -93,7 +93,7 @@ The generally available Force Fields are MMFF94, GAFF, UFF, and LJ. Of these, MM
 (constraints_dialog)=
 #### Constraints
 
-The constraints dialog allows the user to distance constraints, angle constraints, and dihedral constraints. At the top is a list of the current constraints and the atom indices that those constraints involve.
+The constraints dialog allows the user to add distance, angle, and dihedral constraints. At the top is a list of the current constraints and the atom indices that those constraints involve.
 
 Add Constraints
 : Select the type of constraint, the atoms involved in the constraint, and the desired value of the constraint.

@@ -17,7 +17,7 @@ Consequently, this documentation is still a work in progress. Some instructions 
 All other formats are now **exported** instead, using `File`⇒`Export`⇒`Molecule…`
 ```
 
-In Avogadro 1.0–1.2, users would be surprised that when saving to some formats (e.g., XYZ, PDB) and bond orders or other information would be lost. As a result, `File`⇒`Save` is now reserved for saving to CJSON and CML formats, which will retain all data and options.
+In Avogadro 1.0–1.2, users would be surprised that when saving to some formats (e.g., XYZ, PDB) bond orders or other information would be lost. As a result, `File`⇒`Save` is now reserved for saving to CJSON and CML formats, which will retain all data and options.
 
 If you wish to **export** to other formats (e.g., XYZ, PDB, SDF, etc.) use
 `File`⇒`Export`⇒`Molecule…` instead.

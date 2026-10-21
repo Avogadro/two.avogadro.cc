@@ -40,7 +40,7 @@ For example, the Template Tool could be used to rapidly add acyl groups to sugar
 
 :::{tip}
 The Template Tool is designed for quickly appending ligands and functional groups to an existing molecule.
-Discrete small organic molecules can not be created with the Template Tool by clicking on an empty space.
+Discrete small organic molecules cannot be created with the Template Tool by clicking on an empty space.
 
 To create organic molecules with a single click, use [**Build ⇒ Insert ⇒ Molecule…**](menus-build-menu-insert) instead.
 :::

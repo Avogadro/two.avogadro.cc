@@ -25,7 +25,7 @@ Then, to show the custom labels, in the **Atom Label** drop-down of the **Displa
 :::
 
 Edit an existing label by left-clicking on it.
-Its position will raise slightly to indicate that it is being edited.
+Its position will rise slightly to indicate that it is being edited.
 
 ## Options
 

@@ -301,7 +301,7 @@ While a higher resolution may be desirable, keep in mind that the time to comput
 
 ### Isosurface Value
 
-The Isosurface value determines the cutoff distance for the surface by dictating the lowest value of the volume scalars to display. There is not an accepted set of isosurface values that should be used in papers, however it is recommended to stick to 0.01–0.10, and it is strongly encouraged to report your isosurface values if you include a surface in a figure. 
+The Isosurface value determines the cutoff distance for the surface by dictating the lowest value of the volume scalars to display. There is not an accepted set of isosurface values that should be used in papers; however, it is recommended to stick to 0.01–0.10, and it is strongly encouraged to report your isosurface values if you include a surface in a figure.
 
 The reason for this becomes evident with the figure below, which shows the HOMO of pyrazine at 10 different isosurface values. As you move through the different values, you'll see that the orbital overlap between atoms can change drastically as a function of the chosen isosurface value. At 0.01, you might be tempted to say the nitrogens on opposite ends of the pyrazine have bonding character right through the middle of the molecule, but as we know, this is not the case. Only once the isosurface value reaches ~0.08 do we see that in fact the nature of the HOMO is more likely a pair of $\sigma_b$ orbitals between the carbon atoms and two lone pairs on the nitrogen atoms.
 

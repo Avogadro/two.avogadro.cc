@@ -46,7 +46,7 @@ The {ref}`Navigation Tool <tools-navigation-tool>` responds to mouse and keyboar
 | Scroll wheel | Zoom |
 | Middle double-click | Reset camera |
 |--------|--------|
-| <kbd>Alt / Option</kb> Left-click + drag | Rotate (x/y axes) |
+| <kbd>Alt / Option</kbd> Left-click + drag | Rotate (x/y axes) |
 | <kbd>Shift</kbd> + left-click + drag | Rotate (z-axis) |
 | <kbd>Ctrl</kbd> + left-click + drag | Pan (x/y) |
 

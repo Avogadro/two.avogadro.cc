@@ -66,7 +66,7 @@ For example, frozen atoms will show a 🔒 for the X, Y, and Z coordinates:
 
 ![](../../_static/freeze-atoms.png)
 
-Right clicking the dialog will bring up a contextual menu to add or remove constraints on a given atom.
+Right-clicking the dialog will bring up a contextual menu to add or remove constraints on a given atom.
 
 Similarly, distance constraints for bonds are obvious in the Bond Property dialog and the bond length is indicated with a 🔒.
 
@@ -76,4 +76,4 @@ The same is true for angles or torsions:
 
 ![](../../_static/freeze-torsions.png)
 
-The constraints dialog, however, enables distance constraints that are not bonded atoms, or other kinds of angles or torsions.
+The constraints dialog, however, enables distance constraints between atoms that are not bonded, or other kinds of angles or torsions.

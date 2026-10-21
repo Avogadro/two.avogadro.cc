@@ -13,7 +13,7 @@
 - The metadata file may be in the form of:
     - `pyproject.toml` – the normal project metadata file in use in the modern Python ecosystem
         - plugin metadata for consumption by Avogadro is listed in the `[tool.avogadro]` table
-        - some information is read from the normal `[package]` table e.g. the author information
+        - some information is read from the normal `[project]` table e.g. the author information
     - `avogadro.toml` – an Avogadro-specific metadata file
         - metadata is all stored at the top level of the file (see the examples in this repository)
 - For Python plugins, it is recommended to use `pyproject.toml` as the metadata file.

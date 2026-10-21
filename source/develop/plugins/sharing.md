@@ -5,7 +5,7 @@
 - The Avogadro team continues to provide a central index of plugins, that can then be browsed and installed from within the plugin manager in the Avogadro UI
 - The index has until now been hosted at https://avogadro.cc/plugins.json; the future location has yet to be decided
 - The index is in future to be regularly updated in an automated fashion from the `repositories.toml` file in the GitHub repository at https://github.com/Avogadro/plugins
-- Contributions of open-source plugins to the index is most welcome, and are made by opening a pull request that adds information on the plugin to the `repositories.toml` file in the `Avogadro/plugins` repo
+- Contributions of open-source plugins to the index are most welcome, and are made by opening a pull request that adds information on the plugin to the `repositories.toml` file in the `Avogadro/plugins` repo
 - Each plugin listed on the index has its own table within `repositories.toml`. Each plugin has to specify (at minimum, suggestions welcome):
     - The git repository
     - The specific commit

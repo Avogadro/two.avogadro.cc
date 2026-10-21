@@ -14,7 +14,7 @@ Clicking on the ⋯ icon located on the right of some display types will allow v
 
 ## Ball and Stick
 
-Ball and Stick is the default display style when Avogadro is opened. This  provides the standard ball and stick representation of a molecule.
+Ball and Stick is the default display style when Avogadro is opened. This provides the standard ball and stick representation of a molecule.
 
 ![Avogadro window showing caffeine in the default ball-and-stick style, with the Display Types panel on the left](../../_static/caffeine-window.png)
 

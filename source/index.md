@@ -74,7 +74,7 @@ Molecules, crystals, biomolecules, surfaces -- Avogadro loves them all.
 :class-card: sd-border-0
 :shadow: none
 :class-title: sd-fs-4 sd-text-primary
-A sleek interface and user-friendly tools makes working in Avogadro easy, whether you are playing with molecules in 3D for the first time, quickly sketching structures for calculation input, or preparing graphics for publication.
+A sleek interface and user-friendly tools make working in Avogadro easy, whether you are playing with molecules in 3D for the first time, quickly sketching structures for calculation input, or preparing graphics for publication.
 :::::
 
 :::::{grid-item-card}

@@ -10,7 +10,7 @@ When "Super Cell Builder..." is selected under the "Build" menu, the dialog box 
 
 ## Creating a Surface
 
-One way supercell can be utilized is by creating a surface. Below is an elemental unit cell comprised of silver. This cell was imported through the "File" menu, under "Import", "Crystal...". When the dialog box appears follow the procedure displayed below.
+One way a supercell can be used is by creating a surface. Below is an elemental unit cell composed of silver. This cell was imported through the "File" menu, under "Import", "Crystal...". When the dialog box appears follow the procedure displayed below.
 
 ![](../../_static/creating-a-surface-.png)
 

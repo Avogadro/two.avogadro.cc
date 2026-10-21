@@ -23,7 +23,7 @@ Edit Unit Cell
 Fill Unit Cell
 : Populate the unit cell, including translationally equivalent atoms. See [Translational Equivalence](translational-equivalence) for more information.
 
-Fill Translational Cell
+Fill Translation Cell
 : Populate the unit cell, not including translationally equivalent atoms. See [Translational Equivalence](translational-equivalence) for more information.
 
 Wrap Atoms to Unit Cell
@@ -45,7 +45,7 @@ Plot Theoretical XRD Pattern
 : Plot a theoretical x-ray diffraction pattern.
 
 :::{warning}
-If you get an error regarding a missing genXrdPattern executable, you can try to download the executable from [the GitHub repository](https://github.com/psavery/genXrdPattern/releases) and setting the `GENXRDPATTERN_EXECUTABLE` environment variable.
+If you get an error regarding a missing genXrdPattern executable, you can try to download the executable from [the GitHub repository](https://github.com/psavery/genXrdPattern/releases) and set the `GENXRDPATTERN_EXECUTABLE` environment variable.
 :::
 
 Space Group
@@ -67,7 +67,7 @@ The unit cell editor is used for manipulating the unit cell.
 :class: dark-light
 ```
 
-At the top of the unit cell editor are the lattice parameters $A$, $B$, $C$, $\alpha$, $\beta$, and $\gamma$. These either used to calculate the cell matrix, or can be calculated from the cell matrix. Below this is the cell matrix, which contains the three 3D lattice vectors, $\textbf{a}_i = (a^x_i, a^y_i, a^z_i)$ that make up the cell matrix (denoted here as $\mathbb{A}$). Below the cell matrix is the fractional matrix, which is the inverse of the unit cell matrix (denoted $\mathbb{A}^{-1}$). Together, the product of these matrices yields the identity matrix ($\mathbb{I}$),
+At the top of the unit cell editor are the lattice parameters $A$, $B$, $C$, $\alpha$, $\beta$, and $\gamma$. These are either used to calculate the cell matrix, or can be calculated from the cell matrix. Below this is the cell matrix, which contains the three 3D lattice vectors, $\textbf{a}_i = (a^x_i, a^y_i, a^z_i)$ that make up the cell matrix (denoted here as $\mathbb{A}$). Below the cell matrix is the fractional matrix, which is the inverse of the unit cell matrix (denoted $\mathbb{A}^{-1}$). Together, the product of these matrices yields the identity matrix ($\mathbb{I}$),
 ```{math}
 \mathbb{A}\mathbb{A}^{-1}=\mathbb{I}
 ```
@@ -96,7 +96,7 @@ a^x_3 & a^y_3 & a^z_3
 ```
 The individual lattice vectors $\textbf{a}_i = (a^x_i, a^y_i, a^z_i)$, or their integer multiples (e.g. $1\times\textbf{a}_i$, $-1\times\textbf{a}_i$, $2\times\textbf{a}_i$, $-2\times\textbf{a}_i$, etc.), can be used to *translate* or *slide* atoms around in space. To find the *translationally equivalent* atoms in a unit cell, you can take all of the atoms in the cell, apply positive ($+$) or negative ($-$) translations (possibly with an integer multiplier) with the lattice vectors, and then remove all of the atoms which are related by that translation.
 
-As a visual demonstration of this, consider a the conventional unit cell of Palladium, which has a Face-Centered Cubic crystal structure. Below we show the unit cell produced with the `Fill Unit Cell` command and the unit cell matrix ($\mathbb{A}$ from above):
+As a visual demonstration of this, consider the conventional unit cell of palladium, which has a face-centered cubic crystal structure. Below we show the unit cell produced with the `Fill Unit Cell` command and the unit cell matrix ($\mathbb{A}$ from above):
 
 ::::{tab-set}
 :::{tab-item} Unit Cell
@@ -198,7 +198,7 @@ Their coordinates are listed below (with numbering starting from 9 to avoid conf
 |     13      |   1.9449   |   3.8898   |   1.9449   |
 |     14      |   1.9449   |   1.9449   |   3.8898   |
 
-One thing to note right off the bat is that none of the face atoms will be *translationally equivalent* to atom 1 as they all have components which are not equal to a lattice vector multiplied by an integer. For example, atom 9 can not be translated into atom 1
+One thing to note right off the bat is that none of the face atoms will be *translationally equivalent* to atom 1 as they all have components which are not equal to a lattice vector multiplied by an integer. For example, atom 9 cannot be translated into atom 1
 ```{math}
 r_9 - \textbf{a}_2 - \textbf{a}_3 = (0.0000, -1.9449, -1.9449)
 ```
@@ -283,7 +283,7 @@ Symmetrize
 : Take a cell that is not perfectly symmetric, reduce it to its primitive form, and idealize it.
 
 Reduce to Asymmetric Unit
-: Reduce the unit cell to all atoms which can not be represented by the point group's symmetry operations.
+: Reduce the unit cell to all atoms which cannot be represented by the point group's symmetry operations.
 
 Set Tolerance
 : Set the default tolerance for the other operations in the menu.

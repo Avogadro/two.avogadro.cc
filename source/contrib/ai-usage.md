@@ -2,15 +2,15 @@
 
 # AI Usage Policy
 
-We understand that many people are using AI coding tools such as ChatGPT, Claude, Copilot, Gemin, etc.
+We understand that many people are using AI coding tools such as ChatGPT, Claude, Copilot, Gemini, etc.
 
-For Avogadro, code needs to be **correct** particularly for science-related topics. The force fields, the molecular dynamics, molecular surfaces, orbitals, etc. need substantial human intervention and review. Such tools can make mistakes in chemistry and numeric code, which require careful analysis and testing.
+For Avogadro, code needs to be **correct**, particularly for science-related topics. The force fields, the molecular dynamics, molecular surfaces, orbitals, etc. need substantial human intervention and review. Such tools can make mistakes in chemistry and numeric code, which require careful analysis and testing.
 
 :::{important}
 We reserve the right to reject contributions that seem like they were generated mostly by an ML tool, and code review will continue, particularly for any chemistry-specific or mathematical components.
 :::
 
-We are inspired in part by ["the five levels](https://www.danshapiro.com/blog/2026/01/the-five-levels-from-spicy-autocomplete-to-the-software-factory/) of use of AI coding tools, as described by Dan Shapiro.
+We are inspired in part by [the five levels](https://www.danshapiro.com/blog/2026/01/the-five-levels-from-spicy-autocomplete-to-the-software-factory/) of use of AI coding tools, as described by Dan Shapiro.
 
 0. **Spicy autocomplete**, aka original GitHub Copilot or copying and pasting snippets from ChatGPT.
 1. The **coding intern**, writing unimportant snippets and boilerplate with full human review.

@@ -122,9 +122,9 @@ if (foo) {
 }
 ```
 
-- Exception: if this is class declarations and function
-  implementations. The left brace always goes on the start of a line
-  there
+- Exception: for class declarations and function
+  implementations, the left brace always goes at the start of a new
+  line
 
 ```cpp
 void myFun(const std::string &name)
@@ -307,5 +307,5 @@ Eigen::Vector3d position(currentPosition.x() + offset,
 
 ## Breaking Rules
 
-- As with Qt, and others, feel free to break a rule if it makes your
+- As with Qt, and others, feel free to break a rule if following it would make your
   code look bad!

@@ -63,7 +63,7 @@ After running the script, data should be printed to the standard output in JSON 
 
 ### Returning Data in a Specific File Format
 
-While the default is for data to be returned as `cjson` objects, scripts can return data in any format recognized by Avogadro. In general, we suggest `mol` or `sdf`, `xyz`, `pdb`, `cif`, `cml`, or `cjson` as relatively common interchange foramts.
+While the default is for data to be returned as `cjson` objects, scripts can return data in any format recognized by Avogadro. In general, we suggest `mol` or `sdf`, `xyz`, `pdb`, `cif`, `cml`, or `cjson` as relatively common interchange formats.
 
 To indicate the format use the `moleculeFormat` key and then return the file data with the appropriate key:
 
@@ -111,7 +111,7 @@ A script can indicate atoms to select in the current molecule using the `selecte
     for match in mol.GetSubstructMatches(smarts):
         for atom in match:
             selected.append(atom)
- 
+
     # Just indicate that we want to select matching atoms
     result = {
         'selectedAtoms': selected
@@ -123,7 +123,7 @@ A script can indicate atoms to select in the current molecule using the `selecte
 Debugging may be enabled by defining `AVO_PYTHON_SCRIPT_DEBUG` in the process's
 environment. This will cause the `--debug` option to be passed in
 all calls to scripts, and will print extra information to the
-qDebug() stream from within Avogadro (i.e., to the console). 
+qDebug() stream from within Avogadro (i.e., to the console).
 The script is free to handle the debug flag as the author wishes.
 
 
