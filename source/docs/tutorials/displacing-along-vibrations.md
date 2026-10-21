@@ -34,7 +34,7 @@ Imaginary frequencies are listed as negative numbers. Click a mode and click **S
    The dialog summarizes what will be generated.
 3. Click **OK**.
 
-% TODO(screenshot): /_static/tutorial-displace-dialog.png -- the Generate Displaced Coordinates dialog for an imaginary mode, scale 0.5, 1 structure
+![Generate Displaced Coordinates dialog for an imaginary mode, scale 0.5, 1 structure](../../_static/tutorial-displace-dialog.png)
 
 The displaced structures are added to the molecule as new conformers, after any it already has, and the first of them is shown in the main window. The original geometry is kept: if the file held only one geometry, it becomes the first conformer.
 

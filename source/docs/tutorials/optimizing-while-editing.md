@@ -13,7 +13,7 @@ Most people optimize a structure once they've finished building it. The [Auto Op
    - **Method:** Avogadro suggests a method that works for the elements in your molecule. UFF works across the periodic table; MMFF94 or GAFF are often better for organic molecules. Methods installed as plugins (including machine-learning potentials) appear here too.
 4. Click **Start**.
 
-% TODO(screenshot): /_static/tutorial-autoopt-running.png -- cyclohexane with the Auto Optimize Tool pane, method selected and the ΔE overlay visible
+![cyclohexane with the Auto Optimize Tool pane, method selected and the ΔE overlay visible](../../_static/tutorial-autoopt-running.png)
 
 The molecule relaxes on screen, and the method and the change in energy (ΔE) are shown in the corner of the view. The optimization keeps running until you click **Stop**.
 

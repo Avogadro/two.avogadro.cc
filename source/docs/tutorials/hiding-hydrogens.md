@@ -13,7 +13,7 @@ The **Ball and Stick** and **Wireframe** display types each have a **Show hydrog
 1. In the [Display Types pane](panes-display-types-pane), click the **…** button next to **Ball and Stick** (or **Wireframe**).
 2. Uncheck **Show hydrogens**.
 
-% TODO(screenshot): /_static/tutorial-hide-hydrogens-option.png -- Ball and Stick options with "Show hydrogens" unchecked, molecule without hydrogens
+![Ball and Stick options with "Show hydrogens" unchecked, molecule without hydrogens](../../_static/tutorial-hide-hydrogens-option.png)
 
 The hydrogen atoms (and their bonds) disappear. Check the box again to bring them back.
 
@@ -28,8 +28,9 @@ This only affects the display type you changed. If another display type that sho
 1. Choose `Select` ⇒ `Select by Element…`. In the periodic table that appears, click **H**. Every hydrogen atom is selected.
 2. Choose `Select` ⇒ `Create New Layer from Selection`. The hydrogens move to a new layer, which appears in the [Layers pane](panes-layers-pane).
 3. In the Layers pane, click the eye icon next to the new layer to hide it.
+4. Note that if you use the Ball and Stick display type, bonds to atoms in other layers will still be shown.
 
-% TODO(screenshot): /_static/tutorial-hide-hydrogens-layer.png -- Layers pane with a second layer for hydrogens, eye icon toggled off
+![Layers pane with a second layer for hydrogens, eye icon circled in red - toggled off](../../_static/tutorial-hide-hydrogens-layer.png)
 
 Click the eye icon again to show the hydrogens. Clear the selection afterward with `Select` ⇒ `Select None` (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>A</kbd>).
 

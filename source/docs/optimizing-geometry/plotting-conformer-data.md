@@ -6,11 +6,10 @@
 The conformer plot window has been rewritten in version 2.1. It can now plot any two quantities against each other, including distances, angles and dihedrals, time, temperature and atomic speeds, and you can step through the conformers from the plot.
 ```
 
-When a file holds more than one geometry, such as conformers from a conformer search, a relaxed scan, a geometry optimization, or a molecular dynamics trajectory, Avogadro can plot how properties change from one geometry to the next.
 
 Choose `Analyze` ⇒ `Plot Conformer Data…` to open the **Conformer Analysis** window.
 
-% TODO(screenshot): /_static/conformer-analysis-energy.png -- the Conformer Analysis window plotting Relative Energy vs Dihedral for a torsion scan, with the current-conformer marker visible
+![Conformer Analysis window, RMSD vs a time for a MD trajectory](../../_static/conformer-analysis-rmsd.png)
 
 ## Choosing What to Plot
 
@@ -51,7 +50,7 @@ To plot a geometric parameter across the conformers:
 
 The new coordinate is added to both drop-down menus and shown on the x axis. Where the selected atoms are bonded, Avogadro orders them along the bonds, so selecting the four atoms of a torsion gives the dihedral you expect.
 
-% TODO(screenshot): /_static/conformer-analysis-dihedral.png -- butane (or similar) torsion scan with "Dihedral 1-2-3-4" on the x axis
+![Conformer Analysis window, relative energy vs a dihedral for butanol](../../_static/tutorial-conformer-search-plot.png)
 
 Unwrap dihedral scans
 : A dihedral jumps from 180° to −180° as it passes through the *anti* position, which breaks up a scan plotted against it. With this option checked (the default), Avogadro removes those 360° jumps so the scan plots as a continuous curve. It only applies when a dihedral is plotted.
@@ -115,7 +114,7 @@ Velocities estimated from saved frames are only as good as the spacing between t
 
 The conformer properties table (`Analyze` ⇒ `Properties` ⇒ `Conformer Properties…`) lists the same quantities as columns, one row per conformer, so you can sort by them or copy the values elsewhere.
 
-% TODO(screenshot): /_static/menus/analyze-menu/conformer_properties_dialog.png -- refresh to show the new columns (e.g., Temperature, Mean Speed, a dihedral)
+![Conformer Propertyies Table with columns for Time, RMSD, Relative Energy, Temperature, etc.](../../_static/tutorial-properties-dialog.png)
 
 ## See Also
 
