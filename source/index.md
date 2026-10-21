@@ -292,7 +292,7 @@ Develop
 :align: center
 Scripts
 :::
-:::{button-ref} develop-classlist
+:::{button-ref} develop-structure
 :color: primary
 :outline:
 :align: center

@@ -78,10 +78,10 @@ The text in the coordinate box will appear green when it has been edited, and bl
 #### Insert
 
 Molecule
-: Insert a **molecule fragment** from the [Molecules Plugin](extensions-plugins-menu).
+: Insert a **molecule fragment** from the [fragment library](building-molecules-fragments).
 
 DNA/RNA
-: Insert **DNA/RNA** fragments using the [Nucleic Acid Builder](nucleic-acid-builder).
+: Insert **DNA/RNA** fragments using the [Nucleic Acid Builder](building-molecules-dna).
 
 Polymer
 : Insert a **polymer** chain or copolymer using the {ref}`Polymer builder <building-molecules-polymers>`.

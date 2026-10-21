@@ -30,7 +30,7 @@ The color of each element's box matches the color used to draw that element.
 :::
 
 Open Babel
-: See [Open Babel Interface](open_babel_interface)
+: See {ref}`optimize-force-fields` for the Open Babel force fields and {ref}`optimize-conformers` for its conformer search.
 
 (calculate_dropdown)=
 ### Calculate

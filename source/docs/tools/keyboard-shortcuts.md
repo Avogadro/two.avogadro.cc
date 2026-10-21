@@ -30,7 +30,7 @@ These shortcuts work regardless of which tool is currently selected.
 |----------|--------|
 | <kbd>Ctrl</kbd>+<kbd>A</kbd> | Select all atoms |
 | <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>A</kbd> | Deselect all atoms |
-| <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>O</kbd> | {ref}`Optimize geometry <calculations-optimization>` |
+| <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>O</kbd> | {ref}`Optimize geometry <optimize>` |
 
 ## Navigation
 

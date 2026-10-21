@@ -68,7 +68,7 @@ Apply Color
 Change Layer
 : Move the selected atoms to a different layer.
 
-  Putting parts of a molecule, or members of an ensemble, into different layers allows different visual settings to be applied to different elements within the same ["Molecule"](panes-molecules) (what Avogadro calls a file).
+  Putting parts of a molecule, or members of an ensemble, into different layers allows different visual settings to be applied to different elements within the same ["Molecule"](panes-molecules-pane) (what Avogadro calls a file).
 
   See [Layers](panes-layers-pane) for more information on how to use them.
 

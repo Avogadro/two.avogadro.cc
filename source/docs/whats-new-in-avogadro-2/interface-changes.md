@@ -32,6 +32,6 @@ Many menu options have been moved and are now located in different places or hav
 
 The *input generators* which help format input for external programs like Gaussian, ORCA, CP2K, and LAMMPS have moved into a new `Input` menu of their own.
 
-Many of these menu items use [Python scripts](input-generators), so if your menu does not include many options, make sure that Python is installed and configured to enable them.
+Many of these menu items use [Python scripts](menus-input-menu), so if your menu does not include many options, make sure that Python is installed and configured to enable them.
 
 ![Screenshot indicating Input menu and commands from Python scripts](../../_static/InputMenu.png)
