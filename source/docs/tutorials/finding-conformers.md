@@ -37,7 +37,7 @@ The conformer search starts from the current geometry, so it's worth starting fr
 3. For the random, weighted and genetic searches, set the **Number of conformers** to try (e.g., 100–500).
 4. Click **OK**.
 
-% TODO(screenshot): /_static/tutorial-conformer-search-dialog.png -- the Conformer Search dialog with Weighted rotor search selected
+![the Conformer Search dialog with Weighted rotor search selected](../../_static/tutorial-conformer-search-dialog.png)
 
 Each conformer is optimized with the force field chosen under `Extensions` ⇒ `Open Babel` ⇒ `Configure Force Field…`. When the search finishes, the conformers it found are added to the molecule.
 
@@ -47,7 +47,7 @@ Choose `Analyze` ⇒ `Properties` ⇒ `Conformer Properties…` to list the conf
 
 To see the results as a plot, choose `Analyze` ⇒ `Plot Conformer Data…`. Plot **Relative Energy** against **Frame**, or select the C–C–C–O atoms, click **Add from Selection** and plot the energy against that dihedral. Click a point (or use the arrow keys) to show that conformer. See {ref}`analyze-conformer-plot`.
 
-% TODO(screenshot): /_static/tutorial-conformer-search-plot.png -- Conformer Analysis window, relative energy vs a dihedral for butanol
+![Conformer Analysis window, relative energy vs a dihedral for butanol](../../_static/tutorial-conformer-search-plot.png)
 
 ## 4. Save the Conformers
 

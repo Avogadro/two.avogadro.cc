@@ -27,7 +27,7 @@ Values can now be typed directly into the Measure tool.
 2. Click the atoms in order. Click two atoms for a distance, three for an angle (the second atom is the vertex), or four for a dihedral. For the butane example, click the four carbons from one end to the other.
 3. The Tool pane shows each distance, angle and dihedral that the atoms define. Type the new value (e.g., `60` in **Dihedral 1–2–3–4**) and press <kbd>Enter</kbd>.
 
-% TODO(screenshot): /_static/tutorial-set-dihedral-measure.png -- butane with the four carbons picked, Tool pane showing Dihedral 1–2–3–4 = 60°
+![butane with the four carbons picked, Measure Tool pane showing Dihedral 1–2–3–4 = 180°](../../_static/tutorial-set-dihedral-measure.png)
 
 Atom #1 stays fixed, and the atoms move toward the last atom you clicked. If an edit can't be made, for example because the dihedral is around a bond in a ring, a message explains why and nothing moves. See {ref}`measure-tool-editing` for details.
 
@@ -45,10 +45,10 @@ The property tables list every bond, angle and torsion in the molecule:
 2. Click a row to find the right one. The atoms in that row are selected in the 3D view.
 3. Double-click the value (the **Length (Å)** or **Angle (°)** column), type the new value and press <kbd>Enter</kbd>.
 
-% TODO(screenshot): /_static/tutorial-set-dihedral-table.png -- the Torsion Properties table with the C-C-C-C row being edited
+![Torsion Properties table with the C-C-C-C row being edited](../../_static/tutorial-set-dihedral-table.png)
 
 :::{tip}
-Click a column header to sort the table, for example to find the longest bond. Right-click a row to add a constraint that holds the value fixed during a later optimization.
+Click a column header to sort the table, for example to find the longest bond or the C-C-C-C torsions. Right-click a row to add a constraint that holds the value fixed during a later optimization.
 :::
 
 (with-the-z-matrix-editor)=

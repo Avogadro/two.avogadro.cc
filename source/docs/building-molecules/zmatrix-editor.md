@@ -16,7 +16,7 @@ The first atom needs no references, the second only a distance, and the third on
 
 Z-matrices are a natural way to think about bond lengths, angles and torsions, and many quantum chemistry programs accept them as input. The Z-Matrix Editor shows the current molecule as a z-matrix and lets you edit any value directly.
 
-% TODO(screenshot): /_static/zmatrix-editor.png -- the Z-Matrix Editor docked beside a small molecule (e.g., ethanol or butane), a few rows selected
+![the Z-Matrix Editor docked beside acetic acid](../../_static/zmatrix-editor.png)
 
 ## Opening the Editor
 

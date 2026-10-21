@@ -8,19 +8,19 @@ The Polymer builder is new in version 2.1.
 
 Avogadro has a builder for polymer chains, including homopolymers and block or statistical copolymers of up to three different monomers. This walk-through shows you how to use it.
 
-% TODO(screenshot): /_static/insert-polymer-dialog.png -- the Insert Polymer dialog with two monomers chosen
+![the Insert Polymer dialog with two monomers chosen - styrene and butadiene](../../_static/insert-polymer-dialog.png)
 
 The Polymer builder is under the `Build` menu and `Insert` submenu: `Build` ⇒ `Insert` ⇒ `Polymer…`
 
 :::{note}
-The builder generates the 3D structure from a SMILES string, so it needs the SMILES file format, provided by Open Babel. If it isn't available, Avogadro will say so when you insert the polymer.
+The builder generates the 3D structure from a SMILES string, so it needs the SMILES file format, provided by Open Babel. If it isn't available, Avogadro will warn when you insert the polymer.
 :::
 
 ## Choosing Monomers
 
 Click **Choose…** beside **A unit** to pick the first repeat unit from the monomer library. The chooser lists the monomers by category. Type in the **Filter** box to narrow the list (e.g., `styrene`), and select a monomer to see a preview of its structure. Double-click a monomer or click **OK** to use it.
 
-% TODO(screenshot): /_static/insert-polymer-choose-monomer.png -- the Choose Monomer window with a filter typed and a preview showing
+![Choose Monomer window with a filter typed for 'styrene' and a preview](../../_static/insert-polymer-choose-monomer.png)
 
 The name and a depiction of the chosen monomer appear in the dialog.
 
@@ -79,7 +79,7 @@ Tacticity has no effect on monomers without a defined stereocenter.
 
 Click **Insert Polymer**. Avogadro builds the chain, generates its 3D structure and adds it to the current molecule. The ends of the chain are capped with hydrogen atoms.
 
-% TODO(screenshot): /_static/insert-polymer-result.png -- a short inserted chain (e.g., 10-mer of polystyrene) in the main window
+![a short inserted chain (e.g., 10-mer of co-styrene-butadiene) in the main window](../../_static/insert-polymer-result.png)
 
 The new chain is selected and Avogadro switches to the [Manipulate Tool](tools-manipulation-tool), so you can translate and rotate it into position.
 

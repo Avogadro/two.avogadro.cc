@@ -24,7 +24,7 @@ The **Partial Charge** column shows the charge on each atom, and its header name
 
 3. To use a different model, right-click in the table and choose **Change Charge Type…**, then pick a model from the list.
 
-% TODO(screenshot): /_static/tutorial-charges-atom-table.png -- the Atom Properties table with the Partial Charge column and the Change Charge Type dialog
+![Atom Properties table with the Partial Charge column and the Change Charge Type context menu item highlighted](../../_static/tutorial-charges-atom-table.png)
 
 :::{note}
 Different charge models can give quite different charges for the same atom. Partial charges aren't observable quantities, so there's no single "right" answer. Use the model that matches what you'll do with the charges, for example the charges expected by a particular force field.
@@ -34,7 +34,7 @@ Different charge models can give quite different charges for the same atom. Part
 
 To see the charge distribution at a glance, choose `View` ⇒ `Color Atoms` ⇒ `By Partial Charge…`, then choose the charge model and the color map. Negative and positive charges are shown in contrasting colors. Choose `View` ⇒ `Color Atoms` ⇒ `By Element` to go back to the usual colors.
 
-% TODO(screenshot): /_static/tutorial-charges-colored.png -- acetic acid colored by partial charge
+![acetic acid colored by partial charge = blue is more positive and red is more negative - charges are labeled on each atom](../../_static/tutorial-charges-colored.png)
 
 The charges can also be used to color a molecular surface by electrostatic potential. See {ref}`tutorials-electrostatic-potential`.
 
