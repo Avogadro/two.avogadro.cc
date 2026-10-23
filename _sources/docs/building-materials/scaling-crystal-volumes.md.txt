@@ -8,7 +8,7 @@ After creating or opening the crystal \(here ice\), we see the normal unit cell 
 
 ![](../../_static/media_1340336935090.png)
 
-Before we scale volume, we can either choose to preseve Cartesian coordinates \(which will add empty space to the edges of the unit cell\) or preserve fractional coordinates \(which will symmetrically scale the entire unit cell\). This walk-through will show both.
+Before we scale volume, we can either choose to preserve Cartesian coordinates \(which will add empty space to the edges of the unit cell\) or preserve fractional coordinates \(which will symmetrically scale the entire unit cell\). This walk-through will show both.
 
 ![](../../_static/media_1340336917161.png)
 
@@ -29,4 +29,3 @@ If you preserve fractional coordinates, you can scale the unit cell symmetricall
 ![](../../_static/media_1340337575679.png)
 
 Note that while the volume is significantly expanded, the space group \(and fractional coordinates\) are retained.
-

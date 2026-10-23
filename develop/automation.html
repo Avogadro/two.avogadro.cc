@@ -1,0 +1,961 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Automation and Headless Usage &#8212; Avogadro 2.0.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=ee427ece" />
+    <link rel="stylesheet" type="text/css" href="../_static/mermaid-theme.css?v=7f85688a" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=51b770b3"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'develop/automation';</script>
+    <link rel="canonical" href="https://avogadro.cc/develop/automation.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Contributing Code" href="../contrib/code.html" />
+    <link rel="prev" title="Avogadro Remote Procedure Call (RPC)" href="rpc.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+<aside class="bd-header-announcement" aria-label="Announcement">
+  <div class="bd-header-announcement__content">Please see the results of our <a href='https://discuss.avogadro.cc/t/avogadro-2026-survey-results/7502'>anonymous community survey</a> - more feedback welcome!</div>
+</aside>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/avogadro2.png" class="logo__image only-light" alt="Avogadro Documentation- Home"/>
+    <script>document.write(`<img src="../_static/avogadro2-dark.png" class="logo__image only-dark" alt="Avogadro Documentation- Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../install/index.html">
+    Install
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../docs/index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Develop
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../contrib/index.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../teach/index.html">
+    Teach
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+    Discuss
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/avogadro.cc" title="Bluesky" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-bluesky fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../install/index.html">
+    Install
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../docs/index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Develop
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../contrib/index.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../teach/index.html">
+    Teach
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+    Discuss
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/avogadro.cc" title="Bluesky" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-bluesky fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Develop</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structure.html">Project Structure and C++ API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="build.html">Building Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins/index.html">Writing Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rpc.html">Avogadro Remote Procedure Call (RPC)</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Automation and Headless Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contrib/code.html">Contributing Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contrib/ai-usage.html">AI Usage Policy</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Develop</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Automation...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="automation-and-headless-usage">
+<span id="develop-automation"></span><h1>Automation and Headless Usage<a class="headerlink" href="#automation-and-headless-usage" title="Link to this heading">#</a></h1>
+<p>Avogadro can be driven entirely by a script: start it, send it
+<a class="reference internal" href="rpc.html#develop-rpc"><span class="std std-ref">RPC commands</span></a>, let it compute surfaces and orbitals, save
+images and files, then shut it down, with nobody at the keyboard. This page
+covers how to do that reliably, including on servers and in CI jobs that have
+no display at all.</p>
+<p>There is no separate command-line program. Automation uses the normal
+Avogadro application, controlled over its JSON-RPC socket, usually with the
+<code class="docutils literal notranslate"><span class="pre">connect</span></code> class from the <a class="reference external" href="https://pypi.org/project/avogadro/">avogadro</a>
+Python package. A script typically:</p>
+<ol class="arabic simple">
+<li><p>launches Avogadro with its own socket name,</p></li>
+<li><p>waits until Avogadro answers,</p></li>
+<li><p>sends commands, waiting for the slow ones to finish,</p></li>
+<li><p>renders images or exports files, and</p></li>
+<li><p>stops the Avogadro process.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This page describes Avogadro 2.1. <code class="docutils literal notranslate"><span class="pre">--rpc-name</span></code>, waiting for commands to
+finish, and <code class="docutils literal notranslate"><span class="pre">renderImage</span></code> are not available in earlier versions. Use the
+<code class="docutils literal notranslate"><span class="pre">avogadro</span></code> Python package that matches your Avogadro version.</p>
+</div>
+<section id="launching-avogadro-for-scripting">
+<h2>Launching Avogadro for scripting<a class="headerlink" href="#launching-avogadro-for-scripting" title="Link to this heading">#</a></h2>
+<p>The executable is <code class="docutils literal notranslate"><span class="pre">avogadro2</span></code> on Linux, <code class="docutils literal notranslate"><span class="pre">avogadro2.exe</span></code> on Windows, and
+<code class="docutils literal notranslate"><span class="pre">Avogadro2.app/Contents/MacOS/Avogadro2</span></code> inside the macOS application
+bundle. These options are useful when it is started by a script:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Option</p></th>
+<th class="head"><p>Effect</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--rpc-name</span> <span class="pre">NAME</span></code></p></td>
+<td><p>Listen on the socket <code class="docutils literal notranslate"><span class="pre">NAME</span></code> instead of <code class="docutils literal notranslate"><span class="pre">avogadro</span></code>. Also implies <code class="docutils literal notranslate"><span class="pre">--skip-dialogs</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--skip-dialogs</span></code></p></td>
+<td><p>Skip the dialogs that can appear at startup, so that nothing waits for a click.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--disable-settings</span></code></p></td>
+<td><p>Use default settings and do not save any, so a scripted run neither depends on nor changes your preferences.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--skip-autosave</span></code></p></td>
+<td><p>Do not restore or write autosave files.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">FILE</span> <span class="pre">...</span></code></p></td>
+<td><p>Open these files at startup.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>A typical launch line is:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>avogadro2<span class="w"> </span>--rpc-name<span class="w"> </span>avo-batch<span class="w"> </span>--disable-settings<span class="w"> </span>--skip-autosave
+</pre></div>
+</div>
+<p>Give every scripted instance its own <code class="docutils literal notranslate"><span class="pre">--rpc-name</span></code>. Only one running
+Avogadro can own a socket name, and the default name <code class="docutils literal notranslate"><span class="pre">avogadro</span></code> belongs to
+whichever copy was started first, which may be the one you are using
+interactively. With a separate name, a script can run alongside your normal
+session, and several scripts can run at once. Including the process ID in the
+name is an easy way to keep it unique.</p>
+<p>On Linux, macOS and BSD the socket is created in the system temporary
+directory (Python’s <code class="docutils literal notranslate"><span class="pre">tempfile.gettempdir()</span></code>); on Windows it is the named pipe
+<code class="docutils literal notranslate"><span class="pre">\\.\pipe\NAME</span></code>. macOS limits socket paths to 104 bytes, and its temporary
+directory is already long, so keep names short.</p>
+</section>
+<section id="waiting-for-avogadro-to-start">
+<h2>Waiting for Avogadro to start<a class="headerlink" href="#waiting-for-avogadro-to-start" title="Link to this heading">#</a></h2>
+<p>Avogadro takes a moment to start, and the socket does not exist until it has.
+Even once the socket answers, most methods return an error until the main
+window is ready. A simple approach is to retry <code class="docutils literal notranslate"><span class="pre">molecule_info()</span></code>, which only
+succeeds once the window exists:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">avogadro.connect</span><span class="w"> </span><span class="kn">import</span> <span class="n">connect</span><span class="p">,</span> <span class="n">RPCError</span>
+
+<span class="n">AVOGADRO</span> <span class="o">=</span> <span class="s2">&quot;avogadro2&quot;</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">start_avogadro</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">60</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Launch Avogadro listening on `name` and wait until it is ready.&quot;&quot;&quot;</span>
+    <span class="n">process</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span>
+        <span class="p">[</span><span class="n">AVOGADRO</span><span class="p">,</span> <span class="s2">&quot;--rpc-name&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="s2">&quot;--disable-settings&quot;</span><span class="p">,</span> <span class="s2">&quot;--skip-autosave&quot;</span><span class="p">],</span>
+        <span class="n">stdin</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">DEVNULL</span><span class="p">,</span>
+        <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">DEVNULL</span><span class="p">,</span>
+        <span class="n">stderr</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">STDOUT</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">deadline</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">monotonic</span><span class="p">()</span> <span class="o">+</span> <span class="n">timeout</span>
+    <span class="k">while</span> <span class="n">time</span><span class="o">.</span><span class="n">monotonic</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">deadline</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">process</span><span class="o">.</span><span class="n">poll</span><span class="p">()</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
+                <span class="s2">&quot;Avogadro exited during startup (code </span><span class="si">%d</span><span class="s2">)&quot;</span> <span class="o">%</span> <span class="n">process</span><span class="o">.</span><span class="n">returncode</span>
+            <span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">with</span> <span class="n">connect</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span> <span class="k">as</span> <span class="n">avo</span><span class="p">:</span>
+                <span class="n">avo</span><span class="o">.</span><span class="n">molecule_info</span><span class="p">()</span>  <span class="c1"># fails until the main window exists</span>
+            <span class="k">return</span> <span class="n">process</span>
+        <span class="k">except</span> <span class="p">(</span><span class="ne">OSError</span><span class="p">,</span> <span class="n">RPCError</span><span class="p">):</span>  <span class="c1"># not listening yet, or no window yet</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">stop_avogadro</span><span class="p">(</span><span class="n">process</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="ne">TimeoutError</span><span class="p">(</span><span class="s2">&quot;Avogadro did not start within </span><span class="si">%d</span><span class="s2"> s&quot;</span> <span class="o">%</span> <span class="n">timeout</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">stop_avogadro</span><span class="p">(</span><span class="n">process</span><span class="p">):</span>
+    <span class="n">process</span><span class="o">.</span><span class="n">terminate</span><span class="p">()</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">process</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="k">except</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">TimeoutExpired</span><span class="p">:</span>
+        <span class="n">process</span><span class="o">.</span><span class="n">kill</span><span class="p">()</span>
+        <span class="n">process</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Requests that read or write files (<code class="docutils literal notranslate"><span class="pre">openFile</span></code>, <code class="docutils literal notranslate"><span class="pre">loadMolecule</span></code>, <code class="docutils literal notranslate"><span class="pre">exportFile</span></code>,
+<code class="docutils literal notranslate"><span class="pre">getMolecule</span></code>) are held for a second or two after startup, until the file
+formats provided by plugins such as Open Babel have loaded. You do not need to
+wait for that yourself.</p>
+</section>
+<section id="waiting-for-commands-to-finish">
+<span id="automation-wait"></span><h2>Waiting for commands to finish<a class="headerlink" href="#waiting-for-commands-to-finish" title="Link to this heading">#</a></h2>
+<p>Some commands return as soon as their work has <em>started</em>: computing a
+surface or orbital runs on a background thread, and <code class="docutils literal notranslate"><span class="pre">exportFile</span></code> writes the
+file on one. Saving an image straight after starting a surface would capture
+the view before the surface exists.</p>
+<p>Pass <code class="docutils literal notranslate"><span class="pre">wait=True</span></code> (and optionally a <code class="docutils literal notranslate"><span class="pre">timeout</span></code> in seconds, 60 by default) and
+Avogadro holds its reply until the command has really finished:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">avo</span><span class="o">.</span><span class="n">command</span><span class="p">(</span><span class="s2">&quot;renderMO&quot;</span><span class="p">,</span> <span class="n">orbital</span><span class="o">=</span><span class="s2">&quot;homo&quot;</span><span class="p">,</span> <span class="n">isovalue</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">export_file()</span></code>, <code class="docutils literal notranslate"><span class="pre">fetch_by_name()</span></code> and <code class="docutils literal notranslate"><span class="pre">fetch_pdb()</span></code> wait by default. For
+other commands, <code class="docutils literal notranslate"><span class="pre">wait=True</span></code> is harmless when the command finishes straight
+away, so it is a safe default in scripts. A command that fails or runs out of
+time raises <code class="docutils literal notranslate"><span class="pre">RPCError</span></code> with code <code class="docutils literal notranslate"><span class="pre">-2</span></code>. A command sent while the same plugin
+is still busy raises <code class="docutils literal notranslate"><span class="pre">RPCError</span></code> with code <code class="docutils literal notranslate"><span class="pre">-3</span></code>.</p>
+<p>Large grids are slow, especially without a GPU. Raise <code class="docutils literal notranslate"><span class="pre">timeout</span></code> for big
+molecules or a fine <code class="docutils literal notranslate"><span class="pre">resolution</span></code>, rather than letting the request fail.</p>
+</section>
+<section id="rendering-images">
+<h2>Rendering images<a class="headerlink" href="#rendering-images" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">render_image()</span></code> renders the active view to a PNG. It can write a file or
+return the PNG bytes directly:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">avo</span><span class="o">.</span><span class="n">render_image</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">1600</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">1200</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;/data/homo.png&quot;</span><span class="p">)</span>
+
+<span class="n">png_bytes</span> <span class="o">=</span> <span class="n">avo</span><span class="o">.</span><span class="n">render_image</span><span class="p">(</span><span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># nothing written to disk</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Leave out <code class="docutils literal notranslate"><span class="pre">width</span></code> and <code class="docutils literal notranslate"><span class="pre">height</span></code> for the view’s own resolution, or give both
+(each up to 8192 pixels).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">transparent=True</span></code> keeps the background transparent.</p></li>
+<li><p>The image is rendered at the size of the view in the Avogadro window and
+then scaled to the requested size. If the requested shape is different from
+the view’s, the image is centered on a padded canvas rather than reframed,
+so the molecule sits smaller in the picture. Match the aspect ratio of the
+window, or make the window larger (see <a class="reference internal" href="#automation-headless"><span class="std std-ref">Running without a
+display</span></a>), for the best results.</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">save_graphic(filename)</span></code> also works, but always saves at the window’s current
+size.</p>
+<p>The rest of the view can be set before rendering:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">avo</span><span class="o">.</span><span class="n">set_display_types</span><span class="p">({</span><span class="s2">&quot;BallStick&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;Wireframe&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">})</span>
+<span class="n">avo</span><span class="o">.</span><span class="n">set_projection</span><span class="p">(</span><span class="s2">&quot;orthographic&quot;</span><span class="p">)</span>
+
+<span class="n">camera</span> <span class="o">=</span> <span class="n">avo</span><span class="o">.</span><span class="n">get_camera</span><span class="p">()</span>  <span class="c1"># save a view...</span>
+<span class="n">avo</span><span class="o">.</span><span class="n">set_camera</span><span class="p">(</span><span class="n">model_view</span><span class="o">=</span><span class="n">camera</span><span class="p">[</span><span class="s2">&quot;modelView&quot;</span><span class="p">])</span>  <span class="c1"># ...and restore it later</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">get_camera()</span></code> returns plain JSON-friendly data, so a view set up by hand in
+Avogadro can be saved once and reused for a whole series of images.</p>
+<section id="paths">
+<h3>Paths<a class="headerlink" href="#paths" title="Link to this heading">#</a></h3>
+<p>File names are read by the Avogadro process, which may have a different
+working directory from your script. Use absolute paths for <code class="docutils literal notranslate"><span class="pre">open_file()</span></code>,
+<code class="docutils literal notranslate"><span class="pre">export_file()</span></code>, <code class="docutils literal notranslate"><span class="pre">render_image()</span></code> and <code class="docutils literal notranslate"><span class="pre">save_graphic()</span></code>.</p>
+</section>
+</section>
+<section id="avoiding-dialogs">
+<h2>Avoiding dialogs<a class="headerlink" href="#avoiding-dialogs" title="Link to this heading">#</a></h2>
+<p>A modal dialog stops a script: Avogadro still answers <code class="docutils literal notranslate"><span class="pre">ping()</span></code> and other
+connections, but the request that opened the dialog never gets a reply.
+<code class="docutils literal notranslate"><span class="pre">--rpc-name</span></code> turns on <code class="docutils literal notranslate"><span class="pre">--skip-dialogs</span></code>, and with it a failed <code class="docutils literal notranslate"><span class="pre">exportFile</span></code> or
+<code class="docutils literal notranslate"><span class="pre">saveGraphic</span></code> returns an error instead of opening a message box. Some
+commands can still open a dialog, so avoid these in unattended scripts:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">showPdfPlot</span></code> and <code class="docutils literal notranslate"><span class="pre">showXrdPlot</span></code>, which ask for their options in a modal
+dialog</p></li>
+<li><p>other commands whose names start with <code class="docutils literal notranslate"><span class="pre">show</span></code>, such as <code class="docutils literal notranslate"><span class="pre">showVibrations</span></code>,
+which open windows</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fetchPDB</span></code> and <code class="docutils literal notranslate"><span class="pre">fetchByName</span></code>, which also depend on the network</p></li>
+</ul>
+<p>If a script seems stuck, a second connection can ask what is open:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">connect</span><span class="p">(</span><span class="s2">&quot;avo-batch&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">probe</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">probe</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s2">&quot;activeDialog&quot;</span><span class="p">)[</span><span class="s2">&quot;result&quot;</span><span class="p">])</span>  <span class="c1"># open, title, className</span>
+</pre></div>
+</div>
+</section>
+<section id="stopping-avogadro">
+<h2>Stopping Avogadro<a class="headerlink" href="#stopping-avogadro" title="Link to this heading">#</a></h2>
+<p>Stop a scripted Avogadro by ending its process, as <code class="docutils literal notranslate"><span class="pre">stop_avogadro()</span></code> above
+does. Anything not yet exported is lost, so call <code class="docutils literal notranslate"><span class="pre">export_file()</span></code> (which waits
+for the write to finish) for every result you want to keep. Starting with
+<code class="docutils literal notranslate"><span class="pre">--skip-autosave</span></code> means no autosave files are left behind.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">kill</span></code> method is refused unless Avogadro was started with <code class="docutils literal notranslate"><span class="pre">--testing</span></code>,
+which current versions do not accept on the command line. Ending the
+process is the supported way to stop a scripted instance.</p>
+</div>
+</section>
+<section id="running-without-a-display">
+<span id="automation-headless"></span><h2>Running without a display<a class="headerlink" href="#running-without-a-display" title="Link to this heading">#</a></h2>
+<p>Avogadro always creates its main window and needs a working OpenGL context,
+both for rendering and for a check it makes at startup. On a server, in a
+container or in CI with no screen attached, give it a virtual display.</p>
+<section id="linux-xvfb">
+<h3>Linux: Xvfb<a class="headerlink" href="#linux-xvfb" title="Link to this heading">#</a></h3>
+<p><a class="reference external" href="https://www.x.org/releases/current/doc/man/man1/Xvfb.1.xhtml">Xvfb</a> is an X
+server that draws into memory. Together with Mesa’s software OpenGL
+(llvmpipe) it lets Avogadro run, compute surfaces and render images with no
+GPU and no monitor. Avogadro’s own end-to-end RPC tests run this way.</p>
+<p>On Debian or Ubuntu, install Xvfb, Mesa and the X libraries Qt needs:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>xvfb<span class="w"> </span>libgl1-mesa-dri<span class="w"> </span>libglx-mesa0<span class="w"> </span>libegl1<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>libxkbcommon-x11-0<span class="w"> </span>libxcb-cursor0<span class="w"> </span>libxcb-icccm4<span class="w"> </span>libxcb-image0<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>libxcb-keysyms1<span class="w"> </span>libxcb-randr0<span class="w"> </span>libxcb-render-util0<span class="w"> </span>libxcb-shape0<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>libxcb-xinerama0<span class="w"> </span>libxcb-xkb1
+</pre></div>
+</div>
+<p>Then run your script (which launches Avogadro) under <code class="docutils literal notranslate"><span class="pre">xvfb-run</span></code>:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">LIBGL_ALWAYS_SOFTWARE</span><span class="o">=</span><span class="m">1</span><span class="w">   </span><span class="c1"># use Mesa&#39;s software renderer</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">QT_QPA_PLATFORM</span><span class="o">=</span>xcb<span class="w">       </span><span class="c1"># use X11, even if Wayland is configured</span>
+xvfb-run<span class="w"> </span>-a<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;-screen 0 1920x1080x24&quot;</span><span class="w"> </span>python<span class="w"> </span>render_orbitals.py
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">-a</span></code> picks a free display number, so several jobs can run on one machine.
+The screen size limits how large the Avogadro window, and therefore the
+native render size, can be.</p>
+<p>For a long-running service, start one Xvfb server and point everything at it
+instead:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>Xvfb<span class="w"> </span>:99<span class="w"> </span>-screen<span class="w"> </span><span class="m">0</span><span class="w"> </span>1920x1080x24<span class="w"> </span><span class="p">&amp;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">DISPLAY</span><span class="o">=</span>:99
+</pre></div>
+</div>
+<p>Avogadro asks for OpenGL 4.0 (core profile). Older Mesa releases do not
+provide that in software. To check what you have:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>xvfb-run<span class="w"> </span>-a<span class="w"> </span>glxinfo<span class="w"> </span>-B<span class="w">   </span><span class="c1"># from the mesa-utils package</span>
+</pre></div>
+</div>
+<p>and look for an <code class="docutils literal notranslate"><span class="pre">OpenGL</span> <span class="pre">core</span> <span class="pre">profile</span> <span class="pre">version</span> <span class="pre">string</span></code> of 4.0 or higher. If
+Avogadro cannot get a usable context it prints
+<code class="docutils literal notranslate"><span class="pre">This</span> <span class="pre">system</span> <span class="pre">does</span> <span class="pre">not</span> <span class="pre">support</span> <span class="pre">OpenGL.</span></code> and exits.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Setting <code class="docutils literal notranslate"><span class="pre">QT_QPA_PLATFORM=offscreen</span></code> <em>without</em> an X server is not a
+substitute. It is fine for code that never draws, but Avogadro needs a real
+OpenGL context and will not start reliably that way. Use Xvfb.</p>
+</div>
+<p>Software rendering is slower than a GPU, but the slow part of most scripts
+is computing orbital and surface grids, which runs on the CPU either way.</p>
+<p>Prefer a native build or the AppImage for automation. Flatpak keeps
+applications in a sandbox with their own temporary directory, so a script
+running outside the sandbox may not be able to see the socket.</p>
+</section>
+<section id="macos-and-windows">
+<h3>macOS and Windows<a class="headerlink" href="#macos-and-windows" title="Link to this heading">#</a></h3>
+<p>There is no equivalent of Xvfb. Avogadro needs a logged-in desktop session:</p>
+<ul class="simple">
+<li><p><strong>macOS</strong> — run under a user who is logged in at the console (or through
+Screen Sharing). A plain SSH login with nobody logged in cannot open
+windows.</p></li>
+<li><p><strong>Windows</strong> — run in an interactive desktop session, not as a service.</p></li>
+</ul>
+<p>The window can stay in the background or be minimized while the script runs.</p>
+</section>
+</section>
+<section id="a-complete-example">
+<h2>A complete example<a class="headerlink" href="#a-complete-example" title="Link to this heading">#</a></h2>
+<p>This script renders the HOMO and LUMO of every <code class="docutils literal notranslate"><span class="pre">.fchk</span></code> file in a directory.
+Run it under <code class="docutils literal notranslate"><span class="pre">xvfb-run</span></code> on a machine without a display.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">avogadro.connect</span><span class="w"> </span><span class="kn">import</span> <span class="n">connect</span>
+
+<span class="c1"># start_avogadro() and stop_avogadro() as defined above</span>
+
+<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;avo-</span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">os</span><span class="o">.</span><span class="n">getpid</span><span class="p">()</span>
+<span class="n">folder</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span>
+
+<span class="n">process</span> <span class="o">=</span> <span class="n">start_avogadro</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="k">with</span> <span class="n">connect</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="k">as</span> <span class="n">avo</span><span class="p">:</span>
+        <span class="n">avo</span><span class="o">.</span><span class="n">set_display_types</span><span class="p">({</span><span class="s2">&quot;BallStick&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
+        <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">folder</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*.fchk&quot;</span><span class="p">)):</span>
+            <span class="n">avo</span><span class="o">.</span><span class="n">open_file</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">avo</span><span class="o">.</span><span class="n">molecule_info</span><span class="p">()[</span><span class="s2">&quot;hasBasisSet&quot;</span><span class="p">]:</span>
+                <span class="k">for</span> <span class="n">orbital</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;homo&quot;</span><span class="p">,</span> <span class="s2">&quot;lumo&quot;</span><span class="p">):</span>
+                    <span class="n">avo</span><span class="o">.</span><span class="n">command</span><span class="p">(</span>
+                        <span class="s2">&quot;renderMO&quot;</span><span class="p">,</span>
+                        <span class="n">orbital</span><span class="o">=</span><span class="n">orbital</span><span class="p">,</span>
+                        <span class="n">isovalue</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span>
+                        <span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                        <span class="n">timeout</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span>
+                    <span class="p">)</span>
+                    <span class="n">image</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">with_name</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">path</span><span class="o">.</span><span class="n">stem</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">orbital</span><span class="si">}</span><span class="s2">.png&quot;</span><span class="p">)</span>
+                    <span class="n">avo</span><span class="o">.</span><span class="n">render_image</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">1600</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">1200</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="n">image</span><span class="p">)</span>
+            <span class="c1"># Close each molecule so they do not pile up in memory.</span>
+            <span class="n">avo</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s2">&quot;closeMolecule&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;discard&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="n">stop_avogadro</span><span class="p">(</span><span class="n">process</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">avo.list_commands()</span></code> lists every command the running Avogadro understands,
+including those added by plugins. See <a class="reference internal" href="rpc.html#develop-rpc"><span class="std std-ref">RPC</span></a> for the full
+protocol and the options of each command.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="rpc.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Avogadro Remote Procedure Call (RPC)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../contrib/code.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Contributing Code</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launching-avogadro-for-scripting">Launching Avogadro for scripting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waiting-for-avogadro-to-start">Waiting for Avogadro to start</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waiting-for-commands-to-finish">Waiting for commands to finish</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rendering-images">Rendering images</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paths">Paths</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#avoiding-dialogs">Avoiding dialogs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stopping-avogadro">Stopping Avogadro</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-without-a-display">Running without a display</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linux-xvfb">Linux: Xvfb</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#macos-and-windows">macOS and Windows</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-complete-example">A complete example</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/avogadro/two.avogadro.cc/edit/main/source/develop/automation.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">          <p>
+            ©2026 The OpenChemistry / Avogadro Teams 
+          </p>
+          <p>Covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
+          </p></div>
+      
+        <div class="footer-item">        <p>
+          <a href="/contrib/index.html">Contribute</a>
+        </p></div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.0.2.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.4.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -442,6 +442,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../args.html">How plugins are run</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../io.html">The input JSON</a></li>
 
+<li class="toctree-l2"><a class="reference internal" href="../file-formats.html">File format plugins</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../metadata.html">Metadata and configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../sharing.html">The online plugin repository/index</a></li>
 <li class="toctree-l2 current active has-children"><a class="reference internal" href="index.html">Pre-2.0 Plugin API</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
@@ -461,6 +462,7 @@ document.write(`
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../../rpc.html">Avogadro Remote Procedure Call (RPC)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../automation.html">Automation and Headless Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../contrib/code.html">Contributing Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../contrib/ai-usage.html">AI Usage Policy</a></li>
 </ul>
@@ -584,7 +586,7 @@ simulation parameter settings. Various parameter types are supported.</p>
 </div>
 <section id="returning-data-in-a-specific-file-format">
 <h3>Returning Data in a Specific File Format<a class="headerlink" href="#returning-data-in-a-specific-file-format" title="Link to this heading">#</a></h3>
-<p>While the default is for data to be returned as <code class="docutils literal notranslate"><span class="pre">cjson</span></code> objects, scripts can return data in any format recognized by Avogadro. In general, we suggest <code class="docutils literal notranslate"><span class="pre">mol</span></code> or <code class="docutils literal notranslate"><span class="pre">sdf</span></code>, <code class="docutils literal notranslate"><span class="pre">xyz</span></code>, <code class="docutils literal notranslate"><span class="pre">pdb</span></code>, <code class="docutils literal notranslate"><span class="pre">cif</span></code>, <code class="docutils literal notranslate"><span class="pre">cml</span></code>, or <code class="docutils literal notranslate"><span class="pre">cjson</span></code> as relatively common interchange foramts.</p>
+<p>While the default is for data to be returned as <code class="docutils literal notranslate"><span class="pre">cjson</span></code> objects, scripts can return data in any format recognized by Avogadro. In general, we suggest <code class="docutils literal notranslate"><span class="pre">mol</span></code> or <code class="docutils literal notranslate"><span class="pre">sdf</span></code>, <code class="docutils literal notranslate"><span class="pre">xyz</span></code>, <code class="docutils literal notranslate"><span class="pre">pdb</span></code>, <code class="docutils literal notranslate"><span class="pre">cif</span></code>, <code class="docutils literal notranslate"><span class="pre">cml</span></code>, or <code class="docutils literal notranslate"><span class="pre">cjson</span></code> as relatively common interchange formats.</p>
 <p>To indicate the format use the <code class="docutils literal notranslate"><span class="pre">moleculeFormat</span></code> key and then return the file data with the appropriate key:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;moleculeFormat&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pdb&quot;</span><span class="p">,</span>
@@ -624,7 +626,7 @@ simulation parameter settings. Various parameter types are supported.</p>
     <span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetSubstructMatches</span><span class="p">(</span><span class="n">smarts</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">atom</span> <span class="ow">in</span> <span class="n">match</span><span class="p">:</span>
             <span class="n">selected</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">atom</span><span class="p">)</span>
- 
+
     <span class="c1"># Just indicate that we want to select matching atoms</span>
     <span class="n">result</span> <span class="o">=</span> <span class="p">{</span>
         <span class="s1">&#39;selectedAtoms&#39;</span><span class="p">:</span> <span class="n">selected</span>

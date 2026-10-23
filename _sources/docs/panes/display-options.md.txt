@@ -2,7 +2,7 @@
 
 # Display Options Pane
 
-This pane shows options for a particular [display type](display-types)
+This pane shows options for a particular {ref}`display type <display-types>`
 
 ![Screenshot of the display options pane](../../_static/DisplayOptionsPane.png)
 

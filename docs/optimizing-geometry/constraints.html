@@ -447,6 +447,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="force-fields.html">Introduction to Force Fields</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Geometry Constraints</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conformers.html">Finding Conformers of Molecules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotting-conformer-data.html">Plotting Conformer and Trajectory Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="enabling-ff.html">Enabling additional force fields</a></li>
 </ul>
 </details></li>
@@ -524,6 +525,7 @@ document.write(`
 <li><p>fuse a set of atoms together while allowing them to move together</p></li>
 </ul>
 <p><strong>Constraints</strong> can be applied to fix (freeze) a specific selection of atoms in a molecule, as well as to fix X, Y, or Z axes, distances, and angles. For additional information see the <a class="reference internal" href="../tools/autoopt-tool.html#tools-autoopt-tool"><span class="std std-ref">AutoOptimize Tool</span></a> and <a class="reference internal" href="../menus/extensions-menu.html#menus-extensions-menu"><span class="std std-ref">Extensions Menu</span></a> documentation.</p>
+<p>For step-by-step instructions organized by task (for example, optimizing just one region or holding a dihedral angle fixed), see the <a class="reference internal" href="../tutorials/optimizing-with-constraints.html#tutorials-optimizing-with-constraints"><span class="std std-ref">Optimizing with Constraints tutorial</span></a>.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 2.0: </span>In version 2, constraints have been reworked, offering new ways to add or remove them. A “fuse” command has also been added to enable a set of atoms to remain together (e.g. a nanoparticle or metal cluster) while optimizing other components.</p>
 </div>
@@ -566,12 +568,12 @@ create the distance constraint.</p>
 <p>All types of geometry constraints are also shown in property windows with 🔒 icons and can be added or removed accordingly.</p>
 <p>For example, frozen atoms will show a 🔒 for the X, Y, and Z coordinates:</p>
 <p><img alt="" src="../../_images/freeze-atoms.png" /></p>
-<p>Right clicking the dialog will bring up a contextual menu to add or remove constraints on a given atom.</p>
+<p>Right-clicking the dialog will bring up a contextual menu to add or remove constraints on a given atom.</p>
 <p>Similarly, distance constraints for bonds are obvious in the Bond Property dialog and the bond length is indicated with a 🔒.</p>
 <p><img alt="" src="../../_images/freeze-bonds.png" /></p>
 <p>The same is true for angles or torsions:</p>
 <p><img alt="" src="../../_images/freeze-torsions.png" /></p>
-<p>The constraints dialog, however, enables distance constraints that are not bonded atoms, or other kinds of angles or torsions.</p>
+<p>The constraints dialog, however, enables distance constraints between atoms that are not bonded, or other kinds of angles or torsions.</p>
 </section>
 </section>
 

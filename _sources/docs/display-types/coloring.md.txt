@@ -30,7 +30,7 @@ From there you can edit other settings of the display type by clicking on "Setti
 
 ## Select by Element
 
-Coloring parts of a molecule doesn't have to end after a single adjustment. Say we want to stress that iron is at the center of the hem residue. We can go to the "Select" menu, "Select by Element...", and choose to select all of the iron atoms in the molecule.
+Coloring parts of a molecule doesn't have to end after a single adjustment. Say we want to stress that iron is at the center of the heme residue. We can go to the "Select" menu, "Select by Element...", and choose to select all of the iron atoms in the molecule.
 
 ![](../../_static/select-by-element.png)
 
@@ -45,4 +45,3 @@ Then adjustments can be made to the settings.
 The final product is a more intuitive view of qualitative information about hemoglobin.
 
 ![](../../_static/d1ba0a13-262d-4523-897b-775475bc1b06.png)
-

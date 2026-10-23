@@ -98,7 +98,7 @@ Some of these are intrinsic to the Flatpak distribution method itself, while oth
 
 The biggest complaint about Flatpaks is the storage space requirements.
 This arises from Flatpak's use of runtimes: extra Flatpak versions of application support libraries that would on Linux normally be provided by the system.
-Flatpak runtimes are what allows the same application to run on many different distros, by guaranteeing the same version of the library dependencies.
+Flatpak runtimes are what allow the same application to run on many different distros, by guaranteeing the same version of the library dependencies.
 
 Runtimes are shared between Flatpak applications, so the effect is most significant and noticeable when either no or very few other Flatpak apps are installed.
 As such, if you install the Avogadro Flatpak, you may find that not only Avogadro itself will be downloaded and installed (as of v1.102.0, a modest 78.6 MB download and 166.4 MB installation size) but also a large (~1 GB) KDE runtime.

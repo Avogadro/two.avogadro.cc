@@ -1,0 +1,756 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Plotting Conformer and Trajectory Data &#8212; Avogadro 2.0.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=ee427ece" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mermaid-theme.css?v=7f85688a" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=51b770b3"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/optimizing-geometry/plotting-conformer-data';</script>
+    <link rel="canonical" href="https://avogadro.cc/docs/optimizing-geometry/plotting-conformer-data.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Enabling additional force fields" href="enabling-ff.html" />
+    <link rel="prev" title="Finding Conformers of Molecules" href="conformers.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+<aside class="bd-header-announcement" aria-label="Announcement">
+  <div class="bd-header-announcement__content">Please see the results of our <a href='https://discuss.avogadro.cc/t/avogadro-2026-survey-results/7502'>anonymous community survey</a> - more feedback welcome!</div>
+</aside>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/avogadro2.png" class="logo__image only-light" alt="Avogadro Documentation- Home"/>
+    <script>document.write(`<img src="../../_static/avogadro2-dark.png" class="logo__image only-dark" alt="Avogadro Documentation- Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../install/index.html">
+    Install
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../develop/index.html">
+    Develop
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../contrib/index.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../teach/index.html">
+    Teach
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+    Discuss
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/avogadro.cc" title="Bluesky" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-bluesky fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../install/index.html">
+    Install
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../develop/index.html">
+    Develop
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../contrib/index.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../teach/index.html">
+    Teach
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+    Discuss
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/avogadro.cc" title="Bluesky" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-bluesky fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">User Documentation</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whats-new-in-avogadro-2/index.html">What’s New in Avogadro 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../building-molecules/index.html">Building Molecules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../menus/index.html">Menus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../display-types/index.html">Display Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../panes/index.html">Panes</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Optimizing Geometry</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="force-fields.html">Introduction to Force Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="constraints.html">Geometry Constraints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conformers.html">Finding Conformers of Molecules</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Plotting Conformer and Trajectory Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enabling-ff.html">Enabling additional force fields</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plugins/index.html">Plugins and Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../settings/index.html">Settings</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Guide</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Optimizing Geometry</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Plotting...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="plotting-conformer-and-trajectory-data">
+<span id="analyze-conformer-plot"></span><h1>Plotting Conformer and Trajectory Data<a class="headerlink" href="#plotting-conformer-and-trajectory-data" title="Link to this heading">#</a></h1>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><strong>New in 2.1</strong>
+The conformer plot window has been rewritten in version 2.1. It can now plot any two quantities against each other, including distances, angles and dihedrals, time, temperature and atomic speeds, and you can step through the conformers from the plot.</p>
+</div>
+<p>Choose <code class="docutils literal notranslate"><span class="pre">Analyze</span></code> ⇒ <code class="docutils literal notranslate"><span class="pre">Plot</span> <span class="pre">Conformer</span> <span class="pre">Data…</span></code> to open the <strong>Conformer Analysis</strong> window.</p>
+<p><img alt="Conformer Analysis window, RMSD vs a time for a MD trajectory" src="../../_images/conformer-analysis-rmsd.png" /></p>
+<section id="choosing-what-to-plot">
+<h2>Choosing What to Plot<a class="headerlink" href="#choosing-what-to-plot" title="Link to this heading">#</a></h2>
+<p>The two drop-down menus read as a sentence: <strong>Plot</strong> <em>(y axis)</em> <strong>vs</strong> <em>(x axis)</em>. Any quantity can go on either axis. By default, Avogadro plots the relative energy against the frame number if the file has energies, or the RMSD against the frame number if it doesn’t.</p>
+<p>The quantities available depend on what the file contains:</p>
+<dl class="simple myst">
+<dt>Frame</dt><dd><p>The position of the geometry in the file, counting from zero.</p>
+</dd>
+<dt>Time (ps)</dt><dd><p>The elapsed time. Available for trajectories (files with more than one geometry). If the file records when each frame was written, those times are used. Otherwise they’re worked out from the <strong>Time between frames</strong> setting.</p>
+</dd>
+<dt>RMSD (Å)</dt><dd><p>The root mean square displacement of the atoms from their positions in the first geometry. See <a class="reference internal" href="#conformer-plot-formulas"><span class="std std-ref">the formulas below</span></a>.</p>
+</dd>
+<dt>Relative Energy</dt><dd><p>The energy of each geometry relative to the lowest-energy one. Available if the file has energies.</p>
+</dd>
+<dt>RMS Gradient</dt><dd><p>The root mean square gradient (force) on the atoms. Available if the file has gradients.</p>
+</dd>
+<dt>Mean Speed (Å/ps)</dt><dd><p>The average speed of the atoms. Available for trajectories. Error bars show the standard deviation of the atomic speeds, which tells you whether the motion is spread evenly over the atoms or concentrated in a few of them.</p>
+</dd>
+<dt>Temperature (K)</dt><dd><p>The instantaneous temperature from the kinetic energy of the atoms. Available for trajectories of more than one atom.</p>
+</dd>
+<dt>Distance, Angle and Dihedral</dt><dd><p>Any constraints on the molecule are listed automatically, since a relaxed scan usually steps through a constrained coordinate. You can add other coordinates yourself, as described below.</p>
+</dd>
+</dl>
+</section>
+<section id="following-a-distance-angle-or-dihedral">
+<h2>Following a Distance, Angle or Dihedral<a class="headerlink" href="#following-a-distance-angle-or-dihedral" title="Link to this heading">#</a></h2>
+<p>To plot a geometric parameter across the conformers:</p>
+<ol class="arabic simple">
+<li><p>Select 2, 3 or 4 atoms (for example, with the <a class="reference internal" href="../tools/selection-tool.html#tools-selection-tool"><span class="std std-ref">Selection Tool</span></a>) for a distance, angle or dihedral.</p></li>
+<li><p>Click <strong>Add from Selection</strong>.</p></li>
+</ol>
+<p>The new coordinate is added to both drop-down menus and shown on the x axis. Where the selected atoms are bonded, Avogadro orders them along the bonds, so selecting the four atoms of a torsion gives the dihedral you expect.</p>
+<p><img alt="Conformer Analysis window, relative energy vs a dihedral for butanol" src="../../_images/tutorial-conformer-search-plot.png" /></p>
+<dl class="simple myst">
+<dt>Unwrap dihedral scans</dt><dd><p>A dihedral jumps from 180° to −180° as it passes through the <em>anti</em> position, which breaks up a scan plotted against it. With this option checked (the default), Avogadro removes those 360° jumps so the scan plots as a continuous curve. It only applies when a dihedral is plotted.</p>
+</dd>
+</dl>
+</section>
+<section id="stepping-through-the-conformers">
+<h2>Stepping Through the Conformers<a class="headerlink" href="#stepping-through-the-conformers" title="Link to this heading">#</a></h2>
+<p>The window always shows which geometry is displayed in the main window, as an orange marker on the plot and as a line such as “Conformer 3 of 12” below it.</p>
+<ul class="simple">
+<li><p>Click on the plot to jump to the nearest point.</p></li>
+<li><p>Press <kbd>←</kbd> / <kbd>→</kbd> (or <kbd>↓</kbd> / <kbd>↑</kbd>) to step back or forward one conformer.</p></li>
+<li><p>Hold <kbd>Shift</kbd> with the arrow keys, or press <kbd>Page Down</kbd> / <kbd>Page Up</kbd>, to step by 10.</p></li>
+<li><p>Press <kbd>Home</kbd> or <kbd>End</kbd> to go to the first or last conformer.</p></li>
+</ul>
+<p>The main window and the <a class="reference internal" href="../tools/animation-tool.html#tools-animation-tool"><span class="std std-ref">Animation Tool</span></a> follow along, so this is a quick way to look at the geometry behind any point on the plot.</p>
+</section>
+<section id="energy-units">
+<h2>Energy Units<a class="headerlink" href="#energy-units" title="Link to this heading">#</a></h2>
+<p>Most files don’t say what units their energies are in. When an energy is plotted, the <strong>Energy Units</strong> menus set the units the energies are in (<em>from</em>) and the units to show them in (<em>to</em>): Hartree, eV, kcal/mol or kJ/mol. If the file does record its energy units, the first menu shows them and can’t be changed.</p>
+<p>This is the same setting as <strong>Convert Energy Units…</strong> in the conformer properties table (<code class="docutils literal notranslate"><span class="pre">Analyze</span></code> ⇒ <code class="docutils literal notranslate"><span class="pre">Properties</span></code> ⇒ <code class="docutils literal notranslate"><span class="pre">Conformer</span> <span class="pre">Properties…</span></code>), so changing it in one place changes it in both.</p>
+</section>
+<section id="time-between-frames">
+<h2>Time Between Frames<a class="headerlink" href="#time-between-frames" title="Link to this heading">#</a></h2>
+<p>Speeds, temperatures and times depend on how far apart in time the saved frames are. Few trajectory formats record this: XYZ and SDF files carry no time at all, and a LAMMPS dump records step numbers rather than times. Set <strong>Time between frames</strong> (in picoseconds) to the interval at which your simulation <em>saved</em> frames. Avogadro uses the value from the file where there is one, and 1 ps otherwise. Setting it overrides any times recorded in the file.</p>
+<p>This setting is only enabled when time, mean speed or temperature is plotted. It’s stored with the molecule and shared with the conformer properties table.</p>
+</section>
+<section id="how-the-values-are-calculated">
+<span id="conformer-plot-formulas"></span><h2>How the Values Are Calculated<a class="headerlink" href="#how-the-values-are-calculated" title="Link to this heading">#</a></h2>
+<p><strong>RMSD</strong> for geometry <span class="math notranslate nohighlight">\(k\)</span> is computed over the <span class="math notranslate nohighlight">\(N\)</span> atoms against the first geometry:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathrm{RMSD}_k = \sqrt{\frac{1}{N} \sum_{i=1}^{N} \left| \mathbf{r}_i^{(k)} - \mathbf{r}_i^{(0)} \right|^2}
+\]</div>
+<p>The geometries are <em>not</em> superimposed first, so any overall translation or rotation of the molecule counts toward the RMSD.</p>
+<p><strong>Velocities.</strong> If the file includes atomic velocities, they’re used directly. Otherwise, Avogadro estimates them from the change in position between neighboring frames:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{v}_i^{(k)} = \frac{\mathbf{r}_i^{(k)} - \mathbf{r}_i^{(k-1)}}{\Delta t}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\Delta t\)</span> is the time between frames. The first frame uses the difference to the second frame instead. The mean speed is the average of <span class="math notranslate nohighlight">\(|\mathbf{v}_i|\)</span> over the atoms.</p>
+<p><strong>Temperature</strong> follows from equipartition, after removing the motion of the center of mass <span class="math notranslate nohighlight">\(\mathbf{v}_\mathrm{COM}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+T = \frac{2K}{N_\mathrm{df}\,k_\mathrm{B}}, \qquad K = \frac{1}{2} \sum_{i=1}^{N} m_i \left| \mathbf{v}_i - \mathbf{v}_\mathrm{COM} \right|^2, \qquad N_\mathrm{df} = 3N - 3
+\]</div>
+<p>Atomic masses include any isotopes set on the atoms.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Velocities estimated from saved frames are only as good as the spacing between the frames. If your simulation saved a frame every few hundred steps, the atoms will have changed direction many times between frames, and the estimated speeds and temperature will be much lower than the real ones. Bond constraints during the simulation (e.g., SHAKE) remove degrees of freedom that aren’t accounted for here, which also makes the temperature read low. For quantitative work, save velocities from the simulation itself.</p>
+</div>
+</section>
+<section id="conformer-properties-table">
+<h2>Conformer Properties Table<a class="headerlink" href="#conformer-properties-table" title="Link to this heading">#</a></h2>
+<p>The conformer properties table (<code class="docutils literal notranslate"><span class="pre">Analyze</span></code> ⇒ <code class="docutils literal notranslate"><span class="pre">Properties</span></code> ⇒ <code class="docutils literal notranslate"><span class="pre">Conformer</span> <span class="pre">Properties…</span></code>) lists the same quantities as columns, one row per conformer, so you can sort by them or copy the values elsewhere.</p>
+<p><img alt="Conformer Propertyies Table with columns for Time, RMSD, Relative Energy, Temperature, etc." src="_static/tutorial-properties-dialog.png" /></p>
+</section>
+<section id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="conformers.html#optimize-conformers"><span class="std std-ref">Finding Conformers of Molecules</span></a> – Generate conformers with a conformer search</p></li>
+<li><p><a class="reference internal" href="constraints.html#optimize-constraints"><span class="std std-ref">Geometry Constraints</span></a> – Set up constraints for a relaxed scan</p></li>
+<li><p><a class="reference internal" href="../tools/animation-tool.html#tools-animation-tool"><span class="std std-ref">Animation Tool</span></a> – Play back trajectories</p></li>
+<li><p><a class="reference internal" href="../menus/analyze-menu.html#menus-analyze-menu"><span class="std std-ref">Analyze Menu</span></a> – Other analysis tools</p></li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="conformers.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Finding Conformers of Molecules</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="enabling-ff.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Enabling additional force fields</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-what-to-plot">Choosing What to Plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#following-a-distance-angle-or-dihedral">Following a Distance, Angle or Dihedral</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stepping-through-the-conformers">Stepping Through the Conformers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-units">Energy Units</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-between-frames">Time Between Frames</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-the-values-are-calculated">How the Values Are Calculated</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conformer-properties-table">Conformer Properties Table</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#see-also">See Also</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/avogadro/two.avogadro.cc/edit/main/source/docs/optimizing-geometry/plotting-conformer-data.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">          <p>
+            ©2026 The OpenChemistry / Avogadro Teams 
+          </p>
+          <p>Covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
+          </p></div>
+      
+        <div class="footer-item">        <p>
+          <a href="/contrib/index.html">Contribute</a>
+        </p></div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.0.2.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.4.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

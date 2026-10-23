@@ -540,7 +540,7 @@ document.write(`
 </dd>
 <dt>Fill Unit Cell</dt><dd><p>Populate the unit cell, including translationally equivalent atoms. See <a class="reference internal" href="#translational-equivalence"><span class="std std-ref">Translational Equivalence</span></a> for more information.</p>
 </dd>
-<dt>Fill Translational Cell</dt><dd><p>Populate the unit cell, not including translationally equivalent atoms. See <a class="reference internal" href="#translational-equivalence"><span class="std std-ref">Translational Equivalence</span></a> for more information.</p>
+<dt>Fill Translation Cell</dt><dd><p>Populate the unit cell, not including translationally equivalent atoms. See <a class="reference internal" href="#translational-equivalence"><span class="std std-ref">Translational Equivalence</span></a> for more information.</p>
 </dd>
 <dt>Wrap Atoms to Unit Cell</dt><dd><p>Take all atoms outside the unit cell and translate them into their equivalent position inside the unit cell.</p>
 </dd>
@@ -557,7 +557,7 @@ document.write(`
 </dl>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>If you get an error regarding a missing genXrdPattern executable, you can try to download the executable from <a class="reference external" href="https://github.com/psavery/genXrdPattern/releases">the GitHub repository</a> and setting the <code class="docutils literal notranslate"><span class="pre">GENXRDPATTERN_EXECUTABLE</span></code> environment variable.</p>
+<p>If you get an error regarding a missing genXrdPattern executable, you can try to download the executable from <a class="reference external" href="https://github.com/psavery/genXrdPattern/releases">the GitHub repository</a> and set the <code class="docutils literal notranslate"><span class="pre">GENXRDPATTERN_EXECUTABLE</span></code> environment variable.</p>
 </div>
 <dl class="simple myst">
 <dt>Space Group</dt><dd><p>See <a class="reference internal" href="#space-group-menu"><span class="std std-ref">Space Group Menu</span></a></p>
@@ -572,7 +572,7 @@ document.write(`
 <a class="dark-light reference internal image-reference" href="../../_images/pd_unit_cell_editor.png"><img alt="Cell parameters for Palladium" class="dark-light" src="../../_images/pd_unit_cell_editor.png" style="height: 480px;" />
 </a>
 </figure>
-<p>At the top of the unit cell editor are the lattice parameters <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, <span class="math notranslate nohighlight">\(C\)</span>, <span class="math notranslate nohighlight">\(\alpha\)</span>, <span class="math notranslate nohighlight">\(\beta\)</span>, and <span class="math notranslate nohighlight">\(\gamma\)</span>. These either used to calculate the cell matrix, or can be calculated from the cell matrix. Below this is the cell matrix, which contains the three 3D lattice vectors, <span class="math notranslate nohighlight">\(\textbf{a}_i = (a^x_i, a^y_i, a^z_i)\)</span> that make up the cell matrix (denoted here as <span class="math notranslate nohighlight">\(\mathbb{A}\)</span>). Below the cell matrix is the fractional matrix, which is the inverse of the unit cell matrix (denoted <span class="math notranslate nohighlight">\(\mathbb{A}^{-1}\)</span>). Together, the product of these matrices yields the identity matrix (<span class="math notranslate nohighlight">\(\mathbb{I}\)</span>),</p>
+<p>At the top of the unit cell editor are the lattice parameters <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, <span class="math notranslate nohighlight">\(C\)</span>, <span class="math notranslate nohighlight">\(\alpha\)</span>, <span class="math notranslate nohighlight">\(\beta\)</span>, and <span class="math notranslate nohighlight">\(\gamma\)</span>. These are either used to calculate the cell matrix, or can be calculated from the cell matrix. Below this is the cell matrix, which contains the three 3D lattice vectors, <span class="math notranslate nohighlight">\(\textbf{a}_i = (a^x_i, a^y_i, a^z_i)\)</span> that make up the cell matrix (denoted here as <span class="math notranslate nohighlight">\(\mathbb{A}\)</span>). Below the cell matrix is the fractional matrix, which is the inverse of the unit cell matrix (denoted <span class="math notranslate nohighlight">\(\mathbb{A}^{-1}\)</span>). Together, the product of these matrices yields the identity matrix (<span class="math notranslate nohighlight">\(\mathbb{I}\)</span>),</p>
 <div class="math notranslate nohighlight">
 \[\mathbb{A}\mathbb{A}^{-1}=\mathbb{I}\]</div>
 <p>The fractional matrix can be used to transform atoms from their normal 3D coordinates (denoted <span class="math notranslate nohighlight">\(r_i\)</span>) into what are called <em>fractional coordinates</em> (denoted <span class="math notranslate nohighlight">\(r^{\text{frac}}_i\)</span>), which can then be turned back into their normal coordinates by multiplying by the cell matrix.</p>
@@ -593,7 +593,7 @@ a^x_2 &amp; a^y_2 &amp; a^z_2 \\
 a^x_3 &amp; a^y_3 &amp; a^z_3
 \end{pmatrix}\end{split}\]</div>
 <p>The individual lattice vectors <span class="math notranslate nohighlight">\(\textbf{a}_i = (a^x_i, a^y_i, a^z_i)\)</span>, or their integer multiples (e.g. <span class="math notranslate nohighlight">\(1\times\textbf{a}_i\)</span>, <span class="math notranslate nohighlight">\(-1\times\textbf{a}_i\)</span>, <span class="math notranslate nohighlight">\(2\times\textbf{a}_i\)</span>, <span class="math notranslate nohighlight">\(-2\times\textbf{a}_i\)</span>, etc.), can be used to <em>translate</em> or <em>slide</em> atoms around in space. To find the <em>translationally equivalent</em> atoms in a unit cell, you can take all of the atoms in the cell, apply positive (<span class="math notranslate nohighlight">\(+\)</span>) or negative (<span class="math notranslate nohighlight">\(-\)</span>) translations (possibly with an integer multiplier) with the lattice vectors, and then remove all of the atoms which are related by that translation.</p>
-<p>As a visual demonstration of this, consider a the conventional unit cell of Palladium, which has a Face-Centered Cubic crystal structure. Below we show the unit cell produced with the <code class="docutils literal notranslate"><span class="pre">Fill</span> <span class="pre">Unit</span> <span class="pre">Cell</span></code> command and the unit cell matrix (<span class="math notranslate nohighlight">\(\mathbb{A}\)</span> from above):</p>
+<p>As a visual demonstration of this, consider the conventional unit cell of palladium, which has a face-centered cubic crystal structure. Below we show the unit cell produced with the <code class="docutils literal notranslate"><span class="pre">Fill</span> <span class="pre">Unit</span> <span class="pre">Cell</span></code> command and the unit cell matrix (<span class="math notranslate nohighlight">\(\mathbb{A}\)</span> from above):</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-0">
@@ -745,7 +745,7 @@ r_8 - \textbf{a}_1 - \textbf{a}_2 - \textbf{a}_3 &amp;= (0, 0, 0)\end{split}\]</
 </tbody>
 </table>
 </div>
-<p>One thing to note right off the bat is that none of the face atoms will be <em>translationally equivalent</em> to atom 1 as they all have components which are not equal to a lattice vector multiplied by an integer. For example, atom 9 can not be translated into atom 1</p>
+<p>One thing to note right off the bat is that none of the face atoms will be <em>translationally equivalent</em> to atom 1 as they all have components which are not equal to a lattice vector multiplied by an integer. For example, atom 9 cannot be translated into atom 1</p>
 <div class="math notranslate nohighlight">
 \[r_9 - \textbf{a}_2 - \textbf{a}_3 = (0.0000, -1.9449, -1.9449)\]</div>
 <p>As such, we know that some of these atoms will need to remain in the <em>translational unit cell</em>. Applying the same formulas from above, we can see that atoms 12, 13, and 14 can be translated by the lattice vectors into atoms 9, 10, and 11.</p>
@@ -799,7 +799,7 @@ Primitive Unit Cell</label><div class="sd-tab-content docutils">
 </details><dl class="simple myst">
 <dt>Symmetrize</dt><dd><p>Take a cell that is not perfectly symmetric, reduce it to its primitive form, and idealize it.</p>
 </dd>
-<dt>Reduce to Asymmetric Unit</dt><dd><p>Reduce the unit cell to all atoms which can not be represented by the point group’s symmetry operations.</p>
+<dt>Reduce to Asymmetric Unit</dt><dd><p>Reduce the unit cell to all atoms which cannot be represented by the point group’s symmetry operations.</p>
 </dd>
 <dt>Set Tolerance</dt><dd><p>Set the default tolerance for the other operations in the menu.</p>
 </dd>

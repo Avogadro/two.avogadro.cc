@@ -1,0 +1,734 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Building Polymers &#8212; Avogadro 2.0.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=ee427ece" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mermaid-theme.css?v=7f85688a" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=51b770b3"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/building-molecules/building-polymers';</script>
+    <link rel="canonical" href="https://avogadro.cc/docs/building-molecules/building-polymers.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Z-Matrix Editor" href="zmatrix-editor.html" />
+    <link rel="prev" title="Building Peptides" href="building-peptides.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+<aside class="bd-header-announcement" aria-label="Announcement">
+  <div class="bd-header-announcement__content">Please see the results of our <a href='https://discuss.avogadro.cc/t/avogadro-2026-survey-results/7502'>anonymous community survey</a> - more feedback welcome!</div>
+</aside>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/avogadro2.png" class="logo__image only-light" alt="Avogadro Documentation- Home"/>
+    <script>document.write(`<img src="../../_static/avogadro2-dark.png" class="logo__image only-dark" alt="Avogadro Documentation- Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../install/index.html">
+    Install
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../develop/index.html">
+    Develop
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../contrib/index.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../teach/index.html">
+    Teach
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+    Discuss
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/avogadro.cc" title="Bluesky" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-bluesky fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../install/index.html">
+    Install
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../develop/index.html">
+    Develop
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../contrib/index.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../teach/index.html">
+    Teach
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+    Discuss
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/avogadro.cc" title="Bluesky" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-bluesky fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">User Documentation</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whats-new-in-avogadro-2/index.html">What’s New in Avogadro 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/index.html">Getting Started</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Building Molecules</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="drawing-molecules.html">Drawing Molecules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="importing-molecules-by-name.html">Importing Molecules by Name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="importing-from-the-pdb.html">Importing from the Protein Data Bank (PDB)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="insert-fragments.html">Insert Molecular Fragments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="building-with-smiles.html">Building with SMILES</a></li>
+<li class="toctree-l2"><a class="reference internal" href="building-dna-rna.html">Building DNA or RNA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="building-peptides.html">Building Peptides</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Building Polymers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zmatrix-editor.html">Z-Matrix Editor</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../menus/index.html">Menus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../display-types/index.html">Display Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../panes/index.html">Panes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../optimizing-geometry/index.html">Optimizing Geometry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plugins/index.html">Plugins and Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../settings/index.html">Settings</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Guide</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Building Molecules</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Building Polymers</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="building-polymers">
+<span id="building-molecules-polymers"></span><h1>Building Polymers<a class="headerlink" href="#building-polymers" title="Link to this heading">#</a></h1>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><strong>New in 2.1</strong>
+The Polymer builder is new in version 2.1.</p>
+</div>
+<p>Avogadro has a builder for polymer chains, including homopolymers and block or statistical copolymers of up to three different monomers. This walk-through shows you how to use it.</p>
+<p><img alt="the Insert Polymer dialog with two monomers chosen - styrene and butadiene" src="../../_images/insert-polymer-dialog.png" /></p>
+<p>The Polymer builder is under the <code class="docutils literal notranslate"><span class="pre">Build</span></code> menu and <code class="docutils literal notranslate"><span class="pre">Insert</span></code> submenu: <code class="docutils literal notranslate"><span class="pre">Build</span></code> ⇒ <code class="docutils literal notranslate"><span class="pre">Insert</span></code> ⇒ <code class="docutils literal notranslate"><span class="pre">Polymer…</span></code></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The builder generates the 3D structure from a SMILES string, so it needs the SMILES file format, provided by Open Babel. If it isn’t available, Avogadro will warn when you insert the polymer.</p>
+</div>
+<section id="choosing-monomers">
+<h2>Choosing Monomers<a class="headerlink" href="#choosing-monomers" title="Link to this heading">#</a></h2>
+<p>Click <strong>Choose…</strong> beside <strong>A unit</strong> to pick the first repeat unit from the monomer library. The chooser lists the monomers by category. Type in the <strong>Filter</strong> box to narrow the list (e.g., <code class="docutils literal notranslate"><span class="pre">styrene</span></code>), and select a monomer to see a preview of its structure. Double-click a monomer or click <strong>OK</strong> to use it.</p>
+<p><img alt="Choose Monomer window with a filter typed for 'styrene' and a preview" src="../../_images/insert-polymer-choose-monomer.png" /></p>
+<p>The name and a depiction of the chosen monomer appear in the dialog.</p>
+<p>To build a copolymer, choose a <strong>B unit</strong> and, if you like, a <strong>C unit</strong> as well. The B unit can be chosen once the A unit is set, and the C unit once the B unit is set.</p>
+</section>
+<section id="setting-the-composition">
+<h2>Setting the Composition<a class="headerlink" href="#setting-the-composition" title="Link to this heading">#</a></h2>
+<p>The <strong>Repeats</strong> box under each monomer and the <strong>Repeat Style</strong> together set how the monomers are arranged along the chain.</p>
+<dl class="simple myst">
+<dt>Repeat Units</dt><dd><p>Build a <strong>block</strong> copolymer. The <strong>Repeats</strong> values give the length of each block, and the pattern repeats along the chain. For example, A = 2 and B = 1 gives A–A–B–A–A–B… This is the default.</p>
+</dd>
+<dt>Percent</dt><dd><p>Build a <strong>statistical</strong> (random) copolymer. The <strong>Repeats</strong> values give the percentage of each monomer, and each unit is picked at random with those probabilities. Because the sequence is random, inserting the same settings twice gives two different chains.</p>
+</dd>
+</dl>
+<p>With the <strong>Percent</strong> style, the percentages must add up to 100:</p>
+<ul class="simple">
+<li><p>With one monomer, A is set to 100%.</p></li>
+<li><p>With two monomers, changing one value adjusts the other so they add up to 100%.</p></li>
+<li><p>With three monomers, the values turn red when they don’t add up to 100%, and the polymer won’t be inserted until they do.</p></li>
+</ul>
+</section>
+<section id="setting-the-chain-length">
+<h2>Setting the Chain Length<a class="headerlink" href="#setting-the-chain-length" title="Link to this heading">#</a></h2>
+<p><strong>Total Length</strong> sets how long the chain is, in either:</p>
+<dl class="simple myst">
+<dt>Repeat Units</dt><dd><p>The total number of monomer units in the chain.</p>
+</dd>
+<dt>Molecular Weight</dt><dd><p>The approximate molecular weight in g/mol. Avogadro divides this by the average mass of the monomers (weighted by the composition) and rounds to the nearest whole number of repeat units, with a minimum of one.</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The monomer masses used for this conversion include the hydrogen atoms that cap each monomer’s attachment points, so the molecular weight of the inserted chain will differ slightly from the value you entered.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Long chains can take a while to generate in 3D and are slow to optimize. Start with a short chain (e.g., 10–20 repeat units) to check the structure before building a long one.</p>
+</div>
+</section>
+<section id="setting-the-tacticity">
+<h2>Setting the Tacticity<a class="headerlink" href="#setting-the-tacticity" title="Link to this heading">#</a></h2>
+<p>For monomers with a stereocenter (such as propylene or styrene), <strong>Tacticity</strong> controls the relative stereochemistry along the chain:</p>
+<dl class="simple myst">
+<dt>Atactic / Random</dt><dd><p>Each stereocenter is set at random.</p>
+</dd>
+<dt>Isotactic</dt><dd><p>All stereocenters have the same configuration.</p>
+</dd>
+<dt>Syndiotactic</dt><dd><p>The configuration alternates from one repeat unit to the next.</p>
+</dd>
+</dl>
+<p>Tacticity has no effect on monomers without a defined stereocenter.</p>
+</section>
+<section id="inserting-the-polymer">
+<h2>Inserting the Polymer<a class="headerlink" href="#inserting-the-polymer" title="Link to this heading">#</a></h2>
+<p>Click <strong>Insert Polymer</strong>. Avogadro builds the chain, generates its 3D structure and adds it to the current molecule. The ends of the chain are capped with hydrogen atoms.</p>
+<p><img alt="a short inserted chain (e.g., 10-mer of co-styrene-butadiene) in the main window" src="../../_images/insert-polymer-result.png" /></p>
+<p>The new chain is selected and Avogadro switches to the <a class="reference internal" href="../tools/manipulation-tool.html#tools-manipulation-tool"><span class="std std-ref">Manipulate Tool</span></a>, so you can translate and rotate it into position.</p>
+<p>The generated geometry is only a starting point. It’s a good idea to optimize the geometry (<code class="docutils literal notranslate"><span class="pre">Extensions</span></code> ⇒ <code class="docutils literal notranslate"><span class="pre">Optimize</span> <span class="pre">Geometry</span></code>) before using the structure further. See <a class="reference internal" href="../optimizing-geometry/index.html#optimize"><span class="std std-ref">Optimizing Geometry</span></a> for more information.</p>
+</section>
+<section id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../building-materials/building-a-polymer-unit-cell.html#building-materials-polymer-unit-cell"><span class="std std-ref">Building a Polymer Unit Cell</span></a> – Build a periodic unit cell from a polymer</p></li>
+<li><p><a class="reference internal" href="building-with-smiles.html#building-molecules-smiles"><span class="std std-ref">Building with SMILES</span></a> – Build molecules from SMILES strings</p></li>
+<li><p><a class="reference internal" href="building-peptides.html#building-molecules-peptides"><span class="std std-ref">Building Peptides</span></a> – Build peptide chains</p></li>
+<li><p><a class="reference internal" href="../tools/manipulation-tool.html#tools-manipulation-tool"><span class="std std-ref">Manipulation Tool</span></a> – Move and position the inserted chain</p></li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="building-peptides.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Building Peptides</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="zmatrix-editor.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Z-Matrix Editor</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-monomers">Choosing Monomers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-the-composition">Setting the Composition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-the-chain-length">Setting the Chain Length</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-the-tacticity">Setting the Tacticity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inserting-the-polymer">Inserting the Polymer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#see-also">See Also</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/avogadro/two.avogadro.cc/edit/main/source/docs/building-molecules/building-polymers.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">          <p>
+            ©2026 The OpenChemistry / Avogadro Teams 
+          </p>
+          <p>Covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
+          </p></div>
+      
+        <div class="footer-item">        <p>
+          <a href="/contrib/index.html">Contribute</a>
+        </p></div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.0.2.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.4.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

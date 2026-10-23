@@ -52,6 +52,8 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/optimizing-geometry/index';</script>
     <link rel="canonical" href="https://avogadro.cc/docs/optimizing-geometry/index.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -447,6 +449,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="force-fields.html">Introduction to Force Fields</a></li>
 <li class="toctree-l2"><a class="reference internal" href="constraints.html">Geometry Constraints</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conformers.html">Finding Conformers of Molecules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotting-conformer-data.html">Plotting Conformer and Trajectory Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="enabling-ff.html">Enabling additional force fields</a></li>
 </ul>
 </details></li>
@@ -513,7 +516,7 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="optimizing-geometry">
 <span id="optimize"></span><h1>Optimizing Geometry<a class="headerlink" href="#optimizing-geometry" title="Link to this heading">#</a></h1>
 <p>Avogadro offers several methods to optimize the geometry of your system before further calculations, including the command <code class="docutils literal notranslate"><span class="pre">Extensions</span></code> ⇒ <code class="docutils literal notranslate"><span class="pre">Optimize</span> <span class="pre">Geometry</span></code> and the interactive <a class="reference internal" href="../tools/autoopt-tool.html#tools-autoopt-tool"><span class="std std-ref">AutoOptimize</span></a> tool.</p>
-<p>This section discusses in more detail on the methods used for optimization, use of geometry constraints to control optimization, and generation and use of conformers.</p>
+<p>This section discusses in more detail the methods used for optimization, use of geometry constraints to control optimization, and generation and use of conformers.</p>
 <div class="toctree-wrapper compound">
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Optimization</span></p>
 <ul>
@@ -542,6 +545,17 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="conformers.html#configure-open-babel-force-fields">Configure Open Babel Force Fields</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conformers.html#set-the-conformer-search-options">Set the Conformer Search Options</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conformers.html#analyze-results">Analyze Results</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="plotting-conformer-data.html">Plotting Conformer and Trajectory Data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="plotting-conformer-data.html#choosing-what-to-plot">Choosing What to Plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotting-conformer-data.html#following-a-distance-angle-or-dihedral">Following a Distance, Angle or Dihedral</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotting-conformer-data.html#stepping-through-the-conformers">Stepping Through the Conformers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotting-conformer-data.html#energy-units">Energy Units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotting-conformer-data.html#time-between-frames">Time Between Frames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotting-conformer-data.html#how-the-values-are-calculated">How the Values Are Calculated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotting-conformer-data.html#conformer-properties-table">Conformer Properties Table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotting-conformer-data.html#see-also">See Also</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="enabling-ff.html">Enabling additional force fields</a><ul>

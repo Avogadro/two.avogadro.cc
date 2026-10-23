@@ -3,7 +3,7 @@
 # Current Tool Pane
 
 Depending on the [current tool](tools) this pane will show various options,
-such as setting the element for the [Draw tool](tools-draw-tool) the method used in the [AutoOpt tool](tools-autoopt-tool) or the current frame in the [Animation tool](tools-animation-tool).
+such as setting the element for the [Draw tool](tools-draw-tool), the method used in the [AutoOpt tool](tools-autoopt-tool) or the current frame in the [Animation tool](tools-animation-tool).
 
 For example:
 

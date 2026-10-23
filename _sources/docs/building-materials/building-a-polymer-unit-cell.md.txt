@@ -56,4 +56,5 @@ Set options as you desire. Make sure to add a "TV 7.806 0.0 0.0" line at the bot
 
 - {ref}`tools-align-tool` – Align molecules to Cartesian axes
 - {ref}`building-materials-supercell` – Build supercells from unit cells
+- {ref}`building-molecules-polymers` – Build polymer chains to start from
 - {ref}`tools-selection-tool` – Select atoms for deletion or manipulation

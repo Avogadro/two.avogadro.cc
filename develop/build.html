@@ -440,6 +440,7 @@ document.write(`
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Building Source Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plugins/index.html">Writing Plugins</a></li>
 <li class="toctree-l1"><a class="reference internal" href="rpc.html">Avogadro Remote Procedure Call (RPC)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="automation.html">Automation and Headless Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contrib/code.html">Contributing Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contrib/ai-usage.html">AI Usage Policy</a></li>
 </ul>
@@ -512,7 +513,7 @@ repository</a> as a basis, as it will automatically download and build many of t
 <p>The instructions in this guide assume that you know how to execute commands in a terminal.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Platform-specific instructions, guidance, and information is provided in expandable callouts marked by the respective icons <span class="fab fa-windows"></span> <span class="fab fa-apple"></span> <span class="fab fa-linux"></span>.</p>
+<p>Platform-specific instructions, guidance, and information are provided in expandable callouts marked by the respective icons <span class="fab fa-windows"></span> <span class="fab fa-apple"></span> <span class="fab fa-linux"></span>.</p>
 </div>
 <div class="dropdown admonition">
 <p class="admonition-title">Windows <span class="fab fa-windows"></span></p>
@@ -578,7 +579,7 @@ Otherwise, you will need to download and install them separately.</p>
 </div>
 <div class="dropdown admonition">
 <p class="admonition-title">macOS <span class="fab fa-apple"></span></p>
-<p>We recommend to use <a class="reference external" href="https://clang.llvm.org/">Clang 17</a> on a Mac, with Ninja and CMake.</p>
+<p>We recommend using <a class="reference external" href="https://clang.llvm.org/">Clang 17</a> on a Mac, with Ninja and CMake.</p>
 </div>
 <div class="dropdown admonition">
 <p class="admonition-title">Linux <span class="fab fa-linux"></span></p>
@@ -613,7 +614,7 @@ For now though, you will probably need to obtain Qt5.</p>
 <p class="admonition-title">Linux <span class="fab fa-linux"></span></p>
 <p>Qt is widely used in the open-source community, including as the base for the KDE Plasma desktop environment, so it is generally either already installed (though not necessarily including the development libraries that you need) or easily available from package managers.</p>
 <p>Qt is large, so on Linux distributions it is often broken up into its modules.
-Unfortunately, the names of the packages for the modules varies from distro to distro, such that it is hard to say exactly which packages you should install.</p>
+Unfortunately, the names of the packages for the modules vary from distro to distro, such that it is hard to say exactly which packages you should install.</p>
 <p>You should however make sure the following Qt modules are installed:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">QtCore</span></code></p></li>
@@ -646,7 +647,7 @@ Unfortunately, the names of the packages for the modules varies from distro to d
 <li><p><code class="docutils literal notranslate"><span class="pre">readline-devel</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">rapidjson-devel</span></code></p></li>
 </ul>
-<p>You will also need <code class="docutils literal notranslate"><span class="pre">libopenssl</span></code> – either v1.1 if are building with Qt 5, or &gt;3.0 if you are building with Qt 6.</p>
+<p>You will also need <code class="docutils literal notranslate"><span class="pre">libopenssl</span></code> – either v1.1 if you are building with Qt 5, or &gt;3.0 if you are building with Qt 6.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>For a successful build of Open Babel and therefore a successful build of Avogadro, the <code class="docutils literal notranslate"><span class="pre">rapidjson</span></code> version used cannot be the v1.1.0 release; it must have been patched to include at least <a class="reference external" href="https://github.com/Tencent/rapidjson/pull/719">this patch</a> from 2016.
@@ -658,7 +659,7 @@ Your distro probably distributes a version including this patch, but if you have
 <p>Many dependencies that Avogadro needs will be automatically downloaded and built during the build process.
 This means you do not need to install them in advance, and versions will be used that the Avogadro team has determined are compatible.</p>
 <p>However, if you would prefer to use versions of these libraries that are installed on your system, you can build Avogadro with CMake flags of the style <code class="docutils literal notranslate"><span class="pre">-DUSE_SYSTEM_EIGEN</span></code>.
-For some of them it is also possible to do without them altogether by telling Avogadro to build without the features that require it.</p>
+For some of them it is also possible to do without them altogether by telling Avogadro to build without the features that require them.</p>
 <p>This list includes:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">glew</span></code></p></li>
@@ -885,7 +886,7 @@ This results in significant speed-ups (roughly n times faster in the author’s 
 <section id="building-installers">
 <span id="id4"></span><h3>Building installers<a class="headerlink" href="#building-installers" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">avogadroapp</span></code> can build installers for Avogadro.</p>
-<p>In order to do this, move into the cd into the appropriate subdirectory within the build tree and call <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">package</span></code>. So, to build the Avogadro 2 package:</p>
+<p>In order to do this, cd into the appropriate subdirectory within the build tree and call <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">package</span></code>. So, to build the Avogadro 2 package:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>build/avogadroapp
 make<span class="w"> </span>package
 </pre></div>

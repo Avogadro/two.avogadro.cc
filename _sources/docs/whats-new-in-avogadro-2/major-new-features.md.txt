@@ -54,9 +54,9 @@ A major new feature in Avogadro 2 is the layer system, similar to that found in 
 * to use multiple rendering options (e.g., display a protein with cartoon, but show a few key residues with ball-and-stick rendering)
 * to lock a layer to prevent editing (e.g., moving a molecule to bind with a locked surface or protein active site)
 
-A new section on the {ref}`Layer pane <panes-layers-pane>` and tutorials on using layers for common tasks is available in this manual.
+A new section on the {ref}`Layer pane <panes-layers-pane>` and tutorials on using layers for common tasks are available in this manual.
 
-Future development will enable the use layers for complex simulations (e.g., QM/MM with one layer defining the quantum chemical fragments).
+Future development will enable the use of layers for complex simulations (e.g., QM/MM with one layer defining the quantum chemical fragments).
 
 ### Symmetry properties
 
@@ -66,7 +66,7 @@ Avogadro 2 includes a new tool to perceive molecular symmetry, display symmetry 
 
 ### Template tool
 
-A new Template tool makes it easy to rapidly build inorganic/organometallic complexes with different geometries and ligands.&#x20;
+A new Template tool makes it easy to rapidly build inorganic/organometallic complexes with different geometries and ligands.
 
 <figure><img src="../../_static/centers.png" alt="Example of new template tool, indicating octahedral iron atom geometry" width="270"><figcaption><p>Example of the use of the Template tool to insert an octahedral iron fragment</p></figcaption></figure>
 
@@ -126,7 +126,7 @@ Writing plugins of your own, whether it's a quick script or a full package, has 
 See [Writing Plugins](develop-plugins) for details.
 
 Menu commands in particular are very flexible and powerful -- you could write a script to modify the molecule/atoms (e.g., add a solvent box), run analysis (e.g., assign R and S stereochemical labels with `rdkit`), optimize the geometry, create nanoparticles or nanotubes using installed Python modules (e.g., `pymatgen` or `ASE`), generate ice crystal structures, solvate molecules…
-Whatever you come up with, we'd love you to share what you come up with through GitHub so that others can install and use it too!
+Whatever you come up with, we'd love you to share it through GitHub so that others can install and use it too!
 
 ### Python scripting and Jupyter integration
 

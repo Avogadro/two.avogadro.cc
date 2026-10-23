@@ -12,11 +12,11 @@ The LJ model, however, can be used for atomic interactions in crystalline system
 
 ## UFF
 
-UFF \(Universal Force Field\) is capable of reproducing the most structural feature across the periodic table. This force field can optimize the geometry for all elements, and does well with inorganic materials, and organometallic materials.
+UFF \(Universal Force Field\) is capable of reproducing the most structural features across the periodic table. This force field can optimize the geometry for all elements, and does well with inorganic and organometallic materials.
 
 ## MMFF94\(s\)
 
-[MMFF94](https://en.wikipedia.org/wiki/Merck_molecular_force_field) & MMFF94s \(designed by Merck\), is particularly good with organic compounds. MMFF94 has specifically been parameterized for alkanes, alkenes, alcohols, phenols, ethers, aldehydes, ketones, ketals, acetals, hemiketals, hemiacetals, amines, amides, peptide analogs, ureas, imides, carboxylic acids, esters, carboxylate anions, ammonium cations, thiols, mercaptans, disulfides, halides \(chlorides and fluorides\), imines, iminium cations, amine N-oxides, hydroxylamines, hydroxamic acids, amidines, guanidines, amidinium cations, guanidinium cations, imidazolium cations, aromatic hydrocarbons, and heteroaromatic compounds.
+[MMFF94](https://en.wikipedia.org/wiki/Merck_molecular_force_field) & MMFF94s \(designed by Merck\), are particularly good with organic compounds. MMFF94 has specifically been parameterized for alkanes, alkenes, alcohols, phenols, ethers, aldehydes, ketones, ketals, acetals, hemiketals, hemiacetals, amines, amides, peptide analogs, ureas, imides, carboxylic acids, esters, carboxylate anions, ammonium cations, thiols, mercaptans, disulfides, halides \(chlorides and fluorides\), imines, iminium cations, amine N-oxides, hydroxylamines, hydroxamic acids, amidines, guanidines, amidinium cations, guanidinium cations, imidazolium cations, aromatic hydrocarbons, and heteroaromatic compounds.
 
 MMFF94 and MMFF94s use the same functional form to calculate the potential energy. They only differ in the Torsion and Out-Of-Plane bending parameters used. The 's' in MMFF94s stands for static and this set of parameters is more suited for tasks where the output is static (e.g., planar nitrogen atoms next to aromatic rings).
 

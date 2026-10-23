@@ -1,0 +1,861 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Optimizing with Constraints &#8212; Avogadro 2.0.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=ee427ece" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mermaid-theme.css?v=7f85688a" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=51b770b3"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/tutorials/optimizing-with-constraints';</script>
+    <link rel="canonical" href="https://avogadro.cc/docs/tutorials/optimizing-with-constraints.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Viewing Molecular Orbitals" href="viewing-molecular-orbitals.html" />
+    <link rel="prev" title="Naming a Molecule" href="naming-a-molecule.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+<aside class="bd-header-announcement" aria-label="Announcement">
+  <div class="bd-header-announcement__content">Please see the results of our <a href='https://discuss.avogadro.cc/t/avogadro-2026-survey-results/7502'>anonymous community survey</a> - more feedback welcome!</div>
+</aside>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/avogadro2.png" class="logo__image only-light" alt="Avogadro Documentation- Home"/>
+    <script>document.write(`<img src="../../_static/avogadro2-dark.png" class="logo__image only-dark" alt="Avogadro Documentation- Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../install/index.html">
+    Install
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../develop/index.html">
+    Develop
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../contrib/index.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../teach/index.html">
+    Teach
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+    Discuss
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/avogadro.cc" title="Bluesky" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-bluesky fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../install/index.html">
+    Install
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../develop/index.html">
+    Develop
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../contrib/index.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../teach/index.html">
+    Teach
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+    Discuss
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/avogadro.cc" title="Bluesky" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-bluesky fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">User Documentation</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whats-new-in-avogadro-2/index.html">What’s New in Avogadro 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../building-molecules/index.html">Building Molecules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../menus/index.html">Menus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../display-types/index.html">Display Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../panes/index.html">Panes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../optimizing-geometry/index.html">Optimizing Geometry</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Tutorials</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="building-organic-molecules.html">Building Organic Molecules with Functional Groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="building-metal-complexes.html">Building Metal Complexes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="naming-a-molecule.html">Naming a Molecule</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Optimizing with Constraints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="viewing-molecular-orbitals.html">Viewing Molecular Orbitals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="viewing-electrostatic-potential.html">Viewing Electrostatic Potential Maps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="viewing-vibrations.html">Viewing Vibrations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using-qtaim-and-wfn.html">Using QTAIM (Atoms in Molecules) Analysis</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../plugins/index.html">Plugins and Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../settings/index.html">Settings</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Guide</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Tutorials</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Optimizing...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="optimizing-with-constraints">
+<span id="tutorials-optimizing-with-constraints"></span><h1>Optimizing with Constraints<a class="headerlink" href="#optimizing-with-constraints" title="Link to this heading">#</a></h1>
+<p>Often you don’t want the <em>whole</em> molecule to relax. You might want to keep part of a structure fixed, hold a bond at a particular length, or find the best geometry with a dihedral angle locked at a chosen value. Avogadro does all of these with <strong>constraints</strong>.</p>
+<p>This tutorial is organized by task. Each section stands on its own, so jump to the one you need:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#tutorial-constraints-freeze"><span class="std std-ref">Keep some atoms from moving</span></a></p></li>
+<li><p><a class="reference internal" href="#tutorial-constraints-region"><span class="std std-ref">Optimize only one region of a molecule</span></a></p></li>
+<li><p><a class="reference internal" href="#tutorial-constraints-geometry"><span class="std std-ref">Hold a bond length, angle, or dihedral at a set value</span></a></p></li>
+<li><p><a class="reference internal" href="#tutorial-constraints-fuse"><span class="std std-ref">Keep a group of atoms rigid while it moves</span></a></p></li>
+<li><p><a class="reference internal" href="#tutorial-constraints-remove"><span class="std std-ref">Check, change, and remove constraints</span></a></p></li>
+</ul>
+<p>For a reference list of every constraint command, see <a class="reference internal" href="../optimizing-geometry/constraints.html#optimize-constraints"><span class="std std-ref">Geometry Constraints</span></a>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Constraints apply to both <kbd>Extensions</kbd> ⇒ <kbd>Optimize Geometry</kbd> and the interactive <a class="reference internal" href="../tools/autoopt-tool.html#tools-autoopt-tool"><span class="std std-ref">AutoOptimize Tool</span></a>. They also work with every energy method, including the built-in force fields, Open Babel force fields, and energy-model plugins such as xtb or machine-learning potentials.</p>
+</div>
+<section id="task-1-keep-some-atoms-from-moving">
+<span id="tutorial-constraints-freeze"></span><h2>Task 1: Keep Some Atoms from Moving<a class="headerlink" href="#task-1-keep-some-atoms-from-moving" title="Link to this heading">#</a></h2>
+<p><strong>Use this when:</strong> you have a molecule on a surface, a ligand in a fixed binding pose, or any part of a structure that must stay exactly where it is.</p>
+<p>Freezing an atom fixes its position completely. Frozen atoms do not move at all during optimization.</p>
+<ol class="arabic">
+<li><p>Use the <a class="reference internal" href="../tools/selection-tool.html#tools-selection-tool"><span class="std std-ref">Selection Tool</span></a> to select the atoms you want to keep fixed.</p></li>
+<li><p>Choose <kbd>Extensions</kbd> ⇒ <kbd>Calculate</kbd> ⇒ <kbd>Freeze Selected Atoms</kbd>.</p>
+<p><img alt="" src="../../_images/calculate-freeze.png" /></p>
+</li>
+<li><p>Choose <kbd>Extensions</kbd> ⇒ <kbd>Optimize Geometry</kbd>.</p></li>
+</ol>
+<p>The frozen atoms stay in place, and the rest of the molecule relaxes around them.</p>
+<section id="freezing-only-one-direction">
+<h3>Freezing Only One Direction<a class="headerlink" href="#freezing-only-one-direction" title="Link to this heading">#</a></h3>
+<p>Sometimes an atom should be free to move in some directions but not others. For example, you might want a molecule to stay at a fixed height above a surface while sliding across it.</p>
+<p>Select the atoms, then choose <kbd>Extensions</kbd> ⇒ <kbd>Calculate</kbd> ⇒ <kbd>Freeze Z</kbd>. The atoms can still move in X and Y. <kbd>Freeze X</kbd> and <kbd>Freeze Y</kbd> work the same way. Freeze two axes and the atoms can only move along a line.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The X, Y, and Z axes are the Cartesian axes of the molecule’s coordinates, not the directions on your screen. For a surface slab, build or orient the slab so the surface normal lies along Z.</p>
+</div>
+</section>
+</section>
+<section id="task-2-optimize-only-one-region-of-a-molecule">
+<span id="tutorial-constraints-region"></span><h2>Task 2: Optimize Only One Region of a Molecule<a class="headerlink" href="#task-2-optimize-only-one-region-of-a-molecule" title="Link to this heading">#</a></h2>
+<p><strong>Use this when:</strong> you have edited one part of a large structure (for example, a substituent, a binding site, or a defect) and want to clean up just that part.</p>
+<p><kbd>Optimize Geometry</kbd> always optimizes the whole molecule, even if some atoms are selected. To optimize only one region, <strong>freeze everything else</strong>:</p>
+<ol class="arabic simple">
+<li><p>Select the atoms you want to optimize.</p>
+<ul class="simple">
+<li><p>To grow the selection outward, use <kbd>Select</kbd> ⇒ <kbd>Enlarge Selection</kbd>. Each time you use it, the selection grows to include all atoms within 2.5 Å beyond its current outer edge.</p></li>
+</ul>
+</li>
+<li><p>Choose <kbd>Select</kbd> ⇒ <kbd>Invert Selection</kbd>. Now everything <em>except</em> your region is selected.</p></li>
+<li><p>Choose <kbd>Extensions</kbd> ⇒ <kbd>Calculate</kbd> ⇒ <kbd>Freeze Selected Atoms</kbd>.</p></li>
+<li><p>Choose <kbd>Extensions</kbd> ⇒ <kbd>Optimize Geometry</kbd>.</p></li>
+</ol>
+<p>Only your region moves.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Include a shell of neighboring atoms in the region you optimize, not just the atoms you edited. If the boundary is right next to your change, the atoms there can’t adjust and the geometry will be strained.</p>
+</div>
+<p>When you’re done, select all atoms (<kbd>Select</kbd> ⇒ <kbd>Select All</kbd>) and choose <kbd>Extensions</kbd> ⇒ <kbd>Calculate</kbd> ⇒ <kbd>Unfreeze Selected Atoms</kbd> so later optimizations can move them again.</p>
+</section>
+<section id="task-3-hold-a-bond-length-angle-or-dihedral-at-a-set-value">
+<span id="tutorial-constraints-geometry"></span><h2>Task 3: Hold a Bond Length, Angle, or Dihedral at a Set Value<a class="headerlink" href="#task-3-hold-a-bond-length-angle-or-dihedral-at-a-set-value" title="Link to this heading">#</a></h2>
+<p><strong>Use this when:</strong> you want the best geometry with one internal coordinate held fixed. Examples include:</p>
+<ul class="simple">
+<li><p>a metal–ligand distance taken from a crystal structure</p></li>
+<li><p>an approximate transition-state geometry with a partly formed bond</p></li>
+<li><p>a molecule locked into a particular conformation</p></li>
+</ul>
+<p>In this example we’ll look at the conformations of butane by holding the central C–C–C–C dihedral angle at different values.</p>
+<section id="build-butane">
+<h3>Build Butane<a class="headerlink" href="#build-butane" title="Link to this heading">#</a></h3>
+<p>Choose <kbd>Build</kbd> ⇒ <kbd>Insert</kbd> ⇒ <kbd>SMILES…</kbd>, enter <code class="docutils literal notranslate"><span class="pre">CCCC</span></code>, and click OK. (See <a class="reference internal" href="../building-molecules/building-with-smiles.html#building-molecules-smiles"><span class="std std-ref">Building with SMILES</span></a> for details.)</p>
+</section>
+<section id="option-a-the-constraints-dialog">
+<h3>Option A: The Constraints Dialog<a class="headerlink" href="#option-a-the-constraints-dialog" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p>With the <a class="reference internal" href="../tools/selection-tool.html#tools-selection-tool"><span class="std std-ref">Selection Tool</span></a>, select the four carbon atoms in order along the chain.</p></li>
+<li><p>Choose <kbd>Extensions</kbd> ⇒ <kbd>Calculate</kbd> ⇒ <kbd>Constraints…</kbd>.</p>
+<p><img alt="" src="../../_images/constraint-dialog.png" /></p>
+<p>Because four atoms are selected, the dialog chooses <strong>Torsion Angle</strong> and fills in the atom numbers and the current dihedral angle for you. (With two atoms selected it chooses <strong>Distance</strong>; with three it chooses <strong>Angle</strong>, with the middle atom as the vertex.)</p>
+</li>
+<li><p>Change <strong>Value</strong> to <code class="docutils literal notranslate"><span class="pre">0</span></code> (the eclipsed conformation) and click <strong>Add</strong>. The constraint appears in the list at the top of the dialog.</p></li>
+<li><p>Click <strong>OK</strong>, then choose <kbd>Extensions</kbd> ⇒ <kbd>Optimize Geometry</kbd>.</p></li>
+</ol>
+<p>The molecule rotates to a 0° dihedral angle, and everything else (C–H bonds, angles, and the methyl rotations) relaxes around it.</p>
+<p><strong>The value you set doesn’t have to match the current geometry.</strong> The optimization moves the atoms to reach it. This is the easiest way to set a precise bond length or angle and still get a sensible structure around it.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Atom numbers in the Constraints dialog start at <strong>1</strong>, matching the <strong>Index</strong> atom <a class="reference internal" href="../tools/label-tool.html#tools-label-tool"><span class="std std-ref">labels</span></a> and the numbering in the <a class="reference internal" href="../panes/properties.html#panes-properties-atom"><span class="std std-ref">Atom Properties</span></a> table. You can also type atom numbers directly instead of selecting atoms first.</p>
+</div>
+</section>
+<section id="option-b-the-property-tables">
+<h3>Option B: The Property Tables<a class="headerlink" href="#option-b-the-property-tables" title="Link to this heading">#</a></h3>
+<p>The property tables are a faster way to constrain a coordinate at its <em>current</em> value.</p>
+<ol class="arabic">
+<li><p>Choose <kbd>Analyze</kbd> ⇒ <kbd>Properties</kbd> ⇒ <kbd>Torsion Properties…</kbd> (or <kbd>Bond Properties…</kbd> or <kbd>Angle Properties…</kbd>).</p></li>
+<li><p>Find the C–C–C–C row. If you want a different value, edit it in the table first and press Enter. The molecule updates to match.</p></li>
+<li><p>Right-click the row and choose <kbd>Constrain Torsion</kbd>. A 🔒 appears next to the value.</p>
+<p><img alt="" src="../../_images/freeze-torsions.png" /></p>
+</li>
+<li><p>Optimize the molecule.</p></li>
+</ol>
+</section>
+<section id="try-it-a-simple-conformational-comparison">
+<h3>Try It: A Simple Conformational Comparison<a class="headerlink" href="#try-it-a-simple-conformational-comparison" title="Link to this heading">#</a></h3>
+<p>Repeat the procedure with the dihedral angle set to 0°, 60°, 120°, and 180°. After each optimization, compare the energies with <kbd>Extensions</kbd> ⇒ <kbd>Calculate</kbd> ⇒ <kbd>Energy</kbd>. The anti (180°) and gauche (about 60°) conformations should be lower in energy than the eclipsed ones (0° and 120°).</p>
+<p>Before you set a new value for the same dihedral, delete the old constraint (see <a class="reference internal" href="#tutorial-constraints-remove"><span class="std std-ref">Task 5</span></a>). Otherwise the two constraints pull against each other.</p>
+<div class="note admonition">
+<p class="admonition-title">How precise are constraints?</p>
+<p>Frozen atoms (Task 1) are exact: they do not move at all.</p>
+<p>Distance, angle, and dihedral constraints work differently. Each one acts like a very stiff spring pulling the coordinate toward its target. After optimization the value is usually very close to the target, but not always exact to the last decimal place, especially if the rest of the molecule pulls strongly against it.</p>
+<p>The energy reported for a constrained structure includes a small contribution from these springs. If you need exact energies for a comparison like the one above, use the constrained structures as starting points for a constrained optimization in a quantum chemistry program.</p>
+</div>
+</section>
+</section>
+<section id="task-4-keep-a-group-of-atoms-rigid-while-it-moves">
+<span id="tutorial-constraints-fuse"></span><h2>Task 4: Keep a Group of Atoms Rigid While It Moves<a class="headerlink" href="#task-4-keep-a-group-of-atoms-rigid-while-it-moves" title="Link to this heading">#</a></h2>
+<p><strong>Use this when:</strong> a group of atoms should keep its shape but still be able to move as a unit. Examples include a metal cluster, a nanoparticle, or a rigid ligand you want to dock against something else.</p>
+<p>This is different from freezing: frozen atoms can’t move at all, while fused atoms can translate and rotate together.</p>
+<ol class="arabic simple">
+<li><p>Select the atoms in the group.</p></li>
+<li><p>Choose <kbd>Extensions</kbd> ⇒ <kbd>Calculate</kbd> ⇒ <kbd>Fuse Selected Atoms</kbd>.</p></li>
+<li><p>Optimize.</p></li>
+</ol>
+<p>The group moves as a single piece while the rest of the system relaxes around it.</p>
+<p>Fusing works by adding a distance constraint between every pair of selected atoms, so all of those constraints will appear in the Constraints dialog. To undo it, select the same atoms and choose <kbd>Unfuse Selected Atoms</kbd>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Fusing <em>n</em> atoms creates <em>n</em>(<em>n</em>−1)/2 constraints, which is about 5,000 for a 100-atom group. For very large groups, freezing is faster if the group doesn’t actually need to move.</p>
+</div>
+</section>
+<section id="task-5-check-change-and-remove-constraints">
+<span id="tutorial-constraints-remove"></span><h2>Task 5: Check, Change, and Remove Constraints<a class="headerlink" href="#task-5-check-change-and-remove-constraints" title="Link to this heading">#</a></h2>
+<p>Constraints stay with the molecule until you remove them. If an optimization doesn’t behave as you expect, first check whether any constraints are left over from earlier work.</p>
+<section id="finding-existing-constraints">
+<h3>Finding Existing Constraints<a class="headerlink" href="#finding-existing-constraints" title="Link to this heading">#</a></h3>
+<ul>
+<li><p><strong>Frozen atoms</strong> show a 🔒 next to their X, Y, and Z coordinates in <kbd>Analyze</kbd> ⇒ <kbd>Properties</kbd> ⇒ <kbd>Atom Properties…</kbd>.</p>
+<p><img alt="" src="../../_images/freeze-atoms.png" /></p>
+</li>
+<li><p><strong>Distance, angle, and dihedral constraints</strong> are listed in <kbd>Extensions</kbd> ⇒ <kbd>Calculate</kbd> ⇒ <kbd>Constraints…</kbd>. Click a row to select the atoms it involves in the 3D view. They also show a 🔒 in the Bond, Angle, and Torsion Properties tables.</p></li>
+</ul>
+</section>
+<section id="removing-constraints">
+<h3>Removing Constraints<a class="headerlink" href="#removing-constraints" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>To remove…</p></th>
+<th class="head"><p>Do this</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Frozen atoms</p></td>
+<td><p>Select them, then <kbd>Extensions</kbd> ⇒ <kbd>Calculate</kbd> ⇒ <kbd>Unfreeze Selected Atoms</kbd>. To unfreeze all atoms, select all atoms first.</p></td>
+</tr>
+<tr class="row-odd"><td><p>One distance, angle, or dihedral constraint</p></td>
+<td><p>In the Constraints dialog, click the row and choose <strong>Delete Selected</strong>. Or right-click the row in a property table and choose <strong>Remove Constraint</strong>.</p></td>
+</tr>
+<tr class="row-even"><td><p>All distance, angle, and dihedral constraints</p></td>
+<td><p>In the Constraints dialog, choose <strong>Delete All</strong>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>A fused group</p></td>
+<td><p>Select the atoms, then <kbd>Unfuse Selected Atoms</kbd>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><strong>Delete All</strong> in the Constraints dialog does <em>not</em> unfreeze atoms. Frozen atoms are stored separately. Use <kbd>Unfreeze Selected Atoms</kbd> for those.</p>
+</div>
+</section>
+<section id="saving-constraints">
+<h3>Saving Constraints<a class="headerlink" href="#saving-constraints" title="Link to this heading">#</a></h3>
+<p>Frozen atoms and constraints are saved in Avogadro’s native <strong>CJSON</strong> format (<code class="docutils literal notranslate"><span class="pre">.cjson</span></code>), so they’re still there when you reopen the file. Most other formats (XYZ, PDB, MOL2, SDF, etc.) have no way to store them, so they’re lost when you save in those formats.</p>
+</section>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading">#</a></h2>
+<dl class="simple myst">
+<dt><strong>“I selected some atoms, but Optimize Geometry moved everything.”</strong></dt><dd><p>Selecting atoms doesn’t limit the optimization. Freeze the atoms you want to keep fixed. See <a class="reference internal" href="#tutorial-constraints-region"><span class="std std-ref">Task 2</span></a>.</p>
+</dd>
+<dt><strong>“Atoms moved that I didn’t expect to move.”</strong></dt><dd><p>Check the Constraints dialog and Atom Properties table for constraints left over from earlier work. See <a class="reference internal" href="#tutorial-constraints-remove"><span class="std std-ref">Task 5</span></a>.</p>
+</dd>
+<dt><strong>“My constrained bond ended up a little off from the value I entered.”</strong></dt><dd><p>Distance, angle, and dihedral constraints are very stiff springs, not exact locks. See <em>How precise are constraints?</em> in <a class="reference internal" href="#tutorial-constraints-geometry"><span class="std std-ref">Task 3</span></a>. If you need an exact position, freeze the atoms instead.</p>
+</dd>
+<dt><strong>“The Constraints dialog’s Add button does nothing.”</strong></dt><dd><p>Check that the atom numbers are all different and within the number of atoms in the molecule, and that a distance isn’t set to zero.</p>
+</dd>
+</dl>
+</section>
+<section id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../optimizing-geometry/constraints.html#optimize-constraints"><span class="std std-ref">Geometry Constraints</span></a>: reference for all constraint commands</p></li>
+<li><p><a class="reference internal" href="../tools/autoopt-tool.html#tools-autoopt-tool"><span class="std std-ref">AutoOptimize Tool</span></a>: interactive optimization that also respects constraints</p></li>
+<li><p><a class="reference internal" href="../optimizing-geometry/force-fields.html#optimize-force-fields"><span class="std std-ref">Force Fields</span></a>: choosing an energy method</p></li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="naming-a-molecule.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Naming a Molecule</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="viewing-molecular-orbitals.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Viewing Molecular Orbitals</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-1-keep-some-atoms-from-moving">Task 1: Keep Some Atoms from Moving</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#freezing-only-one-direction">Freezing Only One Direction</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-optimize-only-one-region-of-a-molecule">Task 2: Optimize Only One Region of a Molecule</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-3-hold-a-bond-length-angle-or-dihedral-at-a-set-value">Task 3: Hold a Bond Length, Angle, or Dihedral at a Set Value</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-butane">Build Butane</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#option-a-the-constraints-dialog">Option A: The Constraints Dialog</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#option-b-the-property-tables">Option B: The Property Tables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#try-it-a-simple-conformational-comparison">Try It: A Simple Conformational Comparison</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-4-keep-a-group-of-atoms-rigid-while-it-moves">Task 4: Keep a Group of Atoms Rigid While It Moves</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-5-check-change-and-remove-constraints">Task 5: Check, Change, and Remove Constraints</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-existing-constraints">Finding Existing Constraints</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#removing-constraints">Removing Constraints</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-constraints">Saving Constraints</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#see-also">See Also</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/avogadro/two.avogadro.cc/edit/main/source/docs/tutorials/optimizing-with-constraints.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">          <p>
+            ©2026 The OpenChemistry / Avogadro Teams 
+          </p>
+          <p>Covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
+          </p></div>
+      
+        <div class="footer-item">        <p>
+          <a href="/contrib/index.html">Contribute</a>
+        </p></div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.0.2.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.4.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

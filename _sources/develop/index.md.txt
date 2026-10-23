@@ -44,7 +44,9 @@ Avogadro supports sending messages from external scripts, through
 remote procedure call (RPC) JSON. This can be very helpful for rendering
 images of molecules, generating orbitals, etc.
 
-For more details, see the [RPC](develop-rpc) documentation.
+For more details, see the [RPC](develop-rpc) documentation. To run
+Avogadro unattended, including on servers with no display, see
+[Automation and Headless Usage](develop-automation).
 
 ### Libraries
 
@@ -92,6 +94,7 @@ structure
 build
 plugins/index
 rpc
+automation
 /contrib/code
 /contrib/ai-usage
 :::

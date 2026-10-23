@@ -90,13 +90,13 @@ What follows is a list of core plugins and brief descriptions. A few plugins are
 - **3dmol** - Export the current view for 3dmol.js rendering in a webpage
 - **ply** - Export a 3D PLY format file of the current view
 - **povray** - Export a POV-Ray scene of the current view
-- **svg** - Export a SVG render of the current image
+- **svg** - Export an SVG render of the current image
 - **vrml** - Export a VRML / WRL file of the current view
 
 ## Plotting Commands
 
 - **spectra** - plot vibrational (IR, Raman), electronic (UV), NMR and other computed spectra
-- **plotpdf** - plot the probability distribution function (PDF)
+- **plotpdf** - plot the pair distribution function (PDF)
 - **plotrmsd** - plot RMSD across multiple coordinate sets (e.g., in an MD trajectory)
 - **plotxrd** - plot simulated x-ray diffraction patterns from a crystal structure
 

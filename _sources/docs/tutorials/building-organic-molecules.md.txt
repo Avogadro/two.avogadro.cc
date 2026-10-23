@@ -144,7 +144,7 @@ Let's combine these techniques to build a more complex structure: a para-substit
 
 1. Insert benzene
 2. Add carboxylic acid: Type `C` and click on a ring hydrogen (position 1)
-3. Add nitro group: Type `N` and click on an adjacent hydrogen (position 3, ortho to CO₂H)
+3. Add nitro group: Type `N` and click on a hydrogen two carbons away from the carboxylic acid (position 3, meta to CO₂H)
 4. Add methoxy group: Type `om` and click on the para hydrogen (position 4, opposite CO₂H)
 
 ![4-methoxy-3-nitrobenzoic acid molecule](../../_static/methoxynitrobenzoic-acid.png){height=300px align=center}

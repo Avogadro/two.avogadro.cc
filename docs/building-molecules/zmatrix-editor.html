@@ -1,0 +1,760 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Z-Matrix Editor &#8212; Avogadro 2.0.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=ee427ece" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mermaid-theme.css?v=7f85688a" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=51b770b3"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/building-molecules/zmatrix-editor';</script>
+    <link rel="canonical" href="https://avogadro.cc/docs/building-molecules/zmatrix-editor.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Tools" href="../tools/index.html" />
+    <link rel="prev" title="Building Polymers" href="building-polymers.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+<aside class="bd-header-announcement" aria-label="Announcement">
+  <div class="bd-header-announcement__content">Please see the results of our <a href='https://discuss.avogadro.cc/t/avogadro-2026-survey-results/7502'>anonymous community survey</a> - more feedback welcome!</div>
+</aside>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/avogadro2.png" class="logo__image only-light" alt="Avogadro Documentation- Home"/>
+    <script>document.write(`<img src="../../_static/avogadro2-dark.png" class="logo__image only-dark" alt="Avogadro Documentation- Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../install/index.html">
+    Install
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../develop/index.html">
+    Develop
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../contrib/index.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../teach/index.html">
+    Teach
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+    Discuss
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/avogadro.cc" title="Bluesky" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-bluesky fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../install/index.html">
+    Install
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../develop/index.html">
+    Develop
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../contrib/index.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../teach/index.html">
+    Teach
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+    Discuss
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/avogadro.cc" title="Bluesky" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-bluesky fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">User Documentation</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whats-new-in-avogadro-2/index.html">What’s New in Avogadro 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/index.html">Getting Started</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Building Molecules</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="drawing-molecules.html">Drawing Molecules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="importing-molecules-by-name.html">Importing Molecules by Name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="importing-from-the-pdb.html">Importing from the Protein Data Bank (PDB)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="insert-fragments.html">Insert Molecular Fragments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="building-with-smiles.html">Building with SMILES</a></li>
+<li class="toctree-l2"><a class="reference internal" href="building-dna-rna.html">Building DNA or RNA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="building-peptides.html">Building Peptides</a></li>
+<li class="toctree-l2"><a class="reference internal" href="building-polymers.html">Building Polymers</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Z-Matrix Editor</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../menus/index.html">Menus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../display-types/index.html">Display Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../panes/index.html">Panes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../optimizing-geometry/index.html">Optimizing Geometry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plugins/index.html">Plugins and Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../settings/index.html">Settings</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Guide</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Building Molecules</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Z-Matrix Editor</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="z-matrix-editor">
+<span id="building-molecules-zmatrix-editor"></span><h1>Z-Matrix Editor<a class="headerlink" href="#z-matrix-editor" title="Link to this heading">#</a></h1>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><strong>New in 2.1</strong>
+The Z-Matrix Editor is new in version 2.1.</p>
+</div>
+<p>A z-matrix describes a molecule by its <em>internal coordinates</em> rather than its Cartesian (<span class="math notranslate nohighlight">\(x, y, z\)</span>) coordinates. Each atom is placed relative to atoms that have already been placed:</p>
+<ul class="simple">
+<li><p>a <strong>distance</strong> <span class="math notranslate nohighlight">\(r\)</span> to a first reference atom <span class="math notranslate nohighlight">\(a\)</span>,</p></li>
+<li><p>an <strong>angle</strong> <span class="math notranslate nohighlight">\(\theta\)</span> between the atom, <span class="math notranslate nohighlight">\(a\)</span>, and a second reference atom <span class="math notranslate nohighlight">\(b\)</span> (with <span class="math notranslate nohighlight">\(a\)</span> at the vertex),</p></li>
+<li><p>a <strong>dihedral</strong> <span class="math notranslate nohighlight">\(\phi\)</span> between the atom, <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, and a third reference atom <span class="math notranslate nohighlight">\(c\)</span>.</p></li>
+</ul>
+<p>The first atom needs no references, the second only a distance, and the third only a distance and an angle. Every later row has all three.</p>
+<p>Z-matrices are a natural way to think about bond lengths, angles and torsions, and many quantum chemistry programs accept them as input. The Z-Matrix Editor shows the current molecule as a z-matrix and lets you edit any value directly.</p>
+<p><img alt="the Z-Matrix Editor docked beside acetic acid" src="../../_images/zmatrix-editor.png" /></p>
+<section id="opening-the-editor">
+<h2>Opening the Editor<a class="headerlink" href="#opening-the-editor" title="Link to this heading">#</a></h2>
+<p>Choose <code class="docutils literal notranslate"><span class="pre">Build</span></code> ⇒ <code class="docutils literal notranslate"><span class="pre">Z-Matrix</span> <span class="pre">Editor…</span></code>. The editor opens as a panel docked in the main window. Choose the menu item again to hide it.</p>
+<p>The table follows the current molecule. Moving atoms with another tool, running an optimization, or switching to a different molecule updates the values in place.</p>
+</section>
+<section id="reading-the-table">
+<h2>Reading the Table<a class="headerlink" href="#reading-the-table" title="Link to this heading">#</a></h2>
+<p>The table has one row per atom:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Column</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Row header</p></td>
+<td><p>The atom number placed by this row</p></td>
+</tr>
+<tr class="row-odd"><td><p>Element</p></td>
+<td><p>The element symbol of that atom</p></td>
+</tr>
+<tr class="row-even"><td><p><em>(unlabeled)</em></p></td>
+<td><p>Reference atom <span class="math notranslate nohighlight">\(a\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Distance (Å)</p></td>
+<td><p>Distance from this atom to <span class="math notranslate nohighlight">\(a\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><em>(unlabeled)</em></p></td>
+<td><p>Reference atom <span class="math notranslate nohighlight">\(b\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Angle (°)</p></td>
+<td><p>Angle this atom – <span class="math notranslate nohighlight">\(a\)</span> – <span class="math notranslate nohighlight">\(b\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><em>(unlabeled)</em></p></td>
+<td><p>Reference atom <span class="math notranslate nohighlight">\(c\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Dihedral (°)</p></td>
+<td><p>Dihedral this atom – <span class="math notranslate nohighlight">\(a\)</span> – <span class="math notranslate nohighlight">\(b\)</span> – <span class="math notranslate nohighlight">\(c\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The opening rows leave the cells they have no reference for empty, since there is no value to show.</p>
+<p>Avogadro picks reference atoms from bonded neighbors wherever possible, so the values are chemically meaningful bond lengths, bond angles and torsions. Separate molecules (for example, a water dimer) are anchored to atoms placed before them, so their relative position is described too.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Rows are listed in z-matrix order, which may differ from the atom numbering: every reference atom must appear in an earlier row. The row header always shows the real atom number, matching the reference columns and the rest of Avogadro. Use the <strong>Reorder Atoms</strong> <a class="reference internal" href="#zmatrix-editor-buttons"><span class="std std-ref">button</span></a> to make the two orders match.</p>
+</div>
+<p>Selecting rows in the table selects those atoms in the 3D view, and selecting atoms in the view highlights their rows.</p>
+</section>
+<section id="editing-values">
+<h2>Editing Values<a class="headerlink" href="#editing-values" title="Link to this heading">#</a></h2>
+<p>Double-click a cell to edit it.</p>
+<dl class="simple myst">
+<dt>Distance, Angle, Dihedral</dt><dd><p>Type a new value. The atom placed by that row moves, along with the part of the molecule attached to it, and the rest of the molecule stays where it is. Distances must be between 0.5 and 1000 Å, and angles between 0° and 180°. A value outside these limits is ignored, as is an edit that would move the two end atoms closer than 0.5 Å.</p>
+</dd>
+<dt>Element</dt><dd><p>Type an element symbol (e.g., <code class="docutils literal notranslate"><span class="pre">Cl</span></code>) or an atomic number (e.g., <code class="docutils literal notranslate"><span class="pre">17</span></code>). Use <code class="docutils literal notranslate"><span class="pre">Xx</span></code> or <code class="docutils literal notranslate"><span class="pre">0</span></code> for a dummy atom.</p>
+</dd>
+<dt>Reference atoms (<span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, <span class="math notranslate nohighlight">\(c\)</span>)</dt><dd><p>Type a different atom number to measure the row against another atom. No atoms move: the same geometry is described against different atoms, so only the values change. A reference must be an atom placed in an earlier row, and it can’t be the row’s own atom or an atom the row already uses. If Avogadro rejects a reference, the message below the table explains why.</p>
+</dd>
+</dl>
+<p>Every edit can be undone with <code class="docutils literal notranslate"><span class="pre">Edit</span></code> ⇒ <code class="docutils literal notranslate"><span class="pre">Undo</span></code>.</p>
+</section>
+<section id="constraining-values">
+<h2>Constraining Values<a class="headerlink" href="#constraining-values" title="Link to this heading">#</a></h2>
+<p>Right-click a Distance, Angle or Dihedral cell and choose <strong>Constrain Distance</strong>, <strong>Constrain Angle</strong> or <strong>Constrain Dihedral</strong> to hold that coordinate at its current value during geometry optimization. Constrained values show a 🔒 marker, and hovering over one shows the value it is constrained to. Choose <strong>Remove Constraint</strong> to release it.</p>
+<p>If several rows are selected, the action applies to all of them.</p>
+<p>These are the same constraints used by the optimizer and listed in the constraints dialog. See <a class="reference internal" href="../optimizing-geometry/constraints.html#optimize-constraints"><span class="std std-ref">Geometry Constraints</span></a> for more about using constraints.</p>
+</section>
+<section id="buttons">
+<span id="zmatrix-editor-buttons"></span><h2>Buttons<a class="headerlink" href="#buttons" title="Link to this heading">#</a></h2>
+<dl class="simple myst">
+<dt>Reorder Atoms</dt><dd><p>Renumber the atoms of the molecule so they match the z-matrix row order. This is useful before writing a z-matrix input file, so that the atom numbers in the file match the ones you see. This changes the atom numbering used throughout Avogadro, and can be undone. The button is disabled when the atoms are already in a valid z-matrix order.</p>
+</dd>
+<dt>Add Dummy Atoms</dt><dd><p>A z-matrix can’t describe a <em>linear</em> fragment, such as an alkyne or a nitrile. When an atom and its two references are in a straight line (within about 1°), the 180° angle doesn’t define a plane, so neither that angle nor any dihedral measured from it can be edited. The standard remedy is a dummy atom placed off the axis. This button adds one dummy atom (element <code class="docutils literal notranslate"><span class="pre">Xx</span></code>) 1 Å from each atom that needs one, bonded to that atom. It is disabled when nothing needs a dummy atom.</p>
+</dd>
+<dt>Rebuild Geometry</dt><dd><p>Rebuild every atom position from the values in the table. The molecule is not moved or reoriented: the position and orientation are taken from where the molecule already sits.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Dummy atoms are real atoms in the molecule. They are saved and exported with it until you delete them (or undo adding them). Remember to remove them before running a calculation in a program that doesn’t support dummy atoms.</p>
+</div>
+</section>
+<section id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../tools/measure-tool.html#tools-measure-tool"><span class="std std-ref">Measure Tool</span></a> – Measure and edit distances, angles and dihedrals by clicking atoms</p></li>
+<li><p><a class="reference internal" href="../optimizing-geometry/constraints.html#optimize-constraints"><span class="std std-ref">Geometry Constraints</span></a> – Use constraints during geometry optimization</p></li>
+<li><p><a class="reference internal" href="../menus/build-menu.html#menus-build-menu"><span class="std std-ref">Build Menu</span></a> – Other commands for building and editing molecules</p></li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="building-polymers.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Building Polymers</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../tools/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Tools</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-the-editor">Opening the Editor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-the-table">Reading the Table</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#editing-values">Editing Values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constraining-values">Constraining Values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buttons">Buttons</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#see-also">See Also</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/avogadro/two.avogadro.cc/edit/main/source/docs/building-molecules/zmatrix-editor.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">          <p>
+            ©2026 The OpenChemistry / Avogadro Teams 
+          </p>
+          <p>Covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
+          </p></div>
+      
+        <div class="footer-item">        <p>
+          <a href="/contrib/index.html">Contribute</a>
+        </p></div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.0.2.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.4.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

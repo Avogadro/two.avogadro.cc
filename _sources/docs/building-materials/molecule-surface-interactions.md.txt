@@ -44,7 +44,7 @@ Now we'll paste in the ethanol molecule.
 
 ![](../../_static/media_1332470085470.png)
 
-Note that the ethanol is now embedded in the surface, centered as desired. The Manipulate tool has been selected, allow us to translate the molecule as needed.
+Note that the ethanol is now embedded in the surface, centered as desired. The Manipulate tool has been selected, allowing us to translate the molecule as needed.
 
 ![](../../_static/media_1340332629038.png)
 
@@ -53,4 +53,3 @@ New in version 1.1 is an option to specify the exact amount to translate or rota
 ![](../../_static/media_1332470208253.png)
 
 Here we have translated the ethanol 2.5 Å above the Ag  surface and are ready to submit for a calculation.
-

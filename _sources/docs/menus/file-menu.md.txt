@@ -52,7 +52,7 @@ Crystal
 (export_menu)=
 #### Export Menu
 
-Export the current molecule as chemical file format or as a graphic.
+Export the current molecule in a chemical file format or as a graphic.
 
 Molecule
 : Open a file dialog to select a format to save the current molecule to.

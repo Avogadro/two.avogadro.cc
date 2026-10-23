@@ -14,7 +14,7 @@ Enter your SMILES fragment, and select "OK".
 
 ![](../../_static/insert-smiles.png)
 
-There it is..
+There it is.
 
 ![](../../_static/caffeine-window.png)
 

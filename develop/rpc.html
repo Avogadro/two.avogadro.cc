@@ -56,7 +56,7 @@
     <link rel="canonical" href="https://avogadro.cc/develop/rpc.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Contributing Code" href="../contrib/code.html" />
+    <link rel="next" title="Automation and Headless Usage" href="automation.html" />
     <link rel="prev" title="Input Generators" href="plugins/old-api/generators.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -440,6 +440,7 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="build.html">Building Source Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plugins/index.html">Writing Plugins</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Avogadro Remote Procedure Call (RPC)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="automation.html">Automation and Headless Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contrib/code.html">Contributing Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contrib/ai-usage.html">AI Usage Policy</a></li>
 </ul>
@@ -504,13 +505,22 @@ document.write(`
 <p>Avogadro 2 listens on a local socket and accepts <a class="reference external" href="https://en.wikipedia.org/wiki/JSON-RPC">JSON-RPC
 2.0</a> messages, so another program on
 the same machine can drive it: open files, load molecules straight from memory,
-change the display, render surfaces, animate vibrations, and save images.
-MoleQueue and XtalOpt use this to push results into Avogadro for visualization,
-and it is a convenient way to script figure generation from Python.</p>
+select and edit atoms, run force fields, change the display, render surfaces
+and orbitals, animate vibrations, and save images. MoleQueue and XtalOpt use
+this to push results into Avogadro for visualization, and it is a convenient
+way to script figure generation or whole workflows from Python.</p>
 <p>The easiest way to send messages is the <code class="docutils literal notranslate"><span class="pre">connect</span></code> class in the
 <a class="reference external" href="https://pypi.org/project/avogadro/">avogadro</a> package on PyPI. Everything it
 does can also be done by writing the JSON packets yourself, which is described
 further down.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This page describes Avogadro 2.1. Waiting for commands to finish, read-back
+methods such as <code class="docutils literal notranslate"><span class="pre">moleculeInfo</span></code> and <code class="docutils literal notranslate"><span class="pre">renderImage</span></code>, and most of the plugin
+commands below are new in 2.1. Use the <code class="docutils literal notranslate"><span class="pre">avogadro</span></code> Python package from the
+same release: earlier versions of <code class="docutils literal notranslate"><span class="pre">avogadro.connect</span></code> lack most of the helpers
+shown here.</p>
+</div>
 <section id="quick-start-with-python">
 <h2>Quick start with Python<a class="headerlink" href="#quick-start-with-python" title="Link to this heading">#</a></h2>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>avogadro
@@ -521,9 +531,9 @@ further down.</p>
 
 <span class="k">with</span> <span class="n">connect</span><span class="p">()</span> <span class="k">as</span> <span class="n">avo</span><span class="p">:</span>
     <span class="n">avo</span><span class="o">.</span><span class="n">open_file</span><span class="p">(</span><span class="s2">&quot;/path/to/caffeine.cml&quot;</span><span class="p">)</span>
-    <span class="c1"># render the van der Waals surface</span>
-    <span class="n">avo</span><span class="o">.</span><span class="n">command</span><span class="p">(</span><span class="s2">&quot;renderVanDerWaals&quot;</span><span class="p">)</span>
-    <span class="n">avo</span><span class="o">.</span><span class="n">save_graphic</span><span class="p">(</span><span class="s2">&quot;/path/to/caffeine.png&quot;</span><span class="p">)</span>
+    <span class="c1"># render the van der Waals surface, and wait until it is ready</span>
+    <span class="n">avo</span><span class="o">.</span><span class="n">command</span><span class="p">(</span><span class="s2">&quot;renderVanDerWaals&quot;</span><span class="p">,</span> <span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">avo</span><span class="o">.</span><span class="n">render_image</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">1200</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">900</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;/path/to/caffeine.png&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Creating a <code class="docutils literal notranslate"><span class="pre">connect</span></code> object raises <code class="docutils literal notranslate"><span class="pre">ConnectionError</span></code> if Avogadro is not
@@ -533,11 +543,42 @@ running. Each call blocks until Avogadro answers, and raises
 
 <span class="k">with</span> <span class="n">connect</span><span class="p">()</span> <span class="k">as</span> <span class="n">avo</span><span class="p">:</span>
     <span class="k">try</span><span class="p">:</span>
-        <span class="n">avo</span><span class="o">.</span><span class="n">command</span><span class="p">(</span><span class="s2">&quot;renderMO&quot;</span><span class="p">,</span> <span class="n">orbital</span><span class="o">=</span><span class="s2">&quot;homo&quot;</span><span class="p">,</span> <span class="n">isovalue</span><span class="o">=</span><span class="mf">0.02</span><span class="p">)</span>
+        <span class="n">avo</span><span class="o">.</span><span class="n">command</span><span class="p">(</span><span class="s2">&quot;renderMO&quot;</span><span class="p">,</span> <span class="n">orbital</span><span class="o">=</span><span class="s2">&quot;homo&quot;</span><span class="p">,</span> <span class="n">isovalue</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="k">except</span> <span class="n">RPCError</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">error</span><span class="o">.</span><span class="n">code</span><span class="p">,</span> <span class="n">error</span><span class="o">.</span><span class="n">message</span><span class="p">)</span>
 </pre></div>
 </div>
+<section id="getting-results-back">
+<h3>Getting results back<a class="headerlink" href="#getting-results-back" title="Link to this heading">#</a></h3>
+<p>Many commands report something useful: the atoms now selected, a measured
+distance, an energy, whether an optimization converged. That data is only sent
+when the request asks to <strong>wait</strong>. Without <code class="docutils literal notranslate"><span class="pre">wait=True</span></code> a plugin command
+answers <code class="docutils literal notranslate"><span class="pre">true</span></code> as soon as it has been accepted, which for surfaces, orbitals
+and force field calculations is before the work has even finished.</p>
+<p><code class="docutils literal notranslate"><span class="pre">result_data()</span></code> pulls the data out of a waited reply:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">avogadro.connect</span><span class="w"> </span><span class="kn">import</span> <span class="n">connect</span><span class="p">,</span> <span class="n">result_data</span>
+
+<span class="n">water</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;3</span>
+
+<span class="s2">O   0.000   0.000   0.119</span>
+<span class="s2">H   0.000   0.763  -0.477</span>
+<span class="s2">H   0.000  -0.763  -0.477</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="k">with</span> <span class="n">connect</span><span class="p">()</span> <span class="k">as</span> <span class="n">avo</span><span class="p">:</span>
+    <span class="n">avo</span><span class="o">.</span><span class="n">load_molecule</span><span class="p">(</span><span class="n">water</span><span class="p">,</span> <span class="s2">&quot;xyz&quot;</span><span class="p">)</span>
+    <span class="n">reply</span> <span class="o">=</span> <span class="n">avo</span><span class="o">.</span><span class="n">command</span><span class="p">(</span><span class="s2">&quot;measureAngle&quot;</span><span class="p">,</span> <span class="n">atoms</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">result_data</span><span class="p">(</span><span class="n">reply</span><span class="p">)[</span><span class="s2">&quot;angle&quot;</span><span class="p">])</span>  <span class="c1"># about 104</span>
+
+    <span class="n">reply</span> <span class="o">=</span> <span class="n">avo</span><span class="o">.</span><span class="n">command</span><span class="p">(</span><span class="s2">&quot;optimize&quot;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;UFF&quot;</span><span class="p">,</span> <span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">result_data</span><span class="p">(</span><span class="n">reply</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;energy&quot;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;unit&quot;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;converged&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">wait=True</span></code> is harmless for a command that finishes straight away, so it is a
+sensible default in scripts. See <a class="reference internal" href="automation.html#automation-wait"><span class="std std-ref">Waiting for commands to
+finish</span></a> for timeouts.</p>
+</section>
 <section id="methods-on-connect">
 <h3>Methods on <code class="docutils literal notranslate"><span class="pre">connect</span></code><a class="headerlink" href="#methods-on-connect" title="Link to this heading">#</a></h3>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -553,23 +594,53 @@ running. Each call blocks until Avogadro answers, and raises
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">load_molecule(content,</span> <span class="pre">format=&quot;cjson&quot;)</span></code></p></td>
 <td><p>Load molecular data from a string</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">export_file(filename)</span></code></p></td>
-<td><p>Write the active molecule, inferring the format from the extension</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">get_molecule(format=&quot;cjson&quot;)</span></code></p></td>
+<td><p>Return the active molecule as a string in any format Avogadro can write</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">save_graphic(filename)</span></code></p></td>
-<td><p>Save a bitmap image of the current view</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">export_file(filename,</span> <span class="pre">wait=True)</span></code></p></td>
+<td><p>Write the active molecule, inferring the format from the extension; waits for the write to finish</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">command(name,</span> <span class="pre">**options)</span></code></p></td>
-<td><p>Run any registered command, e.g. <code class="docutils literal notranslate"><span class="pre">command(&quot;setVibrationalMode&quot;,</span> <span class="pre">mode=3)</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">fetch_by_name(name)</span></code></p></td>
+<td><p>Download a structure by chemical name and load it</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">send(method,</span> <span class="pre">params=None,</span> <span class="pre">wait=True)</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">fetch_pdb(code)</span></code></p></td>
+<td><p>Download a Protein Data Bank entry by its four-character code</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">molecule_info()</span></code></p></td>
+<td><p>Summary of the active molecule: counts, formula, charge, whether it has orbitals, vibrations, a unit cell, and so on</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">render_image(width=None,</span> <span class="pre">height=None,</span> <span class="pre">transparent=False,</span> <span class="pre">filename=None)</span></code></p></td>
+<td><p>Render the view to a PNG file, or return the PNG bytes</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">save_graphic(filename)</span></code></p></td>
+<td><p>Save an image of the view at the window’s current size</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">list_display_types()</span></code> / <code class="docutils literal notranslate"><span class="pre">set_display_types(types)</span></code></p></td>
+<td><p>List or change the active display types</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">set_projection(kind)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;perspective&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;orthographic&quot;</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">get_camera()</span></code> / <code class="docutils literal notranslate"><span class="pre">set_camera(model_view=None,</span> <span class="pre">projection=None,</span> <span class="pre">orthographic_scale=None)</span></code></p></td>
+<td><p>Read or restore the exact view</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">version()</span></code></p></td>
+<td><p>Versions of Avogadro, its libraries, Qt, and the RPC protocol</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">list_commands()</span></code></p></td>
+<td><p>Every method this Avogadro understands, including plugin commands</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">command(name,</span> <span class="pre">wait=False,</span> <span class="pre">timeout=None,</span> <span class="pre">**options)</span></code></p></td>
+<td><p>Run any command, e.g. <code class="docutils literal notranslate"><span class="pre">command(&quot;setVibrationalMode&quot;,</span> <span class="pre">mode=3)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">send(method,</span> <span class="pre">params=None,</span> <span class="pre">wait=False,</span> <span class="pre">timeout=None)</span></code></p></td>
 <td><p>Send any JSON-RPC method; the general escape hatch</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ping()</span></code></p></td>
 <td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if Avogadro answered</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">kill()</span></code></p></td>
-<td><p>Ask Avogadro to quit (only honored with <code class="docutils literal notranslate"><span class="pre">--testing</span></code>, see below)</p></td>
+<td><p>Ask Avogadro to quit (refused, see below)</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">close()</span></code></p></td>
 <td><p>Close the connection (also done by the <code class="docutils literal notranslate"><span class="pre">with</span></code> block)</p></td>
@@ -578,21 +649,14 @@ running. Each call blocks until Avogadro answers, and raises
 </table>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">command()</span></code> and <code class="docutils literal notranslate"><span class="pre">send()</span></code> reach <em>every</em> method Avogadro understands, including
-commands added by plugins, so the list below is the real vocabulary rather than
-the handful of named convenience methods.</p>
-<p>Molecules can be sent without touching the disk, which is useful when the data
-was generated in the same script:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">xyz</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;3</span>
-
-<span class="s2">O   0.000   0.000   0.119</span>
-<span class="s2">H   0.000   0.763  -0.477</span>
-<span class="s2">H   0.000  -0.763  -0.477</span>
-<span class="s2">&quot;&quot;&quot;</span>
-
-<span class="k">with</span> <span class="n">connect</span><span class="p">()</span> <span class="k">as</span> <span class="n">avo</span><span class="p">:</span>
-    <span class="n">avo</span><span class="o">.</span><span class="n">load_molecule</span><span class="p">(</span><span class="n">xyz</span><span class="p">,</span> <span class="s2">&quot;xyz&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
+commands added by plugins, so the lists below are the real vocabulary rather
+than the handful of named helpers. The command name is positional-only, so a
+command can take an option called <code class="docutils literal notranslate"><span class="pre">name</span></code>, as in
+<code class="docutils literal notranslate"><span class="pre">avo.command(&quot;fetchByName&quot;,</span> <span class="pre">name=&quot;caffeine&quot;)</span></code>. Only <code class="docutils literal notranslate"><span class="pre">wait</span></code> and <code class="docutils literal notranslate"><span class="pre">timeout</span></code> are
+reserved.</p>
+<p>As the example shows, molecules can be sent without touching the disk, which
+is useful when the data was generated in the same script, and read back with
+<code class="docutils literal notranslate"><span class="pre">get_molecule()</span></code> in any format Avogadro can write.</p>
 </section>
 </section>
 <section id="the-connection">
@@ -608,6 +672,10 @@ sends <code class="docutils literal notranslate"><span class="pre">internalPing<
 instance leaves the server alone, and if it does not it takes the name over.
 This means messages always go to the instance that started first and is still
 alive.</p>
+<p>To use a different name, start Avogadro with <code class="docutils literal notranslate"><span class="pre">--rpc-name</span> <span class="pre">NAME</span></code> and pass the
+same name to the client, e.g. <code class="docutils literal notranslate"><span class="pre">connect(&quot;NAME&quot;)</span></code>. This lets a script run its
+own copy of Avogadro alongside your regular session. See <a class="reference internal" href="automation.html#develop-automation"><span class="std std-ref">Automation and
+Headless Usage</span></a>.</p>
 <p>Each packet on the wire is a 4-byte big-endian unsigned length followed by that
 many bytes of UTF-8 JSON. The same framing is used in both directions, so a
 reply must be read by taking the 4-byte header first and then exactly that many
@@ -625,35 +693,88 @@ bytes.</p>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">id</span></code> is any unique number for that request; the reply carries the same <code class="docutils literal notranslate"><span class="pre">id</span></code>.
-<code class="docutils literal notranslate"><span class="pre">params</span></code> is an object whose keys are the options for that method — Avogadro
-converts it to a <code class="docutils literal notranslate"><span class="pre">QVariantMap</span></code> before handing it to the plugin, so numbers,
-strings, booleans, and lists all pass through.</p>
-<p>A successful reply looks like:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">}</span>
+<code class="docutils literal notranslate"><span class="pre">params</span></code> is a single JSON object whose keys are the options for that method.
+Avogadro converts it to a <code class="docutils literal notranslate"><span class="pre">QVariantMap</span></code> before handing it to the plugin, so
+numbers, strings, booleans, and lists all pass through. Atom, bond, layer and
+molecule indices count from zero unless a command says otherwise.</p>
+<p>Two keys in <code class="docutils literal notranslate"><span class="pre">params</span></code> are reserved and never reach a plugin:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">wait</span></code> — when <code class="docutils literal notranslate"><span class="pre">true</span></code>, hold the reply until the command has finished, and
+include any data it reports.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">timeout</span></code> — how many seconds to wait before giving up, when <code class="docutils literal notranslate"><span class="pre">wait</span></code> is set.
+The default is 60.</p></li>
+</ul>
+<section id="replies">
+<h3>Replies<a class="headerlink" href="#replies" title="Link to this heading">#</a></h3>
+<p>A successful reply has one of three shapes, depending on the method:</p>
+<ul>
+<li><p><strong>Plain</strong> — <code class="docutils literal notranslate"><span class="pre">&quot;result&quot;:</span> <span class="pre">true</span></code>. This is what every command answers when it was
+sent without <code class="docutils literal notranslate"><span class="pre">wait</span></code>.</p></li>
+<li><p><strong>Read-back</strong> — methods that exist to report something (<code class="docutils literal notranslate"><span class="pre">version</span></code>,
+<code class="docutils literal notranslate"><span class="pre">moleculeInfo</span></code>, <code class="docutils literal notranslate"><span class="pre">getMolecule</span></code>, <code class="docutils literal notranslate"><span class="pre">renderImage</span></code>, <code class="docutils literal notranslate"><span class="pre">listCommands</span></code>,
+<code class="docutils literal notranslate"><span class="pre">listMolecules</span></code>, <code class="docutils literal notranslate"><span class="pre">listTools</span></code>, <code class="docutils literal notranslate"><span class="pre">listDisplayTypes</span></code>, <code class="docutils literal notranslate"><span class="pre">getCamera</span></code>, <code class="docutils literal notranslate"><span class="pre">setCamera</span></code>,
+<code class="docutils literal notranslate"><span class="pre">activeDialog</span></code>) put their answer straight in <code class="docutils literal notranslate"><span class="pre">result</span></code>, with or without
+<code class="docutils literal notranslate"><span class="pre">wait</span></code>:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;atomCount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;formula&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;H2 O&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;hasBasisSet&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
 </pre></div>
 </div>
-<p>and a failure like:</p>
+</li>
+<li><p><strong>Finished</strong> — a command sent with <code class="docutils literal notranslate"><span class="pre">wait</span></code> answers with a <code class="docutils literal notranslate"><span class="pre">status</span></code>, an
+optional human-readable <code class="docutils literal notranslate"><span class="pre">message</span></code>, and any <code class="docutils literal notranslate"><span class="pre">data</span></code> it reports:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;finished&quot;</span><span class="p">,</span>
+<span class="w">              </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;atoms&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">],</span><span class="w"> </span><span class="nt">&quot;angle&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">104.5</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>A failure looks like:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">-32601</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Method not found&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">-2</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;There is nothing to undo.&quot;</span><span class="w"> </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Error code <code class="docutils literal notranslate"><span class="pre">-32601</span></code> means the method name is not registered — the original
-request is echoed back in <code class="docutils literal notranslate"><span class="pre">error.data.request</span></code>. Code <code class="docutils literal notranslate"><span class="pre">-1</span></code> is used for a
-method that exists but could not be carried out, for example a file that
-could not be read, or any request that arrives with no Avogadro window open.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><code class="docutils literal notranslate"><span class="pre">params</span></code> is a single JSON object. Older versions of this page showed a nested
-form with braces around each key, which is not valid JSON and is not what
-Avogadro parses.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Code</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-1</span></code></p></td>
+<td><p>The request could not be carried out: a file that could not be read or written, a malformed parameter to a method such as <code class="docutils literal notranslate"><span class="pre">renderImage</span></code> or <code class="docutils literal notranslate"><span class="pre">setCamera</span></code>, or no Avogadro window open yet.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-2</span></code></p></td>
+<td><p>The command ran and failed, or did not finish within <code class="docutils literal notranslate"><span class="pre">timeout</span></code>. The message says why.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-3</span></code></p></td>
+<td><p>That plugin is still busy with an earlier command. Wait for it, or send the earlier one with <code class="docutils literal notranslate"><span class="pre">wait</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-32601</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Method</span> <span class="pre">not</span> <span class="pre">found</span></code>: no built-in or plugin claims this method. The original request is echoed back in <code class="docutils literal notranslate"><span class="pre">error.data.request</span></code>.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
+<p>A few older plugin commands still answer <code class="docutils literal notranslate"><span class="pre">-32601</span></code> instead of <code class="docutils literal notranslate"><span class="pre">-2</span></code> when an
+option is missing or invalid; these are noted below.</p>
+<p>Requests that read or write molecule files (<code class="docutils literal notranslate"><span class="pre">openFile</span></code>, <code class="docutils literal notranslate"><span class="pre">loadMolecule</span></code>,
+<code class="docutils literal notranslate"><span class="pre">exportFile</span></code>, <code class="docutils literal notranslate"><span class="pre">getMolecule</span></code>) are held for a second or two after Avogadro
+starts, until the file formats provided by plugins such as Open Babel have
+loaded. Later requests queue behind them, so replies always come back in the
+order the requests were sent.</p>
+</section>
 </section>
 <section id="built-in-methods">
 <h2>Built-in methods<a class="headerlink" href="#built-in-methods" title="Link to this heading">#</a></h2>
-<p>These are handled by the application itself.</p>
+<p>These are handled by the application itself. Most need a main window, and
+answer <code class="docutils literal notranslate"><span class="pre">-1</span></code> while Avogadro is still starting; <code class="docutils literal notranslate"><span class="pre">version</span></code>, <code class="docutils literal notranslate"><span class="pre">activeDialog</span></code>,
+<code class="docutils literal notranslate"><span class="pre">internalPing</span></code> and <code class="docutils literal notranslate"><span class="pre">kill</span></code> work before that.</p>
+<section id="files-and-molecules">
+<h3>Files and molecules<a class="headerlink" href="#files-and-molecules" title="Link to this heading">#</a></h3>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Method</p></th>
@@ -670,13 +791,103 @@ Avogadro parses.</p>
 <td><p><code class="docutils literal notranslate"><span class="pre">content</span></code>, <code class="docutils literal notranslate"><span class="pre">format</span></code></p></td>
 <td><p>Read molecular data from a string in any format Avogadro can read, and make it the active molecule.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">exportFile</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">getMolecule</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">format</span></code> (default <code class="docutils literal notranslate"><span class="pre">&quot;cjson&quot;</span></code>)</p></td>
+<td><p>Return the active molecule as <code class="docutils literal notranslate"><span class="pre">{&quot;format&quot;,</span> <span class="pre">&quot;content&quot;}</span></code>, in any format Avogadro can write.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">exportFile</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">fileName</span></code></p></td>
-<td><p>Write the active molecule. The format is inferred from the extension, and the write is queued asynchronously, so <code class="docutils literal notranslate"><span class="pre">true</span></code> means “started”, not “finished”.</p></td>
+<td><p>Write the active molecule, inferring the format from the extension. The write happens in the background: without <code class="docutils literal notranslate"><span class="pre">wait</span></code>, <code class="docutils literal notranslate"><span class="pre">true</span></code> means “started”; with <code class="docutils literal notranslate"><span class="pre">wait</span></code>, the reply comes when the file is on disk and reports its <code class="docutils literal notranslate"><span class="pre">fileName</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">newMolecule</span></code></p></td>
+<td><p>none</p></td>
+<td><p>Create a new empty molecule and make it active, like <strong>File → New</strong>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">setActiveMolecule</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">index</span></code></p></td>
+<td><p>Make the open molecule at <code class="docutils literal notranslate"><span class="pre">index</span></code> (as <code class="docutils literal notranslate"><span class="pre">listMolecules</span></code> reports it) the active one.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">closeMolecule</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">index</span></code> (default: the active one), <code class="docutils literal notranslate"><span class="pre">discard</span></code></p></td>
+<td><p>Close a molecule. A molecule with unsaved changes is only closed if <code class="docutils literal notranslate"><span class="pre">discard</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>. Closing the last molecule leaves a new empty one.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">newMolecule</span></code>, <code class="docutils literal notranslate"><span class="pre">setActiveMolecule</span></code> and <code class="docutils literal notranslate"><span class="pre">closeMolecule</span></code> report the active
+molecule’s <code class="docutils literal notranslate"><span class="pre">index</span></code> and the <code class="docutils literal notranslate"><span class="pre">count</span></code> of open molecules when sent with <code class="docutils literal notranslate"><span class="pre">wait</span></code>.</p>
+</section>
+<section id="inspecting-avogadro">
+<h3>Inspecting Avogadro<a class="headerlink" href="#inspecting-avogadro" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Method</p></th>
+<th class="head"><p>Parameters</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">version</span></code></p></td>
+<td><p>none</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">avogadroApp</span></code>, <code class="docutils literal notranslate"><span class="pre">avogadroLibs</span></code> and <code class="docutils literal notranslate"><span class="pre">qt</span></code> versions, <code class="docutils literal notranslate"><span class="pre">platform</span></code> (<code class="docutils literal notranslate"><span class="pre">macos</span></code>, <code class="docutils literal notranslate"><span class="pre">windows</span></code>, <code class="docutils literal notranslate"><span class="pre">linux</span></code> or <code class="docutils literal notranslate"><span class="pre">bsd</span></code>) and <code class="docutils literal notranslate"><span class="pre">rpcProtocol</span></code>, which is <code class="docutils literal notranslate"><span class="pre">2</span></code> for any version that supports <code class="docutils literal notranslate"><span class="pre">wait</span></code>. An older Avogadro answers <code class="docutils literal notranslate"><span class="pre">-32601</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">listCommands</span></code></p></td>
+<td><p>none</p></td>
+<td><p>Every method Avogadro will answer, sorted by name. Each entry has <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">description</span></code>, <code class="docutils literal notranslate"><span class="pre">kind</span></code> (<code class="docutils literal notranslate"><span class="pre">builtin</span></code>, <code class="docutils literal notranslate"><span class="pre">tool</span></code> or <code class="docutils literal notranslate"><span class="pre">extension</span></code>), the owning <code class="docutils literal notranslate"><span class="pre">plugin</span></code>, and <code class="docutils literal notranslate"><span class="pre">async</span></code>, which is <code class="docutils literal notranslate"><span class="pre">true</span></code> for anything that may finish after it replies.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">moleculeInfo</span></code></p></td>
+<td><p>none</p></td>
+<td><p>Summary of the active molecule: <code class="docutils literal notranslate"><span class="pre">atomCount</span></code>, <code class="docutils literal notranslate"><span class="pre">bondCount</span></code>, <code class="docutils literal notranslate"><span class="pre">formula</span></code>, <code class="docutils literal notranslate"><span class="pre">mass</span></code>, <code class="docutils literal notranslate"><span class="pre">totalCharge</span></code>, <code class="docutils literal notranslate"><span class="pre">spinMultiplicity</span></code>, <code class="docutils literal notranslate"><span class="pre">coordinateSetCount</span></code>, <code class="docutils literal notranslate"><span class="pre">selectedAtomCount</span></code>, <code class="docutils literal notranslate"><span class="pre">residueCount</span></code>, <code class="docutils literal notranslate"><span class="pre">hasResidues</span></code>, <code class="docutils literal notranslate"><span class="pre">hasUnitCell</span></code>, <code class="docutils literal notranslate"><span class="pre">hasCustomElements</span></code>, <code class="docutils literal notranslate"><span class="pre">hasBasisSet</span></code>, <code class="docutils literal notranslate"><span class="pre">orbitalCount</span></code>, <code class="docutils literal notranslate"><span class="pre">homoIndex</span></code> (zero-based, <code class="docutils literal notranslate"><span class="pre">-1</span></code> without orbitals), <code class="docutils literal notranslate"><span class="pre">cubeCount</span></code>, <code class="docutils literal notranslate"><span class="pre">vibrationCount</span></code>, <code class="docutils literal notranslate"><span class="pre">fileName</span></code>, and the document state <code class="docutils literal notranslate"><span class="pre">modified</span></code>, <code class="docutils literal notranslate"><span class="pre">canUndo</span></code> and <code class="docutils literal notranslate"><span class="pre">canRedo</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">listMolecules</span></code></p></td>
+<td><p>none</p></td>
+<td><p>The open molecules, each with <code class="docutils literal notranslate"><span class="pre">index</span></code>, <code class="docutils literal notranslate"><span class="pre">active</span></code>, <code class="docutils literal notranslate"><span class="pre">atomCount</span></code>, <code class="docutils literal notranslate"><span class="pre">formula</span></code>, <code class="docutils literal notranslate"><span class="pre">fileName</span></code> and <code class="docutils literal notranslate"><span class="pre">modified</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">listTools</span></code></p></td>
+<td><p>none</p></td>
+<td><p>The tools of the active view, each with <code class="docutils literal notranslate"><span class="pre">name</span></code>, translated <code class="docutils literal notranslate"><span class="pre">displayName</span></code>, and <code class="docutils literal notranslate"><span class="pre">active</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">listDisplayTypes</span></code></p></td>
+<td><p>none</p></td>
+<td><p>The display types of the active view, each with <code class="docutils literal notranslate"><span class="pre">name</span></code>, translated <code class="docutils literal notranslate"><span class="pre">displayName</span></code>, <code class="docutils literal notranslate"><span class="pre">enabled</span></code>, <code class="docutils literal notranslate"><span class="pre">applicable</span></code> and <code class="docutils literal notranslate"><span class="pre">hasSettings</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">activeDialog</span></code></p></td>
+<td><p>none</p></td>
+<td><p>Whether a modal dialog is open: <code class="docutils literal notranslate"><span class="pre">open</span></code>, <code class="docutils literal notranslate"><span class="pre">title</span></code> and <code class="docutils literal notranslate"><span class="pre">className</span></code>. Answered even while another request is stuck behind that dialog.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">internalPing</span></code></p></td>
+<td><p>none</p></td>
+<td><p>Answers <code class="docutils literal notranslate"><span class="pre">&quot;pong&quot;</span></code>. Handled by the RPC layer itself, so it works even before a window exists.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="view-and-images">
+<h3>View and images<a class="headerlink" href="#view-and-images" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Method</p></th>
+<th class="head"><p>Parameters</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">renderImage</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">width</span></code>, <code class="docutils literal notranslate"><span class="pre">height</span></code>, <code class="docutils literal notranslate"><span class="pre">transparentBackground</span></code>, <code class="docutils literal notranslate"><span class="pre">fileName</span></code></p></td>
+<td><p>Render the active view to a PNG. Give both <code class="docutils literal notranslate"><span class="pre">width</span></code> and <code class="docutils literal notranslate"><span class="pre">height</span></code> (each up to 8192), or neither for the view’s own resolution. With <code class="docutils literal notranslate"><span class="pre">fileName</span></code>, the image is written there (<code class="docutils literal notranslate"><span class="pre">.png</span></code> is appended if there is no extension); without it, the PNG comes back base64-encoded in <code class="docutils literal notranslate"><span class="pre">data</span></code>. The reply also gives the <code class="docutils literal notranslate"><span class="pre">width</span></code> and <code class="docutils literal notranslate"><span class="pre">height</span></code> produced and the view’s <code class="docutils literal notranslate"><span class="pre">nativeWidth</span></code> and <code class="docutils literal notranslate"><span class="pre">nativeHeight</span></code>.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">saveGraphic</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">fileName</span></code></p></td>
-<td><p>Save a bitmap image of the active view at its current on-screen size. <code class="docutils literal notranslate"><span class="pre">.png</span></code> is appended if the name has no extension.</p></td>
+<td><p>Save an image of the active view at its current on-screen size. <code class="docutils literal notranslate"><span class="pre">.png</span></code> is appended if the name has no extension.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">getCamera</span></code></p></td>
+<td><p>none</p></td>
+<td><p>The camera’s <code class="docutils literal notranslate"><span class="pre">distance</span></code> to its focal point, <code class="docutils literal notranslate"><span class="pre">focus</span></code> (x, y, z), <code class="docutils literal notranslate"><span class="pre">projection</span></code>, <code class="docutils literal notranslate"><span class="pre">orthographicScale</span></code>, and <code class="docutils literal notranslate"><span class="pre">modelView</span></code>: the 4×4 matrix as 16 numbers in row-major order.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">setCamera</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">modelView</span></code>, <code class="docutils literal notranslate"><span class="pre">projection</span></code>, <code class="docutils literal notranslate"><span class="pre">orthographicScale</span></code></p></td>
+<td><p>Apply any of these, as returned by <code class="docutils literal notranslate"><span class="pre">getCamera</span></code>; anything left out is unchanged. Answers with the resulting camera.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">setProjection</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">type</span></code>, or <code class="docutils literal notranslate"><span class="pre">perspective</span></code> / <code class="docutils literal notranslate"><span class="pre">orthographic</span></code></p></td>
@@ -686,20 +897,63 @@ Avogadro parses.</p>
 <td><p><code class="docutils literal notranslate"><span class="pre">types</span></code>, or one key per type</p></td>
 <td><p>Choose which display types are active — see below.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">internalPing</span></code></p></td>
-<td><p>none</p></td>
-<td><p>Answers <code class="docutils literal notranslate"><span class="pre">&quot;pong&quot;</span></code>. Handled by the RPC layer itself, so it works even before a window exists.</p></td>
+</tbody>
+</table>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">renderImage</span></code> renders at the size of the view and scales the result. When
+the requested shape differs from the view’s, the image is centered on a padded
+canvas rather than reframed. See <a class="reference internal" href="automation.html#develop-automation"><span class="std std-ref">Rendering images</span></a> for
+practical advice.</p>
+</section>
+<section id="undo-tools-and-layers">
+<h3>Undo, tools and layers<a class="headerlink" href="#undo-tools-and-layers" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Method</p></th>
+<th class="head"><p>Parameters</p></th>
+<th class="head"><p>Description</p></th>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">kill</span></code></p></td>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">undo</span></code> / <code class="docutils literal notranslate"><span class="pre">redo</span></code></p></td>
 <td><p>none</p></td>
-<td><p>Quit Avogadro. Refused unless Avogadro was started with <code class="docutils literal notranslate"><span class="pre">--testing</span></code>, so that test suites can shut it down without giving every script that power.</p></td>
+<td><p>Undo or redo the active molecule’s last edit. Fails if there is nothing to undo or redo. With <code class="docutils literal notranslate"><span class="pre">wait</span></code>, reports <code class="docutils literal notranslate"><span class="pre">canUndo</span></code>, <code class="docutils literal notranslate"><span class="pre">canRedo</span></code>, <code class="docutils literal notranslate"><span class="pre">undoText</span></code>, <code class="docutils literal notranslate"><span class="pre">redoText</span></code> and <code class="docutils literal notranslate"><span class="pre">modified</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">activateTool</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">name</span></code></p></td>
+<td><p>Make a tool active, by the <code class="docutils literal notranslate"><span class="pre">name</span></code> that <code class="docutils literal notranslate"><span class="pre">listTools</span></code> reports (e.g. <code class="docutils literal notranslate"><span class="pre">&quot;Editor&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;Navigator&quot;</span></code>).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">addLayer</span></code></p></td>
+<td><p>none</p></td>
+<td><p>Add a layer to the active molecule, after the existing ones. Reports the new <code class="docutils literal notranslate"><span class="pre">layer</span></code> and the <code class="docutils literal notranslate"><span class="pre">count</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">removeLayer</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">layer</span></code></p></td>
+<td><p>Remove a layer. The last remaining layer cannot be removed.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">setActiveLayer</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">layer</span></code></p></td>
+<td><p>Make a layer the active one; new atoms go into it.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">setLayerVisible</span></code> / <code class="docutils literal notranslate"><span class="pre">getLayerVisible</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">layer</span></code>, <code class="docutils literal notranslate"><span class="pre">visible</span></code></p></td>
+<td><p>Show or hide a layer, or report whether it is <code class="docutils literal notranslate"><span class="pre">visible</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">setLayerLocked</span></code> / <code class="docutils literal notranslate"><span class="pre">getLayerLocked</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">layer</span></code>, <code class="docutils literal notranslate"><span class="pre">locked</span></code></p></td>
+<td><p>Lock or unlock a layer against edits, or report whether it is <code class="docutils literal notranslate"><span class="pre">locked</span></code>.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
+<p>The layer and tool methods behave like plugin commands: their results,
+including the answer of <code class="docutils literal notranslate"><span class="pre">getLayerVisible</span></code> and <code class="docutils literal notranslate"><span class="pre">getLayerLocked</span></code>, only come back
+when they are sent with <code class="docutils literal notranslate"><span class="pre">wait</span></code>. <code class="docutils literal notranslate"><span class="pre">visible</span></code> and <code class="docutils literal notranslate"><span class="pre">locked</span></code> must be JSON booleans.</p>
+</section>
 <section id="display-types">
 <h3>Display types<a class="headerlink" href="#display-types" title="Link to this heading">#</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">setRenderTypes</span></code> takes either a list of names:</p>
+<p><code class="docutils literal notranslate"><span class="pre">setRenderTypes</span></code> takes either a list of names to turn on, leaving the others
+as they are:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;setRenderTypes&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;types&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;BallStick&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;VanDerWaals&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
 </pre></div>
 </div>
@@ -709,22 +963,39 @@ Avogadro parses.</p>
 </pre></div>
 </div>
 <p>A name matches either a plugin’s identifier or its translated display name.
-Prefer the identifier — it does not change with the interface language:</p>
+Prefer the identifier — it does not change with the interface language.
+<code class="docutils literal notranslate"><span class="pre">listDisplayTypes</span></code> lists them; in a standard build they are:</p>
 <p><code class="docutils literal notranslate"><span class="pre">BallStick</span></code>, <code class="docutils literal notranslate"><span class="pre">Cartoons</span></code>, <code class="docutils literal notranslate"><span class="pre">CloseContacts</span></code>, <code class="docutils literal notranslate"><span class="pre">CrystalScene</span></code>, <code class="docutils literal notranslate"><span class="pre">Dipole</span></code>, <code class="docutils literal notranslate"><span class="pre">Force</span></code>,
 <code class="docutils literal notranslate"><span class="pre">Label</span></code>, <code class="docutils literal notranslate"><span class="pre">Licorice</span></code>, <code class="docutils literal notranslate"><span class="pre">NonCovalent</span></code>, <code class="docutils literal notranslate"><span class="pre">OverlayAxes</span></code>, <code class="docutils literal notranslate"><span class="pre">QTAIMScenePlugin</span></code>,
 <code class="docutils literal notranslate"><span class="pre">SurfaceRender</span></code>, <code class="docutils literal notranslate"><span class="pre">SymmetryScene</span></code>, <code class="docutils literal notranslate"><span class="pre">VanDerWaals</span></code>, <code class="docutils literal notranslate"><span class="pre">Wireframe</span></code></p>
+</section>
+<section id="quitting">
+<h3>Quitting<a class="headerlink" href="#quitting" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">kill</span></code> asks Avogadro to quit, but it is refused unless Avogadro was started
+with <code class="docutils literal notranslate"><span class="pre">--testing</span></code>, which current versions do not accept on the command line.
+End the process instead, as described in <a class="reference internal" href="automation.html#develop-automation"><span class="std std-ref">Automation and Headless
+Usage</span></a>.</p>
 </section>
 </section>
 <section id="plugin-commands">
 <h2>Plugin commands<a class="headerlink" href="#plugin-commands" title="Link to this heading">#</a></h2>
 <p>Tools and extensions register their own commands at startup, and any of them
-can be sent as a JSON-RPC method name. Commands that belong to a tool
-temporarily make that tool active, run, and then restore the tool you were
-using.</p>
-<p>Unless noted otherwise, a command needs an open molecule and returns an error
-if there is none.</p>
-<section id="atoms-and-bonds">
-<h3>Atoms and bonds<a class="headerlink" href="#atoms-and-bonds" title="Link to this heading">#</a></h3>
+can be sent as a JSON-RPC method name. <code class="docutils literal notranslate"><span class="pre">listCommands</span></code> shows which ones the
+running Avogadro has. A few things hold for all of them:</p>
+<ul class="simple">
+<li><p>A command needs an open molecule, and fails with <code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">molecule</span></code> if there is
+none. <code class="docutils literal notranslate"><span class="pre">fetchByName</span></code> and <code class="docutils literal notranslate"><span class="pre">fetchPDB</span></code> are the exception, since they create one.</p></li>
+<li><p>Commands that belong to a tool (the Editor, Measure, Align, Navigator and
+Player tools) temporarily make that tool active, run, and then restore the
+tool you were using.</p></li>
+<li><p>Edits go through Avogadro’s undo stack, so <code class="docutils literal notranslate"><span class="pre">undo</span></code> reverses them, unless
+noted otherwise. Freezing atoms and changing constraints are not undoable.</p></li>
+<li><p>Results are listed under <strong>Returns</strong>; remember they only arrive with
+<code class="docutils literal notranslate"><span class="pre">wait</span></code>.</p></li>
+</ul>
+<section id="databases">
+<h3>Databases<a class="headerlink" href="#databases" title="Link to this heading">#</a></h3>
+<p>These replace the active molecule, so they do not need one to begin with.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Command</p></th>
@@ -733,32 +1004,219 @@ if there is none.</p>
 </tr>
 </thead>
 <tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">fetchByName</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">name</span></code></p></td>
+<td><p>Download a structure by common or IUPAC name and load it. Queries the NIH Cactus resolver, then retries against PubChem’s 3D endpoint if Cactus errors or returns 2D-only coordinates.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">fetchPDB</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>Download a Protein Data Bank entry from RCSB and load it. <code class="docutils literal notranslate"><span class="pre">code</span></code> is the four-character identifier, the first character a digit 1-9 and the rest letters or digits.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Both hand the work to the network, so send them with <code class="docutils literal notranslate"><span class="pre">wait</span></code>, which is what
+the <code class="docutils literal notranslate"><span class="pre">fetch_by_name()</span></code> and <code class="docutils literal notranslate"><span class="pre">fetch_pdb()</span></code> helpers do for you. On success they
+report the <code class="docutils literal notranslate"><span class="pre">name</span></code> that was fetched and the <code class="docutils literal notranslate"><span class="pre">source</span></code> that answered (<code class="docutils literal notranslate"><span class="pre">&quot;cactus&quot;</span></code>,
+<code class="docutils literal notranslate"><span class="pre">&quot;pubchem&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;rcsb&quot;</span></code>), along with <code class="docutils literal notranslate"><span class="pre">atomCount</span></code> and <code class="docutils literal notranslate"><span class="pre">formula</span></code>; <code class="docutils literal notranslate"><span class="pre">fetchPDB</span></code>
+adds <code class="docutils literal notranslate"><span class="pre">residueCount</span></code>. A code that is malformed, a name with no match, and a
+download that cannot be read are all errors rather than empty successes.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">connect</span><span class="p">()</span> <span class="k">as</span> <span class="n">avo</span><span class="p">:</span>
+    <span class="n">entry</span> <span class="o">=</span> <span class="n">avo</span><span class="o">.</span><span class="n">fetch_pdb</span><span class="p">(</span><span class="s2">&quot;1crn&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">entry</span><span class="p">[</span><span class="s2">&quot;formula&quot;</span><span class="p">],</span> <span class="n">entry</span><span class="p">[</span><span class="s2">&quot;residueCount&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</section>
+<section id="selection">
+<h3>Selection<a class="headerlink" href="#selection" title="Link to this heading">#</a></h3>
+<p>Every selection command returns the full list of selected atoms afterwards as
+<code class="docutils literal notranslate"><span class="pre">indices</span></code>. Atoms in a locked layer are never selected.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Parameters</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">selectAtoms</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">indices</span></code>, <code class="docutils literal notranslate"><span class="pre">mode</span></code></p></td>
+<td><p>Select atoms by index. <code class="docutils literal notranslate"><span class="pre">mode</span></code> is <code class="docutils literal notranslate"><span class="pre">&quot;replace&quot;</span></code> (the default), <code class="docutils literal notranslate"><span class="pre">&quot;add&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;remove&quot;</span></code>. Nothing changes if any index is invalid.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">selectAll</span></code></p></td>
+<td><p>none</p></td>
+<td><p>Select every atom.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">selectNone</span></code></p></td>
+<td><p>none</p></td>
+<td><p>Clear the selection.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">invertSelection</span></code></p></td>
+<td><p>none</p></td>
+<td><p>Select the unselected atoms and deselect the rest.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">selectElement</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">element</span></code></p></td>
+<td><p>Select every atom of one element, given as a symbol (<code class="docutils literal notranslate"><span class="pre">&quot;N&quot;</span></code>) or atomic number (<code class="docutils literal notranslate"><span class="pre">7</span></code>), and deselect the others.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">selectWater</span></code></p></td>
+<td><p>none</p></td>
+<td><p>Select water molecules: oxygens bonded to exactly two hydrogens, and residues named <code class="docutils literal notranslate"><span class="pre">HOH</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">selectBackbone</span></code></p></td>
+<td><p>none</p></td>
+<td><p>Select residue atoms named <code class="docutils literal notranslate"><span class="pre">CA</span></code>, <code class="docutils literal notranslate"><span class="pre">C</span></code>, <code class="docutils literal notranslate"><span class="pre">N</span></code> or <code class="docutils literal notranslate"><span class="pre">O</span></code> and the hydrogens on them.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">selectSidechains</span></code></p></td>
+<td><p>none</p></td>
+<td><p>Select the other residue atoms.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">enlargeSelection</span></code></p></td>
+<td><p>none</p></td>
+<td><p>Grow the selection to every atom within 2.5 Å beyond the selected atom farthest from the selection’s center.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">shrinkSelection</span></code></p></td>
+<td><p>none</p></td>
+<td><p>Shrink that sphere by 2.5 Å.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">createLayerFromSelection</span></code></p></td>
+<td><p>none</p></td>
+<td><p>Move the selected atoms into a new layer, added after the existing ones.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">connect</span><span class="p">()</span> <span class="k">as</span> <span class="n">avo</span><span class="p">:</span>
+    <span class="n">avo</span><span class="o">.</span><span class="n">fetch_pdb</span><span class="p">(</span><span class="s2">&quot;1crn&quot;</span><span class="p">)</span>
+    <span class="n">reply</span> <span class="o">=</span> <span class="n">avo</span><span class="o">.</span><span class="n">command</span><span class="p">(</span><span class="s2">&quot;selectElement&quot;</span><span class="p">,</span> <span class="n">element</span><span class="o">=</span><span class="s2">&quot;S&quot;</span><span class="p">,</span> <span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">result_data</span><span class="p">(</span><span class="n">reply</span><span class="p">)[</span><span class="s2">&quot;indices&quot;</span><span class="p">])</span>  <span class="c1"># the six sulfur atoms</span>
+</pre></div>
+</div>
+</section>
+<section id="building-and-editing">
+<h3>Building and editing<a class="headerlink" href="#building-and-editing" title="Link to this heading">#</a></h3>
+<p>The Editor commands respect locked layers: they fail if the active layer, or
+any atom they would touch, is locked. They do not adjust hydrogens, so send
+<code class="docutils literal notranslate"><span class="pre">adjustHydrogens</span></code> afterwards if you want that.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Parameters</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">addAtom</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">element</span></code>, <code class="docutils literal notranslate"><span class="pre">position</span></code>, <code class="docutils literal notranslate"><span class="pre">bondTo</span></code>, <code class="docutils literal notranslate"><span class="pre">bondOrder</span></code></p></td>
+<td><p>Add an atom at <code class="docutils literal notranslate"><span class="pre">position</span></code> (<code class="docutils literal notranslate"><span class="pre">[x,</span> <span class="pre">y,</span> <span class="pre">z]</span></code> in Å). <code class="docutils literal notranslate"><span class="pre">element</span></code> is a symbol or atomic number. With <code class="docutils literal notranslate"><span class="pre">bondTo</span></code>, it is bonded to that atom with <code class="docutils literal notranslate"><span class="pre">bondOrder</span></code> 1–3 (default 1). Returns the new atom’s <code class="docutils literal notranslate"><span class="pre">index</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">addBond</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">atoms</span></code>, <code class="docutils literal notranslate"><span class="pre">order</span></code></p></td>
+<td><p>Bond two unbonded atoms, <code class="docutils literal notranslate"><span class="pre">[i,</span> <span class="pre">j]</span></code>, with <code class="docutils literal notranslate"><span class="pre">order</span></code> 1–3 (default 1). Returns the bond’s <code class="docutils literal notranslate"><span class="pre">index</span></code>. Fails if they are already bonded.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">removeBond</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">atoms</span></code></p></td>
+<td><p>Remove the bond between two atoms.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">removeSelectedAtoms</span></code></p></td>
+<td><p>none</p></td>
+<td><p>Delete the selected atoms and their bonds. Returns the number <code class="docutils literal notranslate"><span class="pre">removed</span></code>. Later atoms are renumbered.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">addHydrogens</span></code></p></td>
+<td><p>none</p></td>
+<td><p>Add hydrogens to atoms with incomplete valences.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">removeHydrogens</span></code></p></td>
+<td><p>none</p></td>
+<td><p>Remove hydrogens from atoms with too many.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">adjustHydrogens</span></code></p></td>
+<td><p>none</p></td>
+<td><p>Both of the above.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">removeAllHydrogens</span></code></p></td>
+<td><p>none</p></td>
+<td><p>Remove every hydrogen atom.</p></td>
+</tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">createBonds</span></code></p></td>
 <td><p>none</p></td>
-<td><p>Perceive bonds between all atoms, or within the selection if there is one.</p></td>
+<td><p>Perceive bonds from interatomic distances, between all atoms or between selected atoms. Uses the tolerance set in <strong>Configure Bonding</strong>.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">removeBonds</span></code></p></td>
 <td><p>none</p></td>
-<td><p>Remove bonds from all atoms, or from the selection.</p></td>
+<td><p>Remove all bonds, or every bond to a selected atom.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">addBondOrders</span></code></p></td>
 <td><p>none</p></td>
 <td><p>Perceive bond orders.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">centerAtom</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">index</span></code> (or <code class="docutils literal notranslate"><span class="pre">id</span></code>)</p></td>
-<td><p>Move the molecule so that this atom sits at the origin. Atoms are numbered from zero.</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">addCentroid</span></code></p></td>
+<td><p>none</p></td>
+<td><p>Add a dummy atom at the geometric center of the molecule, or of the selected atoms.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">alignAtom</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">index</span></code> (or <code class="docutils literal notranslate"><span class="pre">id</span></code>), <code class="docutils literal notranslate"><span class="pre">axis</span></code></p></td>
-<td><p>Rotate the molecule so this atom lies along an axis. <code class="docutils literal notranslate"><span class="pre">axis</span></code> may be <code class="docutils literal notranslate"><span class="pre">&quot;x&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;y&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;z&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">2</span></code>.</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">addCenterOfMass</span></code></p></td>
+<td><p>none</p></td>
+<td><p>Add a dummy atom at the center of mass.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">addPerpendicular</span></code></p></td>
+<td><p>none</p></td>
+<td><p>Add a dummy atom 2 Å from the center, perpendicular to the best-fit plane.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
+<p>The hydrogen, bonding and centroid commands act on the whole molecule (or the
+selection, where stated) and return no data. Read the result back with
+<code class="docutils literal notranslate"><span class="pre">moleculeInfo</span></code> or <code class="docutils literal notranslate"><span class="pre">getMolecule</span></code>.</p>
 </section>
-<section id="camera-and-view">
-<h3>Camera and view<a class="headerlink" href="#camera-and-view" title="Link to this heading">#</a></h3>
+<section id="measuring-and-constraints">
+<h3>Measuring and constraints<a class="headerlink" href="#measuring-and-constraints" title="Link to this heading">#</a></h3>
+<p>The measure commands take <code class="docutils literal notranslate"><span class="pre">atoms</span></code>, a list of 2, 3 or 4 different atom
+indices, and return them with the measured value. Distances are in Å, angles
+and dihedrals in degrees, and the angle is the one at the middle atom.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Parameters</p></th>
+<th class="head"><p>Returns</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">measureDistance</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">atoms</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">distance</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">measureAngle</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">atoms</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">angle</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">measureDihedral</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">atoms</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">dihedral</span></code>, from -180 to 180</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">editDistance</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">atoms</span></code>, <code class="docutils literal notranslate"><span class="pre">value</span></code> (0.5–1000 Å)</p></td>
+<td><p>the new <code class="docutils literal notranslate"><span class="pre">distance</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">editAngle</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">atoms</span></code>, <code class="docutils literal notranslate"><span class="pre">value</span></code> (0–180°)</p></td>
+<td><p>the new <code class="docutils literal notranslate"><span class="pre">angle</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">editDihedral</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">atoms</span></code>, <code class="docutils literal notranslate"><span class="pre">value</span></code></p></td>
+<td><p>the new <code class="docutils literal notranslate"><span class="pre">dihedral</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The edit commands keep the first atom fixed and move the fragment on the far
+side of the relevant bond, or a whole separate molecule. If the atoms are
+joined some other way, for example through a ring, the command fails with an
+explanation rather than distorting the structure. The value returned is
+measured after the move.</p>
+<p>Constraints are applied by the next force field optimization. Their type
+follows from the number of atoms: 2 for a distance, 3 for an angle, 4 for a
+torsion.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Command</p></th>
@@ -767,13 +1225,125 @@ if there is none.</p>
 </tr>
 </thead>
 <tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">listConstraints</span></code></p></td>
+<td><p>none</p></td>
+<td><p>Returns <code class="docutils literal notranslate"><span class="pre">constraints</span></code>, a list of <code class="docutils literal notranslate"><span class="pre">{type,</span> <span class="pre">atoms,</span> <span class="pre">value}</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">addConstraint</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">atoms</span></code>, <code class="docutils literal notranslate"><span class="pre">value</span></code></p></td>
+<td><p>Add a constraint, or update an existing one on the same atoms (in either order). Without <code class="docutils literal notranslate"><span class="pre">value</span></code>, the current geometry is used. Returns <code class="docutils literal notranslate"><span class="pre">type</span></code>, <code class="docutils literal notranslate"><span class="pre">atoms</span></code>, <code class="docutils literal notranslate"><span class="pre">value</span></code> and <code class="docutils literal notranslate"><span class="pre">updated</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">removeConstraint</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">atoms</span></code></p></td>
+<td><p>Remove the constraint on these atoms, in either order. Returns the number <code class="docutils literal notranslate"><span class="pre">removed</span></code>; fails if none matched.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">clearConstraints</span></code></p></td>
+<td><p>none</p></td>
+<td><p>Remove every constraint. Returns the number <code class="docutils literal notranslate"><span class="pre">removed</span></code>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="force-fields">
+<h3>Force fields<a class="headerlink" href="#force-fields" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Parameters</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">listForceFields</span></code></p></td>
+<td><p>none</p></td>
+<td><p>The force fields that suit the active molecule: <code class="docutils literal notranslate"><span class="pre">names</span></code>, <code class="docutils literal notranslate"><span class="pre">methods</span></code> (each <code class="docutils literal notranslate"><span class="pre">{id,</span> <span class="pre">name}</span></code>), <code class="docutils literal notranslate"><span class="pre">count</span></code>, <code class="docutils literal notranslate"><span class="pre">recommended</span></code>, and the <code class="docutils literal notranslate"><span class="pre">current</span></code> one.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">energy</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">method</span></code></p></td>
+<td><p>Calculate the energy. Returns <code class="docutils literal notranslate"><span class="pre">energy</span></code>, <code class="docutils literal notranslate"><span class="pre">unit</span></code> (<code class="docutils literal notranslate"><span class="pre">&quot;kJ/mol&quot;</span></code>) and the <code class="docutils literal notranslate"><span class="pre">method</span></code> used.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">forces</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">method</span></code></p></td>
+<td><p>Calculate the forces (the negative gradient), and show them as force arrows. Returns <code class="docutils literal notranslate"><span class="pre">forces</span></code>, one <code class="docutils literal notranslate"><span class="pre">[fx,</span> <span class="pre">fy,</span> <span class="pre">fz]</span></code> per atom in kJ/(mol·Å), plus <code class="docutils literal notranslate"><span class="pre">energy</span></code>, <code class="docutils literal notranslate"><span class="pre">rmsForce</span></code>, <code class="docutils literal notranslate"><span class="pre">maxForce</span></code>, <code class="docutils literal notranslate"><span class="pre">unit</span></code> and <code class="docutils literal notranslate"><span class="pre">method</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">optimize</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">method</span></code>, <code class="docutils literal notranslate"><span class="pre">steps</span></code>, <code class="docutils literal notranslate"><span class="pre">gradientTolerance</span></code>, <code class="docutils literal notranslate"><span class="pre">energyTolerance</span></code></p></td>
+<td><p>Optimize the geometry, as one undo step. Returns <code class="docutils literal notranslate"><span class="pre">energy</span></code>, <code class="docutils literal notranslate"><span class="pre">unit</span></code>, <code class="docutils literal notranslate"><span class="pre">method</span></code>, the <code class="docutils literal notranslate"><span class="pre">steps</span></code> taken, <code class="docutils literal notranslate"><span class="pre">converged</span></code>, and the <code class="docutils literal notranslate"><span class="pre">reason</span></code> it stopped: <code class="docutils literal notranslate"><span class="pre">gradient</span></code>, <code class="docutils literal notranslate"><span class="pre">energy</span></code>, <code class="docutils literal notranslate"><span class="pre">maxSteps</span></code>, <code class="docutils literal notranslate"><span class="pre">optimizerStopped</span></code> or <code class="docutils literal notranslate"><span class="pre">nonFinite</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">freezeSelected</span></code></p></td>
+<td><p>none</p></td>
+<td><p>Freeze the selected atoms during optimization. Returns the <code class="docutils literal notranslate"><span class="pre">count</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">unfreezeSelected</span></code></p></td>
+<td><p>none</p></td>
+<td><p>Unfreeze the selected atoms.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">freezeAxis</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">axis</span></code></p></td>
+<td><p>Freeze one Cartesian axis of the selected atoms: <code class="docutils literal notranslate"><span class="pre">&quot;x&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;y&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;z&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">0</span></code>–<code class="docutils literal notranslate"><span class="pre">2</span></code>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">method</span></code> is an identifier from <code class="docutils literal notranslate"><span class="pre">listForceFields</span></code>, such as <code class="docutils literal notranslate"><span class="pre">&quot;UFF&quot;</span></code> or
+<code class="docutils literal notranslate"><span class="pre">&quot;MMFF94&quot;</span></code>, and is case-sensitive. Without it, the force field chosen in
+<strong>Extensions → Calculate → Configure…</strong> is used, and so are the saved defaults for
+<code class="docutils literal notranslate"><span class="pre">steps</span></code> (250), <code class="docutils literal notranslate"><span class="pre">gradientTolerance</span></code> and <code class="docutils literal notranslate"><span class="pre">energyTolerance</span></code> (both 10⁻⁴).</p>
+<p><code class="docutils literal notranslate"><span class="pre">energy</span></code>, <code class="docutils literal notranslate"><span class="pre">forces</span></code> and <code class="docutils literal notranslate"><span class="pre">optimize</span></code> run in the background: always send them
+with <code class="docutils literal notranslate"><span class="pre">wait</span></code>, and a longer <code class="docutils literal notranslate"><span class="pre">timeout</span></code> for large optimizations. An optimization
+that runs out of <code class="docutils literal notranslate"><span class="pre">steps</span></code> still finishes successfully, so check <code class="docutils literal notranslate"><span class="pre">converged</span></code>.</p>
+</section>
+<section id="symmetry">
+<h3>Symmetry<a class="headerlink" href="#symmetry" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Parameters</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">detectSymmetry</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">tolerance</span></code></p></td>
+<td><p>Detect the point group. Returns <code class="docutils literal notranslate"><span class="pre">pointGroup</span></code>, e.g. <code class="docutils literal notranslate"><span class="pre">&quot;C2v&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;D∞h&quot;</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">symmetrize</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">tolerance</span></code></p></td>
+<td><p>Detect the point group and move the atoms onto it exactly. Returns <code class="docutils literal notranslate"><span class="pre">pointGroup</span></code> and <code class="docutils literal notranslate"><span class="pre">symmetryError</span></code>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">tolerance</span></code> is <code class="docutils literal notranslate"><span class="pre">&quot;tight&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;normal&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;loose&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;veryloose&quot;</span></code>. Pass it
+explicitly: otherwise the setting in the Symmetry window is used if that window
+has been opened, and <code class="docutils literal notranslate"><span class="pre">&quot;tight&quot;</span></code> if not.</p>
+</section>
+<section id="moving-the-molecule-and-the-view">
+<h3>Moving the molecule and the view<a class="headerlink" href="#moving-the-molecule-and-the-view" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Parameters</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">centerAtom</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">index</span></code> (or <code class="docutils literal notranslate"><span class="pre">id</span></code>)</p></td>
+<td><p>Move the molecule so that this atom sits at the origin.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">alignAtom</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">index</span></code> (or <code class="docutils literal notranslate"><span class="pre">id</span></code>), <code class="docutils literal notranslate"><span class="pre">axis</span></code></p></td>
+<td><p>Rotate the molecule about the origin so this atom lies along an axis: <code class="docutils literal notranslate"><span class="pre">&quot;x&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;y&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;z&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">0</span></code>–<code class="docutils literal notranslate"><span class="pre">2</span></code>. Send <code class="docutils literal notranslate"><span class="pre">centerAtom</span></code> first to rotate about a chosen atom.</p></td>
+</tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">rotateScene</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>, <code class="docutils literal notranslate"><span class="pre">z</span></code></p></td>
-<td><p>Rotate the camera about the screen x, y, and z axes, through the current focal point.</p></td>
+<td><p>Rotate the camera about the screen axes, through the focal point. One unit is 0.005 radians (about 0.29°), the same as one pixel of mouse drag.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">zoomScene</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">delta</span></code></p></td>
-<td><p>Zoom in or out. Positive values move toward the molecule.</p></td>
+<td><p>Zoom. Positive values move toward the focal point; one unit is about 2% of the distance to it.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">translateScene</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code></p></td>
@@ -781,11 +1351,66 @@ if there is none.</p>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">alignView</span></code></p></td>
 <td><p>none</p></td>
-<td><p>Align the view to the x, y, and z axes, centered on the molecule and backed off far enough to frame it.</p></td>
+<td><p>Look down the z axis, centered on the molecule and backed off far enough to frame it.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">focusSelection</span></code></p></td>
+<td><p>none</p></td>
+<td><p>Center the view on the selected atoms and zoom to fit them.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">unfocus</span></code></p></td>
+<td><p>none</p></td>
+<td><p>Reset the view to show the whole molecule.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
+<p><code class="docutils literal notranslate"><span class="pre">centerAtom</span></code> and <code class="docutils literal notranslate"><span class="pre">alignAtom</span></code> change the coordinates and can be undone; the
+others only move the camera. For exact, repeatable views use <code class="docutils literal notranslate"><span class="pre">getCamera</span></code> and
+<code class="docutils literal notranslate"><span class="pre">setCamera</span></code>.</p>
+</section>
+<section id="colors">
+<h3>Colors<a class="headerlink" href="#colors" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Parameters</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">colorAtomsCustom</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">color</span></code></p></td>
+<td><p>Color all atoms, or the selected ones.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">resetAtomColors</span></code></p></td>
+<td><p>none</p></td>
+<td><p>Go back to element colors, for all or the selected atoms.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">colorResiduesCustom</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">color</span></code></p></td>
+<td><p>Color all residues, or those whose <code class="docutils literal notranslate"><span class="pre">CA</span></code> atom is selected.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">colorResiduesByAminoAcid</span></code></p></td>
+<td><p>none</p></td>
+<td><p>Color residues by amino acid.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">colorResiduesShapely</span></code></p></td>
+<td><p>none</p></td>
+<td><p>Color residues with the Shapely scheme.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">colorResiduesBySecondaryStructure</span></code></p></td>
+<td><p>none</p></td>
+<td><p>Color residues by helix, sheet, and so on.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">resetResidueColors</span></code></p></td>
+<td><p>none</p></td>
+<td><p>Color residues by chain.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">color</span></code> is a color name such as <code class="docutils literal notranslate"><span class="pre">&quot;steelblue&quot;</span></code> or a hex code such as
+<code class="docutils literal notranslate"><span class="pre">&quot;#4682b4&quot;</span></code>. A missing or unreadable color answers <code class="docutils literal notranslate"><span class="pre">-32601</span></code>.</p>
 </section>
 <section id="crystals">
 <h3>Crystals<a class="headerlink" href="#crystals" title="Link to this heading">#</a></h3>
@@ -799,23 +1424,33 @@ if there is none.</p>
 <tbody>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">wrapUnitCell</span></code></p></td>
 <td><p>none</p></td>
-<td><p>Wrap all atoms back into the unit cell.</p></td>
+<td><p>Wrap all atoms back into the unit cell, then perceive bonds again.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">standardCrystalOrientation</span></code></p></td>
 <td><p>none</p></td>
 <td><p>Rotate the unit cell into the standard orientation.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">fillUnitCell</span></code></p></td>
-<td><p>none</p></td>
-<td><p>Add the symmetry-equivalent atoms implied by the space group.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">hallNumber</span></code> or <code class="docutils literal notranslate"><span class="pre">spaceGroup</span></code></p></td>
+<td><p>Add the symmetry-equivalent atoms, including copies on the cell faces, edges and corners.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">fillTranslationalCell</span></code></p></td>
-<td><p>none</p></td>
-<td><p>Fill the cell including atoms related by translation.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">hallNumber</span></code> or <code class="docutils literal notranslate"><span class="pre">spaceGroup</span></code></p></td>
+<td><p>Add the symmetry-equivalent atoms, keeping only one copy of each atom on the cell boundary.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
+<p>The fill commands use the molecule’s own space group, which most crystal file
+formats provide. Otherwise, give one of:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">hallNumber</span></code> — a Hall setting number from 1 to 530. This is <em>not</em> the
+International Tables number from 1 to 230.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">spaceGroup</span></code> — a symbol that names a single setting, such as <code class="docutils literal notranslate"><span class="pre">&quot;P</span> <span class="pre">21/c&quot;</span></code> or
+<code class="docutils literal notranslate"><span class="pre">&quot;F</span> <span class="pre">d</span> <span class="pre">-3</span> <span class="pre">m</span> <span class="pre">:2&quot;</span></code>. A bare number like <code class="docutils literal notranslate"><span class="pre">&quot;225&quot;</span></code> works when that group has only
+one setting.</p></li>
+</ul>
+<p>They never open a dialog; anything ambiguous is an error.</p>
 </section>
 <section id="surfaces-and-orbitals">
 <h3>Surfaces and orbitals<a class="headerlink" href="#surfaces-and-orbitals" title="Link to this heading">#</a></h3>
@@ -833,11 +1468,11 @@ if there is none.</p>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">renderSolventAccessible</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">resolution</span></code></p></td>
-<td><p>Solvent-accessible surface.</p></td>
+<td><p>Solvent-accessible surface, with a 1.4 Å probe.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">renderSolventExcluded</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">resolution</span></code></p></td>
-<td><p>Solvent-excluded surface.</p></td>
+<td><p>Solvent-excluded surface, with a 1.4 Å probe.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">renderMO</span></code> (or <code class="docutils literal notranslate"><span class="pre">renderOrbital</span></code>)</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">orbital</span></code>, <code class="docutils literal notranslate"><span class="pre">isovalue</span></code>, <code class="docutils literal notranslate"><span class="pre">resolution</span></code>, <code class="docutils literal notranslate"><span class="pre">spin</span></code></p></td>
@@ -848,33 +1483,42 @@ if there is none.</p>
 <td><p>Total electron density.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">renderSpinDensity</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">isovalue</span></code>, <code class="docutils literal notranslate"><span class="pre">resolution</span></code>, <code class="docutils literal notranslate"><span class="pre">spin</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">isovalue</span></code>, <code class="docutils literal notranslate"><span class="pre">resolution</span></code></p></td>
 <td><p>Spin density.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">renderCube</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">index</span></code>, <code class="docutils literal notranslate"><span class="pre">isovalue</span></code></p></td>
+<td><p>Draw an isosurface of a cube already in the file, counting from <code class="docutils literal notranslate"><span class="pre">1</span></code> (the default).</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>Shared options:</p>
+<p>Options:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">orbital</span></code> — either a number, counting from one so that <code class="docutils literal notranslate"><span class="pre">1</span></code> is the lowest
 orbital, or a string relative to the frontier orbitals: <code class="docutils literal notranslate"><span class="pre">&quot;homo&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;lumo&quot;</span></code>,
 <code class="docutils literal notranslate"><span class="pre">&quot;homo-1&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;lumo+2&quot;</span></code>, and so on.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">isovalue</span></code> — the isosurface value, default <code class="docutils literal notranslate"><span class="pre">0.03</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">resolution</span></code> — the cube spacing in Å. If it is left out, Avogadro picks a
+<li><p><code class="docutils literal notranslate"><span class="pre">isovalue</span></code> — the isosurface value, default <code class="docutils literal notranslate"><span class="pre">0.03</span></code>. The three molecular
+surfaces do not use it.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">resolution</span></code> — the grid spacing in Å. If it is left out, Avogadro picks a
 value from the size of the molecule, between 0.05 and 0.5 Å.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">spin</span></code> — set to <code class="docutils literal notranslate"><span class="pre">&quot;beta&quot;</span></code> for the beta orbitals or density of an
+<li><p><code class="docutils literal notranslate"><span class="pre">spin</span></code> — set to <code class="docutils literal notranslate"><span class="pre">&quot;beta&quot;</span></code> for the beta orbital or density of an
 open-shell calculation; alpha is used otherwise.</p></li>
 </ul>
-<p>Surface generation runs in the background. The reply comes back as soon as the
-calculation has been started, not when the surface appears.</p>
+<p>Each command replaces any surface already shown and turns on the surface
+display type. Calculation runs in the background, so send it with <code class="docutils literal notranslate"><span class="pre">wait</span></code>
+before saving an image. With <code class="docutils literal notranslate"><span class="pre">wait</span></code> it returns the <code class="docutils literal notranslate"><span class="pre">cubeIndex</span></code> (counting from
+one), the <code class="docutils literal notranslate"><span class="pre">isovalue</span></code>, and the <code class="docutils literal notranslate"><span class="pre">resolution</span></code> actually used.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">connect</span><span class="p">()</span> <span class="k">as</span> <span class="n">avo</span><span class="p">:</span>
-    <span class="n">avo</span><span class="o">.</span><span class="n">open_file</span><span class="p">(</span><span class="s2">&quot;acetone.out&quot;</span><span class="p">)</span>
-    <span class="n">avo</span><span class="o">.</span><span class="n">command</span><span class="p">(</span><span class="s2">&quot;renderMO&quot;</span><span class="p">,</span> <span class="n">orbital</span><span class="o">=</span><span class="s2">&quot;lumo&quot;</span><span class="p">,</span> <span class="n">isovalue</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">resolution</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+    <span class="n">avo</span><span class="o">.</span><span class="n">open_file</span><span class="p">(</span><span class="s2">&quot;/path/to/acetone.out&quot;</span><span class="p">)</span>
+    <span class="n">avo</span><span class="o">.</span><span class="n">command</span><span class="p">(</span><span class="s2">&quot;renderMO&quot;</span><span class="p">,</span> <span class="n">orbital</span><span class="o">=</span><span class="s2">&quot;lumo&quot;</span><span class="p">,</span> <span class="n">isovalue</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">avo</span><span class="o">.</span><span class="n">render_image</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">1600</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">1200</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;/path/to/lumo.png&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
-<section id="vibrations">
-<h3>Vibrations<a class="headerlink" href="#vibrations" title="Link to this heading">#</a></h3>
+<section id="vibrations-and-trajectories">
+<h3>Vibrations and trajectories<a class="headerlink" href="#vibrations-and-trajectories" title="Link to this heading">#</a></h3>
+<p>Vibrational modes and coordinate sets (frames) are numbered from zero.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Command</p></th>
@@ -883,69 +1527,162 @@ calculation has been started, not when the surface appears.</p>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">showVibrations</span></code></p></td>
-<td><p>none</p></td>
-<td><p>Open the vibrational modes dialog.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">setVibrationalMode</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">setVibrationalMode</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">mode</span></code></p></td>
-<td><p>Select a mode, numbered from zero.</p></td>
+<td><p>Select a mode and show its displacement arrows.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">setVibrationalAmplitude</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">setVibrationalAmplitude</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">amplitude</span></code></p></td>
 <td><p>Set the animation amplitude on the same 0–99 scale as the dialog slider, which starts at 20.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">startVibrationAnimation</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">startVibrationAnimation</span></code></p></td>
 <td><p>none</p></td>
-<td><p>Start animating the selected mode.</p></td>
+<td><p>Animate the selected mode until stopped.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">stopVibrationAnimation</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">stopVibrationAnimation</span></code></p></td>
 <td><p>none</p></td>
-<td><p>Stop the animation.</p></td>
+<td><p>Stop the animation and restore the geometry.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">generateDisplacedCoordinates</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">generateDisplacedCoordinates</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">modes</span></code> (or <code class="docutils literal notranslate"><span class="pre">mode</span></code>), <code class="docutils literal notranslate"><span class="pre">scale</span></code>, <code class="docutils literal notranslate"><span class="pre">structures</span></code></p></td>
-<td><p>Append coordinate sets displaced along one or more modes. <code class="docutils literal notranslate"><span class="pre">modes</span></code> is a list of mode numbers, <code class="docutils literal notranslate"><span class="pre">scale</span></code> defaults to 1.0, and <code class="docutils literal notranslate"><span class="pre">structures</span></code> (default 1) is how many displaced geometries to generate.</p></td>
+<td><p>Append coordinate sets displaced along one or more modes. <code class="docutils literal notranslate"><span class="pre">modes</span></code> is a list of mode numbers, <code class="docutils literal notranslate"><span class="pre">scale</span></code> defaults to 1.0, and <code class="docutils literal notranslate"><span class="pre">structures</span></code> (default 1) is how many displaced geometries to generate, spread evenly from <code class="docutils literal notranslate"><span class="pre">-scale</span></code> to <code class="docutils literal notranslate"><span class="pre">+scale</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">showVibrations</span></code></p></td>
+<td><p>none</p></td>
+<td><p>Open the vibrational modes window.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">nextFrame</span></code> / <code class="docutils literal notranslate"><span class="pre">previousFrame</span></code></p></td>
+<td><p>none</p></td>
+<td><p>Step to the next or previous coordinate set, wrapping around at the ends.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">setCoordinateSet</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">index</span></code></p></td>
+<td><p>Show a particular coordinate set.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">coordinateSetCount</span></code></p></td>
+<td><p>none</p></td>
+<td><p>Report without changing anything.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
+<p>The vibration commands return no data, and a missing <code class="docutils literal notranslate"><span class="pre">mode</span></code>, <code class="docutils literal notranslate"><span class="pre">amplitude</span></code>, or a
+<code class="docutils literal notranslate"><span class="pre">scale</span></code> of zero answers <code class="docutils literal notranslate"><span class="pre">-32601</span></code>. The <code class="docutils literal notranslate"><span class="pre">vibrationCount</span></code> from <code class="docutils literal notranslate"><span class="pre">moleculeInfo</span></code>
+gives the number of modes. The frame commands all return the current <code class="docutils literal notranslate"><span class="pre">frame</span></code>
+and the <code class="docutils literal notranslate"><span class="pre">count</span></code> of coordinate sets.</p>
+</section>
+<section id="windows">
+<h3>Windows<a class="headerlink" href="#windows" title="Link to this heading">#</a></h3>
+<p>These open windows rather than computing something. Avoid them in unattended
+scripts.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">showSpectra</span></code></p></td>
+<td><p>Open the spectra window, for a molecule with vibrational or other spectra.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">showMolecularProperties</span></code></p></td>
+<td><p>Open the molecular properties window. This also looks up the molecule’s name on PubChem.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">showPdfPlot</span></code></p></td>
+<td><p>Plot the pair distribution function of a crystal. Asks for its options in a modal dialog first.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">showXrdPlot</span></code></p></td>
+<td><p>Plot a theoretical X-ray diffraction pattern of a crystal. Asks for its options in a modal dialog first, unless the file already includes an XRD pattern.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>A modal dialog holds up the reply until someone closes it. <code class="docutils literal notranslate"><span class="pre">activeDialog</span></code>
+from a second connection shows what is open.</p>
+</section>
+<section id="python-plugin-commands">
+<h3>Python plugin commands<a class="headerlink" href="#python-plugin-commands" title="Link to this heading">#</a></h3>
+<p>Menu commands added by Python plugins are not available over RPC in 2.1: they
+do not appear in <code class="docutils literal notranslate"><span class="pre">listCommands</span></code>, and calling one by name answers <code class="docutils literal notranslate"><span class="pre">-32601</span></code>.
+Force fields provided by Python plugins <em>are</em> available, through
+<code class="docutils literal notranslate"><span class="pre">listForceFields</span></code>, <code class="docutils literal notranslate"><span class="pre">energy</span></code>, <code class="docutils literal notranslate"><span class="pre">forces</span></code> and <code class="docutils literal notranslate"><span class="pre">optimize</span></code>.</p>
 </section>
 </section>
 <section id="adding-commands-from-a-plugin">
 <h2>Adding commands from a plugin<a class="headerlink" href="#adding-commands-from-a-plugin" title="Link to this heading">#</a></h2>
-<p>Any <code class="docutils literal notranslate"><span class="pre">ExtensionPlugin</span></code> or <code class="docutils literal notranslate"><span class="pre">ToolPlugin</span></code> can add to this vocabulary. Register the
-names in <code class="docutils literal notranslate"><span class="pre">registerCommands()</span></code> and act on them in <code class="docutils literal notranslate"><span class="pre">handleCommand()</span></code>:</p>
+<p>Any C++ <code class="docutils literal notranslate"><span class="pre">ExtensionPlugin</span></code> or <code class="docutils literal notranslate"><span class="pre">ToolPlugin</span></code> can add to this vocabulary. Register
+the names in <code class="docutils literal notranslate"><span class="pre">registerCommands()</span></code> and act on them in <code class="docutils literal notranslate"><span class="pre">handleCommand()</span></code>:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">MyExtension::registerCommands</span><span class="p">()</span>
 <span class="p">{</span>
-<span class="w">  </span><span class="n">emit</span><span class="w"> </span><span class="n">registerCommand</span><span class="p">(</span><span class="s">&quot;renderMovie&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">tr</span><span class="p">(</span><span class="s">&quot;Render a movie of the current view.&quot;</span><span class="p">));</span>
+<span class="w">  </span><span class="n">emit</span><span class="w"> </span><span class="n">registerCommand</span><span class="p">(</span><span class="s">&quot;renderMovie&quot;</span><span class="p">,</span>
+<span class="w">                       </span><span class="n">tr</span><span class="p">(</span><span class="s">&quot;Render a movie of the current view. Options: &quot;</span>
+<span class="w">                          </span><span class="s">&quot;</span><span class="se">\&quot;</span><span class="s">fileName</span><span class="se">\&quot;</span><span class="s"> (required) and </span><span class="se">\&quot;</span><span class="s">frames</span><span class="se">\&quot;</span><span class="s">.&quot;</span><span class="p">));</span>
 <span class="p">}</span>
 
 <span class="kt">bool</span><span class="w"> </span><span class="nf">MyExtension::handleCommand</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">QString</span><span class="o">&amp;</span><span class="w"> </span><span class="n">command</span><span class="p">,</span>
 <span class="w">                                </span><span class="k">const</span><span class="w"> </span><span class="n">QVariantMap</span><span class="o">&amp;</span><span class="w"> </span><span class="n">options</span><span class="p">)</span>
 <span class="p">{</span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">command</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;renderMovie&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">renderMovie</span><span class="p">(</span><span class="n">options</span><span class="p">.</span><span class="n">value</span><span class="p">(</span><span class="s">&quot;fileName&quot;</span><span class="p">).</span><span class="n">toString</span><span class="p">());</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">command</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s">&quot;renderMovie&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"> </span><span class="c1">// becomes a &quot;Method not found&quot; error</span>
+
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">QString</span><span class="w"> </span><span class="n">fileName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">options</span><span class="p">.</span><span class="n">value</span><span class="p">(</span><span class="s">&quot;fileName&quot;</span><span class="p">).</span><span class="n">toString</span><span class="p">();</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">fileName</span><span class="p">.</span><span class="n">isEmpty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">emit</span><span class="w"> </span><span class="n">commandFailed</span><span class="p">(</span><span class="n">tr</span><span class="p">(</span><span class="s">&quot;renderMovie requires a </span><span class="se">\&quot;</span><span class="s">fileName</span><span class="se">\&quot;</span><span class="s"> option.&quot;</span><span class="p">));</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
 <span class="w">  </span><span class="p">}</span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"> </span><span class="c1">// becomes a &quot;Method not found&quot; error</span>
+
+<span class="w">  </span><span class="n">emit</span><span class="w"> </span><span class="n">commandStarted</span><span class="p">();</span><span class="w">          </span><span class="c1">// the work continues after we return</span>
+<span class="w">  </span><span class="n">startRendering</span><span class="p">(</span><span class="n">fileName</span><span class="p">);</span><span class="w">       </span><span class="c1">// ...and calls movieFinished() when done</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">MyExtension::movieFinished</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">frameCount</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="n">QVariantMap</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
+<span class="w">  </span><span class="n">result</span><span class="p">[</span><span class="s">&quot;frames&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">frameCount</span><span class="p">;</span>
+<span class="w">  </span><span class="n">emit</span><span class="w"> </span><span class="n">commandFinished</span><span class="p">(</span><span class="n">tr</span><span class="p">(</span><span class="s">&quot;Movie finished&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">result</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>The application collects these at startup, so a command is available as soon as
-the plugin loads. Return <code class="docutils literal notranslate"><span class="pre">false</span></code> for anything you do not handle — including a
-command of yours that was sent with options it cannot use — so that the caller
-gets an error rather than a silent success. If the work continues after
-<code class="docutils literal notranslate"><span class="pre">handleCommand()</span></code> returns, emit <code class="docutils literal notranslate"><span class="pre">commandFinished()</span></code> when it is done.</p>
+<p>The application collects these at startup, so a command is available as soon
+as the plugin loads, and the description shows up in <code class="docutils literal notranslate"><span class="pre">listCommands</span></code>. Describe
+the options there; it is the only documentation a script or an AI assistant
+sees.</p>
+<ul class="simple">
+<li><p>Return <code class="docutils literal notranslate"><span class="pre">false</span></code> only for a command name you do not handle.</p></li>
+<li><p>For a command of yours that cannot run, emit <code class="docutils literal notranslate"><span class="pre">commandFailed()</span></code> with a
+message and return <code class="docutils literal notranslate"><span class="pre">true</span></code>. The caller gets error <code class="docutils literal notranslate"><span class="pre">-2</span></code> and the message,
+rather than a misleading <code class="docutils literal notranslate"><span class="pre">Method</span> <span class="pre">not</span> <span class="pre">found</span></code>.</p></li>
+<li><p>Emit <code class="docutils literal notranslate"><span class="pre">commandFinished()</span></code> with any results. Only values with a JSON
+equivalent survive the trip, so convert Eigen vectors and <code class="docutils literal notranslate"><span class="pre">Core::Array</span></code>
+data to lists of numbers first.</p></li>
+<li><p>If the work continues after <code class="docutils literal notranslate"><span class="pre">handleCommand()</span></code> returns, emit
+<code class="docutils literal notranslate"><span class="pre">commandStarted()</span></code> before returning. Every path must then end in
+<code class="docutils literal notranslate"><span class="pre">commandFinished()</span></code> or <code class="docutils literal notranslate"><span class="pre">commandFailed()</span></code>, or a waiting caller only hears
+back when its <code class="docutils literal notranslate"><span class="pre">timeout</span></code> runs out.</p></li>
+<li><p>Never open a modal dialog from a command. Take options from the request,
+and fall back to saved settings.</p></li>
+</ul>
 </section>
 <section id="writing-the-packets-directly">
 <h2>Writing the packets directly<a class="headerlink" href="#writing-the-packets-directly" title="Link to this heading">#</a></h2>
 <p>If you would rather not depend on the Python package, the protocol is small
-enough to implement anywhere. In Python it is about a dozen lines:</p>
+enough to implement anywhere. In Python:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">socket</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">struct</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">tempfile</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">read_exactly</span><span class="p">(</span><span class="n">sock</span><span class="p">,</span> <span class="n">size</span><span class="p">):</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;&quot;</span>
+    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">size</span><span class="p">:</span>
+        <span class="n">chunk</span> <span class="o">=</span> <span class="n">sock</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="n">size</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">chunk</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ConnectionError</span><span class="p">(</span><span class="s2">&quot;Avogadro closed the connection&quot;</span><span class="p">)</span>
+        <span class="n">data</span> <span class="o">+=</span> <span class="n">chunk</span>
+    <span class="k">return</span> <span class="n">data</span>
+
 
 <span class="n">sock</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">AF_UNIX</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">SOCK_STREAM</span><span class="p">)</span>
 <span class="n">sock</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">tempfile</span><span class="o">.</span><span class="n">gettempdir</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;/avogadro&quot;</span><span class="p">)</span>
@@ -958,8 +1695,8 @@ enough to implement anywhere. In Python it is about a dozen lines:</p>
 <span class="p">})</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
 <span class="n">sock</span><span class="o">.</span><span class="n">sendall</span><span class="p">(</span><span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s2">&quot;&gt;I&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">request</span><span class="p">))</span> <span class="o">+</span> <span class="n">request</span><span class="p">)</span>
 
-<span class="n">size</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s2">&quot;&gt;I&quot;</span><span class="p">,</span> <span class="n">sock</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">4</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">sock</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="n">size</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)))</span>
+<span class="n">size</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s2">&quot;&gt;I&quot;</span><span class="p">,</span> <span class="n">read_exactly</span><span class="p">(</span><span class="n">sock</span><span class="p">,</span> <span class="mi">4</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">read_exactly</span><span class="p">(</span><span class="n">sock</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)))</span>
 </pre></div>
 </div>
 <p>On Windows, open <code class="docutils literal notranslate"><span class="pre">\\.\pipe\avogadro</span></code> as an unbuffered binary file instead of
@@ -987,11 +1724,11 @@ creating a socket; the framing and the JSON are identical.</p>
       </div>
     </a>
     <a class="right-next"
-       href="../contrib/code.html"
+       href="automation.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Contributing Code</p>
+        <p class="prev-next-title">Automation and Headless Usage</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1014,21 +1751,38 @@ creating a socket; the framing and the JSON are identical.</p>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-start-with-python">Quick start with Python</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-results-back">Getting results back</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-on-connect">Methods on <code class="docutils literal notranslate"><span class="pre">connect</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-connection">The connection</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#protocol">Protocol</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#protocol">Protocol</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#replies">Replies</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-methods">Built-in methods</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#files-and-molecules">Files and molecules</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inspecting-avogadro">Inspecting Avogadro</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#view-and-images">View and images</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#undo-tools-and-layers">Undo, tools and layers</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#display-types">Display types</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quitting">Quitting</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plugin-commands">Plugin commands</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#atoms-and-bonds">Atoms and bonds</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#camera-and-view">Camera and view</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#databases">Databases</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selection">Selection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#building-and-editing">Building and editing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#measuring-and-constraints">Measuring and constraints</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#force-fields">Force fields</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#symmetry">Symmetry</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moving-the-molecule-and-the-view">Moving the molecule and the view</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#colors">Colors</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#crystals">Crystals</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#surfaces-and-orbitals">Surfaces and orbitals</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vibrations">Vibrations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vibrations-and-trajectories">Vibrations and trajectories</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-plugin-commands">Python plugin commands</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-commands-from-a-plugin">Adding commands from a plugin</a></li>

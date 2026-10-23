@@ -442,6 +442,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../args.html">How plugins are run</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../io.html">The input JSON</a></li>
 
+<li class="toctree-l2"><a class="reference internal" href="../file-formats.html">File format plugins</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../metadata.html">Metadata and configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../sharing.html">The online plugin repository/index</a></li>
 <li class="toctree-l2 current active has-children"><a class="reference internal" href="index.html">Pre-2.0 Plugin API</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
@@ -457,6 +458,7 @@ document.write(`
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../../rpc.html">Avogadro Remote Procedure Call (RPC)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../automation.html">Automation and Headless Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../contrib/code.html">Contributing Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../contrib/ai-usage.html">AI Usage Policy</a></li>
 </ul>
@@ -589,7 +591,7 @@ elements not in the list (e.g., if it does not support metals), or based on the 
     <span class="c1"># we get the molecule from the supplied filename</span>
     <span class="c1">#  in cjson format (it&#39;s a temporary file created by Avogadro)</span>
     <span class="n">mol</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">pybel</span><span class="o">.</span><span class="n">readfile</span><span class="p">(</span><span class="s2">&quot;cml&quot;</span><span class="p">,</span> <span class="n">filename</span><span class="p">))</span>
- 
+
     <span class="n">ff</span> <span class="o">=</span> <span class="n">pybel</span><span class="o">.</span><span class="n">_forcefields</span><span class="p">[</span><span class="s2">&quot;uff&quot;</span><span class="p">]</span>
     <span class="n">success</span> <span class="o">=</span> <span class="n">ff</span><span class="o">.</span><span class="n">Setup</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">OBMol</span><span class="p">)</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">success</span><span class="p">:</span>
@@ -603,7 +605,7 @@ elements not in the list (e.g., if it does not support metals), or based on the 
     <span class="c1">#  in cjson format (it&#39;s a temporary file created by Avogadro)</span>
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
         <span class="n">mol_cjson</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
- 
+
     <span class="c1"># get the atomic numbers</span>
     <span class="n">atoms</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">mol_cjson</span><span class="p">[</span><span class="s2">&quot;atoms&quot;</span><span class="p">][</span><span class="s2">&quot;elements&quot;</span><span class="p">][</span><span class="s2">&quot;number&quot;</span><span class="p">])</span>
     <span class="c1"># get the coordinates in a list of [ [x, y, z], [x, y, z] … ]</span>
@@ -611,7 +613,7 @@ elements not in the list (e.g., if it does not support metals), or based on the 
     <span class="n">coordinates</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">coord_list</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>After reading coordinates from the tempory filename on the command-line arguments, Avogadro will supply updated coordinates through standard input and expect energies and gradients on the standard output.</p>
+<p>After reading coordinates from the temporary filename on the command-line arguments, Avogadro will supply updated coordinates through standard input and expect energies and gradients on the standard output.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># we loop forever - Avogadro will kill the process when done</span>
     <span class="n">num_atoms</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">atoms</span><span class="p">)</span>
     <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
@@ -620,10 +622,10 @@ elements not in the list (e.g., if it does not support metals), or based on the 
             <span class="n">coordinates</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span><span class="nb">input</span><span class="p">(),</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
             <span class="n">atom</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">atoms</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
             <span class="n">atom</span><span class="o">.</span><span class="n">OBAtom</span><span class="o">.</span><span class="n">SetVector</span><span class="p">(</span><span class="n">coordinates</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">coordinates</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">coordinates</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
- 
+
         <span class="c1"># update the molecule geometry for the next energy</span>
         <span class="n">ff</span><span class="o">.</span><span class="n">SetCoordinates</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">OBMol</span><span class="p">)</span>
- 
+
         <span class="c1"># first print the energy of these coordinates</span>
         <span class="n">energy</span> <span class="o">=</span> <span class="n">ff</span><span class="o">.</span><span class="n">Energy</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># in kJ/mol</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;AvogadroEnergy:&quot;</span><span class="p">,</span> <span class="n">energy</span><span class="p">)</span>  <span class="c1"># in kJ/mol</span>

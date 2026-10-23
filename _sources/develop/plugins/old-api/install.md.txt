@@ -36,7 +36,7 @@ Current plugin categories and their respective subdirectories:
 - Scripts that translate between different chemical file formats – found in `formatScripts`
 
 On startup, each of these subdirectories will be scanned for individual
-plugin files, as well as plugin "packages" – directories containing mutliple
+plugin files, as well as plugin "packages" – directories containing multiple
 files as well as a `plugin.json` with information about the plugin.
 
 ```{warning}

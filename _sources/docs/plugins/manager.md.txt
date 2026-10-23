@@ -114,6 +114,6 @@ Click the **Remove Selected** button to uninstall plugins.
 You will be asked whether you would like to keep or delete the plugin's files.
 If you choose to keep them, the plugin's subfolder will remain in the plugins folder.
 
-For locally installed plugins that are linked to with a symlink, the symlink is always deleted, but the source directory is unaffected. 
+For locally installed plugins that are linked to with a symlink, the symlink is always deleted, but the source directory is unaffected.
 
-If you experience problems with the plugin framework, you can remove all of them and start fresh by deleting the entire of the [plugins folder](plugins-manager-install-loc) -- Avogadro will create it again when it next starts.
+If you experience problems with the plugin framework, you can remove all of them and start fresh by deleting the entire [plugins folder](plugins-manager-install-loc) -- Avogadro will create it again when it next starts.

@@ -34,18 +34,18 @@ The atom being dragged will move within the blue Bond Manipulation Plane.
 **Left-click and drag** starting **from the bond** to **rotate the Bond Manipulation Plane** around the bonding axis.
 
 The rotation responds to the mouse movement in the same way as rotation of molecules: for example, moving the mouse upwards pushes the top part of the plane to move backwards while the bottom part moves forwards.
-It is not necessary to change the direction of mouse movement as the crest of the rotation.
+It is not necessary to change the direction of mouse movement at the crest of the rotation.
 
 **Right-click and drag** one of the **bonding atoms** to change the length of the bond.
 
 ### Twisting a Bond Dihedral
 
 With a bond selected, **click and drag** one of the **substituents** to **change the torsion angle**.
-Pulling on a substituent **rotates** the respective bonding atom and all its substituents around the bonding axis; meanwhile, the other end of bond remains fixed.
+Pulling on a substituent **rotates** the respective bonding atom and all its substituents around the bonding axis; meanwhile, the other end of the bond remains fixed.
 
 This only works when the clicked atom is directly covalently bonded to one of the bonding atoms.
 
-Drag the mouse cursor clockwise or counterclockwise around the bonding atom, and the  clicked substituent will follow the mouse.
+Drag the mouse cursor clockwise or counterclockwise around the bonding atom, and the clicked substituent will follow the mouse.
 
 Note that the angle displayed visually during this movement is _not_ a [torsion angle](https://goldbook.iupac.org/terms/view/T06406.html) but rather the [dihedral angle](https://goldbook.iupac.org/terms/view/D01730) between the substituent being dragged and the Bond Manipulation Plane (see image below).
 

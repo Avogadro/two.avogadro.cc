@@ -11,6 +11,8 @@ When optimizing geometries in Avogadro, sometimes you may wish to:
 
 **Constraints** can be applied to fix (freeze) a specific selection of atoms in a molecule, as well as to fix X, Y, or Z axes, distances, and angles. For additional information see the [AutoOptimize Tool](tools-autoopt-tool) and [Extensions Menu](menus-extensions-menu) documentation.
 
+For step-by-step instructions organized by task (for example, optimizing just one region or holding a dihedral angle fixed), see the {ref}`Optimizing with Constraints tutorial<tutorials-optimizing-with-constraints>`.
+
 :::{versionadded} 2.0
 In version 2, constraints have been reworked, offering new ways to add or remove them. A "fuse" command has also been added to enable a set of atoms to remain together (e.g. a nanoparticle or metal cluster) while optimizing other components.
 :::
@@ -64,7 +66,7 @@ For example, frozen atoms will show a 🔒 for the X, Y, and Z coordinates:
 
 ![](../../_static/freeze-atoms.png)
 
-Right clicking the dialog will bring up a contextual menu to add or remove constraints on a given atom.
+Right-clicking the dialog will bring up a contextual menu to add or remove constraints on a given atom.
 
 Similarly, distance constraints for bonds are obvious in the Bond Property dialog and the bond length is indicated with a 🔒.
 
@@ -74,4 +76,4 @@ The same is true for angles or torsions:
 
 ![](../../_static/freeze-torsions.png)
 
-The constraints dialog, however, enables distance constraints that are not bonded atoms, or other kinds of angles or torsions.
+The constraints dialog, however, enables distance constraints between atoms that are not bonded, or other kinds of angles or torsions.

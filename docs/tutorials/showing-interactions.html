@@ -1,0 +1,704 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Showing Hydrogen Bonds and Other Interactions &#8212; Avogadro 2.0.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=ee427ece" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mermaid-theme.css?v=7f85688a" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=51b770b3"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/tutorials/showing-interactions';</script>
+    <link rel="canonical" href="https://avogadro.cc/docs/tutorials/showing-interactions.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+<aside class="bd-header-announcement" aria-label="Announcement">
+  <div class="bd-header-announcement__content">Please see the results of our <a href='https://discuss.avogadro.cc/t/avogadro-2026-survey-results/7502'>anonymous community survey</a> - more feedback welcome!</div>
+</aside>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/avogadro2.png" class="logo__image only-light" alt="Avogadro Documentation- Home"/>
+    <script>document.write(`<img src="../../_static/avogadro2-dark.png" class="logo__image only-dark" alt="Avogadro Documentation- Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../install/index.html">
+    Install
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../develop/index.html">
+    Develop
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../contrib/index.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../teach/index.html">
+    Teach
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+    Discuss
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/avogadro.cc" title="Bluesky" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-bluesky fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../install/index.html">
+    Install
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../develop/index.html">
+    Develop
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../contrib/index.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../teach/index.html">
+    Teach
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://discuss.avogadro.cc">
+    Discuss
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/openchemistry/avogadrolibs" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://bsky.app/profile/avogadro.cc" title="Bluesky" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-bluesky fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Bluesky</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@avogadrochem" title="Mastodon" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">Showing...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="showing-hydrogen-bonds-and-other-interactions">
+<span id="tutorials-showing-interactions"></span><h1>Showing Hydrogen Bonds and Other Interactions<a class="headerlink" href="#showing-hydrogen-bonds-and-other-interactions" title="Link to this heading">#</a></h1>
+<p>Avogadro can draw non-covalent interactions as dashed lines, both between molecules (<em>intermolecular</em>, e.g., in a dimer or a protein–ligand complex) and within one molecule (<em>intramolecular</em>, e.g., an internal hydrogen bond). Two display types do this:</p>
+<dl class="simple myst">
+<dt>Non-Covalent</dt><dd><p>Hydrogen bonds, halogen bonds and chalcogen bonds, checked against both distance and direction.</p>
+</dd>
+<dt>Close Contacts</dt><dd><p>Atoms that are unusually close (possible clashes), plus salt bridges and repulsive contacts between charged groups.</p>
+</dd>
+</dl>
+<section id="show-hydrogen-bonds">
+<h2>Show Hydrogen Bonds<a class="headerlink" href="#show-hydrogen-bonds" title="Link to this heading">#</a></h2>
+<p>As an example, build a short piece of DNA, whose base pairs are held together by hydrogen bonds.</p>
+<ol class="arabic simple">
+<li><p>Choose <code class="docutils literal notranslate"><span class="pre">Build</span></code> ⇒ <code class="docutils literal notranslate"><span class="pre">Insert</span></code> ⇒ <code class="docutils literal notranslate"><span class="pre">DNA/RNA…</span></code> and insert a short sequence (e.g., <code class="docutils literal notranslate"><span class="pre">GATTACA</span></code>), choosing <strong>Double</strong> so both strands are built. See <a class="reference internal" href="../building-molecules/building-dna-rna.html#building-molecules-dna"><span class="std std-ref">Building DNA or RNA</span></a>.</p></li>
+<li><p>In the <a class="reference internal" href="../panes/display-types.html#panes-display-types-pane"><span class="std std-ref">Display Types pane</span></a>, check <strong>Non-Covalent</strong>.</p></li>
+</ol>
+<p>Hydrogen bonds appear as dashed light blue lines between the bases.</p>
+<p>The same works for any structure: a water cluster, a protein from the PDB (<code class="docutils literal notranslate"><span class="pre">File</span></code> ⇒ <code class="docutils literal notranslate"><span class="pre">Import</span></code> ⇒ <code class="docutils literal notranslate"><span class="pre">Fetch</span> <span class="pre">from</span> <span class="pre">PDB…</span></code>), or a host–guest complex.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Hydrogen bonds need hydrogen atoms. Structures from the PDB and many crystal structures don’t include them, so add them first with <code class="docutils literal notranslate"><span class="pre">Build</span></code> ⇒ <code class="docutils literal notranslate"><span class="pre">Hydrogens</span></code> ⇒ <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">Hydrogens</span></code>.</p>
+</div>
+</section>
+<section id="what-counts-as-an-interaction">
+<h2>What Counts as an Interaction<a class="headerlink" href="#what-counts-as-an-interaction" title="Link to this heading">#</a></h2>
+<p>The <strong>Non-Covalent</strong> display type looks for three kinds of interaction, each drawn in its own color:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Interaction</p></th>
+<th class="head"><p>Donor</p></th>
+<th class="head"><p>Acceptor</p></th>
+<th class="head"><p>Default color</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Hydrogen bond</p></td>
+<td><p>H bonded to N, O or F</p></td>
+<td><p>N, O, F or Cl</p></td>
+<td><p>Light blue</p></td>
+</tr>
+<tr class="row-odd"><td><p>Halogen bond</p></td>
+<td><p>F, Cl, Br or I bonded to C, N, O, F, S, Cl, Br or I</p></td>
+<td><p>N, O, F or Cl</p></td>
+<td><p>Green</p></td>
+</tr>
+<tr class="row-even"><td><p>Chalcogen bond</p></td>
+<td><p>O, S, Se or Te bonded to C</p></td>
+<td><p>N, O, F, S, Cl, Se or Te</p></td>
+<td><p>Orange</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>A line is drawn when the two atoms aren’t bonded to each other, they’re close enough, and they point at each other: the donor’s bond should point roughly along the line to the acceptor, and the line should point roughly along one of the acceptor’s lone pairs (worked out from the acceptor’s hybridization). This avoids drawing a line between every pair of nearby atoms.</p>
+</section>
+<section id="adjust-the-settings">
+<h2>Adjust the Settings<a class="headerlink" href="#adjust-the-settings" title="Link to this heading">#</a></h2>
+<p>Click the <strong>…</strong> button next to <strong>Non-Covalent</strong> in the Display Types pane to open its settings. There’s a tab for each kind of interaction, with:</p>
+<dl class="simple myst">
+<dt>Angle tolerance</dt><dd><p>How far (in degrees) the geometry can be from ideal and still count. The default is 40°. Lower it to show only the most linear, strongest interactions.</p>
+</dd>
+<dt>Maximum distance</dt><dd><p>How much longer than the sum of the two atoms’ van der Waals radii the contact can be. The default is 1.0 Å for hydrogen bonds and 2.0 Å for halogen and chalcogen bonds.</p>
+</dd>
+<dt>Line width</dt><dd><p>The width of the dashed lines.</p>
+</dd>
+</dl>
+</section>
+<section id="show-close-contacts-and-salt-bridges">
+<h2>Show Close Contacts and Salt Bridges<a class="headerlink" href="#show-close-contacts-and-salt-bridges" title="Link to this heading">#</a></h2>
+<p>Check <strong>Close Contacts</strong> in the Display Types pane. It draws three kinds of contact, with a tab for each in its settings (the <strong>…</strong> button):</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Contact</p></th>
+<th class="head"><p>Drawn between</p></th>
+<th class="head"><p>Default distance</p></th>
+<th class="head"><p>Default color</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Contact</p></td>
+<td><p>Any two atoms that aren’t bonded to each other or to a common atom</p></td>
+<td><p>2.0 Å</p></td>
+<td><p>Grey</p></td>
+</tr>
+<tr class="row-odd"><td><p>Salt Bridge</p></td>
+<td><p>Oppositely charged atoms</p></td>
+<td><p>4.0 Å</p></td>
+<td><p>Purple</p></td>
+</tr>
+<tr class="row-even"><td><p>Repulsive</p></td>
+<td><p>Atoms with the same charge</p></td>
+<td><p>4.0 Å</p></td>
+<td><p>Red</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Here the distance is the actual distance between the atoms. With the default 2.0 Å, <strong>Contact</strong> lines show atoms that are probably too close, which is useful for spotting clashes after docking or building a complex by hand.</p>
+<p>Charged atoms are those with a formal charge. In proteins, the side chains of Lys, Arg and His are also treated as positive, and those of Asp and Glu as negative, so salt bridges show up in a protein straight from the PDB.</p>
+</section>
+<section id="focus-on-part-of-a-structure">
+<h2>Focus on Part of a Structure<a class="headerlink" href="#focus-on-part-of-a-structure" title="Link to this heading">#</a></h2>
+<p>In a large system, lines everywhere can be hard to read. Use <a class="reference internal" href="../panes/layers.html#panes-layers-pane"><span class="std std-ref">layers</span></a> to show interactions only where you need them: select the region of interest (e.g., a ligand and its binding pocket), choose <code class="docutils literal notranslate"><span class="pre">Select</span></code> ⇒ <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">New</span> <span class="pre">Layer</span> <span class="pre">from</span> <span class="pre">Selection</span></code>, then enable <strong>Non-Covalent</strong> or <strong>Close Contacts</strong> for that layer only. See <a class="reference internal" href="hiding-hydrogens.html#tutorials-hiding-hydrogens"><span class="std std-ref">Hiding and Showing Hydrogens</span></a> for more about working with layers.</p>
+<p>To get the exact length of an interaction, use the <a class="reference internal" href="../tools/measure-tool.html#tools-measure-tool"><span class="std std-ref">Measure Tool</span></a> and click the two atoms.</p>
+</section>
+<section id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../display-types/index.html#display-types"><span class="std std-ref">Display Types</span></a> – All display types</p></li>
+<li><p><a class="reference internal" href="../panes/display-types.html#panes-display-types-pane"><span class="std std-ref">Display Types Pane</span></a> – Turning display types on and off</p></li>
+<li><p><a class="reference internal" href="../panes/layers.html#panes-layers-pane"><span class="std std-ref">Layers Pane</span></a> – Working with layers</p></li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#show-hydrogen-bonds">Show Hydrogen Bonds</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-counts-as-an-interaction">What Counts as an Interaction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adjust-the-settings">Adjust the Settings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#show-close-contacts-and-salt-bridges">Show Close Contacts and Salt Bridges</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#focus-on-part-of-a-structure">Focus on Part of a Structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#see-also">See Also</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/avogadro/two.avogadro.cc/edit/main/source/docs/tutorials/showing-interactions.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">          <p>
+            ©2026 The OpenChemistry / Avogadro Teams 
+          </p>
+          <p>Covered by the <a href="https://github.com/openchemistry/avogadrolibs/blob/master/CODE_OF_CONDUCT.md">Avogadro Code of Conduct</a>.
+          </p></div>
+      
+        <div class="footer-item">        <p>
+          <a href="/contrib/index.html">Contribute</a>
+        </p></div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.0.2.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.4.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

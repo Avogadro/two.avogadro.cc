@@ -89,7 +89,7 @@ Using the Draw Tool alone will probably not give you a molecule that looks sensi
 
 For manual adjustment, the position of the atoms can be fine-tuned by using the [Manipulation Tool](tools-manipulation-tool) in combination with the [Navigation Tool](tools-navigation-tool) to rotate and pan the view.
 
-To quickly get a sensible geometry, make use of the [`Optimize Geometry`](calculations-optimization) extension.
+To quickly get a sensible geometry, make use of the [`Optimize Geometry`](optimize) extension.
 This can be conveniently activated using the shortcut <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>O</kbd>.
 
 You can also switch to the [AutoOptimization Tool](tools-autoopt-tool) to interactively optimize the molecule. This can be activated using <kbd>Ctrl</kbd>+<kbd>7</kbd>
@@ -103,7 +103,7 @@ Sometimes when editing, you want to adjust the view (e.g., some part of the mole
 | Scroll wheel | Zoom |
 | Middle double-click | Reset camera |
 |--------|--------|
-| <kbd>Alt / Option</kb> Left-click + drag | Rotate (x/y axes) |
+| <kbd>Alt / Option</kbd> Left-click + drag | Rotate (x/y axes) |
 | <kbd>Shift</kbd> + left-click + drag | Rotate (z-axis) |
 | <kbd>Ctrl</kbd> + left-click + drag | Pan (x/y) |
 

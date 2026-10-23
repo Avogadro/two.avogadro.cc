@@ -442,12 +442,14 @@ document.write(`
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">How plugins are run</a></li>
 <li class="toctree-l2"><a class="reference internal" href="io.html">The input JSON</a></li>
 
+<li class="toctree-l2"><a class="reference internal" href="file-formats.html">File format plugins</a></li>
 <li class="toctree-l2"><a class="reference internal" href="metadata.html">Metadata and configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sharing.html">The online plugin repository/index</a></li>
 <li class="toctree-l2"><a class="reference internal" href="old-api/index.html">Pre-2.0 Plugin API</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../rpc.html">Avogadro Remote Procedure Call (RPC)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../automation.html">Automation and Headless Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contrib/code.html">Contributing Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contrib/ai-usage.html">AI Usage Policy</a></li>
 </ul>
@@ -524,7 +526,7 @@ document.write(`
 <li><p>Features of packages (including Pixi projects) are invoked using <code class="docutils literal notranslate"><span class="pre">pixi</span> <span class="pre">run</span> <span class="pre">avogadro-&lt;plugin&gt;</span> <span class="pre">&lt;identifier&gt;</span> <span class="pre">[OPTIONS]</span></code></p>
 <ul>
 <li><p>e.g. for the <code class="docutils literal notranslate"><span class="pre">mass</span></code> feature of a plugin called <code class="docutils literal notranslate"><span class="pre">demo</span></code> the full command would be <code class="docutils literal notranslate"><span class="pre">pixi</span> <span class="pre">run</span> <span class="pre">avogadro-demo</span> <span class="pre">mass</span></code></p></li>
-<li><p>The plugin defines an entry point in their <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> for the plugin’s name prefixed with <code class="docutils literal notranslate"><span class="pre">avogadro-</span></code> e.g. for a <code class="docutils literal notranslate"><span class="pre">demo</span></code> plugin:</p></li>
+<li><p>The plugin defines an entry point in its <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> for the plugin’s name prefixed with <code class="docutils literal notranslate"><span class="pre">avogadro-</span></code> e.g. for a <code class="docutils literal notranslate"><span class="pre">demo</span></code> plugin:</p></li>
 </ul>
 </li>
 </ul>
@@ -563,7 +565,7 @@ document.write(`
 <li><p>This is no longer passed on <code class="docutils literal notranslate"><span class="pre">stdin</span></code>; streams of subsequent data are, however, if relevant for the plugin type</p></li>
 </ul>
 </li>
-<li><p>Avogadro will now <em>always</em> accept an JSON object as the output of the plugin to <code class="docutils literal notranslate"><span class="pre">stdout</span></code> – for details of the contents, see below</p>
+<li><p>Avogadro will now <em>always</em> accept a JSON object as the output of the plugin to <code class="docutils literal notranslate"><span class="pre">stdout</span></code> – for details of the contents, see below</p>
 <ul>
 <li><p>If Avogadro expects a stream of output on <code class="docutils literal notranslate"><span class="pre">stdout</span></code>, it will first expect a JSON object as the initial output before the stream, and will handle any subsequent JSON object on <code class="docutils literal notranslate"><span class="pre">stdout</span></code> as an indication that the plugin process should be stopped</p></li>
 </ul>
