@@ -9,7 +9,8 @@ When the release is a new version 2.x, it also:
     the release body (only if the file does not already exist, so
     hand-edited pages are never overwritten),
   * lists that page first in the toctree of source/install/versions/avogadro2.md
-    (if not already listed), and
+    (if not already listed),
+  * sets the version and its "Release Notes" link in source/install/index.md, and
   * updates the offline fallback version in source/conf.py.
 Other major versions only get a warning; those steps are skipped.
 """
@@ -38,6 +39,12 @@ CONF_FALLBACK_RE = re.compile(
 
 # The option block that starts the toctree in avogadro2.md.
 TOCTREE_RE = re.compile(r"(```\{toctree\}\n---\nmaxdepth: 1\n---\n)")
+
+# The version and release-notes link in index.md, e.g.
+#   v2.1.0 ([Release Notes](versions/v210.md))
+NOTES_LINK_RE = re.compile(
+    r"v[0-9][0-9.]* \(\[Release Notes\]\(versions/v[0-9]+\.md\)\)"
+)
 
 # GitHub doubles some links: [[text](url)](url) and [`[text](url)`](url)
 DOUBLE_LINK_RE = re.compile(r"\[(`?)\[(.+?)\]\((?P<url>[^()\s]+)\)\1\]\((?P=url)\)")
@@ -121,6 +128,21 @@ def add_to_toctree(slug):
     print(f"Added {entry} to {TOCTREE_PATH}")
 
 
+def update_notes_link(version, slug):
+    """Set the version and release-notes link (versions/v<slug>.md) in index.md."""
+    if not (VERSIONS_DIR / f"v{slug}.md").exists():
+        print(f"Warning: v{slug}.md not found; leaving the release-notes link alone")
+        return
+    text = INDEX_PATH.read_text()
+    link = f"v{version} ([Release Notes](versions/v{slug}.md))"
+    new, n = NOTES_LINK_RE.subn(lambda m: link, text, count=1)
+    if n == 0:
+        print(f"Warning: release-notes link not found in {INDEX_PATH}")
+    elif new != text:
+        INDEX_PATH.write_text(new)
+        print(f"Updated release-notes link in {INDEX_PATH} to v{version}")
+
+
 def update_conf_fallback(version):
     """Set the fallback release in conf.py (only that line)."""
     text = CONF_PATH.read_text()
@@ -180,14 +202,15 @@ def main():
     INDEX_PATH.write_text(index)
     print(f"Updated {INDEX_PATH} to version {version}")
 
-    # 3. Release notes page, toctree entry and conf.py fallback
+    # 3. Release notes page, toctree entry, index.md link and conf.py fallback
     if version.split(".")[0] != SUPPORTED_MAJOR:
         print(f"Warning: version {version} is not {SUPPORTED_MAJOR}.x; "
-              "skipping release notes page, toctree and conf.py updates")
+              "skipping release notes page, toctree, link and conf.py updates")
         return
     slug = version.replace(".", "")
     create_notes_page(version, slug, release["published_at"], release.get("body") or "")
     add_to_toctree(slug)
+    update_notes_link(version, slug)
     update_conf_fallback(version)
 
 

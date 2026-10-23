@@ -2,7 +2,7 @@
 
 # Install
 
-Most users will want to use the current official release:
+Most users will want to use the current official release: v2.1.0 ([Release Notes](versions/v210.md))
 
 <div class="sd-col sd-d-flex-column docutils">
 <span class="sd-d-grid"><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary sd-shadow-sm" id="download-button" href="#">Detecting OS…</a></span>
