@@ -3,7 +3,7 @@
 # Avogadro::MoleQueue
 
 MoleQueue classes handle interaction with the MoleQueue queue system
-for submitting calculations to programs and  opening completed output
+for submitting calculations to programs and opening completed output
 files.
 
 ```{tip}

@@ -14,7 +14,7 @@ This toolbar allows you to view the various vibrations of a molecule. Selecting 
 
 ![](../../_static/vibration-animation.png)
 
-Avogadro then provides you with the ability to tune the vibration amplitude, it allows you to display the force vectors on the atoms present.
+Avogadro also lets you tune the vibration amplitude and display the force vectors on the atoms.
 
 If the calculation included Raman intensities, the window will also show those.
 

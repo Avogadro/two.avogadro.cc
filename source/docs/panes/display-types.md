@@ -2,7 +2,7 @@
 
 # Display Types Pane
 
-This pane shows all [display types](display-types) allowing you to enable or disable them for the active [layer](panes-layers-pane)
+This pane shows all {ref}`display types <display-types>` allowing you to enable or disable them for the active [layer](panes-layers-pane)
 
 ![Screenshot of the display types pane](../../_static/DisplayTypesPane.png)
 

@@ -17,4 +17,6 @@ insert-fragments
 building-with-smiles
 building-dna-rna
 building-peptides
+building-polymers
+zmatrix-editor
 ```

@@ -14,7 +14,7 @@ A database of fragments will then pop up \(shown below\). You can filter the sel
 
 After you've made your fragment selection, click "Insert".
 
-The fragment will be inserted and the [Manipulate](tools-manipulate-tool) tool will be selected so you can move the new fragment around the window.
+The fragment will be inserted and the [Manipulate](tools-manipulation-tool) tool will be selected so you can move the new fragment around the window.
 
 ![](../../_static/manipulate-fragment.png)
 

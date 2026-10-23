@@ -4,7 +4,7 @@
 
 We use [Doxygen](http://www.doxygen.org/) to generate documentation,
 and make use of the JavaDoc style. They go in the header next to the
-declaration, all classes should have at a minimum a brief description
+declaration. All classes should have at a minimum a brief description
 with one or two sentences explaining what the intended purpose of the
 class is.
 
@@ -71,7 +71,7 @@ class JsonRpcClient : public QObject
 
   - Use complete sentences
 
-- Constructors should be more that "Constructor", such as "Constructs
+- Constructors should be more than "Constructor", such as "Constructs
   the ... with ..."
 
 - Use complete sentences to describe parameters

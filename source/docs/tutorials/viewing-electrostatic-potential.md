@@ -4,7 +4,7 @@
 
 The electrostatic potential maps help to visualize charge distribution, and other charge related properties of molecules.
 
-Overall, let's say you want to determine visually if a specific proton has more or less electron density. First, you'll want to begin with your molecule of choice \(shown below is trifluoracetic acid\).
+Overall, let's say you want to determine visually if a specific proton has more or less electron density. First, you'll want to begin with your molecule of choice \(shown below is trifluoroacetic acid\).
 
 ![](../../_static/cf3-co2h.png)
 
@@ -16,7 +16,7 @@ A dialog box will pop up providing you with various surface options. The Van der
 
 ![](../../_static/surfaces-vdw.png)
 
-Under "Color By:" select `Electrostatic Potential`, select an electrostatic model, such as `EEM` and a color map. and then click "Calculate". After Avogadro calculates the surface select "Close".
+Under "Color By:" select `Electrostatic Potential`, select an electrostatic model, such as `EEM` and a color map, and then click "Calculate". After Avogadro calculates the surface select "Close".
 
 ![](../../_static/surfaces-electrostatic.png)
 

@@ -7,8 +7,8 @@
 "chemicalJson": 1,
 "atoms": {
     "coords": {
-        "3d": [0.617532, -0.027246, 0.481009, 
-               0.156663, 0.031752, -0.362419, 
+        "3d": [0.617532, -0.027246, 0.481009,
+               0.156663, 0.031752, -0.362419,
                -0.774185, -0.004516, -0.11859],
     },
     "elements": {"number": [1, 8, 1]}
@@ -20,18 +20,18 @@
 The above segment represent a water molecule in CJSON format.
 So, an example input molecule for the replace or alloy command may look like:
 ```
-echo '{"Find": "Hydrogen", 
-"Percent": 50, 
+echo '{"Find": "Hydrogen",
+"Percent": 50,
 "Replace": "Carbon",
 "cjson": {"chemicalJson": 1,
-          "atoms": {"coords": {"3d": [0.617532, -0.027246, 0.481009, 0.156663, 0.031752, -0.362419, -0.774185, -0.004516, -0.11859]},   
-          "elements": {"number": [1, 1, 8, 1, 9, 1]}},      
-          "bonds": {"connections": {"index": [1, 2, 1, 0]}, 
+          "atoms": {"coords": {"3d": [0.617532, -0.027246, 0.481009, 0.156663, 0.031752, -0.362419, -0.774185, -0.004516, -0.11859]},
+          "elements": {"number": [1, 1, 8, 1, 9, 1]}},
+          "bonds": {"connections": {"index": [1, 2, 1, 0]},
                     "order": [1, 1]}}
-}'| python replace.py --run-command  
+}'| python replace.py --run-command
 ```
 
-where 
+where
 - 'Find','percent','replace' represent the user inputs to the script interface options
 - The --run-command signifies the input argument.
 
@@ -52,13 +52,13 @@ def runCommand():
     return result
 ```
 
-The `runCommand` function is responsible for executing the (in this example, element replacement) operation based on the user options and input data. 
+The `runCommand` function is responsible for executing the (in this example, element replacement) operation based on the user options and input data.
 
 1. **Read Options from Standard Input**:
    - `stdinStr = sys.stdin.read()`: This line reads data from the standard input (stdin).
 
 2. **Parse JSON Data**:
-   - `opts = json.loads(stdinStr)`: The `json.loads` function is used to parse the JSON data (in `stdinStr`) into a Python dictionary. 
+   - `opts = json.loads(stdinStr)`: The `json.loads` function is used to parse the JSON data (in `stdinStr`) into a Python dictionary.
 
 3. **Element Replacement**:
    - `result['cjson'] = replace_element(opts, opts['cjson'])`:  It calls the `replace_element` function to perform the actual element replacement operation.
@@ -70,13 +70,13 @@ The `runCommand` function is responsible for executing the (in this example, ele
 4. **Return the Result**:
    - `return result`: contains the modified molecular structure in CJSON format.
 
-In summary, the `runCommand` function acts as a bridge between the Avogadro environment and the element replacement operation. 
+In summary, the `runCommand` function acts as a bridge between the Avogadro environment and the element replacement operation.
 
-It reads user options, triggers the replacement operation, and returns the modified molecular structure. 
+It reads user options, triggers the replacement operation, and returns the modified molecular structure.
 
 ## Operation Function
 This function gets executed through the runCommand() function. It is responsible for the required changes in the input molecule and thus, returns the modified molecule.
-### Retrieving necessary components 
+### Retrieving necessary components
 ```python
 def replace_element(opts, mol):
     original= element_dict.get(opts['Find'])
@@ -96,16 +96,16 @@ For example,
 - Here the input also consists of an additional selected component which is a list indicating the atoms selected, **1 for selected atom and 0 for non selected atom**
 For example:
 ```
-echo '{"Find": "Hydrogen", 
-"Percent": 50, 
+echo '{"Find": "Hydrogen",
+"Percent": 50,
 "Replace": "Carbon",
 "cjson": {"chemicalJson": 1,
-          "atoms": {"coords": {"3d": [0.617532, -0.027246, 0.481009, 0.156663, 0.031752, -0.362419, -0.774185, -0.004516, -0.11859]},  
+          "atoms": {"coords": {"3d": [0.617532, -0.027246, 0.481009, 0.156663, 0.031752, -0.362419, -0.774185, -0.004516, -0.11859]},
           "selected":[1,0,0,1,0,0],
-          "elements": {"number": [1, 1, 8, 1, 9, 1]}},      
-          "bonds": {"connections": {"index": [1, 2, 1, 0]}, 
+          "elements": {"number": [1, 1, 8, 1, 9, 1]}},
+          "bonds": {"connections": {"index": [1, 2, 1, 0]},
                     "order": [1, 1]}}
-}'| python replace.py --run-command  
+}'| python replace.py --run-command
 ```
 - If no such component is present we consider all the atoms to have been selected.
 
@@ -131,8 +131,8 @@ Have a look at the code for selection support for the Alloy or Replace command
             elif mol['atoms']['selected'][i]:
                 indices.append(i)
 
-    occurences = len(indices)
-    number_of_atoms = int((percent*occurences)/100)
+    occurrences = len(indices)
+    number_of_atoms = int((percent*occurrences)/100)
     selected_indices = random.sample(indices, number_of_atoms)
 
     for index in selected_indices:
@@ -142,24 +142,24 @@ Have a look at the code for selection support for the Alloy or Replace command
 Here, replacement takes place only for the selected atoms
 
 ```python
-return mol 
+return mol
 ```
 Finally we get the modified molecule output in the **CJSON format**
 
-## Sample Input and Output 
+## Sample Input and Output
 For example when we give the following input to the alchemy script:
 ```
-echo '{"Find": "Hydrogen", 
-"Percent": 50, 
+echo '{"Find": "Hydrogen",
+"Percent": 50,
 "Replace": "Carbon",
 "cjson": {"chemicalJson": 1,
-          "atoms": {"coords": {"3d": [0.617532, -0.027246, 0.481009, 0.156663, 0.031752, -0.362419, -0.774185, -0.004516, -0.11859]},  
+          "atoms": {"coords": {"3d": [0.617532, -0.027246, 0.481009, 0.156663, 0.031752, -0.362419, -0.774185, -0.004516, -0.11859]},
           "selected":[1,0,0,1,0,0],
-          "elements": {"number": [1, 1, 8, 1, 9, 1]}},      
-          "bonds": {"connections": {"index": [1, 2, 1, 0]}, 
+          "elements": {"number": [1, 1, 8, 1, 9, 1]}},
+          "bonds": {"connections": {"index": [1, 2, 1, 0]},
                     "order": [1, 1]}}
 }'| python replace.py --run-command
-``` 
+```
 we get the following output:
 ```json
 {"cjson": {"chemicalJson": 1, "atoms": {"coords": {"3d": [0.617532, -0.027246, 0.481009, 0.156663, 0.031752, -0.362419, -0.774185, -0.004516, -0.11859]}, "selected": [1, 0, 0, 1, 0, 0], "elements": {"number": [1, 1, 8, 6, 9, 1]}}, "bonds": {"connections": {"index": [1, 2, 1, 0]}, "order": [1, 1]}}}

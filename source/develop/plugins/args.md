@@ -9,7 +9,7 @@
 - Features of a script plugin are invoked by Avogadro using `pixi run python plugins/python/<plugin>/<identifier>.py [OPTIONS]`
 - Features of packages (including Pixi projects) are invoked using `pixi run avogadro-<plugin> <identifier> [OPTIONS]`
     - e.g. for the `mass` feature of a plugin called `demo` the full command would be `pixi run avogadro-demo mass`
-    - The plugin defines an entry point in their `pyproject.toml` for the plugin's name prefixed with `avogadro-` e.g. for a `demo` plugin:
+    - The plugin defines an entry point in its `pyproject.toml` for the plugin's name prefixed with `avogadro-` e.g. for a `demo` plugin:
 ```toml
 [project.scripts]
 avogadro-demo = "demo:main"
@@ -29,5 +29,5 @@ avogadro-demo = "demo:main"
     - The information provided by things like `--display-name` and `--menu-path`, is now contained in the static metadata
 - Avogadro will now *always* pass a JSON object as the main argument (following the feature identifier) to all feature types – for details of the contents, see below
     - This is no longer passed on `stdin`; streams of subsequent data are, however, if relevant for the plugin type
-- Avogadro will now *always* accept an JSON object as the output of the plugin to `stdout` – for details of the contents, see below
+- Avogadro will now *always* accept a JSON object as the output of the plugin to `stdout` – for details of the contents, see below
     - If Avogadro expects a stream of output on `stdout`, it will first expect a JSON object as the initial output before the stream, and will handle any subsequent JSON object on `stdout` as an indication that the plugin process should be stopped

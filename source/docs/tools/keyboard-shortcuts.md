@@ -30,7 +30,7 @@ These shortcuts work regardless of which tool is currently selected.
 |----------|--------|
 | <kbd>Ctrl</kbd>+<kbd>A</kbd> | Select all atoms |
 | <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>A</kbd> | Deselect all atoms |
-| <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>O</kbd> | {ref}`Optimize geometry <calculations-optimization>` |
+| <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>O</kbd> | {ref}`Optimize geometry <optimize>` |
 
 ## Navigation
 
@@ -46,7 +46,7 @@ The {ref}`Navigation Tool <tools-navigation-tool>` responds to mouse and keyboar
 | Scroll wheel | Zoom |
 | Middle double-click | Reset camera |
 |--------|--------|
-| <kbd>Alt / Option</kb> Left-click + drag | Rotate (x/y axes) |
+| <kbd>Alt / Option</kbd> Left-click + drag | Rotate (x/y axes) |
 | <kbd>Shift</kbd> + left-click + drag | Rotate (z-axis) |
 | <kbd>Ctrl</kbd> + left-click + drag | Pan (x/y) |
 
