@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Avogadro::QtOpenGL::GLWidget &#8212; Avogadro 2.0.0 documentation</title>
+    <title>Avogadro::QtOpenGL::GLWidget &#8212; Avogadro 2.1.0 documentation</title>
   
   
   
@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../_static/documentation_options.js?v=51b770b3"></script>
+    <script src="../../_static/documentation_options.js?v=20623aea"></script>
     <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -763,6 +763,18 @@ This class creates the GL context, and contains a renderer to render the 3D mole
 </dl>
 </dd></dl>
 
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro8QtOpenGL8GLWidget18navigationModifierEv">
+<span id="_CPPv3NK8Avogadro8QtOpenGL8GLWidget18navigationModifierEv"></span><span id="_CPPv2NK8Avogadro8QtOpenGL8GLWidget18navigationModifierEv"></span><span id="Avogadro::QtOpenGL::GLWidget::navigationModifierC"></span><span class="target" id="class_avogadro_1_1_qt_open_g_l_1_1_g_l_widget_1ae00ab64f6766e92222f39aacc79ec5c2"></span><span class="n"><span class="pre">Qt</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">KeyboardModifiers</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">navigationModifier</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro8QtOpenGL8GLWidget18navigationModifierEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Modifier reserved for camera navigation. </p>
+<p>A mouse gesture carrying this modifier is routed to the default (navigation) tool regardless of which tool is currently active. Defaults to Qt::AltModifier and is persisted in QSettings. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro8QtOpenGL8GLWidget21setNavigationModifierEN2Qt17KeyboardModifiersE">
+<span id="_CPPv3N8Avogadro8QtOpenGL8GLWidget21setNavigationModifierEN2Qt17KeyboardModifiersE"></span><span id="_CPPv2N8Avogadro8QtOpenGL8GLWidget21setNavigationModifierEN2Qt17KeyboardModifiersE"></span><span id="Avogadro::QtOpenGL::GLWidget::setNavigationModifier__Qt::KeyboardModifiers"></span><span class="target" id="class_avogadro_1_1_qt_open_g_l_1_1_g_l_widget_1ac8cd83862d2cd48fbfe3790ecc6f67eb"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setNavigationModifier</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Qt</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">KeyboardModifiers</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">modifier</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro8QtOpenGL8GLWidget21setNavigationModifierEN2Qt17KeyboardModifiersE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
 </div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-slots">Public Slots</p>
@@ -811,7 +823,7 @@ This class creates the GL context, and contains a renderer to render the 3D mole
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N8Avogadro8QtOpenGL8GLWidget13requestUpdateEv">
 <span id="_CPPv3N8Avogadro8QtOpenGL8GLWidget13requestUpdateEv"></span><span id="_CPPv2N8Avogadro8QtOpenGL8GLWidget13requestUpdateEv"></span><span id="Avogadro::QtOpenGL::GLWidget::requestUpdate"></span><span class="target" id="class_avogadro_1_1_qt_open_g_l_1_1_g_l_widget_1a0bf4e1f2069ff74873db9b831369c856"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">requestUpdate</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro8QtOpenGL8GLWidget13requestUpdateEv" title="Link to this definition">#</a><br /></dt>
-<dd><p>Request an update, this will by default initiate a timer that will trigger in a specified time, enabling us to compress multiple events such as camera moves to maintain interactivity. </p>
+<dd><p>Request a repaint. Multiple requests before the next frame are compressed into one, so camera moves stay interactive. </p>
 </dd></dl>
 
 </div>
@@ -841,15 +853,6 @@ This class creates the GL context, and contains a renderer to render the 3D mole
 <dt class="sig sig-object cpp" id="_CPPv4N8Avogadro8QtOpenGL8GLWidget7paintGLEv">
 <span id="_CPPv3N8Avogadro8QtOpenGL8GLWidget7paintGLEv"></span><span id="_CPPv2N8Avogadro8QtOpenGL8GLWidget7paintGLEv"></span><span id="Avogadro::QtOpenGL::GLWidget::paintGL"></span><span class="target" id="class_avogadro_1_1_qt_open_g_l_1_1_g_l_widget_1a6875b9482308b3be7e7db0f9beba97e9"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">paintGL</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N8Avogadro8QtOpenGL8GLWidget7paintGLEv" title="Link to this definition">#</a><br /></dt>
 <dd><p>Main entry point for all GL rendering. </p>
-</dd></dl>
-
-</div>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-slots">Protected Slots</p>
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro8QtOpenGL8GLWidget13updateTimeoutEv">
-<span id="_CPPv3N8Avogadro8QtOpenGL8GLWidget13updateTimeoutEv"></span><span id="_CPPv2N8Avogadro8QtOpenGL8GLWidget13updateTimeoutEv"></span><span id="Avogadro::QtOpenGL::GLWidget::updateTimeout"></span><span class="target" id="class_avogadro_1_1_qt_open_g_l_1_1_g_l_widget_1aded25376434b22c5796c2b9bf40aa3b2"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">updateTimeout</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro8QtOpenGL8GLWidget13updateTimeoutEv" title="Link to this definition">#</a><br /></dt>
-<dd><p>Perform the update of the render, this should only be called by the timer. </p>
 </dd></dl>
 
 </div>
@@ -928,6 +931,8 @@ This class creates the GL context, and contains a renderer to render the 3D mole
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro8QtOpenGL8GLWidget11defaultToolEv"><code class="docutils literal notranslate"><span class="pre">GLWidget::defaultTool()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro8QtOpenGL8GLWidget7isValidEv"><code class="docutils literal notranslate"><span class="pre">GLWidget::isValid()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro8QtOpenGL8GLWidget5errorEv"><code class="docutils literal notranslate"><span class="pre">GLWidget::error()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro8QtOpenGL8GLWidget18navigationModifierEv"><code class="docutils literal notranslate"><span class="pre">GLWidget::navigationModifier()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro8QtOpenGL8GLWidget21setNavigationModifierEN2Qt17KeyboardModifiersE"><code class="docutils literal notranslate"><span class="pre">GLWidget::setNavigationModifier()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro8QtOpenGL8GLWidget11updateSceneEv"><code class="docutils literal notranslate"><span class="pre">GLWidget::updateScene()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro8QtOpenGL8GLWidget14updateMoleculeEv"><code class="docutils literal notranslate"><span class="pre">GLWidget::updateMolecule()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro8QtOpenGL8GLWidget10clearSceneEv"><code class="docutils literal notranslate"><span class="pre">GLWidget::clearScene()</span></code></a></li>
@@ -940,7 +945,6 @@ This class creates the GL context, and contains a renderer to render the 3D mole
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro8QtOpenGL8GLWidget12initializeGLEv"><code class="docutils literal notranslate"><span class="pre">GLWidget::initializeGL()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro8QtOpenGL8GLWidget8resizeGLEii"><code class="docutils literal notranslate"><span class="pre">GLWidget::resizeGL()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro8QtOpenGL8GLWidget7paintGLEv"><code class="docutils literal notranslate"><span class="pre">GLWidget::paintGL()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro8QtOpenGL8GLWidget13updateTimeoutEv"><code class="docutils literal notranslate"><span class="pre">GLWidget::updateTimeout()</span></code></a></li>
 </ul>
 </li>
 </ul>

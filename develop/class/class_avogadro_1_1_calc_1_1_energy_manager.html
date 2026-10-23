@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Avogadro::Calc::EnergyManager &#8212; Avogadro 2.0.0 documentation</title>
+    <title>Avogadro::Calc::EnergyManager &#8212; Avogadro 2.1.0 documentation</title>
   
   
   
@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../_static/documentation_options.js?v=51b770b3"></script>
+    <script src="../../_static/documentation_options.js?v=20623aea"></script>
     <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -596,7 +596,8 @@ document.write(`
 <dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro4Calc13EnergyManager16recommendedModelERKN4Core8MoleculeE">
 <span id="_CPPv3NK8Avogadro4Calc13EnergyManager16recommendedModelERKN4Core8MoleculeE"></span><span id="_CPPv2NK8Avogadro4Calc13EnergyManager16recommendedModelERKN4Core8MoleculeE"></span><span id="Avogadro::Calc::EnergyManager::recommendedModel__Core::MoleculeCRC"></span><span class="target" id="class_avogadro_1_1_calc_1_1_energy_manager_1af06d2f30b6c2eb61cf51ef7df7cbd936"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">recommendedModel</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_molecule.html#_CPPv4N8Avogadro4Core8MoleculeE" title="Avogadro::Core::Molecule"><span class="n"><span class="pre">Molecule</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">molecule</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro4Calc13EnergyManager16recommendedModelERKN4Core8MoleculeE" title="Link to this definition">#</a><br /></dt>
 <dd><p>Get a recommended model for this molecule. </p>
-<p>This returns the identifier for a model that works, given the charge, unit cell, spin states, etc. </p>
+<p>This returns the identifier for a model that works, given the charge, unit cell, spin states, etc.</p>
+<p>Only the built-in models (GAFF, MMFF94, <a class="reference internal" href="class_avogadro_1_1_calc_1_1_u_f_f.html#class_avogadro_1_1_calc_1_1_u_f_f"><span class="std std-ref">UFF</span></a>, LJ) are ever recommended, in that order of preference. Plugin / user-installed models are never auto-selected, even if compatible with the molecule: they typically run as external processes (so can be slow to start and less robust), and when several are installed there is no principled way to rank them against each other, so the user must choose one explicitly. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The recommended model identifier </p>

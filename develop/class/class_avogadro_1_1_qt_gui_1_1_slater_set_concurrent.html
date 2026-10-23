@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Avogadro::QtGui::SlaterSetConcurrent &#8212; Avogadro 2.0.0 documentation</title>
+    <title>Avogadro::QtGui::SlaterSetConcurrent &#8212; Avogadro 2.1.0 documentation</title>
   
   
   
@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../_static/documentation_options.js?v=51b770b3"></script>
+    <script src="../../_static/documentation_options.js?v=20623aea"></script>
     <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -627,6 +627,16 @@ document.write(`
 </dd></dl>
 
 </div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-functions">Public Static Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui19SlaterSetConcurrent21cancelAllCalculationsEv">
+<span id="_CPPv3N8Avogadro5QtGui19SlaterSetConcurrent21cancelAllCalculationsEv"></span><span id="_CPPv2N8Avogadro5QtGui19SlaterSetConcurrent21cancelAllCalculationsEv"></span><span id="Avogadro::QtGui::SlaterSetConcurrent::cancelAllCalculations"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_slater_set_concurrent_1a32700644822c734e08e4d22cd142ea0f"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cancelAllCalculations</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui19SlaterSetConcurrent21cancelAllCalculationsEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Cancel every running calculation and wait for the worker threads to stop.</p>
+<p>A running calculation reads the molecule’s basis set and writes into the cube it was handed, so anything about to delete either has to stop the work first. The calculation may belong to a different part of the application than the code doing the deleting, which is why this reaches every instance rather than just one. </p>
+</dd></dl>
+
+</div>
 </dd></dl>
 
 </section>
@@ -686,6 +696,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui19SlaterSetConcurrent20calculateSpinDensityEPN4Core4CubeE"><code class="docutils literal notranslate"><span class="pre">SlaterSetConcurrent::calculateSpinDensity()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui19SlaterSetConcurrent7watcherEv"><code class="docutils literal notranslate"><span class="pre">SlaterSetConcurrent::watcher()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui19SlaterSetConcurrent8finishedEv"><code class="docutils literal notranslate"><span class="pre">SlaterSetConcurrent::finished()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui19SlaterSetConcurrent21cancelAllCalculationsEv"><code class="docutils literal notranslate"><span class="pre">SlaterSetConcurrent::cancelAllCalculations()</span></code></a></li>
 </ul>
 </li>
 </ul>

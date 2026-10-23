@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Avogadro::Rendering::DashedLineGeometry &#8212; Avogadro 2.0.0 documentation</title>
+    <title>Avogadro::Rendering::DashedLineGeometry &#8212; Avogadro 2.1.0 documentation</title>
   
   
   
@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../_static/documentation_options.js?v=51b770b3"></script>
+    <script src="../../_static/documentation_options.js?v=20623aea"></script>
     <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -730,6 +730,12 @@ document.write(`
 <dd><p>Clear the contents of the node. </p>
 </dd></dl>
 
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK8Avogadro9Rendering18DashedLineGeometry8verticesEv">
+<span id="_CPPv3NK8Avogadro9Rendering18DashedLineGeometry8verticesEv"></span><span id="_CPPv2NK8Avogadro9Rendering18DashedLineGeometry8verticesEv"></span><span id="Avogadro::Rendering::DashedLineGeometry::verticesC"></span><span class="target" id="class_avogadro_1_1_rendering_1_1_dashed_line_geometry_1a31f7935bd8306d035408aa74ff4e0e03"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Core</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="class_avogadro_1_1_core_1_1_array.html#_CPPv4I0EN8Avogadro4Core5ArrayE" title="Avogadro::Core::Array"><span class="n"><span class="pre">Array</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4N8Avogadro9Rendering18DashedLineGeometry12PackedVertexE" title="Avogadro::Rendering::DashedLineGeometry::PackedVertex"><span class="n"><span class="pre">PackedVertex</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">vertices</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK8Avogadro9Rendering18DashedLineGeometry8verticesEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>The CPU-side vertex array, laid out as GL_LINES pairs: vertices 2k and 2k+1 are the endpoints of one dash. Each <a class="reference internal" href="#class_avogadro_1_1_rendering_1_1_dashed_line_geometry_1a6ce614694bd15d3ba2ceb12bb5b48404"><span class="std std-ref">addDashedLine()</span></a> call appends 2 * dashCount evenly spaced points from start to end inclusive, so the gaps between dashes are the same length as the dashes. </p>
+</dd></dl>
+
 </div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-friends">Friends</p>
@@ -845,6 +851,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering18DashedLineGeometry6acceptER7Visitor"><code class="docutils literal notranslate"><span class="pre">DashedLineGeometry::accept()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering18DashedLineGeometry6renderERK6Camera"><code class="docutils literal notranslate"><span class="pre">DashedLineGeometry::render()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering18DashedLineGeometry5clearEv"><code class="docutils literal notranslate"><span class="pre">DashedLineGeometry::clear()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro9Rendering18DashedLineGeometry8verticesEv"><code class="docutils literal notranslate"><span class="pre">DashedLineGeometry::vertices()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering18DashedLineGeometry4swapER18DashedLineGeometryR18DashedLineGeometry"><code class="docutils literal notranslate"><span class="pre">DashedLineGeometry::swap()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering18DashedLineGeometry12PackedVertexE"><code class="docutils literal notranslate"><span class="pre">DashedLineGeometry::PackedVertex</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro9Rendering18DashedLineGeometry12PackedVertex12PackedVertexERK8Vector3fRK9Vector4ub"><code class="docutils literal notranslate"><span class="pre">DashedLineGeometry::PackedVertex::PackedVertex()</span></code></a></li>

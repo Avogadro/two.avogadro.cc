@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Avogadro::QtGui::Molecule &#8212; Avogadro 2.0.0 documentation</title>
+    <title>Avogadro::QtGui::Molecule &#8212; Avogadro 2.1.0 documentation</title>
   
   
   
@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../_static/documentation_options.js?v=51b770b3"></script>
+    <script src="../../_static/documentation_options.js?v=20623aea"></script>
     <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -735,6 +735,12 @@ document.write(`
 </dd></dl>
 
 <dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui8Molecule14MoleculeChange9ConformerE">
+<span id="_CPPv3N8Avogadro5QtGui8Molecule14MoleculeChange9ConformerE"></span><span id="_CPPv2N8Avogadro5QtGui8Molecule14MoleculeChange9ConformerE"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_molecule_1a701d0ba2f8fb411c5f4557cd58c76f1faab9486891144ff407609e78b13e6a306"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Conformer</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui8Molecule14MoleculeChange9ConformerE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Indicates the active conformer / coordinate set changed (e.g., setCoordinate3d(int)) or the set of conformers was modified. Switching the active conformer is view-state: pair with Moved (not Modified) so derived data (vibrations, orbitals, meshes) survives; changing the number of coordinate sets should pair with Modified. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui8Molecule14MoleculeChange5AddedE">
 <span id="_CPPv3N8Avogadro5QtGui8Molecule14MoleculeChange5AddedE"></span><span id="_CPPv2N8Avogadro5QtGui8Molecule14MoleculeChange5AddedE"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_molecule_1a701d0ba2f8fb411c5f4557cd58c76f1faa455ce64761c6aabdef8ec20a782aa0b"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Added</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui8Molecule14MoleculeChange5AddedE" title="Link to this definition">#</a><br /></dt>
 <dd><p>Operations that can affect the above types. </p>
@@ -754,6 +760,18 @@ document.write(`
 <dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui8Molecule14MoleculeChange5MovedE">
 <span id="_CPPv3N8Avogadro5QtGui8Molecule14MoleculeChange5MovedE"></span><span id="_CPPv2N8Avogadro5QtGui8Molecule14MoleculeChange5MovedE"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_molecule_1a701d0ba2f8fb411c5f4557cd58c76f1fa9bf35ab1cecfbb50d8f1d708a4921fc6"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Moved</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui8Molecule14MoleculeChange5MovedE" title="Link to this definition">#</a><br /></dt>
 <dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui8Molecule14MoleculeChange9ReorderedE">
+<span id="_CPPv3N8Avogadro5QtGui8Molecule14MoleculeChange9ReorderedE"></span><span id="_CPPv2N8Avogadro5QtGui8Molecule14MoleculeChange9ReorderedE"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_molecule_1a701d0ba2f8fb411c5f4557cd58c76f1fa704ec249a4435196ffc46fd4c5c2dad3"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Reordered</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui8Molecule14MoleculeChange9ReorderedE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Indicates atom indices were permuted (see <a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_r_w_molecule.html#class_avogadro_1_1_qt_gui_1_1_r_w_molecule_1a50891ff3c83b860cd3ee4d62ebac329e"><span class="std std-ref">RWMolecule::reorderAtoms</span></a>). Same atoms, same bonds, same counts &amp;#8212; only the numbering changed, so listeners that detect structural change by comparing counts will miss it unless they check for this flag. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui8Molecule14MoleculeChange8ReplacedE">
+<span id="_CPPv3N8Avogadro5QtGui8Molecule14MoleculeChange8ReplacedE"></span><span id="_CPPv2N8Avogadro5QtGui8Molecule14MoleculeChange8ReplacedE"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_molecule_1a701d0ba2f8fb411c5f4557cd58c76f1fa91aa5268f23fee11f4171b5873a0af18"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Replaced</span></span></span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui8Molecule14MoleculeChange8ReplacedE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Indicates the molecule’s contents were replaced wholesale by a molecule built elsewhere (see <a class="reference internal" href="class_avogadro_1_1_qt_gui_1_1_r_w_molecule.html#class_avogadro_1_1_qt_gui_1_1_r_w_molecule_1a2cf0fe84ca23414c5e3b2cde5518887d"><span class="std std-ref">RWMolecule::modifyMolecule</span></a>). The derived data now present (vibrations, spectra, cubes, meshes, basis set, partial charges) came with the replacement, so <a class="reference internal" href="#class_avogadro_1_1_qt_gui_1_1_molecule_1a9374c8b1c39f163f459aae407918b028"><span class="std std-ref">emitChanged()</span></a> keeps it. Cached pointers into that data are still stale: <a class="reference internal" href="#class_avogadro_1_1_qt_gui_1_1_molecule_1a52553a142f0e60ec6ed702197f06ae5a"><span class="std std-ref">invalidatesDerivedData()</span></a> remains true. </p>
+</dd></dl>
 
 </dd></dl>
 
@@ -1103,6 +1121,19 @@ The <code class="docutils literal notranslate"><span class="pre">change</span></
 </dd></dl>
 
 </div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-functions">Public Static Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N8Avogadro5QtGui8Molecule22invalidatesDerivedDataEj">
+<span id="_CPPv3N8Avogadro5QtGui8Molecule22invalidatesDerivedDataEj"></span><span id="_CPPv2N8Avogadro5QtGui8Molecule22invalidatesDerivedDataEj"></span><span id="Avogadro::QtGui::Molecule::invalidatesDerivedData__unsigned-i"></span><span class="target" id="class_avogadro_1_1_qt_gui_1_1_molecule_1a52553a142f0e60ec6ed702197f06ae5a"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">invalidatesDerivedData</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">changes</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N8Avogadro5QtGui8Molecule22invalidatesDerivedDataEj" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if <code class="docutils literal notranslate"><span class="pre">changes</span></code> leaves the cubes, meshes, basis set, vibration data and partial charges derived from this molecule stale: <a class="reference internal" href="#class_avogadro_1_1_qt_gui_1_1_molecule_1a9374c8b1c39f163f459aae407918b028"><span class="std std-ref">emitChanged()</span></a> discards them, unless <code class="docutils literal notranslate"><span class="pre">changes</span></code> includes Replaced, in which case it keeps the replacement’s own data but the objects are still new ones. Consumers that cache raw pointers to any of that must refresh them in step with this, rather than re-deriving the rule from the flags. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
 </dd></dl>
 
 </section>
@@ -1171,10 +1202,13 @@ The <code class="docutils literal notranslate"><span class="pre">change</span></
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui8Molecule14MoleculeChange11ConstraintsE"><code class="docutils literal notranslate"><span class="pre">Molecule::MoleculeChange::Constraints</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui8Molecule14MoleculeChange8ResiduesE"><code class="docutils literal notranslate"><span class="pre">Molecule::MoleculeChange::Residues</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui8Molecule14MoleculeChange10NewCrystalE"><code class="docutils literal notranslate"><span class="pre">Molecule::MoleculeChange::NewCrystal</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui8Molecule14MoleculeChange9ConformerE"><code class="docutils literal notranslate"><span class="pre">Molecule::MoleculeChange::Conformer</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui8Molecule14MoleculeChange5AddedE"><code class="docutils literal notranslate"><span class="pre">Molecule::MoleculeChange::Added</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui8Molecule14MoleculeChange7RemovedE"><code class="docutils literal notranslate"><span class="pre">Molecule::MoleculeChange::Removed</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui8Molecule14MoleculeChange8ModifiedE"><code class="docutils literal notranslate"><span class="pre">Molecule::MoleculeChange::Modified</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui8Molecule14MoleculeChange5MovedE"><code class="docutils literal notranslate"><span class="pre">Molecule::MoleculeChange::Moved</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui8Molecule14MoleculeChange9ReorderedE"><code class="docutils literal notranslate"><span class="pre">Molecule::MoleculeChange::Reordered</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui8Molecule14MoleculeChange8ReplacedE"><code class="docutils literal notranslate"><span class="pre">Molecule::MoleculeChange::Replaced</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui8Molecule8AtomTypeE"><code class="docutils literal notranslate"><span class="pre">Molecule::AtomType</span></code></a></li>
@@ -1214,6 +1248,7 @@ The <code class="docutils literal notranslate"><span class="pre">change</span></
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui8Molecule10emitUpdateEv"><code class="docutils literal notranslate"><span class="pre">Molecule::emitUpdate()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui8Molecule7changedEj"><code class="docutils literal notranslate"><span class="pre">Molecule::changed()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK8Avogadro5QtGui8Molecule6updateEv"><code class="docutils literal notranslate"><span class="pre">Molecule::update()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N8Avogadro5QtGui8Molecule22invalidatesDerivedDataEj"><code class="docutils literal notranslate"><span class="pre">Molecule::invalidatesDerivedData()</span></code></a></li>
 </ul>
 </li>
 </ul>
