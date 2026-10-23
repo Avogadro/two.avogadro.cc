@@ -114,5 +114,5 @@ Wireframe draws atoms and bond order into the molecule.
 caption: Display Types
 ---
 Introduction <self>
-coloring-molecules
+coloring
 ```
