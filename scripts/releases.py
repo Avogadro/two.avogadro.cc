@@ -167,6 +167,8 @@ def main():
 
     assets = []
     for a in release["assets"]:
+        if "diagnostic" in a["name"].lower():
+            continue
         plat = detect_platform(a["name"])
         if not plat:
             continue
