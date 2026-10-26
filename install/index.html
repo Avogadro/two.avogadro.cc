@@ -555,6 +555,7 @@ document.write(`
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-text-center docutils">
 <div class="sd-card-body docutils">
 <p class="sd-card-text"><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-primary reference external" href="https://github.com/OpenChemistry/avogadrolibs/releases/download/2.1.0/Avogadro2-2.1.0-win64.exe"><span>Download Installer</span></a></p>
+<p class="sd-card-text"><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-primary reference external" href="https://github.com/OpenChemistry/avogadrolibs/releases/download/2.1.0/Avogadro2-2.1.0-win-arm.exe"><span>Download Installer (ARM)</span></a></p>
 </div>
 </div>
 </div>
@@ -562,6 +563,7 @@ document.write(`
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-text-center docutils">
 <div class="sd-card-body docutils">
 <p class="sd-card-text"><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-secondary reference external" href="https://github.com/OpenChemistry/avogadrolibs/releases/download/continuous/Avogadro2-continuous-win64.exe"><span>Download Nightly Build</span></a></p>
+<p class="sd-card-text"><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-secondary reference external" href="https://github.com/OpenChemistry/avogadrolibs/releases/download/continuous/Avogadro2-continuous-win-arm.exe"><span>Download Nightly Build (ARM)</span></a></p>
 </div>
 </div>
 </div>
@@ -673,18 +675,6 @@ document.write(`
       "size": "108.1 MB"
     },
     {
-      "platform": "windows-arm64",
-      "name": "Avogadro2-Diagnostic-2.1.0-win-arm.exe",
-      "url": "https://github.com/OpenChemistry/avogadrolibs/releases/download/2.1.0/Avogadro2-Diagnostic-2.1.0-win-arm.exe",
-      "size": "138.0 MB"
-    },
-    {
-      "platform": "windows-x64",
-      "name": "Avogadro2-Diagnostic-2.1.0-win64.exe",
-      "url": "https://github.com/OpenChemistry/avogadrolibs/releases/download/2.1.0/Avogadro2-Diagnostic-2.1.0-win64.exe",
-      "size": "151.4 MB"
-    },
-    {
       "platform": "linux-x64",
       "name": "Avogadro2-x86_64.AppImage",
       "url": "https://github.com/OpenChemistry/avogadrolibs/releases/download/2.1.0/Avogadro2-x86_64.AppImage",
@@ -714,9 +704,20 @@ function getMacOSArchitecture() {
   return 'unknown';
 }
 
-function detectPlatform() {
+async function detectArch() {
+  try {
+    if (navigator.userAgentData && navigator.userAgentData.getHighEntropyValues) {
+      const { architecture } =
+        await navigator.userAgentData.getHighEntropyValues(["architecture"]);
+      if (architecture) return architecture;   // "arm" or "x86"
+    }
+  } catch (e) {}
+  return /arm|aarch64/.test(navigator.userAgent.toLowerCase()) ? "arm" : "x86";
+}
+
+async function detectPlatform() {
   const ua = navigator.userAgent.toLowerCase();
-  const isARM = /arm|aarch64|apple silicon/.test(ua);
+  const isARM = (await detectArch()) === "arm";
   if (ua.includes("win")) return isARM ? "windows-arm64" : "windows-x64";
   if (ua.includes("mac")) {
     const arch = getMacOSArchitecture();
@@ -752,9 +753,9 @@ function platLabel(platform) {
     return label[platform] || platform;
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
   const data = JSON.parse(document.getElementById("avogadro-release").textContent);
-  const platform = detectPlatform();
+  const platform = await detectPlatform();
   const btn = document.getElementById("download-button");
   const info = document.getElementById("download-info");
 

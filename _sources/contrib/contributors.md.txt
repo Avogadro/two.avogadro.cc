@@ -180,6 +180,7 @@
 - Sanjeed Schamnad
 - Dillon Schultz
 - Sensor
+- Sepandar
 - shaneraphel
 - Oleg Shparber
 - shuo
@@ -208,6 +209,7 @@
 - urkawa
 - Default User
 - Ömer Fadıl USTA
+- Devesh Vaidya
 - Jorge Luis Gálvez Vallejo
 - Tim Vandermeersch
 - VeryTastyTomato

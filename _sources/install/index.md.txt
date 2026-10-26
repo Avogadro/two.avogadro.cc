@@ -117,6 +117,12 @@ Windows
 :outline:
 Download Installer
 :::
+
+:::{button-link} https://github.com/OpenChemistry/avogadrolibs/releases/download/2.1.0/Avogadro2-2.1.0-win-arm.exe
+:color: primary
+:outline:
+Download Installer (ARM)
+:::
 ::::
 
 
@@ -129,6 +135,12 @@ Download Installer
 :color: secondary
 :outline:
 Download Nightly Build
+:::
+
+:::{button-link} https://github.com/OpenChemistry/avogadrolibs/releases/download/continuous/Avogadro2-continuous-win-arm.exe
+:color: secondary
+:outline:
+Download Nightly Build (ARM)
 :::
 ::::
 
@@ -299,18 +311,6 @@ Avogadro on GitHub {fab}`github;fa-1x`
       "size": "108.1 MB"
     },
     {
-      "platform": "windows-arm64",
-      "name": "Avogadro2-Diagnostic-2.1.0-win-arm.exe",
-      "url": "https://github.com/OpenChemistry/avogadrolibs/releases/download/2.1.0/Avogadro2-Diagnostic-2.1.0-win-arm.exe",
-      "size": "138.0 MB"
-    },
-    {
-      "platform": "windows-x64",
-      "name": "Avogadro2-Diagnostic-2.1.0-win64.exe",
-      "url": "https://github.com/OpenChemistry/avogadrolibs/releases/download/2.1.0/Avogadro2-Diagnostic-2.1.0-win64.exe",
-      "size": "151.4 MB"
-    },
-    {
       "platform": "linux-x64",
       "name": "Avogadro2-x86_64.AppImage",
       "url": "https://github.com/OpenChemistry/avogadrolibs/releases/download/2.1.0/Avogadro2-x86_64.AppImage",
@@ -341,9 +341,20 @@ function getMacOSArchitecture() {
   return 'unknown';
 }
 
-function detectPlatform() {
+async function detectArch() {
+  try {
+    if (navigator.userAgentData && navigator.userAgentData.getHighEntropyValues) {
+      const { architecture } =
+        await navigator.userAgentData.getHighEntropyValues(["architecture"]);
+      if (architecture) return architecture;   // "arm" or "x86"
+    }
+  } catch (e) {}
+  return /arm|aarch64/.test(navigator.userAgent.toLowerCase()) ? "arm" : "x86";
+}
+
+async function detectPlatform() {
   const ua = navigator.userAgent.toLowerCase();
-  const isARM = /arm|aarch64|apple silicon/.test(ua);
+  const isARM = (await detectArch()) === "arm";
   if (ua.includes("win")) return isARM ? "windows-arm64" : "windows-x64";
   if (ua.includes("mac")) {
     const arch = getMacOSArchitecture();
@@ -379,9 +390,9 @@ function platLabel(platform) {
     return label[platform] || platform;
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
   const data = JSON.parse(document.getElementById("avogadro-release").textContent);
-  const platform = detectPlatform();
+  const platform = await detectPlatform();
   const btn = document.getElementById("download-button");
   const info = document.getElementById("download-info");
 
