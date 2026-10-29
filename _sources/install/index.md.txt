@@ -131,13 +131,13 @@ Download Installer (ARM)
 :text-align: center
 :shadow: none
 
-:::{button-link} https://github.com/OpenChemistry/avogadrolibs/releases/download/continuous/Avogadro2-continuous-win64.exe
+:::{button-link} https://github.com/OpenChemistry/avogadrolibs/releases/download/continuous/Avogadro2-Diagnostic-continuous-win64.exe
 :color: secondary
 :outline:
 Download Nightly Build
 :::
 
-:::{button-link} https://github.com/OpenChemistry/avogadrolibs/releases/download/continuous/Avogadro2-continuous-win-arm.exe
+:::{button-link} https://github.com/OpenChemistry/avogadrolibs/releases/download/continuous/Avogadro2-Diagnostic-continuous-win-arm.exe
 :color: secondary
 :outline:
 Download Nightly Build (ARM)
