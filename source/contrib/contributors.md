@@ -39,6 +39,7 @@
 - Javier Cerezo
 - Andi Chandler
 - Guillaume Charifi
+- Jian Jin Chen
 - Evgeny Chernyavsky
 - مهدي شينون (Mehdi Chinoune)
 - Yuri Chornoivan
@@ -190,6 +191,7 @@
 - Adrea Snow
 - sofiane
 - StefanBruens
+- steve_cooks
 - stilldown
 - Andreas Sturmlechner
 - SwyftPain
@@ -226,6 +228,7 @@
 - Nathan Young
 - YuriNikolai
 - Sihan Zhang
+- Shuhan Zhang
 - LIHAN ZHU
 - Zulfikar
 - Ondřej Čertík
