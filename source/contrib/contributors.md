@@ -85,6 +85,7 @@
 - hooray804
 - Brenton Horne
 - Geoff Hutchison
+- Hwmemory514
 - ian0318git
 - Takaki IEKURA
 - Barry Moore II
@@ -93,6 +94,7 @@
 - ivo6t
 - Jakob
 - jawlensky
+- Adolfo Jayme-Barrientos
 - JEAM-professional
 - jeannemfavret
 - Sumeet Jha
