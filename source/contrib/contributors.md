@@ -27,6 +27,7 @@
 - Makiah Bennett
 - Eric Berquist
 - Ludovico Besana
+- Ngo Binh
 - Nathan Bonnemains
 - Alex Brohovsky
 - Arif Budiman
@@ -39,6 +40,7 @@
 - Javier Cerezo
 - Andi Chandler
 - Guillaume Charifi
+- Jonathan Chau
 - Jian Jin Chen
 - Evgeny Chernyavsky
 - مهدي شينون (Mehdi Chinoune)
