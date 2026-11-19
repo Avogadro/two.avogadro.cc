@@ -21,7 +21,7 @@ Molecule Orbitals
 :alt: Example of the molecular orbital window
 :align: center
 :width: 360px
-:class: dark-light
+:class: dark-light unclickable-figure
 ```
 :::
 
@@ -56,7 +56,7 @@ Molecular
 :alt: Example of the molecular properties dialog
 :align: center
 :width: 43%
-:class: dark-light
+:class: dark-light unclickable-figure
 ```
 :::
 
@@ -70,7 +70,7 @@ Atom Properties
 ```{image} /_static/menus/analyze-menu/atom_properties_dialog.png
 :alt: Example of the atom properties dialog
 :align: center
-:class: dark-light
+:class: dark-light unclickable-figure
 ```
 :::
 
@@ -85,7 +85,7 @@ Bond Properties
 :alt: Example of the Bond Properties Dialog
 :align: center
 :width: 67%
-:class: dark-light
+:class: dark-light unclickable-figure
 ```
 :::
 
@@ -100,7 +100,7 @@ Angle Properties
 :alt: Example of the Angle Properties Dialog
 :align: center
 :width: 49%
-:class: dark-light
+:class: dark-light unclickable-figure
 ```
 :::
 
@@ -115,7 +115,7 @@ Torsion Properties
 :alt: Example of the Torsion Properties Dialog
 :align: center
 :width: 59%
-:class: dark-light
+:class: dark-light unclickable-figure
 ```
 :::
 
@@ -130,7 +130,7 @@ Residue Properties
 :alt: Example of the Residue Properties Dialog
 :align: center
 :width: 74%
-:class: dark-light
+:class: dark-light unclickable-figure
 ```
 :::
 
@@ -145,7 +145,7 @@ Conformer Properties
 :alt: Example of the Conformer Properties Dialog
 :align: center
 :width: 36%
-:class: dark-light
+:class: dark-light unclickable-figure
 ```
 :::
 
@@ -160,7 +160,7 @@ Symmetry
 :alt: Example of the Symmetry Dialog
 :align: center
 :width: 48%
-:class: dark-light
+:class: dark-light unclickable-figure
 ```
 :::
 
@@ -173,7 +173,7 @@ The surfaces dialog has several useful tools for calculating and rendering vario
 :alt: Example of the surfaces dialog
 :align: center
 :width: 420px
-:class: dark-light
+:class: dark-light unclickable-figure
 ```
 
 ### Surface Types and Coloring
@@ -185,13 +185,13 @@ For any surface other than a molecular orbital, you can choose to color the surf
 ```{figure} /_static/menus/analyze-menu/coronene_colored_density_dark.png
 :alt: Example of the electron density of coronene colored by the electrostatic potential
 :align: center
-:class: only-dark
+:class: only-dark unclickable-figure
 :height: 300px
 ```
 ```{figure} /_static/menus/analyze-menu/coronene_colored_density_light.png
 :alt: Example of the electron density of coronene colored by the electrostatic potential
 :align: center
-:class: only-light
+:class: only-light unclickable-figure
 :height: 300px
 ```
 
@@ -202,12 +202,12 @@ For any surface other than a molecular orbital, you can choose to color the surf
 ```{image} /_static/avogadro_charge_colors.svg
 :alt: The color maps available for coloring by electrostatic potential
 :align: center
-:class: only-light
+:class: only-light unclickable-figure
 ```
 ```{image} /_static/avogadro_charge_colors_darkmode.svg
 :alt: The color maps available for coloring by electrostatic potential
 :align: center
-:class: only-dark
+:class: only-dark unclickable-figure
 ```
 :::
 
@@ -222,13 +222,13 @@ The resolution option sets the spacing between volume elements in the rendered i
 :alt: The HOMO of Pyrazine with the Very Low resolution setting.
 :align: center
 :height: 300px
-:class: only-light
+:class: only-light unclickable-figure
 ```
 ```{image} /_static/menus/analyze-menu/pyrazine_homo_verylow_res_dark.png
 :alt: The HOMO of Pyrazine with the Very Low resolution setting.
 :align: center
 :height: 300px
-:class: only-dark
+:class: only-dark unclickable-figure
 ```
 :::
 
@@ -237,13 +237,13 @@ The resolution option sets the spacing between volume elements in the rendered i
 :alt: The HOMO of Pyrazine with the Low resolution setting.
 :align: center
 :height: 300px
-:class: only-light
+:class: only-light unclickable-figure
 ```
 ```{image} /_static/menus/analyze-menu/pyrazine_homo_low_res_dark.png
 :alt: The HOMO of Pyrazine with the Low resolution setting.
 :align: center
 :height: 300px
-:class: only-dark
+:class: only-dark unclickable-figure
 ```
 :::
 
@@ -253,13 +253,13 @@ The resolution option sets the spacing between volume elements in the rendered i
 :alt: The HOMO of Pyrazine with the Medium resolution setting.
 :align: center
 :height: 300px
-:class: only-light
+:class: only-light unclickable-figure
 ```
 ```{image} /_static/menus/analyze-menu/pyrazine_homo_medium_res_dark.png
 :alt: The HOMO of Pyrazine with the Medium resolution setting.
 :align: center
 :height: 300px
-:class: only-dark
+:class: only-dark unclickable-figure
 ```
 :::
 
@@ -268,13 +268,13 @@ The resolution option sets the spacing between volume elements in the rendered i
 :alt: The HOMO of Pyrazine with the High resolution setting.
 :align: center
 :height: 300px
-:class: only-light
+:class: only-light unclickable-figure
 ```
 ```{image} /_static/menus/analyze-menu/pyrazine_homo_high_res_dark.png
 :alt: The HOMO of Pyrazine with the High resolution setting.
 :align: center
 :height: 300px
-:class: only-dark
+:class: only-dark unclickable-figure
 ```
 :::
 
@@ -283,13 +283,13 @@ The resolution option sets the spacing between volume elements in the rendered i
 :alt: The HOMO of Pyrazine with the Very High resolution setting.
 :align: center
 :height: 300px
-:class: only-light
+:class: only-light unclickable-figure
 ```
 ```{image} /_static/menus/analyze-menu/pyrazine_homo_veryhigh_res_dark.png
 :alt: The HOMO of Pyrazine with the Very High resolution setting.
 :align: center
 :height: 300px
-:class: only-dark
+:class: only-dark unclickable-figure
 ```
 :::
 
@@ -312,13 +312,13 @@ The reason for this becomes evident with the figure below, which shows the HOMO 
 :alt: HOMO of pyrazine with an Isosurface value of 0.01
 :align: center
 :height: 300px
-:class: only-light
+:class: only-light unclickable-figure
 ```
 ```{image} /_static/menus/analyze-menu/pyrazine_iso/pyrazine_homo_iso_0.01_dark.png
 :alt: HOMO of pyrazine with an Isosurface value of 0.01
 :align: center
 :height: 300px
-:class: only-dark
+:class: only-dark unclickable-figure
 ```
 :::
 
@@ -327,13 +327,13 @@ The reason for this becomes evident with the figure below, which shows the HOMO 
 :alt: HOMO of pyrazine with an Isosurface value of 0.02
 :align: center
 :height: 300px
-:class: only-light
+:class: only-light unclickable-figure
 ```
 ```{image} /_static/menus/analyze-menu/pyrazine_iso/pyrazine_homo_iso_0.02_dark.png
 :alt: HOMO of pyrazine with an Isosurface value of 0.02
 :align: center
 :height: 300px
-:class: only-dark
+:class: only-dark unclickable-figure
 ```
 :::
 
@@ -343,13 +343,13 @@ The reason for this becomes evident with the figure below, which shows the HOMO 
 :alt: HOMO of pyrazine with an Isosurface value of 0.03
 :align: center
 :height: 300px
-:class: only-light
+:class: only-light unclickable-figure
 ```
 ```{image} /_static/menus/analyze-menu/pyrazine_iso/pyrazine_homo_iso_0.03_dark.png
 :alt: HOMO of pyrazine with an Isosurface value of 0.03
 :align: center
 :height: 300px
-:class: only-dark
+:class: only-dark unclickable-figure
 ```
 :::
 
@@ -358,13 +358,13 @@ The reason for this becomes evident with the figure below, which shows the HOMO 
 :alt: HOMO of pyrazine with an Isosurface value of 0.04
 :align: center
 :height: 300px
-:class: only-light
+:class: only-light unclickable-figure
 ```
 ```{image} /_static/menus/analyze-menu/pyrazine_iso/pyrazine_homo_iso_0.04_dark.png
 :alt: HOMO of pyrazine with an Isosurface value of 0.04
 :align: center
 :height: 300px
-:class: only-dark
+:class: only-dark unclickable-figure
 ```
 :::
 
@@ -373,13 +373,13 @@ The reason for this becomes evident with the figure below, which shows the HOMO 
 :alt: HOMO of pyrazine with an Isosurface value of 0.05
 :align: center
 :height: 300px
-:class: only-light
+:class: only-light unclickable-figure
 ```
 ```{image} /_static/menus/analyze-menu/pyrazine_iso/pyrazine_homo_iso_0.05_dark.png
 :alt: HOMO of pyrazine with an Isosurface value of 0.05
 :align: center
 :height: 300px
-:class: only-dark
+:class: only-dark unclickable-figure
 ```
 :::
 
@@ -388,13 +388,13 @@ The reason for this becomes evident with the figure below, which shows the HOMO 
 :alt: HOMO of pyrazine with an Isosurface value of 0.06
 :align: center
 :height: 300px
-:class: only-light
+:class: only-light unclickable-figure
 ```
 ```{image} /_static/menus/analyze-menu/pyrazine_iso/pyrazine_homo_iso_0.06_dark.png
 :alt: HOMO of pyrazine with an Isosurface value of 0.06
 :align: center
 :height: 300px
-:class: only-dark
+:class: only-dark unclickable-figure
 ```
 :::
 
@@ -403,13 +403,13 @@ The reason for this becomes evident with the figure below, which shows the HOMO 
 :alt: HOMO of pyrazine with an Isosurface value of 0.07
 :align: center
 :height: 300px
-:class: only-light
+:class: only-light unclickable-figure
 ```
 ```{image} /_static/menus/analyze-menu/pyrazine_iso/pyrazine_homo_iso_0.07_dark.png
 :alt: HOMO of pyrazine with an Isosurface value of 0.07
 :align: center
 :height: 300px
-:class: only-dark
+:class: only-dark unclickable-figure
 ```
 :::
 
@@ -418,13 +418,13 @@ The reason for this becomes evident with the figure below, which shows the HOMO 
 :alt: HOMO of pyrazine with an Isosurface value of 0.08
 :align: center
 :height: 300px
-:class: only-light
+:class: only-light unclickable-figure
 ```
 ```{image} /_static/menus/analyze-menu/pyrazine_iso/pyrazine_homo_iso_0.08_dark.png
 :alt: HOMO of pyrazine with an Isosurface value of 0.08
 :align: center
 :height: 300px
-:class: only-dark
+:class: only-dark unclickable-figure
 ```
 :::
 
@@ -433,13 +433,13 @@ The reason for this becomes evident with the figure below, which shows the HOMO 
 :alt: HOMO of pyrazine with an Isosurface value of 0.09
 :align: center
 :height: 300px
-:class: only-light
+:class: only-light unclickable-figure
 ```
 ```{image} /_static/menus/analyze-menu/pyrazine_iso/pyrazine_homo_iso_0.09_dark.png
 :alt: HOMO of pyrazine with an Isosurface value of 0.09
 :align: center
 :height: 300px
-:class: only-dark
+:class: only-dark unclickable-figure
 ```
 :::
 
@@ -448,13 +448,13 @@ The reason for this becomes evident with the figure below, which shows the HOMO 
 :alt: HOMO of pyrazine with an Isosurface value of 0.10
 :align: center
 :height: 300px
-:class: only-light
+:class: only-light unclickable-figure
 ```
 ```{image} /_static/menus/analyze-menu/pyrazine_iso/pyrazine_homo_iso_0.10_dark.png
 :alt: HOMO of pyrazine with an Isosurface value of 0.10
 :align: center
 :height: 300px
-:class: only-dark
+:class: only-dark unclickable-figure
 ```
 :::
 
@@ -469,13 +469,13 @@ It should be noted, however, that while one may initially conclude that all orbi
 :alt: HOMO of coronene with an Isosurface value of 0.01
 :align: center
 :height: 300px
-:class: only-light
+:class: only-light unclickable-figure
 ```
 ```{image} /_static/menus/analyze-menu/coronene_iso/coronene_homo_iso_0.01_dark.png
 :alt: HOMO of coronene with an Isosurface value of 0.01
 :align: center
 :height: 300px
-:class: only-dark
+:class: only-dark unclickable-figure
 ```
 :::
 
@@ -484,13 +484,13 @@ It should be noted, however, that while one may initially conclude that all orbi
 :alt: HOMO of coronene with an Isosurface value of 0.02
 :align: center
 :height: 300px
-:class: only-light
+:class: only-light unclickable-figure
 ```
 ```{image} /_static/menus/analyze-menu/coronene_iso/coronene_homo_iso_0.02_dark.png
 :alt: HOMO of coronene with an Isosurface value of 0.02
 :align: center
 :height: 300px
-:class: only-dark
+:class: only-dark unclickable-figure
 ```
 :::
 
@@ -500,13 +500,13 @@ It should be noted, however, that while one may initially conclude that all orbi
 :alt: HOMO of coronene with an Isosurface value of 0.03
 :align: center
 :height: 300px
-:class: only-light
+:class: only-light unclickable-figure
 ```
 ```{image} /_static/menus/analyze-menu/coronene_iso/coronene_homo_iso_0.03_dark.png
 :alt: HOMO of coronene with an Isosurface value of 0.03
 :align: center
 :height: 300px
-:class: only-dark
+:class: only-dark unclickable-figure
 ```
 :::
 
@@ -515,13 +515,13 @@ It should be noted, however, that while one may initially conclude that all orbi
 :alt: HOMO of coronene with an Isosurface value of 0.04
 :align: center
 :height: 300px
-:class: only-light
+:class: only-light unclickable-figure
 ```
 ```{image} /_static/menus/analyze-menu/coronene_iso/coronene_homo_iso_0.04_dark.png
 :alt: HOMO of coronene with an Isosurface value of 0.04
 :align: center
 :height: 300px
-:class: only-dark
+:class: only-dark unclickable-figure
 ```
 :::
 
@@ -530,13 +530,13 @@ It should be noted, however, that while one may initially conclude that all orbi
 :alt: HOMO of coronene with an Isosurface value of 0.05
 :align: center
 :height: 300px
-:class: only-light
+:class: only-light unclickable-figure
 ```
 ```{image} /_static/menus/analyze-menu/coronene_iso/coronene_homo_iso_0.05_dark.png
 :alt: HOMO of coronene with an Isosurface value of 0.05
 :align: center
 :height: 300px
-:class: only-dark
+:class: only-dark unclickable-figure
 ```
 :::
 
@@ -545,13 +545,13 @@ It should be noted, however, that while one may initially conclude that all orbi
 :alt: HOMO of coronene with an Isosurface value of 0.06
 :align: center
 :height: 300px
-:class: only-light
+:class: only-light unclickable-figure
 ```
 ```{image} /_static/menus/analyze-menu/coronene_iso/coronene_homo_iso_0.06_dark.png
 :alt: HOMO of coronene with an Isosurface value of 0.06
 :align: center
 :height: 300px
-:class: only-dark
+:class: only-dark unclickable-figure
 ```
 :::
 
@@ -560,13 +560,13 @@ It should be noted, however, that while one may initially conclude that all orbi
 :alt: HOMO of coronene with an Isosurface value of 0.07
 :align: center
 :height: 300px
-:class: only-light
+:class: only-light unclickable-figure
 ```
 ```{image} /_static/menus/analyze-menu/coronene_iso/coronene_homo_iso_0.07_dark.png
 :alt: HOMO of coronene with an Isosurface value of 0.07
 :align: center
 :height: 300px
-:class: only-dark
+:class: only-dark unclickable-figure
 ```
 :::
 
@@ -575,13 +575,13 @@ It should be noted, however, that while one may initially conclude that all orbi
 :alt: HOMO of coronene with an Isosurface value of 0.08
 :align: center
 :height: 300px
-:class: only-light
+:class: only-light unclickable-figure
 ```
 ```{image} /_static/menus/analyze-menu/coronene_iso/coronene_homo_iso_0.08_dark.png
 :alt: HOMO of coronene with an Isosurface value of 0.08
 :align: center
 :height: 300px
-:class: only-dark
+:class: only-dark unclickable-figure
 ```
 :::
 
@@ -590,13 +590,13 @@ It should be noted, however, that while one may initially conclude that all orbi
 :alt: HOMO of coronene with an Isosurface value of 0.09
 :align: center
 :height: 300px
-:class: only-light
+:class: only-light unclickable-figure
 ```
 ```{image} /_static/menus/analyze-menu/coronene_iso/coronene_homo_iso_0.09_dark.png
 :alt: HOMO of coronene with an Isosurface value of 0.09
 :align: center
 :height: 300px
-:class: only-dark
+:class: only-dark unclickable-figure
 ```
 :::
 
@@ -605,13 +605,13 @@ It should be noted, however, that while one may initially conclude that all orbi
 :alt: HOMO of coronene with an Isosurface value of 0.10
 :align: center
 :height: 300px
-:class: only-light
+:class: only-light unclickable-figure
 ```
 ```{image} /_static/menus/analyze-menu/coronene_iso/coronene_homo_iso_0.10_dark.png
 :alt: HOMO of coronene with an Isosurface value of 0.10
 :align: center
 :height: 300px
-:class: only-dark
+:class: only-dark unclickable-figure
 ```
 :::
 
@@ -630,13 +630,13 @@ The smoothing option, as the name implies, affects how visually smooth the surfa
 :alt: Van der Waals surface of pyrazine with Light (Level 1) smoothing
 :align: center
 :height: 300px
-:class: only-light
+:class: only-light unclickable-figure
 ```
 ```{image} /_static/menus/analyze-menu/pyrazine_vdw_light_smoothing_dark.png
 :alt: Van der Waals surface of pyrazine with Light (Level 1) smoothing
 :align: center
 :height: 300px
-:class: only-dark
+:class: only-dark unclickable-figure
 ```
 :::
 
@@ -645,13 +645,13 @@ The smoothing option, as the name implies, affects how visually smooth the surfa
 :alt: Van der Waals surface of pyrazine with Level 3 smoothing
 :align: center
 :height: 300px
-:class: only-light
+:class: only-light unclickable-figure
 ```
 ```{image} /_static/menus/analyze-menu/pyrazine_vdw_3_smoothing_dark.png
 :alt: Van der Waals surface of pyrazine with Level 3 smoothing
 :align: center
 :height: 300px
-:class: only-dark
+:class: only-dark unclickable-figure
 ```
 :::
 
@@ -661,13 +661,13 @@ The smoothing option, as the name implies, affects how visually smooth the surfa
 :alt: Van der Waals surface of pyrazine with Medium (Level 5) smoothing
 :align: center
 :height: 300px
-:class: only-light
+:class: only-light unclickable-figure
 ```
 ```{image} /_static/menus/analyze-menu/pyrazine_vdw_medium_smoothing_dark.png
 :alt: Van der Waals surface of pyrazine with Medium (Level 5) smoothing
 :align: center
 :height: 300px
-:class: only-dark
+:class: only-dark unclickable-figure
 ```
 :::
 
@@ -676,13 +676,13 @@ The smoothing option, as the name implies, affects how visually smooth the surfa
 :alt: Van der Waals surface of pyrazine with Level 7 smoothing
 :align: center
 :height: 300px
-:class: only-light
+:class: only-light unclickable-figure
 ```
 ```{image} /_static/menus/analyze-menu/pyrazine_vdw_7_smoothing_dark.png
 :alt: Van der Waals surface of pyrazine with Level 7 smoothing
 :align: center
 :height: 300px
-:class: only-dark
+:class: only-dark unclickable-figure
 ```
 :::
 
@@ -691,13 +691,13 @@ The smoothing option, as the name implies, affects how visually smooth the surfa
 :alt: Van der Waals surface of pyrazine with Strong (Level 9) smoothing
 :align: center
 :height: 300px
-:class: only-light
+:class: only-light unclickable-figure
 ```
 ```{image} /_static/menus/analyze-menu/pyrazine_vdw_strong_smoothing_dark.png
 :alt: Van der Waals surface of pyrazine with Strong (Level 9) smoothing
 :align: center
 :height: 300px
-:class: only-dark
+:class: only-dark unclickable-figure
 ```
 :::
 
