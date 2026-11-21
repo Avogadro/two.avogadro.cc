@@ -3,6 +3,8 @@
 const PLUGINS_URL = "https://avogadro.cc/plugins2.json";
 const STATS_URL = "https://plugins.avogadro.cc/stats?days=30";
 const ERROR_LINK = "https://github.com/Avogadro/plugins";
+// Nearly every user installs these, so they would always top the list
+const NOT_RANKED = new Set(["generators"]);
 
 // PEP 503 normalization, minus the "avogadro-" prefix (matches the generator)
 function statsKey(name) {
@@ -25,7 +27,7 @@ function newest(plugins, count = 10) {
 
 function popular(plugins, stats, count = 10) {
   return plugins
-    .filter((p) => stats[statsKey(p.name)])
+    .filter((p) => stats[statsKey(p.name)] && !NOT_RANKED.has(statsKey(p.name)))
     .map((p) => ({ plugin: p, recent: stats[statsKey(p.name)].recent || 0 }))
     .sort((a, b) => b.recent - a.recent || a.plugin.name.localeCompare(b.plugin.name))
     .slice(0, count);

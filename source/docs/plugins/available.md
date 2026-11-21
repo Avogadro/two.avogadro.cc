@@ -22,6 +22,8 @@ The tables below are loaded live, so they are always current.
 
 ## Most Downloaded Plugins (Last 30 Days)
 
+The input generators are installed by nearly everyone, so they are not ranked here.
+
 ```{raw} html
 <p id="plugins-popular-status" hidden>Loading…</p>
 <table id="plugins-popular" class="table" hidden>
