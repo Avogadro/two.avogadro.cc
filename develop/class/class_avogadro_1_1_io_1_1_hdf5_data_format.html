@@ -562,7 +562,7 @@ This class is intended to supplement an existing format reader/writer by providi
 </dd>
 </dl>
 </p>
-<p>To use this class, open or create an HDF5 file with the openFile method, using the appropriate OpenMode for the intended operation. Data can be written to the file using the writeDataset methods and retrieved using the readDataset methods. When finished, call closeFile to release the file resources from the HDF5 library.</p>
+<p>To use this class, open or create an HDF5 file with the openFile method, using the appropriate <a class="reference internal" href="#class_avogadro_1_1_io_1_1_hdf5_data_format_1a3a70f8b621474c9885f80fe709e2dca2"><span class="std std-ref">OpenMode</span></a> for the intended operation. Data can be written to the file using the writeDataset methods and retrieved using the readDataset methods. When finished, call closeFile to release the file resources from the HDF5 library.</p>
 <p>A complete set of datasets available in an open file can be retrieved with the <a class="reference internal" href="#class_avogadro_1_1_io_1_1_hdf5_data_format_1a0a8802f46a5f64ef2e53beb5c44f397f"><span class="std std-ref">datasets()</span></a> method, and the existence of a particular dataset can be tested with <a class="reference internal" href="#class_avogadro_1_1_io_1_1_hdf5_data_format_1a21e4c2c0e6515f649c3f0d9c0c0d5df4"><span class="std std-ref">datasetExists()</span></a>. <a class="reference internal" href="#class_avogadro_1_1_io_1_1_hdf5_data_format_1ada3bdb6c43f304564fa565da7731f421"><span class="std std-ref">removeDataset()</span></a> can be used to unlink an existing dataset from the file, though this will not free any space on disk. The space occupied by an unlinked dataset may be reclaimed by new write operations, but only if they occur before the file is closed.</p>
 <p>A convenient thresholding system is implemented to help the accompanying text format writer determine which data is “large” enough to be stored in HDF5. A size threshold (in bytes) may be set with the <a class="reference internal" href="#class_avogadro_1_1_io_1_1_hdf5_data_format_1a6f6353b77aafbddfa6b476fa519e1d09"><span class="std std-ref">setThreshold()</span></a> function (the default is 1KB). A data object may be passed to the exceedsThreshold method to see if the size of the data in the container exceeds the currently set threshold. If so, it should be written into the HDF5 file by writeDataset. If not, it should be serialized into the text file in a suitable format. The thresholding operations are optional; the threshold size does not affect the behavior of the read/write methods and are only for user convenience. </p>
 <div class="breathe-sectiondef docutils container">
@@ -628,7 +628,7 @@ This class is intended to supplement an existing format reader/writer by providi
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>filename_</strong> – Name of the file to open. </p></li>
-<li><p><strong>mode</strong> – OpenMode for the file. Default is ReadWriteAppend. </p></li>
+<li><p><strong>mode</strong> – <a class="reference internal" href="#class_avogadro_1_1_io_1_1_hdf5_data_format_1a3a70f8b621474c9885f80fe709e2dca2"><span class="std std-ref">OpenMode</span></a> for the file. Default is ReadWriteAppend. </p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>

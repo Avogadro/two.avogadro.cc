@@ -543,7 +543,7 @@ The QuantumInput extension provides a scriptable method for users to add custom 
 <section id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md0">
 <h2>Script Entry Points<a class="headerlink" href="#class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md0" title="Link to this heading">#</a></h2>
 <p id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md0">The script must handle the following command-line arguments:<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">--debug</span></code> Enable extra debugging output. Used with other commands. It is not required that the script support extra debugging, but it should not crash when this option is passed.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--</span><a class="reference internal" href="#class_avogadro_1_1_mole_queue_1_1_input_generator_1a1d829a8cc5502cefd6713febc645035a"><span class="std std-ref"><span class="pre">debug</span></span></a></code> Enable extra debugging output. Used with other commands. It is not required that the script support extra debugging, but it should not crash when this option is passed.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--print-options</span></code> Print the available options supported by the script, e.g. simulation parameters, etc. See below for more details.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--generate-input</span></code> Read an option block from stdin and print input files to stdout. See below for more details.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--display-name</span></code> Print a user-friendly name for the input generator. This is used in the GUI for menu entries, window titles, etc.</p></li>
@@ -551,7 +551,7 @@ The QuantumInput extension provides a scriptable method for users to add custom 
 </p>
 </section>
 <section id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md1">
-<h2>Specifying parameters with &lt;tt&gt;–print-options&lt;/tt&gt;<a class="headerlink" href="#class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md1" title="Link to this heading">#</a></h2>
+<h2>Specifying parameters with <a class="headerlink" href="#class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md1" title="Link to this heading">#</a></h2>
 <p id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md1">The format of the <code class="docutils literal notranslate"><span class="pre">--print-options</span></code> output must be a JSON object of the following form: <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">  </span><span class="s2">&quot;userOptions&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="p">...</span>
@@ -737,7 +737,7 @@ The QuantumInput extension provides a scriptable method for users to add custom 
 </section>
 </section>
 <section id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md10">
-<h2>Handling User Selections: &lt;tt&gt;–generate-input&lt;/tt&gt;<a class="headerlink" href="#class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md10" title="Link to this heading">#</a></h2>
+<h2>Handling User Selections: <a class="headerlink" href="#class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md10" title="Link to this heading">#</a></h2>
 <p id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md10">When <code class="docutils literal notranslate"><span class="pre">--generate-input</span></code> is passed, the information needed to generate the input file will be written to the script’s standard input channel as JSON string of the following form: <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">  </span><span class="s2">&quot;cjson&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{...},</span>
 <span class="w">  </span><span class="s2">&quot;options&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
@@ -748,7 +748,7 @@ The QuantumInput extension provides a scriptable method for users to add custom 
 <span class="p">}</span>
 </pre></div>
 </div>
- The <code class="docutils literal notranslate"><span class="pre">cjson</span></code> entry will contain a Chemical JSON representation of the molecule if <code class="docutils literal notranslate"><span class="pre">inputMoleculeFormat</span></code> is set to “cjson” in the <code class="docutils literal notranslate"><span class="pre">--print-options</span></code> output. Similarly, a <code class="docutils literal notranslate"><span class="pre">cml</span></code> entry and CML string will exist if a Chemical Markup Language representation was requested. It will be omitted entirely if <code class="docutils literal notranslate"><span class="pre">inputMoleculeFormat</span></code> is not set. The <code class="docutils literal notranslate"><span class="pre">options</span></code> block contains key/value pairs for each of the options specified in the <code class="docutils literal notranslate"><span class="pre">userOptions</span></code> block of the <code class="docutils literal notranslate"><span class="pre">--print-options</span></code> output.</p>
+ The <code class="docutils literal notranslate"><span class="pre">cjson</span></code> entry will contain a Chemical JSON representation of the molecule if <code class="docutils literal notranslate"><span class="pre">inputMoleculeFormat</span></code> is set to “cjson” in the <code class="docutils literal notranslate"><span class="pre">--print-options</span></code> output. Similarly, a <code class="docutils literal notranslate"><span class="pre">cml</span></code> entry and CML string will exist if a Chemical Markup Language representation was requested. It will be omitted entirely if <code class="docutils literal notranslate"><span class="pre">inputMoleculeFormat</span></code> is not set. The <code class="docutils literal notranslate"><a class="reference internal" href="#class_avogadro_1_1_mole_queue_1_1_input_generator_1aaed9d637f54ac10171aef0d68a66996c"><span class="std std-ref"><span class="pre">options</span></span></a></code> block contains key/value pairs for each of the options specified in the <code class="docutils literal notranslate"><span class="pre">userOptions</span></code> block of the <code class="docutils literal notranslate"><span class="pre">--print-options</span></code> output.</p>
 <p>If the script is called with <code class="docutils literal notranslate"><span class="pre">--generate-input</span></code>, it must write a JSON string to standard output with the following format: <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">  </span><span class="s2">&quot;files&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="p">{</span>
@@ -799,7 +799,7 @@ $$zmatpad:[coordSpec]$$
 </section>
 <section id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md13">
 <h2>Debugging<a class="headerlink" href="#class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md13" title="Link to this heading">#</a></h2>
-<p id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md13">Debugging may be enabled by defining AVO_QM_INPUT_DEBUG in the process’s environment. This will cause the <code class="docutils literal notranslate"><span class="pre">debug</span></code> option to be passed in all calls to generator scripts, and will print extra information to the qDebug() stream from within avogadro. The script is free to handle the debug flag as the author wishes. </p>
+<p id="class_avogadro_1_1_mole_queue_1_1_input_generator_1autotoc_md13">Debugging may be enabled by defining AVO_QM_INPUT_DEBUG in the process’s environment. This will cause the <code class="docutils literal notranslate"><a class="reference internal" href="#class_avogadro_1_1_mole_queue_1_1_input_generator_1a1d829a8cc5502cefd6713febc645035a"><span class="std std-ref"><span class="pre">debug</span></span></a></code> option to be passed in all calls to generator scripts, and will print extra information to the qDebug() stream from within avogadro. The script is free to handle the debug flag as the author wishes. </p>
 </section>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
