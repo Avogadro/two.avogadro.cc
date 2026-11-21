@@ -32,6 +32,7 @@ caption: Plugins
 hidden: true
 maxdepth: 1
 ---
+available
 manager
 python
 ```
