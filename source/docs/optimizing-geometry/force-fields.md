@@ -22,7 +22,7 @@ MMFF94 and MMFF94s use the same functional form to calculate the potential energ
 
 These force fields also add electrostatic charges, and hydrogen bonds \(displayed below\).
 
-![](../../_static/mmff94-s-.png)
+![Avogadro showing MMFF94 non-covalent interactions for a water cluster, with hydrogen bonds marked by blue dashed lines](../../_static/mmff94-s-.png)
 
 ## GAFF
 
