@@ -275,6 +275,11 @@ html_css_files = [
     'mermaid-theme.css',
 ]
 
+# Fills the tables on docs/plugins/available (no-ops on other pages)
+html_js_files = [
+    ('plugin-tables.js', {'defer': 'defer'}),
+]
+
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
