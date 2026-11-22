@@ -12,6 +12,18 @@ function statsKey(name) {
   return key.startsWith("avogadro-") ? key.slice("avogadro-".length) : key;
 }
 
+// Same prefixes, longest first, as PackageModel::displayName() in avogadrolibs
+const AVO_PREFIXES = ["avogadro-", "avogadro_", "avogadro", "avo-", "avo_", "avo"];
+
+// Drop the redundant "avogadro-" / "avo_" etc. prefix, as the GUI does
+function displayName(name) {
+  const text = String(name);
+  const lower = text.toLowerCase();
+  const prefix = AVO_PREFIXES.find((p) => lower.startsWith(p));
+  const stripped = prefix ? text.slice(prefix.length) : text;
+  return stripped || text;
+}
+
 function parseDate(plugin) {
   const t = Date.parse(plugin["date-added"]);
   return Number.isNaN(t) ? null : t;
@@ -51,11 +63,12 @@ function cell(row, content) {
 
 function nameNode(plugin) {
   const href = safeUrl((plugin.git || {}).repo) || safeUrl(plugin["readme-url"]);
-  if (!href) return document.createTextNode(plugin.name);
+  const label = displayName(plugin.name);
+  if (!href) return document.createTextNode(label);
   const a = document.createElement("a");
   a.href = href;
   a.className = "reference external";
-  a.textContent = plugin.name;
+  a.textContent = label;
   return a;
 }
 
@@ -123,4 +136,4 @@ async function init() {
 }
 
 if (typeof document !== "undefined") init();
-if (typeof module !== "undefined") module.exports = { statsKey, newest, popular, safeUrl };
+if (typeof module !== "undefined") module.exports = { statsKey, displayName, newest, popular, safeUrl };
