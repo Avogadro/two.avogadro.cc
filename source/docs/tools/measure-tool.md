@@ -22,7 +22,7 @@ The second atom is used as the vertex (e.g., atoms 1-2-3 = 109.476°)
 
 If four atoms are selected, a dihedral angle is determined (e.g. 149.981° for atoms 1-2-3-4), as well as the 2-3-4 angle, and the 3-4 distance.
 
-![](../../_static/measure-1234.png)
+![Molecular view showing four selected atoms, a dihedral angle of 149.981°, the angle between atoms 2, 3, and 4, and the distance between atoms 3 and 4.](../../_static/measure-1234.png)
 
 Clicking on an atom will remove it from the list, or double clicking the display will reset the atoms previously selected.
 
