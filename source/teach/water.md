@@ -19,11 +19,11 @@ Add another water molecule and use the same force field to optimize the geometry
 
 Wikipedia gives an experimental O-H bond length of 95.84 pm, and a H-O-H bond angle of 104.45°, so both MMFF94 and UFF perform reasonably.
 
-![](../_static/Water_molecules.png)
+![Two water molecules showing their molecular arrangement and interaction.](../_static/Water_molecules.png)
 
 Note that there is a significant electrostatic interaction between the positively charged hydrogen atom and the oxygen on neighboring molecules.
 
-![](../_static/Water_molecules_with_electrostatic_potential.png)
+![Electrostatic potential distribution around two interacting water molecules.](../_static/Water_molecules_with_electrostatic_potential.png)
 
 ```{warning}
 Only the MMFF94 force field includes hydrogen bonding terms, so two water molecules may not attract each other using the other force fields.

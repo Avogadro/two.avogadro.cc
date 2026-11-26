@@ -12,17 +12,17 @@ As you click on atoms Avogadro will automatically calculate the distances betwee
 
 For example, the distance between atom 1 and 2 is 1.090 Å \(displayed below\).
 
-![](../../_static/measure-12.png)
+![Molecular view showing two selected atoms and their measured distance of 1.090 Å.](../../_static/measure-12.png)
 
 Avogadro will also determine the angle between atoms, if at least three atoms have been selected, as well as indicating the distance between atoms 2 and 3.
 
 The second atom is used as the vertex (e.g., atoms 1-2-3 = 109.476°)
 
-![](../../_static/measure-123.png)
+![Molecular view showing three selected atoms, the angle of 109.476°, and the distance between atoms 2 and 3.](../../_static/measure-123.png)
 
 If four atoms are selected, a dihedral angle is determined (e.g. 149.981° for atoms 1-2-3-4), as well as the 2-3-4 angle, and the 3-4 distance.
 
-![](../../_static/measure-1234.png)
+![Molecular view showing four selected atoms, a dihedral angle of 149.981°, the angle between atoms 2, 3, and 4, and the distance between atoms 3 and 4.](../../_static/measure-1234.png)
 
 Clicking on an atom will remove it from the list, or double clicking the display will reset the atoms previously selected.
 
@@ -38,7 +38,7 @@ Distances, angles and dihedrals can now be edited directly in the Measure tool.
 
 The [Tool pane](panes-tool-pane) shows each value as an editable box. Type a new value and press <kbd>Enter</kbd>, or use the arrow buttons, the up and down arrow keys, or the mouse wheel to change it step by step. The atoms move as soon as the edit is applied.
 
-![](../../_static/measure-tool-edit.png)
+![Tool pane showing editable distance, angle, and dihedral measurements for selected atoms.](../../_static/measure-tool-edit.png)
 
 The rows shown depend on how many atoms are picked:
 
