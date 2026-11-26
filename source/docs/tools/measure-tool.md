@@ -12,7 +12,7 @@ As you click on atoms Avogadro will automatically calculate the distances betwee
 
 For example, the distance between atom 1 and 2 is 1.090 Å \(displayed below\).
 
-![](../../_static/measure-12.png)
+![Molecular view showing two selected atoms and their measured distance of 1.090 Å.](../../_static/measure-12.png)
 
 Avogadro will also determine the angle between atoms, if at least three atoms have been selected, as well as indicating the distance between atoms 2 and 3.
 
