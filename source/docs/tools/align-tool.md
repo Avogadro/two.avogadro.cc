@@ -30,7 +30,7 @@ The red axis is designated as the X axis, green is designated as the Y axis, and
 
 The **Axis** drop-down menu allows you to choose which Cartesian axis the molecule will be aligned to.
 
-![](../../_static/align-axis.png)
+![Align pane showing the drop-down menu for selecting the X, Y, or Z alignment axis.](../../_static/align-axis.png)
 
 ## See Also
 
