@@ -38,7 +38,7 @@ Distances, angles and dihedrals can now be edited directly in the Measure tool.
 
 The [Tool pane](panes-tool-pane) shows each value as an editable box. Type a new value and press <kbd>Enter</kbd>, or use the arrow buttons, the up and down arrow keys, or the mouse wheel to change it step by step. The atoms move as soon as the edit is applied.
 
-![](../../_static/measure-tool-edit.png)
+![Tool pane showing editable distance, angle, and dihedral measurements for selected atoms.](../../_static/measure-tool-edit.png)
 
 The rows shown depend on how many atoms are picked:
 
