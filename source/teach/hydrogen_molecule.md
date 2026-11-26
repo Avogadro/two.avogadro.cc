@@ -10,7 +10,7 @@ Investigate the hydrogen molecule and its bond length using different force fiel
 
 ## Solution
 
-![](../_static/Hydrogen_molecule.png)
+![Hydrogen molecule model displayed in Avogadro.](../_static/Hydrogen_molecule.png)
 
 | Force field | Bond length (Å) | 
 | ----------- | ----------- | 
