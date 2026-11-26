@@ -20,7 +20,7 @@ If only one atom was selected, the molecule will simply be translated so that it
 
 If two atoms were selected, the first will be placed at the origin, and the second will be placed along the chosen axis.
 
-![](../../_static/align-atoms.png)
+![Molecule view showing two selected atoms labeled #1 and #2 for alignment.](../../_static/align-atoms.png)
 
 ```{tip}
 The red axis is designated as the X axis, green is designated as the Y axis, and blue is designated as the Z axis.
@@ -30,7 +30,7 @@ The red axis is designated as the X axis, green is designated as the Y axis, and
 
 The **Axis** drop-down menu allows you to choose which Cartesian axis the molecule will be aligned to.
 
-![](../../_static/align-axis.png)
+![Align pane showing the drop-down menu for selecting the X, Y, or Z alignment axis.](../../_static/align-axis.png)
 
 ## See Also
 
