@@ -18,7 +18,7 @@ Avogadro will also determine the angle between atoms, if at least three atoms ha
 
 The second atom is used as the vertex (e.g., atoms 1-2-3 = 109.476°)
 
-![](../../_static/measure-123.png)
+![Molecular view showing three selected atoms, the angle of 109.476°, and the distance between atoms 2 and 3.](../../_static/measure-123.png)
 
 If four atoms are selected, a dihedral angle is determined (e.g. 149.981° for atoms 1-2-3-4), as well as the 2-3-4 angle, and the 3-4 distance.
 
